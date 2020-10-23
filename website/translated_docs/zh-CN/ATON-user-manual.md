@@ -5,7 +5,7 @@ title: ATON钱包用户使用手册
 
 ## ATON 下载
 
-<div><br/><a href="https://platon.network/developer/?lang=zh#aton" target="_blank" >点击下载ATON最新版本 </a></div>
+<div><br/><a href="https://pATPon.network/developer/?lang=zh#aton" target="_blank" >点击下载ATON最新版本 </a></div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 
@@ -13,6 +13,28 @@ title: ATON钱包用户使用手册
 
 <div>
 <div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton2.png" width="500" style="padding-bottom:50px;" /></div> <div><br>1. 点击【创建钱包】。<br>2. 选择钱包类型（普通或HD），设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮即可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> <br><b>注意</b><br>1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
+<br>3.点击页面左上角的节点切换切换击页可以切换节点。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## 钱包资产主页
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥展示当前账户地址及地址二维码，可供转入ATP。<br>8. ⑦点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>9. 页面下半部分是【资产列表】。<br>10. ⑧第一条是主币数据，可以看到单位和余额，点击可以进入主币详情页面。<br>12. ⑨其余是Token币数据，可以看到单位和余额，点击可以进入主币详情页面。
+
+
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## 资产详情页
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton101.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在资产管理页点击第一条数据，进入主币资产详情页，点击其余数据进入Token币资产详情页。<br>2. ①顶部部分是当前钱包信息。<br>3. ②钱包信息包含余额、单位和锁仓余额，以及【发送】和【接收】等必显信息。<br>4. ③点击【发送】按钮可以跳转到发送页面进行转账。<br>5. ④点击【接收】可以进入接收页面进行接收转账。<br>6. 页面下半部分是【交易记录】。<br>7. ⑤在Token币资产详情中没有【发送】按钮和【锁仓余额】文字标签。<br>8. ⑥页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情页面。
+
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -66,7 +88,7 @@ title: ATON钱包用户使用手册
 ## 查看钱包信息
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的LAT总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③点击可选择该组HD钱包的任意一个子钱包。<br>5. ④当前显示钱包的LAT余额，如果有锁仓余额，在余额下方会显示锁仓金额。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账LAT至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入LAT。<br>9. ⑧点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>10. ⑨点击查看钱包详情
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的ATP总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③点击可选择该组HD钱包的任意一个子钱包。<br>5. ④当前显示钱包的ATP余额，如果有锁仓余额，在余额下方会显示锁仓金额。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账ATP至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入ATP。<br>9. ⑧点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>10. ⑨点击查看钱包详情。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -84,7 +106,7 @@ title: ATON钱包用户使用手册
 ## 接收
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton15.png" width="300" style="zoom:80%;" /></div><div><br>1. 在钱包首页点击某个具体钱包，点击【接收】栏，则可展示钱包地址和二维码。<br>2. 点击钱包地址复制按钮则可复制地址。<br>3. 点击【保存图片并分享】则可将图片保存至本地相册，并分享给他人。<br>4. 其他方可通过此地址或者扫描此二维码进行LAT转账。<br><br><b>注意</b><br>1. 本APP地址和二维码仅接受Alaya网络的资产，请勿充值其他网络资产至此钱包。<br>2. 充值时，请确认网络的正确性。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton15.png" width="300" style="zoom:80%;" /></div><div><br>1. 在某个钱包的资产详情页点，点击【接收】栏，则可展示钱包地址和二维码。<br>2. 点击钱包地址复制按钮则可复制地址。<br>3. 点击【保存图片并分享】则可将图片保存至本地相册，并分享给他人。<br>4. 其他方可通过此地址或者扫描此二维码进行ATP转账。<br><br><b>注意</b><br>1. 本APP地址和二维码仅接受Alaya网络的资产，请勿充值其他网络资产至此钱包。<br>2. 充值时，请确认网络的正确性。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -93,7 +115,7 @@ title: ATON钱包用户使用手册
 ## 发送
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton17.png" width="500" style="zoom:80%;" /></div><div><br>1.在钱包首页点击某个具体钱包，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的LAT数量。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton17.png" width="500" style="zoom:80%;" /></div><div><br>1.在主币钱包资产详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的ATP数量。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -113,7 +135,7 @@ title: ATON钱包用户使用手册
 ### 查看验证节点详情
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton44.jpg" width="300" style="zoom:80%;" /></div><div><br>1.点击某个具体节点，可查看节点的收益相关信息：<br>- 预计委托收益率：近4个结算周期每份额委托净收益折合成的年化收益率，基于该值可预估委托收益情况<br>-委托奖励比例：节点所获奖励分配给委托者的比例，比例越大，委托奖励越多<br>-累计奖励：节点累计分配的委托奖励数<br>2. 同时可查看节点的基本信息，如委托者信息、出块信息等。<br>3. 如果您想将LAT质押给此节点，可点击下方【委托】按钮进行操作。<br><br><b>注意</b><br>1. 基金会资助的节点，不接受委托。<br>2. 如果当前节点状态为“锁定中”，则不能接受委托。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton44.jpg" width="300" style="zoom:80%;" /></div><div><br>1.点击某个具体节点，可查看节点的收益相关信息：<br>- 预计委托收益率：近4个结算周期每份额委托净收益折合成的年化收益率，基于该值可预估委托收益情况<br>-委托奖励比例：节点所获奖励分配给委托者的比例，比例越大，委托奖励越多<br>-累计奖励：节点累计分配的委托奖励数<br>2. 同时可查看节点的基本信息，如委托者信息、出块信息等。<br>3. 如果您想将ATP质押给此节点，可点击下方【委托】按钮进行操作。<br><br><b>注意</b><br>1. 基金会资助的节点，不接受委托。<br>2. 如果当前节点状态为“锁定中”，则不能接受委托。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -124,7 +146,7 @@ title: ATON钱包用户使用手册
 ### 参与委托
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton45.png" width="300" style="zoom:80%;"  /></div><div><br>1. 可点击【委托-验证节点】，选择某个节点进行委托。如果已委托过，可点击【委托-我的委托-委托节点详情】，选择某个节点继续进行委托。<br>2. 进入页面，选择需要委托的钱包。<br>3. 如果钱包有锁仓金额，可点击委托钱包余额选项栏进行切换，使用锁仓金额进行委托（注意钱包余额需足够支付委托交易手续费）。<br>4. 输入委托的金额，每次委托不得小于10LAT。<br>5. 输入正确的密码即可完成委托。<br>6. 已委托过的节点，可再次进行委托，无次数限制。<br><br><b>注意</b><br>1. 委托人将LAT委托给节点，当委托的节点产生收益时，委托人将会获得基于节点配置的委托奖励比例分配的收益。<br>2. 收益节点关联的钱包地址，不可参与委托。<br>3. 委托的LAT在下个结算周期才开始生效。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton45.png" width="300" style="zoom:80%;"  /></div><div><br>1. 可点击【委托-验证节点】，选择某个节点进行委托。如果已委托过，可点击【委托-我的委托-委托节点详情】，选择某个节点继续进行委托。<br>2. 进入页面，选择需要委托的钱包。<br>3. 如果钱包有锁仓金额，可点击委托钱包余额选项栏进行切换，使用锁仓金额进行委托（注意钱包余额需足够支付委托交易手续费）。<br>4. 输入委托的金额，每次委托不得小于10ATP。<br>5. 输入正确的密码即可完成委托。<br>6. 已委托过的节点，可再次进行委托，无次数限制。<br><br><b>注意</b><br>1. 委托人将ATP委托给节点，当委托的节点产生收益时，委托人将会获得基于节点配置的委托奖励比例分配的收益。<br>2. 收益节点关联的钱包地址，不可参与委托。<br>3. 委托的ATP在下个结算周期才开始生效。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -142,7 +164,7 @@ title: ATON钱包用户使用手册
 ### 赎回委托
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.jpg" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10LAT，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.jpg" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10ATP，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -188,7 +210,7 @@ title: ATON钱包用户使用手册
 **3. 观察钱包操作**
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton35.png" width="300" style="zoom:80%;" /></div><div><br>（1）点击步骤1图里面的【下一步】按钮，到达读取签名数据页面。<br>（2）点击扫一扫图标，扫描步骤2冷钱包页面的二维码，则可获取签名数据。<br>（3）点击【发送交易】，即可将交易发送至区块链网络。<br><br><b>注意</b><br>1. 观察钱包需配合冷钱包进行操作，否则无法转账。<br>2. 请不要将资产充值至您无法掌控的观察钱包地址上。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton35.png" width="300" style="zoom:80%;" /></div><div><br>（1）使用观察钱包进行发送、委托和赎回操作时，需要离线签名。(2)点击【下一步】按钮，到达读取签名数据页面<br>（3）点击扫一扫图标，扫描步骤2冷钱包页面的二维码，则可获取签名数据。<br>（4）点击【发送交易】，即可将交易发送至区块链网络。<br><br><b>注意</b><br>1. 观察钱包需配合冷钱包进行操作，否则无法转账。<br>2. 请不要将资产充值至您无法掌控的观察钱包地址上。
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
