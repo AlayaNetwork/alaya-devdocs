@@ -4,118 +4,118 @@ title: OffLine MTool Manual
 sidebar_label: OffLine MTool Manual
 ---
 
-## 简介
+## Introduction
 
-为了便于节点进行转账，质押，委托以及治理等相关的操作，Alaya提供了MTool来辅助用户：
+In order to facilitate node transfer, pledge, delegation and governance and other related operations, Alaya provides MTool to assist users:
 
-- MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用，用户可根据自己的资源进行选择。
-- MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述离线签名操作，在线签名操作请参考[在线MTool教程](/alaya-devdocs/zh-CN/OnLine_MTool_Manual)。
-- MTool离线签名方式主要流程为：在在线机器上生成待签名文件，然后在离线机器上签名交易，最后在在线机器上发送签名交易。
+- MTool can support Ubuntu 18.04 and Windows 10. This document describes the installation and use under Windows and Ubuntu environments respectively. Users can choose according to their own resources.
+- MTool provides two signature methods for pledge transactions: online signature and offline signature. This document describes offline signature operations. For online signature operations, please refer to [Online MTool Tutorial](/alaya-devdocs/zh-CN/OnLine_MTool_Manual).
+- The main process of MTool offline signature method is: generate the file to be signed on the online machine, then sign the transaction on the offline machine, and finally send the signed transaction on the online machine.
 
-## 安装MTool
+## Install MTool
 
-另外，本文档分别介绍Windows和Ubuntu环境下MTool的操作，用户可根据自己的资源进行选择；以下安装方式为在线机器上的安装，如果在离线机器上安装，可使用移动U盘或者移动硬盘进行拷贝安装包到离线机器上，安装方法和在线安装方法一样。
+In addition, this document separately introduces the operation of MTool in Windows and Ubuntu environments. Users can choose according to their own resources; the following installation methods are installation on online machines. If you install on offline machines, you can use a mobile U disk or a mobile hard disk. Copy the installation package to the offline machine, the installation method is the same as the online installation method.
 
-### Windows下安装MTool
+### Install MTool under Windows
 
-#### 安装前准备
+#### Preparation before installation
 
-执行命令：
+Excuting an order:
 
 ```
 mtool-client --version
 ```
 
-如果执行结果显示`无法将“mtool-client”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次`，表示没有安装旧版本不需要执行下面操作。
+If the execution result shows `Cannot recognize the "mtool-client" item as the name of a cmdlet, function, script file, or executable program. Please check the spelling of the name. If you include the path, make sure that the path is correct, and then try again `, it means that there is no need to perform the following operations if the old version is not installed.
 
-如果执行结果显示版本号，时间戳等信息表示已安装MTool，如果MTool是旧版本，此时需要备份重要信息，然后再手工卸载旧版本，操作步骤：
+If the execution result shows the version number, timestamp and other information, it means that MTool has been installed. If MTool is an old version, you need to back up important information at this time, and then manually uninstall the old version. Operation steps:
 
-**step1. 备份目录**
+**step1. Backup directory**
 
-将 `C:\tools\mtool\current\keystore` 下的所有文件到 D 盘或其他非 `C:\tools` 的目录下。安装完新版本之后需要将备份文件拷贝回 `C:\tools\mtool\current\keystore` 目录下。
+Put all the files under `C:\tools\mtool\current\keystore` to D drive or other directories other than `C:\tools`. After installing the new version, you need to copy the backup file back to the `C:\tools\mtool\current\keystore` directory.
 
-**step2. 卸载旧版本**
+**step2. Uninstall the old version**
 
-双击 `C:\tools\unins000.exe` 卸载所有旧版本的 MTool 及其他业务工具。
+Double-click `C:\tools\unins000.exe` to uninstall all old versions of MTool and other business tools.
 
-#### 开始安装
+#### start installation
 
-**step1. 下载MTool安装包**
+**step1. Download the MTool installation package**
 
-在在线机器上，复制链接<http://download.alaya.network/alaya/mtool/windows/0.13.2/mtool-setup.exe> 到浏览器下载MTool安装包。
+On the online machine, copy the link <http://download.alaya.network/alaya/mtool/windows/0.13.2/mtool-setup.exe> ​​to the browser to download the MTool installation package.
 
-**step2. 安装MTool**
+**step2. Install MTool**
 
-双击mtool-setup.exe进行安装。默认安装目录为 C:\tools，建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
+Double-click mtool-setup.exe to install. The default installation directory is C:\tools, it is recommended not to change this installation directory. The pop-up interface displays **Completing the mtool Setup Wizard** message indicating that the installation is successful, just click **Finish**.
 
-**step3. 重启终端**
+**step3. Restart the terminal**
 
-安装完成之后，需要<font color=red>重启终端</font>，让新添加的环境变量生效。
+After the installation is complete, you need to <font color=red>restart the terminal</font> to make the newly added environment variables take effect.
 
-### Ubuntu下安装MTool
+### Install MTool under Ubuntu
 
-步骤如下：
+Proceed as follows:
 
-**step1. 下载MTool工具包**
+**step1. Download MTool Toolkit**
 
 ``` bash
 wget http://download.alaya.network/alaya/mtool/linux/0.13.2/mtool-client.zip
 ```
 
-**step2. 解压MTool工具包**
+**step2. Unzip MTool toolkit**
 
 ``` bash
-(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
+(if! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
 ```
 
-**step3. 下载脚本**
+**step3. Download the script**
 
->脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径。
+>The script is downloaded to the <font color=red>mtool-client</font> directory, otherwise the script cannot find the path of the new version of mtool.
 
 ``` bash
-wget http://download.alaya.network/opensource/scripts/mtool_install.sh 
+wget http://download.alaya.network/opensource/scripts/mtool_install.sh
 ```
 
-**step4. 执行命令**
+**step4. Execute command**
 
 ```
 chmod +x mtool_install.sh && ./mtool_install.sh
 ```
 
-> - 提示 <font color=red>Install mtool succeed.</font> 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客服联系方式反馈具体问题。
+>-When it prompts <font color=red>Install mtool succeed.</font>, it means that the MTool installation is successful. If the installation is not successful, please feedback specific questions through our official customer service contact information.
 
-**step5. 重新启动会话窗口**
+**step5. Restart the session window**
 
-安装完成之后，需要<font color=red>重新启动会话窗口</font>，让新添加的环境变量生效。
+After the installation is complete, you need to <font color=red>restart the session window</font> to make the newly added environment variables take effect.
 
-## MTool环境变量说明
+## MTool environment variable description
 
-Windows和Ubuntu下MTool目录使用环境变量有所区别：
+The environment variables used in the MTool directory under Windows and Ubuntu are different:
 
-- MTool目录
+- MTool catalog
 
-  - Windows：`%MTOOLDIR%`
+  - Windows: `%MTOOLDIR%`
 
-  - Ubuntu：`$MTOOLDIR`
+  - Ubuntu: `$MTOOLDIR`
 
->  说明：**`用户根据自己安装的系统进行选择环境变量。`**
+> Note: **`Users choose environment variables according to the system they have installed. `**
 >
 
-##  MTool钱包命令详解
+## Detailed explanation of MTool wallet commands
 
-> 注意：后续命令是Ubuntu下的命令格式，Windows下需要把`$MTOOLDIR`修改成`%MTOOLDIR%`。
+> Note: The follow-up command is the command format under Ubuntu. Under Windows, you need to modify `$MTOOLDIR` to `%MTOOLDIR%`.
 
-### 创建冷钱包
+### Create a cold wallet
 
-- 执行命令
+- Excuting an order
 
 ```shell
 mtool-client account new staking
 ```
 
-- 参数说明
+- Parameter Description
 
->staking: 生成的钱包名称，输入两次相同密码之后，创建成功后会在目录`$MTOOLDIR/keystore`下生成钱包文件`staking.json`，并打印如下信息：
+>staking: The generated wallet name. After entering the same password twice, the wallet file `staking.json` will be generated under the directory `$MTOOLDIR/keystore` after the creation is successful, and the following information will be printed:
 >
 >```shell
 >-name: staking
@@ -132,33 +132,33 @@ mtool-client account new staking
 >Important write this mnemonic phrase in a safe place.
 >It is the important way to recover your account if you ever forget your password.
 >worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney
->```
+> ```
 >
->钱包地址格式调整为Bech32，其中：
+>The wallet address format is adjusted to Bech32, where:
 >
->`atp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`：为主网账户地址，以atp开头；
+>ʻatp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`: main network account address, starting with atp;
 >
->`atx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx`：为测试网账户地址，以atx开头；
+>ʻatx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx`: is the testnet account address, starting with atx;
 >
->`4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07` 为钱包私钥；
+>`4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07` is the wallet private key;
 >
->`worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney` 为助记词。
+>`worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney` is the mnemonic phrase.
 >
->出于安全考虑，用户需对钱包私钥或助记词进行备份（可都进行备份，也可备份其中一个），钱包丢失时，可用于恢复。建议用户将助记词或者私钥备份到安全的存储介质上，如离线机器等。
+>For security reasons, users need to back up the wallet's private key or mnemonic phrase (either all or one of them), which can be used for recovery when the wallet is lost. It is recommended that users back up the mnemonic phrase or private key to a secure storage medium, such as an offline machine.
 
-### 恢复钱包
+### Restore wallet
 
-如果钱包文件丢失了，可以通过上述备份的私钥或助记词进行恢复，操作如下：
+If the wallet file is lost, you can use the backup private key or mnemonic to restore it, as follows:
 
-- 执行命令
+- Excuting an order
 
-  通过私钥恢复：
+  Recovery by private key:
 
   ```shell
   mtool-client account recover -k staking
   ```
 
-  > 提示输入新的钱包密码和备份的私钥，如下：
+  > Prompt to enter the new wallet password and backup private key, as follows:
   >
   > ```shell
   > Enter a passphrase to encrypt your key to disk:
@@ -167,104 +167,104 @@ mtool-client account new staking
   > 4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07
   > ```
 
-  或
+  or
 
-  通过助记词恢复：
+  Recovery by mnemonic:
 
   ```shell
   mtool-client account recover -m staking
   ```
 
-  >提示输入新的钱包密码和备份的助记词，如下：
+  >Prompt to enter the new wallet password and backup mnemonic, as follows:
   >
   >```shell
   >Enter a passphrase to encrypt your key to disk:
   >Repeat the passphrase:
   >Enter your bip39 mnemonic:
   >worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney
-  >```
+  > ```
 
-- 参数说明
+- Parameter Description
 
-  staking：钱包名称。
+  staking: The name of the wallet.
 
-  恢复成功后会在目录`$MTOOLDIR/keystore`下生成钱包文件`staking.json`。
+  After successful restoration, the wallet file `staking.json` will be generated under the directory `$MTOOLDIR/keystore`.
 
 
 
-### 创建观察钱包
+### Create an observation wallet
 
-执行命令生成观察钱包：
+Execute the command to generate an observation wallet:
 
 ```shell
 mtool-client create_observewallet --keystore $MTOOLDIR/keystore/staking.json
 ```
 
-- 参数说明
+- Parameter Description
 
-  keystore：表示冷钱包路径。
+  keystore: indicates the path of the cold wallet.
 
-> 如下提示表示创建观察钱包成功：
+> The following prompt indicates that the observation wallet is successfully created:
 >
 > please input keystore password:
 > SUCCESS
 > wallet created at: C:\tools\mtool\current\keystore\staking_observed.json
 
-### 查看钱包列表
+### View wallet list
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client account list
 ```
 
-### 根据钱包名称查询余额
+### Query balance according to wallet name
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 变量说明
+- Variable description
 
->$keystorename：钱包文件名称，如staking.json
+>$keystorename: wallet file name, such as staking.json
 
-### 根据地址查询余额
+### Check balance based on address
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数
+- Parameters
 
-> a：钱包地址
+> a: wallet address
 
 
 
-## 离线MTool交易流程
+## Offline MTool transaction process
 
-MTool离线签名方式主要流程为：在在线机器上生成待签名文件，然后在离线机器上签名交易，最后在在线机器上发送签名交易。以转账交易为例，步骤如下，其他交易生成待签名文件的操作参考[MTool交易命令详解](# MTool交易命令详解)章节。
+The main process of MTool offline signature method is: generate the file to be signed on the online machine, then sign the transaction on the offline machine, and finally send the signed transaction on the online machine. Taking the transfer transaction as an example, the steps are as follows. For the operation of generating the file to be signed for other transactions, refer to the [MTool Transaction Command Details] (# MTool Transaction Command Details) chapter.
 
-### 生成交易待签名文件
+### Generate transaction pending signature file
 
-在**在线机器**上执行：
+Execute on **online machine**:
 
 ```shell
 mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明:
+- Parameter Description:
 
-> address：发送交易的观察钱包路径;
+> address: Observation wallet path for sending transactions;
 >
-> amount：转账金额，单位：ATP；
+> amount: transfer amount, unit: ATP;
 >
-> recipient：接收地址；
+> recipient: recipient address;
 
-打印如下信息，表示执行成功：
+The following information is printed, indicating successful execution:
 
 ```shell
 operation finished
@@ -272,32 +272,32 @@ SUCCESS
 File generated on transaction_details/transaction_detail_20191108114241.csv
 ```
 
-其中，`transaction_detail_20191108114241.csv`为转账交易待签名文件，需要拷贝到离线机器上，进行签名；
+Among them, `transaction_detail_20191108114241.csv` is the file to be signed for the transfer transaction, which needs to be copied to the offline machine for signature;
 
-### 签名交易
+### Signature transaction
 
-在保管冷钱包的离线机器上执行：
+Execute on the offline machine where the cold wallet is kept:
 
 ```shell
 mtool-client offlinesign --filelocation $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
-注：$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv为上一步骤生成的待签名文件，修改为实际的待签名文件。
+Note: $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv is the file to be signed generated in the previous step, modified to the actual file to be signed.
 
-输入对应冷钱包密码并返回签完名的文件，文件内容如下：
+Enter the corresponding cold wallet password and return the signed file. The content of the file is as follows:
 
 ```shell
- ┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬───────┬───────┐
-│Type    │From    │To      │Account │Amount  │Fee     │Nonce   │Create │Chain  │
-│        │        │        │Type    │        │        │        │Time   │Id     │
-├────────┼────────┼────────┼────────┼────────┼────────┼────────┼───────┼───────┤
-│STAKING │0xa1548d│0x100000│FREE_AMO│5000000.│0.043210│0       │2019-10│100    │
-│        │d61010a7│00000000│UNT_TYPE│00000000│00000000│        │-11T13:│       │
-│        │42cd66fb│00000000│        │00000000│0000    │        │54:06.8│       │
-│        │86324ab3│00000000│        │00      │        │        │97     │       │
-│        │e2935586│00000000│        │        │        │        │       │       │
-│        │4a      │02      │        │        │        │        │       │       │
-└────────┴────────┴────────┴────────┴────────┴────────┴────────┴───────┴───────┘
+ ┌────────┬───────┬────────┬────────┬────────┬──── ────┬────────┬───────┬──────┐
+│Type │From │To │Account │Amount │Fee │Nonce │Create │Chain │
+│ │ │ │Type │ │ │ │Time │Id │
+├────────┼────────┼────────┼────────┼────────┼──── ────┼────────┼───────┼───────┤
+│STAKING │0xa1548d│0x100000│FREE_AMO│5000000.│0.043210│0 │2019-10│100 │
+│ │d61010a7│00000000│UNT_TYPE│00000000│00000000│ │-11T13:│ │
+│ │42cd66fb│00000000│ │00000000│0000 │ │54:06.8│ │
+│ │86324ab3│00000000│ │00 │ │ │97 │ │
+│ │e2935586│00000000│ │ │ │ │ │ │
+│ │4a │02 │ │ │ │ │ │ │
+└────────┴────────┴────────┴────────┴────────┴──── ────┴────────┴───────┴──────┘
 Need load 1 wallets for address: [0xa1548dd61010a742cd66fb86324ab3e29355864a]
 
 operation finished
@@ -307,21 +307,21 @@ total: 1, to be signed: 1
 success: 1, failure: 0
 ```
 
-注：其中transaction_signature/transaction_signature_20191108114625.csv为已签名交易文件，将交易签名文件拷贝到在线机器上；
+Note: transaction_signature/transaction_signature_20191108114625.csv is the signed transaction file, copy the transaction signature file to the online machine;
 
 
 
-### 发送签名交易
+### Send signed transaction
 
-在**在线机器**发送交易：
+Send transaction in **online machine**:
 
 ```shell
-$mtool-client send_signedtx --filelocation $MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $MTOOLDIR/validator/validator_config.json
+mtool-client send_signedtx --filelocation $MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $MTOOLDIR/validator/validator_config.json
 ```
 
-注：其中transaction_signature_20191108114625.csv为上一步骤生成的交易签名文件，修改为实际的签名文件。
+Note: transaction_signature_20191108114625.csv is the transaction signature file generated in the previous step, modified to the actual signature file.
 
-输入`yes`返回交易结果：
+Enter `yes` to return the transaction result:
 
 ```bash
 Send Transaction? (yes|no)
@@ -333,235 +333,235 @@ total: 1
 success: 1, failure: 0
 ```
 
-注：提示success并返回transaction hash表示签名交易发送成功，否则发送签名交易失败。
+Note: Prompt success and return transaction hash means that the signature transaction is sent successfully, otherwise the signature transaction fails.
 
-## MTool交易命令详解
+## Detailed explanation of MTool trading commands
 
-此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令，生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[离线MTool交易流程](#离线MTool交易流程)章节。
+This chapter mainly describes the relevant commands for generating the csv format transaction to-be-signed file on the **online machine**. The generated csv file will be saved in the `$MTOOLDIR/transaction_details` directory. For the complete transaction process of sending offline signatures, please refer to the [Offline MTool Transaction Process] (#Offline MTool Transaction Process) chapter.
 
-### 普通转账操作
+### Ordinary transfer operations
 
-- 执行命令
+- Excuting an order
 
 ```shell
 mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> address：发送交易的观察钱包路径;
+> address: Observation wallet path for sending transactions;
 >
-> amount：转账金额，单位：ATP；
+> amount: transfer amount, unit: ATP;
 >
-> recipient：接收地址；
+> recipient: recipient address;
 
 
 
-### 发起质押操作
+### Initiate a pledge operation
 
-如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换质押金额，质押最低门槛为1万ATP。
+If the consensus node deployment is complete and the blocks have been successfully synchronized, you can use MTool to pledge operations. After the pledge fund application is completed, ensure that the pledge account balance is sufficient, and replace the pledge deposit amount according to the user's situation. The minimum pledge threshold is 10,000 ATP.
 
-注意：请保持质押账户里面有足够ATP，以备后续发起节点管理的交易有足够的交易手续费，比如升级提案的投票，解质押等交易。
+Note: Please keep enough ATP in the pledge account to prepare for the subsequent transactions managed by the initiating node to have sufficient transaction fees, such as voting for upgrade proposals, unstaking transactions and other transactions.
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client staking --amount 10000 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
-- 参数说明
+- Parameter Description
 
-> address: 质押观察钱包路径
+> address: pledge observation wallet path
 >
-> amount: 质押数，不少于1000000lat-质押门槛，小数点不超过8位（使用自由金额质押）
+> amount: pledge amount, no less than 1000000lat- pledge threshold, no more than 8 decimal places (use free amount pledge)
 >
-> restrictedamount: 不少于1000000lat-质押门槛，小数点不超过8位（使用锁仓余额质押）
+> restricted amount: not less than 1000000lat-pledge threshold, no more than 8 decimal places (using locked balance pledge)
 
-### 修改验证人信息操作
+### Modify validator information operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client update_validator --name VerifierName --url "www.alaya.com" --identity IdentifyID --reward atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --introduction "Modify the verifier information operation" --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json --a
 ```
 
-- 参数说明
+- Parameter Description
 
-> name：验证人名称，不超过30字节，支持字母、数字、空格、上下划线及#，必须字母开头
+> name: The name of the verifier, no more than 30 bytes, supports letters, numbers, spaces, underscores and #, and must start with a letter
 >
-> url：官网路径，不超过70字节，数字字母组成
+> url: official website path, no more than 70 bytes, composed of numbers and letters
 >
-> identity：身份认证ID，不超过140字节，对应validator_config.json配置文件中的`externalId`字段。
+> identity: Identity authentication ID, no more than 140 bytes, corresponding to the ʻexternalId` field in the validator_config.json configuration file.
 >
-> delegated-reward-rate：委托奖励比例，单位：万分比，整数，范围0~10000，如输入5000，表示分红比例为50%
+> delegated-reward-rate: delegated-reward-rate, unit: ten-thousand-point ratio, integer, range 0~10000, for example, enter 5000, which means the dividend rate is 50%
 >
-> reward：收益地址，42字符（字母数字）
+> reward: reward address, 42 characters (alphanumeric)
 >
-> introduction：简介，验证人简要介绍说明，不超过280字节，建议英文
+> introduction: Introduction, a brief introduction by the verifier, no more than 280 bytes, English is recommended
 >
-> a：执行命令时，用配置文件里面的值作参数去修改验证人信息
+> a: When executing the command, use the value in the configuration file as a parameter to modify the validator information
 
-### 解质押操作
+### Unpledge operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client unstaking --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> 无
+> None
 
-### 增加质押操作
+### Increase pledge operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client increasestaking --amount 5000000 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> amount：用账户余额来增加质押量(ATP)，不少于10最小增加值，小数点不超过8位
+> amount: Use the account balance to increase the pledge amount (ATP), no less than 10 minimum increase value, no more than 8 decimal places
 >
-> restrictedamount： 用账户锁仓余额来增加质押量，不少于10质押门槛，小数点不超过8位（使用锁仓余额质押）
+> restricted amount: Use the account lock balance to increase the pledge amount, no less than 10 pledge threshold, no more than 8 decimal places (use locked balance pledge)
 
-### 提交文本提案操作
+### Submit text proposal operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> pid_id：GitHub ID
+> pid_id: GitHub ID
 
-### 提交升级提案操作
+### Submit an upgrade proposal operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client submit_versionproposal --newversion 0.13.2 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> newversion：目标升级版本，x.x.x，数字加标点
+> newversion: target upgrade version, x.x.x, number plus punctuation
 >
-> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
+> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 <N <= 4838 (about 2 weeks)
 >
-> pid_id：GitHub ID
+> pid_id: GitHub ID
 
-### 提交取消提案操作
+### Submit proposal cancellation
 
-- 执行命令
+- Excuting an order
 
 ```bash
-mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator/validator
 ```
 
-- 参数说明
+- Parameter Description
 
-> proposalid：需要被取消的提案ID，即发起提案交易的hash，66字符，字母数字组成
+> proposalid: proposal ID that needs to be cancelled, that is, the hash used to initiate the proposal transaction, 66 characters, alphanumeric
 >
-> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
+> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 <N <= 4838 (about 2 weeks)
 >
-> pid_id：GitHub ID
+> pid_id: GitHub ID
 
-### 文本提案投票操作
+### Text proposal voting operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> proposalid：文本提案ID，即发起提案交易的hash，66字符，字母数字组成
+> proposalid: text proposal ID, which is the hash used to initiate the proposal transaction, 66 characters, alphanumeric
 >
-> opinion：投票选项，yes、no、abstain-三选一
+> opinion: voting options, yes, no, abstain-choose one of three
 
-### 升级提案投票操作
+### Upgrade proposal voting operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> proposalid：升级提案ID，即发起提案交易的hash，66字符，字母数字组成
+> proposalid: upgrade proposal ID, that is, the hash used to initiate the proposal transaction, 66 characters, alphanumeric
 
-### 取消提案投票操作
+### Cancel proposal voting operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> proposalid：取消提案ID，即发起提案交易的hash，66字符，字母数字组成
+> proposalid: cancel proposal ID, that is, the hash used to initiate the proposal transaction, 66 characters, alphanumeric composition
 >
-> opinion：投票选项，yes、no、abstain-三选一
+> opinion: voting options, yes, no, abstain-choose one of three
 
-### 提交参数提案操作
+### Submit parameter proposal operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> module：治理模块参数
+> module: management module parameters
 >
-> paramname：治理模块参数名，注意字母大小写
+> paramname: management module parameter name, pay attention to letter case
 >
-> paramvalue：治理模块参数值
+> paramvalue: governance module parameter value
 >
-> pid_id：GitHub ID
+> pid_id: GitHub ID
 
-###  参数提案投票操作
+### Parameter proposal voting operation
 
-- 执行命令
+- Excuting an order
 
 ``` bash
-mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> proposalid：取消提案ID，即发起提案交易的hash，66字符，字母数字组成
+> proposalid: cancel proposal ID, that is, the hash used to initiate the proposal transaction, 66 characters, alphanumeric
 >
-> opinion：投票选项，yes、no、abstain-三选一
+> opinion: voting options, yes, no, abstain-choose one of three
 
-### 版本声明操作
+### Version statement operation
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client declare_version --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
-- 参数说明
+- Parameter Description
 
-> 无
+> None
 
-### 查看帮助
+### View help
 
-- 执行命令
+- Excuting an order
 
 ```bash
 mtool-client -h
 ```
 
-- 参数说明
+- Parameter Description
 
-> 无
+> None

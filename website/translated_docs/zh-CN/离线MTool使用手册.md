@@ -208,7 +208,7 @@ mtool-client create_observewallet --keystore $MTOOLDIR/keystore/staking.json
 >
 > please input keystore password:
 > SUCCESS
-> wallet created at: C:\tools\mtool\current\keystore\staking_observed.json
+> wallet created at: $MTOOLDIR/keystore/staking_observed.json
 
 ### 查看钱包列表
 
