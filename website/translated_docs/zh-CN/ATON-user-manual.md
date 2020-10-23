@@ -5,7 +5,7 @@ title: ATON钱包用户使用手册
 
 ## ATON 下载
 
-<div><br/><a href="https://pATPon.network/developer/?lang=zh#aton" target="_blank" >点击下载ATON最新版本 </a></div>
+<div><br/><a href="https://platon.network/developer/?lang=zh#aton" target="_blank" >点击下载ATON最新版本 </a></div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 
