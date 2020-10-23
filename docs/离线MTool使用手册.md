@@ -267,9 +267,8 @@ mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --am
 The following information is printed, indicating successful execution:
 
 ```shell
-operation finished
-SUCCESS
-File generated on transaction_details/transaction_detail_20191108114241.csv
+Transfer unsigned raw: H4sIAAAAAAAAAGWOPW/DIBRF/8ubPfDhGsdrp0oZMmSrMiCMDUGADTiGRPnvoVGHSn3T1ZHuPe8Ba/j0ozwH7iIXSXt31DHB8P0Abv3masTo3zUgFNfua4SBIIxoBVPwFgbgKeM9pLweppERJTrGXH+n1KY+5Wtujckfy247JqF2NvdWnssiYagjM49HbXWVEvzWVHAKWsg/XzTgvPshtIHkf5UlxKL2tBVkCJnZnNWtm/dyn/qbiIdrNHFlysDzUjvaypi4Xepmh2jbMor6luLnC0n7ZKsMAQAA
+File generated on: $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
 Among them, `transaction_detail_20191108114241.csv` is the file to be signed for the transfer transaction, which needs to be copied to the offline machine for signature;

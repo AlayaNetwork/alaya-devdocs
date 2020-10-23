@@ -267,9 +267,8 @@ mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --am
 打印如下信息，表示执行成功：
 
 ```shell
-operation finished
-SUCCESS
-File generated on transaction_details/transaction_detail_20191108114241.csv
+Transfer unsigned raw: H4sIAAAAAAAAAGWOPW/DIBRF/8ubPfDhGsdrp0oZMmSrMiCMDUGADTiGRPnvoVGHSn3T1ZHuPe8Ba/j0ozwH7iIXSXt31DHB8P0Abv3masTo3zUgFNfua4SBIIxoBVPwFgbgKeM9pLweppERJTrGXH+n1KY+5Wtujckfy247JqF2NvdWnssiYagjM49HbXWVEvzWVHAKWsg/XzTgvPshtIHkf5UlxKL2tBVkCJnZnNWtm/dyn/qbiIdrNHFlysDzUjvaypi4Xepmh2jbMor6luLnC0n7ZKsMAQAA
+File generated on: $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
 其中，`transaction_detail_20191108114241.csv`为转账交易待签名文件，需要拷贝到离线机器上，进行签名；
@@ -337,7 +336,7 @@ success: 1, failure: 0
 
 ## MTool交易命令详解
 
-此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令，生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[离线MTool交易流程](#离线MTool交易流程)章节。
+此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令，生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程参考[离线MTool交易流程](#离线MTool交易流程)章节。
 
 ### 普通转账操作
 
