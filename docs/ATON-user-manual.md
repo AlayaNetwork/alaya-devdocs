@@ -13,13 +13,39 @@ title: ATON Wallet User Manual
 ## Create Wallet
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton2.png "width ="500" /> </div> <div> 1. Click [Create Wallet]. <br> 2.Select type (Normal or HD). Set the wallet name, and set the wallet password. <br> 3. Click the [Create] button to create a wallet. <br> 4. After the wallet is successfully created, you can click [Start to Backup] to start the backup, or click [Skip] to perform backup later. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind.<br> 2. We strongly recommend you to back up your wallet after creating it.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton2.png"width ="500" /> </div> <div> 1. Click [Create Wallet]. <br> 2.Select type (Normal or HD). Set the wallet name, and set the wallet password. <br> 3. Click the [Create] button to create a wallet. <br> 4. After the wallet is successfully created, you can click [Start to Backup] to start the backup, or click [Skip] to perform backup later. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind.<br> 2. We strongly recommend you to back up your wallet after creating it. <br> 3. Click the node switch button in the upper left corner of the page to switch nodes.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
 
-## Wallet backup
+
+
+## Wallet Assets Homepage
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. In the case of a wallet, the wallet assets homepage will display a valid wallet and its assets information. <br>2. ①The top part is the brief information of the current wallet. <br>3. ②The brief wallet information includes wallet name and wallet address. <br>4. ③Click the [Copy] button to copy the address of the current wallet. <br>5. ④Click [Wallet Management] to manage the wallet. <br>6. ⑤The node information of the current wallet is displayed in the upper left corner of the top, click to switch nodes. <br>7. ⑥Click [...] to create, import and select wallets, and click Scan to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the main currency data, you can see the unit and balance, click to enter the main currency details page. <br>10. ⑧The rest is Token currency data, you can see the unit and balance, click to enter the main currency details page.
+
+
+
+</div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## Assets Detail Page
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton14.png" width="300" style="zoom:80%;"  /></div> <div><br>1. Click the first piece of data on the assets management page to enter the main currency assets details page, and click on the remaining data to enter the Token currency assets details page. <br>2. The top part is the current wallet information. <br>3. The wallet information includes balance, unit and restricted balance, as well as mandatory information such as [send] and [receive]. <br>4. Click the [Send] button to jump to the sending page for transfer. <br>5. Click [Receive] to enter the receiving page to receive the transfer. <br>6. The lower part of the page is [Transaction History]. <br>7. There is no [send] button and [restricted balance] text label in the Token assets details. <br>8. The lower part of the page is the transaction record, click on a single transaction record to enter the transaction record details page.
+
+
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## Wallet Backup
 
 <div>
 <div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton4.png "width ="500" style="zoom:80%;" /> </div> <div> <br> 1. After creating the wallet, click [Start Backup] button for wallet backup. Or you can find it in [My-Wallet Management] module. <br> 2. Wallet password is reeuqired for backup. After the password verification is passed, the system will display 12 English words as mnemonic words. <br> 3. Copy the mnemonic and keep it in a safe place. Click [Next] to verify the mnemonic. If the verification succeeds, the wallet backup is completed. <br> <br> <b> Note </b> <br> 1.  Never lose your mnemonics,keep it in a safe place.
@@ -28,9 +54,9 @@ title: ATON Wallet User Manual
 <div style="margin-top:40px;"></div>
 </div>
 
-## Import wallet
+## Import Wallet
 
-### Import Using KeyStore
+### Import Using Keystore
 
 <div>
 <div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton6.png "width ="500" style="zoom:80%" /> </div> <div> <br> 1. Click [Import Wallet-Keystore]. <br> 2. Paster the file, or scan the QR code to get the keystore file. <br> 3. Set the wallet name and enter the password for this wallet. <br> 4. Click the [Start Import] button. After the password verification is passed, the wallet is successfully imported. <br> <br> <b> Note </b> <br> 1. Password is need when import ing wallet Keystore. <br> 2. Your wallet password is not stored on the server. If you forget the password, please use mnemonic and private key to import. <br> 3. You can also click the "..." button on the top corner to import wallet.
@@ -42,7 +68,7 @@ title: ATON Wallet User Manual
 ### Import Using Mnemonics
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton8.png "width ="500 " style="zoom:80%;" /> </div> <div> <br> 1. Click [Import Wallet-Mnemonic]. <br> 2. Fill in the mnemonics correctly and in the correct order. <br> 3. Select type (Normal or HD). Set the wallet name and wallet password. <br> 4. Click the [Start Import] button. After the mnemonic verification is passed, the wallet is successfully imported. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind. <br> 2. Store your mnemonics in a safe place. <br> 3. You can also click the "..." button on  the top corner to import wallet.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton8.png "width ="500 " style="zoom:80%;" /> </div> <div> <br> 1. Click [Import Wallet-Mnemonic]. <br> 2. Fill in the mnemonics correctly and in the correct order. <br> 3. Select type (Normal or HD). Set the wallet name and wallet password. <br> 4. Click the [Start Import] button. After the mnemonic verification is passed, the wallet is successfully imported. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind. <br> 2. Store your mnemonics in a safe place. <br> 3. You can also click the "..." button on the top corner to import wallet.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -63,14 +89,6 @@ For details about importing observation wallets, please refer to the instruction
 
 <div style = "margin-top: 40px;"> </div>
 
-## My Wallet
-
-<div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png "width =" 300 "style="zoom:80%;" /> </div> <div> <br> 1. Click the [Wallet] module, you can see your wallets. <br> 2. ① Show the total number of LAT for all wallets. <br> 3. ② Click different wallets to switch wallets. <br> 4. ③ Click to select any child wallet from this group of HD wallets. <br> 5. ④ Shows your balance for particular wallet. If there is a locked balance, the locked amount will be displayed below.  <br> 6. ⑤ Display all transaction records of the selected wallet. <br> 7. ⑥ You can transfer LAT to other accounts. <br> 8. ⑦ Show the selected account address and address QR code, which can be transferred to LAT. <br> 9. ⑧ Click [...] to create,import and select wallet.<br> 10. ⑨ Show the wallet detail.
-</div>
-<div style="clear:both"></div>
-<div style="margin-top:40px;"></div>
-</div>
 
 ## Select Wallet
 
@@ -84,7 +102,7 @@ For details about importing observation wallets, please refer to the instruction
 ## Receive
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton40.jpg "width =" 300 "style="zoom:80%;" /> </div> <div> <br> 1. Select wallet and click the [Receive] column to check the wallet address and QR code. <br> 2. Click the wallet address to copy the address. <br> 3. Click [Save Picture and Share] to save the picture to the local album. <br> 4. Other parties can use this address and scan this QR code to make LAT transfers. <br> <br> <b> Note </b> <br> 1. This APP address and QR codes only accept assets for PlatONnetwork, do not deposit other network assets to this purse.<br>2. Please make sure you deposit assets for correct network.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton40.jpg "width =" 300 "style="zoom:80%;" /> </div> <div> <br> 1. Enter a wallet assets detail page and click the [Receive] column to check the wallet address and QR code. <br> 2. Click the wallet address to copy the address. <br> 3. Click [Save Picture and Share] to save the picture to the local album. <br> 4. Other parties can use this address and scan this QR code to make LAT transfers. <br> <br> <b> Note </b> <br> 1. This APP address and QR codes only accept assets for PlatONnetwork, do not deposit other network assets to this purse.<br>2. Please make sure you deposit assets for correct network.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -93,7 +111,7 @@ For details about importing observation wallets, please refer to the instruction
 ## Send
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton17.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1.Select wallet and click the [Send] column.  <br> 2. Enter a valid wallet address, or scan the QR code to get address.<br> 3. Enter amount. <br> 4. Set transaction fee rate. <br> 5. Click [Next] to confirm the transaction information, and click [Send] to proceed the transaction. Click [Cancel] to cancel this transaction.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton17.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1.Enter a wallet assets detail page and click the [Send] column.  <br> 2. Enter a valid wallet address, or scan the QR code to get address.<br> 3. Enter amount. <br> 4. Set transaction fee rate. <br> 5. Click [Next] to confirm the transaction information, and click [Send] to proceed the transaction. Click [Cancel] to cancel this transaction.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -101,7 +119,7 @@ For details about importing observation wallets, please refer to the instruction
 
 ## Validators
 
-### Validators list
+### Validators List
 
 <div>
 <div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton41.jpg "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Click [Delegate-Validators], you can view all validators. <br> 2. Defaultly, the nodes are sorted by rank. They can also be sorted by Delegated/Delegators/Expected delegation annualized yield. <br> 3. Active node: validators participating in the consensus election in the current settlement cycle. <br> 4. Candidate node: validators does not participate in consensus election in the current settlement cycle. <br> 
@@ -126,7 +144,7 @@ For details about importing observation wallets, please refer to the instruction
 ### Submit Delegation
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton43.png "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Select a node to delegate.<br> 2. Select the wallet. <br> 3. You can select locked balance to delegate if there is. <br> 4. Enter the amount, and  it must not be less than 10LAT. <br> 5. Enter the correct password.<br> 6. You can delegate to the same nodes without limit. <br> <br> <b> Note </b> <br> 1. The wallet associated with nodes is not allowed for delegation.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton43.png "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Select a node to delegate.<br> 2. Select the wallet. <br> 3. You can select restricted balance to delegate if there is. <br> 4. Enter the amount, and  it must not be less than 10LAT. <br> 5. Enter the correct password.<br> 6. You can delegate to the same nodes without limit. <br> <br> <b> Note </b> <br> 1. The wallet associated with nodes is not allowed for delegation.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -150,7 +168,7 @@ For details about importing observation wallets, please refer to the instruction
 <div style="margin-top:40px;"></div>
 </div>
 
-## Set observed wallet and cold wallet
+## Set Observed Wallet And Cold Wallet
 
 Preparation:
 
@@ -164,14 +182,14 @@ Preparation:
 <div style="margin-top:40px;"></div>
 </div>
 
-## Transaction with cold wallet
+## Transaction With Cold Wallet
 
 If you have set up observed wallets and cold wallets, you can initiate transfers, delegations, withdrawals and other operations on the observation wallets, and use the cold wallets cooperate to sign. The following is an example. <br>
 
 **1. Observed wallet operation**
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton30.png "width ="500" style="zoom:80%;" /> </div> <div> <br> (1) Select an observate wallet and swich to the send Page, enter the information, proceed the transaction. <br> (2) Click the [Next] button, and the page displays the QR code information to be scanned by the cold wallet.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton30.png "width ="500" style="zoom:80%;" /> </div> <div> <br> (1) Select an observate wallet,then enter wallet assets detail page and switch to the send Page, enter the information, proceed the transaction. <br> (2) Click the [Next] button, and the page displays the QR code information to be scanned by the cold wallet.
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 20px;"> </div>
@@ -184,7 +202,6 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
-
 (1) Click Scan in the upper right corner, or click the [Offline Signature] button of the specified wallet to scan and observe the QR code information displayed on the wallet page. <br>
 (2) The page displays the detailed information of the transaction. If the confirmation is correct, you can click [Next] and enter the wallet password. <br/>
 (3) After the wallet password is entered correctly, the signed transaction QR code information will be displayed on the page for the observed wallet to scan.
