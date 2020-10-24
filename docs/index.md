@@ -36,7 +36,7 @@ sidebar_label: Alaya Developer Docs
     </div>
     <div class="homepage-card">
         <img src="/alaya-devdocs/img/nodeTool.svg">
-        <a href="/alaya-devdocs/en/MTool_Manual" class="card-title">Node Tools</a>
+        <a href="/alaya-devdocs/en/OnLine_MTool_Manual" class="card-title">Node Tools</a>
         <div class="card-description">
         Learn to understand the commands and operating instructions of node related tools.
         </div>
