@@ -15,7 +15,7 @@ sidebar_label: Alaya开发者文档
     </div>
     <div class="homepage-card">
         <img src="/alaya-devdocs/img/nodeTool.svg">
-        <a href="/alaya-devdocs/zh-CN/MTool_Manual" class="card-title">节点工具</a>
+        <a href="/alaya-devdocs/zh-CN/OnLine_MTool_Manual" class="card-title">节点工具</a>
         <div class="card-description">
         了解节点相关工具的命令和操作说明。
         </div>
