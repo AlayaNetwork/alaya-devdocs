@@ -21,10 +21,11 @@ title: ATON Wallet User Manual
 
 
 
-## Wallet Assets Homepage
+## Wallet Assets
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. In the case of a wallet, the wallet assets homepage will display a valid wallet and its assets information. <br>2. ①The top part is the brief information of the current wallet. <br>3. ②The brief wallet information includes wallet name and wallet address. <br>4. ③Click the [Copy] button to copy the address of the current wallet. <br>5. ④Click [Wallet Management] to manage the wallet. <br>6. ⑤The node information of the current wallet is displayed in the upper left corner of the top, click to switch nodes. <br>7. ⑥Click [...] to create, import and select wallets, and click Scan to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click to enter the ATP details page. <br>10. ⑧The rest is ARC20 smart contract data, you can see the unit and balance, click to enter the ATP details page.
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. In the case of a wallet, the wallet assets homepage will display a valid wallet and its assets information. <br>2. ①The top part is the brief information of the current wallet. <br>3. ②The brief wallet information includes wallet name and wallet address. <br>4. ③Click the [Copy] button to copy the address of the current wallet. <br>5. ④Click [Wallet Management] button to manage the wallet. <br>6. ⑤The node information of the current wallet is displayed in the upper left corner of the top, click to switch nodes. <br>7. ⑥Click [...] to create, import and select wallets, and click Scan to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click to enter the ATP assets details page. <br>10. ⑧The ARC20 smart contract data, you can see the unit and balance, click to enter the ARC20 smart contract assets details page.
+
 
 
 
@@ -34,14 +35,31 @@ title: ATON Wallet User Manual
 <div style="margin-top:40px;"></div>
 </div>
 
-## Assets Detail Page
+## ATP Assets Detail
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton14.png" width="300" style="zoom:80%;"  /></div> <div><br>1. Click the first piece of data on the assets management page to enter the ATP assets details page, and click on the remaining data to enter the ARC20 smart contract assets details page. <br>2. The top part is the current wallet information. <br>3. The wallet information includes balance, unit and restricted balance, as well as mandatory information such as [send] and [receive]. <br>4. Click the [Send] button to jump to the sending page for transfer. <br>5. Click [Receive] to enter the receiving page to receive the transfer. <br>6. The lower part of the page is [Transaction History]. <br>7. There is no [send] button and [restricted balance] text label in the Token assets details. <br>8. The lower part of the page is the transaction record, click on a single transaction record to enter the transaction record details page.
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton14.png" width="300" style="zoom:80%;"  /></div> <div><br>1.The top part is the current wallet information. <br>2. The wallet information includes balance, unit and lock balance, as well as the [Send] button and [Receive] button. <br>3.Click the [Send] button to jump to the sending page for transfer. <br>4.Click the [Receive] button to enter the receiving page to receive the transfer. <br>5. The lower part of the page is [Transaction History]. <br>6.The lower part of the page is the transaction record, click on a single transaction record to enter the transaction record details page.
 
 
 
 </div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+
+## ARC20 Smart Contract Asset 
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton16.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 
+The top part is the current wallet information. <br>2. 
+Wallet information includes balance, unit and [receive] button. <br>3. Click the [Receive] button to enter the receiving page to receive the transfer. <br>4. The lower part of the page is [Transaction History]. <br>5. The lower part of the page is the transaction record, click on a single transaction record to enter the transaction record details. 
+
+
+
+</div>
+
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
