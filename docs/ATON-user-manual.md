@@ -164,7 +164,7 @@ For details about importing observation wallets, please refer to the instruction
 ### Withdraw Delegation
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton47.jpg "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Click [My Delegations-Details-Withdraw]. <br> 2. Enter the number,it should  be greater than or equal to 10LAT. Enter the correct password to proceed the process. <br> 3. You can click the [Delegated] drop-down box to select different types of delegation. <br> <br> <b> Note </b> <br> 1. If the remaining delegations has been less than 10LAT, it will be automatically returned. <br> 2. When withdrawing all delegations, Claim rewards automatically.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton47.jpg "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Click [My Delegations-Details-Withdraw]. <br> 2. Enter the number,it should  be greater than or equal to 10ATP. Enter the correct password to proceed the process. <br> 3. You can click the [Delegated] drop-down box to select different types of delegation. <br> <br> <b> Note </b> <br> 1. If the remaining delegations has been less than 10ATP, it will be automatically returned. <br> 2. When withdrawing all delegations, Claim rewards automatically.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
