@@ -8,7 +8,7 @@ title: ATON Wallet User Manual
 <div> <br/><a href="https://platon.network/developer/?lang=en#aton" target="_blank">Click to download the latest version of ATON</a>
 </div>
 <div style = "clear: both"> </div>
-<div style = "margin-top: 40px;"> </div>
+<div style = "margin-top: 41px;"> </div>
 
 ## Create Wallet
 
