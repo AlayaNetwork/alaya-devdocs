@@ -19,10 +19,10 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
-## 钱包资产主页
+## 钱包资产
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP资产详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。
 
 
 </div>
@@ -30,10 +30,20 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
-## 资产详情页
+## ATP资产详情
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton101.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在资产管理页点击第一条数据，进入ATP资产详情页，点击第一条以外数据进入ARC20智能合约资产详情页。<br>2. 顶部部分是当前钱包信息。<br>3. 钱包信息包含余额、单位和锁仓余额，以及【发送】和【接收】。<br>4. 点击【发送】按钮可以跳转到发送页面进行转账。<br>5. 点击【接收】按钮进入接收页面进行接收转账。<br>6. 页面下半部分是【交易记录】。<br>7. 在ARC20智能合约资产详情中没有【发送】和【锁仓余额】。<br>8. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情页面。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton101.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2. 钱包信息包含余额、单位和锁仓余额，以及【发送】按钮和【接收】按钮。<br>3. 点击【发送】按钮可以跳转到发送页面进行转账。<br>4. 点击【接收】按钮进入接收页面进行接收转账。<br>5. 页面下半部分是【交易记录】。<br>6. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情页面。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## ARC20智能合约资产详情
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2. 钱包信息包含余额、单位和【接收】按钮。<br>3. 点击【接收】按钮进入接收页面进行接收转账。<br>4. 页面下半部分是【交易记录】。<br>5. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
+
 
 </div>
 <div style="clear:both"></div>
