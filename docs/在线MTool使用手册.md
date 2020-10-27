@@ -279,6 +279,8 @@ mtool-client update_validator --name VerifierName --url "http://www.platon.com" 
 
 ### Decommissioning operation
 
+<font color=red>**It takes 168 settlement cycles to withdraw from the pledge, please be careful!**</font>
+
 - Excuting the command
 
 ```bash

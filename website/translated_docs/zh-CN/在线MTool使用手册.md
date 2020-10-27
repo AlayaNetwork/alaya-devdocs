@@ -199,11 +199,13 @@ mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1"
 
 - 参数说明
 
->keystore：发送转账交易的钱包路径
+>keystore：发送交易的冷钱包路径
 >
 >amount：转账金额，单位：ATP
 >
 >recipient：接收地址
+>
+>config：验证节点信息文件路径
 
 ### 查看钱包列表
 
@@ -224,6 +226,8 @@ mtool-client account balance $keystorename --config $MTOOLDIR/validator/validato
 - 变量说明
 
 >$keystorename：钱包文件名称，如staking.json
+>
+>config：验证节点信息文件路径
 
 ### 根据地址查询余额
 
@@ -236,6 +240,8 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 - 参数
 
 > a：钱包地址
+>
+> config：验证节点信息文件路径
 
 ### 发起质押操作
 
@@ -262,6 +268,10 @@ SUCCESS
 > amount: 质押数，不少于10000atp-质押门槛，小数点不超过8位
 >
 > restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 修改验证人信息操作
 
@@ -285,9 +295,15 @@ mtool-client update_validator --name VerifierName --url "http://www.platon.com" 
 >
 > introduction：简介，验证人简要介绍说明，不超过280字节，建议英文
 >
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
+>
 > a：执行命令时，用配置文件里面的值作参数去修改验证人信息
 
 ### 解质押操作
+
+<font color=red>**解质押需要168个结算周期才能退出完成，请谨慎操作！**</font>
 
 - 执行命令
 
@@ -297,7 +313,9 @@ mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOO
 
 - 参数说明
 
-> 无
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 增加质押操作
 
@@ -312,6 +330,10 @@ mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/stak
 > amount：用账户余额来增加质押量(ATP)，不少于10最小增加值，小数点不超过8位
 >
 > restrictedamount： 用账户锁仓余额来增加质押量，不少于10质押门槛，小数点不超过8位（使用锁仓余额质押）
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 提交文本提案操作
 
@@ -324,6 +346,10 @@ mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/stak
 - 参数说明
 
 > pid_id：GitHub ID
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 提交升级提案操作
 
@@ -340,6 +366,10 @@ mtool-client submit_versionproposal --newversion 0.13.2 --end_voting_rounds 345 
 > end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
 >
 > pid_id：GitHub ID
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 提交取消提案操作
 
@@ -356,6 +386,10 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 > end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
 >
 > pid_id：GitHub ID
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 文本提案投票操作
 
@@ -370,6 +404,10 @@ mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b3700
 > proposalid：文本提案ID，即发起提案交易的hash，66字符，字母数字组成
 >
 > opinion：投票选项，yes、no、abstain-三选一
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 升级提案投票操作
 
@@ -382,6 +420,10 @@ mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - 参数说明
 
 > proposalid：升级提案ID，即发起提案交易的hash，66字符，字母数字组成
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 取消提案投票操作
 
@@ -396,6 +438,10 @@ mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 > proposalid：取消提案ID，即发起提案交易的hash，66字符，字母数字组成
 >
 > opinion：投票选项，yes、no、abstain-三选一
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 提交参数提案操作
 
@@ -414,6 +460,10 @@ mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $par
 > paramvalue：治理模块参数值
 >
 > pid_id：GitHub ID
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ###  参数提案投票操作
 
@@ -428,6 +478,10 @@ mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 > proposalid：取消提案ID，即发起提案交易的hash，66字符，字母数字组成
 >
 > opinion：投票选项，yes、no、abstain-三选一
+>
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 版本声明操作
 
@@ -439,7 +493,9 @@ mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config
 
 - 参数说明
 
-> 无
+> keystore：发送交易的冷钱包路径
+>
+> config：验证节点信息文件路径
 
 ### 查看帮助
 

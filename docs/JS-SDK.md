@@ -3105,12 +3105,10 @@ web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
 Method:
 
 ```js
-web3.utils.decodeBech32Address(hrp, bech32Address)
+web3.utils.decodeBech32Address(bech32Address)
 ```
 
 Parameters:
-
-`hrp` - String:  Specify the network parameters, atx indicates the test network address, and atp indicates the main network address.
 
 `bech32Address` - String:   Address string in bech32 format. 
 
@@ -3121,10 +3119,10 @@ Returns:
 Sample code: 
 
 ```js
-web3.utils.decodeBech32Address('atx', 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
+web3.utils.decodeBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
 > '0x1234567890123456789012345678901234567891'
 
-web3.utils.decodeBech32Address('atp', 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
+web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 > '0x1234567890123456789012345678901234567891'
 ```
 

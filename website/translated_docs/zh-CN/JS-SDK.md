@@ -3125,12 +3125,10 @@ web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
 调用：
 
 ```
-web3.utils.decodeBech32Address(hrp, bech32Address)
+web3.utils.decodeBech32Address(bech32Address)
 ```
 
 参数：
-
-`hrp` - String:  指定网络参数，atx表示测试网地址，atp表示主网地址。
 
 `bech32Address` - String:  bech32格式地址。
 
@@ -3141,10 +3139,10 @@ web3.utils.decodeBech32Address(hrp, bech32Address)
 示例代码：
 
 ```js
-web3.utils.decodeBech32Address('atx', 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
+web3.utils.decodeBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
 > '0x1234567890123456789012345678901234567891'
 
-web3.utils.decodeBech32Address('atp', 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
+web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 > '0x1234567890123456789012345678901234567891'
 ```
 
@@ -3942,7 +3940,7 @@ let buffer = ppos.hexStrBuf(nodeId);
 var utils = require("web3-utils")
 let params, reply;
 
-let address = utils.decodeBech32Address("atx", "atx1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk")
+let address = utils.decodeBech32Address("atx1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk")
 // 以传进入对象进行调用(对于key不要求顺序)
 params = {
     funcType: 1103,
