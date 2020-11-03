@@ -122,10 +122,10 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
-## 发送ERC20智能合约额度
+## 发送ARC20智能合约额度
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton17.png" width="500" style="zoom:80%;" /></div><div><br>1.在Erc20智能合约的钱包资产详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的ERC20智能合约额度。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton107.png" width="500" style="zoom:80%;" /></div><div><br>1.在ARC20智能合约的钱包资产详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的ARC20智能合约额度。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
