@@ -258,6 +258,8 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 
 
 
+
+
 **3. Observed wallet**
 
 <div>
