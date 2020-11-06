@@ -233,7 +233,9 @@ Preparation:
 
 If you have set up observed wallets and cold wallets, you can initiate transfers, delegations, delegation withdrawals , etc. with the observed wallets, and have it worked with the cold wallets cooperate for sign. The following Below is an example. <br>
 
-**1. Observed wallet **
+
+
+**1. Observed wallet**
 
 <div>
 <div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton30.png "width ="500" style="zoom:80%;" /> </div> <div> <br> (1) Select an observed wallet, then move to the send page, enter the required trasfer details, and then click Finish.<br> (2) Click the [Next] button,then you will find the QR code that would be scanned by the cold wallet.
@@ -241,6 +243,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 <div style = "clear: both"> </div>
 <div style = "margin-top: 20px;"> </div>
 </div>
+
 
 **2. Cold wallet**
 
@@ -252,6 +255,8 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 (1) Click the scan button  at the upper right corner, or click the [Offline Signature] button of the specified wallet to scan the QR code displayed on the wallet page. <br>
 (2) The page displays the detailed transaction information. If there is no problems with the transaction, you can click [Next] and enter the password. <br/>
 (3) After  you can see the QR code of the signed transactions for the observed wallet to scan.
+
+
 
 **3. Observed wallet**
 
