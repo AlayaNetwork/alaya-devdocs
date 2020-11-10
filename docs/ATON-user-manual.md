@@ -149,14 +149,15 @@ For details about importing observed wallets, please refer to the instructions o
 
 
 
-## Send ARC20 smart contract quota
+## Send ARC20 Smart Contract Quota
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton18.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. On the wallet asset details page of the ARC20 smart contract, click the [Send] column.  <br> 2. Enter a valid wallet address, or scan the QR code of the wallet to automatically fill in the address, or select a locally saved wallet address through the address book.<br>3. Enter the sent ARC20 smart contract quota. <br> 4. Choose the transaction fee, you can freely adjust the cheaper or faster fee by clicking.<br> 5. Click [Next] to confirm the transaction information, click [Send Transaction] and enter the correct wallet password to send the transaction to the blockchain network. Click [Cancel] to cancel this transaction.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton18.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. On the wallet asset details page of the ARC20 smart contract wallet, click the [Send] button.  <br> 2. Enter a valid wallet address, or scan the QR code of the wallet to automatically fill in the address, or select a locally saved wallet address through the address book.<br>3. Enter the amount of ARC20 smart contract quota to be sent. <br> 4. Choose the transaction fee, and you can click to adjust it to be lower or higher.<br> 5.Click the [Next] button to confirm the transaction information, and click the [Send Transaction] button and enter the correct wallet password to send the transaction to the blockchain network. Click the [Cancel] button to cancel this transaction.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+
 
 ## Validators
 
