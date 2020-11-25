@@ -95,6 +95,20 @@ title: ATON钱包用户使用手册
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 
+### 地址簿
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton108.png" width="500" style="zoom:80%;" /></div><div><br>1.选择【我的-设置】，可以看见地址簿中的存储的钱包地址列表。<br>2.点击其中任意一条地址信息，可以复制选中的地址。<br>3.侧滑其中任意一条地址信息，可以对其进行删除和编辑。<br>4.点击顶部导航栏右边的【+】按钮可以实现手动新增地址信息到地址簿。<br>5.同时，还可以在【创建钱包】和【导入钱包】页面（包含助记词导入、钱包文件导入、私钥导入、观察钱包导入）的【开始导入】按钮的上方勾选【存入地址簿】选项实现钱包自动存入地址簿，该选项默认勾选。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+详见“设置观察钱包和冷钱包”说明
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+
 ## 选择钱包
 
 <div>
@@ -113,10 +127,19 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
-## 发送
+## 发送ATP
 
 <div>
 <div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton17.png" width="500" style="zoom:80%;" /></div><div><br>1.在ATP钱包资产详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的ATP数量。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+## 发送ARC20智能合约额度
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton107.png" width="500" style="zoom:80%;" /></div><div><br>1.在ARC20智能合约的钱包资产详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.输入发送的ARC20智能合约额度。<br>4.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>5.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。点击【取消】则可取消此次交易。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -178,7 +201,7 @@ title: ATON钱包用户使用手册
 1. 准备 2 台手机，安装最新版的 ATON 钱包。
 2. 确保一台手机永不联网，建议开启飞行模式，关闭 WiFi，作为冷钱包设备；另一台手机联网作为观察钱包设备。
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton28.png" width="300" style="zoom:80%;" /></div><div><br>1. 不联网手机创建一个钱包，此钱包则为冷钱包。点击“接收”打开钱包二维码<br>2. 联网手机点击【导入钱包-观察钱包】，扫描不联网手机的二维码或者输入钱包地址，点击【完成】，观察钱包设置成功。<br><br><b>注意</b><br>1. 观察钱包：联网但不存有私钥的钱包，仅做观察使用。如需进行交易，需要配合冷钱包操作。<br>2. 冷钱包：不联网但存有私钥的钱包，需做安全隔离保管。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton28.png" width="300" style="zoom:80%;" /></div><div><br>1. 不联网手机创建一个钱包，此钱包则为冷钱包。点击“接收”打开钱包二维码<br>2. 如图所示，联网手机点击【导入钱包-观察钱包】，扫描不联网手机的二维码或者输入钱包地址，点击【完成】，观察钱包设置成功。<br><br><b>注意</b><br>1. 观察钱包：联网但不存有私钥的钱包，仅做观察使用。如需进行交易，需要配合冷钱包操作。<br>2. 冷钱包：不联网但存有私钥的钱包，需做安全隔离保管。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
