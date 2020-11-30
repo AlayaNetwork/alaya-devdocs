@@ -72,7 +72,7 @@ wget http://download.alaya.network/alaya/mtool/linux/0.13.2/mtool-client.zip
 >脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径。
 
 ``` bash
-wget http://download.alaya.network/opensource/scripts/mtool_install.sh 
+wget http://download.alaya.network/opensource/scripts/mtool_install.sh
 ```
 
 **step4. 执行命令**
@@ -243,6 +243,43 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 >
 > config：验证节点信息文件路径
 
+### 创建新的锁仓计划
+
+节点可以使用自己钱包内的资金，创建新的锁仓计划。在创建新的锁仓计划前，先要创建一个格式为json的锁仓计划描述文件。
+
+- 锁仓计划描述文件，retricting_plans.json
+
+```json
+{
+  "account":"atp12jn6835z96ez93flwezrwu4xpv8e4zatwxj7ju",
+  "plans":[
+    {"epoch": 5000,"amount": 1800000000000000},
+    {"epoch": 6000,"amount": 1800000000000000},
+    {"epoch": 7000,"amount": 1800000000000000}
+  ]
+}
+```
+
+> account：指锁仓资金的释放目标地址
+>
+> epoch：释放等待的结算周期数量（大于等于1）
+>
+> amount：释放资金
+
+- 执行命令
+
+```bash
+mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
+```
+
+- 参数说明，
+
+> config：验证节点信息文件路径
+>
+> keystore：发送交易的冷钱包路径
+>
+> file: 锁仓计划描述文件
+
 ### 发起质押操作
 
 如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换质押金额，质押最低门槛为1万ATP。
@@ -252,7 +289,8 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 - 执行命令
 
 ```bash
-mtool-client staking --amount 10000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+
 ```
 提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
 
@@ -265,41 +303,53 @@ SUCCESS
 
 - 参数说明
 
-> amount: 质押数，不少于10000atp-质押门槛，小数点不超过8位
->
-> restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
+> config：验证节点信息文件路径
 >
 > keystore：发送交易的冷钱包路径
 >
-> config：验证节点信息文件路径
+> amount: 质押数，不少于1000000lat-质押门槛，小数点不超过8位（使用自由金额质押）
+>
+> restrictedamount: 不少于1000000lat-质押门槛，小数点不超过8位（使用锁仓余额质押）
+>
+> benefit_address：验证节点收益地址
+>
+> delegated_reward_rate：委托奖励比例，单位：万分比，整数，范围\[0,\10000]，如输入5000，表示分红比例为50%
+>
+> node_name：验证人名称，不超过30字节，支持字母、数字、空格、上下划线及#，必须字母开头
+>
+> website：官网路径，不超过70字节，数字字母组成
+>
+> details：简介，验证人简要介绍说明，不超过280字节，建议英文
+>
+> external_id：节点头像icon在keybase.io的ID，或者外部系统身份认证ID
+
 
 ### 修改验证人信息操作
 
 - 执行命令
 
 ```bash
-mtool-client update_validator --name VerifierName --url "http://www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --introduction "Modify the verifier information operation" --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - 参数说明
 
-> name：验证人名称，不超过30字节，支持字母、数字、空格、上下划线及#，必须字母开头
->
-> url：官网路径，不超过70字节，数字字母组成
->
-> identity：身份认证ID，不超过140字节，对应validator_config.json配置文件中的`externalId`字段。
->
-> delegated-reward-rate：委托奖励比例，单位：万分比，整数，范围0~10000，如输入5000，表示分红比例为50%
->
-> reward：收益地址，42字符（字母数字）
->
-> introduction：简介，验证人简要介绍说明，不超过280字节，建议英文
+> config：验证节点信息文件路径
 >
 > keystore：发送交易的冷钱包路径
 >
-> config：验证节点信息文件路径
+> node_name\[可选\]：验证人名称，不超过30字节，支持字母、数字、空格、上下划线及#，必须字母开头
 >
-> a：执行命令时，用配置文件里面的值作参数去修改验证人信息
+> website\[可选\]：官网路径，不超过70字节，数字字母组成
+>
+> external_id\[可选\]：节点头像icon在keybase.io的ID，或者外部系统身份认证ID
+>
+> delegated_reward_rate\[可选\]：委托奖励比例，单位：万分比，整数，范围\[0,\10000]，如输入5000，表示分红比例为50%
+>
+> benefit_address\[可选\]：验证节点收益地址，42字符（字母数字）
+>
+> details\[可选\]：简介，验证人简要介绍说明，不超过280字节，建议英文
+
 
 ### 解质押操作
 

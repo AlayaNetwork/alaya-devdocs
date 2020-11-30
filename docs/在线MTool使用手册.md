@@ -80,7 +80,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 After installation is complete, you need to <font color=red>restart the session window</font> for the newly added environment variables to take effect.
 
-## MTool Environment Variable Description 
+## MTool Environment Variable Description
 
 The environment variables of MTool directories under Windows and Ubuntu are different:
 
@@ -90,11 +90,11 @@ The environment variables of MTool directories under Windows and Ubuntu are diff
 
 > Note:Users choose according to their installed system.
 
-##  MTool Command Details 
+##  MTool Command Details
 
 > Note: The follow-up command is the command format under Ubuntu. Under Windows, you need to modify `$MTOOLDIR` to `%MTOOLDIR%`.
 
-### Create A Wallet 
+### Create A Wallet
 
 - Execute the command:
 
@@ -122,7 +122,7 @@ mtool-client account new staking
 >worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney
 >```
 >
->  Wallet address format adjusted to Bech32, among them: 
+>  Wallet address format adjusted to Bech32, among them:
 >
 >`atp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`: Main network account address, beginning with atp;
 >
@@ -132,21 +132,21 @@ mtool-client account new staking
 >
 >`worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney`: the mnemonic words.
 >
->  For security reasons, users need to back up the wallet private key or mnemonic words (both can be backed up, or one of them can be backed up). When the wallet is lost, it can be used for recovery. It is recommended that users back up mnemonic words or private keys to a secure storage medium, such as an offline machine. 
+>  For security reasons, users need to back up the wallet private key or mnemonic words (both can be backed up, or one of them can be backed up). When the wallet is lost, it can be used for recovery. It is recommended that users back up mnemonic words or private keys to a secure storage medium, such as an offline machine.
 
 ### Recover wallet file
 
- If the wallet file is lost, you can restore it with the backed up private key or mnemonic as follows: 
+ If the wallet file is lost, you can restore it with the backed up private key or mnemonic as follows:
 
 - Execute the command:
 
-   Recovery via private key: 
+   Recovery via private key:
 
   ```shell
   mtool-client account recover -k staking
   ```
 
-  > Prompt to enter the new wallet password and backup private key, as follows: 
+  > Prompt to enter the new wallet password and backup private key, as follows:
   >
   > ```shell
   > Enter a passphrase to encrypt your key to disk:
@@ -157,13 +157,13 @@ mtool-client account new staking
 
   or
 
-   Recovery through mnemonics: 
+   Recovery through mnemonics:
 
   ```shell
   mtool-client account recover -m staking
   ```
 
-  >  Prompt to enter a new wallet password and backup mnemonic words, as follows: 
+  >  Prompt to enter a new wallet password and backup mnemonic words, as follows:
   >
   >  ```shell
   >   Enter a passphrase to encrypt your key to disk:
@@ -180,7 +180,7 @@ mtool-client account new staking
 
 ### Ordinary transfer operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $ to_address --config $MTOOLDIR/validator/validator_config.json
@@ -196,7 +196,7 @@ mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1"
 
 ### View wallet list
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client account list
@@ -204,7 +204,7 @@ mtool-client account list
 
 ### Query balance based on wallet name
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
@@ -216,7 +216,7 @@ mtool-client account balance $keystorename --config $MTOOLDIR/validator/validato
 
 ### Query balance based on address
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
@@ -226,16 +226,55 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 
 > a: wallet address
 
+### Create a new restricting plans
+
+Creating a new restricting plan, node's ATPs will be transferred to a specified precompiled contract. The ATPs will be transferred to the specified account multiple times at specified intervals. Before creating a new restricting, you need to create a restricting plan description file in json format.
+
+- restricting plan description file，retricting_plans.json
+
+```json
+{
+  "account":"atp12jn6835z96ez93flwezrwu4xpv8e4zatwxj7ju",
+  "plans":[
+    {"epoch": 5000,"amount": 1800000000000000},
+    {"epoch": 6000,"amount": 1800000000000000},
+    {"epoch": 7000,"amount": 1800000000000000}
+  ]
+}
+```
+
+> account：the specified account that will received ATP from the estricting plan.
+>
+> epoch：the number of epoch to wait for a transfer plan (Greater than or equal to 1)
+>
+> amount：the number of ATP to be transferred
+
+
+- command line
+
+```bash
+mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
+```
+
+- Parameter Description
+
+> config：node configuration file
+>
+> keytore: wallet file
+>
+> file: restricting plan description file
+
+
 ### Initiate a staking operation
 
 If the deployment of the consensus node is complete and the block has been synchronized successfully, you can use MTool for staking operations. After the staking fund application is completed, ensure that the balance of the staking account is sufficient, and replace the staking amount according to the user's situation. The minimum threshold for staking is ten thousand ATP.
 
 Note: Please keep enough ATP in the staking account, so that the transactions initiated by the subsequent node management have sufficient transaction fees, such as voting for upgrading proposals, and unsecured transactions.
 
-- Excuting the command
+- Command line
 
 ```bash
-mtool-client staking --amount 10000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 Prompt:**please input keystore password:**Enter the password of the staking wallet and press Enter. If the following information is displayed, the staking is successful:
@@ -249,39 +288,58 @@ SUCCESS
 
 - Parameters Description
 
+> config：node configuration file
+>
+> keystore: staking wallet file
+>
 > amount: staking amount, not less than 10000atp-staking threshold, no more than 8 decimal places
 >
 > restrictedamount: not less than 10000atp- staking threshold, no more than 8 decimal points (staking using locked balance)
+>
+> benefit_address: benefit account to receive block-packing reward and staking reward
+>
+> delegated_reward_rate：Delegated bonus ratio, type is integer range is \[0,10000\], unit: ten thousand percent, e.g. enter 5000, it means the bonus ratio is 50%
+>
+> node_name：node name，30 bytes(beginning with a letter, including alphabet, number, space, _, -, #)
+>
+> website：node website, 30 bytes
+>
+> details：node description, 280 bytes
+>
+> external_id：node Icon ID of keybase.io, or identity authentication ID
+
 
 ### Modify validator information operation
 
-- Excuting the command
+- Command line
 
 ```bash
-mtool-client update_validator --name VerifierName --url "http://www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward atx1rquxycp7xacmj25wy75l8mrux23tjvwxjmz26v --introduction "Modify the verifier information operation" --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - Parameters Description
 
-> name: validator name, no more than 30 bytes, supports letters, numbers, spaces, underscores and #, must start with a letter
+> config：node configuration file
 >
-> url: official website path, no more than 70 bytes, composed of alphanumeric characters
+> keystore: staking wallet file
 >
-> identity: identity authentication ID, no more than 140 bytes, corresponds to the `externalId` field in the validator_config.json configuration file
+> benefit_address\[option\]: benefit account to receive block-packing reward and staking reward
 >
-> delegated-reward-rate: delegated reward ratio, unit: million points, integer, range 0 ~ 10000, If you enter 5000, it means that the dividend ratio is 50%
+> delegated_reward_rate\[option\]：Delegated bonus ratio, type is integer range is \[0,10000\], unit: ten thousand percent, e.g. enter 5000, it means the bonus ratio is 50%
 >
-> reward: return address, 42 characters (alphanumeric)
+> node_nam\[option\]e：node name，30 bytes(beginning with a letter, including alphabet, number, space, _, -, #)
 >
-> introduction: introduction, brief description of the validator, no more than 280 bytes, English is recommended
+> website\[option\]：node website, 30 bytes
 >
-> a: When executing the command, use the values in the configuration file as parameters to modify the verifier information
+> details\[option\]：node description, 280 bytes
+>
+> external_id\[option\]：node Icon ID of keybase.io, or identity authentication ID
 
 ### Decommissioning operation
 
 <font color=red>**It takes 168 settlement cycles to withdraw from the pledge, please be careful!**</font>
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -293,7 +351,7 @@ mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOO
 
 ### Increase staking operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -307,7 +365,7 @@ mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/stak
 
 ### Submit Text Proposal
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -319,7 +377,7 @@ mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/stak
 
 ### Submit upgrade proposal operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client submit_versionproposal --newversion 0.13.1 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -335,7 +393,7 @@ mtool-client submit_versionproposal --newversion 0.13.1 --end_voting_rounds 345 
 
 ### Submit Cancel Proposal
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR_validator/validator
@@ -351,7 +409,7 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 
 ### Text proposal voting operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -365,7 +423,7 @@ mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b3700
 
 ### Upgrade proposal voting operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -377,7 +435,7 @@ mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 
 ### Cancel proposal voting
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -391,7 +449,7 @@ mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 
 ### Submit parameter proposal operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client submit_paramproposal --pid_id 200 --module $ module --paramname $ paramname --paramvalue $ paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -409,7 +467,7 @@ mtool-client submit_paramproposal --pid_id 200 --module $ module --paramname $ p
 
 ### Parameter proposal voting operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -423,7 +481,7 @@ mtool-client vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 
 ### Version declaration operation
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
@@ -435,7 +493,7 @@ mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config
 
 ### View help
 
-- Excuting the command
+- Command line
 
 ```bash
 mtool-client -h
