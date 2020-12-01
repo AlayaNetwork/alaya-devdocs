@@ -290,7 +290,6 @@ mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.js
 
 ```bash
 mtool-client staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
-
 ```
 提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
 
@@ -307,9 +306,9 @@ SUCCESS
 >
 > keystore：发送交易的冷钱包路径
 >
-> amount: 质押数，不少于1000000atp-质押门槛，小数点不超过8位（使用自由金额质押）
+> amount: 质押数，不少于10000atp-质押门槛，小数点不超过8位（使用自由金额质押）
 >
-> restrictedamount: 不少于1000000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
+> restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
 >
 > benefit_address：验证节点收益地址
 >
