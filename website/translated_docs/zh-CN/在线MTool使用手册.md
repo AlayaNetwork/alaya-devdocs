@@ -253,9 +253,9 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 {
   "account":"atp12jn6835z96ez93flwezrwu4xpv8e4zatwxj7ju",
   "plans":[
-    {"epoch": 5000,"amount": 1800000000000000},
-    {"epoch": 6000,"amount": 1800000000000000},
-    {"epoch": 7000,"amount": 1800000000000000}
+    {"epoch": 5000,"amount": 100},
+    {"epoch": 6000,"amount": 100},
+    {"epoch": 7000,"amount": 100}
   ]
 }
 ```
@@ -264,7 +264,7 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 >
 > epoch：释放等待的结算周期数量（大于等于1）
 >
-> amount：释放资金
+> amount：释放资金，单位:ATP
 
 - 执行命令
 

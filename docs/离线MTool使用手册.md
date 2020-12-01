@@ -365,9 +365,9 @@ Creating a new restricting plan, node's ATPs will be transferred to a specified 
 {
   "account":"atp12jn6835z96ez93flwezrwu4xpv8e4zatwxj7ju",
   "plans":[
-    {"epoch": 5000,"amount": 1800000000000000},
-    {"epoch": 6000,"amount": 1800000000000000},
-    {"epoch": 7000,"amount": 1800000000000000}
+    {"epoch": 5000,"amount": 100},
+    {"epoch": 6000,"amount": 100},
+    {"epoch": 7000,"amount": 100}
   ]
 }
 ```
@@ -376,7 +376,7 @@ Creating a new restricting plan, node's ATPs will be transferred to a specified 
 >
 > epoch：the number of epoch to wait for a transfer plan (Greater than or equal to 1)
 >
-> amount：the number of ATP to be transferred
+> amount：the number of ATP to be transferred. Unit: ATP
 
 
 - command line
