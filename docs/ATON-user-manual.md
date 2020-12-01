@@ -117,6 +117,16 @@ For details about importing observed wallets, please refer to the instructions o
 <div style = "margin-top: 40px;"> </div>
 
 
+### Address Book
+
+<div>
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton11.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. Select [My-Settings], you can see the list of stored wallet addresses in the address book. <br> 2. Click any one of the address information to copy the selected address.<br> 3. Slide any one of the address information to delete and edit it. <br> 4. Click the [+] button on the right side of the top navigation bar to manually add address information to the address book.<br><br> 5. At the same time, you can also check the [Deposit Address] button above the [Start Import] button on the [Create Wallet] and [Import Wallet] pages (including mnemonic import, wallet file import, private key import, and watch wallet import) Book] The option realizes that the wallet is automatically stored in the address book, and this option is checked by default.<br> <br> 
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+
 ## Select Wallet
 
 <div>
