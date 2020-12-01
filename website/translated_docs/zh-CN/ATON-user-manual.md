@@ -22,7 +22,7 @@ title: ATON钱包用户使用手册
 ## 钱包资产
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建、导入和选择钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP资产详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址，以及【切换钱包】按钮。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建和导入钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP资产详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。
 
 
 </div>
@@ -112,7 +112,7 @@ title: ATON钱包用户使用手册
 ## 选择钱包
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton99.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 点击钱包首页右上角【...】，再点击【选择钱包】。<br>2. 可按“全部”、“HD”、“普通”进行分类筛选，也可通过钱包名称模糊搜索或钱包地址进行精确搜索。<br>3. 找到需选择的钱包，点击钱包框。<br>4. 钱包首页自动切换到刚选择的钱包。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton99.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 点击钱包首页的钱包名称右侧的“切换钱包”图标，即可选择钱包。<br>2. 可按“全部”、“HD”、“普通”进行分类筛选，也可通过钱包名称模糊搜索或钱包地址进行精确搜索。<br>3. 找到需选择的钱包，点击钱包框。<br>4. 钱包首页自动切换到刚选择的钱包。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -150,7 +150,7 @@ title: ATON钱包用户使用手册
 ### 查看验证节点列表
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/atonrank.jpg" width="300"style="zoom:80%;" /></div> <div><br>1. 点击【委托-验证节点】，可查看Alaya网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接受委托量、委托者数、预计委托年化收益率排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/atonrank.png" width="300"style="zoom:80%;" /></div> <div><br>1. 点击【委托-验证节点】，可查看Alaya网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接受委托量、委托者数、预计委托年化收益率排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>

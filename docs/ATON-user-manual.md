@@ -22,10 +22,10 @@ title: ATON Wallet User Manual
 
 
 
-## Wallet Assets
+##  Wallet Assets
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. When you successfully created a wallet, you can find the valid wallet and asset info at the Wallet Asset page. <br>2. ①The upper part shows the brief information of the current wallet. <br>3. ②The brief wallet information includes the wallet name and wallet address. <br>4. ③Click the [Copy] button to copy the wallet address. <br>5. ④Click the [Wallet Management] button to manage the wallet. <br>6. ⑤The node information of your wallet is shown at the upper left corner, click it to switch nodes. <br>7. ⑥By Click [...],you can create, import and select wallets, and click "Scan" to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click it to enter the ATP assets details page. <br>10. ⑧The ARC20 smart contract data, you can see the unit and balance, click it to enter the ARC20 smart contract assets details page.
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. When you successfully created a wallet, you can find the valid wallet and asset info at the Wallet Asset page. <br>2. ①The upper part shows the brief information of the current wallet. <br>3. ②The brief wallet information includes the wallet name and wallet address,and [Switch Wallet] button. <br>4. ③Click the [Copy] button to copy the wallet address. <br>5. ④Click the [Wallet Management] button to manage the wallet. <br>6. ⑤The node information of your wallet is shown at the upper left corner, click it to switch nodes. <br>7. ⑥By Click [...],you can create, import and select wallets, and click "Scan" to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click it to enter the ATP assets details page. <br>10. ⑧The ARC20 smart contract data, you can see the unit and balance, click it to enter the ARC20 smart contract assets details page.
 
 
 
@@ -115,6 +115,17 @@ Wallet information includes balance, unit and [Receive] button. <br>3. Click the
 For details about importing observed wallets, please refer to the instructions of “Set observed wallet and cold wallet”
 
 <div style = "margin-top: 40px;"> </div>
+
+
+### Address Book
+
+<div>
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton11.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. Select [My-Settings], you can see the list of stored wallet addresses in the address book. <br> 2. Click any one of the address information to copy the selected address.<br> 3. Slide any one of the address information to delete and edit it. <br> 4. Click the [+] button on the right side of the top navigation bar to manually add address information to the address book.<br> 5. At the same time, you can also check the [Deposit Address] button above the [Start Import] button on the [Create Wallet] and [Import Wallet] pages (including mnemonic import, wallet file import, private key import, and watch wallet import) Book] The option realizes that the wallet is automatically stored in the address book, and this option is checked by default.<br> <br> 
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
 
 
 ## Select Wallet
