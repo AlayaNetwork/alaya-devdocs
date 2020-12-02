@@ -3481,26 +3481,26 @@ web3.utils.hexToBytes(0x000000ea);
 * kvon
 * mvon
 * gvon
-* microlat
-* millilat
-* lat
-* klat
-* mlat
-* glat
-* tlat
+* microatp
+* milliatp
+* atp
+* katp
+* matp
+* gatp
+* tatp
 
 ```
 'von':          '1',
 'kvon':         '1000',
 'mvon':         '1000000',
 'gvon':         '1000000000',
-'microlat':     '1000000000000',
-'millilat':     '1000000000000000',
-'lat':          '1000000000000000000',
-'klat':         '1000000000000000000000',
-'mlat':         '1000000000000000000000000',
-'glat':         '1000000000000000000000000000',
-'tlat':         '1000000000000000000000000000000'
+'microatp':     '1000000000000',
+'milliatp':     '1000000000000000',
+'atp':          '1000000000000000000',
+'katp':         '1000000000000000000000',
+'matp':         '1000000000000000000000000',
+'gatp':         '1000000000000000000000000000',
+'tatp':         '1000000000000000000000000000000'
 ```
 
 调用：
@@ -3512,7 +3512,7 @@ web3.utils.toVon(number [, unit])
 参数：
 
 *  `number` - String|Number|BN: 金额 
-*  `unit` - String，可选，默认值为`ether`
+*  `unit` - String，可选，默认值为`atp`
 
 
 返回值：
@@ -3522,7 +3522,7 @@ web3.utils.toVon(number [, unit])
 示例代码：
 
 ```js
-web3.utils.toVon('1', 'lat');
+web3.utils.toVon('1', 'atp');
 > "1000000000000000000"
 ```
 
@@ -3538,24 +3538,24 @@ web3.utils.toVon('1', 'lat');
 web3.utils.fromVon(number [, unit])
 ```
 
-Converts any von value into a lat value.
+Converts any von value into a atp value.
 
 参数：
 
 `number` - String|Number|BN: VON为单位的数值
-`unit` - String，可选，默认值为`lat`，可选的单位有：
+`unit` - String，可选，默认值为`atp`，可选的单位有：
 
 * von
 * kvon
 * mvon
 * gvon
-* microlat
-* millilat
-* lat
-* klat
-* mlat
-* glat
-* tlat
+* microatp
+* milliatp
+* atp
+* katp
+* matp
+* gatp
+* tatp
 
 返回值：
 
@@ -3564,7 +3564,7 @@ Converts any von value into a lat value.
 示例代码：
 
 ```js
-web3.utils.fromVon('1', 'lat');
+web3.utils.fromVon('1', 'atp');
 > "0.000000000000000001"
 ```
 

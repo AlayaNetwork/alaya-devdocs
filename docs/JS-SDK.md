@@ -3455,32 +3455,32 @@ web3.utils.hexToBytes(0x000000ea);
 
 #### web3.utils.toVon
 
-Converts any lat value value into von.
+Converts any atp value value into von.
 
 * von
 * kvon
 * mvon
 * gvon
-* microlat
-* millilat
-* lat
-* klat
-* mlat
-* glat
-* tlat
+* microatp
+* milliatp
+* atp
+* katp
+* matp
+* gatp
+* tatp
 
 ```
 'von':          '1',
 'kvon':         '1000',
 'mvon':         '1000000',
 'gvon':         '1000000000',
-'microlat':     '1000000000000',
-'millilat':     '1000000000000000',
-'lat':          '1000000000000000000',
-'klat':         '1000000000000000000000',
-'mlat':         '1000000000000000000000000',
-'glat':         '1000000000000000000000000000',
-'tlat':         '1000000000000000000000000000000'
+'microatp':     '1000000000000',
+'milliatp':     '1000000000000000',
+'atp':          '1000000000000000000',
+'katp':         '1000000000000000000000',
+'matp':         '1000000000000000000000000',
+'gatp':         '1000000000000000000000000000',
+'tatp':         '1000000000000000000000000000000'
 ```
 
 Method:
@@ -3492,7 +3492,7 @@ web3.utils.toVon(number [, unit])
 Parameter:
 
 *  `number` - `String|Number|BN`: The value. 
-*  `unit` - String，(optional, defaults to "lat"): The ether to convert from. 
+*  `unit` - String，(optional, defaults to "atp"): The ether to convert from. 
 
 
 Returns:
@@ -3502,7 +3502,7 @@ Returns:
 Example:
 
 ```js
-web3.utils.toVon('1', 'lat');
+web3.utils.toVon('1', 'atp');
 > "1000000000000000000"
 ```
 
@@ -3510,7 +3510,7 @@ web3.utils.toVon('1', 'lat');
 
 #### web3.utils.fromVon
 
-Converts any von value into a lat value.
+Converts any von value into a atp value.
 
 Method:
 
@@ -3518,24 +3518,24 @@ Method:
 web3.utils.fromVon(number [, unit])
 ```
 
-Converts any von value into a lat value.
+Converts any von value into a atp value.
 
 Parameter:
 
 `number` - `String|Number|BN`: The value in von.
-`unit` - `String`，(optional, defaults to "lat"): The ether to convert to. Possible units are:
+`unit` - `String`，(optional, defaults to "atp"): The ether to convert to. Possible units are:
 
 * von
 * kvon
 * mvon
 * gvon
-* microlat
-* millilat
-* lat
-* klat
-* mlat
-* glat
-* tlat
+* microatp
+* milliatp
+* atp
+* katp
+* matp
+* gatp
+* tatp
 
 Returns:
 
@@ -3544,7 +3544,7 @@ Returns:
 Example:
 
 ```js
-web3.utils.fromVon('1', 'lat');
+web3.utils.fromVon('1', 'atp');
 > "0.000000000000000001"
 ```
 
