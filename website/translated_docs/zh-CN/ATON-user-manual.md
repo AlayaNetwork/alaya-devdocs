@@ -145,6 +145,16 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
+
+## 选择交易手续费
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton109.png" width="500" style="zoom:80%;" /></div><div><br>1.发送、委托、赎回和领取奖励功能都会产生交易手续费。<br>2.以发送功能为例，点击【交易手续费】，可以进入交易手续费设置页面。<br>3.交易手续费有5种选择（最快、快速、一般、缓慢、自定义）。<br>4.默认选中【一般】配置项。<br>5.用户可以根据实际需要选择相应的选项。<br>6.其中【自定义】一栏用户可以自主输入Gas Price和Gas Limit来实现灵活化的费用配置。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
 ## 节点
 
 ### 查看验证节点列表
