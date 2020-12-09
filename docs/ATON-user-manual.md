@@ -28,6 +28,8 @@ title: ATON Wallet User Manual
 <div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. When you successfully created a wallet, you can find the valid wallet and asset info at the Wallet Asset page. <br>2. ①The upper part shows the brief information of the current wallet. <br>3. ②The brief wallet information includes the wallet name and wallet address,and [Switch Wallet] button. <br>4. ③Click the [Copy] button to copy the wallet address. <br>5. ④Click the [Wallet Management] button to manage the wallet. <br>6. ⑤The node information of your wallet is shown at the upper left corner, click it to switch nodes. <br>7. ⑥By Click [...],you can create, import and select wallets, and click "Scan" to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click it to enter the ATP assets details page. <br>10. ⑧The ARC20 smart contract data, you can see the unit and balance, click it to enter the ARC20 smart contract assets details page.
 
 
+
+
 </div>
 
 <div style="clear:both"></div>
