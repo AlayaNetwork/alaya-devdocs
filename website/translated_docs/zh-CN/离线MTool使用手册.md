@@ -431,13 +431,13 @@ mtool-client staking --config $MTOOLDIR/validator/validator_config.json --addres
 >
 > address: 质押观察钱包路径
 >
-> amount: 质押数，不少于1000000lat-质押门槛，小数点不超过8位（使用自由金额质押）
+> amount: 质押数，不少于10000atp-质押门槛，小数点不超过8位（使用自由金额质押）
 >
-> restrictedamount: 不少于1000000lat-质押门槛，小数点不超过8位（使用锁仓余额质押）
+> restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
 >
 > benefit_address：验证节点收益地址
 >
-> delegated_reward_rate：委托奖励比例，单位：万分比，整数，范围\[0,\10000]，如输入5000，表示分红比例为50%
+> delegated_reward_rate：委托奖励比例，单位：万分比，整数，范围\[0,10000]，如输入5000，表示分红比例为50%
 >
 > node_name：验证人名称，不超过30字节，支持字母、数字、空格、上下划线及#，必须字母开头
 >
@@ -468,7 +468,7 @@ mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json
 >
 > external_id\[可选\]：节点头像icon在keybase.io的ID，或者外部系统身份认证ID
 >
-> delegated_reward_rate\[可选\]：委托奖励比例，单位：万分比，整数，范围\[0,\10000]，如输入5000，表示分红比例为50%
+> delegated_reward_rate\[可选\]：委托奖励比例，单位：万分比，整数，范围\[0,10000]，如输入5000，表示分红比例为50%
 >
 > benefit_address\[可选\]：验证节点收益地址，42字符（字母数字）
 >
