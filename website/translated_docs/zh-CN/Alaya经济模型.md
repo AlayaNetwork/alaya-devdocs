@@ -93,4 +93,12 @@ LatticeX基金会将拿出**5亿LAT**来支持Alaya网络的发展。这5亿LAT�
 
 LAT激励方案将分期公布和分批执行，每期将根据Alaya发展情况制定不同的规则，对网络上的开发者、用户和节点进行激励，以引导生态的发展。
 
+## 9 相关文档
 
+请参考PlatON开发者文档：
+
+- [总体方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Overall_Solution/)
+- [共识方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Solution/)
+- [治理方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Governance_Solution/)
+- [安全多方计算](https://devdocs.platon.network/docs/zh-CN/Secure_Multi_Party_Computation/)
+- [可验证计算](https://devdocs.platon.network/docs/zh-CN/Verifiable_Computation/)

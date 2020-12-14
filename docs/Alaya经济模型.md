@@ -100,4 +100,16 @@ The LatticeX Foundation will provide 500 million LAT to support the development 
 
 The LAT incentive program will be announced and executed in phases. In each phase, different rules will be formulated depending on the development of Alaya to encourage developers, users and validators on the network while guiding the healthy development of the ecosystem.
 
+## 9 Related documents
 
+Please refer to the PlatON developer documentation:
+
+- [Overall Solution](https://devdocs.platon.network/docs/en/PlatON_Overall_Solution)
+
+- [Consensus Solution](https://devdocs.platon.network/docs/en/PlatON_Solution)
+
+- [Governance Solution](https://devdocs.platon.network/docs/en/PlatON_Governance_Solution)
+
+- [Secure Multi Party Computation](https://devdocs.platon.network/docs/en/Secure_Multi_Party_Computation)
+
+- [Verifiable Computation](https://devdocs.platon.network/docs/en/Verifiable_Computation)
