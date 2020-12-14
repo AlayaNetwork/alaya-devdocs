@@ -76,9 +76,9 @@ web3.modules
 
 `Object`: 子模块列表:
 
-*  `Platon` - Function: Platon模块类，用来与以太坊网络进行交互。参见web3.platon。
+*  `Platon` - Function: Platon模块类，用来与Alaya网络进行交互。参见web3.platon。
 *  `Net` - Function: Net模块类，用来与网络属性进行交互。参见web3.platon.net。
-*  `Personal` - Function: Personal模块类，用来与以太坊账户进行交互。参见web3.platon.personal。
+*  `Personal` - Function: Personal模块类，用来与Alaya账户进行交互。参见web3.platon.personal。
 
 示例代码：
 

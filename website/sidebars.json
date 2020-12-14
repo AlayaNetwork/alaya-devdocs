@@ -6,6 +6,7 @@
 	"Environment Setup":["Install_Alaya","Build_Private_Chain"],
 	"Reference Docs":["EVM_Smart_Contract","WASM_Smart_Contract"],
 	"SDK Docs": ["Java_SDK","JS_SDK","Json_Rpc"],
+	"Abount PlatON":["Economic_Model"],
 	"Community Projects":["community"]
   }
 }
