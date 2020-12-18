@@ -42,7 +42,7 @@ title: ATON钱包用户使用手册
 ## ARC20智能合约资产详情
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2.钱包信息包含余额、单位，以及【发送】按钮和【接收】按钮。<br>3. 部分钱包存在发送权限，点击【发送】按钮进入接收页面进行接收转账。<br>4. 点击【接收】按钮进入接收页面进行接收转账。<br>5. 页面下半部分是【交易记录】。<br>6. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2.钱包信息包含余额、单位，以及【发送】按钮和【接收】按钮。<br>3. 部分钱包拥有发送权限，点击【发送】按钮进入接收页面进行接收转账。<br>4. 点击【接收】按钮进入接收页面进行接收转账。<br>5. 页面下半部分是【交易记录】。<br>6. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
 
 
 </div>
