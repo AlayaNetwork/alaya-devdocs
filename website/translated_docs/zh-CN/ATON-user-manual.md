@@ -42,7 +42,7 @@ title: ATON钱包用户使用手册
 ## ARC20智能合约资产详情
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2. 钱包信息包含余额、单位和【接收】按钮。<br>3. 点击【接收】按钮进入接收页面进行接收转账。<br>4. 页面下半部分是【交易记录】。<br>5. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2.钱包信息包含余额、单位，以及【发送】按钮和【接收】按钮。<br>3. 部分钱包存在发送权限，点击【发送】按钮进入接收页面进行接收转账。<br>4. 点击【接收】按钮进入接收页面进行接收转账。<br>5. 页面下半部分是【交易记录】。<br>6. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
 
 
 </div>
@@ -198,7 +198,7 @@ title: ATON钱包用户使用手册
 ### 赎回委托
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.jpg" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10ATP，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.png" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10ATP，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
