@@ -16,7 +16,7 @@ USAGE:
    platon.exe [options] command [command options] [arguments...]
 
 VERSION:
-   0.13.2-unstable
+   0.14.0-unstable
 
 COMMANDS:
    account           Manage accounts
