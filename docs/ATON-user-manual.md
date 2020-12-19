@@ -212,11 +212,12 @@ For details about importing observed wallets, please refer to the instructions o
 ### My Delegations
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton45.png"width =" 250 " style="zoom:80%;" /> </div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and delegated amount. <br> 2.Select a specific wallet to check the details including total delegated amount, total rewards and unclaimed rewards. You can delegate and withdraw your delegation. <br>3.Click the [Claim] button to get all unclaimed rewards, and input your wallet. After that, you can see your rewards.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton45.png"width ="300" style="zoom:80%;" /> </div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and delegated amount. <br> 2.Select a specific wallet to check the details including total delegated amount, total rewards and unclaimed rewards. You can delegate and withdraw your delegation. <br>3.Click the [Claim] button to get all unclaimed rewards, and input your wallet. After that, you can see your rewards.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+
 
 
 
