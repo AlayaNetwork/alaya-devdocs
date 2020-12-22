@@ -28,9 +28,6 @@ title: ATON Wallet User Manual
 <div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton12.png" width="300" style="zoom:80%;"  /></div> <div><br>1. When you successfully created a wallet, you can find the valid wallet and asset info at the Wallet Asset page. <br>2. ①The upper part shows the brief information of the current wallet. <br>3. ②The brief wallet information includes the wallet name and wallet address,and [Switch Wallet] button. <br>4. ③Click the [Copy] button to copy the wallet address. <br>5. ④Click the [Wallet Management] button to manage the wallet. <br>6. ⑤The node information of your wallet is shown at the upper left corner, click it to switch nodes. <br>7. ⑥By Click [...],you can create, import and select wallets, and click "Scan" to scan the QR code. <br>8. The lower part of the page is [assets List]. <br>9. ⑦The first item is the ATP data, you can see the unit and balance, click it to enter the ATP assets details page. <br>10. ⑧The ARC20 smart contract data, you can see the unit and balance, click it to enter the ARC20 smart contract assets details page.
 
 
-
-
-
 </div>
 
 <div style="clear:both"></div>
@@ -55,14 +52,7 @@ title: ATON Wallet User Manual
 ## ARC20 Smart Contract Asset 
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton16.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 
-The upper part is the wallet information of the current wallet. <br>2. 
-Wallet information includes balance, unit and [Receive] button. <br>3. Click the [Receive] button to share your QR code and ATON wallet address to your friends for receiving the transfer. <br>4. The lower part of the page is [Transactions]. <br>5. The lower part of the page is the transaction record, click on a transaction record, you can get more transaction details. 
-
-
-
-
-</div>
+<div style="float:left;"><img src="/alaya-devdocs/img/en/ATON-user-manual.assets/aton16.png" width="300" style="zoom:80%;"  /></div> <div><br>1. The upper part is the wallet information of the current wallet. <br>2. The wallet information includes balance, unit, and [Send] button and [Receive] button. <br>3. Some wallets have sending permission, click the [Send] button to enter the receiving page to receive the transfer. <br>4. Click the [Receive] button to enter the receiving page to receive the transfer. <br>5. The lower part of the page is [Transaction History]. <br>6. The lower part of the page is the transaction record, click on a single transaction record to enter the transaction record details.</div>
 
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -120,7 +110,7 @@ For details about importing observed wallets, please refer to the instructions o
 ### Address Book
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton11.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. Select [My-Settings], you can see the list of stored wallet addresses in the address book. <br> 2. Click any one of the address information to copy the selected address.<br> 3. Slide any one of the address information to delete and edit it. <br> 4. Click the [+] button on the right side of the top navigation bar to manually add address information to the address book.<br> 5. At the same time, you can also check the [Deposit Address] button above the [Start Import] button on the [Create Wallet] and [Import Wallet] pages (including mnemonic import, wallet file import, private key import, and watch wallet import) Book] The option realizes that the wallet is automatically stored in the address book, and this option is checked by default.<br> <br> 
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton11.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1. Select [My-Settings],and you can see the list of wallet addresses stored in the address book. <br> 2. Click any of the address information to copy the selected address.<br> 3. Slide any of the address information to delete and edit it. <br> 4. Click the [+] button on the right side of the top navigation bar to manually add address information to the address book.<br> 5. At the same time, you can also check the [Deposit Address] button above the [Start Import] button on the [Create Wallet] and [Import Wallet] pages to enable the wallet to be stored in the address book automatically, and this option is checked by default.<br> <br> 
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -170,6 +160,19 @@ For details about importing observed wallets, please refer to the instructions o
 </div>
 
 
+
+
+## Choose Transaction Fee
+
+<div>
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton20.png "width ="500"style="zoom:80%;" /> </div> <div> <br> 1.The functions of sending, entrusting, redeeming and receiving rewards all incur transaction fees. <br> 2. Take the sending function as an example, click [Transaction Fee] to enter the transaction fee setting page.<br>3. There are 5 choices for transaction fees (fastest, fast, normal, slow, custom). <br> 4. [General] configuration item is selected by default.<br> 5.The user can select the corresponding option according to actual needs.<br> 6.In the [Custom] column, users can enter Gas Price and Gas Limit independently to achieve flexible cost configuration.
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
+
+
 ## Validators
 
 ### Validators List
@@ -209,21 +212,24 @@ For details about importing observed wallets, please refer to the instructions o
 ### My Delegations
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton45.jpg "width =" 250 " style="zoom:80%;" /> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton46.jpg "width =" 250 " style="zoom:80%;" /></div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and delegated amount. <br> 2.Select a specific wallet to check the details including total delegated amount, total rewards and unclaimed rewards. You can delegate and withdraw your delegation. <br>3.Click the [Claim] button to get all unclaimed rewards, and input your wallet. After that, you can see your rewards.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton45.png"width ="300" style="zoom:80%;" /> </div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and delegated amount. <br> 2.Select a specific wallet to check the details including total delegated amount, total rewards and unclaimed rewards. You can delegate and withdraw your delegation. <br>3.Click the [Claim] button to get all unclaimed rewards, and input your wallet. After that, you can see your rewards.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+
+
 
 
 ### Withdraw Delegation
 
 <div>
-<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton47.jpg "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Click You can withdraw your delegation via: [My Delegations]-[Delegation Rec]-[Withdraw]. <br> 2. Enter the number,it should  be greater than or equal to 10ATP. Enter your password to proceed the process.<br> <br> <b> Note </b> <br> 1.Your delegated LAT will be back to your wallet immediately after you withdraw the delegation successfully. <br> 2. When withdrawing all delegations, the delegation rewards will be claimed automatically.
+<div style = "float: left;"> <img src = "/alaya-devdocs/img/en/ATON-user-manual.assets/aton47.png "width =" 300 " style="zoom:80%;" /> </div> <div> <br> 1. Click You can withdraw your delegation via: [My Delegations]-[Delegation Rec]-[Withdraw]. <br> 2. Enter the number,it should  be greater than or equal to 10ATP. Enter your password to proceed the process.<br> <br> <b> Note </b> <br> 1.Your delegated LAT will be back to your wallet immediately after you withdraw the delegation successfully. <br> 2. When withdrawing all delegations, the delegation rewards will be claimed automatically.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+
 
 
 ## Set the Observed Wallet and Cold Wallet

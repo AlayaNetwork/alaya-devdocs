@@ -44,6 +44,10 @@
         "title": "Alaya Command Line Tools",
         "sidebar_label": "Alaya Command line tools"
       },
+	 "Economic_Model": {
+        "title": "Alaya Economic Model",
+        "sidebar_label": "Alaya Economic Model"
+      },
       "WASM_Smart_Contract": {
         "title": "WASM Smart Contract",
         "sidebar_label": "WASM Smart Contract"
@@ -77,6 +81,7 @@
       "Environment Setup": "Environment Setup",
       "Reference Docs": "Reference Docs",
 	  "SDK Docs": "SDK Docs",
+	  "Abount Alaya": "Abount Alaya",
       "Community Projects": "Community Projects"
     }
   },

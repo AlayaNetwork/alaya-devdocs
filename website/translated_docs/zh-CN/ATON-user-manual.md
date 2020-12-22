@@ -42,7 +42,7 @@ title: ATON钱包用户使用手册
 ## ARC20智能合约资产详情
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2. 钱包信息包含余额、单位和【接收】按钮。<br>3. 点击【接收】按钮进入接收页面进行接收转账。<br>4. 页面下半部分是【交易记录】。<br>5. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton102.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前钱包信息。<br>2.钱包信息包含余额、单位，以及【发送】按钮和【接收】按钮。<br>3. 部分钱包拥有发送权限，点击【发送】按钮进入接收页面进行接收转账。<br>4. 点击【接收】按钮进入接收页面进行接收转账。<br>5. 页面下半部分是【交易记录】。<br>6. 页面下半部分是交易记录，点击单条交易记录可以进入交易记录详情。
 
 
 </div>
@@ -145,6 +145,16 @@ title: ATON钱包用户使用手册
 <div style="margin-top:40px;"></div>
 </div>
 
+
+## 选择交易手续费
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton109.png" width="500" style="zoom:80%;" /></div><div><br>1.发送、委托、赎回和领取奖励功能都会产生交易手续费。<br>2.以发送功能为例，点击【交易手续费】，可以进入交易手续费设置页面。<br>3.交易手续费有5种选择（最快、快速、一般、缓慢、自定义）。<br>4.默认选中【一般】配置项。<br>5.用户可以根据实际需要选择相应的选项。<br>6.其中【自定义】一栏用户可以自主输入Gas Price和Gas Limit来实现灵活化的费用配置。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
 ## 节点
 
 ### 查看验证节点列表
@@ -188,7 +198,7 @@ title: ATON钱包用户使用手册
 ### 赎回委托
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.jpg" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10ATP，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton47.png" width="500"style="zoom:80%;" /></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10ATP，输入正确的密码即可完成赎回委托操作。<br><br><b>注意:</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>

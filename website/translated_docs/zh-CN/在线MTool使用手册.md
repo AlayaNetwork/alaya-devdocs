@@ -199,7 +199,7 @@ mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1"
 
 - 参数说明
 
->keystore：发送交易的冷钱包路径
+>keystore：发送转账交易的钱包路径
 >
 >amount：转账金额，单位：ATP
 >

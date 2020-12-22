@@ -16,7 +16,7 @@ USAGE:
    platon.exe [options] command [command options] [arguments...]
 
 VERSION:
-   0.13.2-unstable
+   0.14.0-unstable
 
 COMMANDS:
    account           Manage accounts
@@ -453,4 +453,137 @@ COPYRIGHT:
   >
   >5：TRACE
 
+## alayakey工具使用说明
 
+```conf
+
+alayakey [global options] command [command options] [arguments...]
+
+VERSION:
+   0.14.0-unstable-16aced7d
+
+COMMANDS:
+   generate          generate new keyfile
+   inspect           inspect a keyfile
+   changepassphrase  change the passphrase on a keyfile
+   signmessage       sign a message
+   verifymessage     verify the signature of a signed message
+   genkeypair        generate new private key pair
+   genblskeypair     generate new bls private key pair
+   updateaddress     update hex/bech32 address to mainnet/testnet bech32 address
+   help              Shows a list of commands or help for one command
+   
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+
+```
+
+### 常用命令
+
+1. 生成钱包
+
+```conf
+NAME:
+   alayakey generate - generate new keyfile
+
+USAGE:
+   alayakey generate [command options] [ <keyfile> ]
+
+DESCRIPTION:
+   
+Generate a new keyfile.
+
+If you want to encrypt an existing private key, it can be specified by setting
+--privatekey with the location of the file containing the private key.
+
+
+OPTIONS:
+   --passwordfile value  the file that contains the passphrase for the keyfile
+   --json                output JSON instead of human-readable format
+   --privatekey value    file containing a raw private key to encrypt
+```
+
+可以通过以下命令生成一个新的钱包
+
+```shell
+alayakey generate
+```
+
+也可以使用以下命令将一个privatekey明文加密生成一个钱包文件
+
+```shell
+alayakey generate --privatekey ./prikey --json
+```
+
+2. 生成公私钥对
+
+生成节点公私钥：
+```conf
+NAME:
+   alayakey genkeypair - generate new private key pair
+
+USAGE:
+   alayakey genkeypair [command options] [ ]
+
+DESCRIPTION:
+   
+Generate a new private key pair.
+
+
+OPTIONS:
+   --json  output JSON instead of human-readable format
+```
+
+
+生成节点BLS公私钥
+
+```conf
+NAME:
+   alayakey genblskeypair - generate new bls private key pair
+
+USAGE:
+   alayakey genblskeypair [command options] [  ]
+
+DESCRIPTION:
+   
+Generate a new bls private key pair.
+
+
+OPTIONS:
+   --json  output JSON instead of human-readable format
+```
+
+3. 将任意EIP55/bech32地址转换为alaya地址
+
+```conf
+NAME:
+   alayakey updateaddress - update hex/bech32 address to mainnet/testnet bech32 address
+
+USAGE:
+   alayakey updateaddress [command options] [<address> <address>...]
+
+DESCRIPTION:
+   
+update hex/bech32 address to mainnet/testnet bech32 address.
+
+
+OPTIONS:
+   --json                  output JSON instead of human-readable format
+   --hexAddressFile value  file bech32/hex accounts want to update to mainnet/testnet bech32 address,file like  [hex,hex...]
+```
+
+以下命令将EIP55地址转换为alaya地址
+
+```shell
+alayakey updateaddress 0x1000000000000000000000000000000000000001
+```
+
+此命令支持将任意bech32地址转换为alaya地址，如：
+
+```shell
+alayakey updateaddress lax19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
+originAddress:  lax19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
+main net Address: atp19phpafljm0mgu2fj8mrwyarftpafynxvyuffwh
+other net Address: atx19phpafljm0mgu2fj8mrwyarftpafynxvw64raa
+```
