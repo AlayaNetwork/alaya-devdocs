@@ -59,7 +59,7 @@ Get the source code and put it in the GOPATH path, where `alaya` is the branch n
 ```
 mkdir -p $GOPATH/src/github.com/PlatONnetwork
 cd $GOPATH/src/github.com/PlatONnetwork
-git clone -b alaya https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 - Add bls dependent library to environment variables
@@ -74,10 +74,10 @@ source ~/.bashrc
 ```
 cd $GOPATH/src/github.com/PlatONnetwork/PlatON-Go
 go run build/ci.go install ./cmd/platon
-go run build/ci.go install ./cmd/keytool
+go run build/ci.go install ./cmd/alayakey
 ```
 
-After compiling, `platon`,` keytool` executable files will be generated in the` PlatON-Go/build/bin` directory. Copy these executable files to your working directory and run.
+After compiling, `platon`,` alayakey` executable files will be generated in the` PlatON-Go/build/bin` directory. Copy these executable files to your working directory and run.
 
 > Repeated compilation will overwrite the previously generated executable file.
 
@@ -94,7 +94,7 @@ After compiling, `platon`,` keytool` executable files will be generated in the` 
 **step2.** Get the Alaya source:
 
 ```bash
-git clone -b alaya https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 **step3.** Install dependency library:
@@ -111,13 +111,13 @@ cd PlatON-Go
 make all
 ```
 
-After compiling, a series of executable files such as `platon, keytool` and so on will be generated in the `./build/bin` directory. 
+After compiling, a series of executable files such as `platon, alayakey` and so on will be generated in the `./build/bin` directory. 
 
 **step5.** Copy binary:
 
 ```shell
 sudo cp -f ./build/bin/platon /usr/bin/ 
-sudo cp -f ./build/bin/keytool /usr/bin/
+sudo cp -f ./build/bin/alayakey /usr/bin/
 ```
 
 To this step, congratulations, the source code compilation completed!

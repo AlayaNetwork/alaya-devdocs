@@ -57,7 +57,7 @@ Windows编译环境需要符合以下条件：
 ```
 mkdir -p $GOPATH/src/github.com/PlatONnetwork
 cd $GOPATH/src/github.com/PlatONnetwork
-git clone -b alaya https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 - 添加bls依赖库到环境变量
@@ -72,10 +72,10 @@ source ~/.bashrc
 ```bash
 cd $GOPATH/src/github.com/PlatONnetwork/PlatON-Go
 go run build/ci.go install ./cmd/platon
-go run build/ci.go install ./cmd/keytool
+go run build/ci.go install ./cmd/alayakey
 ```
 
-编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`keytool`可执行文件，将这两个可执行文件拷贝到自己工作目录运行即可。
+编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`alayakey`可执行文件，将这两个可执行文件拷贝到自己工作目录运行即可。
 
 > 重复编译会覆盖之前生成的可执行文件。
 
@@ -92,7 +92,7 @@ go run build/ci.go install ./cmd/keytool
 **step2.** 获取Alaya源码：
 
 ```bash
-git clone -b alaya https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 **step3.** 安装依赖库：
@@ -109,13 +109,13 @@ cd PlatON-Go
 make all
 ```
 
-编译完成之后在`./build/bin`目录下会生成`platon, keytool`等一系列可执行文件。
+编译完成之后在`./build/bin`目录下会生成`platon, alayakey`等一系列可执行文件。
 
 **step5.** 拷贝二进制： 
 
 ```shell
 sudo cp -f ./build/bin/platon /usr/bin/
-sudo cp -f ./build/bin/keytool /usr/bin/
+sudo cp -f ./build/bin/alayakey /usr/bin/
 ```
 
 源码编译成功！
