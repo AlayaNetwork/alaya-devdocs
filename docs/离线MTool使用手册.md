@@ -42,7 +42,7 @@ Double-click `C:\tools\unins000.exe` to uninstall all old versions of MTool and 
 
 **step1. Download the MTool installation package**
 
-On the online machine, copy the link <http://download.alaya.network/alaya/mtool/windows/0.13.2/mtool-setup.exe> ​​to the browser to download the MTool installation package.
+On the online machine, copy the link <http://download.alaya.network/alaya/mtool/windows/0.14.0/mtool-setup.exe> ​​to the browser to download the MTool installation package.
 
 **step2. Install MTool**
 
@@ -59,7 +59,7 @@ Proceed as follows:
 **step1. Download MTool Toolkit**
 
 ``` bash
-wget http://download.alaya.network/alaya/mtool/linux/0.13.2/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.14.0/mtool-client.zip
 ```
 
 **step2. Unzip MTool toolkit**
@@ -499,7 +499,7 @@ mtool-client submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staki
 - Command line
 
 ```bash
-mtool-client submit_versionproposal --newversion 0.13.2 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_versionproposal --newversion 0.14.0 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
