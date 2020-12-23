@@ -29,25 +29,27 @@ Alaya主网络将于北京时间2020年10月24日正式上线对外开放，Chai
 执行以下命令即可启动验证节点加入Alaya主网络：
 
 ```bash
-cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 **提示：**
 
-| **选项**       | **描述**                             |
-| -------------- | ------------------------------------ |
-| --identity     | 指定网络名称                         |
-| --datadir      | 指定 data 目录路径                   |
-| --rpcaddr      | 指定 rpc 服务器地址                  |
-| --rpcport      | 指定 rpc 协议通信端口                |
-| --rpcapi       | 指定节点开放的 rpcapi 名称           |
-| --rpc          | 指定 http-rpc 通讯方式               |
-| --nodekey      | 指定节点私钥文件                     |
-| --cbft.blskey  | 指定节点 bls 私钥文件                |
-| --alaya        | 指定连接到Alaya主网络                |
-| --alayatestnet | 指定连接到Alaya测试网络              |
-| --syncmode     | fast：快速同步模式，full：全同步模式 |
-| –db.nogc       | 开启归档模式                         |
+| **选项**       | **描述**                                                     |
+| -------------- | ------------------------------------------------------------ |
+| --identity     | 指定网络名称                                                 |
+| --datadir      | 指定 data 目录路径                                           |
+| --port         | p2p端口号                                                    |
+| --rpcaddr      | 指定 rpc 服务器地址                                          |
+| --rpcport      | 指定 rpc 协议通信端口                                        |
+| --rpcapi       | 指定节点开放的 rpcapi 名称                                   |
+| --rpc          | 指定 http-rpc 通讯方式                                       |
+| --nodekey      | 指定节点私钥文件                                             |
+| --cbft.blskey  | 指定节点 bls 私钥文件                                        |
+| --verbosity    | 日志级别，0: CRIT;  1: ERROR； 2: WARN;  3: INFO;  4: DEBUG； 5: TRACE |
+| --alaya        | 指定连接到Alaya主网络                                        |
+| --alayatestnet | 指定连接到Alaya测试网络                                      |
+| --syncmode     | fast：快速同步模式，full：全同步模式                         |
+| –db.nogc       | 开启归档模式                                                 |
 
 更多参数意义通过`platon --help`命令查看。
 
