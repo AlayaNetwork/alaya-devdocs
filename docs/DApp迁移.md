@@ -66,7 +66,7 @@ sidebar_label: DApp Migrate
 
 Samurai为了跟metamask命名不冲突，把metamask的window.ethereum修改成了window.alaya，另外，`eth_`开头的接口改成了`platon_`，例如：eth_requestAccounts修改成了platon_requestAccounts。所以连接钱包的代码需要修改相对应的代码。Samurai开发者文档请参考：https://github.com/AlayaNetwork/Samurai/blob/main/docs/develop-manual.md 。
 
-在uniswap的迁移过程中，修改了项目https://github.com/NoahZinsmeister/web3-react的injected-connector包，具体修改请参考github提交 https://github.com/AlayaNetwork/aswap-web3-react/commits/alaya-v6.1.1 。
+在uniswap的迁移过程中，修改了项目 https://github.com/NoahZinsmeister/web3-react 的injected-connector包，具体修改请参考github提交 https://github.com/AlayaNetwork/aswap-web3-react/commits/alaya-v6.1.1 。
 
 ### 依赖包的修改
 
