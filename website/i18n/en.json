@@ -52,6 +52,10 @@
         "title": "WASM Smart Contract",
         "sidebar_label": "WASM Smart Contract"
       },
+      "DApp_migrate": {
+        "title": "DApp Migrate",
+        "sidebar_label": "DApp Migrate"
+      },
       "Join_Alaya_NetWork": {
         "title": "Join the Alaya network",
         "sidebar_label": "Join the Alaya network"

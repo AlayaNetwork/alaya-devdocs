@@ -56,7 +56,11 @@
         "title": "Alaya经济模型",
         "sidebar_label": "Alaya经济模型"
       },
-	  "WASM_Smart_Contract": {
+	  "DApp_migrate": {
+        "title": "DApp迁移",
+        "sidebar_label": "DApp迁移"
+      },
+      "WASM_Smart_Contract": {
         "title": "WASM智能合约",
         "sidebar_label": "WASM智能合约"
       },
