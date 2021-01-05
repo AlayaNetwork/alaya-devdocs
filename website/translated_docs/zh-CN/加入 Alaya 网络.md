@@ -6,7 +6,7 @@ sidebar_label: 加入 Alaya 网络
 
 ## 简介
 
-Alaya主网络将于北京时间2020年10月24日正式上线对外开放，ChainID为201018；另外一个是于北京时间 2021年1月15日正式上线的用来对开发者开放的Alaya测试网络，ChainID待定。
+Alaya主网络将于北京时间2020年10月24日正式上线对外开放，ChainID为201018；另外一个是于北京时间 2021年1月15日正式上线的用来对开发者开放的Alaya测试网络，ChainID为201030。
 
 
 
@@ -18,7 +18,7 @@ Alaya主网络将于北京时间2020年10月24日正式上线对外开放，Chai
 
 本章节假设服务器为 Ubuntu18.04，可执行文件所在工作目录为 `~/platon-node`，注意后续所有命令行操作均在工作目录下进行。
 
-如需要加入Alaya主网络，请参考[加入Alaya主网络](#加入Alaya主网络)；如需要加入Alaya测试网络，请参考[加入Alaya测试网络](#加入Alaya测试网络)；
+如需要加入Alaya主网络，请参考[加入Alaya主网络](#加入alaya主网络)；如需要加入Alaya测试网络，请参考[加入Alaya测试网络](#加入alaya测试网络)；
 
 
 
@@ -73,15 +73,28 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
           "cbft": {
               "initialNodes": [
                 {
-                      "node":"enode://4fcc251cf6bf3ea53a748971a223f5676225ee4380b65c7889a2b491e1551d45fe9fcc19c6af54dcf0d5323b5aa8ee1d919791695082bae1f86dd282dba4150f@0.0.0.0:16789",
-                      "blsPubKey":"d341a0c485c9ec00cecf7ea16323c547900f6a1bacb9daacb00c2b8bacee631f75d5d31b75814b7f1ae3a4e18b71c617bc2f230daa0c893746ed87b08b2df93ca4ddde2816b3ac410b9980bcc048521562a3b2d00e900fd777d3cf88ce678719"
+                  "node":"enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@testnode1.alaya.network:16789",
+                  "blsPubKey":"821043f4df086533691f0445deb51cf524f45ab7a855a3f1a79fa0f65ceb1cabd2674bbe4575c645dfbd878734ad0910568db5aebcd46bfd72d50c9007c1328559fb1e7de876990ab7c7d3bc7cb9e291da6fe28ba185de5fe7f99566de3b8381"
+                },
+                {
+                  
+                  "node":"enode://01bdfadca94b45250437d4c1be61a555381a05a0227257c4be1941b0b83692a98fe9fccb9e412509c3a0ad9cbcdb8de0cfafd57ab230bff1207313b7f99fa3e3@testnode2.alaya.network:16789",
+                  "blsPubKey":"9a0e9a50bbaadbea9687710ae50f21daf734e7c66151728b948cc11514f483293487368eefd2057168814bef18b572054766a78c219b7d37967ed61cb75c8dea6e63e879972494950e30808092ef3f68ba5b5e252e8e4f270d702a1137128f90"
+                },
+                {
+                  "node":"enode://a192ebbb32c0810d17b2b6bcef89761a6a4885bb2a73bc8d44563cd510e8ae64cd710d942b3f6aa504aeea1983c60ef030d743f0373c4dc813436435ca6dd2a7@testnode3.alaya.network:16789",
+                  "blsPubKey":"0c13a22bc66da7502184b6561aaad3d48ce519dd4fa91cdd5c08b31973d273d1317e714f07f99996e6691c13e3c4e70cd9bc2b0c4bc9f1f8ef2ac7d9d0f35f8a508273d00334ae687fa81c8c54c6242c73b3e91016051c70e19923e2fb1f628f"
+                },
+                {
+                  "node":"enode://c4d723c6a227346d5a8704e7bc65eb9eb8dc1022b8a90dc9bb276a6c3accb01513317404ff82fe439b0948bc1522147c413e61f6e1bc8b4233669286cf238f51@testnode4.alaya.network:16789",
+                  "blsPubKey":"f641c5231a29987b1e03464ea81b408a1fddf885e35c0733bf4806b7b26d7d5a5d15c9dc1e5c43f8814912aa709e3615c081b61e7b984642a1029b3ce609ff16b04e90f93ebfeee3ad1b83c287d8dfa42439fdbaee92769a85a40b37c64d520f"
                 }
               ],
               "amount": 10,
-              "period": 10000,
+              "period": 20000,
               "validatorMode": "ppos"
           },
-          "genesisVersion": 3328
+          "genesisVersion": 3584
       },
       "economicModel":{
           "common":{
@@ -93,7 +106,7 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
               "stakeThreshold": 10000000000000000000000,
               "operatingThreshold": 1000000000000000000,
               "maxValidators": 101,
-              "unStakeFreezeDuration": 8,
+              "unStakeFreezeDuration": 168,
               "rewardPerMaxChangeRange": 500,
               "rewardPerChangeInterval": 10
           },
@@ -102,9 +115,9 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
              "duplicateSignReportReward": 50,
              "maxEvidenceAge":7,
              "slashBlocksReward":250,
-             "zeroProduceCumulativeTime":30,
-             "zeroProduceNumberThreshold":1,
-             "zeroProduceFreezeDuration":7
+  		   "zeroProduceCumulativeTime":30,
+  		   "zeroProduceNumberThreshold":1,
+  		   "zeroProduceFreezeDuration":56
           },
            "gov": {
               "versionProposalVoteDurationSeconds": 1209600,
@@ -121,25 +134,29 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
           "reward":{
               "newBlockRate": 50,
               "platonFoundationYear": 2,
-              "increaseIssuanceRatio": 500
+              "increaseIssuanceRatio": 500,
+  			"theNumberOfDelegationsReward":20
+          },
+          "restricting":{
+              "minimum_release":80000000000000000000
           },
           "innerAcc":{
-              "platonFundAccount": "atx10spacq8cz76y2n60pl7sg5yazncmjuus7n6hw2",
-              "platonFundBalance": 0,
-              "cdfAccount": "atx17tfkaghs4vded6mz6k53xyv5cvqsl63h5gq7cw",
-              "cdfBalance": 4000000000000000000000000
+              "platonFundAccount": "atx1zpez9rfnttgkunjtdevr50tmckcscknnn20097",
+              "platonFundBalance": 2500000000000000000000000,
+              "cdfAccount": "atx1kwj9fldfqt65y4twy4lm3skddeu805dv6ca53d",
+              "cdfBalance": 500000000000000000000000
           }
       },
       "nonce": "0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23",
-      "timestamp": "0x5bc94a8a",
+      "timestamp": "0x17538ac5720",
       "extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
       "gasLimit": "4712388",
       "alloc": {
           "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr75cqxf": {
-              "balance": "1000000000000000000000000"
+              "balance": "2000000000000000000000000"
           },
-          "atx1zkrxx6rf358jcvr7nruhyvr9hxpwv9unj58er9": {
-              "balance": "9718188019000000000000000000"
+          "atx1suw7ycupkr3g0a6sch29tddfz7sg98svnqu5mn": {
+              "balance": "100000000000000000000000000"
           }
       },
       "number": "0x0",
@@ -169,7 +186,7 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 执行以下命令即可启动验证节点加入Alaya测试网络：
 
 ```shell
-cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@testnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 
