@@ -102,7 +102,10 @@ Windows和Ubuntu下MTool目录使用环境变量有所区别：
 
 ##  MTool命令详解
 
-> 注意：后续命令是Ubuntu下的命令格式，Windows下需要把`$MTOOLDIR`修改成`%MTOOLDIR%`。
+> **注意：**
+>
+> - 后续命令是Ubuntu下的命令格式，Windows下需要把`$MTOOLDIR`修改成`%MTOOLDIR%`；
+> - 如果连接的是测试网，需要修改MTool安装目录下的config.properties配置文件的chainid为201030。
 
 ### 创建钱包
 
