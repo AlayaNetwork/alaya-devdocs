@@ -67,7 +67,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Join the Alaya network</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
-<p>The Alaya main network will be officially launched on October 24, 2020 Beijing time, and the ChainID is 201018.</p>
+<p>The Alaya main network will be officially launched on October 24, 2020 Beijing time, and the ChainID is 201018; The other is the Alaya beta network, which will be available to developers on January 15, 2021 (Chainid 201030).</p>
 <h2><a class="anchor" aria-hidden="true" id="preparation"></a><a href="#preparation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Preparation</h2>
 <p>Before joining the Alaya public network, please ensure that the server has the following conditions:</p>
 <ul>
@@ -102,7 +102,127 @@
 <tr><td>--db.nogc</td><td>Enable archive mode</td></tr>
 </tbody>
 </table>
-<p>See more parameters with the command <code>platon --help</code></p>
+<p>See more parameters with the command <code>platon --help</code>��</p>
+<h2><a class="anchor" aria-hidden="true" id="join-the-alaya-test-network"></a><a href="#join-the-alaya-test-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Join the Alaya Test Network</h2>
+<p>Anyone and any organization can join the Alaya Test network.</p>
+<h3><a class="anchor" aria-hidden="true" id="initialize-the-genesis-block"></a><a href="#initialize-the-genesis-block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initialize the genesis block</h3>
+<ul>
+<li><p>Save the genesis block file</p>
+<p>Save the following to the platon.json file:</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"config"</span>: {
+        <span class="hljs-attr">"chainId"</span>: <span class="hljs-number">201030</span>,
+        <span class="hljs-attr">"eip155Block"</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">"cbft"</span>: {
+            <span class="hljs-attr">"initialNodes"</span>: [
+              {
+                <span class="hljs-attr">"node"</span>:<span class="hljs-string">"enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@testnode1.alaya.network:16789"</span>,
+                <span class="hljs-attr">"blsPubKey"</span>:<span class="hljs-string">"821043f4df086533691f0445deb51cf524f45ab7a855a3f1a79fa0f65ceb1cabd2674bbe4575c645dfbd878734ad0910568db5aebcd46bfd72d50c9007c1328559fb1e7de876990ab7c7d3bc7cb9e291da6fe28ba185de5fe7f99566de3b8381"</span>
+              },
+              {
+                
+                <span class="hljs-attr">"node"</span>:<span class="hljs-string">"enode://01bdfadca94b45250437d4c1be61a555381a05a0227257c4be1941b0b83692a98fe9fccb9e412509c3a0ad9cbcdb8de0cfafd57ab230bff1207313b7f99fa3e3@testnode2.alaya.network:16789"</span>,
+                <span class="hljs-attr">"blsPubKey"</span>:<span class="hljs-string">"9a0e9a50bbaadbea9687710ae50f21daf734e7c66151728b948cc11514f483293487368eefd2057168814bef18b572054766a78c219b7d37967ed61cb75c8dea6e63e879972494950e30808092ef3f68ba5b5e252e8e4f270d702a1137128f90"</span>
+              },
+              {
+                <span class="hljs-attr">"node"</span>:<span class="hljs-string">"enode://a192ebbb32c0810d17b2b6bcef89761a6a4885bb2a73bc8d44563cd510e8ae64cd710d942b3f6aa504aeea1983c60ef030d743f0373c4dc813436435ca6dd2a7@testnode3.alaya.network:16789"</span>,
+                <span class="hljs-attr">"blsPubKey"</span>:<span class="hljs-string">"0c13a22bc66da7502184b6561aaad3d48ce519dd4fa91cdd5c08b31973d273d1317e714f07f99996e6691c13e3c4e70cd9bc2b0c4bc9f1f8ef2ac7d9d0f35f8a508273d00334ae687fa81c8c54c6242c73b3e91016051c70e19923e2fb1f628f"</span>
+              },
+              {
+                <span class="hljs-attr">"node"</span>:<span class="hljs-string">"enode://c4d723c6a227346d5a8704e7bc65eb9eb8dc1022b8a90dc9bb276a6c3accb01513317404ff82fe439b0948bc1522147c413e61f6e1bc8b4233669286cf238f51@testnode4.alaya.network:16789"</span>,
+                <span class="hljs-attr">"blsPubKey"</span>:<span class="hljs-string">"f641c5231a29987b1e03464ea81b408a1fddf885e35c0733bf4806b7b26d7d5a5d15c9dc1e5c43f8814912aa709e3615c081b61e7b984642a1029b3ce609ff16b04e90f93ebfeee3ad1b83c287d8dfa42439fdbaee92769a85a40b37c64d520f"</span>
+              }
+            ],
+            <span class="hljs-attr">"amount"</span>: <span class="hljs-number">10</span>,
+            <span class="hljs-attr">"period"</span>: <span class="hljs-number">20000</span>,
+            <span class="hljs-attr">"validatorMode"</span>: <span class="hljs-string">"ppos"</span>
+        },
+        <span class="hljs-attr">"genesisVersion"</span>: <span class="hljs-number">3584</span>
+    },
+    <span class="hljs-attr">"economicModel"</span>:{
+        <span class="hljs-attr">"common"</span>:{
+            <span class="hljs-attr">"maxEpochMinutes"</span>:<span class="hljs-number">360</span>,
+            <span class="hljs-attr">"maxConsensusVals"</span>:<span class="hljs-number">25</span>,
+            <span class="hljs-attr">"additionalCycleTime"</span>:<span class="hljs-number">525960</span>
+        },
+        <span class="hljs-attr">"staking"</span>:{
+            <span class="hljs-attr">"stakeThreshold"</span>: <span class="hljs-number">10000000000000000000000</span>,
+            <span class="hljs-attr">"operatingThreshold"</span>: <span class="hljs-number">1000000000000000000</span>,
+            <span class="hljs-attr">"maxValidators"</span>: <span class="hljs-number">101</span>,
+            <span class="hljs-attr">"unStakeFreezeDuration"</span>: <span class="hljs-number">168</span>,
+            <span class="hljs-attr">"rewardPerMaxChangeRange"</span>: <span class="hljs-number">500</span>,
+            <span class="hljs-attr">"rewardPerChangeInterval"</span>: <span class="hljs-number">10</span>
+        },
+        <span class="hljs-attr">"slashing"</span>:{
+           <span class="hljs-attr">"slashFractionDuplicateSign"</span>: <span class="hljs-number">10</span>,
+           <span class="hljs-attr">"duplicateSignReportReward"</span>: <span class="hljs-number">50</span>,
+           <span class="hljs-attr">"maxEvidenceAge"</span>:<span class="hljs-number">7</span>,
+           <span class="hljs-attr">"slashBlocksReward"</span>:<span class="hljs-number">250</span>,
+         <span class="hljs-attr">"zeroProduceCumulativeTime"</span>:<span class="hljs-number">30</span>,
+         <span class="hljs-attr">"zeroProduceNumberThreshold"</span>:<span class="hljs-number">1</span>,
+         <span class="hljs-attr">"zeroProduceFreezeDuration"</span>:<span class="hljs-number">56</span>
+        },
+         <span class="hljs-attr">"gov"</span>: {
+            <span class="hljs-attr">"versionProposalVoteDurationSeconds"</span>: <span class="hljs-number">1209600</span>,
+            <span class="hljs-attr">"versionProposalSupportRate"</span>: <span class="hljs-number">6670</span>,
+            <span class="hljs-attr">"textProposalVoteDurationSeconds"</span>: <span class="hljs-number">1209600</span>,
+            <span class="hljs-attr">"textProposalVoteRate"</span>: <span class="hljs-number">5000</span>,
+            <span class="hljs-attr">"textProposalSupportRate"</span>: <span class="hljs-number">6670</span>,          
+            <span class="hljs-attr">"cancelProposalVoteRate"</span>: <span class="hljs-number">5000</span>,
+            <span class="hljs-attr">"cancelProposalSupportRate"</span>: <span class="hljs-number">6670</span>,
+            <span class="hljs-attr">"paramProposalVoteDurationSeconds"</span>: <span class="hljs-number">1209600</span>,
+            <span class="hljs-attr">"paramProposalVoteRate"</span>: <span class="hljs-number">5000</span>,
+            <span class="hljs-attr">"paramProposalSupportRate"</span>: <span class="hljs-number">6670</span>      
+        },
+        <span class="hljs-attr">"reward"</span>:{
+            <span class="hljs-attr">"newBlockRate"</span>: <span class="hljs-number">50</span>,
+            <span class="hljs-attr">"platonFoundationYear"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"increaseIssuanceRatio"</span>: <span class="hljs-number">500</span>,
+          <span class="hljs-attr">"theNumberOfDelegationsReward"</span>:<span class="hljs-number">20</span>
+        },
+        <span class="hljs-attr">"restricting"</span>:{
+            <span class="hljs-attr">"minimum_release"</span>:<span class="hljs-number">80000000000000000000</span>
+        },
+        <span class="hljs-attr">"innerAcc"</span>:{
+            <span class="hljs-attr">"platonFundAccount"</span>: <span class="hljs-string">"atx1zpez9rfnttgkunjtdevr50tmckcscknnn20097"</span>,
+            <span class="hljs-attr">"platonFundBalance"</span>: <span class="hljs-number">2500000000000000000000000</span>,
+            <span class="hljs-attr">"cdfAccount"</span>: <span class="hljs-string">"atx1kwj9fldfqt65y4twy4lm3skddeu805dv6ca53d"</span>,
+            <span class="hljs-attr">"cdfBalance"</span>: <span class="hljs-number">500000000000000000000000</span>
+        }
+    },
+    <span class="hljs-attr">"nonce"</span>: <span class="hljs-string">"0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"0x17538ac5720"</span>,
+    <span class="hljs-attr">"extraData"</span>: <span class="hljs-string">"0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-attr">"gasLimit"</span>: <span class="hljs-string">"4712388"</span>,
+    <span class="hljs-attr">"alloc"</span>: {
+        <span class="hljs-attr">"atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr75cqxf"</span>: {
+            <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"2000000000000000000000000"</span>
+        },
+        <span class="hljs-attr">"atx1suw7ycupkr3g0a6sch29tddfz7sg98svnqu5mn"</span>: {
+            <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"100000000000000000000000000"</span>
+        }
+    },
+    <span class="hljs-attr">"number"</span>: <span class="hljs-string">"0x0"</span>,
+    <span class="hljs-attr">"gasUsed"</span>: <span class="hljs-string">"0x0"</span>,
+    <span class="hljs-attr">"parentHash"</span>: <span class="hljs-string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>
+}
+</code></pre></li>
+</ul>
+<ul>
+<li><p>Initialize the genesis block file</p>
+<p>Executive command��</p>
+<pre><code class="hljs css language-shell">cd ~/platon-node &amp;&amp; platon --datadir ./data init platon.json
+</code></pre>
+<blockquote>
+<p>Description:</p>
+<p>A prompt for <code>Successfully wrote genesis state</code> indicates that the initialization creation information is complete.</p>
+</blockquote></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="start-as-a-validator-node-1"></a><a href="#start-as-a-validator-node-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Start as a validator node</h3>
+<p><strong>Execute the following command to join the Alaya as a validator node</strong></p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> ~/platon-node/ &amp;&amp; nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi <span class="hljs-string">"db,platon,net,web3,admin,personal"</span> --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@testnode1.alaya.network:16789 --syncmode <span class="hljs-string">"fast"</span> &gt; ./data/platon.log 2&gt;&amp;1 &amp;
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="view-node-status"></a><a href="#view-node-status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View node status</h2>
 <p>When Alaya is successfully started, under normal circumstances, it will automatically establish a connection with the node closest to it through the node discovery protocol. After the connection is successful, block synchronization will be started. You can determine whether joining the network successfully by looking at the peers of the node and confirming whether the block height of the node is increasing.</p>
 <p>If the key is not generated in advance, the node is automatically generated in the node's data directory at startup. If it is automatically generated, only the node private key and BLS private key will be generated, and the relevant public key will not be automatically generated.</p>
 <h3><a class="anchor" aria-hidden="true" id="enter-alaya-console"></a><a href="#enter-alaya-console" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enter <code>Alaya</code> console</h3>
@@ -117,7 +237,7 @@
 </code></pre>
 <p>A series of Alaya network nodes appear in the node list and the block height is increasing, which means the connection is successful! (Since the new node needs to be synchronized, there may be a delay)</p>
 <p>Type exit to exit the console.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/alaya-devdocs/en/Install_Node"><span class="arrow-prev">← </span><span>Install and Deploy a Node</span></a><a class="docs-next button" href="/alaya-devdocs/en/Become_Verification_Node"><span>Upgrade to Validator Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#preparation">Preparation</a></li><li><a href="#join-the-alaya-main-network">Join the Alaya Main Network</a><ul class="toc-headings"><li><a href="#start-as-a-validator-node">Start as a validator node</a></li><li><a href="#enter-alaya-console">Enter <code>Alaya</code> console</a></li><li><a href="#view-peers-of-a-node">View peers of a node</a></li><li><a href="#view-the-current-block-height">View the current block height</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a class="nav-home"><img src="/alaya-devdocs/img/alaya-logo.svg" alt="Alaya" width="66" height="58"/></a><div><a href="https://www.alaya.network/?lang=en">Alaya network</a><a href="https://latticex.foundation/home">LatticeX.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2020 Alaya NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/alaya-devdocs/en/Install_Node"><span class="arrow-prev">← </span><span>Install and Deploy a Node</span></a><a class="docs-next button" href="/alaya-devdocs/en/Become_Verification_Node"><span>Upgrade to Validator Node</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#preparation">Preparation</a></li><li><a href="#join-the-alaya-main-network">Join the Alaya Main Network</a><ul class="toc-headings"><li><a href="#start-as-a-validator-node">Start as a validator node</a></li></ul></li><li><a href="#join-the-alaya-test-network">Join the Alaya Test Network</a><ul class="toc-headings"><li><a href="#initialize-the-genesis-block">Initialize the genesis block</a></li><li><a href="#start-as-a-validator-node-1">Start as a validator node</a></li></ul></li><li><a href="#view-node-status">View node status</a><ul class="toc-headings"><li><a href="#enter-alaya-console">Enter <code>Alaya</code> console</a></li><li><a href="#view-peers-of-a-node">View peers of a node</a></li><li><a href="#view-the-current-block-height">View the current block height</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a class="nav-home"><img src="/alaya-devdocs/img/alaya-logo.svg" alt="Alaya" width="66" height="58"/></a><div><a href="https://www.alaya.network/?lang=en">Alaya network</a><a href="https://latticex.foundation/home">LatticeX.Foundation</a><a href="https://forum.latticex.foundation/">Forum</a></div><div class="gitstar"><a class="github-button" href="https://github.com/PlatONnetwork/PlatON-Go" data-color-scheme="no-preference: light; light: light; dark: light;" data-icon="octicon-star" data-size="small" data-show-count="true" aria-label="Star PlatONnetwork/PlatON-Go on GitHub">Star</a></div></section><section class="copyright">COPYRIGHT  © 2021 Alaya NETWORK.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
