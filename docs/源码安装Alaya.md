@@ -59,7 +59,7 @@ Get the source code and put it in the GOPATH path, where `alaya` is the branch n
 ```
 mkdir -p $GOPATH/src/github.com/PlatONnetwork
 cd $GOPATH/src/github.com/PlatONnetwork
-git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 - Add bls dependent library to environment variables
@@ -94,7 +94,7 @@ After compiling, `platon`,` alayakey` executable files will be generated in the`
 **step2.** Get the Alaya source:
 
 ```bash
-git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 **step3.** Install dependency library:
