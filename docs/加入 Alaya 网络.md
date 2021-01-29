@@ -52,7 +52,7 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 | --syncmode     | fast: Fast synchronization mode, full: All synchronous mode  |
 | --db.nogc      | Enable archive mode                                          |
 
-See more parameters with the command `platon --help`£»
+See more parameters with the command `platon --help`;
 
 ## Join the Alaya Test Network
 
@@ -168,7 +168,7 @@ Anyone and any organization can join the Alaya Test network.
 
 - Initialize the genesis block file
 
-   Executive command£º
+   Executive command:
 
   ```shell
   cd ~/platon-node && platon --datadir ./data init platon.json

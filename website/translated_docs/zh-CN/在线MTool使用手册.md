@@ -41,7 +41,7 @@ mtool-client --version
 
 **step1. 下载MTool安装包**
 
-在在线机器上，复制链接<http://download.alaya.network/alaya/mtool/windows/0.14.0/mtool-setup.exe> 到浏览器下载MTool安装包。
+在在线机器上，复制链接<http://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe> 到浏览器下载MTool安装包。
 
 **step2. 安装MTool**
 
@@ -58,7 +58,7 @@ mtool-client --version
 **step1. 下载MTool工具包**
 
 ``` bash
-wget http://download.alaya.network/alaya/mtool/linux/0.14.0/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
 ```
 
 **step2. 解压MTool工具包**
@@ -313,6 +313,8 @@ SUCCESS
 >
 > restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
 >
+> autoamount：不少于10000atp-优先使用锁仓余额质押，若锁仓余额不足质押金，再使用自由金额质押
+>
 > benefit_address：验证节点收益地址
 >
 > delegated_reward_rate：委托奖励比例，单位：万分比，整数，范围\[0,10000]，如输入5000，表示分红比例为50%
@@ -408,7 +410,7 @@ mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/stak
 - 执行命令
 
 ```bash
-mtool-client submit_versionproposal --newversion 0.14.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明

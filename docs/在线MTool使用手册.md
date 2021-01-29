@@ -34,7 +34,7 @@ Double-click `C:\tools\unins000.exe` to uninstall all old versions of MTool and 
 
 **Step1. Download MTool installation package**
 
-On the online machine, copy the link http://download.alaya.network/alaya/mtool/windows/0.14.0/mtool-setup.exe  to the browser and download the MTool installation package.
+On the online machine, copy the link http://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe  to the browser and download the MTool installation package.
 
 **Step2. Install MTool**
 
@@ -51,7 +51,7 @@ Proceed as follows:
 **Step1. Download MTool toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.14.0/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
 ```
 
 **Step2. Extract the MTool toolkit**
@@ -296,6 +296,8 @@ SUCCESS
 >
 > restrictedamount: not less than 10000atp- staking threshold, no more than 8 decimal points (staking using locked balance)
 >
+> autoamount: Not less than 10000atp-Priority to use the lock-up balance staking, if the lock-up balance is not enough for the staking deposit, then use free amount staking
+>
 > benefit_address: benefit account to receive block-packing reward and staking reward
 >
 > delegated_reward_rate：Delegated bonus ratio, type is integer range is \[0,10000\], unit: ten thousand percent, e.g. enter 5000, it means the bonus ratio is 50%
@@ -380,7 +382,7 @@ mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/stak
 - Command line
 
 ```bash
-mtool-client submit_versionproposal --newversion 0.14.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description

@@ -57,7 +57,7 @@ Windows编译环境需要符合以下条件：
 ```
 mkdir -p $GOPATH/src/github.com/PlatONnetwork
 cd $GOPATH/src/github.com/PlatONnetwork
-git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 - 添加bls依赖库到环境变量
@@ -92,7 +92,7 @@ go run build/ci.go install ./cmd/alayakey
 **step2.** 获取Alaya源码：
 
 ```bash
-git clone -b alaya-0.14.0 https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 **step3.** 安装依赖库：
