@@ -3,7 +3,7 @@ id: ATON-user-manual
 title: ATON Wallet User Manual
 ---
 
-## Download TEST
+## Download
 
 <div> <br/><a href="https://platon.network/developer/?lang=en#aton" target="_blank">Click it to download the latest version of ATON</a>
 </div>
