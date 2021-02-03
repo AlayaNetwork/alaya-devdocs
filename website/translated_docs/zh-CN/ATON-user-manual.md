@@ -22,10 +22,12 @@ title: ATON钱包用户使用手册
 ## 钱包资产
 
 <div>
-<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址，以及【切换钱包】按钮。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建和导入钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP资产详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/aton100.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 在存在钱包的情况下，钱包资产主页会显示一个有效的钱包及其资产信息。<br>2. ①顶部部分是当前钱包简要信息。<br>3. ②钱包简要信息包含钱包名和钱包地址，以及【切换钱包】按钮。<br>4. ③点击【复制】按钮可以复制当前钱包的地址。<br>5. ④点击【钱包管理】按钮可以对钱包进行管理。<br>6. ⑤顶部左上角显示当前钱包所在节点信息，点击可以切换节点。<br>7. ⑥点击【...】可创建和导入钱包，点击扫一扫可扫描二维码。<br>8. 页面下半部分是【资产列表】。<br>9. ⑦第一条是ATP数据，可以看到单位和余额，点击可以进入ATP资产详情页面。<br>12. ⑧ARC20智能合约数据，可以看到单位和余额，点击可以进入ARC20智能合约资产详情页面。<br>13. “收藏”页签为ARC721智能合约数据，点击可以进入ARC721智能合约资产列表页面。
+
 
 
 </div>
+
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
@@ -48,6 +50,66 @@ title: ATON钱包用户使用手册
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+</div>
+
+## ARC721智能合约
+
+### ARC721智能合约资产列表
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/paints1.png" width="300" style="zoom:80%;"  /></div> <div><br>点击其中一个ARC721资产，可以进入该ARC721资产详情页面。
+
+
+
+</div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+
+</div>
+
+### ARC721智能合约资产详情
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/paints2.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前ARC721资产信息。<br>2. 页面下半部分是当前钱包拥有的ARC721资产列表，点击单条资产图片可以进入收藏详情。
+
+
+
+</div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+
+</div>
+
+
+
+### ARC721智能合约收藏品详情
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/paints3.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 顶部部分是当前ARC721智能合约收藏品名称和ID。<br>2. 页面下半部分是当前收藏的详情、最近交易记录。<br>3.底部是发送该收藏品的按钮，点击后，进入发送页面，可以将该收藏品发送给其他地址。
+
+</div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+
+</div>
+
+
+
+### ARC721智能合约收藏品交易记录
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/paints4.png" width="300" style="zoom:80%;"  /></div> <div><br>1. 点击“最近交易”可以查看到该收藏品的交易记录列表。<br>2. 点击某一条交易记录，可以查看到交易的详情。
+
+
+
+</div>
+
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+
 </div>
 
 ## 钱包备份
@@ -144,6 +206,15 @@ title: ATON钱包用户使用手册
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+## 发送ARC721智能合约收藏品
+
+<div>
+<div style="float:left;"><img src="/alaya-devdocs/img/zh-CN/ATON-manual-cn.assets/paints5.png" width="500" style="zoom:80%;" /></div><div><br>1.在ARC721智能合约的收藏品详情页，点击【发送】栏。<br>2.输入有效的钱包地址，或者扫描钱包二维码进行地址的自动填充，或者通过地址簿选择本地已保存的钱包地址。<br>3.选择交易手续费，可通过点击自由调节更便宜或者更快捷的手续费。<br>4.点击【下一步】，确认交易信息，点击【发送交易】输入正确的钱包密码，即可发送交易至区块链网络。
+</div>
+<div style="clear:both"></div>
+<div style="margin-top:40px;"></div>
+</div>
+
 
 
 ## 选择交易手续费
