@@ -36,7 +36,7 @@
         "title": "OnLine MTool Tutorials",
         "sidebar_label": "OnLine MTool Tutorials"
       },
-	  "OffLine_MTool_Manual": {
+      "OffLine_MTool_Manual": {
         "title": "OffLine MTool Tutorials",
         "sidebar_label": "OffLine MTool Tutorials"
       },
@@ -44,7 +44,7 @@
         "title": "Alaya Command Line Tools",
         "sidebar_label": "Alaya Command line tools"
       },
-	 "Economic_Model": {
+      "Economic_Model": {
         "title": "Alaya Economic Model",
         "sidebar_label": "Alaya Economic Model"
       },
