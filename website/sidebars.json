@@ -6,7 +6,7 @@
 	"Environment Setup":["Install_Alaya","Build_Private_Chain"],
 	"Reference Docs":["EVM_Smart_Contract","WASM_Smart_Contract","DApp_migrate"],
 	"SDK Docs": ["Java_SDK","JS_SDK","Json_Rpc"],
-	"Abount Alaya":["Alaya_Overall_Solution","Alaya_Solution", "Alaya_Economic_Plan", "Alaya_Economic_Model","Alaya_Governance_Solution","Secure_Multi_Party_Computation","Verifiable_Computation"],
+	"Abount Alaya":["Alaya_Overall_Solution","Alaya_Solution", "Alaya_Economic_Model","Alaya_Governance_Solution","Secure_Multi_Party_Computation","Verifiable_Computation"],
 	"Community Projects":["community"]
   }
 }
