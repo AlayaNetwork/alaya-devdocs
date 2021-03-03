@@ -52,6 +52,13 @@ sidebar_label: Alaya开发者文档
 ## 所有人
 <div class="card-wrap">
     <div class="homepage-card">
+        <img src="/alaya-devdocs/img/about.svg">
+        <a href="/alaya-devdocs/zh-CN/Alaya_Overall_Solution" class="card-title">关于Alaya</a>
+        <div class="card-description">
+        学习更多关于Alaya的共识、经济模型、治理、隐私计算等技术
+        </div>
+    </div>
+    <div class="homepage-card">
         <img src="/alaya-devdocs/img/community.svg">
         <a href="/alaya-devdocs/zh-CN/community" class="card-title">社区项目</a>
         <div class="card-description">

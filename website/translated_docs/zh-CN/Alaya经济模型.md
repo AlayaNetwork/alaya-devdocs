@@ -1,16 +1,16 @@
 ---
-id: Economic_Model
+id: Alaya_Economic_Model
 title: Alaya经济模型
 sidebar_label: Alaya经济模型
 ---
 
 ## 1 关于Alaya网络
 
-PlatON致力于成为全球新一代分布式金融基础设施，经过长达两年半的迭代开发，又经历了八个月的Byleyworld测试网的技术测试，我们决定进一步向分布式金融的产品延伸，区块链技术的肇始和初衷就是更好的服务于全球普惠金融领域。
+Alaya致力于成为全球新一代分布式金融基础设施，经过长达两年半的迭代开发，又经历了八个月的Byleyworld测试网的技术测试，我们决定进一步向分布式金融的产品延伸，区块链技术的肇始和初衷就是更好的服务于全球普惠金融领域。
 
-为了确保这个远大理想的实现，我们推出了Alaya来为致力于DeFi 分布式普惠金融的开发者和参与者提供一个安全、合规、高效的“沙箱”。Alaya是PlatON 的前奏，是链接分布式金融与传统金融的桥梁。
+为了确保这个远大理想的实现，我们推出了Alaya来为致力于DeFi 分布式普惠金融的开发者和参与者提供一个安全、合规、高效的“沙箱”。Alaya是Alaya 的前奏，是链接分布式金融与传统金融的桥梁。
 
-欢迎社区来参与测试治理，Alaya的定位是创新型的技术与分布式金融的试验场，而PlatON将会更加专注于服务于全球的金融机构，最终构筑一个多层次的金融业态。
+欢迎社区来参与测试治理，Alaya的定位是创新型的技术与分布式金融的试验场，而Alaya将会更加专注于服务于全球的金融机构，最终构筑一个多层次的金融业态。
 
 ## 2 Alaya原生Token ATP
 
@@ -95,10 +95,11 @@ LAT激励方案将分期公布和分批执行，每期将根据Alaya发展情况
 
 ## 9 相关文档
 
-请参考PlatON开发者文档：
+请参考Alaya开发者文档：
 
-- [总体方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Overall_Solution/)
-- [共识方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Solution/)
-- [治理方案](https://devdocs.platon.network/docs/zh-CN/PlatON_Governance_Solution/)
-- [安全多方计算](https://devdocs.platon.network/docs/zh-CN/Secure_Multi_Party_Computation/)
-- [可验证计算](https://devdocs.platon.network/docs/zh-CN/Verifiable_Computation/)
+- [总体方案](/alaya-devdocs/zh-CN/Alaya_Overall_Solution/)
+- [共识方案](/alaya-devdocs/zh-CN/zh-CN/Alaya_Solution/)
+- [经济方案](/alaya-devdocs/zh-CN/zh-CN/Alaya_Economic_Plan/)
+- [治理方案](/alaya-devdocs/zh-CN/Alaya_Governance_Solution/)
+- [安全多方计算](/alaya-devdocs/zh-CN/Secure_Multi_Party_Computation/)
+- [可验证计算](/alaya-devdocs/zh-CN/Verifiable_Computation/)
