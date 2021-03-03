@@ -4,7 +4,7 @@
 >
 >PIP地址：https://github.com/PlatONnetwork/PIPs/blob/master/Alaya/PIP-15.md
 
-请通过区块链浏览器https://scan.alaya.network查看当前节点是否是以下状态：
+请通过区块链浏览器 https://scan.alaya.network 查看当前节点是否是以下状态：
 
 1. 出块中
 2. 共识中
