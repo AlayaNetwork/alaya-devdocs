@@ -98,8 +98,8 @@ LAT激励方案将分期公布和分批执行，每期将根据Alaya发展情况
 请参考Alaya开发者文档：
 
 - [总体方案](/alaya-devdocs/zh-CN/Alaya_Overall_Solution/)
-- [共识方案](/alaya-devdocs/zh-CN/zh-CN/Alaya_Solution/)
-- [经济方案](/alaya-devdocs/zh-CN/zh-CN/Alaya_Economic_Plan/)
+- [共识方案](/alaya-devdocs/zh-CN/Alaya_Solution/)
+- [经济方案](/alaya-devdocs/zh-CN/Alaya_Economic_Plan/)
 - [治理方案](/alaya-devdocs/zh-CN/Alaya_Governance_Solution/)
 - [安全多方计算](/alaya-devdocs/zh-CN/Secure_Multi_Party_Computation/)
 - [可验证计算](/alaya-devdocs/zh-CN/Verifiable_Computation/)
