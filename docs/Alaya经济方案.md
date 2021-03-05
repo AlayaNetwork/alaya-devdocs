@@ -667,10 +667,10 @@ To limit the malicious submission of text proposals, parameter proposals, upgrad
 
 | Interface name     | Transaction fixed gas consumption | Trading dynamic gas consumption rules |Minimum GasPrice（GVon）|
 | ------------ | --------------- | ------------------- | ------------------- |
-| Submit text proposal | 350000         | N                  | 1500000           |
-| Submit parameter proposal | 530000        | N                  | 2000000           |
-| Submit upgrade proposal | 480000         | N                  | 2100000           |
-| Cancel proposal | 530000         | N                  | 3000000           |
+| Submit text proposal | 350000         | N                  | 15000           |
+| Submit parameter proposal | 530000        | N                  | 20000           |
+| Submit upgrade proposal | 480000         | N                  | 21000           |
+| Cancel proposal | 530000         | N                  | 30000           |
 | Vote on proposal   | 32000          | N                  | N                  |
 | Version declaration     | 33000           | N                  | N                  |
 
