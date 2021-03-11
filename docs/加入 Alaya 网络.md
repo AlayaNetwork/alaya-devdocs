@@ -55,7 +55,28 @@ See more parameters with the command `platon --help`;
 
 ## Join the Alaya Develop Network
 
-Anyone and any organization can join the Alaya Develop network.
+The development network provides a development test environment for the developer or node.There may be instability and a network reset.The current version of the development network is 0.15.1, which does not provide PPA installation mode, but only supports binary download and installation.
+
+### Develop network related resources
+
+> - platon：https://download.alaya.network/alaya/platon/0.15.1/platon
+>
+> - alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
+>
+> - mtool：
+>
+>   - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
+>   - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
+>
+>   > You need to change the chain ID in the configuration file config.properties to the development network chain ID: 201030；
+>
+> - samurai：
+>
+> - Open the RPC URL: http://47.241.91.2:6789
+>
+> - Scan Browser Address: https://devnetscan.alaya.network
+
+
 
 ### Initialize the genesis block
 
@@ -66,8 +87,6 @@ Anyone and any organization can join the Alaya Develop network.
   ```bash
   cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json 
   ```
-  
-  
   
 - Initialize the genesis block file
 
@@ -90,26 +109,20 @@ Anyone and any organization can join the Alaya Develop network.
 cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
+### Other
 
+If you need to receive large amount of test ATP, please send an email to support@latticex.foundation according to the format requirements. The email requirements are:
 
-### Develop network related resources
-
-> - platon：https://download.alaya.network/alaya/platon/0.15.1/platon；
->
-> - alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey；
->
-> - mtool：
->
->   - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe；
->   - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip；
->
->   > You need to change the chain ID in the configuration file config.properties to the development network chain ID: 201030;
->
-> - samurai：
-> - Open the RPC URL: http://47.241.91.2:6789；
-> - Scan Browser Address: https://devnetscan.alaya.network；
-
-
+```toml
+Title: Alaya Test Network Token Application
+Name:
+Contact Information:
+WeChat ID (or other instant messaging software) :
+Application amount:
+USES:
+Receipt account:
+Remark:
+```
 
 ## View node status
 

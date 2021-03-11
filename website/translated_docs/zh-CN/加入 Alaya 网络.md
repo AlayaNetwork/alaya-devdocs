@@ -56,7 +56,29 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
 ## 加入Alaya开发网络
 
-任何人、任何组织都可以加入 Alaya开发网络。
+开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为0.15.1，不提供PPA安装方式，仅支持二进制下载安装。
+
+### 开发网络相关资源
+
+>- platon：https://download.alaya.network/alaya/platon/0.15.1/platon；
+>
+>- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey；
+>
+>- mtool：
+>
+>  - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe；
+>
+>  - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip；
+>
+>  > 需要修改配置文件config.properties中的链ID为开发网络链ID：201030；
+>
+>- samurai：
+>
+>- 开放RPC URL：http://47.241.91.2:6789；
+>
+>- scan浏览器地址：https://devnetscan.alaya.network；
+
+
 
 ### 初始化创世区块
 
@@ -74,7 +96,7 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
   执行命令：
 
-  ```shell
+  ```bash
   cd ~/platon-node && platon --datadir ./data init genesis.json
   ```
 
@@ -94,22 +116,22 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
 
 
-### 开发网络相关资源
+### 其他
 
->- platon：https://download.alaya.network/alaya/platon/0.15.1/platon；
->
->- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey；
->
->- mtool：
->
->  - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe；
->  - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip；
->
->  > 需要修改配置文件config.properties中的链ID为开发网络链ID：201030；
->
->- samurai：
->- 开放RPC URL：http://47.241.91.2:6789；
->- scan浏览器地址：https://devnetscan.alaya.network；
+如果您有领取大额测试ATP的需求，请您按照格式要求发送邮件至support@latticex.foundation，邮件要求：
+
+```toml
+ 标题：Alaya测试网Token申请
+ 姓名：
+ 联系方式：
+ 微信号（或其他即时通讯软件）：
+ 申请金额：
+ 用途：
+ 收款账户：
+ 备注：
+```
+
+
 
 ## 查看节点状态
 
