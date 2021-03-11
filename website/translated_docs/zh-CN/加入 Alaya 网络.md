@@ -64,14 +64,11 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 >
 >- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
 >
->- mtool：
+>- mtool windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
 >
->  - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
->
->  - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
+>- mtool linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
 >
 >  > 需要修改配置文件config.properties中的链ID为开发网络链ID：201030
->
 >
 >- samurai：https://github.com/AlayaNetwork/Samurai/blob/develop/devnet/samurai-devnet-chrome-8.0.11.zip
 >

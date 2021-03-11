@@ -63,10 +63,9 @@ The development network provides a development test environment for the develope
 >
 > - alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
 >
-> - mtool：
+> - mtool windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
 >
->   - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
->   - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
+> - mtool linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
 >
 >   > You need to change the chain ID in the configuration file config.properties to the development network chain ID: 201030；
 >
