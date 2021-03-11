@@ -60,23 +60,23 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
 ### 开发网络相关资源
 
->- platon：https://download.alaya.network/alaya/platon/0.15.1/platon；
+>- platon：https://download.alaya.network/alaya/platon/0.15.1/platon
 >
->- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey；
+>- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
 >
 >- mtool：
 >
->  - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe；
+>  - windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/mtool-setup.exe
 >
->  - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip；
+>  - linux：https://download.alaya.network/alaya/mtool/linux/0.15.1/mtool-client.zip
 >
 >  > 需要修改配置文件config.properties中的链ID为开发网络链ID：201030；
 >
 >- samurai：
 >
->- 开放RPC URL：http://47.241.91.2:6789；
+>- 开放RPC URL：http://47.241.91.2:6789
 >
->- scan浏览器地址：https://devnetscan.alaya.network；
+>- scan浏览器地址：https://devnetscan.alaya.network
 
 
 
