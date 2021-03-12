@@ -1,16 +1,16 @@
 ---
-id: Economic_Model
+id: Alaya_Economic_Model
 title: The Alaya Economic Model
 sidebar_label: The Alaya Economic Model
 ---
 
 ## 1 About Alaya Network
 
-PlatON is designed to become the next-generation of distributed financial infrastructure. With two and half years of development on top of an eight-month technical testing on the Byleyworld test network, we decided to further expand our products towards distributed finance. The original purpose and mission of blockchain technology are to better serve global inclusive finance.
+Alaya is designed to become the next-generation of distributed financial infrastructure. With two and half years of development on top of an eight-month technical testing on the Byleyworld test network, we decided to further expand our products towards distributed finance. The original purpose and mission of blockchain technology are to better serve global inclusive finance.
 
-To realize this great vision, Alaya was launched to provide a safe, compliant, and efficient “sandbox” for developers and participants dedicated to various types of DeFi inclusive finance. Alaya is the prelude of PlatON, as well as a bridge connecting distributed and traditional finance.
+To realize this great vision, Alaya was launched to provide a safe, compliant, and efficient “sandbox” for developers and participants dedicated to various types of DeFi inclusive finance. Alaya is the prelude of Alaya, as well as a bridge connecting distributed and traditional finance.
 
-Communities are encouraged to participate in the governance of testings. Alaya is positioned as a testing ground for innovative technology and distributed finance, and PlatON will focus more on serving financial institutions across the globe and ultimately building up a multi-level business model of finance.
+Communities are encouraged to participate in the governance of testings. Alaya is positioned as a testing ground for innovative technology and distributed finance, and Alaya will focus more on serving financial institutions across the globe and ultimately building up a multi-level business model of finance.
 
 ## 2 Alaya’s NativeToken ATP
 
@@ -18,7 +18,7 @@ The native Token ATP on the Alaya network is a technical tool with an initial pr
 
 ​	1.ATP is a test chain tool with an initial price of zero, representing the governance rights and interests of the test chain;
 
-​	2. \ATP is for the Alaya network internal use only. It does not have or support other circulation functions.
+​	2. ATP is for the Alaya network internal use only. It does not have or support other circulation functions.
 
 ## 3 Initial and Incremental Allocation of ATP
 
@@ -96,20 +96,18 @@ The Technology Innovation Fund will be used to reward technological innovations 
 
 ## 8 LAT Incentive Program For The Main Network
 
-The LatticeX Foundation will provide 500 million LAT to support the development of the Alaya network. The LAT will come from the reserved pool for the PlatON main network and the developer fund.
+The LatticeX Foundation will provide 500 million LAT to support the development of the Alaya network. The LAT will come from the reserved pool for the Alaya main network and the developer fund.
 
 The LAT incentive program will be announced and executed in phases. In each phase, different rules will be formulated depending on the development of Alaya to encourage developers, users and validators on the network while guiding the healthy development of the ecosystem.
 
 ## 9 Related documents
 
-Please refer to the PlatON developer documentation:
+Please refer to the Alaya developer documentation:
 
-- [Overall Solution](https://devdocs.platon.network/docs/en/PlatON_Overall_Solution)
+- [Overall Solution](/alaya-devdocs/en/Alaya_Overall_Solution/)
+- [Consensus Solution](/alaya-devdocs/en/Alaya_Solution/)
+- [Economic Plan](/alaya-devdocs/en/Alaya_Economic_Plan/)
+- [Governance Solution](/alaya-devdocs/en/Alaya_Governance_Solution/)
+- [Secure Multi Party Computation](/alaya-devdocs/en/Secure_Multi_Party_Computation/)
+- [Verifiable Computation](/alaya-devdocs/en/Verifiable_Computation/)
 
-- [Consensus Solution](https://devdocs.platon.network/docs/en/PlatON_Solution)
-
-- [Governance Solution](https://devdocs.platon.network/docs/en/PlatON_Governance_Solution)
-
-- [Secure Multi Party Computation](https://devdocs.platon.network/docs/en/Secure_Multi_Party_Computation)
-
-- [Verifiable Computation](https://devdocs.platon.network/docs/en/Verifiable_Computation)

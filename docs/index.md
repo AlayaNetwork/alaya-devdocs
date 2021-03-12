@@ -71,6 +71,13 @@ sidebar_label: Alaya Developer Docs
 ## Everyone
 <div class="card-wrap">
     <div class="homepage-card">
+        <img src="/alaya-devdocs/img/about.svg">
+        <a href="/alaya-devdocs/en/Alaya_Overall_Solution" class="card-title">About Alaya</a>
+        <div class="card-description">
+        Learn more about Alaya's consensus, economic models, governance, privacy-preserving computation and other technologies.
+        </div>
+    </div>
+    <div class="homepage-card">
         <img src="/alaya-devdocs/img/community.svg">
         <a href="/alaya-devdocs/en/community" class="card-title">Community Projects</a>
         <div class="card-description">

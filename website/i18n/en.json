@@ -36,30 +36,55 @@
         "title": "OnLine MTool Tutorials",
         "sidebar_label": "OnLine MTool Tutorials"
       },
-	  "OffLine_MTool_Manual": {
+      "OffLine_MTool_Manual": {
         "title": "OffLine MTool Tutorials",
         "sidebar_label": "OffLine MTool Tutorials"
+      },
+      "Alaya_Solution": {
+        "title": "Alaya Consensus Solution",
+        "sidebar_label": "Alaya Consensus Solution"
       },
       "Command_Line_Tools": {
         "title": "Alaya Command Line Tools",
         "sidebar_label": "Alaya Command line tools"
       },
-	 "Economic_Model": {
+      "Alaya_Overall_Solution": {
+        "title": "Alaya Overall Solution",
+        "sidebar_label": "Alaya Overall Solution"
+      },
+      "Alaya_Governance_Solution": {
+        "title": "Alaya Governance Solution",
+        "sidebar_label": "Alaya Governance Solution"
+      },
+      "Alaya_Economic_Model": {
         "title": "Alaya Economic Model",
         "sidebar_label": "Alaya Economic Model"
+      },
+      "Alaya_Economic_Plan": {
+        "title": "Alaya Economic Plan",
+        "sidebar_label": "Alaya Economic Plan"
       },
       "WASM_Smart_Contract": {
         "title": "WASM Smart Contract",
         "sidebar_label": "WASM Smart Contract"
       },
-      "DApp_migrate": {
-        "title": "DApp Migrate",
-        "sidebar_label": "DApp Migrate"
-      },
       "Join_Alaya_NetWork": {
         "title": "Join the Alaya network",
         "sidebar_label": "Join the Alaya network"
       },
+      "Verifiable_Computation": {
+        "title": "Verifiable Computation",
+        "sidebar_label": "Verifiable Computation"
+      },
+      "Secure_Multi_Party_Computation": {
+        "title": "Secure Multi Party Computation",
+        "sidebar_label": "Secure Multi Party Computation"
+      },
+      "DApp_migrate": {
+        "title": "DApp Migrate",
+        "sidebar_label": "DApp Migrate"
+      },
+
       "Install_Node": {
         "title": "Install and Deploy a Node",
         "sidebar_label": "Install and Deploy a Node"

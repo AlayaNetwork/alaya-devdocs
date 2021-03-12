@@ -36,9 +36,37 @@
         "title": "离线MTool教程",
         "sidebar_label": "离线MTool教程"
       },
+      "Alaya_Solution": {
+        "title": "Alaya共识方案",
+        "sidebar_label": "Alaya共识方案"
+      },
+      "Alaya_Overall_Solution": {
+        "title": "Alaya总体方案",
+        "sidebar_label": "Alaya总体方案"
+      },
+      "Alaya_Governance_Solution": {
+        "title": "Alaya治理方案",
+        "sidebar_label": "Alaya治理方案"
+      },
+      "Alaya_Economic_Plan": {
+        "title": "Alaya经济方案",
+        "sidebar_label": "Alaya经济方案"
+      },
+      "Alaya_Economic_Model": {
+        "title": "Alaya经济模型",
+        "sidebar_label": "Alaya经济模型"
+      },
       "Join_Alaya_NetWork": {
         "title": "加入 Alaya 网络",
         "sidebar_label": "加入 Alaya 网络"
+      },
+      "Verifiable_Computation": {
+        "title": "可验证计算",
+        "sidebar_label": "可验证计算"
+      },
+      "Secure_Multi_Party_Computation": {
+        "title": "安全多方计算",
+        "sidebar_label": "安全多方计算"
       },
       "Install_Node": {
         "title": "安装一个节点",
@@ -52,11 +80,7 @@
         "title": "EVM智能合约",
         "sidebar_label": "EVM智能合约"
       },
-	  "Economic_Model": {
-        "title": "Alaya经济模型",
-        "sidebar_label": "Alaya经济模型"
-      },
-	  "DApp_migrate": {
+      "DApp_migrate": {
         "title": "DApp迁移",
         "sidebar_label": "DApp迁移"
       },
@@ -64,7 +88,7 @@
         "title": "WASM智能合约",
         "sidebar_label": "WASM智能合约"
       },
-	  "Install_Alaya": {
+      "Install_Alaya": {
         "title": "源码安装Alaya",
         "sidebar_label": "源码安装Alaya"
       },
