@@ -102,7 +102,7 @@ The development network provides a development test environment for the develope
 
 ### Start as a validator node
 
-**Execute the following command to join the Alaya as a validator node**
+Please refer to [Install node](/alaya-devdocs/en/Install_Node) section to create a nodekey: nodekey, blskey, and then execute the following command.....;If you need to become a verification node, please apply for a large test ATP by following instructions (the development network will be reset irregularly according to the test needs, and the ATP of the test network has no practical value).
 
 ```bash
 cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
