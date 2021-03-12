@@ -69,7 +69,7 @@ The development network provides a development test environment for the develope
 >
 >   > You need to change the chain ID in the configuration file config.properties to the development network chain ID: 201030；
 >
-> - samurai：https://github.com/AlayaNetwork/Samurai/blob/develop/devnet/samurai-devnet-chrome-8.0.11.zip
+> - samurai：https://github.com/AlayaNetwork/Samurai/raw/develop/devnet/samurai-devnet-chrome-8.0.11.zip
 >
 > - Open the RPC URL: http://47.241.91.2:6789
 >

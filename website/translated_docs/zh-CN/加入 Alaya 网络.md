@@ -70,7 +70,7 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 >
 >  > 需要修改配置文件config.properties中的链ID为开发网络链ID：201030
 >
->- samurai：https://github.com/AlayaNetwork/Samurai/blob/develop/devnet/samurai-devnet-chrome-8.0.11.zip
+>- samurai：https://github.com/AlayaNetwork/Samurai/raw/develop/devnet/samurai-devnet-chrome-8.0.11.zip
 >
 >- 开放RPC URL：http://47.241.91.2:6789
 >
