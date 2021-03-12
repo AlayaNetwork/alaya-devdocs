@@ -74,7 +74,7 @@ sidebar_label: Alaya Developer Docs
         <img src="/alaya-devdocs/img/about.svg">
         <a href="/alaya-devdocs/en/Alaya_Overall_Solution" class="card-title">About Alaya</a>
         <div class="card-description">
-        Learn more about Alaya's consensus, economic models, governance, privacy-preserving computing and other technologies.
+        Learn more about Alaya's consensus, economic models, governance, privacy-preserving computation and other technologies.
         </div>
     </div>
     <div class="homepage-card">

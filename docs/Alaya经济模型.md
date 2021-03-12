@@ -18,7 +18,7 @@ The native Token ATP on the Alaya network is a technical tool with an initial pr
 
 ​	1.ATP is a test chain tool with an initial price of zero, representing the governance rights and interests of the test chain;
 
-​	2. \ATP is for the Alaya network internal use only. It does not have or support other circulation functions.
+​	2. ATP is for the Alaya network internal use only. It does not have or support other circulation functions.
 
 ## 3 Initial and Incremental Allocation of ATP
 
