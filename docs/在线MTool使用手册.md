@@ -4,6 +4,13 @@ title: OnLine MTool Tutorials
 sidebar_label: OnLine MTool Tutorials
 ---
 
+## Introductory
+
+To facilitate transfer, pledge, delegate, and governance operations, Alaya provides MTool to assist users:
+
+- MTool supports Ubuntu 18.04 and Windows 10. This document describes the installation and use of Windows and Ubuntu, respectively. Users can choose from their own resources.
+- MTool provides two signature methods for transactions such as pledge: online signature and offline signature.This document describes online signing operations. For offline signing operations, refer to the [Offline MTool Manual](/alaya-devdocs/en/OffLine_MTool_Manual)。
+
 ## Install MTool
 
 In addition, this document introduces the operation of MTool under Windows and Ubuntu respectively. Users can choose according to their own resources.
