@@ -35,7 +35,7 @@ sidebar_label: 社区项目
     <tr>
         <td><img alt="" src="/alaya-devdocs/img/MTool_logo.svg"></td>
         <td>
-            <p class="color"><a target="_blank" href="http://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe">MTool</a></p>
+            <p class="color"><a target="_blank" href="https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe">MTool</a></p>
             节点管理工具。
         </td>
     </tr>

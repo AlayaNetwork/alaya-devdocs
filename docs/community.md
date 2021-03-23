@@ -35,7 +35,7 @@ The LatticeX Foundation has now opened the [Grants program](https://latticex.fou
     <tr>
         <td><img alt="" src="/alaya-devdocs/img/MTool_logo.svg"></td>
         <td>
-            <p class="color"><a target="_blank" href="http://47.91.153.183/alaya/mtool/windows/0.14.0/mtool-setup.exe">MTool</a></p>
+            <p class="color"><a target="_blank" href="https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe">MTool</a></p>
             Node Management Tool.
         </td>
     </tr>

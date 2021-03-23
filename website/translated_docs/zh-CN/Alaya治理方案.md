@@ -200,29 +200,46 @@ sidebar_label: Alaya治理方案
 备选节点可以通过发起参数治理提案来修改部分系统参数。为避免参数提案和升级提案交叉实施引发问题，因此，当链上存在投票中的升级提案或者参数提案，不允许在发起新的参数修改提案。
 参数提案投票周期为两周。截止当前，我们支持的治理参数如下： 
 
+- staking模块
+
+| Key                     | 描述                                            | 范围                       |
+| ----------------------- | ----------------------------------------------- | -------------------------- |
+| stakeThreshold          | 成为备选节点候选人最低的质押Token数             | [1w,100w] ATP              |
+| operatingThreshold      | 委托人每次委托及赎回的最低Token数               | [1, 10000] ATP             |
+| maxValidators           | 备选节点数量                                    | [25, 201]                  |
+| unStakeFreezeDuration   | 验证节点退出，质押金冻结的结算周期数            | (maxEvidenceAge,336] Epoch |
+| rewardPerMaxChangeRange | "委托奖励比例" 每次修改的最大可调整幅度（‱）    | [1,2000]                   |
+| rewardPerChangeInterval | "委托奖励比例" 允许再次修改需要等待的结算周期数 | [2, 28]                    |
+
 - slashing模块
 
 | Key | 描述|范围|
 | ---|---|---|
-| slashBlocksReward |	出块率为0，削减的区块奖励块数 |[0, 50000] blocks	|
-| slashFractionDuplicateSign|双签举报处罚节点自有质押金比例| (0,10000] ‱|
-| duplicateSignReportReward|	举报人可获得处罚金的奖励比例	| (0, 80] %	|
-| maxEvidenceAge| 双签举报证据有效的结算周期数 |(0, 节点质押退回锁定周期）Epoch|
+| slashBlocksReward |	出块率为0，削减的区块奖励块数 |[0, 50000) blocks	|
+| slashFractionDuplicateSign | 双签举报处罚节点自有质押金比例(‱)                      | (0,10000]                        |
+| duplicateSignReportReward  | 举报人可获得处罚金的奖励比例（%）                      | (0, 80]                          |
+| maxEvidenceAge| 双签举报证据有效的结算周期数 |(0, unStakeFreezeDuration）Epoch|
+| zeroProduceCumulativeTime | 零出块持续的共识轮数，并在该时间内进行零出块次数的累计 |[zeroProduceNumberThreshold,43]|
+| zeroProduceNumberThreshold | 零出块次数处罚阈值 |[1,zeroProduceCumulativeTime]|
+| zeroProduceFreezeDuration | 节点零出块惩罚被锁定时间 |[1,168)|
 
 - block模块
 
 | Key | 描述|范围|
 | ---|---|---|
-| MaxBlockGasLimit|区块最大Gas|[9424776, 630000000] gas|
+| MaxBlockGasLimit |区块最大Gas|[9424776, 630000000] gas|
 
-- staking模块
+- reward模块
 
-| Key | 描述|范围|
-| ---|---|---|
-| stakeThreshold|	成为备选节点候选人最低的质押Token数 | [1W,100w] ATP|
-| operatingThreshold	|委托人每次委托及赎回的最低Token数|	[1, 10000] ATP|
-| unStakeFreezeDuration |节点质押退回锁定周期	| (证据有效期,336] Epoch	|
-| maxValidators| 备选节点数量|[25, 201]	|
+| Key                   | 描述                            | 范围      |
+| --------------------- | ------------------------------- | --------- |
+| increaseIssuanceRatio | Alaya网络的ATP每年增发比例（‱） | [0, 2000] |
+
+- restricting模块
+
+| Key            | 描述                     | 范围         |
+| -------------- | ------------------------ | ------------ |
+| minimumRelease | 释放周期的释放金额最小值 | [80, 100000] |
 
 
 ### 奖惩机制
