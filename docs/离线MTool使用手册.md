@@ -42,7 +42,7 @@ Double-click `C:\tools\unins000.exe` to uninstall all old versions of MTool and 
 
 **step1. Download the MTool installation package**
 
-On the online machine, copy the link <http://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe> ​​to the browser to download the MTool installation package.
+On the online machine, copy the link <https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe> ​​to the browser to download the MTool installation package.
 
 **step2. Install MTool**
 

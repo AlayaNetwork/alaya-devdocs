@@ -231,14 +231,28 @@ The following parameters are required to cancel a proposed transaction:
 Alternative nodes can modify some system parameters by initiating a parameter governance proposal. To avoid problems caused by the cross-implementation of parameter proposals and upgrade proposals, when there are voting upgrade proposals or parameter proposals on the chain, it is not allowed to initiate new parameter modification proposals.
 The parameter proposal voting cycle is two weeks. As of now, the governance parameters we support are as follows:
 
+- staking module
+
+| Key                     | description                                                  | range                      |
+| ----------------------- | ------------------------------------------------------------ | -------------------------- |
+| stakeThreshold          | The minimum number of staking tokens to become alternative node candidates | [1w,100w] ATP              |
+| operatingThreshold      | Minimum number of tokens for each delegation and redemption by the client | [1, 10000] ATP             |
+| maxValidators           | Number of alternative nodes                                  | [25, 201]                  |
+| unStakeFreezeDuration   | Verify the number of settlement cycles when the node exits and the pledged money is frozen | (maxEvidenceAge,336] Epoch |
+| rewardPerMaxChangeRange | The maximum amount that can be adjusted per revision of the "Reward Rate of Delegation" (per 10,000 cases) | [1,2000]                   |
+| rewardPerChangeInterval | The "Delegate Rewards Ratio" allows you to change the number of settlement cycles that need to wait again | [2, 28]                    |
+
 - slashing module
 
-| Key                        | description                                                  | range                                     |
-| -------------------------- | ------------------------------------------------------------ | ----------------------------------------- |
-| slashBlocksReward          | When the block generation rate is 0, the number of blocks rewarded by the reduced block | [0, 50000] blocks                         |
-| slashFractionDuplicateSign | Proportion of penalty node own staking when dual signing behavior was reported | (0,10000] ‱                               |
-| duplicateSignReportReward  | Whistleblower reward ratio                                   | (0, 80] %                                 |
-| maxEvidenceAge             | Number of valid settlement cycles for evidence reported by dual signing | (0, Node staking return lock cycle）Epoch |
+| Key                        | description                                                  | range                            |
+| -------------------------- | ------------------------------------------------------------ | -------------------------------- |
+| slashBlocksReward          | When the block generation rate is 0, the number of blocks rewarded by the reduced block | [0, 50000) blocks                |
+| slashFractionDuplicateSign | Proportion of penalty node own staking when dual signing behavior was reported(‱) | (0,10000]                        |
+| duplicateSignReportReward  | Whistleblower reward ratio(%)                                | (0, 80]                          |
+| maxEvidenceAge             | Number of valid settlement cycles for evidence reported by dual signing | (0, unStakeFreezeDuration）Epoch |
+| zeroProduceCumulativeTime  | The number of continuous consensus rounds of zero block out, and the number of zero block out is accumulated within this time | [zeroProduceNumberThreshold,43]  |
+| zeroProduceNumberThreshold | Zero block times penalty threshold                           | [1,zeroProduceCumulativeTime]    |
+| zeroProduceFreezeDuration  | Node zero block penalty is locked time                       | [1,168)                          |
 
 - block module
 
@@ -246,14 +260,17 @@ The parameter proposal voting cycle is two weeks. As of now, the governance para
 | ---------------- | ------------- | ------------------------ |
 | MaxBlockGasLimit | Block Max Gas | [9424776, 630000000] gas |
 
-- staking module
+- reward模块
 
-| Key                   | description                                                  | range                         |
-| --------------------- | ------------------------------------------------------------ | ----------------------------- |
-| stakeThreshold        | The minimum number of staking tokens to become alternative node candidates | [1W,100w] ATP              |
-| operatingThreshold    | Minimum number of tokens for each delegation and redemption by the client | [1, 10000] ATP               |
-| unStakeFreezeDuration | Node staking return lock cycle                               | (Evidence validity,112] Epoch |
-| maxValidators         | Number of alternative nodes                                  | [25, 201]                     |
+| Key                   | description                                                  | range     |
+| --------------------- | ------------------------------------------------------------ | --------- |
+| increaseIssuanceRatio | Ratio of annual increase in ATP of Alaya Network (10,000 per year) | [0, 2000] |
+
+- restricting模块
+
+| Key            | description                                        | range        |
+| -------------- | -------------------------------------------------- | ------------ |
+| minimumRelease | The minimum amount of release in the release cycle | [80, 100000] |
 
 ### Reward and punishment mechanism
 
