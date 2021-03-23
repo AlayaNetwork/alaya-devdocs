@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>AlayaScanlogo</title>
-    <g id="AlayaScanlogo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(10.000000, 1.000000)">
-            <g id="Group" transform="translate(6.000000, 0.000000)" fill-rule="nonzero">
-                <polygon id="Rectangle-path" fill="#FBB613" points="24.9520285 24.9547511 41.2615817 24.9547511 41.2615817 41.2217195 24.9520285 41.2217195"></polygon>
-                <g id="Shape" transform="translate(9.073465, 9.049774)" fill="#1D2337">
-                    <path d="M8.05270011,47.918552 L41.0347451,47.918552 C44.8456003,47.918552 47.9532621,44.8190045 47.9532621,41.0180995 L47.9532621,8.12217195 L40.3769189,8.12217195 L40.3769189,40.3393665 L8.05270011,40.3393665 L8.05270011,47.918552 Z" id="路径"></path>
-                    <path d="M40.0366639,7.760181 L40.0366639,0.180995475 L7.05461897,0.180995475 C3.24376371,0.180995475 0.136101974,3.28054299 0.136101974,7.08144796 L0.136101974,39.9773756 L7.71244518,39.9773756 L7.71244518,7.760181 L40.0366639,7.760181 Z" id="路径"></path>
-                </g>
-                <polygon id="Rectangle-path" fill="#00B6DC" points="57.026727 0.20361991 66.0775082 0.20361991 66.0775082 9.23076923 57.026727 9.23076923"></polygon>
-                <polygon id="Rectangle-path" fill="#EA106E" points="0.158785636 56.9683258 9.20956689 56.9683258 9.20956689 65.9954751 0.158785636 65.9954751"></polygon>
-            </g>
-            <text id="AlayaScan" font-family="Gilroy-Bold, Gilroy" font-size="16" font-weight="bold" fill="#1D2337">
-                <tspan x="0" y="94">AlayaScan</tspan>
-            </text>
+    <title>AlayaScan</title>
+    <defs>
+        <linearGradient x1="50%" y1="35.6921057%" x2="44.0873171%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FDD159" offset="0%"></stop>
+            <stop stop-color="#FC803A" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="0 47.9175351 8.6380043 47.9175351 24.7151697 16.4825101 20.1315173 8.03903511"></polygon>
+        <linearGradient x1="50%" y1="35.6921057%" x2="36.3787104%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FDD159" offset="0%"></stop>
+            <stop stop-color="#FC803A" offset="100%"></stop>
+        </linearGradient>
+        <path d="M15.394051,41.9187953 L21.1014493,41.9187953 C22.859451,41.9187953 24.4681628,40.9298628 25.2634708,39.3609617 L25.2634708,39.3609617 L26.1546863,37.5993408 L31.7562245,47.9175351 L41.7794581,47.9175351 L26.5500784,19.8682242 L15.394051,41.9187953 Z" id="path-5"></path>
+        <path d="M12.5123035,5.13777055e-14 C11.1641704,5.13777055e-14 10.0711874,1.09298305 10.0711874,2.44202091 L10.0711874,2.44202091 L10.0711874,5.01433118 L30.3338988,5.01433118 L30.3338988,2.44202091 C30.3338988,1.09298305 29.2409158,5.13777055e-14 27.8927827,5.13777055e-14 L27.8927827,5.13777055e-14 L12.5123035,5.13777055e-14 Z" id="path-7"></path>
+        <linearGradient x1="50%" y1="80.9558985%" x2="50%" y2="8.12458172%" id="linearGradient-9">
+            <stop stop-color="#FC803A" offset="0%"></stop>
+            <stop stop-color="#FDD159" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="AlayaScan" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(29.000000, 10.000000)">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Clip-6" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <mask id="mask-6" fill="white">
+                <use xlink:href="#path-5"></use>
+            </mask>
+            <use id="Clip-8" fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+            <mask id="mask-8" fill="white">
+                <use xlink:href="#path-7"></use>
+            </mask>
+            <use id="Clip-12" fill="#FDD158" xlink:href="#path-7"></use>
         </g>
+        <text fill="url(#linearGradient-9)" font-family="Gilroy-Bold, Gilroy" font-size="18" font-weight="bold">
+            <tspan x="4" y="85">AlayaScan</tspan>
+        </text>
     </g>
 </svg>
