@@ -106,7 +106,7 @@ Windows和Ubuntu下MTool目录使用环境变量有所区别：
 > **注意：**
 >
 > - 后续命令是Ubuntu下的命令格式，Windows下需要把`$MTOOLDIR`修改成`%MTOOLDIR%`；
-> - 如果连接的是测试网，需要修改MTool安装目录下的config.properties配置文件的chainid为201030。
+> - 如果连接的是开发网，需要修改MTool安装目录下的config.properties配置文件的chainid为201030。
 
 ### 创建冷钱包
 
@@ -141,7 +141,7 @@ mtool-client account new staking
 >
 >`atp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`：为主网账户地址，以atp开头；
 >
->`atx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx`：为测试网账户地址，以atx开头；
+>`atx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx`：为开发网账户地址，以atx开头；
 >
 >`4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07` 为钱包私钥；
 >
