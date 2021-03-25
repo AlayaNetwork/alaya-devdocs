@@ -434,11 +434,11 @@ mtool-client staking --config $MTOOLDIR/validator/validator_config.json --addres
 >
 > address: 质押观察钱包路径
 >
-> amount: 质押数，不少于10000atp-质押门槛，小数点不超过8位（使用自由金额质押）
+> amount: 质押数，不少于10000ATP-质押门槛，小数点不超过8位（使用自由金额质押）
 >
-> restrictedamount: 不少于10000atp-质押门槛，小数点不超过8位（使用锁仓余额质押）
+> restrictedamount: 不少于10000ATP-质押门槛，小数点不超过8位（使用锁仓余额质押）
 >
-> autoamount：不少于10000atp-优先使用锁仓余额质押，若锁仓余额不足质押金，再使用自由金额质押
+> autoamount：不少于10000ATP-优先使用锁仓余额质押，若锁仓余额不足质押金，再使用自由金额质押
 >
 > benefit_address：验证节点收益地址
 >
