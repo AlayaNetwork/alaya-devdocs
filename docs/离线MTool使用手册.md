@@ -411,11 +411,11 @@ mtool-client staking --config $MTOOLDIR/validator/validator_config.json --addres
 >
 > address: pledge observation wallet file
 >
-> amount: pledge amount, no less than 10000atp- pledge threshold, no more than 8 decimal places (use free amount pledge)
+> amount: pledge amount, no less than 10000ATP-pledge threshold, no more than 8 decimal places (use free amount pledge)
 >
-> restricted amount: not less than 10000atp-pledge threshold, no more than 8 decimal places (using locked balance pledge)
+> restricted amount: not less than 10000ATP-pledge threshold, no more than 8 decimal places (using locked balance pledge)
 >
-> autoamount: Not less than 10000atp-Priority to use the lock-up balance staking, if the lock-up balance is not enough for the staking deposit, then use free amount staking
+> autoamount: Not less than 10000ATP-Priority to use the lock-up balance staking, if the lock-up balance is not enough for the staking deposit, then use free amount staking
 >
 > benefit_address: benefit account to receive block-packing reward and staking reward
 >
