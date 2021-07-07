@@ -1,10 +1,17 @@
 .DS_Store
+.vscode
 
-node_modules
+# dependencies
+*/node_modules
 
-lib/core/metadata.js
-lib/core/MetadataBlog.js
+# production
+*/build
 
-website/build/
-website/yarn.lock
-website/node_modules
+# generated files
+.docusaurus
+.cache-loader
+
+*/npm-debug.log
+*/yarn-debug.log
+*/yarn-error.log
+

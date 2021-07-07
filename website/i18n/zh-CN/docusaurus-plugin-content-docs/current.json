@@ -1,0 +1,20 @@
+{
+  "sidebar.docs.category.Run a Node": {
+    "message": "运行一个节点"
+  },
+  "sidebar.docs.category.Node Tools": {
+    "message": "节点工具"
+  },
+  "sidebar.docs.category.Environment Setup": {
+    "message": "设置开发环境"
+  },
+  "sidebar.docs.category.Reference Docs": {
+    "message": "参考文档"
+  },
+  "sidebar.docs.category.SDK Docs": {
+    "message": "SDK文档"
+  },
+  "sidebar.docs.category.Abount Alaya": {
+    "message": "关于Alaya"
+  }
+}
