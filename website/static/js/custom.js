@@ -1,11 +1,11 @@
 // 首页重定向，开发环境记得注释
-// let path = window.location.pathname
-// let reg = /^\/alaya-devdocs\/(en|zh-CN)\//
-// if (path.indexOf('/alaya-devdocs/') == -1) {
-//   window.location.href = '/alaya-devdocs/en/'
-// } else if (!reg.test(path)) {
-//   window.location.href = '/alaya-devdocs/en/' + path.slice(15)
-// }
+let path = window.location.pathname
+let reg = /^\/alaya-devdocs\/(en|zh-CN)\//
+if (path.indexOf('/alaya-devdocs/') == -1) {
+  window.location.href = '/alaya-devdocs/en/'
+} else if (!reg.test(path)) {
+  window.location.href = '/alaya-devdocs/en/' + path.slice(15)
+}
 
 //数学公式  mathJax
 let isMathjaxConfig = false // 防止重复调用Config，造成性能损耗

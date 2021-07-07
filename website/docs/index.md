@@ -1,5 +1,6 @@
 ---
 id: index
+slug: /
 title: Alaya Developer Docs
 sidebar_label: Alaya Developer Docs
 ---

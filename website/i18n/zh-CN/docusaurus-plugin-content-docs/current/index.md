@@ -1,5 +1,6 @@
 ---
 id: index
+slug: /
 title: Alaya开发者文档
 sidebar_label: Alaya开发者文档
 ---

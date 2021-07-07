@@ -148,7 +148,8 @@ a:not([href]) {
   color: inherit;
 }
 
-.markdown > p > img {
+.markdown p > img,
+.markdown > img {
   display: block;
   margin-left: auto;
   margin-right: auto;

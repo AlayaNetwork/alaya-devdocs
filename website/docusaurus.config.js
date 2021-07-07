@@ -16,7 +16,7 @@ module.exports = {
     '/alaya-devdocs/js/custom.js'
   ],
   i18n: {
-    defaultLocale: 'zh-CN',
+    defaultLocale: 'en',
     locales: ['en', 'zh-CN'],
     localeConfigs: {
       en: {
@@ -41,11 +41,11 @@ module.exports = {
           editUrl: ({ locale, versionDocsDirPath, docPath }) => {
             // Link to Crowdin for French docs
             if (locale !== 'en') {
-              // return `https://github.com/PlatONnetwork/docs/tree/master/website/translated_docs/${locale}/${docPath}`;
-              return `https://github.com/PlatONnetwork/docs/tree/master/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
+              // return `https://github.com/AlayaNetwork/alaya-devdocs/tree/master/website/translated_docs/${locale}/${docPath}`;
+              return `https://github.com/AlayaNetwork/alaya-devdocs/tree/master/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
             }
             // Github 的英文文档链接
-            return `https://github.com/PlatONnetwork/docs/tree/master/docs/${docPath}`
+            return `https://github.com/AlayaNetwork/alaya-devdocs/tree/master/website/docs/${docPath}`
           }
         },
         blog: false,
@@ -99,19 +99,19 @@ module.exports = {
         {
           items: [
             {
-              label: 'PlatON network',
+              label: 'Alaya network',
               img: 'img/alaya-logo.svg',
-              href: 'https://www.platon.network/en',
-              hrefzh: 'https://www.platon.network/'
+              href: 'https://www.alaya.network/en',
+              hrefzh: 'https://www.alaya.network/'
             }
           ]
         },
         {
           items: [
             {
-              label: 'PlatON network',
-              href: 'https://www.platon.network/en',
-              hrefzh: 'https://www.platon.network/'
+              label: 'Alaya network',
+              href: 'https://www.alaya.network/en',
+              hrefzh: 'https://www.alaya.network/'
             },
             {
               label: 'LatticeX.Foundation',
