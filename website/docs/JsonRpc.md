@@ -262,7 +262,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_accounts","params":[],"id":1}'
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"platon_accounts","params":[],"id":1}'
 
 // Result
 {
