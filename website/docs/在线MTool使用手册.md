@@ -1,7 +1,7 @@
 ---
 id: OnLine_MTool_Manual
-title: OnLine MTool Tutorials
-sidebar_label: OnLine MTool Tutorials
+title: MTool online tutorial
+sidebar_label: MTool online tutorial
 ---
 
 ## Introductory

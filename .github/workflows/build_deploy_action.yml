@@ -1,5 +1,8 @@
 name: GitHub Actions Build and Deploy
 on:
+  pull_request:
+    branches:
+      - v2
   push:
     branches:
       - v2

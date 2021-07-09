@@ -1,7 +1,7 @@
 ---
-id: Alaya_Economic_Model
-title: Alaya经济模型
-sidebar_label: Alaya经济模型
+id: Economic_model
+title: 经济模型
+sidebar_label: 经济模型
 ---
 
 ## 1 关于Alaya网络

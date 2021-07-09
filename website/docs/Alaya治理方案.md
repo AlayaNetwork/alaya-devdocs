@@ -1,7 +1,7 @@
 ---
-id: Alaya_Governance_Solution
-title: Alaya Governance Solution
-sidebar_label: Alaya Governance Solution
+id: Governance_mechanism
+title: Governance mechanism
+sidebar_label: Governance mechanism
 ---
 
 ## Governance Overview

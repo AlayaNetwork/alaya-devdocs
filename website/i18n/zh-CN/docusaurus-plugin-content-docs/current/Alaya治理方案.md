@@ -1,7 +1,7 @@
 ---
-id: Alaya_Governance_Solution
-title: Alaya治理方案
-sidebar_label: Alaya治理方案
+id: Governance_mechanism
+title: 治理机制
+sidebar_label: 治理机制
 ---
 
 ## 概述
