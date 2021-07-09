@@ -1,5 +1,5 @@
 ---
-id: ATON-user-manual
+id: ATON_user_manual
 title: ATON Wallet
 sidebar_label: ATON Wallet
 ---
@@ -140,7 +140,7 @@ The following provides guidance on how to operate the ATON wallet on the Alaya n
 
 For details about importing observed wallets, please refer to the instructions of “Set observed wallet and cold wallet”.
 
-<div style = "margin-top: 40px;"> </div>
+<div style={{marginTop: '40px'}}> </div>
 
 #### Address Book
 
@@ -437,7 +437,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 <br />(1) Select an observed wallet, then move to the send page, enter the required trasfer details, and then click Finish.
 <br />(2) Click the [Next] button, then you will find the QR code that would be scanned by the cold wallet.
 </div>
-<div style = "margin-top: 20px;"> </div>
+<div style={{marginTop: '20px'}}> </div>
 </div>
 
 **2. Cold wallet**
@@ -449,7 +449,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 <br />(2) The page displays the detailed transaction information. If there is no problems with the transaction, you can click [Next] and enter the password. 
 <br />(3) After  you can see the QR code of the signed transactions for the observed wallet to scan.
 </div>
-<div style = "margin-top: 20px;"> </div>
+<div style={{marginTop: '20px'}}> </div>
 </div>
 
 **3. Observed wallet**
