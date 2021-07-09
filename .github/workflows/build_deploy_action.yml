@@ -1,0 +1,24 @@
+name: GitHub Actions Build and Deploy
+on:
+  push:
+    branches:
+      - v2
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with: 
+        ref: v2
+    
+    # 替换定制化js文件,生成静态文件
+    - name: Build
+      run: cd website && npm install && npm run build:all
+    
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+          ACCESS_TOKEN: ${{ secrets.BUILD_DEPLOY_ACTION }}
+          BRANCH: gh-pages
+          FOLDER: website/build
