@@ -1,8 +1,8 @@
-```
-id: Explorer_API_Guide
+---
+id: Explorer_API
 title: Explorer API
 sidebar_label: Explorer API
-```
+---
 
 
 
