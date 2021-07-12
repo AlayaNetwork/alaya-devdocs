@@ -1,11 +1,12 @@
 module.exports = {
   docs: [
     'Overview',
+    'Glossary',
+    
     {
       type: 'category',
       label: 'Basics',
       items: [
-        'Glossary',
         'Intro_to_Alaya',
         'Intro_to_ATP',
         'staking_and_delegation',
