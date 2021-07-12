@@ -1,7 +1,7 @@
 ---
-id: Alaya_Solution
-title: Alaya Consensus Solution
-sidebar_label: Alaya Consensus Solution
+id: Consensus_mechanism
+title: Consensus mechanism
+sidebar_label: Consensus mechanism
 ---
 
 ## Summary

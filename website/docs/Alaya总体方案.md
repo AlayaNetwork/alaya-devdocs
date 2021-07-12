@@ -1,7 +1,7 @@
 ---
-id: Alaya_Overall_Solution
-title: Alaya Overall Solution
-sidebar_label: Alaya Overall Solution
+id: Architecture
+title: Architecture
+sidebar_label: Architecture
 ---
 
 ## Overview

@@ -14,7 +14,46 @@
   "sidebar.docs.category.SDK Docs": {
     "message": "SDK文档"
   },
-  "sidebar.docs.category.Abount Alaya": {
-    "message": "关于Alaya"
+  "sidebar.docs.category.Basics": {
+    "message": "初步了解"
+  },
+  "sidebar.docs.category.Advanced": {
+    "message": "进阶了解"
+  },
+  "sidebar.docs.category.Alaya Node": {
+    "message": "Alaya节点"
+  },
+  "sidebar.docs.category.Developers": {
+    "message": "开发者"
+  },
+  "sidebar.docs.category.Tools for nodes": {
+    "message": "节点工具"
+  },
+  "sidebar.docs.category.Set up local environment": {
+    "message": "设置开发环境"
+  },
+  "sidebar.docs.category.Smart contract": {
+    "message": "智能合约"
+  },
+  "sidebar.docs.category.Solidity contract": {
+    "message": "Solidity合约"
+  },
+  "sidebar.docs.category.Wasm contract": {
+    "message": "Wasm合约"
+  },
+  "sidebar.docs.category.References": {
+    "message": "API参考"
+  },
+  "sidebar.docs.category.Standards": {
+    "message": "标准"
+  },
+  "sidebar.docs.category.Data and analytics": {
+    "message": "数据分析"
+  },
+  "sidebar.docs.category.Wallet": {
+    "message": "钱包"
+  },
+  "sidebar.docs.category.Community": {
+    "message": "社区"
   }
 }

@@ -1,7 +1,7 @@
 ---
 id: OffLine_MTool_Manual
-title: OffLine MTool Manual
-sidebar_label: OffLine MTool Manual
+title: MTool offline tutorial
+sidebar_label: MTool offline tutorial
 ---
 
 ## Introduction

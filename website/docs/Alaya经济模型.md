@@ -1,7 +1,7 @@
 ---
-id: Alaya_Economic_Model
-title: The Alaya Economic Model
-sidebar_label: The Alaya Economic Model
+id: Economic_model
+title: Economic Model
+sidebar_label: Economic Model
 ---
 
 ## 1 About Alaya Network

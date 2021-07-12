@@ -1,7 +1,7 @@
 ---
 id: Join_Alaya_NetWork
-title: Join the Alaya network
-sidebar_label: Join the Alaya network
+title: Join Alaya
+sidebar_label: Join Alaya
 ---
 
 ## Overview

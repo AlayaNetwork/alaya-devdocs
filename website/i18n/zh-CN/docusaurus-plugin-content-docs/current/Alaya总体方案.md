@@ -1,7 +1,7 @@
 ---
-id: Alaya_Overall_Solution
-title: Alaya总体方案
-sidebar_label: Alaya总体方案
+id: Architecture
+title: 总体架构
+sidebar_label: 总体架构
 ---
 
 

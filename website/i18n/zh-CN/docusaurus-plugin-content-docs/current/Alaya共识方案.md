@@ -1,7 +1,7 @@
 ---
-id: Alaya_Solution
-title: Alaya共识方案
-sidebar_label: Alaya共识方案
+id: Consensus_mechanism
+title: 共识机制
+sidebar_label: 共识机制
 ---
 
 ## 概述
