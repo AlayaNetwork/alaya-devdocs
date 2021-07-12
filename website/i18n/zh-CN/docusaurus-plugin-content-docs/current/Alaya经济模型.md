@@ -365,7 +365,7 @@ Alaya采取在小规模的备选节点中随机选取节点参与BFT共识，在
 
 >[!NOTE|style:fATP|label:注意]
 >
->如果当前节点参与了升级提案投票，且提案没有投票结束，则需要判断解冻区块是否大于投票截止区块，如果大于，则继续按照默认的解冻区块进行质押<font color=red>ATP</font>释放。如果小于，则按照投票截止区块进行质押<font color=red>ATP</font>释放。退回的质押<font color=red>ATP</font>原路返回。
+>如果当前节点参与了升级提案投票，且提案没有投票结束，则需要判断解冻区块是否大于投票截止区块，如果大于，则继续按照默认的解冻区块进行质押<font color="red">ATP</font>释放。如果小于，则按照投票截止区块进行质押<font color="red">ATP</font>释放。退回的质押<font color="red">ATP</font>原路返回。
 
 （4）备选节点候选人退出，委托的ATP处理说明：
 
