@@ -3,11 +3,6 @@ id: ARC20
 title: ARC20
 sidebar_label: ARC20
 ---
----
-id: ARC20_contract
-title: ARC-20
-sidebar_label: ARC-20
----
 
 ## ARC-20合约
 
