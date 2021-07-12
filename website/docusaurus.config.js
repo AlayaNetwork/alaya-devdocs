@@ -16,7 +16,7 @@ module.exports = {
     process.env.NODE_ENV == 'development' ? '/alaya-devdocs/js/custom_dev.js' : '/alaya-devdocs/js/custom.js'
   ],
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: process.env._LANG || 'en',
     locales: ['en', 'zh-CN'],
     localeConfigs: {
       en: {
