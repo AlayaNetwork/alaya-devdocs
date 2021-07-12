@@ -1,7 +1,7 @@
 ---
-id: Alaya_Economic
-title: Alaya Economic
-sidebar_label: Alaya Economic
+id: Economic_model
+title: Economic Model
+sidebar_label: Economic Model
 ---
 
 
@@ -366,7 +366,7 @@ Alternative Validator Candidates can apply for withdrawal voluntarily, and valid
 
 >[!NOTE|style:flat|label:notice]
 >
->If the current node participates in the upgrade proposal voting and the proposal does not end voting, you need to determine whether the thawed block is greater than the voting deadline block. If it is greater, continue to pledge <font color=red>LAT</font> release according to the default thawed block. If it is smaller, the pledged <font color=red>LAT</font> is released according to the voting deadline block. The returned pledge <font color=red>LAT</font> returned the same way.
+>If the current node participates in the upgrade proposal voting and the proposal does not end voting, you need to determine whether the thawed block is greater than the voting deadline block. If it is greater, continue to pledge <font color="red">LAT</font> release according to the default thawed block. If it is smaller, the pledged <font color="red">LAT</font> is released according to the voting deadline block. The returned pledge <font color= "red">LAT</font> returned the same way.
 
 (4) The alternative validator candidate withdraws, and LAT entrusts the processing instructions:
 
