@@ -359,7 +359,7 @@ provider API提供创建完整功能的web3应用程序所需的全部接口。
       ```
       用于request通过Samurai将RPC请求提交给PlatON/Alaya网络。它返回一个Promise以返回RPC方法调用的结果。
 
-      params和返回值根据RPC方法而变化。实际上，如果一个方法有任意数量的params，它们类型几乎总是Array<any>。
+      params和返回值根据RPC方法而变化。实际上，如果一个方法有任意数量的params，它们类型几乎总是Array。
 
       如果请求由于任何原因而失败，则Promise将以RPC Error的形式reject。
 
