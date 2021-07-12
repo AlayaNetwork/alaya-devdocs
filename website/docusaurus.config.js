@@ -13,7 +13,7 @@ module.exports = {
   scripts: [
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
     'https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js',
-    '/alaya-devdocs/js/custom.js'
+    process.env.NODE_ENV == 'development' ? '/alaya-devdocs/js/custom_dev.js' : '/alaya-devdocs/js/custom.js'
   ],
   i18n: {
     defaultLocale: 'en',
