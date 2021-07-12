@@ -1,5 +1,5 @@
 ```
-id: Explorer_PlatEye
+id: PlatEye
 title: PlatEye
 sidebar_label: PlatEye
 ```
