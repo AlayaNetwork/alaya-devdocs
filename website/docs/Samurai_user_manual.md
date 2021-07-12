@@ -1,8 +1,8 @@
-```
+---
 id: Samurai_user_manual
 title: Samurai
 sidebar_label: Samurai
-```
+---
 
 
 

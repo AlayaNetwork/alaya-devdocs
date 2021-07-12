@@ -1,7 +1,7 @@
 ---
 id: ATON_user_manual
 title: ATON钱包
-sidebar_label: ATON Wallet
+sidebar_label: ATON钱包
 ---
 
 

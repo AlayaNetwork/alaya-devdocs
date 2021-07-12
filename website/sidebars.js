@@ -95,12 +95,12 @@ module.exports = {
     {
       type: 'category',
       label: 'Wallet',
-      items: ['Wallet_Guide', 'ATON_Wallet', 'Samurai']
+      items: ['Wallet_Guide', 'ATON_user_manual', 'Samurai_user_manual']
     },
     {
       type: 'category',
       label: 'Community',
-      items: ['Join_the_Community', 'Ecosystem_Programs', 'Ways_to_contribute', 'Contribution_Tutorial']
+      items: ['Join_the_Community', 'Ecosystem_Programs', 'Ways_to_contribute', 'Contribution_Guidelines']
     }
   ]
 }
