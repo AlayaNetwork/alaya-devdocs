@@ -1,8 +1,5 @@
 {
-  "sidebar.docs.category.Run a Node": {
-    "message": "节点部署"
-  },
-  "sidebar.docs.category.Node Tools": {
+  "sidebar.docs.category.Tools for nodes": {
     "message": "节点工具"
   },
   "sidebar.docs.category.Environment Setup": {
