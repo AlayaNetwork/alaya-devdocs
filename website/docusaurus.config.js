@@ -42,10 +42,10 @@ module.exports = {
             // Link to Crowdin for French docs
             if (locale !== 'en') {
               // return `https://github.com/AlayaNetwork/alaya-devdocs/tree/master/website/translated_docs/${locale}/${docPath}`;
-              return `https://github.com/zfamz/alaya-devdocs/tree/v2/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
+              return `https://github.com/luo-dahui/alaya-devdocs/tree/v2/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
             }
             // Github 的英文文档链接
-            return `https://github.com/zfamz/alaya-devdocs/tree/v2/website/docs/${docPath}`
+            return `https://github.com/luo-dahui/alaya-devdocs/tree/v2/website/docs/${docPath}`
           }
         },
         blog: false,
