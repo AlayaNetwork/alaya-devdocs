@@ -43,7 +43,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Set up local environment',
-          items: ['Join_the_dev_network', 'Run_a_dev_node', 'Private_network', 'Interacting_with_a_Public_Node']
+          items: ['Join_the_dev_network', 'Run_a_dev_node', 'Private_network']
         },
         {
           type: 'category',
