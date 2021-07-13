@@ -1,6 +1,6 @@
 {
   "sidebar.docs.category.Run a Node": {
-    "message": "运行一个节点"
+    "message": "节点部署"
   },
   "sidebar.docs.category.Node Tools": {
     "message": "节点工具"
@@ -45,7 +45,7 @@
     "message": "API参考"
   },
   "sidebar.docs.category.Standards": {
-    "message": "标准"
+    "message": "ARC Token"
   },
   "sidebar.docs.category.Data and analytics": {
     "message": "数据分析"
