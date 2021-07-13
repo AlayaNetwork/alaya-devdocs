@@ -27,12 +27,12 @@ module.exports = {
         'Join_Alaya_NetWork',
         'Become_Verification_Node',
         'Data_snapshot',
-        'FAQs_about_Node',
         {
           type: 'category',
           label: 'Tools for nodes',
           items: ['OnLine_MTool_Manual', 'OffLine_MTool_Manual', 'Command_Line_Tools']
-        }
+        },
+         'FAQs_about_Node'
       ]
     },
     {
