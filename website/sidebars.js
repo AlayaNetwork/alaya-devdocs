@@ -70,7 +70,6 @@ module.exports = {
               label: 'Wasm contract',
               items: ['Wasm_Getting_started', 'Wasm_Development_costs', 'Wasm_Best_practices', 'Wasm_API']
             },
-            'System_contracts'
           ]
         },
         { 
