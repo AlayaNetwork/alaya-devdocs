@@ -13,10 +13,10 @@ module.exports = {
   scripts: [
     'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
     'https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js',
-    '/alaya-devdocs/js/custom.js'
+    process.env.NODE_ENV == 'development' ? '/alaya-devdocs/js/custom_dev.js' : '/alaya-devdocs/js/custom.js'
   ],
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: process.env._LANG || 'en',
     locales: ['en', 'zh-CN'],
     localeConfigs: {
       en: {
@@ -42,10 +42,10 @@ module.exports = {
             // Link to Crowdin for French docs
             if (locale !== 'en') {
               // return `https://github.com/AlayaNetwork/alaya-devdocs/tree/master/website/translated_docs/${locale}/${docPath}`;
-              return `https://github.com/zfamz/alaya-devdocs/tree/v2/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
+              return `https://github.com/luo-dahui/alaya-devdocs/tree/v2/website/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`
             }
             // Github 的英文文档链接
-            return `https://github.com/zfamz/alaya-devdocs/tree/v2/website/docs/${docPath}`
+            return `https://github.com/luo-dahui/alaya-devdocs/tree/v2/website/docs/${docPath}`
           }
         },
         blog: false,
