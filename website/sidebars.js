@@ -76,7 +76,7 @@ module.exports = {
         { 
           type: 'category',
           label: 'References',
-          items: ['Python_SDK', 'JS_SDK', 'Java_SDK', 'Json_Rpc', 'Explorer_API', 'Samurai_API']
+          items: ['JS_SDK', 'Java_SDK', 'Json_Rpc', 'Explorer_API', 'Samurai_API']
         },
         {
           type: 'category',
