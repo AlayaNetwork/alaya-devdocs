@@ -10,10 +10,7 @@ module.exports = {
         'Intro_to_Alaya',
         'Intro_to_ATP',
         'staking_and_delegation',
-        'Networks',
-        'Alaya_Account',
-        'Account_Generation',
-        'Alaya_Transaction'
+        'Networks'
       ]
     },
     {
