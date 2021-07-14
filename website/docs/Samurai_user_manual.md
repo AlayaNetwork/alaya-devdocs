@@ -14,7 +14,7 @@ Samurai only generates wallet keys on your device, so only you can access your w
 
 ## Note
 
-Samurai is a browser plug-in wallet modified based on MetaMask's version 8.0.10, which is mainly adapted to the Alaya network and PlatON network. Due to some bugs in the official MetaMask itself. Please pay attention when using Samurai:
+Samurai is a browser plug-in wallet modified based on MetaMask's open source code version 8.0.10, which is mainly adapted to the Alaya network and PlatON network. Due to some bugs in the official MetaMask itself. Please pay attention when using Samurai:
 
 * **Do not click the edit button to edit transaction related information on the transaction confirmation page**.
 * **On the transaction confirmation page, please make sure that the receiving address is correct before clicking the confirm button**.
@@ -23,15 +23,15 @@ Samurai is a browser plug-in wallet modified based on MetaMask's version 8.0.10,
 
 ## Installation
 
-+ Download Samurai plug-in package from [Release address](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)
-+ Unzip Samurai plug-in package
-+ Open chrome browser,input “chrome://extensions/” in the address bar and Enter,enter the management page of chrome extension program.
++ Download Samurai plug-in package from [Release address](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip).
++ Unzip Samurai plug-in package.
++ Open chrome browser,input `chrome://extensions/` in the address bar and Enter,enter the management page of chrome extension program.
 
 ```
 chrome://extensions/
 ```
 
-+ Open the switch of **developer mode**, select to **load the unzipped extension program**, select the unzipped catalogue of the 2nd step
++ Open the switch of **developer mode**, select to **load the unzipped extension program**, import the unzipped catalogue of the 2nd step.
 
 ![](/img/en/Samurai.assets/add-chrome.jpg)
 
@@ -41,7 +41,7 @@ chrome://extensions/
 
 ![](/img/en/Samurai.assets/samurai-welcome-en.jpg)
 
-2. Click “**Get Started**”,there is two options - **create wallet** and **import wallet**.
+2. Click “**Get Started**”,there is two options - **Create wallet** and **iImport wallet**.
 
 ![](/img/en/Samurai.assets/samurai-select-action-en.jpg)
 
@@ -175,7 +175,7 @@ Click “**ext step**”, re-input the mnemonic words with the right sequence, c
 
 
 
-+ If the import is successful you will enter the main page of the newly imported wallet, click on the wallet avatar at the top right to see a list of all wallet accounts
++ If the import is successful you will enter the main page of the newly imported wallet, click on the wallet avatar at the top right to see a list of all wallet accounts.
 
 ![](/img/en/Samurai.assets/samurai-home-import-account-end-en.jpg)
 
@@ -192,7 +192,7 @@ Samurai have added PlatON Main Network, PlatON dev network, Alaya Network, Alaya
 ![](/img/en/Samurai.assets/choose-network-en.jpg)
 
 ### Add Custom Network
-- Click **“Networks”**-> **Custom RPC**
+- Click **“Networks”**-> **Custom RPC**.
   ![](/img/en/Samurai.assets/choose-custom-network-en.jpg)
 
 - Enter the new network configuration page, and click **“Save”** after configuring the form.
