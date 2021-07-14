@@ -31,7 +31,7 @@ module.exports = {
           type: 'category',
           label: 'Tools for nodes',
           items: ['OnLine_MTool_Manual', 'OffLine_MTool_Manual', 'Command_Line_Tools']
-        },
+        }
       ]
     },
     {
