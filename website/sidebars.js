@@ -46,7 +46,7 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Dev Tools',
-                    items: ['Alaya-Truffle', 'Alaya_Studio']
+                    items: ['Alaya-Truffle', 'IDE']
                 },
                 {
                     type: 'category',
