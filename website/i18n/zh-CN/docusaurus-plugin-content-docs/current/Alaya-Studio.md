@@ -31,7 +31,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 在正确安装 PlatON Studio 并初次启动时，你将看到一个欢迎页面，这里有 PlatON Studio 正常运行所需要的依赖，包括了 Docker，Alaya Node 以及 Alaya Truffle。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/welcome.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/welcome.png" width="720px" />
 </p>
 
 
@@ -46,7 +46,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 进入主界面后，我们需要首先创建一些密钥对。在 PlatON Studio 的任意界面，点击应用左下⻆的钥匙图标，打开密钥管理器。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/keypairs.png" width="480px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/keypairs.png" width="480px" />
 </p>
 
 
@@ -61,14 +61,14 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 点击主页面中右上角的 *New Instance* 按钮打开创建新实例的弹窗，填写实例名称和选择合适的版本，点击 *Create* 按钮完成节点实例的创建。创建节点实例时间比较长 可能需要等待十几秒钟。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/new_instance.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/new_instance.png" width="720px" />
 </p>
 
 
 节点实例创建完成后，实例列表将显示刚刚创建好的实例，点击实例的绿色 *Start* 按钮启动本地节点。启动完成后，你可以在下方的日志查看器中检查节点运行日志。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/node_log.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/node_log.png" width="720px" />
 </p>
 
 
@@ -81,7 +81,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 成功启动本地节点或连接到远程网络后，点击顶部的 *Explorer* 标签打开区块浏览器。在 *Explorer* 标签旁的下拉菜单中，可以直接选择密钥管理器中保存的地址。或者，也可以在输入框中输入或粘贴希望访问的地址。点击回车后，我们便可以看到对应地址的余额、交易记录等信息。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/explorer.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/explorer.png" width="720px" />
 </p>
 
 
@@ -96,7 +96,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 - [Hello World (WASM)](https://devdocs.platon.network/docs/zh-CN/Wasm_Dev_Manual#%E5%88%9B%E5%BB%BAhelloworld%E5%90%88%E7%BA%A6)：基于 C++ 的一个简单的智能合约。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/create_project.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/create_project.png" width="720px" />
 </p>
 
 
@@ -109,7 +109,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 编译过程中需要下载 Solc，在国内网路环境下可能需要使用网络代理才能完成编译。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/compile.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/compile.png" width="720px" />
 </p>
 
 
@@ -118,7 +118,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 点击工具栏的部署按钮（船形状），部署参数窗口将被打开，在这里可以选择要部署的合约，输入构造函数的参数，并选择部署交易的签名者。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/deploy_parameters.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/deploy_parameters.png" width="720px" />
 </p>
 
 
@@ -127,7 +127,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 合约部署成功后，PlatON Studio 将弹出交易详情弹窗，显示合约部署的结果，包括交易哈希、已部署合约的地址、参数、部署交易、Receipt、ABI 等等相关数据。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/deploy.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/deploy.png" width="720px" />
 </p>
 
 
@@ -146,7 +146,7 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 PlatON Studio 在部署合约后将自动保存合约 ABI，并在读取合约时读取 ABI 数据，用于生成上面的写入方法、读取方法、事件查询，和它们各自的参数表单（关于更多 ABI 的使用参见 [ABI Storage](#abi-storage)）。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/contract.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/contract.png" width="720px" />
 </p>
 
 
@@ -159,7 +159,7 @@ PlatON Studio 的参数输入表单，支持了 Solidity 的各种参数格式�
 在中间栏，在选择 *getName* 方法，点击执行按钮便可执行读取方法，并在下方 *Result* 中看到查询结果为刚刚设置的 `Hello Alaya`。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/hello.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/hello.png" width="720px" />
 </p>
 
 
@@ -170,7 +170,7 @@ PlatON Studio 的参数输入表单，支持了 Solidity 的各种参数格式�
 在使用合约浏览器时，PlatON Studio 需要基于合约 ABI 生成各读写方法和查询事件的界面，底部栏中的 ABI Storage 就是保存这些合约 ABI 的地方。在合约部署成功后，PlatON Studio 将自动保存合约的 ABI。有些情况，如果需要调用其它合约（例如线上合约），就需要将合约的 ABI 添加到 ABI Storage 中。使用 ABI Storage 中的 New 按钮即可完成该操作。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/new_abi.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/new_abi.png" width="720px" />
 </p>
 
 
@@ -181,6 +181,6 @@ PlatON Studio 的参数输入表单，支持了 Solidity 的各种参数格式�
 PlatON Studio 还提供了直接从底层调用 PlatON/Alaya 节点 RPC 接口的功能。点击底部栏的网络按钮，在弹出菜单中选择并打开 RPC Client 后，可以看到 PlatON/Alaya 节点的全部 RPC 接口。对每个 RPC 接口，PlatON Studio 也将生成对应的参数表格，填写数据后点击运行按钮，即可完成调用并查看返回数据。
 
 <p align="center">
-  <img src="/img/en/Alaya-Studio.assets/rpc_client.png" width="720px" />
+  <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/rpc_client.png" width="720px" />
 </p>
 
