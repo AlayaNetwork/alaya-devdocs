@@ -30,7 +30,7 @@ sidebar_label: Alaya开发者文档
 ### 节点
 如果您想通过节点的方式加入到Alaya网络，以下信息可以为您提供更多的了解和帮助。
  - [验证节点介绍](/alaya-devdocs/zh-CN/Intro_to_validator)-在这里你可以了解什么是验证节点、如何成为验证节点、验证节点的收益与职责等
- - [节点部署](/alaya-devdocs/zh-CN/Run_a_validator)-开始部署一个Alaya节点
+ - [全节点部署](/alaya-devdocs/zh-CN/Run_a_fullnode)-开始部署一个Alaya数据节点
  - [成为主网验证节点](/alaya-devdocs/zh-CN/Join_Alaya_NetWork)-详细介绍了如何加入到PlatON主网，并质押成为验证的具体操作
  - 节点工具-以下工具可以帮助你更好的做节点管理
    - [MTool在线教程](/alaya-devdocs/zh-CN/OnLine_MTool_Manual)-在线教程提供了使用在线钱包管理节点的方式
