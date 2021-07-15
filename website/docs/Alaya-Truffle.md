@@ -14,5 +14,5 @@ Alaya-Truffle is a contract development framework based on Solidity and WASM, wh
 * External script runner that executes scripts within a Truffle environment.
 
 For more details, please refer to:
-- [Alaya Truffle Documentation](https://platon-truffle.readthedocs.io/en/alaya/)
+- [Usage manuals](https://platon-truffle.readthedocs.io/en/alaya/)
 - [GitHub](https://github.com/AlayaNetwork/alaya-truffle/tree/develop)
