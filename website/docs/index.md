@@ -5,87 +5,67 @@ title: Alaya Developer Docs
 sidebar_label: Alaya Developer Docs
 ---
 
-## Noderunners
+This documentation is designed to help you build with Alaya. It covers Alaya's philosophy, explains the Alaya tech stack, and documents advanced topics for more complex applications and use case.
 
-<div className="card-wrap">
-    {/* <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Install_Node.svg" />
-        <a href="/alaya-devdocs/en/Install_Node" className="card-title">Install and Deploy a Node</a>
-        <div className="card-description">
-        Install, configure, and deploy a node.
-        </div>
-    </div>
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Join_Alaya_NetWork.svg" />
-        <a href="/alaya-devdocs/en/Join_Alaya_NetWork" className="card-title">Join the Alaya Network</a>
-        <div className="card-description">
-        How to join Alaya's mainnet and testnet.
-        </div>
-    </div>
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Become_Verification_Node.svg" />
-        <a href="/alaya-devdocs/en/Become_Verification_Node" className="card-title">Upgrade to Validator Node</a>
-        <div className="card-description">
-        Participate in Alaya consensus.
-        </div>
-    </div> */}
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Install_Node.svg" />
-        <a href="/alaya-devdocs/en/Install_Node" className="card-title">Run a Node</a>
-        <div className="card-description">
-        Deploy a node, join Alaya's mainnet and testnet, and participate in Alaya consensus.
-        </div>
-    </div>
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/nodeTool.svg" />
-        <a href="/alaya-devdocs/en/OnLine_MTool_Manual" className="card-title">Node Tools</a>
-        <div className="card-description">
-        Learn to understand the commands and operating instructions of node related tools.
-        </div>
-    </div>
-</div>
+## Basics
+If you are new to Alaya, we recommend starting at the beginning and working your way through like a book.
 
-## Developers
+- [Intro to Alaya](/alaya-devdocs/en/Intro_to_ATP) - A basic introduction to the Alaya network.
+- [What is ATP](/alaya-devdocs/en/Intro_to_ATP) - Here you can get a comprehensive understanding of what ATP is, what it does, and how it is used, etc.
+- [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation) - A brief introduction to Staking and Delegation.
+- [ATON wallet](/docs/en/ATON-user-manual) - A comprehensive instruction on the use of ATON.
+- Blockchain Explorer
+  - [PlatScan](https://scan.alaya.network/)
+  - [PlatEye](https://www.alayascan.com/) - An Alaya blockchain explorer was developed by the community. It provides an [API](/alaya-devdocs/en/Explorer_API) interface for developers.
+- [Network Description](/alaya-devdocs/en/Networks) - Here you can learn what networks we have and the differences between them.
 
-<div className="card-wrap">
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Set_Develop_Env.svg" />
-        <a href="/alaya-devdocs/en/Install_Alaya" className="card-title">Environment Setup</a>
-        <div className="card-description">
-        Learn how to install Alaya and deploy a private test network.
-        </div>
-    </div>
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/Smart_Contract_Development.svg" />
-        <a href="/alaya-devdocs/en/EVM_Smart_Contract" className="card-title">Reference Docs</a>
-        <div className="card-description">
-        Learn how to develop and use Alaya blockchain smart contracts.
-        </div>
-    </div>
-    <div className="homepage-card">
-​        <img src="/alaya-devdocs/img/resdoc.svg" />
-        <a href="/alaya-devdocs/en/Java_SDK" className="card-title">SDK Docs</a>
-        <div className="card-description">
-        Tools, API and SDK documentation, learning resource references, etc.
-        </div>
-    </div>
-</div>
+## Advanced 
 
-## Everyone
+- [Architecture](/alaya-devdocs/en/Architecture) - Here you can learn about the design of the overall architecture of Alaya, and the introduction of the core modules.
+- [Economic Model](/alaya-devdocs/en/Economic_model) - A comprehensive introduction to Alaya's economic model.
+- [Governance Mechanism](/alaya-devdocs/en/Governance_mechanism) - A detailed explanation of Alaya's governance mechanism is provided here.
+- [Consensus Mechanism](/alaya-devdocs/en/Consensus_mechanism) - A detailed introduction to Alaya's consensus mechanism.
 
-<div className="card-wrap">
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/about.svg" />
-        <a href="/alaya-devdocs/en/Alaya_Overall_Solution" className="card-title">About Alaya</a>
-        <div className="card-description">
-        Learn more about Alaya's consensus, economic models, governance, privacy-preserving computation and other technologies.
-        </div>
-    </div>
-    <div className="homepage-card">
-        <img src="/alaya-devdocs/img/community.svg" />
-        <a href="/alaya-devdocs/en/community" className="card-title">Community Projects</a>
-        <div className="card-description">
-        Browse existing projects built on Alaya, including wallets, blockchain browsers, node tools.
-        </div>
-    </div>
-</div>
+## Join us
+
+### Node
+
+If you want to join the Alaya network as a node, the following guidelines can help.
+
+- [Intro to validator](/alaya-devdocs/en/Intro_to_validator) - Here you can learn what is a validation node, how to become a validation node, the benefits and responsibilities of a validation node, etc.
+- [Run a fullnode](/alaya-devdocs/en/Run_a_fullnode) - How to deploy nodes and how to pledge to join PlatON's main network.
+- Tools for nodes - The following tools can be used to assist you with the management of your nodes.
+   - [Online MTool](/alaya-devdocs/en/OnLine_MTool_Manual)-Provides a way to manage a node using an online wallet.
+   - [Offline MTool](/alaya-devdocs/en/OffLine_MTool_Manual)-Provides a way to manage node using an offline wallet to improve wallet security.
+   - [Alaya Command Line](/alaya-devdocs/zh-CN/Command_Line_Tools)
+
+### Developers
+
+- [Development Guide](/alaya-devdocs/en/Development_guide) - This section describes how to develop a DApp on the Alaya network, starting with building the development environment.
+  - [Dev Network](/alaya-devdocs/en/Join_the_dev_network)
+  - [Private Network](/alaya-devdocs/en/Private_network)
+  - [Solidity Contract](/alaya-devdocs/en/Solidity_Getting_started)
+  - [WASM Contract](/alaya-devdocs/en/Wasm_Getting_started)
+  - [API Reference](/alaya-devdocs/en/JS_SDK)
+  - [PRC Token](/alaya-devdocs/en/ARC20)
+- [Grant Program](https://forum.latticex.foundation/t/topic/1092) - When you have a great idea, talk to us and we'll make it happen together.
+  - [Principle](https://forum.latticex.foundation/t/topic/4128) - 
+  - [Technical Grant Application Template](https://forum.latticex.foundation/t/topic/4126)
+  - [Grant Process](https://forum.latticex.foundation/t/topic/4129)
+- [Bugbounty Program](https://slowmist.io/platon/index.html?utm_source=index&utm_medium=cpc&utm_campaign=platon)
+- [Alaya GitHub Repository](https://github.com/AlayaNetwork) - You can submit your code and issues by submitting a pull request or issue.
+
+
+### General users
+
+- [Ambassador Program](https://forum.latticex.foundation/t/topic/4246)
+- [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation)
+- [Ecosystem Programs](/alaya-devdocs/zh-CN/Ecosystem_Programs)
+- [Join the Community](/alaya-devdocs/zh-CN/Join_the_Community)
+  - [Twitter](https://twitter.com/PlatON_Network)
+  - [Facebook](https://www.facebook.com/PlatONNetwork/)
+  - [GitHub](https://github.com/PlatONnetwork)
+  - [Medium](https://medium.com/platon-network)
+  - [Telegram](https://t.me/PlatONNetworkCN)
+  - [Discord](https://discord.com/invite/jAjFzJ3Cff)
+  - [Forum](https://forum.latticex.foundation/)
