@@ -76,7 +76,7 @@ module.exports = {
                 },
                 {
                     type: 'category',
-                    label: 'Standards',
+                    label: 'ARC Token',
                     items: ['ARC20', 'ARC721']
                 }
             ]
