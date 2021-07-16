@@ -1,7 +1,7 @@
 ---
 id: Online_MTool
-title: Online_MTool
-sidebar_label: Online_MTool
+title: Online MTool
+sidebar_label: Online MTool
 ---
 
 ## Introductory
