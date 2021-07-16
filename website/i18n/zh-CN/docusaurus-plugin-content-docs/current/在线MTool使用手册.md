@@ -1,7 +1,7 @@
 ---
-id: OnLine_MTool_Manual
-title: MTool在线教程
-sidebar_label: MTool在线教程
+id: Online Mtool
+title: Online Mtool
+sidebar_label: Online Mtool
 ---
 
 ## 简介
