@@ -1,5 +1,5 @@
 ---
-id: OffLine_MTool_Manual
+id: Offline_MTool
 title: MTool离线教程
 sidebar_label: MTool离线教程
 ---
