@@ -29,7 +29,7 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Tools for nodes',
-                    items: ['OnLine_MTool_Manual', 'OffLine_MTool_Manual', 'Command_Line_Tools']
+                    items: ['Online_MTool', 'Offline_MTool', 'Command_Line_Tools']
                 }
             ]
         },
