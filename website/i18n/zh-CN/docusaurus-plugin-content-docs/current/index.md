@@ -15,7 +15,7 @@ sidebar_label: Alaya开发者文档
 - [ATON钱包](/alaya-devdocs/zh-CN/ATON-user-manual)-关于ATON钱包的各类操作，你都可以在这里找到相关说明
 - 区块链浏览器
   - [AlayaScan](https://scan.alaya.network/)
-  - [PlatEye](/alaya-devdocs/zh-CN/PlatEye)-由社区主导开发的浏览器，并提供了API数据查询接口
+  - [PlatEye](https://www.alayascan.com/)-由社区主导开发的浏览器，并提供了API数据查询接口
 - [网络说明](/alaya-devdocs/zh-CN/Networks)-在这里可以了解到我们有哪些网络，以及不同网络间的差异
 
 ## 进阶了解
