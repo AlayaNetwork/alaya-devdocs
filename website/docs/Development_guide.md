@@ -3,13 +3,13 @@ id: Development_guide
 title: Development guide
 sidebar_label: Development guide
 ---
-This section helps developers to quickly write, deploy and debug contracts on the Alaya network and develop various Dapp applications based on the contracts.
+This section helps developers to quickly write, deploy and debug contracts on the Alaya network and develop various DApp applications based on the contracts.
 
 ## What is DApp?
 
 A DApp is a decentralized application built on the blockchain. It usually consists of a series of contracts, an interactive front-end and a back-end service.
 
-## What a Dapp?
+## What a DApp?
 
 A DApp is a decentralized application build on the blockchain, usually consisting of a series of smart contracts, an interactive interface, and backend services.
 
@@ -46,7 +46,7 @@ WASM currently supports contract development in `C++` language, that would be we
 
 You can interact directly with the contract through the front-end directly, and the following documentation will help.
 
-- [Samurai API](/alaya-devdocs/en/Samurai_API) - Introduction to a Web Wallet API that supports the Alaya network
+- [Samurai API](/alaya-devdocs/en/Samurai_API) - Introduction to a Web Wallet API that supports the Alaya network.
 - [JS SDK](/alaya-devdocs/en/JS_SDK) - How to use JavaScrip to interact with contracts on the Alaya network.
 
 If you want to interact with the Alaya network by writing back-end services, the following SDKs in different languages can help.
