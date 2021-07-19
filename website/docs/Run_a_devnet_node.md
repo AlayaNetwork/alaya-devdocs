@@ -12,11 +12,11 @@ This section describes how to become a validator in the development network.
 
 ## Install full node of the development network
 
-Follow the instructions of [Full Node Deployment](/alaya-devdocs/zh-CN/Run_a_fullnode) to install the Alaya Development Network node and complete the synchronization.
+Follow the instructions of [Full Node Deployment](/alaya-devdocs/en/Run_a_fullnode/) to install the Alaya Development Network node and complete the synchronization.
 
 ## Stake to be a validator
 
-Operation in this part is almost the same as the operation in [Become a Validator](/alaya-devdocs/zh-CN/Become_Verification_Node). The only difference is that Mtool uses version 0.15.1 ([download link](https://download.alaya.network/alaya/ mtool/linux/0.15.1/alaya_mtool.zip)), and you need to modify the `chainId` in the configuration file `$ALAYA_MTOOLDIR/config.properties` to the development network chain ID: 201030.
+Operation in this part is almost the same as the operation in [Become a Validator](/alaya-devdocs/en/Become_Validator/). The only difference is that Mtool uses version 0.15.1 ([download link](https://download.alaya.network/alaya/ mtool/linux/0.15.1/alaya_mtool.zip)), and you need to modify the `chainId` in the configuration file `$ALAYA_MTOOLDIR/config.properties` to the development network chain ID: 201030.
 
 ## Develop the network faucet
 
