@@ -7,7 +7,7 @@ This section helps developers to quickly write, deploy and debug contracts on th
 
 ## What is DApp?
 
-DApp is a decentralized application built on the blockchain, 
+A DApp is a decentralized application built on the blockchain. It usually consists of a series of contracts, an interactive front-end and a back-end service.
 
 ## What a Dapp?
 
