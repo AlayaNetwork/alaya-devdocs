@@ -14,7 +14,7 @@ This section describes how to operate as a validator node.
 
 Before becoming a validator node, please ensure that the server meets the following requirements:
 
-- The Alaya node has been installed and the node key have been created according to the instructions of [Installing a Node](/alaya-devdocs/en/Install_Node)
+- The Alaya node has been installed and the node key have been created according to the instructions of [Installing a Node](/alaya-devdocs/en/Run_a_fullnode/)
 - Start the node and [join the Alaya network](/alaya-devdocs/en/Join_Alaya_NetWork)
 
 ## Configure Nginx
