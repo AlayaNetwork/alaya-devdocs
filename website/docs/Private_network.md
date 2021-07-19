@@ -232,7 +232,7 @@ Replace `your-account-address` with the wallet address (multiple initial account
 
 ```json
 # Here is a snippet
-...
+……
   "cbft": {
   "initialNodes": [{
         "node": "enode://node0-pubkey@127.0.0.1:16789",
@@ -241,13 +241,13 @@ Replace `your-account-address` with the wallet address (multiple initial account
         "node": "enode://node1-pubkey@127.0.0.1:16790",
         "blsPubKey": "node1-blspubkey"
     }],
-...
+   ……
   "alloc": {
     "your-account-address": {
         "balance": "999000000000000000000"
     }
   },
-...
+……
 ```
 
 ### Initialization and startup
