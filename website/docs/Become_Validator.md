@@ -1,5 +1,5 @@
 ---
-id: Become_Verification_Node
+id: Become_Validator
 title: Staking
 sidebar_label: Staking
 ---
