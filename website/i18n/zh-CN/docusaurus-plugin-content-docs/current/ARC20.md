@@ -112,8 +112,6 @@ pip install client-sdk-python
 
 #### 实例化合约
 
-以下为python代码示例：
-
 ``` python
 from client_sdk_python import Web3, HTTPProvider
 
