@@ -6,7 +6,7 @@ sidebar_label: ARC20
 
 ## ARC-20合约
 
-ARC-20是在PlatON上通过智能合约实现代币API的一套标准，它提供的功能包括代币转账、查询代币余额以及网络上可用的代币总供应量等接口，与[ERC-20](https://eips.ethereum.org/EIPS/eip-20)完全兼容。
+ARC-20是在Alaya上通过智能合约实现代币API的一套标准，它提供的功能包括代币转账、查询代币余额以及网络上可用的代币总供应量等接口，与[ERC-20](https://eips.ethereum.org/EIPS/eip-20)完全兼容。
 
 ### 协议标准
 
@@ -90,11 +90,11 @@ ARC-20标准与ERC-20完全兼容，示例可参考[这里](https://github.com/O
 
 ### 查看
 
-可以通过PlatON[浏览器](https://scan.platon.network/tokens/tokensTranfer/arc20)查看，也可以通过[ATON](https://devdocs.platon.network/docs/zh-CN/ATON-user-manual/)查看ARC-20合约交易。
+可以通过Alaya[浏览器](https://scan.alaya.network/tokens/tokensTranfer/arc20)查看，也可以通过[ATON](https://devdocs.alaya.network/docs/zh-CN/ATON-user-manual/)查看ARC-20合约交易。
 
 ### 合约发行
 
-请参考[Solidity合约入门手册](/docs/zh-CN/Solidity_Dev_Manual#入门手册)。
+请参考[Solidity合约入门手册](/alaya-devdocs/zh-CN/Solidity_Getting_started)。
 
 ### 调用方法
 
@@ -102,7 +102,7 @@ ARC-20标准与ERC-20完全兼容，示例可参考[这里](https://github.com/O
 
 #### 安装依赖
 
-使用下列命令，安装PlatON python library，建议 Python 版本3.7.5+:
+使用下列命令，安装 `python library`，建议 Python 版本3.7.5+:
 
 ``` shell
 pip install client-sdk-python
