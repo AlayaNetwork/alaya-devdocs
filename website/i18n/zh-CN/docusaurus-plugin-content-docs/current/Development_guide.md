@@ -32,7 +32,7 @@ Dapp，即Decentralized Application，是构建在区块链上的去中心化应
 
 - [开发入门](/alaya-devdocs/zh-CN/Solidity_Getting_started) - 你可以了解如何在Alaya网络部署、编译、发布、调用合约
 - [最佳实践](/alaya-devdocs/zh-CN/Solidity_Best_practices) - 对于如何合理设置手续费，如何规避因交易失败扣除手续费等合约编写规范的介绍
-- [开发成本](/alaya-devdocs/zh-CN/Solidity_Development_costs) - 介绍在Alaya上Slolidity合约部署调用的手续费成本以及和以太坊手续费的对比分析
+- [开发成本](/alaya-devdocs/zh-CN/Solidity_Development_costs) - 介绍在Alaya上Solidity合约部署调用的手续费成本以及和以太坊手续费的对比分析
 - [安全指南](/alaya-devdocs/zh-CN/Solidity_Contract_security) - 介绍如何提高合约的安全性
 - [合约迁移](/alaya-devdocs/zh-CN/Solidity_Migration_tutorial) - 除了自己编写合约，你也可以从以太坊或其他支持Solidity合约的公链上迁移合约到Alaya网络
 
@@ -40,22 +40,22 @@ Dapp，即Decentralized Application，是构建在区块链上的去中心化应
 
 WASM合约目前只支持`C++`语言开发，也欢迎大家继续扩展其他主流语言的合约。
 
-- [开发入门](/alaya-devdocs/zh-CN/Wasm_Getting_started) - 介绍如何在Alaya上编译发布调用WASM合约 
-- [开发成本](/alaya-devdocs/zh-CN/Wasm_Development_costs) - 介绍在Alaya上Wasm合约部署调用的手续费成本以及和以太坊手续费的对比分析
+- [开发入门](/alaya-devdocs/zh-CN/Wasm_Getting_started) - 介绍如何在 Alaya 上编译发布调用 WASM 合约 
+- [开发成本](/alaya-devdocs/zh-CN/Wasm_Development_costs) - 介绍在 Alaya 上 Wasm 合约部署调用的手续费成本以及和以太坊手续费的对比分析
 - [最佳实践](/alaya-devdocs/zh-CN/Wasm_Best_practices) - 对于如何合理设置手续费，如何规避因交易失败扣除手续费等合约编写规范的介绍
 - [合约库](/alaya-devdocs/zh-CN/Wasm_API)
 
 ### 前端或后台开发
 
 如果你想直接通过Web前端与合约直接交互，请参考以下文档：
-- [Samurai API](/alaya-devdocs/zh-CN/Samurai_API) - 提供Web钱包开发支持
-- [JS SDK](/alaya-devdocs/zh-CN/JS_SDK) - 如何使用JS与合约或Alaya网络进行交互
+- [Samurai API](/alaya-devdocs/zh-CN/Samurai_API) - 提供 Web 钱包开发支持
+- [JS SDK](/alaya-devdocs/zh-CN/JS_SDK) - 如何使用JS与合约或 Alaya 网络进行交互
 
-如果你想通过编写后端代码来和合约或Alaya网络进行交互，以下不同语言的SDK可以提供帮助：
+如果你想通过编写后端代码来和合约或Alaya网络进行交互，以下不同语言的 SDK 可以提供帮助：
 - [JAVA SDK](/alaya-devdocs/zh-CN/Java_SDK)
 
 
 ### 如何发布PRC Token？
 
-由于Alaya继承了EVM虚拟机，理论上可以兼容所有以太坊标准协议的Token，目前常用的Token协议有[ARC-20](/alaya-devdocs/zh-CN/ARC20)和[ARC-721](/alaya-devdocs/zh-CN/ARC721).
+由于Alaya继承了EVM虚拟机，理论上可以兼容所有以太坊标准协议的 Token ，目前常用的 Token 协议有 [ARC-20](/alaya-devdocs/zh-CN/ARC20)和[ARC-721](/alaya-devdocs/zh-CN/ARC721).
 
