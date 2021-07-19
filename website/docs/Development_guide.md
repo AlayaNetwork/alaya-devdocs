@@ -15,7 +15,7 @@ A DApp is a decentralized application build on the blockchain, usually consistin
 
 ### Set up local development environment
 
-- [Private network](/alaya-devdocs/en/Run_a_dev_node) - Build a private node or cluster network locally, which can help you debug your local application quickly.
+- [Private network](/alaya-devdocs/en/Private_network) - Build a private node or cluster network locally, which can help you debug your local application quickly.
 - [Join the dev network](/alaya-devdocs/en/Join_the_dev_network) - Use the development network to test your application in a more open network environment.
 
 ### How to Write Contracts?
@@ -28,8 +28,8 @@ A DApp is a decentralized application build on the blockchain, usually consistin
 #### Solidity contract
 
 - [Getting started](/alaya-devdocs/en/Solidity_Getting_started) - An example of how to deploy, compile, publish, and call contracts on the Alaya network.
-- [Best practices](/alaya-devdocs/zh-CN/Solidity_Best_practices) - Learn about some of the specifications for writing contracts on trasaction fees.
-- [Development costs](/alaya-devdocs/zh-CN/Solidity_Development_costs) - Introduces the fee cost about Solidity contract deployment and call, and the comparative analysis of the fee with Ethereum.
+- [Best practices](/alaya-devdocs/en/Solidity_Best_practices/) - Learn about some of the specifications for writing contracts on trasaction fees.
+- [Development costs](/alaya-devdocs/zh-CN/Solidity_Development_costs/) - Introduces the fee cost about Solidity contract deployment and call, and the comparative analysis of the fee with Ethereum.
 - [Contract security](/alaya-devdocs/en/Solidity_Contract_security) - A few writing specifications on how to improve the security of the contract.
 - [Migration tutorial](/alaya-devdocs/en/Solidity_Migration_tutorial) - A tutorial on migrating Solidity contracts from Ethereum to the Alaya network.
 
