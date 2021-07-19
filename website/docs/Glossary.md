@@ -234,7 +234,7 @@ The account for depositing tokens issued by the system and rewards.
 ### Locked-up Token
 
 
-Tokens locked in the [lock contract](https://scan.alaya.network/contract-detail?address=atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp8h9fxw) of the system, uncirculated.
+Tokens locked in the [LockupContract](https://scan.alaya.network/contract-detail?address=atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp8h9fxw) of the system, uncirculated.
 
 
 
