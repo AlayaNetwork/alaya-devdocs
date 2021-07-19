@@ -8,7 +8,7 @@ sidebar_label: Private network
 
 This document describes how to quickly deploy a personal private blockchain, which requires certain development/operation and maintenance skills of the reader. 
 
-- Before building a private chain, you need to compile the binary file. Please refer to [Alaya Installation](/alaya-devdocs/zh-CN/Install_Alaya).
+- Before building a private chain, you need to compile the binary file. Please refer to [Alaya Installation](/alaya-devdocs/en/Install_Alaya/).
 - Takes Ubuntu as an example to illustrate how to deploy a private chain, including single node and cluster deployment. The deployment method on Windows is similar.
 
 If it is inconvenient for you to connect to an external network, you can build your own private network. `Alaya` supports the single node mode and cluster mode to run private network. Take the Ubuntu environment as an example, and suppose the node data directory is: `~/platon-node/data` (users can adjust it by themselves).
