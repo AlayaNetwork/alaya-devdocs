@@ -63,15 +63,15 @@ At least 10,000 ATP should be staked. You can stake more, but can only unstake a
 
 ### How to Be A Validator
 
-First, make sure you have a balance of 10,000 ATP in your staking account, either locked or unlocked. You also need a server with the recommended configuration above. With the above two conditions met, you can [Be an Alaya validator](/alaya-devdocs/zh-CN/Run_a_validator) through staking.
+First, make sure you have a balance of 10,000 ATP in your staking account, either locked or unlocked. You also need a server with the recommended configuration above. With the above two conditions met, you can [Be an Alaya validator](/alaya-devdocs/en/Become_Validator) through staking.
 
-For descriptions of node-related nouns and roles, please refer to [Role Description](/alaya-devdocs/zh-CN/Governance_mechanism#%E5%8F%82%E4%B8%8E%E8%A7%92%E8%89%B2).
+For descriptions of node-related nouns and roles, please refer to [Role Description](/alaya-devdocs/en/Governance_mechanism/#participating-roles).
 
 ### What's the Reward
 
 #### Reward source
 
-- [Issuance](/alaya-devdocs/zh-CN/Economic_model#%E5%A2%9E%E5%8F%91): 5% of the total issuance of the previous year will be issued every year, and 40% of the yearly issuance (that is, 2% of the total issuance) enter the staking reward pool. 
+- [Issuance](/alaya-devdocs/en/Economic_model#lat-issue): 5% of the total issuance of the previous year will be issued every year, and 40% of the yearly issuance (that is, 2% of the total issuance) enter the staking reward pool. 
 
 #### Node reward
 
@@ -108,8 +108,8 @@ Staking rewards are distributed to validators and alternative validators, and th
 
 In Alaya, governance is conducted by voting on proposals on the chain. Proposals can be categorized as below:
 
-- [Text proposal](/alaya-devdocs/zh-CN/Governance_mechanism#%E6%8F%90%E6%A1%88%E5%88%86%E7%B1%BB): Used to initiate decisions that do not need to be executed by code.
-- [Software Upgrade Proposal](/alaya-devdocs/zh-CN/Governance_mechanism#%E6%8F%90%E6%A1%88%E5%88%86%E7%B1%BB): Used to initiate on-chain vote for version upgrades for the purpose of smooth upgrades.
-- [Proposal for parameter modification](/alaya-devdocs/zh-CN/Governance_mechanism#%E6%8F%90%E6%A1%88%E5%88%86%E7%B1%BB): Used to adjust system parameters and other manageable parameters.
-- [Cancellation proposal](/alaya-devdocs/zh-CN/Governance_mechanism#%E6%8F%90%E6%A1%88%E5%88%86%E7%B1%BB): Used to cancel proposals for software upgrade or parameter modification in voting on the chain.
+- [Text proposal](/alaya-devdocs/en/Governance_mechanism/#proposal-classification): Used to initiate decisions that do not need to be executed by code.
+- [Software Upgrade Proposal](/alaya-devdocs/en/Governance_mechanism/#proposal-classification): Used to initiate on-chain vote for version upgrades for the purpose of smooth upgrades.
+- [Proposal for parameter modification](/alaya-devdocs/en/Governance_mechanism/#proposal-classification): Used to adjust system parameters and other manageable parameters.
+- [Cancellation proposal](/alaya-devdocs/en/Governance_mechanism/#proposal-classification): Used to cancel proposals for software upgrade or parameter modification in voting on the chain.
 
