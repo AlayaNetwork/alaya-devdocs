@@ -1,5 +1,5 @@
 ---
-id: Become_Verification_Node
+id: Become_Validator
 title: 成为验证节点
 sidebar_label: 成为验证节点
 ---
