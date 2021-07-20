@@ -37,54 +37,24 @@ contract ARC20 {
 
 ### Required interfaces
 
-- totalSupply
-
-Returns the total token supply.
-
-- balanceOf
-
-Returns the account balance of another account with address _owner.
-
-- transfer
-
-Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller’s account balance does not have enough tokens to spend.
-
-- approve
-
-MUST trigger on any successful call to approve(address _spender, uint256 _value).
-
-- transferFrom
-
-Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event.
-
-- allowance
-
-Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.
+- `totalSupply`: Returns the total token supply.
+- `balanceOf`: Returns the account balance of another account with address _owner.
+- `transfer`: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller’s account balance does not have enough tokens to spend.
+- `approve`: MUST trigger on any successful call to approve(address _spender, uint256 _value).
+- `transferFrom`: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event.
+- `allowance`: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.
 
 ### Optionally interfaces
 
-- name
-
-Return the name of the token.
-
-- symbol
-
-Return token symbol.
-
-- decimals
-
-Return Token Accuracy.
+- `name`: Return the name of the token.
+- `symbol`: Return token symbol.
+- `decimals`: Return Token Accuracy.
 
 ### Event
 
-- Transfer
-
-MUST trigger when tokens are transferred, including zero value transfers.
+- `Transfer`: MUST trigger when tokens are transferred, including zero value transfers.
 A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.
-
-- Approval
-
-MUST trigger on any successful call to approve(address _spender, uint256 _value).
+- `Approval`: MUST trigger on any successful call to approve(address _spender, uint256 _value).
 
 ## Example
 
@@ -94,13 +64,13 @@ ARC-20 standard is fully compatible with ERC-20, examples are available [here](h
 
 You can view ARC20 Token and transaction history in [Alaya Explorer](https://scan.alaya.network/tokens/tokensTranfer/arc20) and [ATON Wallet](/alaya-devdocs/en/ATON_user_manual/).
 
-## Deploy
+## Contract Deployment
 
 Please refer to [Solidity Getting started](/alaya-devdocs/en/Solidity_Getting_started).
 
 ## Method call
 
-The following is an example of how Python is used.
+Here's an example of how to call a contract method using the Python SDK.
 
 ### Install the dependencies
 
