@@ -95,9 +95,9 @@ On the right side of the address bar are buttons for commonly used tools. For ex
 
 Click the *Project* tab at the top to switch to the contract project interface. Click the *New* button in the upper right corner of the page to open the project creation pop-up window, enter the project name and select the appropriate template. PlatON Studio has provided multiple templates:
 
-- [Hello World (Solidity)](https://devdocs.platon.network/docs/zh-CN/Solidity_Dev_Manual/#%E5%88%9B%E5%BB%BAhelloworld%E5%90%88%E7%BA %A6): A simple smart contract based on Solidity;
-- [Crowd Funding (Solidity)](https://devdocs.platon.network/docs/zh-CN/Solidity_Dev_Manual#%E4%BC%97%E7%AD%B9%E5%90%88%E7%BA% A6): A crowdfunding smart contract based on Solidity;
-- [Hello World (WASM)](https://devdocs.platon.network/docs/zh-CN/Wasm_Dev_Manual#%E5%88%9B%E5%BB%BAhelloworld%E5%90%88%E7%BA% A6): A simple smart contract based on C++.
+- [Hello World (Solidity)](/alaya-devdocs/en/Solidity_Getting_started/#create-helloworld-contract): A simple smart contract based on Solidity;
+- [Crowd Funding (Solidity)](/alaya-devdocs/en/Solidity_Getting_started/#crowdfunding-contract): A crowdfunding smart contract based on Solidity;
+- [Hello World (WASM)](/alaya-devdocs/en/Wasm_Getting_started#create-helloworld-contract): A simple smart contract based on C++.
 
 <p align="center">
   <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/create_project.png" width="720px" />
@@ -109,7 +109,7 @@ After the project is created, PlatON Studio will automatically open the newly cr
 
 ### Compile a smart contract
 
-Click the compile button (in a hammer shape) on the toolbar, and PlatON Studio will compile the project. You can view the compilation result through the terminal below. After compilation, the compiled JSON file will be generated in the `build/contracts` folder under the project directory. For the specific data format, please refer to [solc documentation](https://docs.soliditylang.org/en/latest/using- the-compiler.html#output-description).
+Click the compile button (in a hammer shape) on the toolbar, and PlatON Studio will compile the project. You can view the compilation result through the terminal below. After compilation, the compiled JSON file will be generated in the `build/contracts` folder under the project directory. For the specific data format, please refer to [solc documentation](https://docs.soliditylang.org/en/latest/using-the-compiler.html#output-description).
 
 During the compilation process, you need to download Solc. If you're in the Chinese mainland, you may need to use a network proxy for compilation.
 
