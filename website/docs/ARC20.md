@@ -16,7 +16,7 @@ ARC-20 is a standard for convertible fungible tokens. The contract standard spec
 ``` solidity
 contract ARC20 {
 
-	  //required
+    //required
     function totalSupply() constant returns (uint theTotalSupply);
     function balanceOf(address _owner) constant returns (uint balance);
     function transfer(address _to, uint _value) returns (bool success);
@@ -24,12 +24,12 @@ contract ARC20 {
     function approve(address _spender, uint _value) returns (bool success);
     function allowance(address _owner, address _spender) constant returns (uint remaining);
 	
-	  //optional
-	  function name() public view returns (string);
-	  function symbol() public view returns (string);
-	  function decimals() public view returns (uint8);
+    //optional
+    function name() public view returns (string);
+    function symbol() public view returns (string);
+    function decimals() public view returns (uint8);
 	
-	  //events
+    //events
     event Transfer(address indexed _from, address indexed _to, uint _value);
     event Approval(address indexed _owner, address indexed _spender, uint _value);
 }
@@ -40,7 +40,7 @@ contract ARC20 {
 - `totalSupply`: Returns the total token supply.
 - `balanceOf`: Returns the account balance of another account with address _owner.
 - `transfer`: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller’s account balance does not have enough tokens to spend.
-- `approve`: MUST trigger on any successful call to approve(address _spender, uint256 _value).
+- `approve`: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.
 - `transferFrom`: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event.
 - `allowance`: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.
 
