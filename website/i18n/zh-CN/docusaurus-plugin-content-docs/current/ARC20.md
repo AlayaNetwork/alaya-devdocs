@@ -36,53 +36,23 @@ contract ARC20 {
 
 #### 必须实现的接口
 
-- totalSupply
-
-该方法返回令牌总的发行量。
-
-- balanceOf
-
-该方法返回查询账户的令牌余额。
-
-- transfer
-
-该方法用来从智能合约地址里转账令牌到指定账户。
-
-- approve
-
-该方法用来授权第三方（例如Dapp）从令牌拥有者账户转账令牌。
-
-- transferFrom
-
-该方法可供第三方从令牌拥有者账户转账令牌。需要配合approve()方法使用。
-
-- allowance
-
-该方法用来查询可供第三方转账的查询账户的令牌余额。
+- totalSupply：该方法返回令牌总的发行量
+- balanceOf：该方法返回查询账户的令牌余额
+- transfer：该方法用来从智能合约地址里转账令牌到指定账户
+- approve：该方法用来授权第三方（例如Dapp）从令牌拥有者账户转账令牌
+- transferFrom：该方法可供第三方从令牌拥有者账户转账令牌，需要配合approve()方法使用
+- allowance：该方法用来查询可供第三方转账的查询账户的令牌余额
 
 #### 可选实现的接口
 
-- name
-
-返回令牌名称
-
-- symbol
-
-返回令牌符号
-
-- decimals
-
-返回令牌精度
+- name：返回令牌名称
+- symbol：返回令牌符号
+- decimals：返回令牌精度
 
 #### 事件
 
-- Transfer
-
-当通证被成功转账后，会触发Transfer转账事件，在链上记录转账信息日志。
-
-- Approval
-
-当approve()方法被成功调用后，会触发Approval事件，在链上记录授权信息日志。
+- Transfer：当通证被成功转账后，会触发Transfer转账事件，在链上记录转账信息日志
+- Approval：当approve()方法被成功调用后，会触发Approval事件，在链上记录授权信息日志
 
 ### 示例
 
