@@ -91,9 +91,9 @@ PlatON Studio 安装包可以在 [Github Releases](https://github.com/ObsidianLa
 
 点击顶部的 *Project* 标签，切换至合约项目界面。点击页面右上角的 *New* 按钮打开创建项目弹窗，输入项目名称并选择合适的模版，PlatON Studio 目前提供了多个模版：
 
-- [Hello World (Solidity)](https://devdocs.platon.network/docs/zh-CN/Solidity_Dev_Manual/#%E5%88%9B%E5%BB%BAhelloworld%E5%90%88%E7%BA%A6)：基于 Solidity 的一个简单的智能合约；
-- [Crowd Funding (Solidity)](https://devdocs.platon.network/docs/zh-CN/Solidity_Dev_Manual#%E4%BC%97%E7%AD%B9%E5%90%88%E7%BA%A6)：基于 Solidity 的众筹智能合约；
-- [Hello World (WASM)](https://devdocs.platon.network/docs/zh-CN/Wasm_Dev_Manual#%E5%88%9B%E5%BB%BAhelloworld%E5%90%88%E7%BA%A6)：基于 C++ 的一个简单的智能合约。
+- [Hello World (Solidity)](/alaya-devdocs/zh-CN/Solidity_Getting_started#创建helloworld合约)：基于 Solidity 的一个简单的智能合约；
+- [Crowd Funding (Solidity)](/alaya-devdocs/zh-CN/Solidity_Getting_started#众筹合约)：基于 Solidity 的众筹智能合约；
+- [Hello World (WASM)](/alaya-devdocs/zh-CN/Wasm_Getting_started#创建-helloworld-合约)：基于 C++ 的一个简单的智能合约。
 
 <p align="center">
   <img src="/alaya-devdocs/img/en/Alaya-Studio.assets/create_project.png" width="720px" />
