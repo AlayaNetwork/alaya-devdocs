@@ -62,7 +62,7 @@ ARC-20 standard is fully compatible with ERC-20, examples are available [here](h
 
 ## View Token
 
-You can view ARC20 Token and transaction history in [Alaya Explorer](https://scan.alaya.network/tokens/tokensTranfer/arc20) and [ATON Wallet](/alaya-devdocs/en/ATON_user_manual/).
+You can view ARC-20 Token and transaction history in [Alaya Explorer](https://scan.alaya.network/tokens/tokensTranfer/arc20) and [ATON Wallet](/alaya-devdocs/en/ATON_user_manual/).
 
 ## Contract Deployment
 
