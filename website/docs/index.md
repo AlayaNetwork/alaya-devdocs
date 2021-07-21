@@ -13,7 +13,7 @@ If you are new to Alaya, we recommend starting at the beginning and working your
 - [Intro to Alaya](/alaya-devdocs/en/Intro_to_ATP) - A basic introduction to the Alaya network.
 - [What is ATP](/alaya-devdocs/en/Intro_to_ATP) - Here you can get a comprehensive understanding of what ATP is, what it does, and how it is used, etc.
 - [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation) - A brief introduction to Staking and Delegation.
-- [ATON wallet](/docs/en/ATON-user-manual) - A comprehensive instruction on the use of ATON.
+- [ATON wallet](/docs/en/ATON_user_manual) - A comprehensive instruction on the use of ATON.
 - Blockchain Explorer
   - [PlatScan](https://scan.alaya.network/)
   - [PlatEye](https://www.alayascan.com/) - An Alaya blockchain explorer was developed by the community. It provides an [API](/alaya-devdocs/en/Explorer_API) interface for developers.
@@ -35,8 +35,8 @@ If you want to join the Alaya network as a node, the following guidelines can he
 - [Intro to validator](/alaya-devdocs/en/Intro_to_validator) - Here you can learn what is a validation node, how to become a validation node, the benefits and responsibilities of a validation node, etc.
 - [Run a fullnode](/alaya-devdocs/en/Run_a_fullnode) - How to deploy nodes and how to pledge to join PlatON's main network.
 - Tools for nodes - The following tools can be used to assist you with the management of your nodes.
-   - [Online MTool](/alaya-devdocs/en/OnLine_MTool_Manual)-Provides a way to manage a node using an online wallet.
-   - [Offline MTool](/alaya-devdocs/en/OffLine_MTool_Manual)-Provides a way to manage node using an offline wallet to improve wallet security.
+   - [Online MTool](/alaya-devdocs/en/OnLine_MTool)-Provides a way to manage a node using an online wallet.
+   - [Offline MTool](/alaya-devdocs/en/OffLine_MTool)-Provides a way to manage node using an offline wallet to improve wallet security.
    - [Alaya Command Line](/alaya-devdocs/zh-CN/Command_Line_Tools)
 
 ### Developers
