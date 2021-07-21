@@ -12,7 +12,7 @@ sidebar_label: Alaya开发者文档
 - [关于Alaya](/alaya-devdocs/zh-CN/Intro_to_Alaya) - 快速了解什么是Alaya
 - [什么是ATP](/alaya-devdocs/zh-CN/Intro_to_ATP) - 在这里你可以全面了解到什么是ATP、ATP有什么作用，以及相关使用方式等
 - [质押&委托](/alaya-devdocs/zh-CN/staking_and_delegation)
-- [ATON钱包](/alaya-devdocs/zh-CN/ATON-user-manual) - 关于ATON钱包的各类操作，你都可以在这里找到相关说明
+- [ATON钱包](/alaya-devdocs/zh-CN/ATON_user_manual) - 关于ATON钱包的各类操作，你都可以在这里找到相关说明
 - 区块链浏览器
   - [AlayaScan](https://scan.alaya.network/)
   - [PlatEye](/alaya-devdocs/zh-CN/PlatEye) - 由社区开发的浏览器，并提供了API数据查询接口
@@ -33,8 +33,8 @@ sidebar_label: Alaya开发者文档
  - [全节点部署](/alaya-devdocs/zh-CN/Run_a_fullnode)-开始部署一个Alaya数据节点
  - [成为主网验证节点](/alaya-devdocs/zh-CN/Join_Alaya_NetWork)-详细介绍了如何加入到PlatON主网，并质押成为验证的具体操作
  - 节点工具-以下工具可以帮助你更好的做节点管理
-   - [MTool在线教程](/alaya-devdocs/zh-CN/OnLine_MTool_Manual)-在线教程提供了使用在线钱包管理节点的方式
-   - [MTool离线教程](/alaya-devdocs/zh-CN/OffLine_MTool_Manual)-该教程提供了如何使用离线钱包管理节点的方式，提高钱包安全性
+   - [MTool在线教程](/alaya-devdocs/zh-CN/Online_MTool)-在线教程提供了使用在线钱包管理节点的方式
+   - [MTool离线教程](/alaya-devdocs/zh-CN/Offline_MTool)-该教程提供了如何使用离线钱包管理节点的方式，提高钱包安全性
    - [Alaya命令行](/alaya-devdocs/zh-CN/Command_Line_Tools)
 
 ### 开发者
@@ -42,10 +42,10 @@ sidebar_label: Alaya开发者文档
 - [开发指南](/alaya-devdocs/zh-CN/Development_guide) - 介绍如何使用已有的工具和资源开发 Dapp
   - [开发网络](/alaya-devdocs/zh-CN/Join_the_dev_network) - 介绍了如何接入开发网络
   - [私有网络](/alaya-devdocs/zh-CN/Private_network)-在本地搭建你的私有网络来调试本地应用
-  - [Solidity合约](/alaya-devdocs/zh-CN/Solidity_Dev_Manual) - 关于 Solidity 合约编写、编译、发布教程，以及一些合约开发建议
-  - [Wasm合约](/alaya-devdocs/zh-CN/Wasm_Operation_Principle) - 关于 Wasm 合约的编写、编译、发布教程，以及一些合约开发建议
+  - [Solidity合约](/alaya-devdocs/zh-CN/Solidity_Getting_started) - 关于 Solidity 合约编写、编译、发布教程，以及一些合约开发建议
+  - [Wasm合约](/alaya-devdocs/zh-CN/Wasm_Getting_started) - 关于 Wasm 合约的编写、编译、发布教程，以及一些合约开发建议
   - [Alaya Truffle](/alaya-devdocs/zh-CN/Alaya-Truffle) - 支持 Solidity 和 Wasm 合约的编译工具
-  - [Alaya Studio](/alaya-devdocs/zh-CN/Alaya_Studio) - 支持 Solidity 和 Wasm 合约的编写工具
+  - [IDE](/alaya-devdocs/zh-CN/IDE) - 支持 Solidity 和 Wasm 合约的编写工具
   - [API参考](/alaya-devdocs/zh-CN/JS_SDK) - 可以和PlatON网络交互的各类API、以及 Web 钱包 API 
   - [ARC Token](/alaya-devdocs/zh-CN/ARC20) - `ARC Token`标准，目前支持 ARC20 和 ARC721
  
@@ -58,7 +58,7 @@ sidebar_label: Alaya开发者文档
 
 ### 普通用户
 
-- [大使计划](https://forum.latticex.foundation/t/topic/4246) - 你可以作为大使为PlatON生态贡献力量
+- [大使计划](https://forum.latticex.foundation/t/topic/4246) - 你可以作为大使为 PlatON 和 Alaya 生态贡献力量
 - [质押&委托](/docs/en/staking_and_delegation) - 介绍了什么是委托、什么是质押，以及相关收益问题
 - 社区资源：
   - [Facebook](https://www.facebook.com/PlatONNetwork/)
