@@ -49,9 +49,6 @@ If you want to join the Alaya network as a node, the following guidelines can he
   - [API Reference](/alaya-devdocs/en/JS_SDK)
   - [PRC Token](/alaya-devdocs/en/ARC20)
 - [Grant Program](https://forum.latticex.foundation/t/topic/1092) - When you have a great idea, talk to us and we'll make it happen together.
-  - [Principle](https://forum.latticex.foundation/t/topic/4128) - 
-  - [Technical Grant Application Template](https://forum.latticex.foundation/t/topic/4126)
-  - [Grant Process](https://forum.latticex.foundation/t/topic/4129)
 - [Bugbounty Program](https://slowmist.io/platon/index.html?utm_source=index&utm_medium=cpc&utm_campaign=platon)
 - [Alaya GitHub Repository](https://github.com/AlayaNetwork) - You can submit your code and issues by submitting a pull request or issue.
 
