@@ -8,6 +8,7 @@ sidebar_label: Alaya Developer Docs
 This documentation is designed to help you build with Alaya. It covers Alaya's philosophy, explains the Alaya tech stack, and documents advanced topics for more complex applications and use case.
 
 ## Basics
+
 If you are new to Alaya, we recommend starting at the beginning and working your way through like a book.
 
 - [Intro to Alaya](/alaya-devdocs/en/Intro_to_ATP) - A basic introduction to the Alaya network.
