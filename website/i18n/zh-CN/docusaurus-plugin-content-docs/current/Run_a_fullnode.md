@@ -42,12 +42,12 @@ ntpq -4c rv | grep leap_none
 
 | **网络**   | **ChainID** | **当前版本** |
 | ------ | ------- | -------- |
-| 主网   | 201018  | 0.15.0   |
+| 主网   | 201018  | 0.16.0   |
 | 开发网 | 201030  | 0.16.0   |
 
 ```bash
 # 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.0
-export PLATON_VERSION=0.15.0
+export PLATON_VERSION=0.16.0
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/platon -P /usr/bin
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alayakey -P /usr/bin
 sudo chmod +x /usr/bin/platon  /usr/bin/alayakey
@@ -178,10 +178,10 @@ sudo systemctl start alaya.service
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| platon二进制文件  | https://download.alaya.network/alaya/platon/0.15.0/platon                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.15.0/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe                | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| platon二进制文件  | https://download.alaya.network/alaya/platon/0.16.0/platon                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.0/alayakey                               |                                                                 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.0/mtool-setup.exe                | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.0/mtool-client.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | scan浏览器地址 | https://scan.alaya.network/                                                               |                                                                 |
 
