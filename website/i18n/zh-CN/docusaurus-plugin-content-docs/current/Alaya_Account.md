@@ -14,7 +14,7 @@ sidebar_label: Alaya账户
 
 这里已经出现了账户、公钥、私钥及地址等概念，不要着急，下面我们就慢慢的一一解释这些概念。我们先看下面一张图片：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/account.png" alt="Account" style="zoom: 25%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/account.png" alt="Account" style={{zoom: '25%'}} />
 
 ### 账户（Accounts）
 
@@ -39,7 +39,7 @@ Alaya还有另外一种账户是**合约账户**，通常我们也直接称之�
 >
 >下图为地址组成部分示意图：
 >
-><img src="/alaya-devdocs/img/zh-CN/account.assets/18.png" alt="地址组成部分" style="zoom: 50%;" />
+><img src="/alaya-devdocs/img/zh-CN/account.assets/18.png" alt="地址组成部分" style={{zoom: '50%'}} />
 
 再进一步的关于如何使用公钥生成地址，将下下文【私钥和公钥】进行解释。
 
@@ -82,7 +82,7 @@ PublicKey :  628f1d4fc711f609c76ea89c7556236fa0df559fa92c074c5c7869eaf8d96adb7b9
 
 私钥说白了其实是一个很大的随机数，其长度为64位的16进制数（32字节）。然后我们使用在线工具：[Paul Miller — Elliptic curve calculator (paulmillr.com)](https://paulmillr.com/ecc/)，如下图所示：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/19.png" alt="在线工具生成公钥" style="zoom: 50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/19.png" alt="在线工具生成公钥" style={{zoom: '50%'}}  />
 
 有人可能会疑问，感觉公钥完全对不上啊。其实x和y是两个10进制的数，而上面给定的是16进制的。我们只要将两个数进制转化一下就完全相同了。
 
@@ -111,7 +111,7 @@ atp1d4vw2qxjg5ldyaqceel3s6ykpljav6hc2ey3yc
 >
 > 步骤2中使用了在线工具：[Keccak-256 Online (emn178.github.io)](https://emn178.github.io/online-tools/keccak_256.html)
 >
-> <img src="/alaya-devdocs/img/zh-CN/account.assets/20.png" alt="注意事项" style="zoom:50%;" />
+> <img src="/alaya-devdocs/img/zh-CN/account.assets/20.png" alt="注意事项" style={{zoom: '50%'}}  />
 >
 > 步骤3使用的是Alaya的js sdk，使用的代码为：
 >
@@ -141,7 +141,7 @@ atp1d4vw2qxjg5ldyaqceel3s6ykpljav6hc2ey3yc
 
 [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)：定义 Hierarchical Deterministic wallet (简称 "HD Wallet")，是一个系统可以从单一个 seed 产生一树状结构储存多组 keypairs（私钥和公钥）。比特币和现在的Alaya有一点不同的是，每一次交易如果交易账户的钱比特币没有全部用完，需要产生新的公私钥对来进行“打零”操作，所以一般情况下需要生成一系列的账户。而HD Wallet很好的解决了这个问题，只需要一个Seed就可以产生大量账户，而且HD Wallet还可以方便的备份、转移到其他相容装置（因为都只需要 seed），以及分层的权限控制等。下图为HD Wallet的结构。
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/21.png" alt="HD Wallet" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/21.png" alt="HD Wallet" style={{zoom: '50%'}}  />
 
 > 在Alaya交易中，每次交易都产生新的账户也是一种更安全的操作，因为公钥泄露也会产生一定的安全风险。这是由于从历史上来看，一种加密算法被破解并不罕见。但如果你只公布了公钥的hash（地址），那么被破解的可能性又小了一大截。
 
@@ -228,11 +228,11 @@ main();
 
 ATON是支持PlatON和Alaya网络的手机钱包，相比其他第三方钱包来说，除了一般钱包的功能，还有调用Alaya内置合约的功能，可以进行委托及赎回操作。可以从以下地址下载[ATON 钱包](https://platon.network/wallet)。
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/1.png" alt="初始界面" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/1.png" alt="初始界面" style={{zoom: '50%'}}  />
 
 本教程为了安全起见，我们选择“PlatON开发网络”进行账户的相关操作，单击“PlatON开发网络”，可以切换网络，如下图所示：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/2.png" alt="切换网络" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/2.png" alt="切换网络" style={{zoom: '50%'}}  />
 
 > **创建钱包**：新建一个全新的钱包。
 >
@@ -240,19 +240,19 @@ ATON是支持PlatON和Alaya网络的手机钱包，相比其他第三方钱包�
 
 单击创建钱包，进入以下界面：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/3.jpg" alt="创建钱包" style="zoom: 25%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/3.jpg" alt="创建钱包" style={{zoom: '25%'}}  />
 
 钱包类型可以选择普通或HD。一般情况下选择普通即可，选择HD的话会一次性的创建密码相同的30个钱包，普通用户很少用到。**钱包名称**随意起一个即可，本例中使用“嘎子的钱包”，**密码**建议搞得复杂一点，不要被他人破解。然后点击“创建钱包”即可。现在钱包就创建成功了。进入“钱包创建成功”页面。这时你可以选择备份钱包（也可以直接跳过，后续再进行备份）。
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/4.jpg" alt="钱包创建成功" style="zoom: 25%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/4.jpg" alt="钱包创建成功" style={{zoom: '25%'}}  />
 
 点击开始备份，会显示12个英文单词，请将这12个单词最好记录在纸上，妥善保存。你必须注意的是，**这12个单词和私钥的作用基本是一致的，所以如果丢失，或被别人窃取，你就失去了对当前钱包的所有权，所以对助记词的保存必须十分慎重！**如下图所示：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/5.jpg" alt="备份助记词" style="zoom:25%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/5.jpg" alt="备份助记词" style={{zoom: '25%'}}  />
 
 然后进行助记词的验证：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/6.jpg" alt="验证助记词" style="zoom:25%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/6.jpg" alt="验证助记词" style={{zoom: '25%'}}  />
 
 最后完成备份即可。
 
@@ -369,43 +369,43 @@ MTool功能也非常强大，但并不在本教程的讨论范围内，这里就
 
 **Samurai钱包的安装**：本文以Google Chrome为例，说明Samurai的安装方法。由于Samurai并没有存在于哪个应用商店中，所以需要手动安装。首先到[Samurai Chrome 8.1.0](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)下载最新版本的Samurai钱包，将下载的安装包解压。然后打开Google Chrome，选择设置->更多工具->扩展程序，如下图所示：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/7.png" style="zoom: 67%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/7.png" style={{zoom: '67%'}}  />
 
 然后打开开发者模式->加载解压的扩展程序->选择刚才解压的文件夹，如下图所示：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/8.png" alt="Samurai安装" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/8.png" alt="Samurai安装" style={{zoom: '50%'}}  />
 
 安装完成后Samurai会自动运行，单击开始使用：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/9.png" alt="欢迎来到Samurai" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/9.png" alt="欢迎来到Samurai"  style={{zoom: '50%'}}  />
 
 之后你就可以选择导入一个现有的钱包或者新建一个新钱包，这里我们新建一个新钱包：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/10.png" alt="导入钱包或新建钱包" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/10.png" alt="导入钱包或新建钱包"  style={{zoom: '50%'}}  />
 
 出现协议界面，直接同意即可：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/11.png" alt="协议" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/11.png" alt="协议"  style={{zoom: '50%'}}  />
 
 输入钱包密码：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/12.png" alt="输入密码" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/12.png" alt="输入密码"  style={{zoom: '50%'}}  />
 
 单击“建立”后，会提示是否备份助记词，如果你点击“稍后提醒我”就可以直接使用钱包，这里我们备份一下助记词：先显示助记词，然后将助记词妥善保管好，然后单击下一页：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/14.png" alt="助记词" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/14.png" alt="助记词"  style={{zoom: '50%'}}  />
 
 然后和其他钱包一样，需要通过选择将助记词完整的还原出来：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/15.png" alt="确认助记词" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/15.png" alt="确认助记词"  style={{zoom: '50%'}} />
 
 这样你就完成了钱包的创建：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/16.png" alt="恭喜" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/16.png" alt="恭喜"  style={{zoom: '50%'}}  />
 
 由于最新版本的Samurai是PlatON与Alaya通用的，所以我们需要更换一下网络，才能接入Alaya网络：
 
-<img src="/alaya-devdocs/img/zh-CN/account.assets/17.png" alt="选择网络" style="zoom:50%;" />
+<img src="/alaya-devdocs/img/zh-CN/account.assets/17.png" alt="选择网络"  style={{zoom: '50%'}}  />
 
 这样我们就完成了使用Samurai钱包创建账户。
 
