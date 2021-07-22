@@ -170,7 +170,7 @@ Provider API本身非常简单，并且包装了PlatON/Alaya JSON-RPC格式化�
   + 您的私钥的另一个高级版本，实际上用于派生多个私钥。
   + 一个（通常）12或24个单词的短语，使您可以访问无限数量的帐户。
   + 由ATON, Samurai等使用。
-  + 源自[BIP 39 Spec](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+  + 源自[BIP 39 Spec](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
   + 您可以使用此短语访问的账户由“路径”决定的帐户。
   + 示例12个单词： `brain surround have swap horror body response double fire dumb bring hazard`
   + 示例24个单词： `card enrich gesture connect kick topple fan body blind engine lemon swarm venue praise addict agent unaware equal bean sing govern income link leg`
