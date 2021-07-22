@@ -43,10 +43,10 @@ ntpq -4c rv | grep leap_none
 | **网络**   | **ChainID** | **当前版本** |
 | ------ | ------- | -------- |
 | 主网   | 201018  | 0.15.0   |
-| 开发网 | 201030  | 0.15.1   |
+| 开发网 | 201030  | 0.16.0   |
 
 ```bash
-# 如果需要加入开发网，请修改PLATON_VERSION，如：0.15.1
+# 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.0
 export PLATON_VERSION=0.15.0
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/platon -P /usr/bin
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alayakey -P /usr/bin
@@ -215,13 +215,13 @@ fast同步状态下，会查询不到当前块高，待同步到最新高度，�
 ### 运行全节点加入alaya开发网络
 
 如您正在部署主网节点，以下内容可以忽略。
-开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.15.1`。
+开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.16.0`。
 
 #### 初始化创世区块
 
 ```bash
 # 下载创世区块文件genesis.json
-cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json
 
 # 初始化创世区块文件
 cd ~/platon-node && platon --datadir ./data init genesis.json
@@ -245,10 +245,10 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| platon二进制文件| https://download.alaya.network/alaya/platon/0.15.1/platon                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.15.1/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.1/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.1/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| platon二进制文件| https://download.alaya.network/alaya/platon/0.16.0/platon                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.0/alayakey                               |                                                                 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | 开放RPC URL    | http://47.241.91.2:6789                                                                   |                                                                 |
 | scan浏览器地址 | https://devnetscan.alaya.network                                                          |                                                                 |
