@@ -57,27 +57,27 @@ You can install the above compilation environment yourself. Please make sure the
 Get the source code and put it in the GOPATH path, where `alaya` is the branch name, then switch to the actual branch:
 
 ```
-mkdir -p $GOPATH/src/github.com/AlayaNetwork
-cd $GOPATH/src/github.com/AlayaNetwork
-git clone -b alaya-develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
+mkdir -p $GOPATH/src/github.com/PlatONnetwork
+cd $GOPATH/src/github.com/PlatONnetwork
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 - Add bls dependent library to environment variables
 
 ```bash
-echo 'export PATH=$PATH:"$GOPATH/src/github.com/AlayaNetwork/Alaya-Go/crypto/bls/bls_win/lib"' >> ~/.bashrc
+echo 'export PATH=$PATH:"$GOPATH/src/github.com/PlatONnetwork/PlatON-Go/crypto/bls/bls_win/lib"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 - Compile
 
 ```
-cd $GOPATH/src/github.com/AlayaNetwork/Alaya-Go
-go run build/ci.go install ./cmd/alaya
+cd $GOPATH/src/github.com/PlatONnetwork/PlatON-Go
+go run build/ci.go install ./cmd/platon
 go run build/ci.go install ./cmd/alayakey
 ```
 
-After compiling, `alaya`,` alayakey` executable files will be generated in the` Alaya-Go/build/bin` directory. Copy these executable files to your working directory and run.
+After compiling, `platon`,` alayakey` executable files will be generated in the` PlatON-Go/build/bin` directory. Copy these executable files to your working directory and run.
 
 > Repeated compilation will overwrite the previously generated executable file.
 
@@ -94,7 +94,7 @@ After compiling, `alaya`,` alayakey` executable files will be generated in the` 
 **step2.** Get the Alaya source:
 
 ```bash
-git clone -b alaya-develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
+git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 **step3.** Install dependency library:
@@ -107,16 +107,16 @@ sudo apt install -y golang-go cmake llvm g++ libgmp-dev libssl-dev
 **step4.** compilation：
 
 ```bash
-cd Alaya-Go 
+cd PlatON-Go 
 make all
 ```
 
-After compiling, a series of executable files such as `alaya, alayakey` and so on will be generated in the `./build/bin` directory. 
+After compiling, a series of executable files such as `platon, alayakey` and so on will be generated in the `./build/bin` directory. 
 
 **step5.** Copy binary:
 
 ```shell
-sudo cp -f ./build/bin/alaya /usr/bin/ 
+sudo cp -f ./build/bin/platon /usr/bin/ 
 sudo cp -f ./build/bin/alayakey /usr/bin/
 ```
 

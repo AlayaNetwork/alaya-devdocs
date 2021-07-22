@@ -10,14 +10,14 @@ This document describes how to quickly deploy a private blockchain.
 
 - Take the private chain deployment under Ubuntu as an example, including single node and cluster deployment. The deployment procedures under Windows is similar to Ubuntu.
 
-If you can't easily connect to an external network, you can choose to build your own private network.Alaya supports single node mode and cluster mode to run private networks.Take the Ubuntu environment as an example and suppose the node data directory is **`~/alaya-node/data`** , which the users should modify accordingly:
+If you can't easily connect to an external network, you can choose to build your own private network.Alaya supports single node mode and cluster mode to run private networks.Take the Ubuntu environment as an example and suppose the node data directory is **`~/platon-node/data`** , which the users should modify accordingly:
 
 ## Standalone or Single Node Mode
 
 - **Generate nodekey and blskey files**
 
 ```shell
-mkdir -p ~/alaya-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/blspub)
+mkdir -p ~/platon-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/blspub)
 ```
 
 > Note:
@@ -30,7 +30,7 @@ mkdir -p ~/alaya-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | aw
 - **Generate wallet file**
 
 ```shell
-mkdir -p ~/alaya-node/data && alaya --datadir ~/alaya-node/data account new
+mkdir -p ~/platon-node/data && platon --datadir ~/platon-node/data account new
 ```
 
 > Your new account is locked with a password. Please give a password. Do not forget this password.
@@ -46,9 +46,9 @@ mkdir -p ~/alaya-node/data && alaya --datadir ~/alaya-node/data account new
 >
 > The wallet file and password are very important for the generated account address. Losing the wallet file or forgetting the password will cause the token in the account to be lost. Please make a backup of the wallet file and remember the password.
 
-- **Editing the genesis block configuration file `alaya.json`**
+- **Editing the genesis block configuration file `platon.json`**
 
-Create the genesis block configuration file alaya.json in the `~/alaya-node` directory, then copy the following genesis block configuration file template content to alaya.json file, modify `your-node-pubkey` as the previously generated **_node public key (nodeid)_**, `your-node-blspubkey` as **_node BLS public key (blspub)_**, `your-account-address` as **_the wallet address_**:
+Create the genesis block configuration file platon.json in the `~/platon-node` directory, then copy the following genesis block configuration file template content to platon.json file, modify `your-node-pubkey` as the previously generated **_node public key (nodeid)_**, `your-node-blspubkey` as **_node BLS public key (blspub)_**, `your-account-address` as **_the wallet address_**:
 
 ```json
 ……
@@ -154,7 +154,7 @@ Create the genesis block configuration file alaya.json in the `~/alaya-node` dir
 - **Initialize the genesis block**
 
 ```shell
-cd ~/alaya-node && alaya --datadir ./data init alaya.json
+cd ~/platon-node && platon --datadir ./data init platon.json
 ```
 
 > Note:
@@ -163,10 +163,10 @@ cd ~/alaya-node && alaya --datadir ./data init alaya.json
 
 - **Start Node**
 
-  In general, the alaya process is always in the foreground, so we cannot do anything else, and if we exit the terminal in the middle, the program will exit.Ubuntu can launch programs in nohup mode:
+  In general, the platon process is always in the foreground, so we cannot do anything else, and if we exit the terminal in the middle, the program will exit.Ubuntu can launch programs in nohup mode:
 
 ```shell
-cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
+cd ~/platon-node && nohup platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/platon.log 2>&1 &
 ```
 
 When succeed in excuting the command of nohup, press enter again to ensure that the process does not exit because the terminal is closed by mistake.
@@ -174,7 +174,7 @@ When succeed in excuting the command of nohup, press enter again to ensure that 
 - **Check the running status of the node**
 
 ```shell
-alaya attach http://localhost:6789 --exec platon.blockNumber
+platon attach http://localhost:6789 --exec platon.blockNumber
 ```
 
 Execute the above command several times. If the block height keeps growing, the single-node private chain deployment is successful.
@@ -190,10 +190,10 @@ Execute the above command several times. If the block height keeps growing, the 
 
 **1.Create directory**
 
-Create directories data0 and data1 under the alaya-node directory as the data directories for the two nodes. Generate two coinbase accounts for each node.
+Create directories data0 and data1 under the platon-node directory as the data directories for the two nodes. Generate two coinbase accounts for each node.
 
 ```shell
-mkdir -p ~/alaya-node/data0 ~/alaya-node/data1
+mkdir -p ~/platon-node/data0 ~/platon-node/data1
 ```
 
 **2. Generate key pair**
@@ -201,16 +201,16 @@ mkdir -p ~/alaya-node/data0 ~/alaya-node/data1
 Save the nodekey and blskey of the two nodes to 'data0' and 'data1' respectively.
 
 ```shell
-cd ~/alaya-node/data0 && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
+cd ~/platon-node/data0 && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
 
-cd ~/alaya-node/data1 && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
+cd ~/platon-node/data1 && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
 ```
 
 **3. Editing genesis files**
 
-Modify the genesis block configuration file `alaya.json`.
+Modify the genesis block configuration file `platon.json`.
 
-Add the node information of the two nodes to the initialNodes array, which is 2 because we are generating a two-node cluster environment.The alaya.json file needs to be modified: please replace the contents of the following files 'node0-nodekey ', 'node1-nodekey', 'node0-blspubkey' and 'node1-blspubkey' with the node public key and node BLS public key generated in the previous step.Replace 'your account-address' with the wallet address.
+Add the node information of the two nodes to the initialNodes array, which is 2 because we are generating a two-node cluster environment.The platon.json file needs to be modified: please replace the contents of the following files 'node0-nodekey ', 'node1-nodekey', 'node0-blspubkey' and 'node1-blspubkey' with the node public key and node BLS public key generated in the previous step.Replace 'your account-address' with the wallet address.
 
 ```
 ……
@@ -236,24 +236,24 @@ Add the node information of the two nodes to the initialNodes array, which is 2 
 Initialize genesis block information for node 0 and node 1, respectively:
 
 ```
-alaya --datadir ~/alaya-node/data0 init alaya.json && alaya --datadir ~/alaya-node/data1 init alaya.json
+platon --datadir ~/platon-node/data0 init platon.json && platon --datadir ~/platon-node/data1 init platon.json
 ```
 
 After successful initialization, start node 0 and node 1 in nohup mode:
 
 ```shell
-cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
+cd ~/platon-node && nohup platon --identity "platon0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/platon.log 2>&1 &
 
-cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
+cd ~/platon-node && nohup platon --identity "platon1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/platon.log 2>&1 &
 ```
 
 **5. Check**
 
-Go to the alaya console for any node as described above to see if the node is connected to its counterpart and to see if the cluster has started successfully by seeing if blockNumber continues to grow.
+Go to the platon console for any node as described above to see if the node is connected to its counterpart and to see if the cluster has started successfully by seeing if blockNumber continues to grow.
 
 ```shell
-alaya attach http://localhost:6789 --exec platon.blockNumber
-alaya attach http://localhost:6790 --exec platon.blockNumber
+platon attach http://localhost:6789 --exec platon.blockNumber
+platon attach http://localhost:6790 --exec platon.blockNumber
 ```
 
 Do this multiple times and watch if the block height increases.

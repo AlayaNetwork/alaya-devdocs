@@ -10,7 +10,7 @@ sidebar_label: JSON RPC
 
 ## JavaScript API
 
-To talk to an alaya node from inside a JavaScript application use the [web3.js](https://github.com/PlatONnetwork/client-sdk-js) library, which gives an convenient interface for the RPC methods.
+To talk to an platon node from inside a JavaScript application use the [web3.js](https://github.com/PlatONnetwork/client-sdk-js) library, which gives an convenient interface for the RPC methods.
 
 ## Note
 
@@ -164,7 +164,7 @@ none
 
 ##### Returns
 
-`String` - The current alaya protocol version.
+`String` - The current platon protocol version.
 
 ##### Example
 ```js

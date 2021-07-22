@@ -16,7 +16,7 @@ Alaya主网络已于北京时间2020年10月24日正式上线对外开放，Chai
 
 - 已经按照[安装一个节点](/alaya-devdocs/zh-CN/Install_Node)指引安装好Alaya节点并创建好节点密钥。
 
-本章节假设服务器为 Ubuntu18.04，可执行文件所在工作目录为 `~/alaya-node`，注意后续所有命令行操作均在工作目录下进行。
+本章节假设服务器为 Ubuntu18.04，可执行文件所在工作目录为 `~/platon-node`，注意后续所有命令行操作均在工作目录下进行。
 
 如需要加入Alaya主网络，请参考[加入Alaya主网络](#加入alaya主网络)；如需要加入Alaya开发网络，请参考[加入Alaya开发网络](#加入alaya开发网络)；
 
@@ -31,7 +31,7 @@ Alaya主网络已于北京时间2020年10月24日正式上线对外开放，Chai
 执行以下命令即可启动验证节点加入Alaya主网络：
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 **提示：**
@@ -52,7 +52,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 | --syncmode    | fast：快速同步模式，full：全同步模式                         |
 | –db.nogc      | 开启归档模式                                                 |
 
-更多参数意义通过`alaya --help`命令查看。
+更多参数意义通过`platon --help`命令查看。
 
 ## 加入Alaya开发网络
 
@@ -60,7 +60,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 ### 开发网络相关资源
 
->- alaya：https://download.alaya.network/alaya/platon/0.15.1/platon
+>- platon：https://download.alaya.network/alaya/platon/0.15.1/platon
 >
 >- alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
 >
@@ -85,7 +85,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
   下载创世区块文件genesis.json：
 
   ```bash
-  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+  cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
   ```
   
   
@@ -95,7 +95,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
   执行命令：
 
   ```bash
-  cd ~/alaya-node && alaya --datadir ./data init genesis.json
+  cd ~/platon-node && platon --datadir ./data init genesis.json
   ```
 
   > 说明：
@@ -109,7 +109,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 请参考[安装一个节点](/alaya-devdocs/zh-CN/Install_Node)章节先创建节点密钥：nodekey、blskey，然后执行以下命令即可启动验证节点加入Alaya开发网络；如果需要成为验证节点，请通过后续说明方式申请大额测试ATP（开发网将根据测试需要不定期重置，开发网ATP无任何实际价值）。
 
 ```shell
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 
@@ -142,7 +142,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 ### 进入`Alaya`控制台
 
 ```bash
-alaya attach http://localhost:6789
+platon attach http://localhost:6789
 ```
 
 
@@ -160,7 +160,7 @@ admin.peers
 通过在`Alaya`控制台中执行以下命令查看当前节点的块高。
 
 ```bash
-alaya.blockNumber
+platon.blockNumber
 ```
 
 节点列表中出现一系列Alaya网络节点并且块高在不断增长，则表示连接成功！（由于新节点需要同步，可能会存在延迟）

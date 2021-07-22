@@ -8,12 +8,12 @@ sidebar_label: Alaya命令行工具
 
 ```conf
 NAME:
-   alaya.exe - the alaya-go command line interface
+   platon.exe - the platon-go command line interface
 
-   Copyright 2019 The Alaya-Go Authors
+   Copyright 2019 The PlatON-Go Authors
 
 USAGE:
-   alaya.exe [options] command [command options] [arguments...]
+   platon.exe [options] command [command options] [arguments...]
 
 VERSION:
    0.14.0-unstable
@@ -21,7 +21,7 @@ VERSION:
 COMMANDS:
    account           Manage accounts
    attach            Start an interactive JavaScript environment (connect to node)
-   bug               opens a window to report a bug on the alaya repo
+   bug               opens a window to report a bug on the platon repo
    console           Start an interactive JavaScript environment
    copydb            Create a local chain from a target chaindata folder
    dump              Dump a specific block from storage
@@ -35,9 +35,9 @@ COMMANDS:
    version           Print version numbers
    help, h           Shows a list of commands or help for one command
 
-ALAYA OPTIONS:
+PLATON OPTIONS:
   --config value                                        TOML configuration file
-  --datadir "C:\Users\jungle\AppData\Roaming\Alaya"  Data directory for the databases and keystore
+  --datadir "C:\Users\jungle\AppData\Roaming\PlatON"  Data directory for the databases and keystore
   --keystore                                            Directory for the keystore (default = inside the datadir)
   --nousb                                               Disables monitoring for and managing USB hardware wallets
   --networkid value                                     Network identifier (integer, 1=Frontier, 2=Morden (disused), 3=Ropsten, 4=Rinkeby) (default: 1)
@@ -169,7 +169,7 @@ MISC OPTIONS:
 
 
 COPYRIGHT:
-   Copyright 2019 The Alaya-Go Authors
+   Copyright 2019 The PlatON-Go Authors
 ```
 ---
 
@@ -183,55 +183,55 @@ COPYRIGHT:
 - 查看当前节点数据目录
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.datadir
+  platon attach http://localhost:6789 -exec admin.datadir
   ```
 
 - 查看当前节点的ChainID
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.chainId
+  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.chainId
   ```
 
 - 查看当前节点的id
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.id
+  platon attach http://localhost:6789 -exec admin.nodeInfo.id
   ```
 
 - 查看当前节点的blsPubKey
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.blsPubKey
+  platon attach http://localhost:6789 -exec admin.nodeInfo.blsPubKey
   ```
 
 - 查看当前节点的p2p端口号
 
   ```
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.ports.listener
+  platon attach http://localhost:6789 -exec admin.nodeInfo.ports.listener
   ```
 
 - 查看当前节点的peers的连接信息
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.peers
+  platon attach http://localhost:6789 -exec admin.peers
   ```
 
 - 查看当前节点的创世区块hash
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.genesis
+  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.genesis
   ```
 
 - 查看cbft共识每个共识轮单个节点的最大出块数($amount)
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.amount
+  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.amount
   ```
 
 - 查看cbft共识每个共识轮单个节点的出块的时间窗口（$period，单位：ms）
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.period
+  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.period
   ```
 
   >**出块时间间隔 = period / 1000 / amount**
@@ -239,19 +239,19 @@ COPYRIGHT:
 - 获取二进制版本号和签名信息
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'admin.getProgramVersion()'
+  platon attach http://localhost:6789 -exec 'admin.getProgramVersion()'
   ```
 
 - 获取零知识证明信息（用节点私钥去证明该接口出的证明是否正确，用于节点质押）
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'admin.getSchnorrNIZKProve()'
+  platon attach http://localhost:6789 -exec 'admin.getSchnorrNIZKProve()'
   ```
 
 - 查看底层使用的虚机类型（EVM/WASM）
 
   ```bash
-  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.interpreter
+  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.interpreter
   ```
 
 ### platon
@@ -259,85 +259,85 @@ COPYRIGHT:
 - 查看当前节点下所有的钱包地址
 
   ```bash
-  alaya attach http://localhost:6789 -exec platon.accounts
+  platon attach http://localhost:6789 -exec platon.accounts
   ```
 
 - 查看当前节点的块高
 
   ```bash
-  alaya attach http://localhost:6789 -exec platon.blockNumber
+  platon attach http://localhost:6789 -exec platon.blockNumber
   ```
 
 - 查询指定账户的余额($account为账户地址)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getBalance("$account")'
+  platon attach http://localhost:6789 -exec 'platon.getBalance("$account")'
   ```
 
 - 查询指定块的交易数量($blockNumber为指定块的块高或区块hash)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getBlockTransactionCount($blockNumber)'
+  platon attach http://localhost:6789 -exec 'platon.getBlockTransactionCount($blockNumber)'
   ```
 
 - 查询交易信息($txHash为交易hash)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getTransaction("$txHash")'
+  platon attach http://localhost:6789 -exec 'platon.getTransaction("$txHash")'
   ```
 
 - 查询交易回执($txHash为交易hash)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getTransactionReceipt("$txHash")'
+  platon attach http://localhost:6789 -exec 'platon.getTransactionReceipt("$txHash")'
   ```
 
 - 查询指定账户的交易数（参数$address为账户地址，用于发交易时指定交易的nonce）
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getTransactionCount("$address")'
+  platon attach http://localhost:6789 -exec 'platon.getTransactionCount("$address")'
   ```
 
 - 查询当前节点正在pending的交易
 
   ```bash
-  alaya attach http://localhost:6789 -exec platon.pendingTransactions
+  platon attach http://localhost:6789 -exec platon.pendingTransactions
   ```
 
 - 查看当前节点默认的gasPrice(单位：von)
 
   ```bash
-  alaya attach http://localhost:6789 -exec platon.gasPrice
+  platon attach http://localhost:6789 -exec platon.gasPrice
   ```
 
 - 预估交易的gas(参数$transaction为交易详情，单位：von)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.estimateGas($transaction)'
+  platon attach http://localhost:6789 -exec 'platon.estimateGas($transaction)'
   ```
 
   如：
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.estimateGas({from:"atp1fyeszufxwxk62p46djncj86rd553skpparksa6",to:"atp1zhllhqu72wz66cdwly8983xhla2sann7zpwwf2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
+  platon attach http://localhost:6789 -exec 'platon.estimateGas({from:"lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6",to:"lax1zhllhqu72wz66cdwly8983xhla2sann75j2ec2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
   ```
 
 - 查看当前节点底层版本的p2p协议号
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'web3.toDecimal(platon.protocolVersion)'
+  platon attach http://localhost:6789 -exec 'web3.toDecimal(platon.protocolVersion)'
   ```
 
 - 查看当前节点是否在同步
 
   ```bash
-  alaya attach http://localhost:6789 -exec platon.syncing
+  platon attach http://localhost:6789 -exec platon.syncing
   ```
 
 - 获取指定区块详情
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.getBlock($blockNumber)
+  platon attach http://localhost:6789 -exec 'platon.getBlock($blockNumber)
   ```
 
 ### personal
@@ -345,13 +345,13 @@ COPYRIGHT:
 - 生成钱包(参数为钱包密码)
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.newAccount("88888888")'
+  platon attach http://localhost:6789 -exec 'personal.newAccount("88888888")'
   ```
 
 - 导入私钥，生成钱包
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.importRawKey($privateKey,$password)'
+  platon attach http://localhost:6789 -exec 'personal.importRawKey($privateKey,$password)'
   ```
 
   > 参数：
@@ -366,31 +366,31 @@ COPYRIGHT:
   例子：
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.importRawKey("842d943dbb50a8d3fe63af2f82fda3d8f0ca817fe8d47e61698142bac7c24212","88888888")'
+  platon attach http://localhost:6789 -exec 'personal.importRawKey("842d943dbb50a8d3fe63af2f82fda3d8f0ca817fe8d47e61698142bac7c24212","88888888")'
   ```
 
 - 查看账户地址
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.listAccounts'
+  platon attach http://localhost:6789 -exec 'personal.listAccounts'
   ```
 
 - 查看本地钱包信息，包括钱包地址，钱包文件路径，钱包状态
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.listWallets'
+  platon attach http://localhost:6789 -exec 'personal.listWallets'
   ```
 
 - 锁账户
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.lockAccount(platon.accounts[0])'
+  platon attach http://localhost:6789 -exec 'personal.lockAccount(platon.accounts[0])'
   ```
 
 - 解锁账户
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'personal.unlockAccount(platon.accounts[0],"88888888",24*3600)'
+  platon attach http://localhost:6789 -exec 'personal.unlockAccount(platon.accounts[0],"88888888",24*3600)'
   ```
 
   > 参数：
@@ -402,7 +402,7 @@ COPYRIGHT:
   - 发送未签名的交易
 
   ```shell
-  alaya attach http://localhost:6789 -exec 'personal.sendTransaction({from:platon.accounts[2],to:platon.accounts[0],value:web3.toVon("0.1","lat"),nonce:platon.getTransactionCount(platon.accounts[2])},"88888888")'
+  platon attach http://localhost:6789 -exec 'personal.sendTransaction({from:platon.accounts[2],to:platon.accounts[0],value:web3.toVon("0.1","lat"),nonce:platon.getTransactionCount(platon.accounts[2])},"88888888")'
   ```
 
 ### net
@@ -410,19 +410,19 @@ COPYRIGHT:
 - 查看当前节点的networkid
 
   ```bash
-  alaya attach http://localhost:6789 -exec net.version
+  platon attach http://localhost:6789 -exec net.version
   ```
 
 - 查看当前节点的p2p端口是否处于监听状态
 
   ```bash
-  alaya attach http://localhost:6789 -exec net.listening
+  platon attach http://localhost:6789 -exec net.listening
   ```
 
 - 查看当前节点的peers连接数
 
   ```bash
-  alaya attach http://localhost:6789 -exec net.peerCount
+  platon attach http://localhost:6789 -exec net.peerCount
   ```
 
 ### debug
@@ -430,13 +430,13 @@ COPYRIGHT:
 - 查询当前节点经济模型配置参数
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'debug.economicConfig()'
+  platon attach http://localhost:6789 -exec 'debug.economicConfig()'
   ```
 
 - 设置日志级别
 
   ```shell
-  alaya attach http://localhost:6789 -exec 'debug.verbosity(4)'
+  platon attach http://localhost:6789 -exec 'debug.verbosity(4)'
   ```
 
   >日志级别说明：

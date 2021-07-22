@@ -15,7 +15,7 @@ Before joining the Alaya public network, please ensure that the server has the f
 
 - The Alaya node has been installed and the wallet file and node key have been created according to the instructions of [Installing a Node](/alaya-devdocs/en/Install_Node).
 
-This section assumes that the server is Ubuntu 18.04, and the working directory of the executable file is `~/alaya-node`. Note that all subsequent commands should be run under the same working directory.
+This section assumes that the server is Ubuntu 18.04, and the working directory of the executable file is `~/platon-node`. Note that all subsequent commands should be run under the same working directory.
 
 
 
@@ -30,7 +30,7 @@ Anyone and any organization can join the Alaya main network.
 **Execute the following command to join the Alaya as a validator node**
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 **Prompt:**
@@ -51,7 +51,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 | --syncmode     | fast: Fast synchronization mode, full: All synchronous mode  |
 | --db.nogc      | Enable archive mode                                          |
 
-See more parameters with the command `alaya --help`;
+See more parameters with the command `platon --help`;
 
 ## Join the Alaya Develop Network
 
@@ -59,7 +59,7 @@ The development network provides a development test environment for the develope
 
 ### Develop network related resources
 
-> - alaya：https://download.alaya.network/alaya/platon/0.15.1/platon
+> - platon：https://download.alaya.network/alaya/platon/0.15.1/platon
 >
 > - alayakey：https://download.alaya.network/alaya/platon/0.15.1/alayakey
 >
@@ -84,7 +84,7 @@ The development network provides a development test environment for the develope
   Save the following to the genesis.json file:
 
   ```bash
-  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json 
+  cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json 
   ```
   
 - Initialize the genesis block file
@@ -92,7 +92,7 @@ The development network provides a development test environment for the develope
    Executive command:
 
   ```shell
-  cd ~/alaya-node && alaya --datadir ./data init genesis.json
+  cd ~/platon-node && platon --datadir ./data init genesis.json
   ```
 
   > Description:
@@ -105,7 +105,7 @@ The development network provides a development test environment for the develope
 Please refer to [Install node](/alaya-devdocs/en/Install_Node) section to create a nodekey: nodekey, blskey, and then execute the following command to start the verification node to join the Alaya development network;If you need to become a verification node, please apply for a large test ATP by following instructions (the development network will be reset irregularly according to the test needs, and the ATP of the test network has no practical value).
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 ### Other
@@ -134,7 +134,7 @@ If the key is not generated in advance, the node is automatically generated in t
 ### Enter `Alaya` console
 
 ```bash
-alaya attach http://localhost:6789
+platon attach http://localhost:6789
 ```
 
 ### View peers of a node
