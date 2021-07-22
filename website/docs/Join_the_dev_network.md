@@ -19,10 +19,10 @@ RPC Address：http://47.241.91.2:6789
 
 #### Access to the development network through local programs
 
-On the ubuntu18.04 server, download and install the PlatON binary file with the following command:
+On the ubuntu18.04 server, download and install the Alaya binary file with the following command:
 
 ```
-sudo wget https://download.alaya.network/alaya/platon/0.15.1/platon -P /usr/bin    
+sudo wget https://download.alaya.network/alaya/platon/0.16.0/alaya -P /usr/bin    
 ```
 
 Connect to the development network by the following method:

@@ -17,7 +17,7 @@ RPC地址：http://47.241.91.2:6789
 
 在ubuntu18.04服务器上，通过以下命令下载并安装Alaya二进制文件:
 ```
-sudo wget https://download.alaya.network/alaya/platon/0.15.1/platon -P /usr/bin    
+sudo wget https://download.alaya.network/alaya/platon/0.16.0/alaya -P /usr/bin    
 ```
 通过以下方式连接入开发网：
 ```
