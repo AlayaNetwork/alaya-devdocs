@@ -58,7 +58,7 @@ A token contract which creates new tokens SHOULD trigger a Transfer event with t
 
 ## Example
 
-ARC-20 standard is fully compatible with ERC-20, examples are available [here](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/9b3710465583284b8c4c5d2245749246bb2e0094/contracts/token/ERC20)。
+ARC-20 standard is fully compatible with ERC-20, examples are available [here](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/9b3710465583284b8c4c5d2245749246bb2e0094/contracts/token/ERC20).
 
 ## View Token
 
