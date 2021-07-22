@@ -9,7 +9,7 @@ sidebar_label: MTool在线教程
 为了便于节点进行转账，质押，委托以及治理等相关的操作，Alaya 提供了 MTool 来辅助用户：
 
 - MTool 可支持 Ubuntu 18.04 和 Windows 10，本文档分别描述 Windows 和 Ubuntu 环境下的安装和使用，用户可根据自己的资源进行选择。
-- MTool 对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述在线签名操作，离线签名操作请参考[离线 MTool 教程](/alaya-devdocs/zh-CN/OffLine_MTool)。
+- MTool 对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述在线签名操作，离线签名操作请参考[离线 MTool 教程](/alaya-devdocs/zh-CN/Offline_MTool)。
 
 ## 安装 MTool
 
