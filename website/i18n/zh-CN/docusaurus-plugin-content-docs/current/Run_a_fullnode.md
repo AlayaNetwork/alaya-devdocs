@@ -180,8 +180,8 @@ sudo systemctl start alaya.service
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | platon二进制文件  | https://download.alaya.network/alaya/platon/0.15.0/platon                                 |                                                                 |
 | alayakey       | https://download.alaya.network/alaya/platon/0.15.0/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.0/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.0/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe                | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | scan浏览器地址 | https://scan.alaya.network/                                                               |                                                                 |
 
