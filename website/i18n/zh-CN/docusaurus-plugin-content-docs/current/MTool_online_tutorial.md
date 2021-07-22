@@ -22,10 +22,10 @@ sidebar_label: MTool在线教程
 执行命令：
 
 ```
-mtool-client --version
+alaya_mtool --version
 ```
 
-如果执行结果显示`无法将“mtool-client”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次`，表示没有安装旧版本不需要执行下面操作。
+如果执行结果显示`无法将“alaya_mtool”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次`，表示没有安装旧版本不需要执行下面操作。
 
 如果执行结果显示版本号，时间戳等信息表示已安装 MTool，如果 MTool 是旧版本，此时需要备份重要信息，然后再手工卸载旧版本，操作步骤：
 
@@ -41,11 +41,11 @@ mtool-client --version
 
 **step1. 下载 MTool 安装包**
 
-在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe> 到浏览器下载 MTool 安装包。
+在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe> 到浏览器下载 MTool 安装包。
 
 **step2. 安装 MTool**
 
-双击 mtool-setup.exe 进行安装。默认安装目录为 C:\tools，建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
+双击 alaya_mtool.exe 进行安装。默认安装目录为 C:\tools，建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
 **step3. 重启终端**
 
@@ -58,18 +58,18 @@ mtool-client --version
 **step1. 下载 MTool 工具包**
 
 ```bash
-wget https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
+wget https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
 ```
 
 **step2. 解压 MTool 工具包**
 
 ```bash
-(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
+(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip alaya_mtool.zip && cd alaya_mtool
 ```
 
 **step3. 下载脚本**
 
-> 脚本下载到<font color="red">mtool-client</font> 目录下，否则脚本无法找到新版本 mtool 的路径。
+> 脚本下载到<font color="red">alaya_mtool</font> 目录下，否则脚本无法找到新版本 mtool 的路径。
 
 ```bash
 wget https://download.alaya.network/alaya/scripts/mtool_install.sh
@@ -111,7 +111,7 @@ Windows 和 Ubuntu 下 MTool 目录使用环境变量有所区别：
 - 执行命令
 
 ```shell
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 - 参数说明
@@ -156,7 +156,7 @@ mtool-client account new staking
   通过私钥恢复：
 
   ```shell
-  mtool-client account recover -k staking
+  alaya_mtool account recover -k staking
   ```
 
   > 提示输入新的钱包密码和备份的私钥，如下：
@@ -173,7 +173,7 @@ mtool-client account new staking
   通过助记词恢复：
 
   ```shell
-  mtool-client account recover -m staking
+  alaya_mtool account recover -m staking
   ```
 
   > 提示输入新的钱包密码和备份的助记词，如下：
@@ -196,7 +196,7 @@ mtool-client account new staking
 - 执行命令
 
 ```bash
-mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -214,7 +214,7 @@ mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1"
 - 执行命令
 
 ```bash
-mtool-client account list
+alaya_mtool account list
 ```
 
 ### 根据钱包名称查询余额
@@ -222,7 +222,7 @@ mtool-client account list
 - 执行命令
 
 ```bash
-mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 变量说明
@@ -236,7 +236,7 @@ mtool-client account balance $keystorename --config $MTOOLDIR/validator/validato
 - 执行命令
 
 ```bash
-mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance -a $address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数
@@ -271,7 +271,7 @@ mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_
 - 执行命令
 
 ```bash
-mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
+alaya_mtool create_restricting --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
 ```
 
 - 参数说明，
@@ -291,7 +291,7 @@ mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.js
 - 执行命令
 
 ```bash
-mtool-client staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
@@ -332,7 +332,7 @@ SUCCESS
 - 执行命令
 
 ```bash
-mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
+alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - 参数说明
@@ -360,7 +360,7 @@ mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json
 - 执行命令
 
 ```bash
-mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -374,7 +374,7 @@ mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOO
 - 执行命令
 
 ```bash
-mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -392,7 +392,7 @@ mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/stak
 - 执行命令
 
 ```bash
-mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -408,7 +408,7 @@ mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/stak
 - 执行命令
 
 ```bash
-mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -428,7 +428,7 @@ mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 
 - 执行命令
 
 ```bash
-mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -448,7 +448,7 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 - 执行命令
 
 ```bash
-mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -466,7 +466,7 @@ mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b3700
 - 执行命令
 
 ```bash
-mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -482,7 +482,7 @@ mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - 执行命令
 
 ```bash
-mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -500,7 +500,7 @@ mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 - 执行命令
 
 ```bash
-mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -522,7 +522,7 @@ mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $par
 - 执行命令
 
 ```bash
-mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -540,7 +540,7 @@ mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 - 执行命令
 
 ```bash
-mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -554,7 +554,7 @@ mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config
 - 执行命令
 
 ```bash
-mtool-client -h
+alaya_mtool -h
 ```
 
 - 参数说明

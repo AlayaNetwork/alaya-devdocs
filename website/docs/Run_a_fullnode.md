@@ -61,11 +61,11 @@ ntpq -4c rv | grep leap_none
 
 - Install binary
 
-  <font color="red">The binary version number of the main network is 0.15.0, and that of the development network is 0.15.1. If you need to join the development network, please change the version number in the download link to 0.15.1.</font>
+  <font color="red">The binary version number of the main network is 0.16.0, and that of the development network is 0.16.0. If you need to join the development network, please change the version number in the download link to 0.16.0.</font>
 
   ```bash
-  sudo wget https://download.alaya.network/alaya/platon/0.15.0/platon -P /usr/bin
-  sudo wget https://download.alaya.network/alaya/platon/0.15.0/alayakey -P /usr/bin
+  sudo wget https://download.alaya.network/alaya/platon/0.16.0/platon -P /usr/bin
+  sudo wget https://download.alaya.network/alaya/platon/0.16.0/alayakey -P /usr/bin
   sudo chmod +x /usr/bin/platon  /usr/bin/alayakey
   platon version
   ```
