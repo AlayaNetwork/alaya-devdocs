@@ -28,7 +28,7 @@ sudo wget https://download.alaya.network/alaya/platon/0.15.1/platon -P /usr/bin
 Connect to the development network by the following method:
 
 ```
-platon attach http://47.241.91.2:6789
+alaya attach http://47.241.91.2:6789
 ```
 
 #### Connect to Alaya development network through SDK

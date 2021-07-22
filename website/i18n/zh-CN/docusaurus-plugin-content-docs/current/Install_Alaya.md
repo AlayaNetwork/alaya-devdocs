@@ -55,27 +55,27 @@ Windows编译环境需要符合以下条件：
 获取源码放到GOPATH路径下，其中`alaya`为分支名称，届时切换到实际的分支：
 
 ```
-mkdir -p $GOPATH/src/github.com/PlatONnetwork
-cd $GOPATH/src/github.com/PlatONnetwork
-git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+mkdir -p $GOPATH/src/github.com/AlayaNetwork
+cd $GOPATH/src/github.com/AlayaNetwork
+git clone -b develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
 ```
 
 - 添加bls依赖库到环境变量
 
 ```bash
-echo 'export PATH=$PATH:"$GOPATH/src/github.com/PlatONnetwork/PlatON-Go/crypto/bls/bls_win/lib"' >> ~/.bashrc
+echo 'export PATH=$PATH:"$GOPATH/src/github.com/AlayaNetwork/Alaya-Go/crypto/bls/bls_win/lib"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
 - 编译
 
 ```bash
-cd $GOPATH/src/github.com/PlatONnetwork/PlatON-Go
-go run build/ci.go install ./cmd/platon
+cd $GOPATH/src/github.com/AlayaNetwork/Alaya-Go
+go run build/ci.go install ./cmd/alaya
 go run build/ci.go install ./cmd/alayakey
 ```
 
-编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`alayakey`可执行文件，将这两个可执行文件拷贝到自己工作目录运行即可。
+编译完成之后在`Alaya-Go/build/bin`目录下会生成`alaya`、`alayakey`可执行文件，将这两个可执行文件拷贝到自己工作目录运行即可。
 
 > 重复编译会覆盖之前生成的可执行文件。
 
@@ -92,7 +92,7 @@ go run build/ci.go install ./cmd/alayakey
 **step2.** 获取Alaya源码：
 
 ```bash
-git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone -b alaya-develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
 ```
 
 **step3.** 安装依赖库：
@@ -105,16 +105,16 @@ sudo apt install -y golang-go cmake llvm g++ libgmp-dev libssl-dev
 **step4.** 编译：
 
 ```bash
-cd PlatON-Go 
+cd Alaya-Go 
 make all
 ```
 
-编译完成之后在`./build/bin`目录下会生成`platon, alayakey`等一系列可执行文件。
+编译完成之后在`./build/bin`目录下会生成`alaya, alayakey`等一系列可执行文件。
 
 **step5.** 拷贝二进制： 
 
 ```shell
-sudo cp -f ./build/bin/platon /usr/bin/
+sudo cp -f ./build/bin/alaya /usr/bin/
 sudo cp -f ./build/bin/alayakey /usr/bin/
 ```
 

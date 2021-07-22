@@ -66,20 +66,20 @@ ntpq -4c rv | grep leap_none
   ```bash
   sudo wget https://download.alaya.network/alaya/platon/0.15.0/platon -P /usr/bin
   sudo wget https://download.alaya.network/alaya/platon/0.15.0/alayakey -P /usr/bin
-  sudo chmod +x /usr/bin/platon  /usr/bin/alayakey
-  platon version
+  sudo chmod +x /usr/bin/alaya  /usr/bin/alayakey
+  alaya version
   ```
 
-  After executing the commands above, `platon` and ` alayakey` binary should be successfully installed in the `/usr/bin` directory on your system. You can execute corresponding commands in any directory.
+  After executing the commands above, `alaya` and ` alayakey` binary should be successfully installed in the `/usr/bin` directory on your system. You can execute corresponding commands in any directory.
 
 ## Generate keys
 
 ### Public and private keys
 
-Each node in the network has an unique identity to distinguish it from others. This identity is a public and private key pair, generated in the node's working directory ( `~/platon-node`) by the following command:
+Each node in the network has an unique identity to distinguish it from others. This identity is a public and private key pair, generated in the node's working directory ( `~/alaya-node`) by the following command:
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/nodeid)
+mkdir -p ~/alaya-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/nodeid)
 ```
 
 > Remark:
@@ -99,10 +99,10 @@ Two files will be generated in the subdirectory `data` under the working directo
 
 ### BLS public and private key
 
-In addition to the public and private keys of the node, the PlatON node also needs a key pair called the BLS public and private key. This key pair will be used in the consensus protocol. The key pair can be generated in the node's working directory (such as `~/platon-node`) by the following command:
+In addition to the public and private keys of the node, the Alaya node also needs a key pair called the BLS public and private key. This key pair will be used in the consensus protocol. The key pair can be generated in the node's working directory (such as `~/alaya-node`) by the following command:
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/blspub)
+mkdir -p ~/alaya-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/blspub)
 ```
 
 > PrivateKey: f22a785c80bd1095beff1f356811268eae6c94abf0b2b4e2d64918957b74783e

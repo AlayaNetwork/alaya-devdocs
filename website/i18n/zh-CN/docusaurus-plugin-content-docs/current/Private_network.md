@@ -12,16 +12,16 @@ sidebar_label: 私有网络
 
 - 私链部署方法以Ubuntu为例，包括单节点和集群部署，Windows上的部署方法和Ubuntu类似。
 
-如果你不方便连接到外部网络，也可以选择搭建自己的私有网络。`Alaya`支持单节点模式和集群模式运行私有网络。以Ubuntu环境为例，假设节点数据目录为：`~/platon-node/data` (用户可自行调整)，进行说明：
+如果你不方便连接到外部网络，也可以选择搭建自己的私有网络。`Alaya`支持单节点模式和集群模式运行私有网络。以Ubuntu环境为例，假设节点数据目录为：`~/alaya-node/data` (用户可自行调整)，进行说明：
 
 ## 单节点私有网络
 
 ### 生成nodekey和blskey等相关文件
 
 ```shell
-mkdir -p ~/platon-node/data \ 
-    && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/nodeid) \ 
-    && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/blspub)
+mkdir -p ~/alaya-node/data \ 
+    && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/nodeid) \ 
+    && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/blspub)
 ```
 
 >说明：
@@ -34,7 +34,7 @@ mkdir -p ~/platon-node/data \
 ### 创建创世钱包
 
 ```shell
-mkdir -p ~/platon-node/data && platon --datadir ~/platon-node/data account new {wallet_name}
+mkdir -p ~/alaya-node/data && alaya --datadir ~/alaya-node/data account new {wallet_name}
 ```
 
 > Your new account is locked with a password. Please give a password. Do not forget this password.
@@ -52,7 +52,7 @@ mkdir -p ~/platon-node/data && platon --datadir ~/platon-node/data account new {
 
 ### 编辑创世块配置文件
 
-在~/platon-node目录下创建创世区块配置文件`platon.json`
+在~/alaya-node目录下创建创世区块配置文件`alaya.json`
 
 ```json
 {
@@ -157,7 +157,7 @@ mkdir -p ~/platon-node/data && platon --datadir ~/platon-node/data account new {
 ### 初始化创世区块
 
 ```bash
-cd ~/platon-node && platon --datadir ./data init platon.json
+cd ~/alaya-node && alaya --datadir ./data init alaya.json
 ```
 
 >说明：
@@ -166,10 +166,10 @@ cd ~/platon-node && platon --datadir ./data init platon.json
 
 ### 启动节点
 
-一般情况下，platon 进程一直在前台进行，这样我们就不能进行其他操作了，并且如果中途退出该终端，程序将退出。Ubuntu下可以以nohup方式启动程序：
+一般情况下，alaya 进程一直在前台进行，这样我们就不能进行其他操作了，并且如果中途退出该终端，程序将退出。Ubuntu下可以以nohup方式启动程序：
 
 ```bash
-cd ~/platon-node && nohup platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/platon.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
 ```
 
 当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起进程退出。
@@ -177,7 +177,7 @@ cd ~/platon-node && nohup platon --identity "platon" --datadir ./data --port 167
 ### 检查节点运行状态
 
 ```shell
-platon attach http://localhost:6789 --exec platon.blockNumber
+alaya attach http://localhost:6789 --exec alaya.blockNumber
 ```
 
 多执行几次上面的命令，如果块高一直在增长，表示单节点私链部署成功。
@@ -197,10 +197,10 @@ platon attach http://localhost:6789 --exec platon.blockNumber
 
 > 我们下面以两节点集群为例
 
-在platon-node目录下创建目录data0和data1，作为两个节点的数据目录。分别生成两个节点的coinbase账户。
+在alaya-node目录下创建目录data0和data1，作为两个节点的数据目录。分别生成两个节点的coinbase账户。
 
 ```shell
-mkdir -p ~/platon-node/data0 ~/platon-node/data1
+mkdir -p ~/alaya-node/data0 ~/alaya-node/data1
 ```
 
 ### 生成密钥对
@@ -208,21 +208,21 @@ mkdir -p ~/platon-node/data0 ~/platon-node/data1
 分别将2个节点的nodekey和blskey保存到'data0'和'data1'
 
 ```bash
-cd ~/platon-node/data0 \
+cd ~/alaya-node/data0 \
     && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) \ 
     && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
 
-cd ~/platon-node/data1 \
+cd ~/alaya-node/data1 \
     && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./nodekey) >(grep "PublicKey" | awk '{print $3}' > ./nodeid) \
     && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ./blskey) >(grep "PublicKey" | awk '{print $3}' > ./blspub)
 ```
 
 ### 编辑创世配置文件
 
-修改创世块配置文件`platon.json`。模版文件参照单节点模板。
+修改创世块配置文件`alaya.json`。模版文件参照单节点模板。
 
 将两个节点的节点信息加入 `initialNodes` 数组中，因为我们生成的是两个节点组成的集群环境，所以数组长度为2。
-需要修改`platon.json`文件：
+需要修改`alaya.json`文件：
 请将以下文件内容`node0-nodekey`、`node1-nodekey`、`node0-blspubkey`和`node1-blspubkey`分别替换为上一步生成的节点公钥和节点bls公钥。
 `your-account-address`替换为钱包地址（可以配置多个初始账户）。
 
@@ -251,24 +251,24 @@ cd ~/platon-node/data1 \
 分别为节点0和节点1初始化创世块信息：
 
 ```bash
-platon --datadir ~/platon-node/data0 init platon.json && platon --datadir ~/platon-node/data1 init platon.json
+alaya --datadir ~/alaya-node/data0 init alaya.json && alaya --datadir ~/alaya-node/data1 init alaya.json
 ```
 
 初始化成功后，分别用nohup方式启动节点0和节点1：
 
 ```bash
-cd ~/platon-node && nohup platon --identity "platon0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/platon.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
 
-cd ~/platon-node && nohup platon --identity "platon1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/platon.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
 ```
 
 ### 检查
 
-通过前面所述的方式进入任意一个节点platon控制台，查看节点是否和对端建立连接以及通过查看blockNumber是否在持续增长来判断集群是否已成功启动。
+通过前面所述的方式进入任意一个节点alaya控制台，查看节点是否和对端建立连接以及通过查看blockNumber是否在持续增长来判断集群是否已成功启动。
 
 ```shell
-platon attach http://localhost:6789 --exec platon.blockNumber
-platon attach http://localhost:6790 --exec platon.blockNumber
+alaya attach http://localhost:6789 --exec platon.blockNumber
+alaya attach http://localhost:6790 --exec platon.blockNumber
 ```
 
 多执行几次，观察块高的增长情况。

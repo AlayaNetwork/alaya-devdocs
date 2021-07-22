@@ -111,8 +111,8 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 
 ```json
 {
-  "nodePublicKey": "platon-node/data/nodekey 中的内容",
-  "blsPubKey": "platon-node/data/blskey 中的内容",
+  "nodePublicKey": "alaya-node/data/nodekey 中的内容",
+  "blsPubKey": "alaya-node/data/blskey 中的内容",
   "nodeAddress": "http://127.0.0.1 或本机其他IP地址",
   "nodePort": "16789",
   "nodeRpcPort": "6789",

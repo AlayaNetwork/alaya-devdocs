@@ -8,12 +8,12 @@ sidebar_label: Alaya Command line tools
 
 ```conf
 NAME:
-   platon.exe - the platon-go command line interface
+   alaya.exe - the alaya-go command line interface
 
-   Copyright 2019 The PlatON-Go Authors
+   Copyright 2019 The Alaya-Go Authors
 
 USAGE:
-   platon.exe [options] command [command options] [arguments...]
+   alaya.exe [options] command [command options] [arguments...]
 
 VERSION:
    0.14.0-unstable
@@ -21,7 +21,7 @@ VERSION:
 COMMANDS:
    account           Manage accounts
    attach            Start an interactive JavaScript environment (connect to node)
-   bug               opens a window to report a bug on the platon repo
+   bug               opens a window to report a bug on the alaya repo
    console           Start an interactive JavaScript environment
    copydb            Create a local chain from a target chaindata folder
    dump              Dump a specific block from storage
@@ -35,9 +35,9 @@ COMMANDS:
    version           Print version numbers
    help, h           Shows a list of commands or help for one command
 
-PLATON OPTIONS:
+ALAYA OPTIONS:
   --config value                                        TOML configuration file
-  --datadir "C:\Users\jungle\AppData\Roaming\PlatON"  Data directory for the databases and keystore
+  --datadir "C:\Users\jungle\AppData\Roaming\ALAYA"  Data directory for the databases and keystore
   --keystore                                            Directory for the keystore (default = inside the datadir)
   --nousb                                               Disables monitoring for and managing USB hardware wallets
   --networkid value                                     Network identifier (integer, 1=Frontier, 2=Morden (disused), 3=Ropsten, 4=Rinkeby) (default: 1)
@@ -169,7 +169,7 @@ MISC OPTIONS:
 
 
 COPYRIGHT:
-   Copyright 2019 The PlatON-Go Authors
+   Copyright 2019 The Alaya-Go Authors
 ```
 
 ## Common rpc commands
@@ -182,55 +182,55 @@ COPYRIGHT:
 - View the data directory of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.datadir
+  alaya attach http://localhost:6789 -exec admin.datadir
   ```
 
 - View the ChainID of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.chainId
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.chainId
   ```
 
 - View the id of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.id
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.id
   ```
 
 - View the blsPubKey of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.blsPubKey
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.blsPubKey
   ```
 
 - View the p2p port number of the current node
 
   ```
-  platon attach http://localhost:6789 -exec admin.nodeInfo.ports.listener
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.ports.listener
   ```
 
 - View the connection information of peers of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.peers
+  alaya attach http://localhost:6789 -exec admin.peers
   ```
 
 - View the genesis block hash of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.genesis
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.genesis
   ```
 
 - View the maximum number of blocks ($amount) of a single node in each consensus round of cbft consensus
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.amount
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.amount
   ```
 
 - View the time window of block generation by a single node in each consensus round of cbft consensus ($period, unit: ms)
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.period
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.cbft.period
   ```
 
   > **Blocking time interval = period / 1000 / amount**
@@ -238,19 +238,19 @@ COPYRIGHT:
 - Get the binary version number and signature information
 
   ```bash
-  platon attach http://localhost:6789 -exec 'admin.getProgramVersion()'
+  alaya attach http://localhost:6789 -exec 'admin.getProgramVersion()'
   ```
 
 - Obtain zero- knowledge proof information (use the node's private key to prove whether the certificate issued by the interface is correct and used for node pledge)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'admin.getSchnorrNIZKProve()'
+  alaya attach http://localhost:6789 -exec 'admin.getSchnorrNIZKProve()'
   ```
 
 - View the type of virtual machine used at the bottom (EVM / WASM)
 
   ```bash
-  platon attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.interpreter
+  alaya attach http://localhost:6789 -exec admin.nodeInfo.protocols.platon.config.interpreter
   ```
 
 ### platon
@@ -258,85 +258,85 @@ COPYRIGHT:
 - View all wallet addresses under the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec platon.accounts
+  alaya attach http://localhost:6789 -exec platon.accounts
   ```
 
 - View the block height of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec platon.blockNumber
+  alaya attach http://localhost:6789 -exec platon.blockNumber
   ```
 
 - Check the balance of the specified account ($account is the account address)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getBalance("$account")'
+  alaya attach http://localhost:6789 -exec 'platon.getBalance("$account")'
   ```
 
 - Query the number of transactions in the specified block ($blockNumber is the block height or block hash of the specified block)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getBlockTransactionCount($blockNumber)'
+  alaya attach http://localhost:6789 -exec 'platon.getBlockTransactionCount($blockNumber)'
   ```
 
 - Query transaction information ($txHash is transaction hash)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getTransaction("$txHash")'
+  alaya attach http://localhost:6789 -exec 'platon.getTransaction("$txHash")'
   ```
 
 - Query transaction receipt ($txHash is transaction hash)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getTransactionReceipt("$txHash")'
+  alaya attach http://localhost:6789 -exec 'platon.getTransactionReceipt("$txHash")'
   ```
 
 - Query the number of transactions in the specified account (parameter $address is the account address, used to specify the nonce of the transaction when sending the transaction)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getTransactionCount("$address")'
+  alaya attach http://localhost:6789 -exec 'platon.getTransactionCount("$address")'
   ```
 
 - Query the pending transaction of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec platon.pendingTransactions
+  alaya attach http://localhost:6789 -exec platon.pendingTransactions
   ```
 
 - View the default gasPrice of the current node (unit: von)
 
   ```bash
-  platon attach http://localhost:6789 -exec platon.gasPrice
+  alaya attach http://localhost:6789 -exec platon.gasPrice
   ```
 
 - Estimate the gas of the transaction (parameter $transaction is the transaction details, unit: von)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.estimateGas($transaction)'
+  alaya attach http://localhost:6789 -exec 'platon.estimateGas($transaction)'
   ```
 
   For example:
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.estimateGas({from:"lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6",to:"lax1zhllhqu72wz66cdwly8983xhla2sann75j2ec2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
+  alaya attach http://localhost:6789 -exec 'platon.estimateGas({from:"atp1fyeszufxwxk62p46djncj86rd553skpparksa6",to:"atp1zhllhqu72wz66cdwly8983xhla2sann7zpwwf2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
   ```
 
 - View the p2p protocol number of the underlying version of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec 'web3.toDecimal(platon.protocolVersion)'
+  alaya attach http://localhost:6789 -exec 'web3.toDecimal(platon.protocolVersion)'
   ```
 
 - See if the current node is in sync
 
   ```bash
-  platon attach http://localhost:6789 -exec platon.syncing
+  alaya attach http://localhost:6789 -exec platon.syncing
   ```
 
 - Get details of specified block
 
   ```bash
-  platon attach http://localhost:6789 -exec 'platon.getBlock($blockNumber)'
+  alaya attach http://localhost:6789 -exec 'platon.getBlock($blockNumber)'
   ```
 
 ### personal
@@ -344,13 +344,13 @@ COPYRIGHT:
 - Generate wallet (parameter is wallet password)
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.newAccount("88888888")'
+  alaya attach http://localhost:6789 -exec 'personal.newAccount("88888888")'
   ```
 
 - Import private key to generate wallet
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.importRawKey($privateKey, $password)'
+  alaya attach http://localhost:6789 -exec 'personal.importRawKey($privateKey, $password)'
   ```
 
   > Parameters:
@@ -365,31 +365,31 @@ COPYRIGHT:
   For example:
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.importRawKey ("842d943dbb50a8d3fe63af2f82fda3d8f0ca817fe8d47e61698142bac7c24212", "88888888")'
+  alaya attach http://localhost:6789 -exec 'personal.importRawKey ("842d943dbb50a8d3fe63af2f82fda3d8f0ca817fe8d47e61698142bac7c24212", "88888888")'
   ```
 
 - View account address
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.listAccounts'
+  alaya attach http://localhost:6789 -exec 'personal.listAccounts'
   ```
 
 - View local wallet information, including wallet address, wallet file path and wallet status
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.listWallets'
+  alaya attach http://localhost:6789 -exec 'personal.listWallets'
   ```
 
 - Lock account
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.lockAccount(platon.accounts[0])'
+  alaya attach http://localhost:6789 -exec 'personal.lockAccount(platon.accounts[0])'
   ```
 
 - Unlock account
 
   ```bash
-  platon attach http://localhost:6789 -exec 'personal.unlockAccount(platon.accounts[0], "88888888", 24*3600)'
+  alaya attach http://localhost:6789 -exec 'personal.unlockAccount(platon.accounts[0], "88888888", 24*3600)'
   ```
 
   > Parameters:
@@ -400,7 +400,7 @@ COPYRIGHT:
 
 - Send unsigned transactions
   ```shell
-  platon attach http://localhost:6789 -exec 'personal.sendTransaction({from: platon.accounts[2], to: platon.accounts[0], value:web3.toVon("0.1","lat"), nonce: platon.getTransactionCount(platon.accounts[2])}, "88888888") '
+  alaya attach http://localhost:6789 -exec 'personal.sendTransaction({from: platon.accounts[2], to: platon.accounts[0], value:web3.toVon("0.1","lat"), nonce: platon.getTransactionCount(platon.accounts[2])}, "88888888") '
   ```
 
 ### net
@@ -408,19 +408,19 @@ COPYRIGHT:
 - View the networkid of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec net.version
+  alaya attach http://localhost:6789 -exec net.version
   ```
 
 - Check whether the p2p port of the current node is in the listening state
 
   ```bash
-  platon attach http://localhost:6789 -exec net.listening
+  alaya attach http://localhost:6789 -exec net.listening
   ```
 
 - View the number of peer connections of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec net.peerCount
+  alaya attach http://localhost:6789 -exec net.peerCount
   ```
 
 ### debug
@@ -428,13 +428,13 @@ COPYRIGHT:
 - Query the economic model configuration parameters of the current node
 
   ```bash
-  platon attach http://localhost:6789 -exec 'debug.economicConfig()'
+  alaya attach http://localhost:6789 -exec 'debug.economicConfig()'
   ```
 
 - Set log level
 
   ```shell
-  platon attach http://localhost:6789 -exec 'debug.verbosity(4)'
+  alaya attach http://localhost:6789 -exec 'debug.verbosity(4)'
   ```
 
   > Log level description:
