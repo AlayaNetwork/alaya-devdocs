@@ -172,7 +172,7 @@ Among them, BIP32, BIP39, and BIP44 jointly define the currently widely used HD 
 
 
 
-<img src="/alaya-devdocs/img/en/account.assets/21.png" alt="HD Wallet" style={{zoom: '50%'}}/>
+<img src="/alaya-devdocs/img/en/account.assets/21.png" alt="HD Wallet" style={{zoom: '50%'}} />
 
 > In Alaya transactions, generating a new account for each transaction is safer, because the public key leakage will also cause a certain security risk, as evidenced by many encryption algorithm cracks in the past. But if you publish the hash (address) of the public key only, the possibility of being cracked is reduced.
 
@@ -415,7 +415,7 @@ If you have used MetaMask wallet before, you will be familiar with Samurai walle
 
 Then open the developer mode -> load the unzipped extension -> select the folder just unzipped, as shown in the figure below:
 
-<img src="/alaya-devdocs/img/en/account.assets/8.png" alt="Samurai安装" style={{zoom: '50%'}} " />
+<img src="/alaya-devdocs/img/en/account.assets/8.png" alt="Samurai安装" style={{zoom: '50%'}}  />
 
 After the installation is complete, Samurai will run automatically. Click Start:
 
