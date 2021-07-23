@@ -84,7 +84,7 @@ Alaya支持几种不同命令行工具来创建钱包。
 
 MTool是面向节点的管理的命令行工具，可用于ATP的发送和质押，以及治理等相关的操作，同时支持在线签名与离线签名。
 
-更多MTool的功能介绍和使用教程，查看[MTool使用指南](/alaya-devdocs/zh-CN/OnLine_MTool_Manual)。
+更多MTool的功能介绍和使用教程，查看[MTool使用指南](/alaya-devdocs/zh-CN/Online_MTool)。
 
 
 
