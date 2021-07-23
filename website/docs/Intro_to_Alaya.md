@@ -6,15 +6,11 @@ sidebar_label: Intro to Alaya
 
 ## What is Alaya?
 
-
-
 Alaya is the world's leading distributed financial infrastructure of a new generation, and is committed to providing developers, nodes, data providers and other participants with a secure, high-performance, and scalable "sandbox" of distributed financial applications.
 
 Integrating blockchain and privacy-preserving computation capabilities, Alaya promotes the technology sharing and exchange of financial data in a secure, private, and compliant way, with an ultimate goal to serve the world's inclusive finance.
 
 Also, Alaya is the **pilot zone** of PlatON, the global next-generation privacy-preserving AI infrastructure, and will work with PlatON to build basic facilities for full-circulation services of data elements.
-
-
 
 ## What's the Relationship between PlatON and Alaya?
 
@@ -27,9 +23,6 @@ Alaya is positioned as a distributed financial infrastructure, and, relying on i
 Massive technologies, services and community practices will be tested in Alaya before being migrated to PlatON.  
 
 The two share the same vision, compliance, financing and community of the LatticeX Foundation, yet with different orientation and application scenarios.
-
-
-
 
 
 ## The Future of Alaya
