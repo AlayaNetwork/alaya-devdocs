@@ -33,7 +33,7 @@ Staking是Alaya网络的核心功能，参与质押和委托的ATP比例越大�
 
 我们欢迎对维护网络感兴趣的ATP持有者运行一个Alaya节点，并质押成为Alaya验证节点。详细Alaya节点介绍和操作过程见[Alaya节点页面](/alaya-devdocs/zh-CN/Intro_to_validator)。
 
-为便于节点质押、治理投票等操作，Alaya提供了[MTool工具](/alaya-devdocs/zh-CN/OnLine_MTool_Manual)，使用MTool可以快速的发起质押操作，具体请参考[这里](/alaya-devdocs/zh-CN/OnLine_MTool_Manual#发起质押操作)。
+为便于节点质押、治理投票等操作，Alaya提供了[MTool工具](/alaya-devdocs/zh-CN/Online_MTool)，使用MTool可以快速的发起质押操作，具体请参考[这里](/alaya-devdocs/zh-CN/Online_MTool#发起质押操作)。
 
 
 
