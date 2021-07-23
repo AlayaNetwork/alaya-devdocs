@@ -78,7 +78,7 @@ So what is the relationship between the account and the address in front of the 
 
 Now you must be clear of the relationship between the account, private key (the master key in the figure), public key and address above.
 
-Let's talk about how the public key and private key are generated in detail. The most commonly used asymmetric encryption are: [RSA](https://baike.baidu.com/item/RSA), [Elgamal](https://baike.baidu.com/item/Elgamal), backpack algorithm, Rabin , DH, [ECC](https://baike.baidu.com/item/elliptic curve encryption) (elliptic curve encryption algorithm), etc. Like Ethereum, Alaya also uses ECC asymmetric encryption algorithm. Based on the elliptic curve theory, the keys can be faster in creation, smaller in size, and more effective in performance. 
+Let's talk about how the public key and private key are generated in detail. The most commonly used asymmetric encryption are: [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)), [Elgamal](https://en.wikipedia.org/wiki/ElGamal_encryption), backpack algorithm, Rabin , DH, [ECC](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) (elliptic curve encryption algorithm), etc. Like Ethereum, Alaya also uses ECC asymmetric encryption algorithm. Based on the elliptic curve theory, the keys can be faster in creation, smaller in size, and more effective in performance. 
 
 
 
@@ -173,6 +173,8 @@ Among them, BIP32, BIP39, and BIP44 jointly define the currently widely used HD 
 
 
 <img src="/alaya-devdocs/img/en/account.assets/21.png" alt="HD Wallet" style={{zoom: '50%'}} />
+
+
 
 > In Alaya transactions, generating a new account for each transaction is safer, because the public key leakage will also cause a certain security risk, as evidenced by many encryption algorithm cracks in the past. But if you publish the hash (address) of the public key only, the possibility of being cracked is reduced.
 
@@ -291,11 +293,11 @@ Click to start backup, and 12 English words will be displayed. Please write down
 
 <img src="/alaya-devdocs/img/en/account.assets/5.jpg" alt="备份助记词"style={{zoom: '80%'}}  />
 
-然后进行助记词的验证：
+
 
 Then verify the mnemonic phrases:
 
-<img src="/alaya-devdocs/img/en/account.assets/6.jpg" alt="验证助记词" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/6.jpg" alt="验证助记词" style={{zoom: '50%'}}  />
 
 Finally complete the backup.
 
@@ -353,7 +355,7 @@ The concepts of public and private keys have been mentioned before. Note that yo
 
 ### MTool
 
-The installation of MTool on Windows and Ubuntu is very simple. You can refer to: [Online MTool Tutorial · Alaya](https://devdocs.alaya.network/alaya-devdocs/en/OnLine_MTool_Manual/#Start installation).
+The installation of MTool on Windows and Ubuntu is very simple. You can refer to: [Online MTool Tutorial · Alaya](/alaya-devdocs/en/Online_MTool).
 
 After installation, you can use `mtool-client --version` to check the version of MTool. Among the versatile functions  of MTool, only the operations related to **account generation** are introduced in this sector.
 
@@ -403,7 +405,7 @@ After being prompted to enter the password twice, you will be asked to enter the
 
 At the same time, a wallet file will be generated in the `MTool installation directory\mtool\current\keystore` directory.
 
-MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](https://devdocs.alaya.network/alaya-devdocs /en/OnLine_MTool_Manual/).
+MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](alaya-devdocs/en/Online_MTool).
 
 ### Samurai Wallet
 
