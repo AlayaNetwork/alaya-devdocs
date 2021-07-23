@@ -29,7 +29,7 @@ The delegation is similar to an election in that we exercise our voting right by
 
 We welcome ATP holders interested in maintaining the network to run an Alaya Node and staking to become an Alaya Validator. A detailed description of the Alaya node and how to operate it can be found on the [Alaya Node Page](/)
 
-To facilitate operations such as node staking and governance voting, Alaya provides the [MTool tool](/), which can be used to quickly initiate staking operations, please refer to [here](/) for details.
+To facilitate operations such as node staking and governance voting, Alaya provides the [MTool tool](/alaya-devdocs/en/Online_MTool), which can be used to quickly initiate staking operations, please refer to [here](/alaya-devdocs/en/Online_MTool#initiate-a-staking-operation) for details.
 
 
 
