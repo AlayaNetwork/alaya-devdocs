@@ -81,7 +81,7 @@ If you are not familiar with the use of command-line programs and just need to s
 
 MTool is a command-line tool for node-oriented management. It can be used for ATP sending and staking, as well as governance and other related operations. It also supports online and offline signatures.
 
-For more tutorials on MTool functions and usage, please refer to [MTool User Guide](/alaya-devdocs/en/OnLine_MTool_Manual).
+For more tutorials on MTool functions and usage, please refer to [MTool User Guide](/alaya-devdocs/en/Online_MTool).
 
 
 
