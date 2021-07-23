@@ -133,7 +133,7 @@ $ chmod +x validator_conf.sh && ./validator_conf.sh
 
 > **Note:**
 >
-> - When the prompt shows "Please enter the platon node IP address:", please enter the Alaya node server ip address.
+> - When the prompt shows "Please enter the alaya node IP address:", please enter the Alaya node server ip address.
 > - When the prompt shows "Enter your name:", please enter the username when configuring Alaya node.
 > - When the prompt shows "Enter your password:", please enter the password when configuring Alaya node.
 > - When the prompt shows "validator conf success", and when the validator_config.json content printed at the end is normal, it means that the script is executed successfully. If the script is not executed successfully, please contact our official customer service to feedback specific questions.
