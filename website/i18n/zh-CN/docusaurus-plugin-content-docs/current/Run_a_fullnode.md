@@ -43,10 +43,10 @@ ntpq -4c rv | grep leap_none
 | **网络**   | **ChainID** | **当前版本** |
 | ------ | ------- | -------- |
 | 主网   | 201018  | 0.15.0   |
-| 开发网 | 201030  | 0.15.1   |
+| 开发网 | 201030  | 0.16.0   |
 
 ```bash
-# 如果需要加入开发网，请修改PLATON_VERSION，如：0.15.1
+# 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.0
 export PLATON_VERSION=0.15.0
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/platon -P /usr/bin
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alayakey -P /usr/bin
@@ -215,16 +215,16 @@ fast同步状态下，会查询不到当前块高，待同步到最新高度，�
 ### 运行全节点加入alaya开发网络
 
 如您正在部署主网节点，以下内容可以忽略。
-开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.15.1`。
+开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.16.0`。
 
 #### 初始化创世区块
 
 ```bash
 # 下载创世区块文件genesis.json
-cd ~/platon-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
 
 # 初始化创世区块文件
-cd ~/platon-node && platon --datadir ./data init genesis.json
+cd ~/alaya-node && alaya --datadir ./data init genesis.json
 ```
 
 > 说明：
@@ -236,7 +236,7 @@ cd ~/platon-node && platon --datadir ./data init genesis.json
 执行以下命令即可启动验证节点加入Alaya开发网络；如果需要成为验证节点，请通过后续说明方式申请大额测试ATP（开发网将根据测试需要不定期重置，开发网ATP无任何实际价值）。
 
 ```shell
-cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/platon.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 **也可参照主网配置`service unit`文件管理Alaya进程**
@@ -245,10 +245,10 @@ cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| platon二进制文件| https://download.alaya.network/alaya/platon/0.15.1/platon                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.15.1/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.1/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.1/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| platon二进制文件| https://download.alaya.network/alaya/platon/0.16.0/alaya                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.0/alayakey                               |                                                                 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | 开放RPC URL    | http://47.241.91.2:6789                                                                   |                                                                 |
 | scan浏览器地址 | https://devnetscan.alaya.network                                                          |                                                                 |
