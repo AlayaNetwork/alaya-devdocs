@@ -16,7 +16,7 @@ If you are new to Alaya, we recommend starting at the beginning and working your
 - [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation) - A brief introduction to Staking and Delegation.
 - [ATON wallet](/docs/en/ATON_user_manual) - A comprehensive instruction on the use of ATON.
 - Blockchain Explorer
-  - [PlatScan](https://scan.alaya.network/)
+  - [AlayaScan](https://scan.alaya.network/)
   - [PlatEye](https://www.alayascan.com/) - An Alaya blockchain explorer was developed by the community. It provides an [API](/alaya-devdocs/en/Explorer_API) interface for developers.
 - [Network Description](/alaya-devdocs/en/Networks) - Here you can learn what networks we have and the differences between them.
 
@@ -38,7 +38,7 @@ If you want to join the Alaya network as a node, the following guidelines can he
 - Tools for nodes - The following tools can be used to assist you with the management of your nodes.
    - [Online MTool](/alaya-devdocs/en/OnLine_MTool)-Provides a way to manage a node using an online wallet.
    - [Offline MTool](/alaya-devdocs/en/OffLine_MTool)-Provides a way to manage node using an offline wallet to improve wallet security.
-   - [Alaya Command Line](/alaya-devdocs/zh-CN/Command_Line_Tools)
+   - [Alaya Command Line](/alaya-devdocs/en/Command_Line_Tools)
 
 ### Developers
 
@@ -49,8 +49,7 @@ If you want to join the Alaya network as a node, the following guidelines can he
   - [WASM Contract](/alaya-devdocs/en/Wasm_Getting_started)
   - [API Reference](/alaya-devdocs/en/JS_SDK)
   - [PRC Token](/alaya-devdocs/en/ARC20)
-- [Grant Program](https://forum.latticex.foundation/t/topic/1092) - When you have a great idea, talk to us and we'll make it happen together.
-- [Bugbounty Program](https://slowmist.io/platon/index.html?utm_source=index&utm_medium=cpc&utm_campaign=platon)
+- [Bug Bounty Program](https://slowmist.io/platon/index.html?utm_source=index&utm_medium=cpc&utm_campaign=platon)
 - [Alaya GitHub Repository](https://github.com/AlayaNetwork) - You can submit your code and issues by submitting a pull request or issue.
 
 
@@ -58,8 +57,8 @@ If you want to join the Alaya network as a node, the following guidelines can he
 
 - [Ambassador Program](https://forum.latticex.foundation/t/topic/4246)
 - [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation)
-- [Ecosystem Programs](/alaya-devdocs/zh-CN/Ecosystem_Programs)
-- [Join the Community](/alaya-devdocs/zh-CN/Join_the_Community)
+- [Ecosystem Programs](/alaya-devdocs/en/Ecosystem_Programs)
+- [Join the Community](/alaya-devdocs/en/Join_the_Community)
   - [Twitter](https://twitter.com/PlatON_Network)
   - [Facebook](https://www.facebook.com/PlatONNetwork/)
   - [GitHub](https://github.com/PlatONnetwork)
