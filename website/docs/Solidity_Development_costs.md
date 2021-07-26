@@ -92,7 +92,7 @@ Ethereum
 
 **Sample Code**
 
-[Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/docs/SmartDevelopment.assets/account.sol)
+[Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/website/docs/SmartDevelopment.assets/account.sol)
 
 
 ByteCode
@@ -125,7 +125,7 @@ Ethereum
 
 **Sample Code**
 
-[Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/docs/SmartDevelopment.assets/token.sol)
+[Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/website/docs/SmartDevelopment.assets/token.sol)
 
 
 ByteCode
