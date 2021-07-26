@@ -31,7 +31,7 @@ sidebar_label: Alaya开发者文档
 如果您想通过节点的方式加入到Alaya网络，以下信息可以为您提供更多的了解和帮助。
  - [验证节点介绍](/alaya-devdocs/zh-CN/Intro_to_validator)-在这里你可以了解什么是验证节点、如何成为验证节点、验证节点的收益与职责等
  - [全节点部署](/alaya-devdocs/zh-CN/Run_a_fullnode)-开始部署一个Alaya数据节点
- - [成为主网验证节点](/alaya-devdocs/zh-CN/Join_Alaya_NetWork)-详细介绍了如何加入到PlatON主网，并质押成为验证的具体操作
+ - [成为验证节点](/alaya-devdocs/zh-CN/Become_Validator)-详细介绍了如何加入到PlatON主网，并质押成为验证的具体操作
  - 节点工具-以下工具可以帮助你更好的做节点管理
    - [MTool在线教程](/alaya-devdocs/zh-CN/Online_MTool)-在线教程提供了使用在线钱包管理节点的方式
    - [MTool离线教程](/alaya-devdocs/zh-CN/Offline_MTool)-该教程提供了如何使用离线钱包管理节点的方式，提高钱包安全性
@@ -59,7 +59,7 @@ sidebar_label: Alaya开发者文档
 ### 普通用户
 
 - [大使计划](https://forum.latticex.foundation/t/topic/4246) - 你可以作为大使为 PlatON 和 Alaya 生态贡献力量
-- [质押&委托](/docs/en/staking_and_delegation) - 介绍了什么是委托、什么是质押，以及相关收益问题
+- [质押&委托](/alaya-devdocs/zh-CN/staking_and_delegation) - 介绍了什么是委托、什么是质押，以及相关收益问题
 - 社区资源：
   - [Facebook](https://www.facebook.com/PlatONNetwork/)
   - [Twitter](https://twitter.com/PlatON_Network)
