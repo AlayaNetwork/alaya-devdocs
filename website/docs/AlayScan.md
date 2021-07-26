@@ -83,7 +83,7 @@ By data provide by block explorer, you can intuitive understanding the network s
 
 ### Validators
 
-Validator take responsibility to create and validate the block, more information about validator refer to this page [Introduction of Alaya validator](/alaya-devdocs/en/Alaya_Validation_Introduce).
+Validator take responsibility to create and validate the block, more information about validator refer to this page [Introduction of Alaya validator](/alaya-devdocs/en/Intro_to_validator).
 
 - Total stakes: The amount of ATP staked by validator and delegators.
 - Total delegated: The amount of delegated ATP received by the validator.
@@ -102,7 +102,7 @@ Validator take responsibility to create and validate the block, more information
 
 ### **Alaya blockchain explorer**
 
-- [PlatScan](https://scan.Alaya.network) -- Alaya blockchain explorer and analysis platform, support English and Chinese.
+- [Alaya Scan](https://scan.Alaya.network) -- Alaya blockchain explorer and analysis platform, support English and Chinese.
 
 - [PlatEye](https://alayascan.com/) - Offers a feature-rich blockchain browser for Aalay as well as PlatON, currently only supports Chinese.
 

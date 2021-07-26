@@ -22,8 +22,8 @@ sidebar_label: Alaya开发者文档
 
 - [总体架构](/alaya-devdocs/zh-CN/Architecture) - 在这里可以了解到PlatON作为隐私计算基础设施的总体架构设计，以及相关核心模块的介绍
 - [经济模型](/alaya-devdocs/zh-CN/Economic_model) - 在这里可以学习到PlatON经济模型设计原则和具体的经济模型方案
-- [治理机制](/alaya-devdocs/zh-CN/Consensus_mechanism) - 在这里可以了解到如何在PlatON上发起一个提案，以及提案的投票机制
-- [共识机制](/alaya-devdocs/zh-CN/Governance_mechanism) - 详细的PlatON共识机制介绍
+- [治理机制](/alaya-devdocs/zh-CN/Governance_mechanism) - 在这里可以了解到如何在PlatON上发起一个提案，以及提案的投票机制
+- [共识机制](/alaya-devdocs/zh-CN/Consensus_mechanism) - 详细的PlatON共识机制介绍
 
 ## 加入我们
 
@@ -48,7 +48,7 @@ sidebar_label: Alaya开发者文档
   - [IDE](/alaya-devdocs/zh-CN/IDE) - 支持 Solidity 和 Wasm 合约的编写工具
   - [API参考](/alaya-devdocs/zh-CN/JS_SDK) - 可以和PlatON网络交互的各类API、以及 Web 钱包 API 
   - [ARC Token](/alaya-devdocs/zh-CN/ARC20) - `ARC Token`标准，目前支持 ARC20 和 ARC721
- 
+
 - [Grant计划](https://forum.latticex.foundation/t/topic/1092) - 当你有一个好的想法，请让我们知道，并帮助你实现它
   - [Grant原则](https://forum.latticex.foundation/t/topic/4128)
   - [技术类Grant申请模板](https://forum.latticex.foundation/t/topic/4126)
@@ -63,7 +63,7 @@ sidebar_label: Alaya开发者文档
 - 社区资源：
   - [Facebook](https://www.facebook.com/PlatONNetwork/)
   - [Twitter](https://twitter.com/PlatON_Network)
-  - [GitHub](https://github.com/PlatONnetwork)
+  - [GitHub](https://github.com/AlayaNetwork)
   - [Medium](https://medium.com/platon-network)
   - [Telegram](https://t.me/PlatONNetworkCN)
   - [Discord](https://discord.com/invite/jAjFzJ3Cff)

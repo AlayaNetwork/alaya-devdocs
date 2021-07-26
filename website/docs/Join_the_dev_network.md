@@ -33,20 +33,20 @@ alaya attach http://47.241.91.2:6789
 
 #### Connect to Alaya development network through SDK
 
-- Use [Java SDK](/alaya-devdocs/zh-CN/Java_SDK) to connect to the development network, for example:
+- Use [Java SDK](/alaya-devdocs/en/Java_SDK) to connect to the development network, for example:
 
 ```
 Web3j platonWeb3j = Web3j.build(new HttpService("http://47.241.91.2:6789"));
 ```
 
-- Use [JS SDK](/alaya-devdocs/zh-CN/JS_SDK) to access the development network, for example:
+- Use [JS SDK](/alaya-devdocs/en/JS_SDK) to access the development network, for example:
 
 ```
 var Web3 = require('web3');
 var web3 = new Web3('http://47.241.91.2:6789');
 ```
 
-- Use [JSON RPC](/alaya-devdocs/zh-CN/Json_Rpc) to access the development network, for example: 
+- Use [JSON RPC](/alaya-devdocs/en/Json_Rpc) to access the development network, for example: 
 
 ```
 curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 47.241.91.2:6789

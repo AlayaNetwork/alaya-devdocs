@@ -34,7 +34,7 @@ ATON supports Android and IOS systems: [Click to download the latest version of 
 
 This document will guide you through most of the features of ATON. If you have any questions during use, please consult the [ATON Help Center](https://platon.zendesk.com/hc/en-us).
 
-At the same time, you can feedback any questions or suggestions about ATON through [Discord](https://discord.com/invite/ jAjFzJ3Cff) and [Forum](https://forum.latticex.foundation/).
+At the same time, you can feedback any questions or suggestions about ATON through [Discord](https://discord.com/invite/jAjFzJ3Cff) and [Forum](https://forum.latticex.foundation/).
 
 
 

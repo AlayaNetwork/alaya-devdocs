@@ -26,16 +26,16 @@ alaya attach http://47.241.91.2:6789
 
 #### 通过SDK连接入Alaya开发网
 
-- 使用[Java SDK](/alaya-devdocs/en/Java_SDK/)连接入开发网络，示例如下：
+- 使用[Java SDK](/alaya-devdocs/zh-CN/Java_SDK)连接入开发网络，示例如下：
 ```
 Web3j platonWeb3j = Web3j.build(new HttpService("http://47.241.91.2:6789"));
 ```
-- 使用[JS SDK](/alaya-devdocs/en/JS_SDK)接入开发网，示例如下：
+- 使用[JS SDK](/alaya-devdocs/zh-CN/JS_SDK)接入开发网，示例如下：
 ```
 var Web3 = require('web3');
 var web3 = new Web3('http://47.241.91.2:6789');
 ```
-- 使用[JSON RPC](/alaya-devdocs/en/Json_Rpc)接入开发网，示例如下：
+- 使用[JSON RPC](/alaya-devdocs/zh-CN/Json_Rpc)接入开发网，示例如下：
 ```
 curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 47.241.91.2:6789
 ```

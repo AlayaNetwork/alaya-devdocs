@@ -43,7 +43,7 @@ This Alaya document library is still under constant revision, and you are welcom
 
 ## Community Support
 
-If you like to communicate with people, you can join Alaya's chat group and discussion community to establish contact with people who have a common goal, help those in need, and jointly ensure the healthy and orderly development of the community. The community's communication and discussion channels mainly include: [Alaya Github](https://github.com/AlayaNetwork), [PlatON Github](https://github.com/PlatONnetwork), [LatticeX Foundation Github](https:/ /github.com/LatticeX-Foundation), [Discord](https://discord.gg/jAjFzJ3Cff), [LatticeX Forum](https://forum.latticex.foundation/), [Reddit](https:// www.reddit.com/user/PlatON_Network). 
+If you like to communicate with people, you can join Alaya's chat group and discussion community to establish contact with people who have a common goal, help those in need, and jointly ensure the healthy and orderly development of the community. The community's communication and discussion channels mainly include: [Alaya Github](https://github.com/AlayaNetwork), [PlatON Github](https://github.com/PlatONnetwork), [LatticeX Foundation Github](https:/ /github.com/LatticeX-Foundation), [Discord](https://discord.gg/jAjFzJ3Cff), [LatticeX Forum](https://forum.latticex.foundation/), [Reddit](https://www.reddit.com/user/PlatON_Network). 
 
 Contribution efforts include but are not limited to:
 

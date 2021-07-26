@@ -24,12 +24,12 @@ A DApp is a decentralized application build on the blockchain, usually consistin
 
 - [Alaya-Truffle](/alaya-devdocs/en/Alaya-Truffle) - A contract development framework that supports WASM and Solidity contracts.
 - [IDE](/alaya-devdocs/en/IDE) - An interface-based development tool that supports WASM and Solidity contracts.
- 
+
 #### Solidity contract
 
 - [Getting started](/alaya-devdocs/en/Solidity_Getting_started) - An example of how to deploy, compile, publish, and call contracts on the Alaya network.
 - [Best practices](/alaya-devdocs/en/Solidity_Best_practices/) - Learn about some of the specifications for writing contracts on trasaction fees.
-- [Development costs](/alaya-devdocs/zh-CN/Solidity_Development_costs/) - Introduces the fee cost about Solidity contract deployment and call, and the comparative analysis of the fee with Ethereum.
+- [Development costs](/alaya-devdocs/en/Solidity_Development_costs) - Introduces the fee cost about Solidity contract deployment and call, and the comparative analysis of the fee with Ethereum.
 - [Contract security](/alaya-devdocs/en/Solidity_Contract_security) - A few writing specifications on how to improve the security of the contract.
 - [Migration tutorial](/alaya-devdocs/en/Solidity_Migration_tutorial) - A tutorial on migrating Solidity contracts from Ethereum to the Alaya network.
 

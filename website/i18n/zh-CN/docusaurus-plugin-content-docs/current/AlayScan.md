@@ -102,7 +102,7 @@ AlayaScan(Scan.alaya.network)中令牌列表中仅展示已认证的令牌，如
 
 ### 验证节点
 
-验证节点负责区块生产和验证，相关验证节点信息请查看 [Alaya验证节点介绍](/alaya-devdocs/zh-CN/Alaya_Validation_Introduce)。
+验证节点负责区块生产和验证，相关验证节点信息请查看 [Alaya验证节点介绍](/alaya-devdocs/zh-CN/Intro_to_validator)。
 
 - 总质押 -- 验证节点质押与接收到的委托ATP总量。
 
@@ -132,7 +132,7 @@ AlayaScan(Scan.alaya.network)中令牌列表中仅展示已认证的令牌，如
 
 ### **Alaya区块链浏览器**
 
-- [PlatScan](https://scan.Alaya.network) — Alaya区块链资源管理和分析平台，支持中文、英文。
+- [AlayaScan](https://scan.Alaya.network) — Alaya区块链资源管理和分析平台，支持中文、英文。
 
 - [PlatEye](https://alayascan.com/) — 提供功能丰富的Aalay以及Alaya的区块链浏览器，当前仅支持中文。
 

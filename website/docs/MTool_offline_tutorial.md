@@ -9,7 +9,7 @@ sidebar_label: Offline MTool
 In order to facilitate node transfer, pledge, delegation and governance and other related operations, Alaya provides MTool to assist users:
 
 - MTool can support Ubuntu 18.04 and Windows 10. This document describes the installation and use under Windows and Ubuntu environments respectively. Users can choose according to their own resources.
-- MTool provides two signature methods for pledge transactions: online signature and offline signature. This document describes offline signature operations. For online signature operations, please refer to [Online MTool Tutorial](/alaya-devdocs/zh-CN/Online_MTool).
+- MTool provides two signature methods for pledge transactions: online signature and offline signature. This document describes offline signature operations. For online signature operations, please refer to [Online MTool Tutorial](/alaya-devdocs/en/Online_MTool).
 - The main process of MTool offline signature method is: generate the file to be signed on the online machine, then sign the transaction on the offline machine, and finally send the signed transaction on the online machine.
 
 ## Install MTool
