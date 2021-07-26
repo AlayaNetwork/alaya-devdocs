@@ -86,10 +86,22 @@ The following shows steps of creating an Alaya document branch:
 3. Clone a copy of the project to the local computer:
 
    ```shell
-   git clone https://github.com/YOUR_USERNAME/alaya-devdocs.git    
+   git clone https://github.com/YOUR_USERNAME/alaya-devdocs.git  && \
+   cd docs && \
+   cd website     
    ```
 
 4. Make document changes on the local computer.
+   - Install dependencies
+   ```shell
+   npm install
+   ```
+   - Start project
+   ```shell
+   npm run start     # English version
+   npm run start:zh  # 中文版本
+   ```
+   - Preview the website at `http://localhost:3000/` in your browser.
 
 5. After making all the changes, make sure to push everything back to GitHub:
 
@@ -98,6 +110,12 @@ The following shows steps of creating an Alaya document branch:
    git commit -m "What's fixed, issue #ID."
    git push
    ```
+   
+6. Preview website on Github
+   - go to github repository
+   - **[Setting]** -> **[Pages]** -> Source。choose`gh-pages`branch,`save` open preview
+   - Wait for the flow in the **[Action]** to Run out
+   - Enter `https://YOUR_USERNAME.github.io/alaya-devdocs/` to preview then change
 
 Note: When submitting a fix, remember to provide a summary description of the fixed issue and quote the issue number, so that others can quickly see what you have done.
 
