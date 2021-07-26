@@ -91,7 +91,7 @@ Alaya
 
 **示例代码**
 
-[点击查看微博客账户合约](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/translated_docs/zh-CN/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/account.sol)
+[点击查看微博客账户合约](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/account.sol)
 
 
 字节码
@@ -124,7 +124,7 @@ Alaya
 
 **示例代码**
 
-[点击查看ERC20标准的智能合约](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/translated_docs/zh-CN/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/token.sol)
+[点击查看ERC20标准的智能合约](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/token.sol)
 
 
 字节码
