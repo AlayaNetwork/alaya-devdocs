@@ -39,7 +39,7 @@ Staking是Alaya网络的核心功能，参与质押和委托的ATP比例越大�
 
 ## 如何委托？
 
-任何持有超过1ATP的用户都可以参与委托获取委托奖励，使用[ATON钱包](/alaya-devdocs/zh-CN/ATON_user_manual)即可简单完成委托操作，具体请参考[这里](/alaya-devdocs/zh-CN/ATON-user-manual#委托)。
+任何持有超过1ATP的用户都可以参与委托获取委托奖励，使用[ATON钱包](/alaya-devdocs/zh-CN/ATON_user_manual)即可简单完成委托操作，具体请参考[这里](/alaya-devdocs/zh-CN/ATON_user_manual#委托)。
 
 欢迎提交其他好用并支持Alaya委托服务的应用。
 

@@ -27,7 +27,7 @@ The delegation is similar to an election in that we exercise our voting right by
 
 ## How to staking?
 
-We welcome ATP holders interested in maintaining the network to run an Alaya Node and staking to become an Alaya Validator. A detailed description of the Alaya node and how to operate it can be found on the [Alaya Node Page](/)
+We welcome ATP holders interested in maintaining the network to run an Alaya Node and staking to become an Alaya Validator. A detailed description of the Alaya node and how to operate it can be found on the [Alaya Node Page](/alaya-devdocs/en/Intro_to_validator/)
 
 To facilitate operations such as node staking and governance voting, Alaya provides the [MTool tool](/alaya-devdocs/en/Online_MTool), which can be used to quickly initiate staking operations, please refer to [here](/alaya-devdocs/en/Online_MTool#initiate-a-staking-operation) for details.
 
@@ -35,7 +35,7 @@ To facilitate operations such as node staking and governance voting, Alaya provi
 
 ## How to delegate?
 
-Any user holding more than 1 ATP can participate in delegating for delegated rewards, which can be done simply by using [ATON Wallet](/), see [here](/alaya-devdocs/zh-CN/ATON-user-manual#delegation).
+Any user holding more than 1 ATP can participate in delegating for delegated rewards, which can be done simply by using [ATON Wallet](/alaya-devdocs/en/ATON_user_manual), see [here](/alaya-devdocs/en/ATON_user_manual#delegate).
 
 Feel free to submit more good applications that support the Alaya Delegation Service.
 
@@ -56,19 +56,19 @@ Based on the information provided by the ATON Wallet, you can examine a validato
 
 ## When does the delegation take effect and when can I get rewards after delegation?
 
-Delegated ATP does not become effective (i.e., being locked) until the next [Epoch](/).
+Delegated ATP does not become effective (i.e., being locked) until the next [Epoch](/alaya-devdocs/en/Economic_model#the-business-cycle-in-alaya).
 
-When the effective delegation is fully locked for an Epoch and the delegated validator is rewarded in the [Epoch](/alaya-devdocs/en/Economic_Model#the-business-cycle-in-platon), the delegating reward is available in that settlement block.
+When the effective delegation is fully locked for an Epoch and the delegated validator is rewarded in the [Epoch](/alaya-devdocs/en/Economic_model#the-business-cycle-in-alaya), the delegating reward is available in that settlement block.
 
 There will be no rewards in the Epoch for delegating redeemed in the process.
 
-If the delegated validator is revoked, all delegating under that validator will be invalidated and there will be no delegating rewards for this Epoch and subsequent Epochs. Please take care to [withdraw](/) in a timely manner.
+If the delegated validator is revoked, all delegating under that validator will be invalidated and there will be no delegating rewards for this Epoch and subsequent Epochs. Please take care to [withdraw](/alaya-devdocs/en/ATON_user_manual/#withdraw-delegation) in a timely manner.
 
 
 
 ## How to calculate the delegated rawards?
 
-Rewards can be received when a validator becomes an active validator and participates in block production. The rewards are composed of staking rewards and block-producing rewards and are allocated to delegators in accordance with the delegating reward ratio. The delegated rewards obtained need to be actively [claimed](/) by you.
+Rewards can be received when a validator becomes an active validator and participates in block production. The rewards are composed of staking rewards and block-producing rewards and are allocated to delegators in accordance with the delegating reward ratio. The delegated rewards obtained need to be actively claimed by you.
 
 Example：
 

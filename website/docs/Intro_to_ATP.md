@@ -28,7 +28,7 @@ ATP provides three key functions in Alaya.
 
 When you transfer ATP or use a Alaya application, you need to pay a small ATP as fee. The fee is used to incentivizes the node to process and verify your transaction.
 
-In the PPOS mechanism, ATP is of great importance to the network. With ATP, one can delegate to validators or become a validator by staking themselves, which help maintain Alaya network security.  Both the validators and delegators can get ATP rewards. [More about Alaya validators](/alaya-devdocs/en/Alaya_Validator_Introduce).
+In the PPOS mechanism, ATP is of great importance to the network. With ATP, one can delegate to validators or become a validator by staking themselves, which help maintain Alaya network security.  Both the validators and delegators can get ATP rewards. [More about Alaya validators](/alaya-devdocs/en/Intro_to_validator).
 
 If you want to know more about the economic mechanism of ATP, [click for more inforamtion](/alaya-devdocs/en/Economic_Model#alaya-economic-solution).
 
@@ -38,7 +38,7 @@ If you want to know more about the economic mechanism of ATP, [click for more in
 
 The Alaya Network gives all ATP holders the right to participate in Alaya governance, including deciding on the direction of the Alaya Network, changing the underlying protocols and more.
 
-For details on how holders can participate in governance, see the [governance page](/).
+For details on how holders can participate in governance, see the [governance page](/alaya-devdocs/en/Governance_mechanism).
 
 
 
@@ -57,10 +57,10 @@ Alaya Wallet is an application for users to create and manage ATP account and in
 
 For beginners, the following wallet applications are recommended for creating an ATP account.
 
-- [ATON](https://www.Alaya.network/en/developer/#aton) -  Mobile app wallet designed for iOS and Android platforms
+- [ATON](https://www.platon.network/en/developer#aton) -  Mobile app wallet designed for iOS and Android platforms
 - [Samurai](https://github.com/AlayaNetwork/Samurai) -  Web browser plugin wallet
 
-The non-graphical tools [MTool](/), [AlayaCLI](/) and [Alaya-Truffle](/) also support you in creating ATP accounts.
+The non-graphical tools [MTool](/alaya-devdocs/en/Online_MTool#create-a-wallet), [AlayaCLI](/alaya-devdocs/en/Command_Line_Tools) and [Alaya-Truffle](/alaya-devdocs/en/Alaya-Truffle) also support you in creating ATP accounts.
 
 Please see the manual for your specific wallet/tool for the relevant ATP transfer operations.
 

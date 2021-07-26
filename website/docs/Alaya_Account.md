@@ -405,7 +405,7 @@ After being prompted to enter the password twice, you will be asked to enter the
 
 At the same time, a wallet file will be generated in the `MTool installation directory\mtool\current\keystore` directory.
 
-MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](alaya-devdocs/en/Online_MTool).
+MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](/alaya-devdocs/en/Online_MTool).
 
 ### Samurai Wallet
 

@@ -57,11 +57,11 @@ Alaya将支持DApps的发展，引入DApps的经济耦合设计。例如，DApps
 
 对于小白用户，推荐使用下列钱包应用创建ATP账户：
 
-- [ATON](https://Alaya.network/developer/?lang=zh#aton) -  为iOS和Android平台设计的手机移动端钱包
+- [ATON](https://www.platon.network/en/developer#atonn) -  为iOS和Android平台设计的手机移动端钱包
 
 - [Samurai插件钱包](https://github.com/AlayaNetwork/Samurai) -  网页浏览器插件钱包
 
-另外非图形化的工具：[MTool](/alaya-devdocs/zh-CN/OnLine_MTool_Manual#创建钱包)、[AlayaCLI](/alaya-devdocs/zh-CN/Command_Line_Tools#personal) 、[Alaya-Truffle](/alaya-devdocs/zh-CN/Alaya-Truffle) 也支持您创建ATP账户。
+另外非图形化的工具：[MTool](/alaya-devdocs/zh-CN/Online_MTool#创建钱包)、[AlayaCLI](/alaya-devdocs/zh-CN/Command_Line_Tools#personal) 、[Alaya-Truffle](/alaya-devdocs/zh-CN/Alaya-Truffle) 也支持您创建ATP账户。
 
 相关ATP转移操作请查看具体钱包工具的使用手册。
 
