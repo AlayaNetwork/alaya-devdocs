@@ -115,3 +115,183 @@ Two files will be generated in the subdirectory `data` under the working directo
 - blspub: Node BLS public key file, which holds the node's BLS public key
 
 - blskey: Node BLS private key file, which holds the node's BLS private key
+
+## Run Full Node
+
+The Alaya mainnet was officially launched on October 24, 2020, Beijing time, and the ChainID is 201018; the other is the Alaya development network that is open to developers, and the ChainID is 201030.
+
+If you need to join the Alaya mainnet, please refer to [Join the Alaya mainnet](#Run-Full-Node-to-Join-the-Alaya-Mainnet).
+
+If you need to join the Alaya development network, please refer to [Join the Alaya development network](#Run-Full-Node-to-Join-the-Alaya-Development-Network).
+
+- [Alaya Mainnet Blockchain Explorer](https://scan.alaya.network/)
+- [Alaya Development Network Blockchain Explorer](https://devnetscan.alaya.network)
+
+
+
+### Run Full Node to Join the Alaya Mainnet
+
+Run the following command to join the network:
+
+```bash
+cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+```
+
+Or you can use the `service unit` to manage your `alaya` process:
+
+```bash
+sudo tee <<EOF >/dev/null /etc/systemd/system/alaya.service
+[Unit]
+Description=Alaya node service
+After=network.target
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=alaya
+ExecStart=/usr/bin/platon \\
+    --identity alaya-node \\
+    --alaya \\
+    --datadir ${HOME}/platon-node/data \\
+    --port 16789 \\
+    --rpcaddr 127.0.0.1 \\
+    --rpcport 6789 \\
+    --rpc \\
+    --rpcapi "db,platon,net,web3,admin,personal" \\
+    --nodekey ${HOME}/platon-node/data/nodekey \\
+    --cbft.blskey ${HOME}/platon-node/data/blskey \\
+    --verbosity 1 \\
+    --syncmode "fast" 
+User=${USER}
+Restart=on-failure
+StartLimitInterval=5
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable alaya.service
+sudo systemctl start alaya.service
+```
+
+
+
+**Notes:**
+
+| Item          | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| --identity    | Specify network name                                         |
+| --datadir     | Specify data directory path                                  |
+| --port        | p2p port number                                              |
+| --rpcaddr     | Specify rpc server address                                   |
+| --rpcport     | pecify rpc protocol communication port                       |
+| --rpcapi      | Specify the open rpcapi name of the ode                      |
+| --rpc         | Specify http-rpc communication method                        |
+| --nodekey     | Specify the private key file of the node                     |
+| --cbft.blskey | Specify the bls private key file of the node (a non-validator is a full node. This parameter is optional) |
+| --verbosity   | Log level, 0: CRIT; 1: ERROR;  2: WARN; 3: INFO; 4: DEBUG; 5: TRACE |
+| --alaya       | Specify connection to the Alaya mainnet                      |
+| --syncmode    | fast: fast synchronization mode; full: full synchronization mode |
+| –db.nogc      | Enable the archive mode                                      |
+
+More parameter meanings can be viewed through the `platon --help` command.
+
+
+
+#### Mainnet-related Resources
+
+| Documents or Resources | Address                                                      | Note                                                         |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| platon binary file     | https://download.alaya.network/alaya/platon/0.15.0/platon    |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.15.0/alayakey  |                                                              |
+| mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
+| explorer address       | https://scan.alaya.network/                                  |                                                              |
+
+
+
+### View Node State
+
+When Alaya is successfully started, it will automatically establish a connection with the nearest node through the node discovery protocol under normal circumstances. After the connection is successful, block synchronization will be started, so you can check the peers of the node and the increase in the current node block height to determine if you have joined the network.
+
+If the key is not generated in advance, the node is automatically generated in the data directory of the node when it is started. If it is generated automatically, only the private key and the BLS private key of the node will be generated, not any other related public key.
+
+```bash
+# Enter the Alaya console
+platon attach http://localhost:6789
+
+## The following commands are executed in the Alaya console
+# View peers of the node
+admin.peers
+
+# View the current block height
+platon.blockNumber
+
+# View synchronization state
+platon.syncing
+
+# Exit the console
+exit
+```
+
+If a series of Alaya network nodes appear in the node list and the block height is increasing, then the connection succeeds! (As the new node needs to be synchronized, there may be a delay).
+
+The fast synchronization makes it impossible to query the current block height. When it is synchronized to the latest height, the full synchronization mode will be automatically enabled, and at that time you can view the latest height.
+
+
+
+### Run Full Node to Join the Alaya Development Network
+
+If you are deploying a mainnet node, you can skip the following content.
+
+The development network provides a development and test environment for developers or nodes. There may be instability and network reset. The current version of the development network is `0.16.0`.
+
+#### Initialize the Genesis Block
+
+```bash
+# Download the genesis block file genesis.json
+cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+
+# Initialize the genesis block file
+cd ~/alaya-node && alaya --datadir ./data init genesis.json
+```
+
+
+
+> Note:
+>
+> The prompt of `Successfully wrote genesis state` indicates that the genesis information is synchronized.
+
+
+
+#### Start the Validator
+
+Execute the following command to make the validator to join the Alaya development network; if you need to become a validator, please apply for a large amount of test ATP through the follow-up instructions (the development network will be reset from time to time according to the test needs, and the test ATP has no actual value).
+
+```shell
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+```
+
+**You can also refer to the mainnet configuration `service unit` file to manage the Alaya process.**
+
+
+
+#### Resources Related to the Development Network
+
+| Documents or Resources | Address                                                      | Note                                                         |
+| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| platon binary files    | https://download.alaya.network/alaya/platon/0.16.0/alaya     |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.16.0/alayakey  |                                                              |
+| mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| Samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
+| Open RPC URL           | http://47.241.91.2:6789                                      |                                                              |
+| explorer address       | https://devnetscan.alaya.network                             |                                                              |
+
+
+
+
