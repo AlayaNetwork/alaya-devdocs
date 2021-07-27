@@ -77,10 +77,23 @@ Fork是将项目复制一份个人副本。您可以随时对此副本进行任�
 3. 将项目副本克隆到本地计算机：
 
    ```shell
-   git clone https://github.com/YOUR_USERNAME/alaya-devdocs.git    
+   git clone https://github.com/YOUR_USERNAME/alaya-devdocs.git  && \
+   cd docs && \
+   cd website   
    ```
 
 4. 在本地计算机进行文档更改。
+   - 安装项目依赖
+   ```shell
+   npm install
+   ```
+   - 启动项目
+   ```shell
+   npm run start     # English version
+   npm run start:zh  # 中文版本
+   ```
+   - 在浏览起输入`http://localhost:3000/`预览项目
+   
 
 5. 完成所有更改后，请确保将所有内容推送回 GitHub：
 
@@ -89,6 +102,12 @@ Fork是将项目复制一份个人副本。您可以随时对此副本进行任�
    git commit -m "What's fixed, issue #ID."
    git push
    ```
+
+6. 预览修改效果
+   - 进入github仓库地址
+   - 进入【**Setting**】-> 【**Pages**】-> Source。选择`gh-pages`分支，`save`开启预览
+   - 等 【**Action**】里面的流程跑完
+   - 进入 `https://YOUR_USERNAME.github.io/alaya-devdocs/` 即可预览修改效果
 
 注：提交修复务必对修复的问题进行总结性说明，并引用问题编号，遵循这个规范可以让其他人更容易快速看到您做了什么。
 
