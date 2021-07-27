@@ -120,16 +120,16 @@ Two files will be generated in the subdirectory `data` under the working directo
 
 The Alaya mainnet was officially launched on October 24, 2020, Beijing time, and the ChainID is 201018; the other is the Alaya development network that is open to developers, and the ChainID is 201030.
 
-If you need to join the Alaya mainnet, please refer to [Join the Alaya mainnet](#run-full-node-to-join-the-alaya-mainnet).
+If you need to join the Alaya mainnet, please refer to [Join the Alaya mainnet](#join-the-alaya-mainnet).
 
-If you need to join the Alaya development network, please refer to [Join the Alaya development network](#run-full-node-to-join-the-alaya-development-network).
+If you need to join the Alaya development network, please refer to [Join the Alaya development network](#join-the-alaya-development-network).
 
 - [Alaya Mainnet Blockchain Explorer](https://scan.alaya.network/)
 - [Alaya Development Network Blockchain Explorer](https://devnetscan.alaya.network)
 
 
 
-### Run Full Node to Join the Alaya Mainnet
+### Join the Alaya Mainnet
 
 Run the following command to join the network:
 
@@ -244,7 +244,7 @@ The fast synchronization makes it impossible to query the current block height. 
 
 
 
-### Run Full Node to Join the Alaya Development Network
+### Join the Alaya Development Network
 
 If you are deploying a mainnet node, you can skip the following content.
 
