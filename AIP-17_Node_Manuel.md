@@ -41,6 +41,7 @@
   $ cd Alaya-Go 
   $ git fetch --all
   $ git checkout -b alaya-0.16.0 c1221a425d6b6b0c916c2eecbf1f74ab5224291c
+  # 安装依赖和编译，如果出现missing go.sum entry for module，使用go mod tidy移除未使用和添加缺失的依赖
   $ go mod download && make all
   # 使用新的alaya版本
   $ chmod +x build/bin/alaya
