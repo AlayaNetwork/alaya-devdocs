@@ -40,7 +40,7 @@
   $ git clone https://github.com/AlayaNetwork/Alaya-Go.git --recursive
   $ cd Alaya-Go 
   $ git fetch --all
-  $ git checkout -b develop c1221a425d6b6b0c916c2eecbf1f74ab5224291c
+  $ git checkout -b alaya-0.16.0 c1221a425d6b6b0c916c2eecbf1f74ab5224291c
   $ go mod download && make all
   # 使用新的alaya版本
   $ chmod +x build/bin/alaya
