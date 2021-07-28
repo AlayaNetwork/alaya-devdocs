@@ -4,22 +4,22 @@ title: Wasm API
 sidebar_label: Wasm API
 ---
 
-### block api
+## Block API
 
-#### platon_block_hash()
+### platon_block_hash()
 
 ```cpp
 h256 platon::platon_block_hash(int64_t num)
 ```
 
-Gets the block hash based on the block height.
+Get the block hash based on the block height.
 
 - **Parameters**
     - `num:` Height of block
 - **Returns**
-    - Hash of block
+    - Hash of block.
 
-#### platon_block_number()
+### platon_block_number()
 
 ```cpp
 uint64_t platon_block_number()
@@ -28,9 +28,9 @@ uint64_t platon_block_number()
 Get the height of the current block
 
 - **Returns**
-    - the height of the current block
+    - The height of the current block.
 
-#### platon_coinbase()
+### platon_coinbase()
 
 ```cpp
 Address platon::platon_coinbase()
@@ -39,9 +39,9 @@ Address platon::platon_coinbase()
 Gets the Hash of miner nodes.
 
 - **Returns**
-    - Hash of miner nodes
+    - Hash of miner nodes.
 
-#### platon_unix_timestamp()
+### platon_unix_timestamp()
 
 ```cpp
 int64_t platon::platon_unix_timestamp()
@@ -50,55 +50,55 @@ int64_t platon::platon_unix_timestamp()
 Get the unix timestamp of the current block.
 
 - **Returns**
-    - The unix timestamp of the current block (second)
+    - The unix timestamp of the current block (second).
 
-#### platon_gas_limit()
+### platon_gas_limit()
 
 ```cpp
 uint64_t platon_gas_limit()
 ```
 
-Get the value of gas price limit
+Get the value of gas price limit.
 
 - **Returns**
-    - the value of gas price limit
+    - The value of gas price limit.
 
-### transaction api
+## Transaction API
 
-#### platon_gas_price()
+### platon_gas_price()
 
 ```cpp
 u128 platon::platon_gas_price()
 ```
 
-Get the value of gas price.
+Get the gas price of the transaction.
 
 - **Returns**
-    - The value of gas price
+    - The gas price of the transaction.
 
-#### platon_gas()
+### platon_gas()
 
 ```cpp
 uint64_t platon_gas()
 ```
 
-Get the value of gas
+Get the gas value of the transaction.
 
 - **Returns**
-    - the value of gas
+    - The value of gas.
 
-#### platon_caller_nonce
+### platon_caller_nonce
 
 ```cpp
 uint64_t platon_caller_nonce()
 ```
 
-Get the value of the caller's nonce
+Get the value of the caller's nonce.
 
 - **Returns**
-    - the value of the caller's nonce
+    - The value of the caller's nonce.
 
-#### platon_call_value()
+### platon_call_value()
 
 ```cpp
 u128 platon::platon_call_value()
@@ -107,9 +107,9 @@ u128 platon::platon_call_value()
 Get the value of the current transaction value field.
 
 - **Returns**
-    - The value of the current transaction value field
+    - The value of the current transaction value field.
 
-#### platon_caller()
+### platon_caller()
 
 ```cpp
 Address platon::platon_caller()
@@ -118,9 +118,9 @@ Address platon::platon_caller()
 Get the address of caller.
 
 - **Returns**
-    - The address of caller
+    - The address of caller.
 
-#### platon_origin()
+### platon_origin()
 
 ```cpp
 Address platon::platon_origin()
@@ -129,9 +129,9 @@ Address platon::platon_origin()
 Get the address of original caller.
 
 - **Returns**
-    - The address of original caller
+    - The address of original caller.
 
-#### platon_address()
+### platon_address()
 
 ```cpp
 Address platon::platon_address()
@@ -140,32 +140,32 @@ Address platon::platon_address()
 Get the address of contract.
 
 - **Returns**
-    - The address of contract
+    - The address of contract.
 
-### account api
+## Account API
 
-#### make_address() 1/2
+### make_address() 1/2
 
 ```cpp
 template <size_t M> std::pair<Address, bool> make_address(const char (&str)[M])
 ```
 
-The default address recognized by CDT is the main network address, that is, the address prefix is atp. If you want to recognize the test network address prefix is atx, you need to define the macro TESTNET, and you can put #define TESTNET on the first line of the contract.
+By default, the address recognized by CDT is the mainnet address, that is, the address prefix is atp. If you want to recognize the test network address prefix as atx, you need to define the macro TESTNET, and add #define TESTNET to the first line of the contract.
 
-Converts a c-style string to an address object.
+Convert a c-style string to an address object.
 
 - **Parameters**
     - `str：` C-style string
 - **Returns**
     - The return value is pair, whose second represents success or failure, and whose first represents an Address of type Address.
 
-#### make_address() 2/2
+### make_address() 2/2
 
 ```cpp
 std::pair<Address, bool> make_address(const std::string &str_address)
 ```
 
-The default address recognized by CDT is the main network address, that is, the address prefix is atp. If you want to recognize the test network address prefix is lax, you need to define the macro TESTNET, and you can put #define TESTNET on the first line of the contract.
+By default, the address recognized by CDT is the mainnet address, that is, the address prefix is atp. If you want to recognize the test network address prefix as atx, you need to define the macro TESTNET, and add #define TESTNET to the first line of the contract.
 
 Converts a string to an address object.
 
@@ -174,7 +174,7 @@ Converts a string to an address object.
 - **Returns**
     - The return value is pair, whose second represents success or failure, and whose first represents an Address of type Address.
 
-#### platon_balance()
+### platon_balance()
 
 ```cpp
 Energon platon::platon_balance(const Address & addr)
@@ -185,9 +185,9 @@ Get the balance based on the address.
 - **Parameters**
     - `addr:` address
 - **Returns**
-    - The balance of the address
+    - The balance of the address.
 
-#### platon_transfer()
+### platon_transfer()
 
 ```cpp
 bool platon::platon_transfer(const Address &addr, const Energon &amount)
@@ -199,11 +199,11 @@ Transfer the amount of Energon to address.
     - `addr:` Accounts address
     - `amount:` The amount of Energon
 - **Returns**
-    - true if transfer success, false otherwise
+    - True if transfer succeeds, or false otherwise.
 
-#### platon::Energon Class
+### platon::Energon Class
 
-Energo is a type of currency
+Energo is a currency-related operation class
 
 - **Public Member Functions**
 
@@ -211,16 +211,16 @@ Energo is a type of currency
       Construct a new Energon.
 
     - `const u128 Get () const`
-      Get amount of Von.
+      Get a certain amount of Von.
 
     - `const bytes Bytes () const`
-      Get the bytes of value, the bytes use big-end representations.
+      Get the bytes of value. The bytes use big-end representations.
 
     - `Energon & Add (const u128 &v)`
-      Add amount of Von.
+      Add a certain amount of Von.
 
     - `Energon & Add (const Energon &rhs)`
-      Add amount of Von.
+      Add two Energon objects
 
     - `Energon & operator+= (const Energon &rhs)`
       Implement operator +=
@@ -230,39 +230,39 @@ Energo is a type of currency
     - `platon::Energon::Energon(u128 n)`
       Construct a new Energon.
         - **Parameters**
-            - `n:`amount of Von
+            - `n:`Amount of Von
 
 - **Member Function Documentation**
 
     - `Energon& platon::Energon::Add(const Energon & rhs)`
-      Add amount of Von.
+      Add a certain amount of Von.
 
         - **Parameters**
             - `rhs:`Amount of Von
         - **Returns**
-            - The reference of Energon
+            - The reference of Energon.
 
     - `Energon& platon::Energon::Add(const u128 & v)`
-      Add amount of Von.
+      Add a certain amount of Von.
 
         - **Parameters**
             - `v:` Amount of Von
         - **Returns**
-            - The reference of Energon
+            - The reference of Energon.
 
     - `const bytes platon::Energon::Bytes() const`
 
-      Get the bytes of value, the bytes use big-end representations.
+      Get the bytes of value. The bytes use big-end representations.
 
         - **Returns**
-            - The bytes of value
+            - The bytes of value.
 
     - `const u128 platon::Energon::Get() const`
 
-      Get amount of Von.
+      Get a certain amount of Von.
 
         - **Returns**
-            - The amount of Von
+            - The amount of Von.
 
     - `Energon& platon::Energon::operator+= ( const Energon & rhs)`
 
@@ -271,19 +271,19 @@ Energo is a type of currency
         - **Parameters**
             - `rhs:` Energon object
         - **Returns**
-            - The reference of Energon
+            - The reference of Energon.
 
-#### platon::WhiteList< TableName > Class
+### platon::WhiteList< TableName > Class
 
 ```cpp
 template<Name::Raw TableName>
 class platon::WhiteList< TableName >
 ```
 
-Persist storage whitelist implement.
+A tool to persistently store the whitelist.
 
 - **Template Parameters**
-- `Name:` Whitelist name, in the same contract, the name should be unique
+- `Name:` Whitelist name. The name should be unique in the same contract
 - **Constructor & Destructor Documentation**
 
     - `template<Name::Raw TableName> platon::WhiteList< TableName >::WhiteList ()`
@@ -346,7 +346,7 @@ Persist storage whitelist implement.
         - **Parameters**
             - `addr:` Accounts address
         - **Returns**
-            - true if exists, false otherwise
+            - True if it exists, or false otherwise
 
     - `template<Name::Raw TableName> bool platon::WhiteList< TableName >::Exists ( const std::string & addr)`
       Whether the address exists in whitelist.
@@ -354,17 +354,17 @@ Persist storage whitelist implement.
         - **Parameters**
             - `addr:` Accounts address
         - **Returns**
-            - true if exists, false otherwise
+            - True if it exists, or false otherwise.
 
-### storage api
+## Storage API
 
-#### platon_set_state()
+### platon_set_state()
 
 ```cpp
 void platon_set_state(const uint8_t *key, size_t klen, const uint8_t *value, size_t vlen)
 ```
 
-Set the state object
+Set the state object.
 
 - **Parameters**
     - `key:` Key
@@ -372,28 +372,28 @@ Set the state object
     - `value:` Value
     - `vlen:` The length of value
 
-#### platon_get_state_length()
+### platon_get_state_length()
 
 ```cpp
 size_t platon_get_state_length(const uint8_t *key, size_t klen)
 ```
 
-Get the length of state object
+Get the length of the value corresponding to the key.
 
 - **Parameters** \*`key:` Key
 
     - `Klen:` The length of key
 
 - **Returns**
-    - The length of state object
+    - The length of state object.
 
-#### platon_get_state()
+### platon_get_state()
 
 ```cpp
 size_t platon_get_state(const uint8_t *key, size_t klen, uint8_t *value, size_t vlen);
 ```
 
-Get the state object
+Get the state object.
 
 - **Parameters**
 
@@ -403,9 +403,9 @@ Get the state object
     - `vlen:` The length of value
 
 - **Returns**
-    - The length of value
+    - The length of value.
 
-#### platon::StorageType< StorageName, T > Class Template
+### platon::StorageType< StorageName, T > Class Template
 
 ```cpp
 template<Name::Raw StorageName, typename T>
@@ -414,7 +414,7 @@ class platon::StorageType< StorageName, T >
 
 - **Template Parameters**
 
-    - `StorageName:` Element value name, in the same contract, the name needs to be unique
+    - `StorageName:` Element value name. The name needs to be unique in the same contract
     - `T:` Element type
 
 - **Public Member Functions**
@@ -484,7 +484,7 @@ class platon::StorageType< StorageName, T >
 
     - `T & self ()`
 
-#### platon::db::Array< TableName, Key, N > Class Template
+### platon::db::Array< TableName, Key, N > Class Template
 
 ```cpp
 template<Name::Raw TableName, typename Key, unsigned N>
@@ -516,28 +516,28 @@ class platon::db::Array< TableName, Key, N >
     - `~Array ()`
 
     - `iterator begin ()`
-      iterator start position
+      Start position of iterator
 
     - `iterator end ()`
-      iterator end position
+      End position of iterator
 
     - `reverse_iterator rbegin ()`
-      Reverse iterator start position.
+      Start position of reverse iterator.
 
     - `reverse_iterator rend ()`
-      Reverse iterator end position.
+      End position of reverse iterator.
 
     - `const_iterator cbegin ()`
-      Constant iterator start position.
+      Start position of constant iterator.
 
     - `const_iterator cend ()`
-      Constant iterator end position.
+      End position of inverse constant iterator.
 
     - `const_reverse_iterator crbegin ()`
-      Inverse constant iterator start position.
+      Start position of inverse constant iterator.
 
     - `const_reverse_iterator crend ()`
-      Inverse constant iterator end position.
+      End position of inverse constant iterator.
 
     - `Key & at (size_t pos)`
       Get the specified position element.
@@ -557,7 +557,7 @@ class platon::db::Array< TableName, Key, N >
 - **Static Public Attributes**
     - `static const std::string kType = "__array__"`
 
-#### platon::db::Map< TableName, Key, Value > Class Template
+### platon::db::Map< TableName, Key, Value > Class Template
 
 ```cpp
 template<Name::Raw TableName, typename Key, typename Value>
@@ -568,7 +568,7 @@ Implement map operations, Map templates.
 
 - **Template Parameters**
 
-    - `TableName:` The name of the Map, the name of the Map should be unique within each contract.
+    - `TableName:` The name of the Map. The name of the Map should be unique within each contract.
     - `Key:` key type
     - `Value:` value type
 
@@ -591,7 +591,7 @@ Implement map operations, Map templates.
       Insert a new key-value pair, Update to cache.
 
     - `bool insert_const (const Key &k, const Value &v)`
-      Insert a new key-value pair that will not be updated to the cache. Suitable for large number of inserts, no updates after insertion.
+      The insert will not update the new key-value pair to the cache. It is suitable for a large number of inserts, with no need to update after inserting.
 
     - `Value get_const (const Key &k)`
       Get the Const object, will not join the cache.
@@ -612,7 +612,8 @@ Implement map operations, Map templates.
       Refresh the modified data in memory to the blockchain.
 
 - **Static Public Attributes**
-- `static const std::string kType = "__map__"`
+
+    `static const std::string kType = "__map__"`
 - **Constructor & Destructor Documentation**
 
     - `template<Name::Raw TableName, typename Key , typename Value > platon::db::Map< TableName, Key, Value >::Map ()`
@@ -623,7 +624,7 @@ Implement map operations, Map templates.
 
     - `template<Name::Raw TableName, typename Key , typename Value > platon::db::Map< TableName, Key, Value >::~Map ()`
 
-Destroy the Map object Refresh data to the blockchain.
+Destroy the Map object, and refresh the data to the blockchain.
 
 - **Member Function Documentation**
 
@@ -635,7 +636,8 @@ Destroy the Map object Refresh data to the blockchain.
             - `k:` Key
 
         - **Returns**
-        - Value&
+
+            - Value&
         - **Example:**
 
           ```cpp
@@ -653,7 +655,8 @@ Destroy the Map object Refresh data to the blockchain.
             - `k:` Key
 
         - **Returns**
-        - true if there is such an element, otherwise false.
+
+            - True if there is such an element; otherwise false.
         - **Example:**
 
           ```cpp
@@ -690,7 +693,8 @@ Destroy the Map object Refresh data to the blockchain.
             - `k:` Key
 
         - **Returns**
-        - Value
+
+            - Value
         - **Example:**
 
           ```cpp
@@ -704,11 +708,13 @@ Destroy the Map object Refresh data to the blockchain.
       Insert a new key-value pair, Update to cache.
 
         - **Parameters**
+
             - `k:` Key
+
             - `v:` Value
         - **Returns**
 
-            - true if insert successfully,false otherwise.
+            - True if inserted successfully, or false otherwise.
 
     - **Example:**
 
@@ -720,14 +726,16 @@ Destroy the Map object Refresh data to the blockchain.
       ```
 
     - `template<Name::Raw TableName, typename Key , typename Value > bool platon::db::Map< TableName, Key, Value >::insert_const ( const Key & k, const Value & v)`
-      Insert a new key-value pair that will not be updated to the cache. Suitable for large number of inserts, no updates after insertion.
+      The insert will not update the new key-value pair to the cache. It is suitable for a large number of inserts, with no need to update after insertion.
 
         - **Parameters**
+
             - `k:` Key
+
             - `v:` Value
         - **Returns**
 
-            - true if insert successfully,false otherwise.
+            - True if inserted successfully, or false otherwise.
 
     - **Example:**
 
@@ -748,7 +756,8 @@ Destroy the Map object Refresh data to the blockchain.
             - `k:` Key
 
         - **Returns**
-        - Value& Get Value
+
+            - Value& Get Value.
         - **Example:**
 
           ```cpp
@@ -758,19 +767,21 @@ Destroy the Map object Refresh data to the blockchain.
           ```
 
 - **Member Data Documentation**
+    
     - `template<Name::Raw TableName, typename Key , typename Value > const std::string platon::db::Map< TableName, Key, Value >::kType = "__map__"`
 
-#### template<Name::Raw TableName, typename T, typename... Indices> class platon::db::MultiIndex< TableName, T, Indices >
+### template<Name::Raw TableName, typename T, typename... Indices> class platon::db::MultiIndex< TableName, T, Indices >
 
 MultiIndex supports unique indexes and ordinary indexes. The unique index should be placed first in the parameter. The structure needs to provide the get function corresponding to the index field.
 
 - **Member Function Documentation**
 
     - `template<Name::Raw TableName, typename T , typename... Indices>const_iterator platon::db::MultiIndex< TableName, T, Indices >::cbegin()`
-      Iterator start position
+
+      Start iterator
 
         - **Returns**
-            - const_iterator
+            - const_iterator.
         - **Example:**
 
       ```cpp
@@ -794,11 +805,13 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
       ```
 
     - `template<Name::Raw TableName, typename T , typename... Indices> const_iterator platon::db::MultiIndex< TableName, T, Indices >::cend()`
-      Iterator end position
 
-        - **Returns**
-            - const_iterator
-        - **Example:**
+      End iterator
+
+      - **Returns**
+        - const_iterator.
+
+      - **Example:**
 
       ```cpp
         struct Member {
@@ -823,7 +836,7 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
     - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName, typename KEY > size_t platon::db::MultiIndex< TableName, T, Indices >::count(const KEY &key)`
 
         - **Returns**
-            - Gets the number of data corresponding to the index value
+            - Gets the number of data corresponding to the index value.
         - **Example:**
 
       ```cpp
@@ -849,9 +862,9 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
     - `template<Name::Raw TableName, typename T , typename... Indices> template<typename Lambda> std::pair<const_iterator, bool> platon::db::MultiIndex< TableName, T, Indices >::emplace(Lambda &constructor)`
 
         - **Parameters**
-            - constructor of value
+            - Data item processing function
         - **Returns**
-            - Returns an iterator that indicates whether the insertion was successful with the bool type. If unique index conflicts, the insertion fails
+            - Returns an iterator that indicates whether the insertion was successful with the bool type. If unique index conflicts, the insertion fails.
         - **Example:**
 
       ```cpp
@@ -879,12 +892,13 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
       ```
 
     - `template<Name::Raw TableName, typename T , typename... Indices> void platon::db::MultiIndex< TableName, T, Indices >::erase(const_iterator position)`
-      erase data based on iterator
-
+      
+    Erase data based on iterator
+      
         - **Parameters**
             - `position:` position of iterator
-        - **Example:**
-
+      - **Example:**
+      
       ```cpp
       struct Member {
       std::string name;
@@ -904,17 +918,18 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
       member_table;
       auto vect_iter = member_table.find<"index2"_n>(uint8_t(10));
       member_table.erase(vect_iter[0]);
-      ```
-
+    ```
+      
     - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName, typename KEY > const_iterator platon::db::MultiIndex< TableName, T, Indices >::find(const KEY & key)`
-      Find the data, Only a unique index is available.
-
+      
+    Find the data, Only a unique index is available.
+      
         - **Parameters**
             - `key:` key of index
         - **Returns**
-            - the first iterator. cend() if not found.
-        - **Example:**
-
+            - The result iterator. If not found, the value is cend().
+      - **Example:**
+      
       ```cpp
       struct Member {
       std::string name;
@@ -933,15 +948,16 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
                                             IndexType::NormalIndex>>>
       member_table;
       auto vect_iter = member_table.find<"index2"_n>(uint8_t(10));
-      ```
-
+    ```
+      
     - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName>auto platon::db::MultiIndex< TableName, T, Indices >::get_index()`
-      Gets the index object of a non-unique index.
-
+      
+    Get the index object of a non-unique index.
+      
         - **Returns**
-            - index object
-        - **Example:**
-
+            - index object.
+      - **Example:**
+      
       ```cpp
       struct Member {
       std::string name;
@@ -960,16 +976,17 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
                                             IndexType::NormalIndex>>>
       member_table;
       auto index = member_table.get_index<"index2"_n>();
-      ```
-
+    ```
+      
     - `template<Name::Raw TableName, typename T , typename... Indices> template<typename Lambda >void platon::db::MultiIndex< TableName, T, Indices >::modify(const_iterator position,Lambda && constructor)`
-      Modify data based on iterator, but cannot modify all index-related fields .
-
+      
+    Modify data based on iterators, but not all fields related to the index.
+      
         - **Parameters**
-            - `position:` position of iterator
+            - `position:` Iterator
             - `constructor:` lambda function that updates the target object
-        - **Example:**
-
+      - **Example:**
+      
       ```cpp
       struct Member {
       std::string name;
@@ -990,22 +1007,22 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
       member_table.modify(r.first, [&](auto &m) { m.sex = 15; });
       ```
 
-### contract api
+## Contract API
 
-#### platon_destroy()
+### platon_destroy()
 
 ```cpp
 bool platon::platon_destroy ( const Address & addr)
 ```
 
-Destory contract.
+Destroy the contract.
 
 - **Parameters**
     - `addr:` Address of the contract
 - **Returns**
-    - true if destroy successfully, false otherwise
+    - True if the contract is destroyed successfully, or false otherwise.
 
-#### platon_migrate_contract()
+### platon_migrate_contract()
 
 ```cpp
 template<typename value_type , typename gas_type >
@@ -1015,7 +1032,7 @@ value_type  value,
 gas_type  gas)
 ```
 
-Migrate contract.
+Migrate the contract.
 
 - **Parameters**
     - `addr:` The address of new contract
@@ -1023,9 +1040,9 @@ Migrate contract.
     - `value:` Transfer amount
     - `gas:` Pay amount of gas for this transaction
 - **Returns**
-    - true if migration successfully, false otherwise
+    - True if the contract is migrated successfully, or false otherwise.
 
-#### cross_call_args()
+### cross_call_args()
 
 ```cpp
 template<typename... Args>
@@ -1033,15 +1050,15 @@ bytes platon::cross_call_args ( const std::string & method,
 const Args &...  args)
 ```
 
-Construct the Parameters of the call across contracts.
+Construct cross-contract call parameters.
 
 - **Parameters**
-    - `method:` The method name of the invoked contract
-    - `args:` The Parameters corresponding to the contract method
+    - `method:` The method name of the called contract
+    - `args:` The parameters corresponding to the contract method
 - **Returns**
     - Parameter byte array
 
-#### platon_call() 1/2
+### platon_call() 1/2
 
 ```cpp
 template<typename value_type , typename gas_type >
@@ -1051,17 +1068,17 @@ const value_type & value,
 const gas_type & gas)
 ```
 
-Normal cross-contract invocation.
+Normal cross-contract call.
 
 - **Parameters**
-    - `addr:` The contract address to be invoked
+    - `addr:` The contract address to be called
     - `paras:` A contract parameter constructed using the function cross_call_args
-    - `gas:` The called contract method estimates the gas consumed
+    - `gas:` The estimated gas consumed by the corresponding contract method
     - `value:` The amount transferred to the contract
 - **Returns**
-    - The call succeed or failed
+    - The call succeed or failed.
 
-#### platon_call() 2/2
+### platon_call() 2/2
 
 ```cpp
 template<typename return_type , typename value_type , typename gas_type , typename... Args>
@@ -1073,17 +1090,17 @@ const Args &...  args
 )
 ```
 
-Normal cross-contract invocation.
+Normal cross-contract call.
 
 - **Parameters**
-    - `addr:` The contract address to be invoked
+    - `addr:` The contract address to be called
     - `value:` The amount transferred to the contract
-    - `gas:` The called contract method estimates the gas consumed
-    - `method:` The method name of the invoked contract
-    - `args:` The Parameters corresponding to the contract method
+    - `gas:` The estimated gas consumed by the corresponding contract method
+    - `method:` The method name of the called contract
+    - `args:` The parameters corresponding to the contract method
 - **Returns**
 
-    - The contract method \* **Returns** the value and whether the execution was successful
+    - The contract method \* **Returns** and whether the execution was successful.
 
 - **Example:**
 
@@ -1096,7 +1113,7 @@ Normal cross-contract invocation.
   }
   ```
 
-#### platon_delegate_call() 1/2
+### platon_delegate_call() 1/2
 
 ```cpp
 template<typename gas_type >
@@ -1106,16 +1123,16 @@ const gas_type & gas
 )
 ```
 
-Cross contract delegation call.
+Cross-contract proxy call.
 
 - **Parameters**
-    - `addr:` The contract address to be invoked
+    - `addr:` The contract address to be called
     - `paras:` A contract parameter constructed using the function cross_call_args
-    - `gas:` The called contract method estimates the gas consumed
+    - `gas:` The estimated gas consumed by the corresponding contract method
 - **Returns**
-    - The call succeed or failed
+    - The call succeed or failed.
 
-#### platon_delegate_call() 2/2
+### platon_delegate_call() 2/2
 
 ```cpp
 template<typename return_type , typename gas_type , typename... Args>
@@ -1125,13 +1142,14 @@ const std::string & method,
 const Args &...  args)
 ```
 
-The proxy is invoked across contracts.
+Cross-contract proxy call.
 
 - **Parameters**
-    - `addr:` The contract address to be invoked
-    - `gas:` The called contract method estimates the gas consumed
-    - `method:` The method name of the invoked contract
-    - `args:` The Parameters corresponding to the contract method
+
+    - `addr:` The contract address to be called
+    - `gas:` The estimated gas consumed by the corresponding contract method
+    - `method:` The method name of the called contract
+    - `args:` The parameters corresponding to the contract method
 - **Returns**
 
     - The contract method \* **Returns** the value and whether the execution was successful
@@ -1147,21 +1165,21 @@ The proxy is invoked across contracts.
    }
   ```
 
-#### get_call_output()
+### get_call_output()
 
 ```cpp
 template<typename T >
 void platon::get_call_output ( T & t)
 ```
 
-Gets the return value of calling contract methods across contracts.
+Get the return value of the cross-contract method of calling contract.
 
 - **Template Parameters**
     - `T:` The output value type
 - **Parameters**
     - `t:` The value returned by the contract method
 
-#### platon_event
+### platon_event()
 
 ```cpp
 void platon_event(const uint8_t *topic, size_t topic_len, const uint8_t *args,
@@ -1176,17 +1194,17 @@ Post event to VM
     - `args:` The arguments
     - `args_len:` The length of arguments
 
-### exception api
+## Exception API
 
-#### platon_panic
+### platon_panic()
 
 ```cpp
 void platon_panic(void);
 ```
 
-Terminate transaction, deduct all gas given by transaction
+Terminate transaction, and deduct all gas of the transaction
 
-#### platon_revert
+### platon_revert()
 
 ```cpp
 void platon_revert(void);
@@ -1194,9 +1212,9 @@ void platon_revert(void);
 
 Terminate the transaction and deduct the gas consumed
 
-### other api
+## Other API
 
-#### platon_sha3()
+### platon_sha3()
 
 ```cpp
 h256 platon::platon_sha3 ( const bytes & data )
@@ -1208,5 +1226,3 @@ Sh3 algorithm.
     - `data:` Binary data
 - **Returns**
     - The Hash of the data
-
----

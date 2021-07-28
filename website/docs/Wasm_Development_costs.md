@@ -4,41 +4,41 @@ title: Development costs
 sidebar_label: Development costs
 ---
 
-### Summary
+## Summary
 
-In a blockchain system, developing smart contracts based on any public chain system involves the development cost of resource expenditure. For example, deploying/calling smart contracts on the network, energy transfer, pledge/delegation and other operations all require a certain cost. Different blockchain network development costs are different. There are two types of virtual machines running in the Alaya network. `EVM` and `WASM`, the cost of developing smart contracts on different virtual machines is also different. This article will compare the different development costs of small contracts, medium contracts and large contracts in the form of a table. At the same time, we will compare the `EVM`/`WASM` virtual machine of `Alaya` with the Ethereum virtual machine. In terms of contracts, a simple `SET/GET` function contract is used as a small test contract. The medium-sized contract example will use an open source [Tweet](https://github.com/yep/eth-tweet) contract The large contract is a smart contract that implements the `ERC20` standard.
+In a blockchain system, developing smart contracts based on any public chain system involves the development cost of resource expenditure. For example, deploying/calling smart contracts on the network, performing energy conversion, staking/delegation and other operations all require a certain cost. Development costs vary among blockchain networks. There are two types of virtual machines running in the Alaya network, `EVM` and `WASM`, and the costs of developing smart contracts on different virtual machines vary from each other. This document is mainly to in introduce the costs involved in the usage of  `WASN` virtual machine. This document will compare the development costs of small contracts, medium contracts and large contracts in the form of a table, and compare the `EVM`/`WASM` virtual machines on `Alaya` with Ethereum Virtual Machine. A simple `SET/GET` contract is used as a test sample for small contracts. An open source [Eth-Tweet](https://github.com/yep/eth-tweet) contract is used as the example of medium contracts. The example for large contracts is a smart contract that complies with the `ERC20` standard.
 
-#### Data Overview
+## Resource Consumption
 
-**Simple Storage Contract**
+**Simple set/get contract**
 
-| Platform   | Contract Level | Size     | GasUsed | GasPrice            | Amount        | Remark            |
-| :--------- | :------------- | :------- | :------ | :------------------ | :------------ | :---------------- |
-| Alaya-EVM  | Small-sized    | 0.3 kb   | 76953   | 5,000,000,000 `VON` | 384765 `gVON` | 0.000384765 `ATP` |
-| Ethereum   | Small-sized    | 0.3 kb   | 127173  | 5,000,000,000 `wei` | 635865 `Gwei` | 0.000635865 `ETH` |
-| Alaya-WASM | Small-sized    | 13.55 kb | 184043  | 5,000,000,000 `VON` | 920215 `gVON` | 0.000920215 `ATP` |
+| System     | Contract Level | Contract Size | Gas Used | Gas Price           | Total Cost    | Note              |
+| :--------- | :------------- | :------------ | :------- | :------------------ | :------------ | :---------------- |
+| Alaya-EVM  | Small-sized    | 0.3 kb        | 76953    | 5,000,000,000 `VON` | 384765 `gVON` | 0.000384765 `ATP` |
+| Ethereum   | Small-sized    | 0.3 kb        | 127173   | 5,000,000,000 `wei` | 635865 `Gwei` | 0.000635865 `ETH` |
+| Alaya-WASM | Small-sized    | 13.55 kb      | 184043   | 5,000,000,000 `VON` | 920215 `gVON` | 0.000920215 `ATP` |
 
-**eth-tweet Contract**
+**Eth-tweet Contract**
 
-| Platform   | Contract Level | Size     | GasUsed | GasPrice            | Amount         | Remark            |
-| :--------- | :------------- | :------- | :------ | :------------------ | :------------- | :---------------- |
-| Alaya-EVM  | Medium-sized   | 2.08 kb  | 257065  | 5,000,000,000 `VON` | 1285325 `gVON` | 0.001285325 `ATP` |
-| Ethereum   | Medium-sized   | 2.08 kb  | 621385  | 5,000,000,000 `wei` | 3106925 `Gwei` | 0.003106925 `ETH` |
-| Alaya-WASM | Medium-sized   | 30.07 kb | 349713  | 5,000,000,000 `VON` | 1748565 `gVON` | 0.001748565 `ATP` |
+| System     | Contract Level | Contract Size | Gas Used | Gas Price           | Total Cost     | Note              |
+| :--------- | :------------- | :------------ | :------- | :------------------ | :------------- | :---------------- |
+| Alaya-EVM  | Medium-sized   | 2.08 kb       | 257065   | 5,000,000,000 `VON` | 1285325 `gVON` | 0.001285325 `ATP` |
+| Ethereum   | Medium-sized   | 2.08 kb       | 621385   | 5,000,000,000 `wei` | 3106925 `Gwei` | 0.003106925 `ETH` |
+| Alaya-WASM | Medium-sized   | 30.07 kb      | 349713   | 5,000,000,000 `VON` | 1748565 `gVON` | 0.001748565 `ATP` |
 
 **ERC20 Token Contract**
 
-| Platform   | Contract Level | Size    | GasUsed | GasPrice            | Amount         | Remark            |
-| :--------- | :------------- | :------ | :------ | :------------------ | :------------- | :---------------- |
-| Alaya-EVM  | Large-sized    | 4.45 kb | 552823  | 5,000,000,000 `VON` | 2764115 `gVON` | 0.002764115 `ATP` |
-| Ethereum   | Large-sized    | 4.45 kb | 1282171 | 5,000,000,000 `wei` | 6410855 `Gwei` | 0.006410855 `ETH` |
-| Alaya-WASM | Large-sized    | 35.9 kb | 486274  | 5,000,000,000 `VON` | 2431370 `gVON` | 0.00243137 `ATP`  |
+| System     | Contract Level | Contract Size | Gas Used | Gas Price           | Total Cost     | Note              |
+| :--------- | :------------- | :------------ | :------- | :------------------ | :------------- | :---------------- |
+| Alaya-EVM  | Large-sized    | 4.45 kb       | 552823   | 5,000,000,000 `VON` | 2764115 `gVON` | 0.002764115 `ATP` |
+| Ethereum   | Large-sized    | 4.45 kb       | 1282171  | 5,000,000,000 `wei` | 6410855 `Gwei` | 0.006410855 `ETH` |
+| Alaya-WASM | Large-sized    | 35.9 kb       | 486274   | 5,000,000,000 `VON` | 2431370 `gVON` | 0.00243137 `ATP`  |
 
-### Small-sized Contract
+## Small-sized Contract
 
-#### Simple Storage Contract
+### Simple Set/Get Contract
 
-**EVM Sample Code**
+#### **EVM Sample Code**
 
 ```
 pragma solidity ^0.4.12;
@@ -63,11 +63,11 @@ ByteCode
 608060405234801561001057600080fd5b50610117806100206000396000f3006080604052600436106053576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063262a9dff146058578063967e6e65146080578063d5dcf1271460a8575b600080fd5b348015606357600080fd5b50606a60d2565b6040518082815260200191505060405180910390f35b348015608b57600080fd5b50609260d8565b6040518082815260200191505060405180910390f35b34801560b357600080fd5b5060d06004803603810190808035906020019092919050505060e1565b005b60005481565b60008054905090565b80600081905550505600a165627a7a7230582079e51340567895e1097e1c9115e778c3d982b8e71b6997c57f1ba497c56c8b3b0029
 ```
 
-ByteSize：`311 byte => 0.3 kb`
+Byte Size：`311 byte => 0.3 kb`
 
 -------------------
 
-**WASM Sample Code**
+#### **WASM Sample Code**
 
 ```
 #include <platon/platon.hpp>
@@ -100,37 +100,37 @@ ByteCode
 
 [Click to view bincode](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/SimpleStorage_wasm.bin)
 
-ByteSize: `13882 byte => 13.55 kb`
+Byte Size: `13882 byte => 13.55 kb`
 
 -------------------
 
-###### Cost
+#### Cost
 
 Alaya-EVM
 
-- GasUsed: 76953
-- GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 384765 `gVON`（0.000384765 `ATP`）
+- Gas Used: 76953
+- Gas Price: 5,000,000,000 (5 `gVON`)
+- Total cost: 384,765 `gVON`（0.000384765 `ATP`）
 
 Ethereum
 
 - GasUsed: 127173
 - GasPrice: 5,000,000,000 (5 `Gwei`)
-- Costs: 635865 `Gwei`（0.000635865 `ETH`）
+- Total cost: 635,865 `Gwei`（0.000635865 `ATP`）
 
 Alaya-WASM
 
-- GasUsed: 184043
-- GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 920215 `gVON`（0.000920215 `ATP`）
+- Gas Used: 184043
+- Gas Price: 5,000,000,000 (5 `gVON`)
+- Total cost: 920,215 `gVON`（0.000920215 `ATP`）
 
 -----------------------------------
 
-### Medium-sized Contract
+## Medium-sized Contract
 
-#### Eth-Tweet
+### Eth-Tweet Contract
 
-**EVM Sample Code**
+#### **EVM Sample Code**
 
 [Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/account.sol)
 
@@ -138,11 +138,11 @@ ByteCode
 
 [Click to view bincode](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/Tweet_evm.bin)
 
-ByteSize: `2130.5 byte => 2.08 kb`
+Byte Size: `2130.5 byte => 2.08 kb`
 
 ---------------
 
-**WASM Sample Code**
+#### **WASM Sample Code**
 
 ```
 #include <platon/platon.hpp>
@@ -263,41 +263,37 @@ ByteCode
 
 [Click to view bincode](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/Tweet_wasm.bin)
 
-```
-
-```
-
-ByteSize: `30788` byte => 30.07 kb`
+Byte Size: `30788` byte => 30.07 kb`
 
 ---------------
 
-###### Costs
+#### Costs
 
 Alaya-EVM
 
-- GasUsed: 257065
-- GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 1285325 `gVON`（0.001285325 `ATP`）
+- Gas Used: 257065
+- Gas Price: 5,000,000,000 (5 `gVON`)
+- Total cost: 1,285,325 `gVON`（0.001285325 `ATP`）
 
 Ethereum
 
-- GasUsed: 621385
-- GasPrice: 5,000,000,000 (5 `Gwei`)
-- Costs: 3106925 `Gwei`（0.003106925 `ETH`）
+- Gas Used: 621385
+- Gas Price: 5,000,000,000 (5 `Gwei`)
+- Total cost: 3,106,925 `Gwei`（0.003106925 `ETH`）
 
 Alaya-WASM
 
-- GasUsed: 349713
-- GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 1748565 `gVON`（0.001748565 `ATP`）
+- Gas Used: 349713
+- Gas Price: 5,000,000,000 (5 `gVON`)
+- Total cost: 1,748,565 `gVON`（0.001748565 `ATP`）
 
 ------------------------
 
-### Large-sized Contract
+## Large-sized Contract
 
-#### ERC20 Token Contract
+### ERC20 Token Contract
 
-**EVM Sample Code**
+#### **EVM Sample Code**
 
 [Click to view code](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/token.sol)
 
@@ -305,11 +301,11 @@ ByteCode
 
 [Click to view bincode](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/Token_evm.bin)
 
-ByteSize: `4557.5 byte => 4.45 kb`
+Byte Size: `4557.5 byte => 4.45 kb`
 
 -----------------------------
 
-**WASM Sample Code**
+#### **WASM Sample Code**
 
 ```
 #include <platon/platon.hpp>
@@ -475,29 +471,25 @@ ByteCode
 
 [Click to view bincode](https://github.com/AlayaNetwork/alaya-devdocs/tree/main/website/i18n/zh-CN/docusaurus-plugin-content-docs/current/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91.assets/Token_wasm.bin)
 
-ByteSize: `36764 byte => 35.9 kb`
+Byte Size: `36764 byte => 35.9 kb`
 
------------------------------
-
-###### Costs
+#### Costs
 
 Alaya-EVM
 
 - GasUsed: 552823
 - GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 2764115 `gVON`（0.002764115 `ATP`）
+- Total cost: 2,764,115 `gVON`（0.002764115 `ATP`）
 
 Ethereum
 
 - GasUsed: 1282171
 - GasPrice: 5,000,000,000 (5 `Gwei`)
-- Costs: 6410855 `Gwei`（0.006410855 `ETH`）
+- Total cost: 6,410,855 `Gwei`（0.006410855 `ETH`）
 
 Alaya-WASM
 
 - GasUsed: 486274
 - GasPrice: 5,000,000,000 (5 `gVON`)
-- Costs: 2431370 `gVON`（0.00243137 `ATP`）
-
-------------------------
+- Total cost: 2,431,370 `gVON`（0.00243137 `ATP`）
 

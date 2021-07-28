@@ -4,18 +4,26 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-### Introduction
+## Introduction
 
-This tutorial is mainly to guide users to create a simple HelloWorld smart contract using solidity language on Alaya, compile, deploy, and call this contract through alaya-truffle. If you want to use a richer API you can refer to [Java SDK](/alaya-devdocs/en/Java_SDK) and  [JS SDK](/alaya-devdocs/en/JS_SDK)
+This tutorial is mainly to guide users to create a simple HelloWorld smart contract using solidity language on Alaya, compile, deploy, and call this contract through alaya-truffle. If you want to experience a more versatile API, you can refer to  [Java SDK](/alaya-devdocs/en/Java_SDK) and  [JS SDK](/alaya-devdocs/en/JS_SDK) development guide.
 
-### alaya-truffle Introduction
+- For the syntax of solidity smart contracts, please refer to [Solidity Official Documentation](https://solidity.readthedocs.io/en/develop/)
 
-alaya-truffle is a tool provided by Alaya that can compile, deploy, and invoke smart contracts locally. For specific installation and usage manuals, refer to:
+- Before developing the contract, if you need to build a node to connect to the Alaya network or create a private network, please refer to: [Connect to Alaya Network](/alaya-devdocs/en/Join_Alaya_NetWork)
 
-- alaya-truffle develop tools [specific installation](https://platon-truffle.readthedocs.io/en/alaya/getting-started/installation.html)
-- alaya-truffle develop tools [usage manuals](https://platon-truffle.readthedocs.io/en/alaya/)
 
-### Create HelloWorld Contract
+
+## Alaya-truffle Introduction
+
+Alaya-truffle is a tool provided by PlatON that can compile, deploy, and call smart contracts locally. For specific installation and usage manuals, refer to:
+
+- Alaya-truffle development tools [installation](https://platon-truffle.readthedocs.io/en/alaya/getting-started/installation.html)
+- Alaya-truffle development tool [usage manuals](https://platon-truffle.readthedocs.io/en/alaya/)
+
+
+
+## Create HelloWorld Contract
 
 ```
 pragma solidity ^0.5.17;
@@ -38,66 +46,68 @@ contract HelloWorld {
 Contract Files Description:
 
 - pragma solidity ^0.5.17
-    -	`pragma solidity`: solidity version description
-         `0.5.17`：solidity version
-         `^` ：Indicates upward compatibility, that is, it can be compiled with a compiler above 0.5.17
+    -	`pragma solidity`: Solidity version statement
+    -	`0.5.17`：Solidity version
+    -	`^` ：Indicates upward compatibility, that is, it can be compiled with a compiler above 0.5.17
 - contract HelloWorld
-    -	`contract`：contract keyword
-         `HelloWorld`：contract name
+    -	`contract`：The keyword of the contract statement
+    -	`HelloWorld`：The name of the current contract
 - string name
-    -	`name`：contract state variables
-         `string`：the type of contract state variables
+    -	`name`：State variable of the contract
+    -	`string`：It indicates the type of this state variable
 - function setName(string memory _name) public returns(string memory)
-    -	`function`：function keyword
-         `setName`：function name
-         `memory`：declare the storage location of param name（ function input parameters and output parameters  must be declared as memory when the parameters type is string）
-         `_name`：the  local variables
-         `public`：declare the visibility of the function
-         `name` = _name：Assignment the local variable to state variable
+    -	`function`：The name of this function
+    -	`setName`：The name of this function
+    -	`memory`： It declares the storage location of the _name parameter (function input parameters and output parameters of string type must be declared as memory）
+    -	`\_name` ：Local variable of this function
+    -	`public`：It declares the visibility of this function
+    -	`name` = \_name： It assigns the local variable passed in from the outside to the state variable
 - function getName() public view returns(string memory)
-    -	`view`: this keyword means the function cannot change the blockchain state, which mainly used for query
+    -	`view`:  If a function has the view keyword, this function will not change the value of the state variable in the contract (mainly used for query)
 
-### Compile HelloWorld Contract
+## Compile HelloWorld Contract
 
-**Step1.**  Creat new directory for HelloWorld project
+**Step1.**  Create a new directory for the HelloWorld project
 
 ```
 mkdir HelloWorld && cd HelloWorld
 ```
 
-**Step2.**  Init project
+> The following commands are carried out in the HelloWorld directory if without special instructions.
+
+**Step2.**  Use alaya-truffle to initialize a project
 
 ```
 alaya-truffle init
 ```
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `Contracts/`: solidity contract directory
+- `Contracts/`: Solidity contract directory
 
-- `Migrations/`:  depoly file directory
+- `Migrations/`:  Directory of the depolyment file
 
-- `Test/`: test script directory
+- `Test/`: Directory of test scripts
 
-- `Truffle-config.js`: alaya-truffle config
+- `Truffle-config.js`: Alaya-truffle configuration files
 
-**Step3.**  Move HelloWorld contract compiled in to HelloWorld/contracts/
+**Step3.**  Move the HelloWorld contract compiled under `HelloWorld/contracts/`
 
 ```
 ls contracts/
 ```
-- HelloWorld.sol
+> You will see `HelloWorld.sol`.
 
-**Step4.**  Fix compile version same as the version setted  in truffle-config.js
+**Step4.**  Modify the aaya-truffle configuration file `truffle-config.js`, and modify the compiler version to the version number in the corresponding solidity contract
 
 ```
 vim truffle-config.js
 ```
 
-Truffle-config.js content is  as follows:
+The modified contents of `truffle-config.js` are as follows:
 ```
 compilers: {
       solc: {
-            version: "^0.5.17",    // same as the version declared in HelloWorld.sol
+            version: "^0.5.17",    // This version number is consistent with the version number declared in HelloWorld.sol
       }
 }
 ```
@@ -107,60 +117,63 @@ compilers: {
 ```
 alaya-truffle compile
 ```
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `Build/`: solidity contract directory after compiled
+- `Build/`: The directory where the Solidity contract is compiled
 
-- `Build/contracts/HelloWorld.json`:the compiled file corresponding with HelloWorld.sol
+- `Build/contracts/HelloWorld.json`: The compiled file corresponding to `HelloWorld.sol`
 
 
-### Deploly HelloWorld Contract
+## Deploly HelloWorld Contract
 
-**Step1.** Create deploy script
+**Step1.** Add the contract deployment script file:
 
 ```
 cd migrations/ && touch 2_initial_helloworld.js
 ```
-Suggest replacing script  name  with contract name, for example the deploy script  of HelloWorld contract :2_initial_helloworld.js,content is as follows：
+It is recommended to name the deployment script file with the contract name for the sake of subsequent maintenance. For example, the deployment script file corresponding to the HelloWorld contract is `2_initial_helloworld.js`, and the content is as follows:
 ```
-const helloWorld = artifacts.require("HelloWorld"); //artifacts.require specify deployment contract
+const helloWorld = artifacts.require("HelloWorld"); //artifacts.require tells aaya-truffle which contract needs to be deployed. 
 	module.exports = function(deployer) {
        deployer.deploy(helloWorld); //Failed to deploy contract with parameters, please refer to FAQ
 };
 ```
 
-**Step2.** Setting config  information for blockchain in truffle-config.js
+**Step2.** Modify the configuration information of `truffle-config.js` in the chain
 
 ```
 vim truffle-config.js
 ```
-Set blockchain network  info
+Modify the blockchain-related configuration in `truffle-config.js` to the chain configuration of your real connection:
+
 ```
 networks: {
 	development: {
-       host: "10.1.1.6",     // blockchain server address
-       port: 8806,            // server port
+       host: "10.1.1.6",     // Blockchain server host
+       port: 8806,            // Chain port number
        network_id: "*",       // Any network (default: none)
-       from: "atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp", //the accout address of deploying contract
+       from: "atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp", //The wallet address of the deployment contract account
        gas: 999999,
        gasPrice: 50000000004,
 	},
 }
 ```
 
+
+
 **step3.**  Unlock wallet account
 
-Enter the alaya-truffle console
+Enter the alaya-truffle console:
 
 ```
 alaya-truffle console
 ```
 
-Import the private key (you can skip this step if you have already imported it)
+Import the private key (you can skip this step if you have already imported it):
 ```
 web3.platon.personal.importRawKey("Your wallet private key","Your wallet password");
 ```
-After importing successfully, you will see the address corresponding to the private key as follows：
+You will see the address corresponding to the private key after importing it:
 ```
 'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp'
 ```
@@ -169,7 +182,7 @@ Unlock wallet account
 ```
  web3.platon.personal.unlockAccount('Your wallet address','Your wallet password',999999);
 ```
-After unlocking successfully, you will see the following information：
+After unlocking it successfully, you will see the following information：
 ```
 ture
 ```
@@ -180,7 +193,7 @@ ture
 alaya-truffle migrate
 ```
 
-After deploying successfully, you will see log info as follows:
+After successful deployment，you will see log info as follows:
 ```
 2_initial_helloworld.js
 ======================
@@ -211,14 +224,14 @@ Summary
 > Final cost:          0.000259892 ATP
 ```
 
-### Call HelloWorld Contract
+## Call HelloWorld Contract
 
 **Step1.**  Enter the alaya-truffle console
 
 ```
 alaya-truffle console
 ```
-- You can execute command in alaya-truffle console
+You can execute the command in alaya-truffle console
 
 **Step2.**  Create contract object
 
@@ -231,24 +244,25 @@ var helloWorld = new web3.platon.Contract(abi,contractAddr);
 
 Description：
 
-- `abi` the interface provided by the contract to external calls, the abi  in the file compiled ：`HelloWorld/build/contracts/HelloWorld.json`
-- `contractAddr` contract address
-- `helloWorld`  contract object created
+- `abi` is the interface provided by the contract for external calls. The abi corresponding to each contract can be found in the compiled file, such as: `HelloWorld/build/contracts/HelloWorld.json`
+- `contractAddr`  has a contract address after deploying the contract successfully
+- `helloWorld` is the abstraction of contract objects constructed to interact with on-chain contracts
 
 **Step3.**  Call contract
 
 ```javascript
 helloWorld.methods.setName("hello world").send({from: 'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp'}).on('receipt', function(receipt) {console.log(receipt);}).on('error', console.error);
-
 ```
 
 Description：
 
-- `helloWorld` the contract object created
-- `methods`  specify the call method
-- `setName` the function of the HelloWorld contract, which has a parameter as `hello world`
-- `from` the address of caller
-- `on` listen to the result of the contract method executed. If failed, it will print the error info. If succeeds ,the console will print the receipt as belows:
+- `helloWorld`  is the contract object built before
+- `methods`  is the fixed syntax, followed by the method name of the contract
+- `setName` is a method in the HelloWorld contract. It has an input parameter of type String, where the input parameter is `hello world`
+- `from`  is the wallet address of the caller
+- `on` is to monitor the event of the contract processing result. If it succeeds, a receipt will be printed, or an error log will be output if it fails:
+
+After the function call is successful, you will see the log info as below:
 
 ```
 { 
@@ -275,11 +289,13 @@ helloWorld.methods.getName().call(null,function(error,result){console.log("name 
 ```
 Description：
 
-- `helloWorld` the contract object created
-- `methods` specify the call method
-- `getName` the function of the HelloWorld contract, which has no  parameter
-- `call` specify query method
-- `function` callback result,we can use console.log to print info.
+- `helloWorld` is the contract object built before
+- `methods` specifies that the methods in the contract will be obtained
+- `getName` is a method in the HelloWorld contract. This method has no input parameters, so the input parameters are empty
+- `call`  indicates the query method
+- `function`  is a callback function that will process the result of the call. Here we print the execution result through `console.log`
+
+
 
 ------------------
 
@@ -287,22 +303,22 @@ Description：
 
 ### Introduction
 
-In the following example, we will use smart contract for a crowdfunding campaign. The creator of the contract started crowdfunding, and initialized the number of tokens and the duration of the crowdfunding. If the crowdfunding is completed within a specified time, the crowdfunding will be successful. If the crowdfunding switch is turned off, a certain number of tokens based on a fixed exchange rate will be cast and credited to the name of the investor. Otherwise, the crowdfunding fails and the amount of the crowdfunding is returned to the investors.
+In the following example, we will use the contract for a crowdfunding. The contract creator initiates crowdfunding and initializes the number of tokens for crowdfunding and the duration of crowdfunding. If completed within the specified time, the crowdfunding is successful, and the crowdfunding access will be closed. As a result, a certain number of tokens obtained according to a fixed exchange rate will be minted and credited in the buyer's name. Otherwise, the crowdfunding fails, and the crowdfunding amount is returned to investors.
 
-There are two roles in the contract
+Two roles are set in the contract
 
-- Crowdfunder
-- Investor
+- Crowdfunders
+- Investors
 
 ### Crowdfunding Process
 
-- 1.Creating a crowdfunding contract refers to the beneficiary.
-- 2.Deployment crowdfunding contract initializes the number and duration of crowdfunding tokens.
-- 3.Investors invest.
-- 4.Determine if crowdfunding is over.
-    - If the crowdfunding time is not up and the number of crowdfunding tokens has been completed, turn off the crowdfunding switch, investors will be allocated tokens in proportion. Crowdfunding success.
-    - If the crowdfunding time is up and the amount of crowdfunding tokens has been completed, investors will be allocated tokens in proportion. Crowdfunding success.
-    - If the crowdfunding time is up and the number of crowdfunding tokens is not completed, the investor tokens will be returned. Crowdfunding failure.
+- Create a crowdfunding contract, and designate the beneficiary
+- Deploy the contract to initialize the number and duration of crowdfunding tokens
+- Investors make investments
+- Determine whether the crowdfunding is over:
+    - If the crowdfunding has reached the target amount before the deadline, the access is closed, and tokens are allocated proportionally to investors. The crowdfunding succeeds.
+    - If the crowdfunding has reached the target amount upon the deadline, tokens are allocated proportionally to investors. The crowdfunding succeeds.
+    - If the crowdfunding has not reached the target amount upon the deadline, tokens are returned to investors. The crowdfunding fails.
 
 ### Crowdfunding Contract
 
@@ -311,24 +327,24 @@ pragma solidity ^0.5.17;
 
 contract CrowdFunding {
     address payable public beneficiaryAddress = address(0x0); //Beneficiary address, set as contract creator
-    uint256 public fundingGoal = 100 atp;  //Crowdfunding target, unit is ATP
-    uint256 public amountRaised = 0; //The amount of money raised,the unit is VON
-    uint256 public deadline; 
+    uint256 public fundingGoal = 100 atp;  //Crowdfunding target, with the unit as ATP
+    uint256 public amountRaised = 0; //The amount of money raised, the unit is VON
+    uint256 public deadline; //Deadline
     uint256 public price;  //token price
-    bool public fundingGoalReached = false;  //Achieving crowdfunding goals flag
-    bool public crowdsaleClosed = false; //Crowdfunding closed
+    bool public fundingGoalReached = false;  //The crowdfunding target is reached
+    bool public crowdsaleClosed = false; //Crowdfunding is closed
 
-    mapping(address => uint256) public balance; //Save the amount raised by the investor
+    mapping(address => uint256) public balance; //Save the amount donated by crowdfunders
     
-    mapping(address => uint256) public tokenMap; //Save the number of tokens owned by the investor
+    mapping(address => uint256) public tokenMap; //Save the number of tokens owned by the crowdfunder
 
     //Record received ATP notifications
     event GoalReached(address _beneficiaryAddress, uint _amountRaised);
 
-    //Transfer notice
+    //Transfer notification
     event FundTransfer(address _backer, uint _amount, bool _isContribution);
     
-    //Check if the address is empty
+    //Check whether the address is empty
     modifier validAddress(address _address) {
         require(_address != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _address != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"));
         _;
@@ -337,8 +353,8 @@ contract CrowdFunding {
     /**
      * Initialization constructor
      *
-     * @param _fundingGoalInlats: Total crowdfunding ATP coin
-     * @param _durationInMinutes: Crowdfunding deadline, unit is minute
+     * @param _fundingGoalInlats: Total crowdfunding amount of ATP
+     * @param _durationInMinutes: Crowdfunding deadline, with the unit as minute
      */
     constructor (
         uint _fundingGoalInlats,
@@ -347,7 +363,7 @@ contract CrowdFunding {
 	    beneficiaryAddress = msg.sender;
         fundingGoal = _fundingGoalInlats * 1 atp;
         deadline = now + _durationInMinutes * 1 minutes;
-        price = 500 finney; //1个ATP币可以买 2 个代币
+        price = 500 finney; //You can buy 2 tokens with 1 ATP
     }
 
 
@@ -429,45 +445,45 @@ contract CrowdFunding {
 
 **Compile Crowdfunding Contract**
 
-**Step1.** Create new directory for Crowdfunding project
+**Step1.** Create a new directory for a crowdfunding project
 
 ```
 mkdir myCrowdFunding && cd myCrowdFunding
 ```
 
-> The following commands are performed in the myCrowdFunding directory without special instructions.
+> The following commands are performed in the myCrowdFunding directory if without special instructions
 
-**Step2.** Init project
+**Step2.** Initialize a project using alaya-truffle 
 
 ```
 alaya-truffle init
 ```
 
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `contracts/`: solidity contract directory
-- `migrations/`: depoly file directory
-- `test/`: test script directory
-- `truffle-config.js`: alaya-truffle config
+- `contracts/`: Solidity contract directory
+- `migrations/`: Directory of the depolyment file
+- `test/`: Directory of test scripts
+- `truffle-config.js`: Alaya-truffle configuration file
 
-**Step3.** Move crowdfunding contract compiled in to `myCrowdFunding/contracts/`
+**Step3.** Move the crowdfunding contract compiled under `myCrowdFunding/contracts/`
 
 ```
 ls myCrowdFunding/contracts/
 ```
 > Files in the directory: `crowdFunding.sol`.
 
-**Step4.** Fix compile version same as the version setted  in truffle-config.js
+**Step4.**  Modify the alaya-truffle configuration file `truffle-config.js` and add the compiled solidity contract version number
 
 ```
 vim truffle-config.js
 ```
 
-Truffle-config.js content is  as follows:
+The modified contents of `truffle-config.js` are as follows:
 ```
 compilers: {
      solc: {
-        version: "0.5.17",    //same as the version declared in CrowdFunding.sol
+        version: "0.5.17",    //This version number is consistent with the version number declared in CrowdFunding.sol
     }
 }
 ```
@@ -478,10 +494,10 @@ compilers: {
 alaya-truffle compile
 ```
 
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `build/`: solidity contract directory after compiled
-- `build/contracts/CrowdFunding.json`: the compiled file corresponding with CrowdFunding.sol
+- `build/`: The directory of the Solidity contract compiled
+- `build/contracts/CrowdFunding.json`: Compiled file corresponding to `CrowdFunding.sol`
 
 **Deploly crowdfunding Contract**
 
@@ -491,7 +507,7 @@ After the command is executed, project directory structure is as follows:
 cd migrations/ && touch 2_initial_CrowdFunding.js
 ```
 
-Deploy script 2_initial_crowdFunding.js,content is as follows：
+Deploy script 2_initial_crowdFunding.js, content is as follows：
 
 ```
 const CrowdFunding = artifacts.require("CrowdFunding"); //deployment contract class name
@@ -500,21 +516,21 @@ module.exports = function(deployer) {
 };
 ```
 
-**Step2.** Setting config  information for blockchain in truffle-config.js
+**Step2.**  Modify the configuration information of `truffle-config.js` in the chain
 
 ```
 vim truffle-config.js
 ```
 
-Set blockchain network  info
+Modify the blockchain-related configuration in `truffle-config.js` to the chain configuration of your real connection
 
 ```
 networks: {
 	development: {
-       host: "10.1.1.6",     // blockchain server address
-       port: 8806,            // server port
+       host: "10.1.1.6",     // Blockchain server host
+       port: 8806,            // Chain port number
        network_id: "*",       // Any network (default: none)
-       from: "atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp", //the accout address of deploying contract
+       from: "atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp", //Wallet address of the deployment contract account
        gas: 999999,
        gasPrice: 50000000004,
 	},
@@ -527,7 +543,7 @@ networks: {
 alaya-truffle migrate
 ```
 
-After deploying successfully, you will see log info as follows:
+After successful deployment，you will see log info as follows:
 ```
 Compiling your contracts...
  Everything is up to date, there is nothing to compile.
@@ -551,8 +567,7 @@ Compiling your contracts...
      Total cost:     0.018957700001516616 ATP
 ```
 
-
-**Crowdfounding Query：**
+**Query the crowdfunding progress**：**
 
 **Step1.**  Enter the alaya-truffle console
 
@@ -560,12 +575,12 @@ Compiling your contracts...
 alaya-truffle console
 ```
 
-> You can execute command in alaya-truffle console
+> You can execute the command in alaya-truffle console
 
-**Step2.**  Create contract object
+**Step2.**  Create a crowdfunding contract object
 
 ```
-var abi = [...]; //ABI of CrowdFunding contract,can get from build/contracts/CrowdFunding.json
+var abi = [...]; //The ABI of the crowdfunding contract, accessed from the compiled file
 var contractAddr = 'atp1crcjuu9uwa9aukmf5dr5tq4ym6cv2kre0042ya'; //CrowdFundsing contract address
 var crowdFunding = new web3.platon.Contract(abi,contractAddr);
 ```
@@ -576,7 +591,7 @@ var crowdFunding = new web3.platon.Contract(abi,contractAddr);
 crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);}); //query the amount raised
 ```
 
-**Step4.**  Crowdfunder judge the success of crowdfunding
+**Step4.**  Crowdfunder judges whether the crowdfunding is successful
 
 ```
 crowdFunding.methods.safeWithdrawal().send({from:'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
@@ -584,11 +599,11 @@ crowdFunding.methods.safeWithdrawal().send({from:'atp1jtfqqqr6436ppj6ccnrh8xjg7q
 
 Call contract command description:
 
-- `crowdFunding` is the contract object we built earlier
-- `methods` fixed syntax specifying that methods in the contract will be obtained
+- `crowdFunding`  is the contract object we built before
+- `methods` is the fixed syntax, specifying the methods in the contract that will be accessed
 - `safeWithdrawal` is a method in our crowdfunding contract to recover funds
-- `from` caller's wallet address
-- `on` listen for contract processing result events, and output error logs for failures
+- `from` is the wallet address of the caller
+- `on` is to monitor the event of the contract processing result. If it succeeds, a receipt will be printed, or an error log will be output if it fails
 
 --------------
 
@@ -596,31 +611,30 @@ Call contract command description:
 
 ### About Compile
 
-1. How many commands in alaya-truffle？
+1. What are the commands of alaya-truffle and how to use them?
 
-   Refer to  alaya-truffle develop guide [Reference here](https://platon-truffle.readthedocs.io/en/alaya/).
+   For Alaya-truffle Development Manual, [refer here](https://platon-truffle.readthedocs.io/en/alaya/).
 
-2. Why contract syntax cannot be verified?
+2. Why does the contract fail to pass the syntax verification?
 
-   Solidity 0.4.x has a great different with 0.5.x, detail info refer to [Reference here](https://solidity.readthedocs.io/en/develop/).
+   There are major changes between solidity contract 0.4.x version and 0.5.x version. For the specific syntax, [refer here](https://solidity.readthedocs.io/en/develop/)
 
-3. Why truffle doesn't compile?
+3. What if Alaya-truffle failed to execute truffle compile?
 
-   Confirm the contract version same as the version specified in the truffle-config.js.
-   Contract syntax be writed in a wrong way.
+   Confirm whether the version number in the compiled contract file is consistent with the version number specified in `truffle-config.js`.
+   The syntax may be wrong. You can fix it according to the command line prompts before compiling.
 
-4. Why the contract can not be deployed by truffle migrate?
+4. What if Alaya-truffle failed to execute truffle migrate deployment contract?
 
-   Confrim the blockchain network info be configured correctly.
-   Confirm the account address be configured correctly.
+   Confirm whether the configuration information of the connected chain in `truffle-config.js` and the user's wallet address are correct.
+   
+5. What if truffle failed to deploy a constructor contract with parameters?
 
-5. Deploying a contract with a parameter constructor using the command `truffle migrate` failed.
-
-   For example, A.sol
+   Take the contract A.sol as an example. In the `migrations/2_initial_A.js file`, confirm whether to add the construction parameter information. For example: The A.sol constructor format is as follows:
     ```
     Constructor(uint256 a, string memory b, string memory c) public {}
     ```
-   2_initial_A.js configured as follow：
+   The `2_initial_A.js` file configuration is as follows:
     ```
     const A = artifacts.require("A");  
     module.exports = function(deployer) {

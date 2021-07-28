@@ -8,30 +8,30 @@ sidebar_label: Migration tutorial
 
 Alaya supports four versions of solidity: 0.4.26, 0.5.17, 0.6.12, and 0.7.1. If you migrate contracts with versions above 0.7.1, you need to reduce the version number and remove the syntax related to the higher version.
 
-If you want to migrate Ethereum's smart contract to Alaya, you can do this with the `alaya-truffle` development tool. First, to make sure have `alaya-truffle` installed correctly, just follow these steps.
+If you want to migrate Ethereum's smart contract to Alaya, you can do this with the alaya-truffle development tool. First, to make sure have alaya-truffle installed correctly, just follow these steps.
 
-The migration of Ethereum's ERC200513Token contract to Alaya is demonstrated below，`ERC200513Token.sol` contract are as follows:
+The migration of Ethereum's ERC200513Token contract to Alaya is demonstrated below. ERC200513Token.sol contract are as follows:
 ```
 pragma solidity 0.5.17;
 
 contract ERC200513Token {
-    string public name; 
-    string public symbol; 
+    string public name; // ERC20 token name
+    string public symbol; // ERC20 token abbreviation
     uint8 public decimals = 18;  //18 decimals is the strongly suggested default, avoid changing it
-    uint256 public totalSupply = 10000000000000000000 ether; 
+    uint256 public totalSupply = 10000000000000000000 ether; // total supply
 
-    // This creates an array with all balances
+    // Use mapping to save the balance corresponding to each address
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
     //This generates a public event on the blockchain that will notify clients
     event Transfer(address indexed from, address indexed to, uint256 value);
 
-    // This notifies clients about the amount burnt
+    // Event, used to notify the client that the token is burned
     event Burn(address indexed from, uint256 value);
 
     /**
-     * Constructor function
+     * Initialization structure
      */
     constructor(uint256 initialSupply, string memory tokenName, string memory tokenSymbol) public {
         totalSupply = initialSupply * 10 ** uint256(decimals); // Update total supply with the decimal amount
@@ -40,19 +40,22 @@ contract ERC200513Token {
         symbol = tokenSymbol; 
     }
     /**
-     * get the name for display purposes
+     * Return token name
      */
     function getName() view public returns (string memory){
         return name;
     }
 
     /**
-     * get token symbol
+     * Return token symbol
      */
     function getSymbol() view public returns (string memory){
         return symbol;
     }
- 
+    
+   /**
+      * Return the minimum split amount of the token
+      */
     function getDecimals() public view returns (uint8){
         return decimals;
     }
@@ -187,37 +190,37 @@ contract ERC200513Token {
 mkdir example && cd example
 ```
 
-> After the command is executed,project directory structure is as follows:
+> The following commands are carried out in the example directory if without special instructions
 
-**Step2.**  Init project
+**Step2.**  Use alaya-truffle to initialize a project
 
 ```
 alaya-truffle init
 ```
 
-After the command is executed,project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `contracts/`: solidity contract directory
+- `contracts/`: Solidity contract directory
 
-- `migrations/`: depoly file directory
+- `migrations/`: Directory of script files deployed
 
-- `test/`: test script directory
+- `test/`: Directory of test scripts
 
-- `truffle-config.js`: alaya-truffle config
+- `truffle-config.js`: alaya-truffle configuration file
 
-**Step3.** Move ERC200513Token contract compiled in to example/contracts
+**Step3.** Put the Ethereum contract file `ERC200513Token.sol` into the `example/contract`s directory
 
 ```
 ls contracts/
 ```
 
-- ERC200513Token.sol
-- Alaya's smart contract unit is ATP,VON. To migrate the Ethereum smart contract to Alaya,please change the Ethereum denomination to Alaya denomination.also note the ether /ATP market rate（for this contract, we assume the market exchange rate1:1,uint256 public totalSupply = 10000000000000000000 ether; change to uint256 public totalSupply = 10000000000000000000 atp; ）
+- You will see `ERC200513Token.sol`
+- The currency units in the Alaya smart contract are ATP and VON. To migrate the Ethereum smart contract to Alaya, change the denomination of Ether to Alaya denomination. At the same time pay attention to the ether/ATP market exchange rate (in this contract we assume that the market exchange rate is 1:1, and change uint256 public totalSupply = 10000000000000000000 ether to uint256 public totalSupply = 10000000000000000000 atp;)
 - The compiled version modifies the version supported by Alaya.
 - modify address: `require(_to != address(0x0)` modify to `require(_to != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _to != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"))`
-- Alaya's smart contract block.timestamp is current block timestamp as milliseconds since unix epoch, and Ethereum smart contract is seconds.
+- In the Alaya smart contract, block.timestamp represents the timestamp of the current block in milliseconds, and Ethereum uses seconds as the unit.
 
-**Step4.** Modify the compilation version number and chain-dependent configuration in truffle-config.js
+**Step4.** Modify the compiled version number and chain related configuration in `truffle-config.js`
 
 ```
 module.exports = {
@@ -265,7 +268,7 @@ Compiled successfully using:
 cd migrations && touch 2_initial_ERC200513Token.js
 ```
 
-Deploy script 2_initial_ERC200513Token.js content is as follows：
+Deploy `script 2_initial_ERC200513Token.js` content is as follows：
 ```
 const ERC200513Token = artifacts.require("ERC200513Token"); //contract class name
 module.exports = function(deployer) {
@@ -304,5 +307,3 @@ Summary
  Total deployments:   2
  Final cost:          0.037844150003027532 ATP
 ```
----------
-

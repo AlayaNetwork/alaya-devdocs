@@ -31,14 +31,14 @@ Using random numbers in smart contracts is quite tricky if you do not want miner
 
 #### Re-Entrancy
 
-Any interaction from a contract (A) with another contract (B) and any transfer of Ether hands over control to that contract (B). This makes it possible for B to call back into A before this interaction is completed. To give an example, the following code contains a bug (it is just a snippet and not a complete contract):
+Any interaction from a contract (A) with another contract (B) and any transfer of ATP/LAT hands over control to that contract (B). This makes it possible for B to call back into A before this interaction is completed. To give an example, the following code contains a bug (it is just a snippet and not a complete contract):
 
 ```
 pragma solidity >=0.4.0 <0.7.0;
 
 // THIS CONTRACT CONTAINS A BUG - DO NOT USE
 contract Fund {
-    /// Mapping of ether shares of the contract.
+    /// Mapping of ATP/LAT shares of the contract.
     mapping(address => uint) shares;
     /// Withdraw your share.
     function withdraw() public {
@@ -48,14 +48,14 @@ contract Fund {
 }
 ```
 
-The problem is not too serious here because of the limited gas as part of `send`, but it still exposes a weakness: Ether transfer can always include code execution, so the recipient could be a contract that calls back into `withdraw`. This would let it get multiple refunds and basically retrieve all the Ether in the contract. In particular, the following contract will allow an attacker to refund multiple times as it uses `call` which forwards all remaining gas by default:
+The problem is not too serious here because of the limited gas as part of `send`, but it still exposes a weakness: ATP/LAT transfer can always include code execution, so the recipient could be a contract that calls back into `withdraw`. This would let it get multiple refunds and basically retrieve all the ATP/LAT in the contract. In particular, the following contract will allow an attacker to refund multiple times as it uses `call` which forwards all remaining gas by default:
 
 ```
 pragma solidity >=0.4.0 <0.7.0;
 
 // THIS CONTRACT CONTAINS A BUG - DO NOT USE
 contract Fund {
-    /// Mapping of ether shares of the contract.
+    /// Mapping of ATP/LAT shares of the contract.
     mapping(address => uint) shares;
     /// Withdraw your share.
     function withdraw() public {
@@ -72,7 +72,7 @@ To avoid re-entrancy, you can use the Checks-Effects-Interactions pattern as out
 pragma solidity >=0.4.11 <0.7.0;
 
 contract Fund {
-    /// Mapping of ether shares of the contract.
+    /// Mapping of ATP/LAT shares of the contract.
     mapping(address => uint) shares;
     /// Withdraw your share.
     function withdraw() public {
@@ -83,22 +83,22 @@ contract Fund {
 }
 ```
 
-Note that re-entrancy is not only an effect of Ether transfer but of any function call on another contract. Furthermore, you also have to take multi-contract situations into account. A called contract could modify the state of another contract you depend on.
+Note that re-entrancy is not only an effect of ATP/LAT transfer but of any function call on another contract. Furthermore, you also have to take multi-contract situations into account. A called contract could modify the state of another contract you depend on.
 
 #### Gas Limit and Loops
 
 Loops that do not have a fixed number of iterations, for example, loops that depend on storage values, have to be used carefully: Due to the block gas limit, transactions can only consume a certain amount of gas. Either explicitly or just due to normal operation, the number of iterations in a loop can grow beyond the block gas limit which can cause the complete contract to be stalled at a certain point. This may not apply to `view` functions that are only executed to read data from the blockchain. Still, such functions may be called by other contracts as part of on-chain operations and stall those. Please be explicit about such cases in the documentation of your contracts.
 
-#### Sending and Receiving Ether
+#### Sending and Receiving ATP/LAT
 
-- Neither contracts nor “external accounts” are currently able to prevent that someone sends them Ether. Contracts can react on and reject a regular transfer, but there are ways to move Ether without creating a message call. One way is to simply “mine to” the contract address and the second way is using `selfdestruct(x)`.
-- If a contract receives Ether (without a function being called), either the receive Ether or the fallback function is executed. If it does not have a receive nor a fallback function, the Ether will be rejected (by throwing an exception). During the execution of one of these functions, the contract can only rely on the “gas stipend” it is passed (2300 gas) being available to it at that time. This stipend is not enough to modify storage (do not take this for granted though, the stipend might change with future hard forks). To be sure that your contract can receive Ether in that way, check the gas requirements of the receive and fallback functions.
+- Neither contracts nor “external accounts” are currently able to prevent that someone sends them ATP/LAT. Contracts can react on and reject a regular transfer, but there are ways to move ATP/LAT without creating a message call. One way is to simply “mine to” the contract address and the second way is using `selfdestruct(x)`.
+- If a contract receives ATP/LAT (without a function being called), either the receive ATP/LAT or the fallback function is executed. If it does not have a receive nor a fallback function, the ATP/LAT will be rejected (by throwing an exception). During the execution of one of these functions, the contract can only rely on the “gas stipend” it is passed (2300 gas) being available to it at that time. This stipend is not enough to modify storage (do not take this for granted though, the stipend might change with future hard forks). To be sure that your contract can receive ATP/LAT in that way, check the gas requirements of the receive and fallback functions.
 - There is a way to forward more gas to the receiving contract using `addr.call{value: x}("")`. This is essentially the same as `addr.transfer(x)`, only that it forwards all remaining gas and opens up the ability for the recipient to perform more expensive actions (and it returns a failure code instead of automatically propagating the error). This might include calling back into the sending contract or other state changes you might not have thought of. So it allows for great flexibility for honest users but also for malicious actors.
 - Use the most precise units to represent the wei amount as possible, as you lose any that is rounded due to a lack of precision.
-- If you want to send Ether using `address.transfer`, there are certain details to be aware of:
+- If you want to send ATP/LAT using `address.transfer`, there are certain details to be aware of:
     1. If the recipient is a contract, it causes its receive or fallback function to be executed which can, in turn, call back the sending contract.
-    2. Sending Ether can fail due to the call depth going above 1024. Since the caller is in total control of the call depth, they can force the transfer to fail; take this possibility into account or use `send` and make sure to always check its return value. Better yet, write your contract using a pattern where the recipient can withdraw Ether instead.
-    3. Sending Ether can also fail because the execution of the recipient contract requires more than the allotted amount of gas (explicitly by using `require`, `assert`, `revert` or because the operation is too expensive) - it “runs out of gas” (OOG). If you use `transfer` or `send` with a return value check, this might provide a means for the recipient to block progress in the sending contract. Again, the best practice here is to use a [“withdraw” pattern instead of a “send” pattern](https://solidity.readthedocs.io/en/latest/common-patterns.html#withdrawal-pattern)。
+    2. Sending ATP/LAT can fail due to the call depth going above 1024. Since the caller is in total control of the call depth, they can force the transfer to fail; take this possibility into account or use `send` and make sure to always check its return value. Better yet, write your contract using a pattern where the recipient can withdraw ATP/LAT instead.
+    3. Sending ATP/LAT can also fail because the execution of the recipient contract requires more than the allotted amount of gas (explicitly by using `require`, `assert`, `revert` or because the operation is too expensive) - it “runs out of gas” (OOG). If you use `transfer` or `send` with a return value check, this might provide a means for the recipient to block progress in the sending contract. Again, the best practice here is to use a [“withdraw” pattern instead of a “send” pattern](https://solidity.readthedocs.io/en/latest/common-patterns.html#withdrawal-pattern)。
 
 #### Callstack Depth
 
@@ -128,7 +128,7 @@ contract TxUserWallet {
 }
 ```
 
-Now someone tricks you into sending Ether to the address of this attack wallet:
+Now someone tricks you into sending ATP/LAT to the address of this attack wallet:
 
 ```
 pragma solidity >=0.5.0 <0.7.0;
@@ -237,9 +237,9 @@ If the compiler warns you about something, you should better change it. Even if 
 
 Always use the latest version of the compiler to be notified about all recently introduced warnings.
 
-#### Restrict the Amount of Ether
+#### Restrict the Amount of ATP/LAT
 
-Restrict the amount of Ether (or other tokens) that can be stored in a smart contract. If your source code, the compiler or the platform has a bug, these funds may be lost. If you want to limit your loss, limit the amount of Ether.
+Restrict the amount of ATP/LAT (or other tokens) that can be stored in a smart contract. If your source code, the compiler or the platform has a bug, these funds may be lost. If you want to limit your loss, limit the amount of ATP/LAT.
 
 #### Simple and Modular
 
@@ -247,7 +247,7 @@ Keep your contracts small and easily understandable. Single out unrelated functi
 
 #### Use the Checks-Effects-Interactions Pattern
 
-Most functions will first perform some checks (who called the function, are the arguments in range, did they send enough Ether, does the person have tokens, etc.). These checks should be done first.
+Most functions will first perform some checks (who called the function, are the arguments in range, did they send enough ATP/LAT, does the person have tokens, etc.). These checks should be done first.
 
 As the second step, if all checks passed, effects to the state variables of the current contract should be made. Interaction with other contracts should be the very last step in any function.
 
@@ -259,7 +259,7 @@ Note that, also, calls to known contracts might in turn cause calls to unknown c
 
 While making your system fully decentralised will remove any intermediary, it might be a good idea, especially for new code, to include some kind of fail-safe mechanism:
 
-You can add a function in your smart contract that performs some self-checks like “Has any Ether leaked?”, “Is the sum of the tokens equal to the balance of the contract?” or similar things. Keep in mind that you cannot use too much gas for that, so help through off-chain computations might be needed there.
+You can add a function in your smart contract that performs some self-checks like “Has any ATP/LAT leaked?”, “Is the sum of the tokens equal to the balance of the contract?” or similar things. Keep in mind that you cannot use too much gas for that, so help through off-chain computations might be needed there.
 
 If the self-check fails, the contract automatically switches into some kind of “failsafe” mode, which, for example, disables most of the features, hands over control to a fixed and trusted third party or just converts the contract into a simple “give me back my money” contract.
 
@@ -293,5 +293,3 @@ The more people examine a piece of code, the more issues are found. Asking peopl
 ### Third Party Audit
 
 You can find a professional third-party audit company for security audits, such as：[slow mist](https://www.slowmist.com/en/service-smart-contract-security-audit.html)。
-
----

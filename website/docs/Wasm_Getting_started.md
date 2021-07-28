@@ -4,18 +4,21 @@ title: Getting started
 sidebar_label: Getting started
 ---
 
-### Introduction
+## Overview
 
-This tutorial is mainly to guide users to create a simple HelloWorld smart contract using wasm language on Alaya, compile, deploy, and call this contract through alaya-truffle.If you want to use a richer API.
+This tutorial is mainly to guide users to create a simple HelloWorld smart contract using wasm language on Alaya, compile, deploy, and call this contract through alaya-truffle.
 
-### alaya-truffle Introduction
+## alaya-truffle Introduction
 
-alaya-truffle is a tool provided by Alaya that can compile, deploy, and invoke smart contracts locally. For specific installation and usage manuals, refer to:
+Alaya-truffle is a tool provided by PlatON that can compile, deploy, and call smart contracts locally. For specific installation and usage manuals, refer to:
 
-- alaya-truffle develop tools [specific installation](https://platon-truffle.readthedocs.io/en/alaya/getting-started/installation.html)
-- alaya-truffle develop tools [usage manuals](https://platon-truffle.readthedocs.io/en/alaya/)
+- Alaya-truffle development tools [installation](https://platon-truffle.readthedocs.io/en/alaya/getting-started/installation.html)
 
-### Create HelloWorld Contract
+  If the wasm compiler always fails to download due to network problems, you can go directly to github [link address](https://github.com/PlatONnetwork/PlatON-CDT/releases/download/v0.13.2/platon-cdt.tar.gz ) to download the compiled compressed file, then unzip it to the ~/.config/alaya-truffle/compilers directory, and soft link platon-cdt/bin/wasm-opt to the /usr/bin directory
+
+- Alaya-truffle development tool [usage manuals](https://platon-truffle.readthedocs.io/en/alaya/)https://platon-truffle.readthedocs.io/en/alaya/)
+
+## Create HelloWorld Contract
 
 ```c++
 #include <platon/platon.hpp>
@@ -64,58 +67,55 @@ PLATON_DISPATCH(HelloWorld, (init)(add_message)(get_message_size)(get_message_bo
 Contract Files Description:
 
 - Each contract file has only one contract class. The contract class is decorated with Contract. It must be publicly inherited from platon :: Contract and must have an init function.
-
 - ACTION and CONST qualified member functions represent callable functions, and such member functions cannot be overloaded. The ACTION function will modify the data on the chain. The CONST function just queries the attributes and does not modify the data on the chain.
-
 - The type in the callable function parameter list is a custom type. In this type definition, you need to add the PLATON_SERIALIZE macro to declare the serialization function. This type inherits from other types. You need to add the PLATON_SERIALIZE_DERIVED macro to declare the serialization function.
-
 - Callable functions can only be called externally if the unified entry function is defined in the PLATON_DISPATCH macro.
-
-- At present, platon will persistently store member variables of the contract class. The member variables must be of type platon :: StorageType. The first parameter string of the platon :: StorageType template is followed by \_n, and the string must be .12345abcdefghijklmnopqrstuvwxyz. 32 characters Characters. The second parameter is the concrete type of the actual storage. Member function modification member variables need to obtain an instance of a specific type through the self () function, and then execute the corresponding instance function.
-
+- At present, platon will persistently store member variables of the contract class. The member variables must be of type platon :: StorageType. The first parameter string of the platon :: StorageType template is followed by \_n, and the string must come from the 32 characters of .12345abcdefghijklmnopqrstuvwxyz. The second parameter is the concrete type of the actual storage. To modify member variables, member functions need to obtain specific types of instances through the self() function, and then execute the corresponding instance functions.
 - The second parameter type of the platon :: StorageType template is a custom type. A PLATON_SERIALIZE macro must be added to this type definition to declare a serialization function. This type inherits from other types. A PLATON_SERIALIZE_DERIVED macro must be added to declare a serialization function.
 
-### Compile HelloWorld Contract
+## Compile HelloWorld Contract
 
-**Step1.** Creat new directory for HelloWorld project
+**Step1.** Create a new directory for a HelloWorld project
 
 ```
 mkdir HelloWorld && cd HelloWorld
 ```
 
-- The following commands are performed in the HelloWorld directory without special instructions
+> The following commands are performed in the HelloWorld directory if without special instructions
 
-**Step2.** Init project
+
+
+**Step2.** Initialize a project using alaya-truffle 
 
 ```
 alaya-truffle init
 ```
 
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `contracts/` wasm contract directory
+- `contracts/` Wasm contract directory
 
-- `migrations/` depoly file directory
+- `migrations/` dDirectory of the depolyment file
 
-- `test/` test script directory
+- `test/` Directory of test scripts
 
-- `truffle-config.js` alaya-truffle config
+- `truffle-config.js` Alaya-truffle configuration file
 
-**Step3.** Move HelloWorld contract compiled in to HelloWorld/contracts/
+**Step3.** Move the HelloWorld contract compiled under `HelloWorld/contracts/`
 
 ```
 ls contracts/
 ```
 
-- HelloWorld.cpp
+> You will see `HelloWorld.cpp`
 
-**Step4.** Modify the alaya-truffle configuration file truffle-config.js and add the compiled wasm contract version number
+**Step4.** Modify the alaya-truffle configuration file `truffle-config.js` and add the compiled wasm contract version number
 
 ```
 vim truffle-config.js
 ```
 
-Truffle-config.js content is as follows:
+The modified contents of `truffle-config.js` are as follows:
 
 ```
 compilers: {
@@ -131,21 +131,34 @@ compilers: {
 alaya-truffle compile
 ```
 
-After the command is executed, project directory structure is as follows:
+After the command is executed, the structure of the project directory is as follows:
 
-- `build/` wasm contract directory after compiled
-- `build/contracts/HelloWorld.abi.json` HelloWorld contract compiled abi interface file
-- `build/contracts/HelloWorld.wasm` HelloWorld contract compiled binary
+- `build/` wasm: The directory of the wasm contract compiled
+- `build/contracts/HelloWorld.abi.json`: the ABI interface file of the HelloWorld contract compiled 
+- `build/contracts/HelloWorld.wasm`: The binary file of the HelloWorld contract compiled 
 
-### Deploly HelloWorld Contract
+## Deploly HelloWorld Contract
 
-**Step1.** Setting config information for blockchain in truffle-config.js
+**Step1.** Modify the configuration information of `truffle-config.js` in the chain
 
 ```
 vim truffle-config.js
 ```
 
-Set blockchain network info
+Modify the blockchain-related configuration in `truffle-config.js` to the chain configuration of your real connection:
+
+```
+networks: {
+	development: {
+       host: "10.1.1.6",     // Blockchain server host
+       port: 8806,            // Chain port number
+       network_id: "*",       // Any network (default: none)
+       from: "atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp",
+       gas: 999999,
+       gasPrice: 50000000004,
+	},
+}
+```
 
 ```
 networks: {
@@ -174,7 +187,11 @@ Import the private key (you can skip this step if you have already imported it)
 web3.platon.personal.importRawKey("Your wallet private key","Your wallet password");
 ```
 
-Successful import will see the address corresponding to the private key as follows：
+```
+web3.platon.personal.importRawKey("Your wallet private key","Your wallet password");
+```
+
+You will see the address corresponding to the private key after importing it：
 
 ```
 'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp'
@@ -186,22 +203,22 @@ Unlock wallet account
  web3.platon.personal.unlockAccount('Your wallet address','Your wallet password',999999);
 ```
 
-After unlocking successfully, you will see the following information：
+After unlocking it successfully, you will see the following information：
 
 ```
 ture
 ```
 
-**Step3.** Deploy contract
+**Step3.** Deploy the HelloWorld contract
 
 ```
 alaya-truffle deploy --wasm --contract-name HelloWorld --params '[[["1"], "2", "3"]]'
 ```
 
-- `HelloWorld` deployed contract
-- `params` parameters of contract init function
+- `HelloWorld`: Contract to be deployed
+- `params`: Parameters of contract init function
 
-If deploying successfully，you will see log info as follows:
+After successful deployment, you will see log info as follows:
 
 ```
 receipt:  { blockHash:
@@ -234,7 +251,7 @@ receipt:  { blockHash:
    > total cost:          0.014565700001165256 ATP
 ```
 
-### Call HelloWorld Contract
+## Call HelloWorld Contract
 
 **Step1.** Enter the alaya-truffle console
 
@@ -242,7 +259,7 @@ receipt:  { blockHash:
 alaya-truffle console
 ```
 
-- You can execute command in alaya-truffle console
+> You can execute the command in alaya-truffle console
 
 **Step2.** Create contract object
 
@@ -255,9 +272,9 @@ var helloworld = new web3.platon.Contract(abi,contractAddr,{vmType: 1 });
 
 Description：
 
-- `abi` the interface provided by the contract to external calls，the abi in the file compiled ：`HelloWorld/build/contracts/HelloWorld.json`
-- `contractAddr` contract address
-- `helloWorld` contract object created
+- `abi` is the interface provided by the contract for external calls. The abi corresponding to each contract can be found in the compiled file, such as: `HelloWorld/build/contracts/HelloWorld.json`
+- `contractAddr`: There is a contract address after the contract is successfully deployed
+- `helloWorld` is the abstraction of contract objects constructed to interact with on-chain contracts
 
 **Step3.** Call contract
 
@@ -276,11 +293,48 @@ helloworld.methods
 
 Description：
 
-- `helloWorld` the contract object created
-- `methods` specify the call method
-- `add_message` method in the HelloWorld contract with a custom my_message input
-- `from` caller's wallet address
-- `on` listen to the result of the contract method executed. If failed, it will print the error info. If succeeded, the console will print the receipt as belows:
+- `helloWorld` is the contract object built before
+- `methods` is the fixed syntax, followed by the method name of the contract
+- `add_message` is a method in the HelloWorld contract, with an input parameter of custom my_message type
+- `from` is the wallet address of the caller
+- `gas` is the gas amount
+- `on` 是监听合约处理结果事件，此处如果成功将打印回执，失败输出错误日志
+- `on` is to monitor the event of the contract processing result. If it succeeds, a receipt will be printed, or an error log will be output if it fails
+
+After the function call is successful, you will see the log info as below:
+
+```
+{ blockHash:
+   '0x669c7b8cb938cc30845e08dc4ceda08f2e17207c267ade97dc5458b445405736',
+  blockNumber: 74665,
+  contractAddress: null,
+  cumulativeGasUsed: 108549,
+  from: 'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp',
+  gasUsed: 108549,
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: 'atp12ts3s0zd7s8hm2vwv8wxe3rpvrwpv6tpsx8shx',
+  transactionHash:
+   '0x2b5e590df7e70ad428b1ccb06bda5dcce47f84c4d981c2fb475aca9ec9d0000a',
+  transactionIndex: 0,
+  events: {} }
+{ blockHash:
+   '0x669c7b8cb938cc30845e08dc4ceda08f2e17207c267ade97dc5458b445405736',
+  blockNumber: 74665,
+  contractAddress: null,
+  cumulativeGasUsed: 108549,
+  from: 'atp1jtfqqqr6436ppj6ccnrh8xjg7qals3ctnnmurp',
+  gasUsed: 108549,
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: 'atp12ts3s0zd7s8hm2vwv8wxe3rpvrwpv6tpsx8shx',
+  transactionHash:
+   '0x2b5e590df7e70ad428b1ccb06bda5dcce47f84c4d981c2fb475aca9ec9d0000a',
+  transactionIndex: 0,
+  events: {} }
+```
 
 ```
 { blockHash:
@@ -323,10 +377,10 @@ helloworld.methods.get_message_body(0).call()
 
 Description：
 
-- `helloWorld` the contract object created
-- `methods` specify the call method
-- `get_message_body` method in the HelloWorld contract, which has an input parameter of type int
-- `call` specify the query method
+- `helloWorld` is the contract object built before
+- `methods` specifies the methods in the contract that will be accessed
+- `get_message_body` is a method in the HelloWorld contract, which has an input parameter of type int
+- `call` indicates the query method
 
 ---
 
@@ -342,19 +396,25 @@ Description：
 
    Only allowing exists one contract class.
 
-2. How to specified output directory and filename when use `platon-cpp`
-   to compile contract?
-
-   Use `-o` flag, and must be specified output directory and filename at the
-   same time.
-
+2. How to specified the output directory and file name when using `platon-cpp` to compile a contract?
+   
+Use the `-o` parameter, and you must also specify the file name when specifying the directory:
+   
    ```shell
-   platon-cpp ./test.cpp -o ./out/test.wasm
+platon-cpp ./test.cpp -o ./out/test.wasm
    ```
+   
+3. What if Alaya-truffle failed to execute truffle deploy deployment contract?
 
-3. What data types does ABI support?
+   Confirm whether the configuration information of the connected chain in truffle-config.js and the user's wallet address are correct, and whether the wallet is unlocked.
 
-   Generate ABI supported types and conversion rules as follows:
+4. What if truffle failed to deploy a constructor contract with parameters?
+
+   If the init function in the contract has parameters, you need to specify the params parameter when deploying the contract.
+
+5. What data types does ABI support?
+
+   The types and conversion rules supported by the generated ABI are as follows:
 
 | Type                  | ABI                |
 | --------------------- | ------------------ |
@@ -383,26 +443,25 @@ Description：
 
 1. How to output contract debug logs in the `platon` process?
 
-    - Add `#undef NDEBUG` at the first line of contract codes, and must before
-      header file included.
-
-      ```cpp
+    - Add `#undef NDEBUG` at the first line of contract codes, and it must come before the header file include.
+      
+```cpp
       #undef NDEBUG
- 
-      #include <platon/platon.hpp>
- 
-      //...
+       
+#include <platon/platon.hpp>
+       
+//...
       ```
-
-    - `platon` startup command specifies log level 4 and enable debug flag.
-
-      ```cpp
+      
+- `Alaya` start command specifies log level 4, and turn on the `debug` flag
+    
+  ```cpp
       ./platon --debug --verbosity 4 ...
       ```
+    
+2. How to write a contract to effectively reduce the gas used?
 
-2. How to write a contract can effectively reduce Gas consumption?
-
-    - Use reference arguments
+    - Use reference parameters
 
       ```cpp
       void test(const std::string& str) {}
@@ -418,7 +477,7 @@ Description：
    }
    ```
 
-    - Try not to apply for large blocks of memory
+    - Try not to apply for a large block of memory
 
 3. What should I pay attention to when using `StorageType`?
 
@@ -454,24 +513,17 @@ Description：
      + Tuple
    ```
 
-4. What is the difference between `StorageType` and `platon::db::Map`,
-   `platon::db::Array`?
-
-   From the underlying storage level, the implementation of `StorageType` is
-   serialized as a whole, and then stored in the database. `platon::db::Map`
-   and `platon::db::Array` serialize each element of the container as K/V is
-   stored to the database. For large-scale data, `platon::db::Map` and
-   `platon::db::Array` perform better.
-
-   When implementing a contract, a suitable storage structure should be
-   selected based on the size of the data.
-
-5. RLP serialization/deserialization What C++ standard library types are
-   supported?
-
-   The following C ++ standard library types are supported:
-
-    - std::string
+4. What is the difference between `StorageType` and `platon::db::Map`, `platon::db::Array`?
+   
+From the perspective of the underlying storage level, the implementation of `StorageType` is serialized as a whole and then stored in the database. And `platon::db::Map` and `platon::db::Array`, after each element is serialized, are stored in the database as K/V. For large-scale data, `platon::db::Map` and `platon::db::Array` perform better.
+   
+   When implementing the contract, the appropriate storage structure should be selected according to the scale of the data.
+   
+5. Which C++ standard library types are supported by RLP serialization/deserialization?
+   
+The following C++ standard library types are supported:
+   
+ - std::string
     - std::vector
     - std::map
     - std::list
@@ -479,10 +531,10 @@ Description：
     - std::set
     - std::pair
     - std::tuple
+   
+6. How does custom type support RLP serialization/deserialization?
 
-6. How do custom types support RLP serialization/deserialization?
-
-    - Macro `PLATON_SERIALIZE` for common types
+    - Use macro `PLATON_SERIALIZE` for common types
 
    ```cpp
       struct Base {
@@ -493,7 +545,7 @@ Description：
       };
    ```
 
-    - The derived class uses the macro `PLATON_SERIALIZE_DERIVED`, and the base class also uses the macro `PLATON_SERIALIZE`
+    - For the derived class, use the macro `PLATON_SERIALIZE_DERIVED`, and for the base class, use the macro `PLATON_SERIALIZE` as well.
 
    ```cpp
    struct Derived : public Base {
