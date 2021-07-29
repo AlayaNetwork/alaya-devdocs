@@ -217,7 +217,7 @@ If an address variable is equal to 0, the variable may not be initialized or an 
 
 If the developer initializes an address variable in the code but does not assign an initial value, or the user does not assign the address variable by mistake when initiating an operation, but this variable needs to be handled in the following code, it is possible Cause unnecessary security risks.
 
-For functions that involve addresses, it is recommended to add require (_to! = Address (0)) verification to effectively avoid unnecessary losses caused by user misoperations or unknown errors.
+For functions that involve addresses, it is recommended to add require (_to! = Address (uint160(0))) verification to effectively avoid unnecessary losses caused by user misoperations or unknown errors.
 
 #### Transaction Order Dependent
 

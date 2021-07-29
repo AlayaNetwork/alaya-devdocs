@@ -326,7 +326,7 @@ Two roles are set in the contract
 pragma solidity ^0.5.17;
 
 contract CrowdFunding {
-    address payable public beneficiaryAddress = address(0x0); //Beneficiary address, set as contract creator
+    address payable public beneficiaryAddress = address(uint160(0)); //Beneficiary address, set as contract creator
     uint256 public fundingGoal = 100 atp;  //Crowdfunding target, with the unit as ATP
     uint256 public amountRaised = 0; //The amount of money raised, the unit is VON
     uint256 public deadline; //Deadline
@@ -346,7 +346,7 @@ contract CrowdFunding {
     
     //Check whether the address is empty
     modifier validAddress(address _address) {
-        require(_address != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _address != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"));
+        require(_address != address(uint160(0)));
         _;
     }
 
