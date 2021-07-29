@@ -5,7 +5,7 @@ sidebar_label: Staking&Delegation
 ---
 
 ## What is staking?
-In PlatON's network, staking is the act of nodes joining to Alayanetwork by locking a certain amount of ATP. Alaya uses [PPoS consensus mechanism](/alaya-devdocs/en/Economic_Model#ppos-consensus) to select validators, and nodes joining the Alayanetwork are ranked according to the amount of ATP staked. Each round of consensus will randomly select 25 nodes from the top 101 nodes as validators to pack out blocks and receive network rewards.
+In Alaya's network, staking is the act of nodes joining to Alayanetwork by locking a certain amount of ATP. Alaya uses [PPoS consensus mechanism](/alaya-devdocs/en/Economic_Model#ppos-consensus) to select validators, and nodes joining the Alayanetwork are ranked according to the amount of ATP staked. Each round of consensus will randomly select 25 nodes from the top 101 nodes as validators to pack out blocks and receive network rewards.
 
 
 

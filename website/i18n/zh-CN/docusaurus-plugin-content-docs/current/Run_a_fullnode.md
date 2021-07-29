@@ -42,28 +42,28 @@ ntpq -4c rv | grep leap_none
 
 | **网络**   | **ChainID** | **当前版本** |
 | ------ | ------- | -------- |
-| 主网   | 201018  | 0.15.0   |
+| 主网   | 201018  | 0.16.0   |
 | 开发网 | 201030  | 0.16.0   |
 
 ```bash
 # 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.0
-export PLATON_VERSION=0.15.0
-sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/platon -P /usr/bin
+export PLATON_VERSION=0.16.0
+sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alaya -P /usr/bin
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alayakey -P /usr/bin
-sudo chmod +x /usr/bin/platon  /usr/bin/alayakey
-platon version
+sudo chmod +x /usr/bin/alaya  /usr/bin/alayakey
+alaya version
 ```
 
-执行完上述命令后，`platon`和`alayakey`二进制就已经成功安装到您系统上的`/usr/bin`目录里，您可以在任何目录执行相关命令。
+执行完上述命令后，`alaya`和`alayakey`二进制就已经成功安装到您系统上的`/usr/bin`目录里，您可以在任何目录执行相关命令。
 
 ## 创建节点密钥
 
 ### 节点公私钥
 
-每个节点在网络中都有一个唯一的身份标识以便彼此区分，这个身份标识是一个公私钥对，可以在节点工作目录（如`~/platon-node`）下通过以下命令生成：
+每个节点在网络中都有一个唯一的身份标识以便彼此区分，这个身份标识是一个公私钥对，可以在节点工作目录（如`~/alaya-node`）下通过以下命令生成：
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/nodeid)
+mkdir -p ~/alaya-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/nodeid)
 ```
 
 > 示例输出：
@@ -79,10 +79,10 @@ mkdir -p ~/platon-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | a
 
 ### 节点 BLS 公私钥
 
-Alaya 节点除了需要节点公私钥外还需要一种被称为 BLS 公私钥的密钥对，这个密钥对在共识协议中将被使用，密钥对可以在节点工作目录（如`~/platon-node`）下通过以下命令生成：
+Alaya 节点除了需要节点公私钥外还需要一种被称为 BLS 公私钥的密钥对，这个密钥对在共识协议中将被使用，密钥对可以在节点工作目录（如`~/alaya-node`）下通过以下命令生成：
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/blspub)
+mkdir -p ~/alaya-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/blspub)
 ```
 
 > 示例输出：
@@ -111,7 +111,7 @@ Alaya主网络已于北京时间2020年10月24日正式上线对外开放，Chai
 运行以下命令加入网络：
 
 ```bash
-cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 或者您也可以用`service unit`管理您的`alaya`进程：
@@ -127,17 +127,16 @@ Type=simple
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=alaya
-ExecStart=/usr/bin/platon \\
+ExecStart=/usr/bin/alaya \\
     --identity alaya-node \\
-    --alaya \\
-    --datadir ${HOME}/platon-node/data \\
+    --datadir ${HOME}/alaya-node/data \\
     --port 16789 \\
     --rpcaddr 127.0.0.1 \\
     --rpcport 6789 \\
     --rpc \\
     --rpcapi "db,platon,net,web3,admin,personal" \\
-    --nodekey ${HOME}/platon-node/data/nodekey \\
-    --cbft.blskey ${HOME}/platon-node/data/blskey \\
+    --nodekey ${HOME}/alaya-node/data/nodekey \\
+    --cbft.blskey ${HOME}/alaya-node/data/blskey \\
     --verbosity 1 \\
     --syncmode "fast" 
 User=${USER}
@@ -168,18 +167,17 @@ sudo systemctl start alaya.service
 | --nodekey     | 指定节点私钥文件                                                       |
 | --cbft.blskey | 指定节点 bls 私钥文件 （非验证节点即全节点，该参数为可选）             |
 | --verbosity   | 日志级别，0: CRIT;  1: ERROR； 2: WARN;  3: INFO;  4: DEBUG； 5: TRACE |
-| --alaya       | 指定连接到Alaya主网络                                                  |
 | --syncmode    | fast：快速同步模式，full：全同步模式                                   |
 | –db.nogc      | 开启归档模式                                                           |
 
-更多参数意义通过`platon --help`命令查看。
+更多参数意义通过`alaya --help`命令查看。
 
 #### 主网相关资源
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| platon二进制文件  | https://download.alaya.network/alaya/platon/0.15.0/platon                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.15.0/alayakey                               |                                                                 |
+| alaya二进制文件  | https://download.alaya.network/alaya/platon/0.16.0/alaya                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.0/alayakey                               |                                                                 |
 | mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe                | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
@@ -193,7 +191,7 @@ sudo systemctl start alaya.service
 
 ```bash
 # 进入 Alaya 控制台
-platon attach http://localhost:6789
+alaya attach http://localhost:6789
 
 ## 以下命令在Alaya控制台中执行
 # 查看节点的peers
@@ -245,7 +243,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| platon二进制文件| https://download.alaya.network/alaya/platon/0.16.0/alaya                                 |                                                                 |
+| alaya二进制文件| https://download.alaya.network/alaya/platon/0.16.0/alaya                                 |                                                                 |
 | alayakey       | https://download.alaya.network/alaya/platon/0.16.0/alayakey                               |                                                                 |
 | mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
