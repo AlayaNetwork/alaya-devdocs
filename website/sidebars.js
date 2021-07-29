@@ -84,8 +84,8 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Examples / Tutorials',
-            items: ['Architecture']
+            label: 'Tutorials',
+            items: ['JS-Tutorials']
         },
 
         {
@@ -96,7 +96,7 @@ module.exports = {
         {
             type: 'category',
             label: 'Wallet',
-            items: ['JS-Tutorials', 'ATON_user_manual', 'Samurai_user_manual']
+            items: ['Wallet_Guide', 'ATON_user_manual', 'Samurai_user_manual']
         },
         {
             type: 'category',
