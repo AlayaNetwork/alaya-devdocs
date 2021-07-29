@@ -73,7 +73,11 @@
 如果当前节点质押过，首先通过[区块链浏览器](https://scan.alaya.network/node)查看节点是否已经被选为验证人（共识中）
 如果已经当选，请等待节点退出验证人（共识中转为活跃中）后再进行重启操作。
 
-启动命令中不再需要指定参数 `--alaya`，根据各自的管理方式，重启alaya进程
+启动命令中不再需要指定参数 `--alaya`，以下命令仅供参考，请根据各自的管理方式，重启alaya进程
+
+```bash
+nohup alaya --identity alaya-node --datadir ./data --port 16789  --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+```
 
 ### 4、提案处理
 
