@@ -84,13 +84,19 @@ module.exports = {
         },
         {
             type: 'category',
+            label: 'Developer Tutorials',
+            items: ['Architecture']
+        },
+
+        {
+            type: 'category',
             label: 'Data and analytics',
             items: ['AlayScan', 'PlatEye']
         },
         {
             type: 'category',
             label: 'Wallet',
-            items: ['Wallet_Guide', 'ATON_user_manual', 'Samurai_user_manual']
+            items: ['JS-Tutorials', 'ATON_user_manual', 'Samurai_user_manual']
         },
         {
             type: 'category',
