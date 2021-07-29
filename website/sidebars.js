@@ -84,7 +84,7 @@ module.exports = {
         },
         {
             type: 'category',
-            label: 'Developer Tutorials',
+            label: 'Examples / Tutorials',
             items: ['Architecture']
         },
 
