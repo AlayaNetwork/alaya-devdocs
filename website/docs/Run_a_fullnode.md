@@ -55,7 +55,7 @@ ntpq -4c rv | grep leap_none
   Tip: You can skip this step if you do not need to back up the old version binaries.
 
   ```bash
-  [[ -x /usr/bin/platon ]] && sudo mv /usr/bin/platon /usr/bin/platon_`platon version | grep '^Version:' | awk -F "[ ,:,-]" '{print $3}'`
+  [[ -x /usr/bin/alaya ]] && sudo mv /usr/bin/alaya /usr/bin/alaya_`alaya version | grep '^Version:' | awk -F "[ ,:,-]" '{print $3}'`
   [[ -x /usr/bin/alayakey ]] && sudo mv /usr/bin/alayakey /usr/bin/alayakey_`alayakey --version | awk -F "[ ,-]" '{print $3}'`
   ```
 
@@ -64,22 +64,22 @@ ntpq -4c rv | grep leap_none
   <font color="red">The binary version number of the main network is 0.15.0, and that of the development network is 0.16.0. If you need to join the development network, please change the version number in the download link to 0.16.0.</font>
 
   ```bash
-  sudo wget https://download.alaya.network/alaya/platon/0.15.0/platon -P /usr/bin
-  sudo wget https://download.alaya.network/alaya/platon/0.15.0/alayakey -P /usr/bin
-  sudo chmod +x /usr/bin/platon  /usr/bin/alayakey
-  platon version
+  sudo wget https://download.alaya.network/alaya/platon/0.16.0/alaya -P /usr/bin
+  sudo wget https://download.alaya.network/alaya/platon/0.16.0/alayakey -P /usr/bin
+  sudo chmod +x /usr/bin/alaya  /usr/bin/alayakey
+  alaya version
   ```
 
-  After executing the commands above, `platon` and ` alayakey` binary should be successfully installed in the `/usr/bin` directory on your system. You can execute corresponding commands in any directory.
+  After executing the commands above, `alaya` and ` alayakey` binary should be successfully installed in the `/usr/bin` directory on your system. You can execute corresponding commands in any directory.
 
 ## Generate keys
 
 ### Public and private keys
 
-Each node in the network has an unique identity to distinguish it from others. This identity is a public and private key pair, generated in the node's working directory ( `~/platon-node`) by the following command:
+Each node in the network has an unique identity to distinguish it from others. This identity is a public and private key pair, generated in the node's working directory ( `~/alaya-node`) by the following command:
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/nodeid)
+mkdir -p ~/alaya-node/data && alayakey genkeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/nodekey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/nodeid)
 ```
 
 > Remark:
@@ -99,10 +99,10 @@ Two files will be generated in the subdirectory `data` under the working directo
 
 ### BLS public and private key
 
-In addition to the public and private keys of the node, the PlatON node also needs a key pair called the BLS public and private key. This key pair will be used in the consensus protocol. The key pair can be generated in the node's working directory (such as `~/platon-node`) by the following command:
+In addition to the public and private keys of the node, the Alaya node also needs a key pair called the BLS public and private key. This key pair will be used in the consensus protocol. The key pair can be generated in the node's working directory (such as `~/alaya-node`) by the following command:
 
 ```bash
-mkdir -p ~/platon-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/platon-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/platon-node/data/blspub)
+mkdir -p ~/alaya-node/data && alayakey genblskeypair | tee >(grep "PrivateKey" | awk '{print $2}' > ~/alaya-node/data/blskey) >(grep "PublicKey" | awk '{print $3}' > ~/alaya-node/data/blspub)
 ```
 
 > PrivateKey: f22a785c80bd1095beff1f356811268eae6c94abf0b2b4e2d64918957b74783e
@@ -134,7 +134,7 @@ If you need to join the Alaya development network, please refer to [Join the Ala
 Run the following command to join the network:
 
 ```bash
-cd ~/platon-node/ && nohup platon --identity alaya-node --datadir ./data --port 16789 --alaya --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 Or you can use the `service unit` to manage your `alaya` process:
@@ -150,17 +150,16 @@ Type=simple
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=alaya
-ExecStart=/usr/bin/platon \\
+ExecStart=/usr/bin/alaya \\
     --identity alaya-node \\
-    --alaya \\
-    --datadir ${HOME}/platon-node/data \\
+    --datadir ${HOME}/alaya-node/data \\
     --port 16789 \\
     --rpcaddr 127.0.0.1 \\
     --rpcport 6789 \\
     --rpc \\
     --rpcapi "db,platon,net,web3,admin,personal" \\
-    --nodekey ${HOME}/platon-node/data/nodekey \\
-    --cbft.blskey ${HOME}/platon-node/data/blskey \\
+    --nodekey ${HOME}/alaya-node/data/nodekey \\
+    --cbft.blskey ${HOME}/alaya-node/data/blskey \\
     --verbosity 1 \\
     --syncmode "fast" 
 User=${USER}
@@ -193,11 +192,10 @@ sudo systemctl start alaya.service
 | --nodekey     | Specify the private key file of the node                     |
 | --cbft.blskey | Specify the bls private key file of the node (a non-validator is a full node. This parameter is optional) |
 | --verbosity   | Log level, 0: CRIT; 1: ERROR;  2: WARN; 3: INFO; 4: DEBUG; 5: TRACE |
-| --alaya       | Specify connection to the Alaya mainnet                      |
 | --syncmode    | fast: fast synchronization mode; full: full synchronization mode |
 | –db.nogc      | Enable the archive mode                                      |
 
-More parameter meanings can be viewed through the `platon --help` command.
+More parameter meanings can be viewed through the `alaya --help` command.
 
 
 
@@ -205,8 +203,8 @@ More parameter meanings can be viewed through the `platon --help` command.
 
 | Documents or Resources | Address                                                      | Note                                                         |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| platon binary file     | https://download.alaya.network/alaya/platon/0.15.0/platon    |                                                              |
-| alayakey               | https://download.alaya.network/alaya/platon/0.15.0/alayakey  |                                                              |
+| alaya binary file     | https://download.alaya.network/alaya/platon/0.16.0/alaya    |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.16.0/alayakey  |                                                              |
 | mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
@@ -222,7 +220,7 @@ If the key is not generated in advance, the node is automatically generated in t
 
 ```bash
 # Enter the Alaya console
-platon attach http://localhost:6789
+alaya attach http://localhost:6789
 
 ## The following commands are executed in the Alaya console
 # View peers of the node
@@ -254,7 +252,7 @@ The development network provides a development and test environment for develope
 
 ```bash
 # Download the genesis block file genesis.json
-cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json
 
 # Initialize the genesis block file
 cd ~/alaya-node && alaya --datadir ./data init genesis.json
@@ -284,7 +282,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 | Documents or Resources | Address                                                      | Note                                                         |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| platon binary files    | https://download.alaya.network/alaya/platon/0.16.0/alaya     |                                                              |
+| alaya binary files    | https://download.alaya.network/alaya/platon/0.16.0/alaya     |                                                              |
 | alayakey               | https://download.alaya.network/alaya/platon/0.16.0/alayakey  |                                                              |
 | mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
