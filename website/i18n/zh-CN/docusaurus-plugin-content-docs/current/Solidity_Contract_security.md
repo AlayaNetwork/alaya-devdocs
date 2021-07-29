@@ -150,11 +150,11 @@ contract TxAttackWallet {
 
 如果你的钱包检查过 `msg.sender` 为了获得授权，它将获取攻击钱包的地址，而不是所有者地址。但是通过检查 `tx.origin` ，它获取启动事务的原始地址，该地址仍然是所有者地址。攻击钱包会立即耗尽你所有的资金。
 
-#### 二的补码/下溢/上溢
+#### 补码/下溢/上溢
 
 与许多编程语言一样，solidity的整数类型实际上不是整数。当值很小时，它们类似于整数，但如果数值较大，则表现不同。例如，以下是正确的： `uint8(255) + uint8(1) == 0` .这种情况被称为上溢。当执行的操作需要固定大小的变量来存储超出变量数据类型范围的数值（或数据块）时，就会发生这种情况。一个下溢的情况是： `uint8(0) - uint8(1) == 255` .
 
-一般来说，阅读关于二的补码表示的限制，它甚至对有符号数有一些更特殊的边界情况。
+一般来说，阅读关于补码表示的限制，它甚至对有符号数有一些更特殊的边界情况。
 
 尝试使用 `require` 将输入的大小限制在合理的范围内，并使用 [SMT checker](https://solidity.readthedocs.io/en/latest/layout-of-source-files.html#smt-checker) 查找潜在的溢出，或使用类似的库 [SafeMath](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol) ，如果希望所有溢出都能还原。
 
@@ -215,7 +215,7 @@ function initContract() public {
 
 如果开发者在代码中初始化了某个address变量，但未赋予初值，或用户在发起某种操作时，误操作未赋予address变量，但在下面的代码中需要对这个变量做处理，就可能导致不必要的安全风险。
 
-涉及到地址的函数中，建议加入require(_to!=address(0))验证，有效避免用户误操作或未知错误导致的不必要的损失。
+涉及到地址的函数中，建议加入require(_to!=address(uint160(0)))验证，有效避免用户误操作或未知错误导致的不必要的损失。
 
 #### 交易顺序依赖
 

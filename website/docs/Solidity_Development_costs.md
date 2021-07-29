@@ -6,7 +6,7 @@ sidebar_label: Development costs
 
 ## Introduction
 
-In a blockchain system, developing smart contracts based on any public chain system involves the development cost of resource expenditure. For example, deploying/calling smart contracts on the network, performing energy conversion, staking/delegation and other operations all require a certain cost. Development costs vary among blockchain networks. The cost of developing smart contracts on the `Alaya` network is similar to that on Ethereum and similar protocols. This manual will analyze and compare the development costs in an intuitive format for users' reference.
+In a blockchain system, developing smart contracts based on any public chain system involves the development cost of resource expenditure. For example, deploying/calling smart contracts on the network, staking/delegation and other operations all require a certain cost. Development costs vary among blockchain networks. The cost of developing smart contracts on the `Alaya` network is similar to that on Ethereum and similar protocols. This manual will analyze and compare the development costs in an intuitive format for users' reference.
 
 ## Summary
 

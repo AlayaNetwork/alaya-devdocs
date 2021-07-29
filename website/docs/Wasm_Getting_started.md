@@ -120,7 +120,7 @@ The modified contents of `truffle-config.js` are as follows:
 ```
 compilers: {
      wasm: {
-           version: "1.0.0"
+           version: "v0.13.0"
      }
 }
 ```
@@ -263,7 +263,7 @@ alaya-truffle console
 
 **Step2.** Create contract object
 
-```json
+```javascript
 var abi = [{"baseclass":[],"fields":[{"name":"head","type":"string"}],"name":"message","type":"struct"},{"baseclass":["message"],"fields":[{"name":"body","type":"string"},{"name":"end","type":"string"}],"name":"my_message","type":"struct"},{"constant":false,"input":[{"name":"one_message","type":"my_message"}],"name":"init","output":"void","type":"Action"},{"constant":false,"input":[{"name":"one_message","type":"my_message"}],"name":"add_message","output":"void","type":"Action"},{"constant":true,"input":[],"name":"get_message_size","output":"uint8","type":"Action"},{"constant":true,"input":[{"name":"index","type":"uint8"}],"name":"get_message_body","output":"string","type":"Action"}];
 var contractAddr = 'atp12ts3s0zd7s8hm2vwv8wxe3rpvrwpv6tpsx8shx';
 

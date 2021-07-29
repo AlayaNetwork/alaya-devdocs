@@ -226,7 +226,7 @@ alaya-truffle console
 
 **step2.**  构建合约对象
 
-```json
+```javascript
 var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]; //可以从HelloWorld/build/contracts/HelloWorld.json文件中获取到
 
 var contractAddr = 'atp1c5xxup4au4pqkgkm6a3p6hj3x0vvekdj52z2la';//部署合约时的获取的地址
@@ -604,16 +604,16 @@ crowdFunding.methods.safeWithdrawal().send({from:'atp1jtfqqqr6436ppj6ccnrh8xjg7q
 
    solidity合约0.4.x版本与0.5.x版本有重大变更，具体语法[参考这里](https://solidity.readthedocs.io/en/develop/)。
 
-3. alaya-truffle执行truffle compile 失败?
+3. alaya-truffle执行alaya-truffle compile 失败?
 
    1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致。
    2.可能语法有误，可以根据命令行提示修复后再进行编译。
 
-4. alaya-truffle执行truffle migrate部署合约失败?
+4. alaya-truffle执行alaya-truffle migrate部署合约失败?
 
 1.确认truffle-config.js中连接的链的配置信息及用户的钱包地址是否正确。
 
-5. truffle migrate部署带参数的构造函数合约失败?
+5. alaya-truffle migrate部署带参数的构造函数合约失败?
 
 以合约A.sol为例，在migrations/2_initial_A.js文件中，确认是否添加构造参数信息如：
 A.sol构造函数格式如下：

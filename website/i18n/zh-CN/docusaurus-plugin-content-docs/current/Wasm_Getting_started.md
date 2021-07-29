@@ -125,7 +125,7 @@ truffle-config.js 修改部分内容如下：
 ```
 compilers: {
      wasm: {
-           version: "1.0.0"
+           version: "v0.13.0"
      }
 }
 ```
@@ -251,7 +251,7 @@ alaya-truffle console
 
 **step2.** 构建合约对象
 
-```json
+```javascript
 var abi = [{"baseclass":[],"fields":[{"name":"head","type":"string"}],"name":"message","type":"struct"},{"baseclass":["message"],"fields":[{"name":"body","type":"string"},{"name":"end","type":"string"}],"name":"my_message","type":"struct"},{"constant":false,"input":[{"name":"one_message","type":"my_message"}],"name":"init","output":"void","type":"Action"},{"constant":false,"input":[{"name":"one_message","type":"my_message"}],"name":"add_message","output":"void","type":"Action"},{"constant":true,"input":[],"name":"get_message_size","output":"uint8","type":"Action"},{"constant":true,"input":[{"name":"index","type":"uint8"}],"name":"get_message_body","output":"string","type":"Action"}];
 var contractAddr = 'atp12ts3s0zd7s8hm2vwv8wxe3rpvrwpv6tpsx8shx';
 
@@ -358,7 +358,7 @@ helloworld.methods.get_message_body(0).call()
    platon-cpp ./test.cpp -o ./out/test.wasm
    ```
 
-3. alaya-truffle 执行 truffle deploy 部署合约失败？
+3. alaya-truffle 执行 alaya-truffle deploy 部署合约失败？
 
 确认 truffle-config.js 中连接的链的配置信息及用户的钱包地址是否正确,钱包是否解锁。
 

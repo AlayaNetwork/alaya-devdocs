@@ -63,7 +63,7 @@ In general, invalid opcodes have the following conditions:
 
 When operating a contract in the Alaya network. First, you must confirm the smart contract version supported by the current network, and then select the compiler of the corresponding version pair.
 
-The normal operation is to use the latest Truffle/PlatON-CDT officially provided by Alaya to compile/deploy/execute the contract. At the same time, before switching to the main network, it must be validated on the test network.
+The normal operation is to use the latest Alaya-Truffle/PlatON-CDT officially provided by Alaya to compile/deploy/execute the contract. At the same time, before switching to the main network, it must be validated on the test network.
 
 ### C/C++ Language Limit
 

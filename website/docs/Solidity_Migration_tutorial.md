@@ -74,7 +74,7 @@ contract ERC200513Token {
      */
     function _transfer(address _from, address _to, uint _value) internal returns (bool success){
         // Make sure the destination address is not 0x0, Because address 0x0 represents destruction
-        require(_to != address(0x0));
+        require(_to != address(uint160(0)));
         // Check the sender balance
         require(balanceOf[_from] >= _value);
         // Make sure _value>0
@@ -217,7 +217,7 @@ ls contracts/
 - You will see `ERC200513Token.sol`
 - The currency units in the Alaya smart contract are ATP and VON. To migrate the Ethereum smart contract to Alaya, change the denomination of Ether to Alaya denomination. At the same time pay attention to the ether/ATP market exchange rate (in this contract we assume that the market exchange rate is 1:1, and change uint256 public totalSupply = 10000000000000000000 ether to uint256 public totalSupply = 10000000000000000000 atp;)
 - The compiled version modifies the version supported by Alaya.
-- modify address: `require(_to != address(0x0)` modify to `require(_to != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _to != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"))`
+- modify address: `require(_to != address(0x0)` modify to `require(_to != address(uint160(0)))`
 - In the Alaya smart contract, block.timestamp represents the timestamp of the current block in milliseconds, and Ethereum uses seconds as the unit.
 
 **Step4.** Modify the compiled version number and chain related configuration in `truffle-config.js`

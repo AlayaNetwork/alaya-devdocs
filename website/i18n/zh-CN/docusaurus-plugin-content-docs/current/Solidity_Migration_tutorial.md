@@ -79,7 +79,7 @@ contract ERC200513Token {
      */
     function _transfer(address _from, address _to, uint _value) internal returns (bool success){
         // 确保目标地址不为0x0，因为0x0地址代表销毁
-        require(_to != address(0x0));
+        require(_to != address(uint160(0)));
         // 检查发送者余额
         require(balanceOf[_from] >= _value);
         // 确保转移为正数个
@@ -220,7 +220,7 @@ ls contracts/
 - 将看到 ERC200513Token.sol
 - Alaya智能合约中的货币单位为ATP和VON。要将以太坊智能合约迁移至Alaya，请将以太币面额更改为Alaya面额。同时注意以太/ATP市场汇率（此合约我们假设市场汇率1:1，将uint256 public totalSupply = 10000000000000000000 ether; 修改成uint256 public totalSupply = 10000000000000000000 atp; ）
 - 编译版本修改Alaya支持的版本。
-- 地址修改：把require(_to != address(0x0))修改为require(_to != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _to != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"))
+- 地址修改：把require(_to != address(0x0))修改为require(_to != address(uint160(0)))
 - Alaya智能合约中block.timestamp表示的是当前区块以毫秒为单位的时间戳，以太坊是以秒为单位。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配置
