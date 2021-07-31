@@ -9,7 +9,7 @@ sidebar_label: Offline MTool
 In order to facilitate node transfer, pledge, delegation and governance and other related operations, Alaya provides MTool to assist users:
 
 - MTool can support Ubuntu 18.04 and Windows 10. This document describes the installation and use under Windows and Ubuntu environments respectively. Users can choose according to their own resources.
-- MTool provides two signature methods for pledge transactions: online signature and offline signature. This document describes offline signature operations. For online signature operations, please refer to [Online MTool Tutorial](/alaya-devdocs/en/Online_MTool).
+- MTool provides two signature methods for pledge transactions: online signature and offline signature. This document describes offline signature operations. For online signature operations, please refer to [Online MTool Tutorial](/alaya-devdocs/zh-CN/Online_MTool).
 - The main process of MTool offline signature method is: generate the file to be signed on the online machine, then sign the transaction on the offline machine, and finally send the signed transaction on the online machine.
 
 ## Install MTool
@@ -23,30 +23,30 @@ In addition, this document separately introduces the operation of MTool in Windo
 Command line:
 
 ```
-mtool-client --version
+alaya_mtool --version
 ```
 
-If the execution result shows `Cannot recognize the "mtool-client" item as the name of a cmdlet, function, script file, or executable program. Please check the spelling of the name. If you include the path, make sure that the path is correct, and then try again `, it means that there is no need to perform the following operations if the old version is not installed.
+If the execution result shows `Cannot recognize the "alaya_mtool" item as the name of a cmdlet, function, script file, or executable program. Please check the spelling of the name. If you include the path, make sure that the path is correct, and then try again `, it means that there is no need to perform the following operations if the old version is not installed.
 
 If the execution result shows the version number, timestamp and other information, it means that MTool has been installed. If MTool is an old version, you need to back up important information at this time, and then manually uninstall the old version. Operation steps:
 
 **step1. Backup directory**
 
-Put all the files under `C:\tools\mtool\current\keystore` to D drive or other directories other than `C:\tools`. After installing the new version, you need to copy the backup file back to the `C:\tools\mtool\current\keystore` directory.
+Put all the files under `C:\alaya_mtool\mtool\current\keystore` to D drive or other directories other than `C:\alaya_mtool`. After installing the new version, you need to copy the backup file back to the `C:\alaya_mtool\mtool\current\keystore` directory.
 
 **step2. Uninstall the old version**
 
-Double-click `C:\tools\unins000.exe` to uninstall all old versions of MTool and other business tools.
+Double-click `C:\alaya_mtool\unins000.exe` to uninstall all old versions of MTool and other business tools.
 
 #### start installation
 
 **step1. Download the MTool installation package**
 
-On the online machine, copy the link <https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe> ​​to the browser to download the MTool installation package.
+On the online machine, copy the link <https://download.alaya.network/alaya/mtool/windows/0.16.0/mtool-setup.exe> ​​to the browser to download the MTool installation package.
 
 **step2. Install MTool**
 
-Double-click mtool-setup.exe to install. The default installation directory is C:\tools, it is recommended not to change this installation directory. The pop-up interface displays **Completing the mtool Setup Wizard** message indicating that the installation is successful, just click **Finish**.
+Double-click mtool-setup.exe to install. The default installation directory is C:\alaya_mtool, it is recommended not to change this installation directory. The pop-up interface displays **Completing the mtool Setup Wizard** message indicating that the installation is successful, just click **Finish**.
 
 **step3. Restart the terminal**
 
@@ -59,18 +59,18 @@ Proceed as follows:
 **step1. Download MTool Toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
 ```
 
 **step2. Unzip MTool toolkit**
 
 ```bash
-(if! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
+(if! command -v unzip;then sudo apt install unzip; fi;) && unzip alaya_mtool.zip && cd alaya_mtool
 ```
 
 **step3. Download the script**
 
-> The script is downloaded to the <font color="red">mtool-client</font> directory, otherwise the script cannot find the path of the new version of mtool.
+> The script is downloaded to the <font color="red">alaya_mtool</font> directory, otherwise the script cannot find the path of the new version of mtool.
 
 ```bash
 wget http://download.alaya.network/opensource/scripts/mtool_install.sh
@@ -109,7 +109,7 @@ The environment variables used in the MTool directory under Windows and Ubuntu a
 - Command line
 
 ```shell
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 - Parameter Description
@@ -120,30 +120,27 @@ mtool-client account new staking
 > -name: staking
 > -type: NORMAL
 > -address:
-> mainnet: atp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv
-> testnet: atx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx
+> address: atp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv
 > -public key: 0x9521cd81ba28d5d1c23bb7ddb7042d146375203d35000c0289178027abd4dc09bca30257739df166201e73497485242f41d5f50d46bc3c7e4385f81bde560db0
->
-> Important write this Private Key in a safe place.
+> 
+>Important write this Private Key in a safe place.
 > It is the important way to recover your account if you ever forget your password.
 > 4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07
->
-> Important write this mnemonic phrase in a safe place.
+> 
+>Important write this mnemonic phrase in a safe place.
 > It is the important way to recover your account if you ever forget your password.
 > worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney
 > ```
->
-> The wallet address format is adjusted to Bech32, where:
->
-> ʻatp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`: main network account address, starting with atp;
->
-> ʻatx124xmsmd0uf5cvk7v3s36eytqezqsjfcx67qdhx`: is the testnet account address, starting with atx;
->
-> `4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07` is the wallet private key;
->
-> `worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney` is the mnemonic phrase.
->
-> For security reasons, users need to back up the wallet's private key or mnemonic phrase (either all or one of them), which can be used for recovery when the wallet is lost. It is recommended that users back up the mnemonic phrase or private key to a secure storage medium, such as an offline machine.
+> 
+>The wallet address format is adjusted to Bech32, where:
+> 
+>ʻatp124xmsmd0uf5cvk7v3s36eytqezqsjfcxscu8yv`: main network account address, starting with atp;
+> 
+>`4630b6d86bc74bffd4ca8cfc18bceec562cb40fc5080c258452a04a69bc1ee07` is the wallet private key;
+> 
+>`worry jewel penalty jealous expect embark outer eternal verb rebuild rice kidney` is the mnemonic phrase.
+> 
+>For security reasons, users need to back up the wallet's private key or mnemonic phrase (either all or one of them), which can be used for recovery when the wallet is lost. It is recommended that users back up the mnemonic phrase or private key to a secure storage medium, such as an offline machine.
 
 ### Restore wallet
 
@@ -154,7 +151,7 @@ If the wallet file is lost, you can use the backup private key or mnemonic to re
   Recovery by private key:
 
   ```shell
-  mtool-client account recover -k staking
+  alaya_mtool account recover -k staking
   ```
 
   > Prompt to enter the new wallet password and backup private key, as follows:
@@ -171,7 +168,7 @@ If the wallet file is lost, you can use the backup private key or mnemonic to re
   Recovery by mnemonic:
 
   ```shell
-  mtool-client account recover -m staking
+  alaya_mtool account recover -m staking
   ```
 
   > Prompt to enter the new wallet password and backup mnemonic, as follows:
@@ -194,7 +191,7 @@ If the wallet file is lost, you can use the backup private key or mnemonic to re
 Execute the command to generate an observation wallet:
 
 ```shell
-mtool-client create_observewallet --keystore $MTOOLDIR/keystore/staking.json
+alaya_mtool create_observewallet --keystore $MTOOLDIR/keystore/staking.json
 ```
 
 - Parameter Description
@@ -212,7 +209,7 @@ mtool-client create_observewallet --keystore $MTOOLDIR/keystore/staking.json
 - Command line
 
 ```bash
-mtool-client account list
+alaya_mtool account list
 ```
 
 ### Query balance according to wallet name
@@ -220,7 +217,7 @@ mtool-client account list
 - Command line
 
 ```bash
-mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Variable description
@@ -232,7 +229,7 @@ mtool-client account balance $keystorename --config $MTOOLDIR/validator/validato
 - Command line
 
 ```bash
-mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance -a $address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters
@@ -248,7 +245,7 @@ The main process of MTool offline signature method is: generate the file to be s
 Execute on **online machine**:
 
 ```shell
-mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description:
@@ -273,7 +270,7 @@ Among them, `transaction_detail_20191108114241.csv` is the file to be signed for
 Execute on the offline machine where the cold wallet is kept:
 
 ```shell
-mtool-client offlinesign --filelocation $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
+alaya_mtool offlinesign --filelocation $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
 Note: $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv is the file to be signed generated in the previous step, modified to the actual file to be signed.
@@ -308,7 +305,7 @@ Note: transaction_signature/transaction_signature_20191108114625.csv is the sign
 Send transaction in **online machine**:
 
 ```shell
-mtool-client send_signedtx --filelocation $MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool send_signedtx --filelocation $MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $MTOOLDIR/validator/validator_config.json
 ```
 
 Note: transaction_signature_20191108114625.csv is the transaction signature file generated in the previous step, modified to the actual signature file.
@@ -336,7 +333,7 @@ This chapter mainly describes the relevant commands for generating the csv forma
 - Command line
 
 ```shell
-mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -351,7 +348,7 @@ mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --am
 
 Creating a new restricting plan, node's ATPs will be transferred to a specified precompiled contract. The ATPs will be transferred to the specified account multiple times at specified intervals. Before creating a new restricting, you need to create a restricting plan description file in json format.
 
-- restricting plan description file，retricting_plans.json
+- restricting plan description file，restricting_plans.json
 
 ```json
 {
@@ -373,7 +370,7 @@ Creating a new restricting plan, node's ATPs will be transferred to a specified 
 - command line
 
 ```bash
-mtool-client create_restricting --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --file ./restricting_plans.json
+alaya_mtool create_restricting --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --file ./restricting_plans.json
 ```
 
 - Parameter Description
@@ -393,7 +390,7 @@ Note: Please keep enough ATP in the pledge account to prepare for the subsequent
 - Command line
 
 ```bash
-mtool-client staking --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 - Parameter Description
@@ -425,7 +422,7 @@ mtool-client staking --config $MTOOLDIR/validator/validator_config.json --addres
 - Command line
 
 ```bash
-mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
+alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - Parameter Description
@@ -453,7 +450,7 @@ mtool-client update_validator --config $MTOOLDIR/validator/validator_config.json
 - Command line
 
 ```bash
-mtool-client unstaking --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool unstaking --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -465,7 +462,7 @@ mtool-client unstaking --address $MTOOLDIR/keystore/staking_observed.json --conf
 - Command line
 
 ```bash
-mtool-client increasestaking --amount 5000000 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool increasestaking --amount 5000000 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -479,7 +476,7 @@ mtool-client increasestaking --amount 5000000 --address $MTOOLDIR/keystore/staki
 - Command line
 
 ```bash
-mtool-client submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -491,7 +488,7 @@ mtool-client submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staki
 - Command line
 
 ```bash
-mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -507,7 +504,7 @@ mtool-client submit_versionproposal --newversion 0.15.0 --end_voting_rounds 345 
 - Command line
 
 ```bash
-mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator/validator
+alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator/validator
 ```
 
 - Parameter Description
@@ -523,7 +520,7 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 - Command line
 
 ```bash
-mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -537,7 +534,7 @@ mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b3700
 - Command line
 
 ```bash
-mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -549,7 +546,7 @@ mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - Command line
 
 ```bash
-mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -563,7 +560,7 @@ mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 - Command line
 
 ```bash
-mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -581,7 +578,7 @@ mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $par
 - Command line
 
 ```bash
-mtool-client vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -595,7 +592,7 @@ mtool-client vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 - Command line
 
 ```bash
-mtool-client declare_version --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool declare_version --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -607,7 +604,7 @@ mtool-client declare_version --address $MTOOLDIR/keystore/staking_observed.json 
 - Command line
 
 ```bash
-mtool-client -h
+alaya_mtool -h
 ```
 
 - Parameter Description

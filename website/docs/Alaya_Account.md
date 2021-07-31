@@ -14,7 +14,7 @@ If you are stranger to the blockchain, the concept of Alaya's account (Account) 
 
 Now  you may have been confused about concepts such as the account, public key, private key and address. Don't worry. We will explain these concepts one by one. Let’s look at the following figure first:
 
-<img src="/alaya-devdocs/img/en/account.assets/account.png" alt="Account" style={{zoom: '25%'}} />
+<img src="/alaya-devdocs/img/en/account.assets/account.png" alt="Account" style="zoom: 25%;" />
 
 
 
@@ -46,7 +46,7 @@ You must have noticed that in the Alaya network, all addresses start with atp1 (
 >
 >The following figure is a schematic diagram of the components of the address:
 >
-><img src="/alaya-devdocs/img/en/account.assets/18.png" alt="地址组成部分" style={{zoom: '50%'}} />
+><img src="/alaya-devdocs/img/en/account.assets/18.png" alt="地址组成部分" style="zoom: 50%;" />
 
 How to use the public key to generate an address will be detailed in the following section [Private Key and Public Key].
 
@@ -78,7 +78,7 @@ So what is the relationship between the account and the address in front of the 
 
 Now you must be clear of the relationship between the account, private key (the master key in the figure), public key and address above.
 
-Let's talk about how the public key and private key are generated in detail. The most commonly used asymmetric encryption are: [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)), [Elgamal](https://en.wikipedia.org/wiki/ElGamal_encryption), backpack algorithm, Rabin , DH, [ECC](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography) (elliptic curve encryption algorithm), etc. Like Ethereum, Alaya also uses ECC asymmetric encryption algorithm. Based on the elliptic curve theory, the keys can be faster in creation, smaller in size, and more effective in performance. 
+Let's talk about how the public key and private key are generated in detail. The most commonly used asymmetric encryption are: [RSA](https://baike.baidu.com/item/RSA), [Elgamal](https://baike.baidu.com/item/Elgamal), backpack algorithm, Rabin , DH, [ECC](https://baike.baidu.com/item/elliptic curve encryption) (elliptic curve encryption algorithm), etc. Like Ethereum, Alaya also uses ECC asymmetric encryption algorithm. Based on the elliptic curve theory, the keys can be faster in creation, smaller in size, and more effective in performance. 
 
 
 
@@ -99,7 +99,7 @@ PublicKey :  628f1d4fc711f609c76ea89c7556236fa0df559fa92c074c5c7869eaf8d96adb7b9
 
 To put it bluntly, the private key is actually a large random number with a length of 64-bit hexadecimal number (32 bytes). Then we use the online tool: [Paul Miller — Elliptic curve calculator (paulmillr.com)](https://paulmillr.com/ecc/), as shown in the following figure:
 
-<img src="/alaya-devdocs/img/en/account.assets/19.png" alt="在线工具生成公钥" style={{zoom: '50%'}} />
+<img src="/alaya-devdocs/img/en/account.assets/19.png" alt="在线工具生成公钥" style="zoom: 50%;" />
 
 
 
@@ -134,7 +134,7 @@ atp1d4vw2qxjg5ldyaqceel3s6ykpljav6hc2ey3yc
 >
 > Online tools are used in step 2: [Keccak-256 Online (emn178.github.io)](https://emn178.github.io/online-tools/keccak_256.html)
 >
-> <img src="/alaya-devdocs/img/en/account.assets/20.png" alt="注意事项" style={{zoom: '50%'}} />
+> <img src="/alaya-devdocs/img/en/account.assets/20.png" alt="注意事项" style="zoom:50%;" />
 >
 > In step 3, Alaya's js sdk is utilized, and the code used is:
 >
@@ -172,9 +172,7 @@ Among them, BIP32, BIP39, and BIP44 jointly define the currently widely used HD 
 
 
 
-<img src="/alaya-devdocs/img/en/account.assets/21.png" alt="HD Wallet" style={{zoom: '50%'}} />
-
-
+<img src="/alaya-devdocs/img/en/account.assets/21.png" alt="HD Wallet" style="zoom:50%;" />
 
 > In Alaya transactions, generating a new account for each transaction is safer, because the public key leakage will also cause a certain security risk, as evidenced by many encryption algorithm cracks in the past. But if you publish the hash (address) of the public key only, the possibility of being cracked is reduced.
 
@@ -267,13 +265,13 @@ This section will explain how to use multiple tools to generate accounts, from g
 
 ATON is a mobile wallet that supports PlatON and Alaya networks. Compared with other third-party wallets, in addition to the functions of ordinary wallets, it also has the function of calling Alaya's built-in contracts, which can be used for delegation and redemption. You can download [ATON Wallet](https://platon.network/wallet) from the following address.
 
-<img src="/alaya-devdocs/img/en/account.assets/1.png" alt="初始界面" style={{zoom: '80%'}} />
+<img src="/alaya-devdocs/img/en/account.assets/1.png" alt="初始界面" style="zoom:80%;" />
 
 
 
 For the sake of safety in this tutorial, we select "PlatON Development Network" for account-related operations. Click "PlatON Development Network" to switch the network, as shown in the following figure:
 
-<img src="/alaya-devdocs/img/en/account.assets/2.png" alt="切换网络" style={{zoom: '80%'}} />
+<img src="/alaya-devdocs/img/en/account.assets/2.png" alt="切换网络" style="zoom:80%;" />
 
 
 
@@ -283,21 +281,21 @@ For the sake of safety in this tutorial, we select "PlatON Development Network" 
 
 Click Create Wallet to enter the following interface:
 
-<img src="/alaya-devdocs/img/en/account.assets/3.jpg" alt="创建钱包" style={{zoom: '80%'}} />
+<img src="/alaya-devdocs/img/en/account.assets/3.jpg" alt="创建钱包" style="zoom: 80%;" />
 
 Choose ordinary or HD for the wallet type. Under normal circumstances, you can choose ordinary. If you choose HD, you will create 30 wallets with the same password at one time, which is unnecessary for ordinary users. **Wallet name** can be anything you want. In this example, it's "G's Wallet". **Password** is recommended to be complicated so it won't be easily cracked. Then click "Create Wallet". Now the wallet is successfully created. Go to the "Wallet Created Successfully" page. At this time, you can back up your wallet (or skip it directly, and back up later).
 
-<img src="/alaya-devdocs/img/en/account.assets/4.jpg" alt="钱包创建成功" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/4.jpg" alt="钱包创建成功" style="zoom: 80%;" />
 
 Click to start backup, and 12 English words will be displayed. Please write down these 12 words on paper and keep them properly. You need to note that **these 12 words play the basically same role as the private key. If they are lost or stolen by others, you will lose the ownership of the current wallet. Be sure to keep the mnemonic phrases properly.** As shown below:
 
-<img src="/alaya-devdocs/img/en/account.assets/5.jpg" alt="备份助记词"style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/5.jpg" alt="备份助记词" style="zoom:80%;" />
 
-
+然后进行助记词的验证：
 
 Then verify the mnemonic phrases:
 
-<img src="/alaya-devdocs/img/en/account.assets/6.jpg" alt="验证助记词" style={{zoom: '50%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/6.jpg" alt="验证助记词" style="zoom:25%;" />
 
 Finally complete the backup.
 
@@ -315,7 +313,7 @@ Alayakey is a command-line tool, which is usually installed with the node or ins
 - **Installing alayakey**: Enter the following command in the command line:
 
 ```shell
-sudo wget https://download.alaya.network/alaya/platon/0.16.0/alayakey -P /usr/bin
+sudo wget https://download.alaya.network/alaya/platon/0.15.0/alayakey -P /usr/bin
 sudo chmod +x /usr/bin/alayakey
 ```
 
@@ -355,12 +353,12 @@ The concepts of public and private keys have been mentioned before. Note that yo
 
 ### MTool
 
-The installation of MTool on Windows and Ubuntu is very simple. You can refer to: [Online MTool Tutorial · Alaya](/alaya-devdocs/en/Online_MTool).
+The installation of MTool on Windows and Ubuntu is very simple. You can refer to: [Online MTool Tutorial · Alaya](https://devdocs.alaya.network/alaya-devdocs/en/OnLine_MTool_Manual/#Start installation).
 
-After installation, you can use `mtool-client --version` to check the version of MTool. Among the versatile functions  of MTool, only the operations related to **account generation** are introduced in this sector.
+After installation, you can use `alaya_mtool --version` to check the version of MTool. Among the versatile functions  of MTool, only the operations related to **account generation** are introduced in this sector.
 
 ```shell
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 After you enter the password twice as prompted, the output is similar to the following:
@@ -369,8 +367,7 @@ After you enter the password twice as prompted, the output is similar to the fol
 -name: staking
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 
 
@@ -389,7 +386,7 @@ The above code generates not only the above information but also a wallet file, 
 In addition to generating wallets, MTool can also use private keys to **restore wallets**, as follows:
 
 ```shell
-mtool-client account recover -k staking
+alaya_mtool account recover -k staking
 ```
 
 After being prompted to enter the password twice, you will be asked to enter the private key, and the output will be similar to the following:
@@ -398,14 +395,13 @@ After being prompted to enter the password twice, you will be asked to enter the
 -name: stakin
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 ```
 
 At the same time, a wallet file will be generated in the `MTool installation directory\mtool\current\keystore` directory.
 
-MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](/alaya-devdocs/en/Online_MTool).
+MTool is also versatile, but it is not detailed in this tutorial. For more details, please refer to: [Online MTool Tutorial · Alaya](https://devdocs.alaya.network/alaya-devdocs /en/OnLine_MTool_Manual/).
 
 ### Samurai Wallet
 
@@ -417,39 +413,39 @@ If you have used MetaMask wallet before, you will be familiar with Samurai walle
 
 Then open the developer mode -> load the unzipped extension -> select the folder just unzipped, as shown in the figure below:
 
-<img src="/alaya-devdocs/img/en/account.assets/8.png" alt="Samurai安装" style={{zoom: '50%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/8.png" alt="Samurai安装" style="zoom:50%;" />
 
 After the installation is complete, Samurai will run automatically. Click Start:
 
-<img src="/alaya-devdocs/img/en/account.assets/9.png" alt="欢迎来到Samurai" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/9.png" alt="欢迎来到Samurai" style="zoom:80%;" />
 
 Then you can either import an existing wallet or create a new wallet. Here we create a new wallet:
 
-<img src="/alaya-devdocs/img/en/account.assets/10.png" alt="导入钱包或新建钱包" style={{zoom: '100%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/10.png" alt="导入钱包或新建钱包" style="zoom:100%;" />
 
 The agreement interface appears. Click I agree:
 
-<img src="/alaya-devdocs/img/en/account.assets/11.png" alt="协议" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/11.png" alt="协议" style="zoom:80%;" />
 
 Enter wallet password:
 
-<img src="/alaya-devdocs/img/en/account.assets/12.png" alt="输入密码" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/12.png" alt="输入密码" style="zoom:80%;" />
 
 After you click "Create", you will be prompted whether to back up the mnemonic phrases. If you click "Remind me later", you can use the wallet directly. Here, we back up the mnemonic phrases: first display the mnemonic phrases, and then keep the mnemonic phrases properly, and then click Next:
 
-<img src="/alaya-devdocs/img/en/account.assets/14.png" alt="助记词" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/14.png" alt="助记词" style="zoom:80%;" />
 
 Then, like in other wallets, you need to restore the mnemonic phrases completely by choosing them one by one:
 
-<img src="/alaya-devdocs/img/en/account.assets/15.png" alt="确认助记词" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/15.png" alt="确认助记词" style="zoom:80%;" />
 
 Now you have created a wallet:
 
-<img src="/alaya-devdocs/img/en/account.assets/16.png" alt="恭喜" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/16.png" alt="恭喜" style="zoom:80%;" />
 
 Since the latest version of Samurai is common to PlatON and Alaya, we need to switch the network to the Alaya network:
 
-<img src="/alaya-devdocs/img/en/account.assets/17.png" alt="选择网络" style={{zoom: '80%'}}  />
+<img src="/alaya-devdocs/img/en/account.assets/17.png" alt="选择网络" style="zoom:80%;" />
 
 In this way, we have created an account with Samurai Wallet.
 
