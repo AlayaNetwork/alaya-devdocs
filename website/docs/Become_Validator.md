@@ -67,13 +67,13 @@ Proceed as follows:
 **Step1. Download MTool Toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
 ```
 
 **Step2. Unzip the MTool toolkit**
 
 ```bash
-(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
+(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip alaya_mtool.zip && cd alaya_mtool
 ```
 
 **Step3. Download script**
@@ -107,7 +107,7 @@ In Alaya, two wallets are created for staking as a validator to generate blocks.
 - Staking wallet: The staking wallet is used to stake tokens. Only after the staking is successful can a node becomes an alternative validator candidate. Run the following command to create a staking wallet:
 
 ```bash
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 Enter the password once and enter it again for confirmation to create a wallet file. After the wallet file is created, a staking wallet file `staking.json` will be generated in the directory `$ALAYA_MTOOLDIR/keystore`.
@@ -115,7 +115,7 @@ Enter the password once and enter it again for confirmation to create a wallet f
 - Reward wallet: It is used to collect block rewards and staking rewards. Staking rewards are uniformly distributed to validators, which are distributed by the validators themselves. Run the following command to create a reward wallet:
 
 ```bash
-mtool-client account new reward
+alaya_mtool account new reward
 ```
 
 Enter the password once and enter it again for confirmation to create a wallet file. After the wallet file is created, a staking wallet file `staking.json` will be generated in the directory `$ALAYA_MTOOLDIR/keystore`.
@@ -218,7 +218,7 @@ Please do not stake all the ATP of the staking account. Keep at least 1 ATP for 
 Excuting command
 
 ```bash
-mtool-client staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 8500 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 8500 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 Enter the password of the staking wallet and press Enter. If the following information is displayed, the staking is successful:

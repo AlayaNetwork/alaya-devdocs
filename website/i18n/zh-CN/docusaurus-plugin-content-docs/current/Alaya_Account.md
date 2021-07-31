@@ -311,7 +311,7 @@ PublicKey :  628f1d4fc711f609c76ea89c7556236fa0df559fa92c074c5c7869eaf8d96adb7b9
 
 MTool在Windows平台和Ubuntu平台上的安装都非常简单，可以参照：[在线MTool教程 · Alaya](/alaya-devdocs/zh-CN/Online_MTool)。
 
-安装之后就可以使用`mtool-client --version`来查看MTool的版本。MTool功能非常强大，这里只介绍**账户生成**的相关操作。
+安装之后就可以使用`alaya_mtool --version`来查看MTool的版本。MTool功能非常强大，这里只介绍**账户生成**的相关操作。
 
 ```shell
 mtool-client account new staking
@@ -323,8 +323,7 @@ mtool-client account new staking
 -name: staking
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 
 
@@ -343,7 +342,7 @@ hamster all enroll craft achieve analyst success carry choice artefact exit toni
 MTool除了可以生成钱包外，也可以用私钥来**恢复钱包**，操作如下：
 
 ```shell
-mtool-client account recover -k staking
+alaya_mtool account recover -k staking
 ```
 
 在提示输入两遍密码后会让你输入私钥，会产生类似于以下的输出：
@@ -352,8 +351,7 @@ mtool-client account recover -k staking
 -name: stakin
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 ```
 
