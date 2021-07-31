@@ -205,8 +205,8 @@ More parameter meanings can be viewed through the `alaya --help` command.
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | alaya binary file     | https://download.alaya.network/alaya/platon/0.16.0/alaya    |                                                              |
 | alayakey               | https://download.alaya.network/alaya/platon/0.16.0/alayakey  |                                                              |
-| mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.15.0/mtool-setup.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
-| mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
+| mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
 | explorer address       | https://scan.alaya.network/                                  |                                                              |
 
