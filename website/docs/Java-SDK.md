@@ -25,9 +25,9 @@ Depending on the build tool, use the following methods to add related dependenci
 
 ```xml
 <dependency>
-    <groupId>com.platon.sdk</groupId>
+    <groupId>com.alaya.sdk</groupId>
     <artifactId>core</artifactId>
-    <version>0.15.1.10</version>
+    <version>0.16.0.0</version>
 </dependency>
 ```
 
@@ -44,7 +44,7 @@ repositories {
 > gradle way of reference:
 
 ```
-compile "com.platon.sdk:core:0.15.1.10"
+compile "com.alaya.sdk:core:0.16.0.0"
 ```
 
 ## Basic API Usage
