@@ -25,9 +25,9 @@ sidebar_label: Java SDK
 
 ```xml
 <dependency>
-    <groupId>com.platon.sdk</groupId>
+    <groupId>com.alaya.sdk</groupId>
     <artifactId>core</artifactId>
-    <version>0.15.1.10</version>
+    <version>0.16.0.0</version>
 </dependency>
 ```
 
@@ -44,7 +44,7 @@ repositories {
 > gradle 引用方式:
 
 ```
-compile "com.platon.sdk:core:0.15.1.10"
+compile "com.alaya.sdk:core:0.16.0.0"
 ```
 
 ## 基础 api 使用
