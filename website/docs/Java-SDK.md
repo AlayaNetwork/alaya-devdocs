@@ -1416,6 +1416,31 @@ Request<?, DebugEconomicConfig> req = currentValidWeb3j.getEconomicConfig();
 String debugEconomicConfig = req.send().getEconomicConfigStr();
 ```
 
+### getChainId
+
+> Get chain ID
+
+- **parameters**
+
+  no
+
+- **return value**
+
+```java
+Request<?, PlatonChainId>
+```
+
+The String in the PlatonChainId property is the corresponding stored data
+
+- **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, PlatonChainId> req = platonWeb3j.getChainId();
+BigInteger chainId = req.send().getChainId();
+```
+
+
 ## System Contract Call
 
 System contracts mainly include economic model and governance related contracts：
@@ -1454,7 +1479,7 @@ StakingContract contract = StakingContract.load(web3j, credentials, chainId);
 
   - String: nodeId node id, hexadecimal format
   - BigInteger: amount of von pledged, the pledged amount must be greater than or equal to 1,000,000 LAT
-  - StakingAmountType: stakingAmountType, enumeration, FREE_AMOUNT_TYPE means use the free amount of the account, RESTRICTING_AMOUNT_TYPE means use the amount of the lock to make a pledge
+  - StakingAmountType: stakingAmountType, enumeration, FREE_AMOUNT_TYPE means use the free amount of the account, RESTRICTING_AMOUNT_TYPE means use the amount of the lock to make a pledge, AUTO_AMOUNT_TYPE means give priority to the use of the locked balance, and use the free amount for the remaining part if the locked balance is insufficient
   - String: benefitAddress revenue account
   - String: nodeName The name of the node being pledged
   - String: externalId External Id(the length of the Id described by the third-party pull node), currently the keybase account public key
