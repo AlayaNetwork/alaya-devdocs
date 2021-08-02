@@ -357,10 +357,10 @@ The concepts of public and private keys have been mentioned before. Note that yo
 
 The installation of MTool on Windows and Ubuntu is very simple. You can refer to: [Online MTool Tutorial · Alaya](/alaya-devdocs/en/Online_MTool).
 
-After installation, you can use `mtool-client --version` to check the version of MTool. Among the versatile functions  of MTool, only the operations related to **account generation** are introduced in this sector.
+After installation, you can use `alaya_mtool --version` to check the version of MTool. Among the versatile functions  of MTool, only the operations related to **account generation** are introduced in this sector.
 
 ```shell
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 After you enter the password twice as prompted, the output is similar to the following:
@@ -369,8 +369,7 @@ After you enter the password twice as prompted, the output is similar to the fol
 -name: staking
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 
 
@@ -389,7 +388,7 @@ The above code generates not only the above information but also a wallet file, 
 In addition to generating wallets, MTool can also use private keys to **restore wallets**, as follows:
 
 ```shell
-mtool-client account recover -k staking
+alaya_mtool account recover -k staking
 ```
 
 After being prompted to enter the password twice, you will be asked to enter the private key, and the output will be similar to the following:
@@ -398,8 +397,7 @@ After being prompted to enter the password twice, you will be asked to enter the
 -name: stakin
 -type: NORMAL
 -address:
- mainnet: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
- testnet: atx172w2kpvpj6fjszudgg2py87tajzayqustvdck5
+ address: atp172w2kpvpj6fjszudgg2py87tajzayqusp23j97
 -public key: 0x489085ef457df5c561343442c6a6594e060fa1de88f1e9969f3354cbddf4875662706d4e54b50fbd20636ec04c99ab440d8e18403780dd7d30f472634c36799a
 ```
 

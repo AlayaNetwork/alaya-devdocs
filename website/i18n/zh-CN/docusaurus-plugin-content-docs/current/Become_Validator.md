@@ -35,10 +35,10 @@ chmod +x nginx_conf.sh && ./nginx_conf.sh
 
 ```bash
 # 下载MTool工具包
-wget http://download.alaya.network/alaya/mtool/linux/0.15.0/mtool-client.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
 
 # 解压MTool工具包
-(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip mtool-client.zip && cd mtool-client
+(if ! command -v unzip;then sudo apt install unzip; fi;) && unzip alaya_mtool.zip && cd alaya_mtool
 
 # 下载脚本，脚本下载到mtool-client目录下，否则脚本无法找到新版本 mtool 的路径。
 wget https://download.alaya.network/alaya/scripts/mtool_install.sh
@@ -60,7 +60,7 @@ Alaya 中，参与验证节点进行出块要创建两个钱包。如果已经�
 - 质押钱包：质押钱包用于质押 token，质押成功后才能成为备选节点候选人。 运行以下命令创建质押钱包
 
 ```bash
-mtool-client account new staking
+alaya_mtool account new staking
 ```
 
 输入一次密码，再输入一次确认密码，即可创建钱包文件，创建成功后会在目录`$ALAYA_MTOOLDIR/keystore`下生成质押钱包文件`staking.json`。
@@ -68,7 +68,7 @@ mtool-client account new staking
 - 收益钱包：用于收取区块奖励和 Staking 奖励，Staking 奖励统一发放给验证节点，由验证节点自行分配。 运行以下命令创建收益钱包
 
 ```bash
-mtool-client account new reward
+alaya_mtool account new reward
 ```
 
 输入一次密码，再输入一次确认密码，即可创建钱包文件，创建成功后会在目录`$ALAYA_MTOOLDIR/keystore`下生成质押钱包文件`reward.json`。
@@ -163,7 +163,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 执行命令
 
 ```bash
-mtool-client staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 8500 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 8500 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
