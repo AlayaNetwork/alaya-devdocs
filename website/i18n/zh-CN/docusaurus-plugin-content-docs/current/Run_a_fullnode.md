@@ -248,5 +248,5 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 | mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
-| 开放RPC URL    | http://47.241.91.2:6789                                                                   |                                                                 |
+| 开放RPC URL    | http://47.241.91.2:6789 以及 ws://47.241.91.2:6790                                         |                                                                 |
 | scan浏览器地址 | https://devnetscan.alaya.network                                                          |                                                                 |
