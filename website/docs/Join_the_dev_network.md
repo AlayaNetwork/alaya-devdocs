@@ -14,7 +14,7 @@ This article will introduce how to debug local applications by connecting to the
 Alaya Development Network has opened the following RPC ports to developers.
 
 ```
-RPC Address：http://47.241.91.2:6789
+RPC Address：http://47.241.91.2:6789 and ws://47.241.91.2:6790
 ```
 
 #### Access to the development network through local programs
