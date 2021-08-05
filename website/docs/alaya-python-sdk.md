@@ -24,13 +24,13 @@ You can either use pip to install or download the source code.
 
 - Directly install with pip
 
-  ```
+  ```python
    pip install client-sdk-python
   ```
 
 - Download the source code
 
-  ```
+  ```python
   git clone -b 0.15.1-develop https://github.com/AlayaNetwork/client-sdk-python.git
   ```
 
@@ -434,7 +434,7 @@ It returns a transaction matching the given transaction hash.
 
 Method:
 
-```
+```python
   alaya.getTransaction(transactionHash)
 ```
 
@@ -455,7 +455,7 @@ It returns the HexBytes value of the transaction object with the specified hash 
 
 Method:
 
-```
+```python
   alaya.getRawTransaction(transactionHash )
 ```
 
@@ -476,7 +476,7 @@ It returns a transaction based on a block hash or number and the transactions in
 
 Method:
 
-```
+```python
   getTransactionFromBlock(hashStringOrNumber, indexNumber )
 ```
 
@@ -572,7 +572,7 @@ It returns `null` if the transaction is pending.
 
 Method:
 
-  ```
+  ```python
   alaya.getTransactionReceipt(hash)：
   ```
 
@@ -592,7 +592,7 @@ It returns the numbers of transactions sent from this address.
 
 Method:
 
-  ```
+  ```python
   alaya.getTransactionCount(address [, defaultBlock] )
   ```
 
@@ -611,7 +611,7 @@ A Promise object whose resolved value is the number of transactions issued by th
 
 It submits a signed serialized transaction to the alaya chain
 
-  ```
+  ```python
 alaya.sendRawTransaction(signTransaction，private_key)
   ```
 
@@ -660,7 +660,7 @@ It uses the selected gas price strategy to calculate a gas price.
 
 Method:
 
-  ```
+  ```python
   alaya.generateGasPrice(gas_price_strategy)
   ```
 
@@ -676,7 +676,7 @@ It sets the selected gas price strategy.
 
 Method:
 
-  ```
+  ```python
   alaya.setGasPriceStrategy(gas_price_strategy)
   ```
 
@@ -715,7 +715,7 @@ It signs data using a specific account. This account needs to be unlocked first.
 
 Method:
 
-  ```
+  ```python
   alaya.sign(dataToSign, address )
   ```
 
@@ -736,7 +736,7 @@ It executes a message call or transaction and returns the amount of the gas used
 
 Method:
 
-  ```
+  ```python
   alaya.estimateGas(callObject)
   ```
 
@@ -758,7 +758,7 @@ It generates a new filter. The type of the filter generated depends on the param
 
 Method:
 
-  ```
+  ```python
   alaya.filter(params)
   ```
 
@@ -783,7 +783,7 @@ It polls the specified filter and returns the newly generated log array since th
 
 Method:
 
-  ```
+  ```python
   alaya.getFilterChanges(filter_id)
   ```
 
@@ -807,7 +807,7 @@ It polls the specified filter and returns the corresponding log array.
 
 Method:
 
-  ```
+  ```python
   alaya.getFilterLogs(filter_id)
   ```
 
@@ -823,7 +823,7 @@ It uninstalls the specified filter and returns the bool value of success or fail
 
 Method:
 
-  ```
+  ```python
   alaya.getFilterLogs(filter_id)
   ```
 
@@ -846,8 +846,8 @@ It returns all logs according to the specified options
 
 Method:
 
-  ```
- alaya.getLogs(options )
+  ```python
+ alaya.getLogs(options)
   ```
 
 Parameters:
@@ -902,7 +902,7 @@ It calls a contract and executes the method directly in the contract without sen
 
 Method:
 
-  ```
+  ```python
   myContract.functions.myMethod([param1[, param2[, ...]]]).call()
   ```
 
@@ -938,7 +938,7 @@ It subscribes to the specified contract event.
 
 Method:
 
-  ```
+  ```python
   myContract.events.MyEvent([options])
   ```
 
@@ -1000,7 +1000,7 @@ Example:
 
  #### Get hrp
 
-```
+```python
 w3 = Web3(HTTPProvider("http://47.241.91.2:6789"),chain_id = 201030)
 alaya = PlatON(w3)
 # client-sdk-python 1.0.0.2 Version not adapted.
@@ -1134,8 +1134,6 @@ Sending a transaction via `alaya.sendRawTransaction`.
 
 Getting a transaction receipt via `alaya.waitForTransactionReceipt`.
 
-
-
   ```python
   send_privatekey = "b7a7372e78160f71a1a75e03c4aa72705806a05cf14ef39c87fdee93d108588c"
   def SendTxn(txn):
@@ -1144,7 +1142,6 @@ Getting a transaction receipt via `alaya.waitForTransactionReceipt`.
       txn_receipt = alaya.waitForTransactionReceipt(res)
       print(res)
       return txn_receipt
-    
   ```
 
 Create a contract instance contract_instance. Since it is an EVM contract, the function contract is used. If it is a WASM contract, the function wasmcontract is used.
@@ -1188,15 +1185,23 @@ Parameters:
 
   Below is the output:
 
-  ```python
-0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
-  AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac9910509ed3ff2ca97cebdba1e88db0b909ffd646a86d69597'), 'blockNumber': 305801, 'contractAddress': None, 'cumulativeGasUsed': 42382, 'from': 'atx1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': 42382, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': 0})
   
+
+  ```python
+  0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
+  AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac9910509ed3ff2ca97cebdba1e88db0b909ffd646a86d69597'), 'blockNumber': 305801, 'contractAddress': None, 'cumulativeGasUsed': 42382, 'from': 'atx1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': 42382, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': 0})
   ```
+  
+  
+  
 - The first line of data is the transaction result of `platon.sendRawTransaction` in the function `SendTxn`.
+
 - The second line of data is the transaction result of `ifControl.
   `
+  
 -  The third line of data is the transaction result of `getIfControlResult`.
+
+
 
 ##### Event Call for EVM Contract
 
@@ -1251,7 +1256,7 @@ Among the values corresponding to'args':
 
 Take wasmcontract.cpp as an example. After installing PlatON-CDT on this machine, enter the code in PlatON-CDT/build/bin.
 
-  ```
+  ```python
   platon-cpp wasmcontract.cpp
   ```
 
@@ -1274,7 +1279,7 @@ After obtaining the bin and abi of the WASM contract, deploy on the chain throug
 
 In the code below, bytecode is the bin data of the contract, and cabi is the abi data of the contract.
 
-  ```
+  ```python
   from client_sdk_python import Web3, HTTPProvider
   from client_sdk_python.eth import PlatON
 
@@ -1318,7 +1323,7 @@ Among them, `tx_receipt` is the transaction receipt of the deployed contract.
 
 After the deployment is successful, the output is as follows:
 
-```
+```python
   #Output
 AttributeDict({'blockHash': HexBytes('0x7a193be2cf86aedcf844c0478c6f64d226affb55779bad1b2056c7e70e8158d6'), 'blockNumber': 2012981, 'contractAddress': 'atp15sh4rpuqr4fvzs4cyj9uea54r5tax7kljqqszk', 'cumulativeGasUsed': 1233168, 'from': 'atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl', 'gasUsed': 1233168, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': None, 'transactionHash': HexBytes('0x717a82ea0ef116e271fb02dbb7d456fe9dd41a2dbd07cac81d079e375b5dade1'), 'transactionIndex': 0})
   
@@ -1401,8 +1406,7 @@ The output after successful operation is as follows:
 Among the values corresponding to'args':
 
 'topic1' is the topic value, and 'arg1','arg2', and'arg3' are the three parameter values defined in the event.
-
-​              
+           
 
 
 
@@ -1412,7 +1416,7 @@ Among the values corresponding to'args':
 
 #### staking
 
-```
+```python
 from client_sdk_python import Web3, HTTPProvider
 from client_sdk_python.ppos import Ppos
 w3 = Web3(HTTPProvider("http://47.241.91.2:6789"),chain_id = 201030)
@@ -1425,7 +1429,7 @@ ppos = Ppos(w3)
 
 Method:
 
-```
+```python
 ppos.createStaking(benifit_address, node_id, external_id, node_name, website, details, amount,program_version,program_version_sign, bls_pubkey, bls_proof, pri_key, reward_per, type=2, transaction_cfg=None)
 ```
 
@@ -1461,8 +1465,8 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-   ~~~
-   
+  
+   ```python
    type: 
    	dict
    example:
@@ -1471,15 +1475,14 @@ Parameters:
             "gasPrice":2000000000000,
             "nonce":1,
         }
-   
-   ~~~
+   ```
 
 
 ##### Modify Staking Information
 
 Method:
 
-```
+```python
 ppos.editCandidate(benifit_address, node_id, external_id, node_name, website, details, pri_key, reward_per, transaction_cfg=None)
 ```
 
@@ -1503,7 +1506,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  ~~~
+  ~~~python
   
   type: 
   	dict
@@ -1521,7 +1524,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.increaseStaking(node_id, amount, pri_key, type=2, transaction_cfg=None)
 ```
 
@@ -1537,7 +1540,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-     ~~~
+     ~~~python
   type: 
   	dict
   example:
@@ -1556,7 +1559,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.withdrewStaking(node_id, pri_key, transaction_cfg=None)
 ```
 
@@ -1568,7 +1571,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-     ~~~
+     ~~~python
      type: 
      	dict
      example:
@@ -1587,7 +1590,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.delegate(type, node_id, amount, pri_key, transaction_cfg=None)
 ```
 
@@ -1603,7 +1606,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-    ~~~
+    ~~~python
     type: 
     	dict
     example:
@@ -1636,7 +1639,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  ~~~
+  ~~~python
   type: 
   	dict
   example:
@@ -1649,13 +1652,11 @@ Parameters:
 
   
 
-
-
 ##### Withdraw Delegation Reward
 
 Method:
 
-```
+```python
 ppos.withdrawDelegateReward(pri_key, transaction_cfg=None)
 ```
 
@@ -1665,7 +1666,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  ~~~
+  ~~~python
   type: 
   	dict
   example:
@@ -1684,7 +1685,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getVerifierList(from_address=None)
 ```
 
@@ -1698,7 +1699,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getValidatorList(from_address=None)
 ```
 
@@ -1712,7 +1713,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getCandidateList(from_address=None)
 ```
 
@@ -1726,7 +1727,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getRelatedListByDelAddr(del_addr, from_address=None)
 ```
 
@@ -1741,7 +1742,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getDelegateInfo(staking_blocknum, del_address, node_id, from_address=None)
 ```
 
@@ -1758,7 +1759,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getCandidateInfo(node_id, from_address=None)
 ```
 
@@ -1773,7 +1774,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getPackageReward(from_address=None)
 ```
 
@@ -1787,7 +1788,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getStakingReward(from_address=None)
 ```
 
@@ -1801,7 +1802,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getAvgPackTime(from_address=None)
 ```
 
@@ -1815,7 +1816,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getDelegateReward(address, node_ids=[])
 ```
 
@@ -1830,7 +1831,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.reportDuplicateSign(type, data, pri_key, transaction_cfg=None)
 ```
 
@@ -1844,8 +1845,8 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-- ~~~
-type: 
+  ```python
+  type: 
     	dict
   example:
       cfg = {
@@ -1853,17 +1854,15 @@ type:
            "gasPrice":2000000000000,
            "nonce":1,
        }
-  ~~~
-  
-  
+  ```
 
-
+  
 
 ##### Query Whether a Node Has Been Reported to Have Double Signing
 
 Method:
 
-```
+```python
 ppos.checkDuplicateSign(type, node_id, block_number, from_address=None)
 ```
 
@@ -1884,7 +1883,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.createRestrictingPlan(account, plan, pri_key, transaction_cfg=None)
 ```
 
@@ -1894,7 +1893,7 @@ Parameters:
 
 - `plan`: An is a list of RestrictingPlan (array), and the definition of RestrictingPlan is as follows:
 
-  ~~~
+  ~~~python
   type RestrictingPlan struct {
   Epoch uint64
   Amount *big.Int
@@ -1910,7 +1909,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  ~~~
+  ~~~python
   type: 
   	dict
   example:
@@ -1929,7 +1928,7 @@ Parameters:
 
 Method:
 
-```
+```python
 ppos.getRestrictingInfo(account, from_address=None)
 ```
 
@@ -1942,7 +1941,7 @@ Parameters:
 
 #### Governance
 
-```
+```python
 from client_sdk_python import Web3, HTTPProvider
 from client_sdk_python.pip import Pip
 w3 = Web3(HTTPProvider("http://47.241.91.2:6789"),chain_id = 201030)
@@ -1955,7 +1954,7 @@ pip = Pip(w3)
 
 Method:
 
-```
+```python
 pip.submitText(verifier, pip_id, pri_key, transaction_cfg=None)
 ```
 
@@ -1966,18 +1965,16 @@ Parameters:
 - `pri_key`: Private key of the transaction.
 - `transaction_cfg`: Basic transaction configuration.
 
-
-
-~~~
-type: 
-	dict
-example:
-    cfg = {
-         "gas":100000000,
-         "gasPrice":2000000000000,
-         "nonce":1,
-     }
-~~~
+  ```python
+  type: 
+  	dict
+  example:
+      cfg = {
+           "gas":100000000,
+           "gasPrice":2000000000000,
+           "nonce":1,
+       }
+  ```
 
 
 
@@ -1987,7 +1984,7 @@ example:
 
 Method:
 
-```
+```python
 pip.submitVersion(verifier, pip_id, new_version, end_voting_rounds, pri_key, transaction_cfg=None)
 ```
 
@@ -2007,7 +2004,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-    ~~~
+    ```python
     type: 
     	dict
     example:
@@ -2016,7 +2013,7 @@ Parameters:
              "gasPrice":2000000000000,
              "nonce":1,
          }
-    ~~~
+    ```
 
     
 
@@ -2024,7 +2021,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.submitParam(verifier, pip_id, module, name, new_value, pri_key, transaction_cfg=None)
 ```
 
@@ -2044,7 +2041,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-    ~~~
+    ```python
     type: 
     	dict
     example:
@@ -2053,7 +2050,7 @@ Parameters:
              "gasPrice":2000000000000,
              "nonce":1,
          }
-    ~~~
+    ```
 
     
 
@@ -2061,7 +2058,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.submitCancel(verifier, pip_id, end_voting_rounds, tobe_canceled_proposal_id, pri_key, transaction_cfg=None)
 ```
 
@@ -2079,7 +2076,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  ~~~
+  ```python
   type: 
   	dict
   example:
@@ -2088,7 +2085,7 @@ Parameters:
            "gasPrice":2000000000000,
            "nonce":1,
        }
-  ~~~
+  ```
 
   
 
@@ -2098,7 +2095,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.vote(verifier, proposal_id, option, program_version, version_sign, pri_key, transaction_cfg=None)
 ```
 
@@ -2118,7 +2115,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-- ~~~
+    ```python
     type: 
     	dict
     example:
@@ -2127,11 +2124,9 @@ Parameters:
              "gasPrice":2000000000000,
              "nonce":1,
          }
-    ~~~
+    ```
 
     
-
-
 
 ##### Version Statement
 
@@ -2153,7 +2148,7 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-     ~~~
+     ```python
      type: 
      	dict
      example:
@@ -2162,13 +2157,13 @@ Parameters:
               "gasPrice":2000000000000,
               "nonce":1,
           }
-     ~~~
+     ```
 
      
 
 Method:
 
-```
+```python
 pip.getProposal(proposal_id, from_address=None)
 ```
 
@@ -2183,7 +2178,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.getTallyResult(proposal_id, from_address=None)
 ```
 
@@ -2198,7 +2193,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.getAccuVerifiersCount(proposal_id, block_hash, from_address=None)
 ```
 
@@ -2214,7 +2209,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.listProposal(from_address=None)
 ```
 
@@ -2228,7 +2223,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.getActiveVersion(from_address=None)
 ```
 
@@ -2242,7 +2237,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.getGovernParamValue(module, name, from_address=None)
 ```
 
@@ -2258,7 +2253,7 @@ Parameters:
 
 Method:
 
-```
+```python
 pip.listGovernParam(self, module=None, from_address=None)
 ```
 
