@@ -62,6 +62,8 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
   Code is shown as below:
 
   ```python
+  
+  ```
 # websockets Versions>= 8.0
   w3 = Web3(WebsocketProvider("ws://47.241.91.2:6790"),chain_id =201030)
   alaya = PlatON(w3)
@@ -92,25 +94,25 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
     Method:
 
     ```python
->>> Web3.toBytes(0)
+    >>> Web3.toBytes(0)
     b'\x00'
->>> Web3.toBytes(0x000F)
+    >>> Web3.toBytes(0x000F)
     b'\x0f'
     ```
-    
+
   - **Web3.toHex()**
 
     It converts the input parameter to a hexadecimal parameter.
 
     Method:
 
-    ```
->>> Web3.toHex(b'\x00\x0F')
+    ```python
+    >>> Web3.toHex(b'\x00\x0F')
     '0x000f'
->>> Web3.toHex(False)
+    >>> Web3.toHex(False)
     '0x0'
     ```
-    
+
   - **Web3.toInt()**
 
     It converts the input parameter to an integer.
@@ -118,12 +120,14 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
     Method:
 
     ```python
->>> Web3.toInt(0x000F)
+    >>> Web3.toInt(0x000F)
     15
->>> Web3.toInt(b'\x00\x0F')
+    >>> Web3.toInt(b'\x00\x0F')
     15
     ```
-    
+
+
+
   - **Web3.toJSON()**
 
     It converts the input parameter to an integer.
@@ -131,12 +135,14 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
     Method:
 
     ```python
->>> Web3.toJSON(3)
+    >>> Web3.toJSON(3)
     '3'
->>> Web3.toJSON({'one': 1})
+    >>> Web3.toJSON({'one': 1})
     '{"one": 1}'
     ```
-    
+
+
+
   - **Web3.toText()**
 
     It converts the input parameters to json format.
@@ -161,12 +167,9 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
     Method:
 
     ```python
->>> Web3.isAddress('0xd3CdA913deB6f67967B99D67aCDFa1712C293601')
+    >>> Web3.isAddress('0xd3CdA913deB6f67967B99D67aCDFa1712C293601')
     True
-```
-    
-    
-    
+    ```
 
 ##### Hash Encryption
 
@@ -176,13 +179,14 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
 
     Method:
 
-    ```python
+
+```python
 >>> Web3.sha3(0x678901)
     HexBytes('0x77cf3b4c68ccdb65991397e7b93111e0f7d863df3b26ebb053d0857e26486e6a')
 >>> Web3.sha3(text='txt')
     HexBytes('0xd7278090a36507640ea6b7a0034b69b0d240766fa3f98e3722be93c613b29d2e')
-    ```
-    
+```
+
   - **Web3.soliditySha3()**
 
     It compiles the input abi_type and value into Keccak-256.
@@ -286,17 +290,16 @@ Return value:
 
 An AttributeDict object whose resolved value is the balance string of the specified account address, in the unit of `VON`.
 
-**部分代码示例：**
-
 **Example:**
 
 <details>
-<style type="text/css"> .highlight { margin-bottom: 0px !important} </style>
+<style type="text/css"> .highlight { margin-bottom:0px !important} </style>
 <summary>  
 ```python
 from client_sdk_python import Web3, HTTPProvider
 from client_sdk_python.eth import PlatON
 from hexbytes import HexBytes
+
 
 ```
 </summary>
@@ -502,7 +505,6 @@ It submits a transaction to the Alaya chain (a transaction that has been signed 
 
 Parameters:
 
-  - `transactionObject`：Object - 要发送的交易对象，包含以下字段：
   - `transactionObject`: Object-The transaction object to be sent, including the following fields:
     - `from`-String|Number: The account address of the transaction sender. If this field is not set, the `platon.defaultAccount` property will be used. It can be set to an address or the index number in the local wallet platon.accounts.wallet.
     - `to`-String: Optional, the destination address of the message. For transactions to create a contract, this field is null.
@@ -850,7 +852,7 @@ It returns all logs according to the specified options
 Method:
 
   ```
-xxxxxxxxxx   alaya.getLogs(options )
+ alaya.getLogs(options )
   ```
 
 Parameters:
@@ -1052,6 +1054,7 @@ First, connect to the node through Web3. `from_address` is the account address o
   from platon_keys.utils import bech32,address
   from client_sdk_python.packages.eth_utils import to_checksum_address
 
+
   ```
 </summary>
   ```python
@@ -1180,7 +1183,7 @@ Call ifControl through functions, input parameter 20, and send transaction infor
   print(result)
   ```
 
-参数：
+
 
 Parameters:
 
@@ -1201,14 +1204,12 @@ Parameters:
   ```python
 0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
   AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac9910509ed3ff2ca97cebdba1e88db0b909ffd646a86d69597'), 'blockNumber': 305801, 'contractAddress': None, 'cumulativeGasUsed': 42382, 'from': 'atx1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': 42382, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': 0})
-```
-
+  
+  ```
 - The first line of data is the transaction result of `platon.sendRawTransaction` in the function `SendTxn`.
 - The second line of data is the transaction result of `ifControl.
   `
 -  The third line of data is the transaction result of `getIfControlResult`.
-
-
 
 ##### Event Call for EVM Contract
 
@@ -1293,6 +1294,7 @@ In the code below, bytecode is the bin data of the contract, and cabi is the abi
 
   from client_sdk_python import Web3, HTTPProvider
   from client_sdk_python.eth import PlatON
+
   ```
 </summary>
 
@@ -2003,15 +2005,11 @@ example:
 
 ##### Upgrade Proposal
 
-调用：
-
 Method:
 
 ```
 pip.submitVersion(verifier, pip_id, new_version, end_voting_rounds, pri_key, transaction_cfg=None)
 ```
-
-参数：
 
 Parameters:
 
@@ -2049,8 +2047,6 @@ Method:
 ```
 pip.submitParam(verifier, pip_id, module, name, new_value, pri_key, transaction_cfg=None)
 ```
-
-参数：
 
 Parameters:
 
