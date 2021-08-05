@@ -32,7 +32,7 @@ alaya_mtool --version
 
 **step1. 备份目录**
 
-将 `C:\alaya_mtool\mtool\current\keystore` 下的所有文件到 D 盘或其他非 `C:\alaya_mtool` 的目录下。安装完新版本之后需要将备份文件拷贝回 `C:\alaya_mtool\mtool\current\keystore` 目录下。
+将 `C:\alaya_mtool\mtool\current\keystore` 和 `C:\alaya_mtool\mtool\current\validator` 目录备份到其他目录下（请勿备份到 `C:\alaya_mtool`下）。安装完新版本之后需要将备份目录拷贝回 `C:\alaya_mtool\mtool\current\` 目录下。 （如果安装目录为自定义目录，则以实际为准）
 
 **step2. 卸载旧版本**
 
@@ -53,6 +53,12 @@ alaya_mtool --version
 安装完成之后，需要<font color="red">重启终端</font>，让新添加的环境变量生效。
 
 ### Ubuntu 下安装 MTool
+
+#### 安装前准备
+
+将 `~/alaya_mtool/keystore` 和 `~/alaya_mtool/validator` 目录备份到其他目录下（请勿备份到 `~/alaya_mtool`下）。安装完新版本之后需要将备份目录拷贝回 `~/alaya_mtool/` 目录下。 （如果安装目录为自定义目录，则以实际为准）
+
+#### 开始安装
 
 步骤如下：
 
