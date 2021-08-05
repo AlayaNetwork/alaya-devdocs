@@ -293,7 +293,7 @@ An AttributeDict object whose resolved value is the balance string of the specif
 **Example:**
 
 <details>
-<style type="text/css"> .highlight { margin-bottom:0px !important} </style>
+<style type="text/css">{` .highlight { margin-bottom: 0px !important} `}</style>
 <summary>  
 ```python
 from client_sdk_python import Web3, HTTPProvider
@@ -1045,7 +1045,7 @@ Obtain bin and abi. Take the Helloworld contract as an example. After compiling 
 First, connect to the node through Web3. `from_address` is the account address on the node, and bytecode and abi are the bin and abi after the EVM contract is compiled.
 
 <details>
-<style type="text/css"> .highlight { margin-bottom: 0px !important} </style>
+<style type="text/css">{` .highlight { margin-bottom: 0px !important} `}</style>
 <summary>  
   ```python
   from hexbytes import HexBytes
@@ -1288,7 +1288,7 @@ After obtaining the bin and abi of the WASM contract, deploy on the chain throug
 In the code below, bytecode is the bin data of the contract, and cabi is the abi data of the contract.
 
 <details>
-<style type="text/css"> .highlight { margin-bottom: 0px !important} </style>
+<style type="text/css">{` .highlight { margin-bottom: 0px !important} `}</style>
 <summary>  
   ```python
 
