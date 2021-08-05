@@ -42,7 +42,7 @@ alaya_mtool --version
 
 **step1. 下载 MTool 安装包**
 
-在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe> 到浏览器下载 MTool 安装包。
+在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe> 到浏览器下载 MTool 安装包。
 
 **step2. 安装 MTool**
 
@@ -59,7 +59,7 @@ alaya_mtool --version
 **step1. 下载 MTool 工具包**
 
 ```bash
-wget https://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
+wget https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
 ```
 
 **step2. 解压 MTool 工具包**
@@ -94,9 +94,9 @@ Windows 和 Ubuntu 下 MTool 目录使用环境变量有所区别：
 
 - MTool 目录
 
-  - Windows：`%MTOOLDIR%`
+  - Windows：`%ALAYA_MTOOLDIR%`
 
-  - Ubuntu：`$MTOOLDIR`
+  - Ubuntu：`$ALAYA_MTOOLDIR`
 
 > 说明：**`用户根据自己安装的系统进行选择环境变量。`**
 
@@ -104,7 +104,7 @@ Windows 和 Ubuntu 下 MTool 目录使用环境变量有所区别：
 
 > **注意：**
 >
-> - 后续命令是 Ubuntu 下的命令格式，Windows 下需要把`$MTOOLDIR`修改成`%MTOOLDIR%`；
+> - 后续命令是 Ubuntu 下的命令格式，Windows 下需要把`$ALAYA_MTOOLDIR`修改成`%ALAYA_MTOOLDIR%`；
 > - 如果连接的是开发网，需要修改 MTool 安装目录下的 config.properties 配置文件的 chainid 为 201030。
 
 ### 创建冷钱包
@@ -117,7 +117,7 @@ alaya_mtool account new staking
 
 - 参数说明
 
-> staking: 生成的钱包名称，输入两次相同密码之后，创建成功后会在目录`$MTOOLDIR/keystore`下生成钱包文件`staking.json`，并打印如下信息：
+> staking: 生成的钱包名称，输入两次相同密码之后，创建成功后会在目录`$ALAYA_MTOOLDIR/keystore`下生成钱包文件`staking.json`，并打印如下信息：
 >
 > ```shell
 > -name: staking
@@ -187,14 +187,14 @@ alaya_mtool account new staking
 
   staking：钱包名称。
 
-  恢复成功后会在目录`$MTOOLDIR/keystore`下生成钱包文件`staking.json`。
+  恢复成功后会在目录`$ALAYA_MTOOLDIR/keystore`下生成钱包文件`staking.json`。
 
 ### 创建观察钱包
 
 执行命令生成观察钱包：
 
 ```shell
-alaya_mtool create_observewallet --keystore $MTOOLDIR/keystore/staking.json
+alaya_mtool create_observewallet --keystore $ALAYA_MTOOLDIR/keystore/staking.json
 ```
 
 - 参数说明
@@ -205,7 +205,7 @@ alaya_mtool create_observewallet --keystore $MTOOLDIR/keystore/staking.json
 >
 > please input keystore password:
 > SUCCESS
-> wallet created at: $MTOOLDIR/keystore/staking_observed.json
+> wallet created at: $ALAYA_MTOOLDIR/keystore/staking_observed.json
 
 ### 查看钱包列表
 
@@ -220,7 +220,7 @@ alaya_mtool account list
 - 执行命令
 
 ```bash
-alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance $keystorename --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 变量说明
@@ -234,7 +234,7 @@ alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator
 - 执行命令
 
 ```bash
-alaya_mtool account balance -a $address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance -a $address --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数
@@ -252,7 +252,7 @@ MTool 离线签名方式主要流程为：在在线机器上生成待签名文�
 在**在线机器**上执行：
 
 ```shell
-alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明:
@@ -269,7 +269,7 @@ alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amo
 
 ```shell
 Transfer unsigned raw: H4sIAAAAAAAAAGWOPW/DIBRF/8ubPfDhGsdrp0oZMmSrMiCMDUGADTiGRPnvoVGHSn3T1ZHuPe8Ba/j0ozwH7iIXSXt31DHB8P0Abv3masTo3zUgFNfua4SBIIxoBVPwFgbgKeM9pLweppERJTrGXH+n1KY+5Wtujckfy247JqF2NvdWnssiYagjM49HbXWVEvzWVHAKWsg/XzTgvPshtIHkf5UlxKL2tBVkCJnZnNWtm/dyn/qbiIdrNHFlysDzUjvaypi4Xepmh2jbMor6luLnC0n7ZKsMAQAA
-File generated on: $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
+File generated on: $ALAYA_MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
 其中，`transaction_detail_20191108114241.csv`为转账交易待签名文件，需要拷贝到离线机器上，进行签名；
@@ -279,7 +279,7 @@ File generated on: $MTOOLDIR/transaction_details/transaction_detail_201911081142
 在保管冷钱包的离线机器上执行：
 
 ```shell
-alaya_mtool offlinesign --filelocation $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
+alaya_mtool offlinesign --filelocation $ALAYA_MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
 - 参数说明：
@@ -288,7 +288,7 @@ alaya_mtool offlinesign --filelocation $MTOOLDIR/transaction_details/transaction
 >
 > filelocation：待签名交易文件路径
 
-注：$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv 为上一步骤生成的待签名文件，修改为实际的待签名文件。
+注：$ALAYA_MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv 为上一步骤生成的待签名文件，修改为实际的待签名文件。
 
 输入对应冷钱包密码并返回签完名的文件，文件内容如下：
 
@@ -320,7 +320,7 @@ success: 1, failure: 0
 在**在线机器**发送交易：
 
 ```shell
-alaya_mtool send_signedtx --filelocation $MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool send_signedtx --filelocation $ALAYA_MTOOLDIR/transaction_signature/transaction_signature_20191108114625.csv --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明：
@@ -349,14 +349,14 @@ success: 1, failure: 0
 
 ## MTool 交易命令详解
 
-此章节主要描述在**在线机器**上生成 csv 格式的交易待签名文件的相关命令，生成的 csv 文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程参考[离线 MTool 交易流程](#离线MTool交易流程)章节。
+此章节主要描述在**在线机器**上生成 csv 格式的交易待签名文件的相关命令，生成的 csv 文件会保存在`$ALAYA_MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程参考[离线 MTool 交易流程](#离线MTool交易流程)章节。
 
 ### 普通转账操作
 
 - 执行命令
 
 ```shell
-alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --amount "1" --recipient $to_address --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -395,7 +395,7 @@ alaya_mtool tx transfer --address $MTOOLDIR/keystore/staking_observed.json --amo
 - 执行命令
 
 ```bash
-alaya_mtool create_restricting --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --file ./restricting_plans.json
+alaya_mtool create_restricting --config $ALAYA_MTOOLDIR/validator/validator_config.json --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --file ./restricting_plans.json
 ```
 
 - 参数说明，
@@ -415,7 +415,7 @@ alaya_mtool create_restricting --config $MTOOLDIR/validator/validator_config.jso
 - 执行命令
 
 ```bash
-alaya_mtool staking --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 - 参数说明，
@@ -447,7 +447,7 @@ alaya_mtool staking --config $MTOOLDIR/validator/validator_config.json --address
 - 执行命令
 
 ```bash
-alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json --address $MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
+alaya_mtool update_validator --config $ALAYA_MTOOLDIR/validator/validator_config.json --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - 参数说明
@@ -475,7 +475,7 @@ alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json 
 - 执行命令
 
 ```bash
-alaya_mtool unstaking --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool unstaking --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -489,7 +489,7 @@ alaya_mtool unstaking --address $MTOOLDIR/keystore/staking_observed.json --confi
 - 执行命令
 
 ```bash
-alaya_mtool increasestaking --amount 5000000 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool increasestaking --amount 5000000 --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -507,7 +507,7 @@ alaya_mtool increasestaking --amount 5000000 --address $MTOOLDIR/keystore/stakin
 - 执行命令
 
 ```bash
-alaya_mtool submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_textproposal --pid_id 100 --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -523,7 +523,7 @@ alaya_mtool submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/stakin
 - 执行命令
 
 ```bash
-alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -543,7 +543,7 @@ alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 -
 - 执行命令
 
 ```bash
-alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -563,7 +563,7 @@ alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - 执行命令
 
 ```bash
-alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -581,7 +581,7 @@ alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b37004
 - 执行命令
 
 ```bash
-alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -597,7 +597,7 @@ alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 - 执行命令
 
 ```bash
-alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -615,7 +615,7 @@ alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 - 执行命令
 
 ```bash
-alaya_mtool submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -637,7 +637,7 @@ alaya_mtool submit_paramproposal --pid_id 200 --module $module --paramname $para
 - 执行命令
 
 ```bash
-alaya_mtool  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -655,7 +655,7 @@ alaya_mtool  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 - 执行命令
 
 ```bash
-alaya_mtool declare_version --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool declare_version --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
