@@ -340,7 +340,7 @@ It returns the storage content in the specified location of an address.
 
 Method:
 
-```
+ ```
   alaya.getStorageAt(address, position [, defaultBlock] )
   ```
 
@@ -1046,18 +1046,16 @@ Obtain bin and abi. Take the Helloworld contract as an example. After compiling 
 First, connect to the node through Web3. `from_address` is the account address on the node, and bytecode and abi are the bin and abi after the EVM contract is compiled.
 
 <details>
-<style type="text/css">{` .highlight { margin-bottom: 0px !important} `}</style>
-<summary>  
+ <style type="text/css">{` .highlight { margin-bottom: 0px !important} `}</style>
+ <summary>  
   ```python
   from hexbytes import HexBytes
   from client_sdk_python import Web3, HTTPProvider
   from client_sdk_python.eth import PlatON
   from platon_keys.utils import bech32,address
   from client_sdk_python.packages.eth_utils import to_checksum_address
-
-
   ```
-</summary>
+ </summary>
   ```python
   true = True
   false = False
@@ -1075,10 +1073,8 @@ First, connect to the node through Web3. `from_address` is the account address o
   #Output
   True
   atp1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja
-  ```
-
+  ``` 
 </details>
-
 
  Then use the function `contract_deploy(bytecode, fromAddress)` to deploy the EVM contract on the nodes of the Alaya blockchain by sending transactions, and the transaction hash `transactionHash` is returned.
 
