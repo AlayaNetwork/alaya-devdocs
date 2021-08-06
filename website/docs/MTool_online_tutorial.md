@@ -31,7 +31,7 @@ If the execution result shows the version number, timestamp and other informatio
 
 **Step1. Backup directory**
 
-Back up all files in the directory `C:\alaya_mtool\mtool\current\keystore` to the D drive or other non `C:\alaya_mtool` directory. After installing the new version, you need to copy the backup file back to the `C:\alaya_mtool\mtool\current\keystore` directory.
+Back up the `C:\alaya_mtool\mtool\current\keystore` and `C:\alaya_mtool\mtool\current\validator` directories to other directories (do not back them up to `C:\alaya_mtool`). After installing the new version, you need to copy the backup directory back to the `C:\alaya_mtool\mtool\current\` directory. (If the installation directory is a custom directory, the actual one shall prevail)
 
 **Step2. Uninstall old version**
 
@@ -41,7 +41,7 @@ Double-click `C:\alaya_mtool\unins000.exe` to uninstall all old versions of MToo
 
 **Step1. Download MTool installation package**
 
-On the online machine, copy the link https://download.alaya.network/alaya/mtool/windows/0.16.0/alaya_mtool.exe to the browser and download the MTool installation package.
+On the online machine, copy the link https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe to the browser and download the MTool installation package.
 
 **Step2. Install MTool**
 
@@ -53,12 +53,18 @@ After installation is complete, you need to <font color="red">restart the termin
 
 ### Install MTool under Ubuntu
 
+#### Preparation before installation
+
+Back up the `~/alaya_mtool/keystore` and `~/alaya_mtool/validator` directories to other directories (do not back them up to `~/alaya_mtool`). After installing the new version, you need to copy the backup directory back to the `~/alaya_mtool/` directory. (If the installation directory is a custom directory, the actual one shall prevail)
+
+#### start installation
+
 Proceed as follows:
 
 **Step1. Download MTool toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.16.0/alaya_mtool.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
 ```
 
 **Step2. Extract the MTool toolkit**
@@ -92,14 +98,14 @@ After installation is complete, you need to <font color="red">restart the sessio
 The environment variables of MTool directories under Windows and Ubuntu are different:
 
 - MTool directory
-  - Windows: `%MTOOLDIR%`
-  - Ubuntu: `$MTOOLDIR`
+  - Windows: `%ALAYA_MTOOLDIR%`
+  - Ubuntu: `$ALAYA_MTOOLDIR`
 
 > Note:Users choose according to their installed system.
 
 ## MTool Command Details
 
-> Note: The follow-up command is the command format under Ubuntu. Under Windows, you need to modify `$MTOOLDIR` to `%MTOOLDIR%`.
+> Note: The follow-up command is the command format under Ubuntu. Under Windows, you need to modify `$ALAYA_MTOOLDIR` to `%ALAYA_MTOOLDIR%`.
 
 ### Create A Wallet
 
@@ -111,7 +117,7 @@ alaya_mtool account new staking
 
 - Parameter description
 
-> staking: The name of the wallet to be created. Once the wallet is created successfully, a wallet file named `staking.json` will be generated in the directory `$MTOOLDIR/keystore`, And print the following information:
+> staking: The name of the wallet to be created. Once the wallet is created successfully, a wallet file named `staking.json` will be generated in the directory `$ALAYA_MTOOLDIR/keystore`, And print the following information:
 >
 > ```shell
 > -name: staking
@@ -180,14 +186,14 @@ If the wallet file is lost, you can restore it with the backed up private key or
 
   staking：wallet name.
 
-  After successful restoration, the wallet file staking.json will be generated under the directory `$MTOOLDIR/keystore`.
+  After successful restoration, the wallet file staking.json will be generated under the directory `$ALAYA_MTOOLDIR/keystore`.
 
 ### Ordinary transfer operation
 
 - Command line
 
 ```bash
-alaya_mtool tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $ to_address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool tx transfer --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount "1" --recipient $ to_address --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -211,7 +217,7 @@ alaya_mtool account list
 - Command line
 
 ```bash
-alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance $keystorename --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter description
@@ -223,7 +229,7 @@ alaya_mtool account balance $keystorename --config $MTOOLDIR/validator/validator
 - Command line
 
 ```bash
-alaya_mtool account balance -a $address --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool account balance -a $address --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter description
@@ -256,7 +262,7 @@ Creating a new restricting plan, node's ATPs will be transferred to a specified 
 - command line
 
 ```bash
-alaya_mtool create_restricting --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
+alaya_mtool create_restricting --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --file ./restricting_plans.json
 ```
 
 - Parameter Description
@@ -276,7 +282,7 @@ Note: Please keep enough ATP in the staking account, so that the transactions in
 - Command line
 
 ```bash
-alaya_mtool staking --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
+alaya_mtool staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --amount 10000 --benefit_address xxx196278ns22j23awdfj9f2d4vz0pedld8a2fzwwj --delegated_reward_rate 5000 --node_name myNode --website www.mywebsite.com --details myNodeDescription --external_id 121412312
 ```
 
 Prompt:**please input keystore password:**Enter the password of the staking wallet and press Enter. If the following information is displayed, the staking is successful:
@@ -317,7 +323,7 @@ SUCCESS
 - Command line
 
 ```bash
-alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json --keystore $MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
+alaya_mtool update_validator --config $ALAYA_MTOOLDIR/validator/validator_config.json --keystore $ALAYA_MTOOLDIR/keystore/staking.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - Parameters Description
@@ -345,7 +351,7 @@ alaya_mtool update_validator --config $MTOOLDIR/validator/validator_config.json 
 - Command line
 
 ```bash
-alaya_mtool unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool unstaking --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -357,7 +363,7 @@ alaya_mtool unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOL
 - Command line
 
 ```bash
-alaya_mtool increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool increasestaking --amount 5000000 --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -371,7 +377,7 @@ alaya_mtool increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staki
 - Command line
 
 ```bash
-alaya_mtool submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_textproposal --pid_id 100 --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -383,7 +389,7 @@ alaya_mtool submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staki
 - Command line
 
 ```bash
-alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 --pid_id 100 --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -399,7 +405,7 @@ alaya_mtool submit_versionproposal --newversion 0.16.0 --end_voting_rounds 345 -
 - Command line
 
 ```bash
-alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR_validator/validator
+alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -415,7 +421,7 @@ alaya_mtool submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - Command line
 
 ```bash
-alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -429,7 +435,7 @@ alaya_mtool vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b37004
 - Command line
 
 ```bash
-alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
@@ -441,7 +447,7 @@ alaya_mtool vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b37
 - Command line
 
 ```bash
-alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -455,7 +461,7 @@ alaya_mtool vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 - Command line
 
 ```bash
-alaya_mtool submit_paramproposal --pid_id 200 --module $ module --paramname $ paramname --paramvalue $ paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool submit_paramproposal --pid_id 200 --module $ module --paramname $ paramname --paramvalue $ paramvalue --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -473,7 +479,7 @@ alaya_mtool submit_paramproposal --pid_id 200 --module $ module --paramname $ pa
 - Command line
 
 ```bash
-alaya_mtool vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameters Description
@@ -487,7 +493,7 @@ alaya_mtool vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b3700
 - Command line
 
 ```bash
-alaya_mtool declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+alaya_mtool declare_version --keystore $ALAYA_MTOOLDIR/keystore/staking.json --config $ALAYA_MTOOLDIR/validator/validator_config.json
 ```
 
 - Parameter Description
