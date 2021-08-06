@@ -22,7 +22,7 @@ Operation in this part is almost the same as the operation in [Become a Validato
 
 If you need test `ATP` on the development network, you need to receive it through the faucet at https://faucet.alaya.network/faucet/?id=f93426c0887f11eb83b900163e06151c> 
 
-> **Reminder**: The ATP on the development network has no actual value and is only used for development and testing! 
+> **Reminder**: The ATP on the development network has no actual value and is only used for development and testing。
 
 If you need a large amount of testn ATP, such as creating a validator for the development network, please send an email to [support@latticex.foundation](mailto:support@latticex.foundation) in the following format: 
 
