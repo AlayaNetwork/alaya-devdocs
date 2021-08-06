@@ -78,7 +78,7 @@ wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
 > The script is downloaded to the <font color="red">alaya_mtool</font> directory, otherwise the script cannot find the path of the new version of mtool.
 
 ```bash
-wget http://download.alaya.network/opensource/scripts/mtool_install.sh
+wget https://download.alaya.network/alaya/scripts/mtool_install.sh
 ```
 
 **Step4. Execute command**
