@@ -22,7 +22,7 @@ Alaya开发网络和主网功能一致，在版本上可能超前于主网。可
 
 如果您有在开发网络上使用测试`ATP`的需求，您需要通过水龙头来领取，领取地址：<https://faucet.alaya.network/faucet/?id=f93426c0887f11eb83b900163e06151c>
 
-> **提示**：开发网络上的ATP没有实际价值，仅用于开发测试使用！
+> **提示**：开发网络上的ATP没有实际价值，仅用于开发测试使用。
 
 如果您有领取大额测试ATP的需求，比如创建开发网验证人节点请您按照格式要求发送邮件至：[support@latticex.foundation](mailto:support@latticex.foundation)，邮件要求：
 
