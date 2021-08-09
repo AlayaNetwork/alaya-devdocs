@@ -21,14 +21,10 @@ Samurai基于MetaMask的8.0.10版本开源代码修改的浏览器插件钱包�
 
 ## 安装
 
-+ 从[Release地址](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)下载Samurai插件包。
-+ 解压Samurai插件包。
-+ 打开Chrome浏览器，在地址栏输入`chrome://extensions/`并回车，进入到Chrome扩展程序管理页面。
-```
-chrome://extensions/
-```
-
-+ 打开**开发者模式**开关，选择**加载已解压的扩展程序**，导入第2步解压的目录即可。
++ 从[Release地址](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)下载Samurai插件包；
++ 解压Samurai插件包；
++ 打开Chrome浏览器，在地址栏输入`chrome://extensions/`并回车，进入到Chrome扩展程序管理页面；
++ 打开**开发者模式**开关，选择**加载已解压的扩展程序**，导入第2步解压的目录即可；
 
 <img src="/alaya-devdocs/img/zh-CN/Samurai.assets/add-chrome.jpg" alt="加载已解压的扩展程序"/>
 
