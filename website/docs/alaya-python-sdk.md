@@ -28,13 +28,16 @@ You can either use pip to install or download the source code.
    pip install client-sdk-python
   ```
 
+  > The currently compiled version of client-sdk-python is the alaya branch, and the version number is: 1.0.0.2
+
+
 - Download the source code
 
   ```python
-  git clone -b 0.15.1-develop https://github.com/AlayaNetwork/client-sdk-python.git
+  git clone -b 0.16.0-develop https://github.com/AlayaNetwork/client-sdk-python.git
   ```
 
-  > `0.15.1-develop` is the currently used branch.
+  > `0.16.0-develop` is the currently used branch.
 
 
 
@@ -51,7 +54,7 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
   ```python
   w3 = Web3(HTTPProvider("http://47.241.91.2:6789"),chain_id = 201030)
   // alaya is an instance of the PlatON class
-  alaya = PlatON(w3) 
+  alaya = PlatON(w3)
   print(w3.isConnected())
   ```
 
@@ -72,15 +75,15 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
 - Take IPC connection as an example.
 
   Code is shown as below:
-  
+
   ```python
   # platon.ipc in the node directory ~/platon-node/data/ 下
     w3 = Web3(IPCProvider("./platon.ipc"),chain_id = 201030)
     alaya = PlatON(w3)
     print(w3.isConnected())
   ```
-  
-    
+
+
 
 
 
@@ -179,15 +182,15 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
     It compiles the input parameters to Keccak-256.
 
     Method:
-    
+
     ```python
     >>> Web3.sha3(0x678901)
         HexBytes('0x77cf3b4c68ccdb65991397e7b93111e0f7d863df3b26ebb053d0857e26486e6a')
     >>> Web3.sha3(text='txt')
         HexBytes('0xd7278090a36507640ea6b7a0034b69b0d240766fa3f98e3722be93c613b29d2e')
     ```
-    
-    
+
+
 
   - **Web3.soliditySha3()**
 
@@ -197,24 +200,24 @@ Alaya nodes communicate with each other through P2PMessage. In the case of the c
 
     - value: the true value.
     - abi_type: A string list in solidity format equal to value.
-    
+
     Method:
-    
+
     ```python
     >>> Web3.solidityKeccak(['uint8[]'], [[97, 98, 99]])
     HexBytes("0x233002c671295529bcc50b76a2ef2b0de2dac2d93945fca745255de1a9e4017e")
-    
+
     >>> Web3.solidityKeccak(['address'], ["0x49EdDD3769c0712032808D86597B84ac5c2F5614"])
     HexBytes("0x2ff37b5607484cd4eecf6d13292e22bd6e5401eaffcc07e279583bc742c68882")
     ```
-    
-    
+
+
 
 #### Query API on Chain
 
 After successfully connecting with the nodes on the Alaya chain, you can query the relevant information of the nodes on the chain through the api in `alaya`.
 
-##### alaya.blockNumber 
+##### alaya.blockNumber
 
 It returns the current block number.
 
@@ -238,7 +241,7 @@ An AttributeDict object with a resolved value of `Object` or `Bool`. If the node
   - `knownStates`-Number: Estimated state to be downloaded.
   - `pulledStates`-Number: The states that have been downloaded.
 
-    
+
 
 ##### alaya.gasPrice
 
@@ -258,7 +261,7 @@ Return value:
 
 An AttributeDict object whose resolved value is an array of account addresses.
 
-  
+
 
 ##### alaya.evidences
 
@@ -268,7 +271,7 @@ Return value:
 
 An AttributeDict object whose resolved value is the stored content of an account address.
 
-  
+
 
 ##### alaya.consensusStatus
 
@@ -292,7 +295,9 @@ Return value:
 
 An AttributeDict object whose resolved value is the balance string of the specified account address, in the unit of `VON`.
 
-**Example:**
+
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
 
 ```python
 from client_sdk_python import Web3, HTTPProvider
@@ -315,7 +320,7 @@ print(alaya.consensusStatus)
 
 address = 'atp1ft2fuhh6q8pvpwe4jl3vqc2qhmhqs6ktl7e7g5'
 balance = alaya.getBalance(address)
-print(balance) 
+print(balance)
 
 #Output
 11524411
@@ -326,6 +331,7 @@ False
 AttributeDict({'blockTree': AttributeDict({'root': AttributeDict({'viewNumber': 16, 'blockHash': '0x5070404fbfaeb199ed29aee0723bb8f0de12391606235d4bfe61865bd8fa994e', 'blockNumber': 11524412, 'receiveTime': '2021-08-04T04:02:29.295222897Z', 'qc': AttributeDict({'epoch': 46098, 'viewNumber': 16, 'blockHash': '0x5070404fbfaeb199ed29aee0723bb8f0de12391606235d4bfe61865bd8fa994e', 'blockNumber': 11524412, 'blockIndex': 1, 'signature': '0x4da9acd9b911905d4f9275b7256a76aa254bfc5930903b015e05de6af48e021c8a49d5bd430dc27073d13c246c31b90100000000000000000000000000000000', 'validatorSet': 'xxx_xx'}), 'parentHash': '0x0000000000000000000000000000000000000000000000000000000000000000', 'childrenHash': ['0x83d225f2f00bce603ee85b7b963c31ceefe6df131c232e2ef12c40ca58496119']}), 'blocks': AttributeDict({'11524412': AttributeDict({'0x5070404fbfaeb199ed29aee0723bb8f0de12391606235d4bfe61865bd8fa994e': AttributeDict({'viewNumber': 16, 'blockHash': '0x5070404fbfaeb199ed29aee0723bb8f0de12391606235d4bfe61865bd8fa994e', 'blockNumber': 11524412, 'receiveTime': '2021-08-04T04:02:29.295222897Z'
 ```
 
+</details>
 
 
 ##### alaya.getStorageAt()
@@ -406,7 +412,7 @@ An AttributeDict object whose resolved value is a block object that meets the se
 - `transactions`-Array: Transaction object array, or 32-byte transaction hash value, depending on the setting of `returnTransactionObjects`.
 - `uncles`-Array: Array of uncle block hashes
 
-  
+
 
 ##### alaya.getBlockTransactionCount()
 
@@ -447,7 +453,7 @@ Return value:
 
 An AttributeDict object whose resolved value is a transaction object with a given hash value. For the specific description of this object, see: `alaya.waitForTransactionReceipt`.
 
-  
+
 
 ##### alaya.getRawTransaction()
 
@@ -468,7 +474,7 @@ Return value:
 
 An object of HexBytes.
 
-  
+
 
 ##### alaya.getTransactionFromBlock()
 
@@ -490,7 +496,7 @@ Return value:
 
 A Promise object whose resolved value is a transaction object. For a description of the specific content of the object, see alaya.getTransaction()
 
-  
+
 
 #### Sending Transactions API on chain
 
@@ -513,7 +519,7 @@ Return value:
 
 `alaya.sendTransaction()` returns the 32-byte transaction hash.
 
-  
+
 
 ##### waitForTransactionReceipt(transaction_hash, timeout)
 
@@ -539,9 +545,9 @@ An AttributeDict object whose resolved value is the receipt of the transaction o
 - `gasUsed` - `Number`: The amount of gas used by this specific transaction alone.
 - `logs` - `Array`: Array of log objects, which were generated by this transaction.
 
-  
 
-Examples of how to use `sendTransaction` and `waitForTransactionReceipt` are as follows:
+<details>
+  <summary><mark><b><font size="3" >Examples of how to use `sendTransaction` and `waitForTransactionReceipt` are as follows:</font></b></mark></summary>
 
 ```python
 # sendtransaction
@@ -562,7 +568,7 @@ print(result)
 AttributeDict({'blockHash': HexBytes('0x7bfe17689560c773b1cade579f1bd2cf85aeea9f75177e0e06bcdb4aeebd31a8'), 'blockNumber': 385507, 'contractAddress': None, 'cumulativeGasUsed': 21000, 'from': 'atp1ft2fuhh6q8pvpwe4jl3vqc2qhmhqs6ktl7e7g5', 'gasUsed': 21000, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1ft2fuhh6q8pvpwe4jl3vqc2qhmhqs6ktl7e7g5', 'transactionHash': HexBytes('0x377fcd0dfb5e294041fe4274175ed7fce253973fac7abf4e4ff808b5099a454c'), 'transactionIndex': 0})
 ```
 
-
+</details>
 
 ##### alaya.getTransactionReceipt()
 
@@ -605,7 +611,7 @@ Return value:
 
 A Promise object whose resolved value is the number of transactions issued by the specified address.
 
-  
+
 
 ##### alaya.sendRawTransaction()
 
@@ -631,7 +637,7 @@ Return value:
 
 It returns the HexBytes of the 32-byte transaction hash.
 
-  
+
 
 ##### alaya.replaceTransaction()
 
@@ -652,7 +658,7 @@ Return value:
 
 Hash of new_transaction.
 
-  
+
 
 ##### alaya.generateGasPrice()
 
@@ -707,7 +713,7 @@ Return value:
 
 The hash value of the modified transaction.
 
-  
+
 
 ##### alaya.sign()
 
@@ -728,7 +734,7 @@ Return value:
 
 The signature result string.
 
-  
+
 
 ##### alaya.estimateGas()
 
@@ -754,7 +760,7 @@ Gas used in the simulated call.
 
 ##### alaya.filter
 
-It generates a new filter. The type of the filter generated depends on the parameters. 
+It generates a new filter. The type of the filter generated depends on the parameters.
 
 Method:
 
@@ -791,7 +797,7 @@ Parameters:
 
   - `filter_id`: Filter_id of the specified filter.
 
-  
+
 
 Example:
 
@@ -838,7 +844,7 @@ Example:
   True
   ```
 
-  
+
 
 ##### alaya.getLogs()
 
@@ -894,7 +900,7 @@ Parameters:
 
     - `gas` - Number (optional): The maximum gas provided for this call “transaction” (gas limit).
 
-      
+
 
 ##### call()
 
@@ -925,12 +931,12 @@ The resolved value is the contract method, in the Mixed type. If it returns mult
   print('get : {}'.format(
       payable.functions.getInt64().call()
   ))
-  
+
   #Output
   get : -9223372036854775808
   ```
 
-  
+
 
 ##### events
 
@@ -972,31 +978,33 @@ The structure of the returned event looks as follows:
 - `raw.data` -String: This field contains unindexed log parameters
 - `raw.topics` -Array: Up to four 32-byte long subject string arrays can be stored. Subjects 1-3 include index parameters for events
 
-Example:
+
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
 
   ```python
   greeter = alaya.contract(address=tx_receipt.contractAddress, abi=abi)
-  
+
   tx_hash = greeter.functions.setVar(100).transact(
       {
           'from':from_address,
           'gas':1500000,
       }
   )
-  
+
   tx_receipt = alaya.waitForTransactionReceipt(tx_hash)
   print(tx_receipt)
-  
+
   topic_param = greeter.events.MyEvent().processReceipt(tx_receipt)
   print(topic_param)
-  
+
   #Output：
   AttributeDict({'blockHash': HexBytes('0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'), 'blockNumber': 2014683, 'contractAddress': None, 'cumulativeGasUsed': 43148, 'from': 'atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl', 'gasUsed': 43148, 'logs': [AttributeDict({'address': 'atp1plhafce07ymacurudqdrewhtrrx4r2nxrju39h', 'topics': [HexBytes('0x6c2b4666ba8da5a95717621d879a77de725f3d816709b9cbe9f059b8f875e284'), HexBytes('0x0000000000000000000000000000000000000000000000000000000000000064')], 'data': '0x', 'blockNumber': 2014683, 'transactionHash': HexBytes('0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'), 'transactionIndex': 0, 'blockHash': HexBytes('0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'), 'logIndex': 0, 'removed': False})], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000020080000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000004000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000008000000000000000'), 'status': 1, 'to': 'atp1plhafce07ymacurudqdrewhtrrx4r2nxrju39h', 'transactionHash': HexBytes('0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'), 'transactionIndex': 0})
   (AttributeDict({'args': AttributeDict({'_var': 100}), 'event': 'MyEvent', 'logIndex': 0, 'transactionIndex': 0, 'transactionHash': HexBytes('0xe36b5d2b679d5635ab6dd2b620caa50a476fa84bd93bf7b6c8de807f3a9da483'), 'address': 'atp1plhafce07ymacurudqdrewhtrrx4r2nxrju39h', 'blockHash': HexBytes('0x78fb61da83dae555c8a8a87fc3296f466afeb7f90e9a3b0ac5689e8b34435174'), 'blockNumber': 2014683}),)
-  
+
   ```
 
-  
+</details>
 
  #### Get hrp
 
@@ -1033,11 +1041,14 @@ The python sdk currently supports the bin and abi formed after the compilation o
 
 ##### Compile EVM contracts locally using platon-truffle
 
-Obtain bin and abi. Take the Helloworld contract as an example. After compiling Helloworld.sol with `platon-truffle`, get the abi and bytecode (bin) in the generated build/contracts/HelloWorld.json. 
+Obtain bin and abi. Take the Helloworld contract as an example. After compiling Helloworld.sol with `platon-truffle`, get the abi and bytecode (bin) in the generated build/contracts/HelloWorld.json.
 
 ##### Deploy Helloworld contract via python SDK
 
 First, connect to the node through Web3. `from_address` is the account address on the node, and bytecode and abi are the bin and abi after the EVM contract is compiled.
+
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
 
 ```python
   from hexbytes import HexBytes
@@ -1057,18 +1068,22 @@ First, connect to the node through Web3. `from_address` is the account address o
 
   bytecode = '608060405234801561001057600080fd5b50610c28806100206000396000f3fe608060405234801561001057600080fd5b50600436106101375760003560e01......'
 
-  abi = [{"constant":false,"inputs":[],"name":"doWhileControl","outputs"......]
+  abi = [{"constant": False,"inputs": [{"internalType": "string","name": "_name","type": "string"}],"name": "setName","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": True,"inputs": [],"name": "getName","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": False,"stateMutability": "view","type": "function"}]
 
   #Output
   True
   atp1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja
 ```
 
+</details>
 
 
 Then use the function `contract_deploy(bytecode, fromAddress)` to deploy the EVM contract on the nodes of the Alaya blockchain by sending transactions, and the transaction hash `transactionHash` is returned.
 
 `tx_receipt` is the deployment receipt obtained by `alaya.waitForTransactionReceipt` after resolving `transactionHash` (deployment is also a kind of transaction, and `alaya.waitForTransactionReceipt` returns the transaction receipt).
+
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
 
   ```python
   def contract_deploy(bytecode, fromAddress):
@@ -1083,16 +1098,17 @@ Then use the function `contract_deploy(bytecode, fromAddress)` to deploy the EVM
       )
       transactionHash = HexBytes(transactionHash).hex().lower()
       return transactionHash
-  
+
   tx = contract_deploy(bytecode, from_address)
   print(tx)
   tx_receipt = alaya.waitForTransactionReceipt(tx)
   print(tx_receipt)
   contractAddress = tx_receipt.contractAddress
   print(contractAddress)
-  
+
   ```
 
+</details>
 
 
 **platon.sendTransaction (parameter)**
@@ -1126,7 +1142,7 @@ After the successful deployment of the previous contract, the transaction is sen
 
 First define a function `SendTxn(txn)`.
 
-It involves: 
+It involves:
 
 Signing a transaction via `alaya.account.signTransaction` (signing with the private key).
 
@@ -1135,7 +1151,7 @@ Sending a transaction via `alaya.sendRawTransaction`.
 Getting a transaction receipt via `alaya.waitForTransactionReceipt`.
 
   ```python
-  send_privatekey = "b7a7372e78160f71a1a75e03c4aa72705806a05cf14ef39c87fdee93d108588c"
+  send_privatekey = "<your private key>"
   def SendTxn(txn):
       signed_txn = alaya.account.signTransaction(txn,private_key=send_privatekey)
       res = alaya.sendRawTransaction(signed_txn.rawTransaction).hex()
@@ -1148,25 +1164,29 @@ Create a contract instance contract_instance. Since it is an EVM contract, the f
 
 Call ifControl through functions, input parameter 20, and send transaction information through buildTransaction
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
   ```python
   contract_instance = alaya.contract(address=contractAddress, abi=abi)
-  
+
   txn = contract_instance.functions.ifControl(20).buildTransaction(
       {
-          'chainId':200,
+          'chainId':201030,
           'nonce':alaya.getTransactionCount(from_address),
           'gas':2000000,
           'value':0,
           'gasPrice':1000000000,
       }
   )
-  
+
   print(SendTxn(txn))
-  
+
   result = contract_instance.functions.getIfControlResult().call()
   print(result)
   ```
 
+</details>
 
 
 Parameters:
@@ -1183,22 +1203,14 @@ Parameters:
 
   You need to write a reasonable value, call `ifControl`, and successfully pass the parameter 20 to the chain. Then get the corresponding information and data on the chain through the corresponding `getIfControlResult`.
 
-  Below is the output:
 
-  
 
-  ```python
-  0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9
-  AttributeDict({'blockHash': HexBytes('0xbb1d1c3a7abecac9910509ed3ff2ca97cebdba1e88db0b909ffd646a86d69597'), 'blockNumber': 305801, 'contractAddress': None, 'cumulativeGasUsed': 42382, 'from': 'atx1yjjzvjph3tw4h2quw6mse25y492xy7fzwdtqja', 'gasUsed': 42382, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1ws7m2tqr55h8xs7e3jg5svlyu0lk9ktpx03cke', 'transactionHash': HexBytes('0x16c76387cdd06ab82a4beb330b36369a5cfa22b8cf6ddfff58c72aaae4a39df9'), 'transactionIndex': 0})
-  ```
-  
-  
-  
+
 - The first line of data is the transaction result of `platon.sendRawTransaction` in the function `SendTxn`.
 
 - The second line of data is the transaction result of `ifControl.
   `
-  
+
 -  The third line of data is the transaction result of `getIfControlResult`.
 
 
@@ -1213,22 +1225,26 @@ First call setVar through functions, pass the parameters to the chain, and then 
 
 The events method is the event api dedicated to the contract.
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
   ```python
   greeter = alaya.contract(address=tx_receipt.contractAddress, abi=abi)
-  
+
   tx_hash = greeter.functions.setVar(100).transact(
       {
           'from':from_address,
           'gas':1500000,
       }
   )
-  
+
   tx_receipt = alaya.waitForTransactionReceipt(tx_hash)
   print(tx_receipt)
-  
+
   topic_param = greeter.events.MyEvent().processReceipt(tx_receipt)
 print(topic_param)
   ```
+</details>
 
 Output after successful operation:
 
@@ -1246,7 +1262,7 @@ Among the values corresponding to'args':
 
   '_var' is the only parameter value, and in the event of the EVM contract, the basic types of data are `uint`, `int`, `bool`, `address`, and `bytex`.
 
-  
+
 
 
 
@@ -1279,45 +1295,53 @@ After obtaining the bin and abi of the WASM contract, deploy on the chain throug
 
 In the code below, bytecode is the bin data of the contract, and cabi is the abi data of the contract.
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
   ```python
   from client_sdk_python import Web3, HTTPProvider
   from client_sdk_python.eth import PlatON
 
   ```python
-  
+
   true = True
   false = False
-  
+
   w3 = Web3(HTTPProvider("http://47.241.91.2:6789"),chain_id = 201030)
   alaya = PlatON(w3)
   print(w3.isConnected())
   from_address = "atp1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl"
-  
-  bytecode='0061736d01000000015c1060027f7f0060017f017f60027f7f017f60017f0060037f7f7f017f60037f7f7f0060047f7f7f7f0060000060047f7f7f......'
-  cabi = [{"constant":false,"input":[{"name":"input","type":"string[10]"}],"name":"setArray","output":"void","type":"Action"}......]
-  
-  ```
 
+  bytecode='0061736d01000000015c1060027f7f0060017f017f60027f7f017f60017f0060037f7f7f017f60037f7f7f0060047f7f7f7f0060000060047f7f7f......'
+  cabi = [{"constant": False,"inputs": [{"internalType": "string","name": "_name","type": "string"}],"name": "setName","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": False,"stateMutability": "nonpayable","type": "function"},{"constant": True,"inputs": [],"name": "getName","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": False,"stateMutability": "view","type": "function"}]
+
+  ```
+</details>
 
 WASM contracts create contract instances through `alaya.wasmcontract`.
 
 The .constructor() method is called on the instance to construct the contract, and the transaction is sent to the chain through transact.
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
 ```python
   # Instantiate and deploy contract
 Payable = alaya.wasmcontract(abi=cabi, bytecode=bytecode,vmtype=1)
-  
+
 tx_hash = Payable.constructor().transact(
       {
           'from':from_address,
           'gas':1500000,
       }
   )
-  
+
   # Wait for the transaction to be mined, and get the transaction receipt
   tx_receipt = alaya.waitForTransactionReceipt(tx_hash)
   print(tx_receipt)
 ```
+</details>
+
 
 Among them, `tx_receipt` is the transaction receipt of the deployed contract.
 
@@ -1326,7 +1350,7 @@ After the deployment is successful, the output is as follows:
 ```python
   #Output
 AttributeDict({'blockHash': HexBytes('0x7a193be2cf86aedcf844c0478c6f64d226affb55779bad1b2056c7e70e8158d6'), 'blockNumber': 2012981, 'contractAddress': 'atp15sh4rpuqr4fvzs4cyj9uea54r5tax7kljqqszk', 'cumulativeGasUsed': 1233168, 'from': 'atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl', 'gasUsed': 1233168, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': None, 'transactionHash': HexBytes('0x717a82ea0ef116e271fb02dbb7d456fe9dd41a2dbd07cac81d079e375b5dade1'), 'transactionIndex': 0})
-  
+
 ```
 
 
@@ -1339,9 +1363,12 @@ payable is an instance after the contract is successfully deployed.
 
 By calling the function setBool, the parameter false is sent to the chain (send a transaction).
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
   ```python
   payable = alaya.wasmcontract(address=tx_receipt.contractAddress, abi=cabi,vmtype=1)
-  
+
   tx_hash0 = payable.functions.setBool(false).transact(
       {
           'from':from_address,
@@ -1354,6 +1381,8 @@ By calling the function setBool, the parameter false is sent to the chain (send 
   ))
   ```
 
+</details>
+
 `payable.functions.getBool().call()` means that the corresponding information on the chain is obtained through the function getBool (according to the definition of this contract, the parameters uploaded by setBool are obtained).
 
 After successful operation, the results are as follows:
@@ -1361,6 +1390,8 @@ After successful operation, the results are as follows:
   ```python
   #Output
   AttributeDict({'blockHash': HexBytes('0x9bcadf4db5d74789901b2176cb7dad3191d2425b61f261966e932f6606d13041'), 'blockNumber': 2018575, 'contractAddress': None, 'cumulativeGasUsed': 426496, 'from': 'atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl', 'gasUsed': 426496, 'logs': [], 'logsBloom': HexBytes('0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'), 'status': 1, 'to': 'atp1c5h59flven2hzyrylh2tsmn59r5ucms95n5ugc', 'transactionHash': HexBytes('0x4c724e7d1833ade363f51f611293682771318e3c86b533f5a78b580c812eb009'), 'transactionIndex': 0})
+  get : False
+
   ```
 
 
@@ -1375,6 +1406,9 @@ Greeter is an example of a successfully deployed WASM contract.
 
 tx_hash is a transaction instance of passing parameters via the function setUint32.
 
+<details>
+  <summary><mark><b><font size="3" >Example:</font></b></mark></summary>
+
   ```python
 
   greeter = alaya.wasmcontract(address=tx_receipt.contractAddress, abi=abi,vmtype=1)
@@ -1384,14 +1418,16 @@ tx_hash is a transaction instance of passing parameters via the function setUint
           'gas': 1500000,
       }
   )
-  
+
   tx_receipt = alaya.waitForTransactionReceipt(tx_hash)
   print(tx_receipt)
-  
+
   topic_param = greeter.events.setUint32Evt().processReceipt(tx_receipt)
   print(topic_param)
 
   ```
+
+</details>
 
 `topic_param` is the result of the event setUint32Evt call.
 
@@ -1406,7 +1442,7 @@ The output after successful operation is as follows:
 Among the values corresponding to'args':
 
 'topic1' is the topic value, and 'arg1','arg2', and'arg3' are the three parameter values defined in the event.
-           
+
 
 
 
@@ -1465,9 +1501,9 @@ Parameters:
 
 - `transaction_cfg`: Basic transaction configuration.
 
-  
+
    ```python
-   type: 
+   type:
    	dict
    example:
        cfg = {
@@ -1507,8 +1543,8 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ~~~python
-  
-  type: 
+
+  type:
   	dict
   example:
       cfg = {
@@ -1517,7 +1553,7 @@ Parameters:
            "nonce":1,
        }
   ~~~
-  
+
 
 
 ##### Increase Staking
@@ -1541,7 +1577,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
      ~~~python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -1551,7 +1587,7 @@ Parameters:
        }
   ~~~
 
-  
+
 
 
 
@@ -1572,7 +1608,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
      ~~~python
-     type: 
+     type:
      	dict
      example:
          cfg = {
@@ -1582,7 +1618,7 @@ Parameters:
           }
      ~~~
 
-     
+
 
 #### delegate
 
@@ -1607,7 +1643,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
     ~~~python
-    type: 
+    type:
     	dict
     example:
         cfg = {
@@ -1617,7 +1653,7 @@ Parameters:
          }
     ~~~
 
-    
+
 
 ##### Decrease/Cancel a Delegation
 
@@ -1640,7 +1676,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ~~~python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -1650,7 +1686,7 @@ Parameters:
        }
   ~~~
 
-  
+
 
 ##### Withdraw Delegation Reward
 
@@ -1667,7 +1703,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ~~~python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -1677,7 +1713,7 @@ Parameters:
        }
   ~~~
 
-  
+
 
 #### query
 
@@ -1750,7 +1786,7 @@ Parameters:
 
 - `staking_blocknum`: The block height when the staking is initiated
 - `del_addr`: Client's account address.
-- `node_id`: Validator ID. 
+- `node_id`: Validator ID.
 - `from_address`: The from address that calls the rpc interface.
 
 
@@ -1765,7 +1801,7 @@ ppos.getCandidateInfo(node_id, from_address=None)
 
 Parameters:
 
-- `node_id`: Validator ID. 
+- `node_id`: Validator ID.
 - `from_address`: The from address that calls the rpc interface.
 
 
@@ -1846,7 +1882,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ```python
-  type: 
+  type:
     	dict
   example:
       cfg = {
@@ -1856,7 +1892,7 @@ Parameters:
        }
   ```
 
-  
+
 
 ##### Query Whether a Node Has Been Reported to Have Double Signing
 
@@ -1900,7 +1936,7 @@ Parameters:
   }
   ~~~
 
-  
+
 
   - Epoch: The multiple of the epoch. The product of the number of blocks in each epoch indicates that the locked funds s are released at the height of the target block. Epoch* the number of blocks per epoch is at least greater than the maximum irreversible block height.
   - Amount: Indicates the amount to be released on the target block.
@@ -1910,7 +1946,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ~~~python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -1920,7 +1956,7 @@ Parameters:
        }
   ~~~
 
-  
+
 
 
 
@@ -1966,7 +2002,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ```python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -2005,7 +2041,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
     ```python
-    type: 
+    type:
     	dict
     example:
         cfg = {
@@ -2015,7 +2051,7 @@ Parameters:
          }
     ```
 
-    
+
 
 ##### Parameter Proposal
 
@@ -2042,7 +2078,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
     ```python
-    type: 
+    type:
     	dict
     example:
         cfg = {
@@ -2052,7 +2088,7 @@ Parameters:
          }
     ```
 
-    
+
 
 ##### Delete a Proposal
 
@@ -2077,7 +2113,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
   ```python
-  type: 
+  type:
   	dict
   example:
       cfg = {
@@ -2087,7 +2123,7 @@ Parameters:
        }
   ```
 
-  
+
 
 
 
@@ -2116,7 +2152,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
     ```python
-    type: 
+    type:
     	dict
     example:
         cfg = {
@@ -2126,7 +2162,7 @@ Parameters:
          }
     ```
 
-    
+
 
 ##### Version Statement
 
@@ -2149,7 +2185,7 @@ Parameters:
 - `transaction_cfg`: Basic transaction configuration.
 
      ```python
-     type: 
+     type:
      	dict
      example:
          cfg = {
@@ -2159,7 +2195,7 @@ Parameters:
           }
      ```
 
-     
+
 
 Method:
 
@@ -2219,7 +2255,7 @@ Parameters:
 
 
 
-##### Query the Effective Version of the Chain 
+##### Query the Effective Version of the Chain
 
 Method:
 
