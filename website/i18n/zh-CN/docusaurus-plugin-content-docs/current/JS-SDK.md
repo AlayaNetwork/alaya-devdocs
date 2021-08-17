@@ -608,7 +608,7 @@ web3.platon.getBlock(blockHashOrBlockNumber [, returnTransactionObjects] [, call
 - size - Number: 字节为单位的块大小
 - gasLimit - Number: 该块允许的最大 gas 值
 - gasUsed - Number: 该块中所有交易使用的 gas 总量
-- timestamp - Number: 出块的 unix 时间戳
+- timestamp - Number: 出块的 unix 时间戳(单位: 毫秒)
 - transactions - Array: 交易对象数组，或者 32 字节长的交易哈希值，取决于 returnTransactionObjects 的设置
 - uncles - Array: 叔伯块哈希值数组
 
@@ -1345,7 +1345,7 @@ EventEmitter: 订阅对象实例，是一个事件发生器，定义有如下事
 - extraData - String: 区块的额外数据字段
 - gasLimit - Number: 该块允许的最大 gas 用量
 - gasUsed - Number: 该块中所有交易使用的 gas 总用量
-- timestamp - Number: 出块的 unix 时间戳
+- timestamp - Number: 出块的 unix 时间戳(单位: 毫秒)
 
 通知返回值：
 
