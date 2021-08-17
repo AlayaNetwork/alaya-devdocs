@@ -603,7 +603,7 @@ Promise returns Object - The block object:
 - `size` - `Number`: Integer the size of this block in bytes.
 - `gasLimit` - `Number`: The maximum gas allowed in this block.
 - `gasUsed` - `Number`: The total used gas by all transactions in this block.
-- `timestamp` - `Number`: The unix timestamp for when the block was collated.
+- `timestamp` - `Number`: The unix timestamp for when the block was collated(unit:millisecond).
 - `transactions` - `Array`: Array of transaction objects, or 32 Bytes transaction hashes depending on the returnTransactionObjects parameter.
 - `uncles` - `Array`: Array of uncle hashes.
 
@@ -1339,7 +1339,7 @@ The structure of a returned block header is as follows:
 - `extraData` - `String`: The “extra data” field of this block.
 - `gasLimit` - `Number`: The maximum gas allowed in this block.
 - `gasUsed` - `Number`: The total used gas by all transactions in this block.
-- `timestamp` - `Number`: The unix timestamp for when the block was collated.
+- `timestamp` - `Number`: The unix timestamp for when the block was collated(unit:millisecond).
 
 Notification returns:
 
