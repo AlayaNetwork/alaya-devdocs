@@ -69,6 +69,7 @@ Create the genesis block configuration file `alaya.json` in the ~/alaya-node dir
             "period": 20000,
             "validatorMode": "ppos"
         },
+        "addressHRP": "atx",
         "genesisVersion": 3328
     },
     "economicModel": {
