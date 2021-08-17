@@ -408,7 +408,7 @@ An AttributeDict object whose resolved value is a block object that meets the se
 - `size`-Number: The block size in bytes.
 - `gasLimit`-Number: The maximum gas allowed in this block.
 - `gasUsed`-Number: The total amount of gas used by all transactions in this block.
-- `timestamp`-Number: The unix timestamp at which the block was generated.
+- `timestamp`-Number: The unix timestamp at which the block was generated (millisecond).
 - `transactions`-Array: Transaction object array, or 32-byte transaction hash value, depending on the setting of `returnTransactionObjects`.
 - `uncles`-Array: Array of uncle block hashes
 
