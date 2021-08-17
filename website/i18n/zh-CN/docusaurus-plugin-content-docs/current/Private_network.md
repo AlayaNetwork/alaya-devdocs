@@ -68,6 +68,7 @@ mkdir -p ~/alaya-node/data && alaya --datadir ~/alaya-node/data account new {wal
             "period": 20000,
             "validatorMode": "ppos"
         },
+        "addressHRP": "atx",
         "genesisVersion": 3328
     },
     "economicModel": {
