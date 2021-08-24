@@ -14,7 +14,7 @@ A wallet is a device or application that stores a set of keys, which can be used
 
 The public address and private key can be generated through the wallet: 
 
-- **A public address** is also called the receiving address of the wallet or **address** for short. **Alaya's address is a string of 42 characters starting with `lat`.** A wallet address can be shared and made public. The receiving address is required for sending a certain number of tokens to a wallet. Based on the implementation of the blockchain, the address can also be used to view relevant information about the wallet, such as the balance.
+- **A public address** is also called the receiving address of the wallet or **address** for short. **Alaya's address is a string of 42 characters starting with `atp`.** A wallet address can be shared and made public. The receiving address is required for sending a certain number of tokens to a wallet. Based on the implementation of the blockchain, the address can also be used to view relevant information about the wallet, such as the balance.
 - **A private Key** is necessary to digitally sign any transaction, to transfer the token or to change account-related data. The private key must **never be made public**. If someone obtains the private key of wallet, he can withdraw all the tokens in it. If the private key is lost, all tokens sent to the wallet address will be **permanently lost**.
 
 **To receive ATP on the Alaya chain, you need to select a wallet and then create an Alaya wallet address. **
