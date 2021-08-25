@@ -2776,7 +2776,7 @@ Put the bytecode attribute in ./build/contracts/HelloWorld.json into the HelloWo
 
 The Java SDK supports automatic generation of Java wrapper classes for Solidity smart contracts from an `abi` file.
 
-- Generate Java wrapper classes via command line tools（[platon-web3j download](http://download.alaya.network/alaya/sdk/0.13.2/alaya-web3j-0.13.2.1.zip)）:
+- Generate Java wrapper classes via command line tools（[platon-web3j download](https://download.alaya.network/alaya/sdk/0.16.0/alaya-web3j-0.16.0.0.zip)）:
 
 ```shell
 $ alaya-web3j solidity generate [--javaTypes|--solidityTypes] /path/to/<smart-contract>.bin /path/to/<smart-contract>.abi -o /path/to/src/main/java -p com.your.organisation.name
