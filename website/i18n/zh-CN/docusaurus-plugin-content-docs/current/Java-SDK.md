@@ -2783,7 +2783,7 @@ Warning: This is a pre-release compiler version, please do not use it in product
 
 Java SDK 支持从`abi`文件中自动生成 Solidity 智能合约对应的 Java 包装类。
 
-- 通过命令行工具生成 Java 包装类（[alaya-web3j 下载](http://download.alaya.network/alaya/sdk/0.13.2/alaya-web3j-0.13.2.1.zip)）：
+- 通过命令行工具生成 Java 包装类（[alaya-web3j 下载](https://download.alaya.network/alaya/sdk/0.16.0/alaya-web3j-0.16.0.0.zip)）：
 
 ```shell
 $ alaya-web3j solidity generate [--javaTypes|--solidityTypes] /path/to/<smart-contract>.bin /path/to/<smart-contract>.abi -o /path/to/src/main/java -p com.your.organisation.name
