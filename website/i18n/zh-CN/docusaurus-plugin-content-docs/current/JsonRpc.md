@@ -10,11 +10,11 @@ sidebar_label: JSON RPC
 
 ## JavaScript API
 
-To talk to an platon node from inside a JavaScript application use the [web3.js](https://github.com/PlatONnetwork/client-sdk-js) library, which gives an convenient interface for the RPC methods.
+To talk to an Alaya node from inside a JavaScript application use the [web3.js](https://github.com/AlayaNetwork/client-sdk-js) library, which gives an convenient interface for the RPC methods.
 
 ## Note
 
-The following just shows the RPC call process with curl procedure. Actually you need to make some adjustments according to the specific situation of your server. For example, a possible call procedure for PlatON is `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
+The following just shows the RPC call process with curl procedure. Actually you need to make some adjustments according to the specific situation of your server. For example, a possible call procedure for Alaya is `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
 
 ## JSON RPC API Reference
 
@@ -1418,7 +1418,7 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": []
 {
   "id": 74,
   "jsonrpc": "2.0",
-  "result": "/home/platon/network/data"
+  "result": "/home/alaya/network/data"
 }
 ```
 ***
