@@ -369,7 +369,7 @@ Chain ID is currently derived from the network at `platon.networkVersion` curren
 
 ## Installation
 
-+ Download [Samurai plugin package](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)
++ Download [Samurai plugin package](https://github.com/AlayaNetwork/Samurai/releases)
 + Unzip the Samurai plugin package
 + [Load the decompressed plugin package via chrome](https://github.com/AlayaNetwork/Samurai/blob/feature/multi-networks/docs/add-to-chrome.md)
 
