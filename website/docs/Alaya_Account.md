@@ -411,7 +411,7 @@ If you have used MetaMask wallet before, you will be familiar with Samurai walle
 
 > Note: The Samurai wallet has been updated recently. If you have installed the Samurai wallet before, delete it and reinstall it (remember to back up the wallet private key).
 
-**Installing Samurai Wallet**: This article uses Google Chrome as an example to explain how to install Samurai. Since Samurai does not exist in any app store, it needs to be installed manually. First go to [Samurai Chrome 8.1.0](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip) to download the latest version of the Samurai wallet, and unzip the installation package. Then open Google Chrome, select Settings -> More Tools -> Extensions.
+**Installing Samurai Wallet**: This article uses Google Chrome as an example to explain how to install Samurai. Since Samurai does not exist in any app store, it needs to be installed manually. First go to [Samurai Github](https://github.com/AlayaNetwork/Samurai/releases) to download the latest version of the Samurai wallet, and unzip the installation package. Then open Google Chrome, select Settings -> More Tools -> Extensions.
 
 Then open the developer mode -> load the unzipped extension -> select the folder just unzipped, as shown in the figure below:
 
