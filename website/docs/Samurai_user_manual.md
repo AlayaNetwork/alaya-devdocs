@@ -23,7 +23,7 @@ Samurai is a browser plug-in wallet modified based on MetaMask's open source cod
 
 ## Installation
 
-+ Download Samurai plug-in package from [Release address](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip).
++ Download Samurai plug-in package from [Release address](https://github.com/AlayaNetwork/Samurai/releases).
 + Unzip Samurai plug-in package.
 + Open chrome browser,input `chrome://extensions/` in the address bar and Enter,enter the management page of chrome extension program.
 
