@@ -370,7 +370,7 @@ Gas limit是一个高度可选的参数，我们会自动为它计算一个合�
 
 ## 安装
 
-+ 下载[Samurai插件包](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)
++ 下载[Samurai插件包](https://github.com/AlayaNetwork/Samurai/releases)
 + 解压Samurai插件包
 + [通过chrome加载已解压的插件包](https://github.com/AlayaNetwork/Samurai/blob/feature/multi-networks/docs/add-to-chrome.md)
 
