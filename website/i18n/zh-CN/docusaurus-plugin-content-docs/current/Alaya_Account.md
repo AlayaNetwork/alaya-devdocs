@@ -365,7 +365,7 @@ MTool功能也非常强大，但并不在本教程的讨论范围内，这里就
 
 > 注：Samurai钱包近期有更新，如果你之前安装过Samurai钱包，删除后重新安装（注意备份钱包私钥）。
 
-**Samurai钱包的安装**：本文以Google Chrome为例，说明Samurai的安装方法。由于Samurai并没有存在于哪个应用商店中，所以需要手动安装。首先到[Samurai Chrome 8.1.0](https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip)下载最新版本的Samurai钱包，将下载的安装包解压。然后打开Google Chrome，选择设置->更多工具->扩展程序，如下图所示：
+**Samurai钱包的安装**：本文以Google Chrome为例，说明Samurai的安装方法。由于Samurai并没有存在于哪个应用商店中，所以需要手动安装。首先到[Samurai Github](https://github.com/AlayaNetwork/Samurai/releases)下载最新版本的Samurai钱包，将下载的安装包解压。然后打开Google Chrome，选择设置->更多工具->扩展程序，如下图所示：
 
 <img src="/alaya-devdocs/img/zh-CN/account.assets/7.png" style={{zoom: '67%'}}  />
 
