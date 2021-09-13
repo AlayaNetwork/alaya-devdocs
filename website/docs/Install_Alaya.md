@@ -54,12 +54,12 @@ You can install the above compilation environment yourself. Please make sure the
 
 - Get the source code
 
-Get the source code and put it in the GOPATH path, where `alaya` is the branch name, then switch to the actual branch:
+Get the source code and put it in the GOPATH path, where `master` is the branch name, then switch to the actual branch:
 
 ```
 mkdir -p $GOPATH/src/github.com/AlayaNetwork
 cd $GOPATH/src/github.com/Alaya-Go
-git clone -b alaya-develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
+git clone -b master https://github.com/AlayaNetwork/Alaya-Go.git --recursive
 ```
 
 - Add bls dependent library to environment variables
@@ -94,7 +94,7 @@ After compiling, `alaya`,` alayakey` executable files will be generated in the` 
 **step2.** Get the Alaya source:
 
 ```bash
-git clone -b alaya-develop https://github.com/AlayaNetwork/Alaya-Go.git --recursive
+git clone -b master https://github.com/AlayaNetwork/Alaya-Go.git --recursive
 ```
 
 **step3.** Install dependency library:
