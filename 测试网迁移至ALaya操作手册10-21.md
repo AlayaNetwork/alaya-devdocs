@@ -79,7 +79,7 @@ $ rm -rf platon
 
   ```bash
   $ mkdir PlatON-Go-Alaya && cd PlatON-Go-Alaya
-  $ git clone -b alaya-develop https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+  $ git clone -b master https://github.com/PlatONnetwork/PlatON-Go.git --recursive
   $ cd PlatON-Go && make all
   # 此处可能报错，如果报错，请确认go版本，要求1.13+
   # 使用PlatON-Go-Alaya/build/bin/目录下的platon文件替换旧的platon
