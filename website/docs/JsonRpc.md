@@ -667,6 +667,34 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_call","params":[{see abov
 
 ***
 
+#### platon_chainId
+
+Returns the chain ID used for transaction signing at the current best block. Null is returned if not available.
+
+
+##### Parameters
+
+None
+
+##### Returns
+
+`QUANTITY` - Chain ID, or null if not available.
+
+##### Example
+```js
+// Request
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_chainId","params":[],"id":1}'
+
+// Result
+{
+  "id":1,
+  "jsonrpc": "2.0",
+  "result": "0x1"
+}
+```
+
+***
+
 #### platon_estimateGas
 
 Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas.
