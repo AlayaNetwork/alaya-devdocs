@@ -673,14 +673,15 @@ Destroy the Map object, and refresh the data to the blockchain.
 
             - `k:` Key
 
-    - **Example:**
+        - **Example:**
+          ```cpp
+             typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
+             MapStr map;
+             map.insert("hello", "world");
+             map.erase("hello");
+             ```
 
-      ```cpp
-      typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
-      MapStr map;
-      map.insert("hello", "world");
-      map.erase("hello");
-      ```
+     
 
     - `template<Name::Raw TableName, typename Key , typename Value > void platon::db::Map< TableName, Key, Value >::flush ()`
       Refresh the modified data in memory to the blockchain.
@@ -716,14 +717,14 @@ Destroy the Map object, and refresh the data to the blockchain.
 
             - True if inserted successfully, or false otherwise.
 
-    - **Example:**
+        - **Example:**
 
-      ```cpp
-      typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
-      MapStr map;
-      map.insert("hello", "world");
-      assert(map["hello"] == "world");
-      ```
+          ```cpp
+          typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
+          MapStr map;
+          map.insert("hello", "world");
+          assert(map["hello"] == "world");
+          ```
 
     - `template<Name::Raw TableName, typename Key , typename Value > bool platon::db::Map< TableName, Key, Value >::insert_const ( const Key & k, const Value & v)`
       The insert will not update the new key-value pair to the cache. It is suitable for a large number of inserts, with no need to update after insertion.
@@ -737,14 +738,14 @@ Destroy the Map object, and refresh the data to the blockchain.
 
             - True if inserted successfully, or false otherwise.
 
-    - **Example:**
+        - **Example:**
 
-      ```cpp
-      typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
-      MapStr map;
-      map.insert_const("hello", "world");
-      assert(map["hello"] == "world");
-      ```
+          ```cpp
+          typedef platon::db::Map<"map_str"_n, std::string, std::string> MapStr;
+          MapStr map;
+          map.insert_const("hello", "world");
+          assert(map["hello"] == "world");
+          ```
 
     - `template<Name::Raw TableName, typename Key , typename Value > Map<TableName, Key, Value>& platon::db::Map< TableName, Key, Value >::operator= ( const Map< TableName, Key, Value > & )`
 
@@ -892,120 +893,108 @@ MultiIndex supports unique indexes and ordinary indexes. The unique index should
       ```
 
     - `template<Name::Raw TableName, typename T , typename... Indices> void platon::db::MultiIndex< TableName, T, Indices >::erase(const_iterator position)`
-      
-    Erase data based on iterator
-      
-        - **Parameters**
-            - `position:` position of iterator
+      Erase data based on iterator
+      - **Parameters**
+           - `position:` position of iterator
       - **Example:**
-      
-      ```cpp
-      struct Member {
-      std::string name;
-      uint8_t age;
-      uint8_t sex;
-      uint64_t $seq_;
-      std::string Name() const { return name; }
-      uint8_t Age() const { return age; }
-      PLATON_SERIALIZE(Member, (name)(age)(sex))
-      };
-      MultiIndex<
-      "table"_n, Member,
-      IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
+       ```cpp
+        struct Member {
+        std::string name;
+        uint8_t age;
+        uint8_t sex;
+        uint64_t $seq_;
+        std::string Name() const { return name; }
+        uint8_t Age() const { return age; }
+        PLATON_SERIALIZE(Member, (name)(age)(sex))
+        };
+        MultiIndex<
+        "table"_n, Member,
+        IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
                                         IndexType::UniqueIndex>>,
-      IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
+        IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
                                           IndexType::NormalIndex>>>
-      member_table;
-      auto vect_iter = member_table.find<"index2"_n>(uint8_t(10));
-      member_table.erase(vect_iter[0]);
-    ```
+        member_table;
+        auto vect_iter = member_table.find<"index"_n>(std::string("use to find data"));
+        member_table.erase(vect_iter[0]);
+       ```
       
-    - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName, typename KEY > const_iterator platon::db::MultiIndex< TableName, T, Indices >::find(const KEY & key)`
-      
-    Find the data, Only a unique index is available.
-      
-        - **Parameters**
-            - `key:` key of index
-        - **Returns**
-            - The result iterator. If not found, the value is cend().
+    - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName, typename KEY > const_iterator platon::db::MultiIndex< TableName, T, Indices >::find(const KEY & key)`  
+      Find the data, Only a unique index is available.
+      - **Parameters**
+           - `key:` key of index
+      - **Returns**
+           - The result iterator. If not found, the value is cend().
       - **Example:**
-      
-      ```cpp
-      struct Member {
-      std::string name;
-      uint8_t age;
-      uint8_t sex;
-      uint64_t $seq_;
-      std::string Name() const { return name; }
-      uint8_t Age() const { return age; }
-      PLATON_SERIALIZE(Member, (name)(age)(sex))
-      };
-      MultiIndex<
-      "table"_n, Member,
+       ```cpp
+        struct Member {
+        std::string name;
+        uint8_t age;
+        uint8_t sex;
+        uint64_t $seq_;
+        std::string Name() const { return name; }
+        uint8_t Age() const { return age; }
+        PLATON_SERIALIZE(Member, (name)(age)(sex))
+        };
+        MultiIndex<
+        "table"_n, Member,
         IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
                                           IndexType::UniqueIndex>>,
-      IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
+        IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
                                             IndexType::NormalIndex>>>
-      member_table;
-      auto vect_iter = member_table.find<"index2"_n>(uint8_t(10));
-    ```
+        member_table;
+        auto vect_iter = member_table.find<"index"_n>(std::string("use to find data"));
+       ```
       
     - `template<Name::Raw TableName, typename T , typename... Indices> template<Name::Raw IndexName>auto platon::db::MultiIndex< TableName, T, Indices >::get_index()`
-      
-    Get the index object of a non-unique index.
-      
-        - **Returns**
-            - index object.
+      Get the index object of a non-unique index.
+      - **Returns**
+           - index object.
       - **Example:**
-      
-      ```cpp
-      struct Member {
-      std::string name;
-      uint8_t age;
-      uint8_t sex;
-      uint64_t $seq_;
-      std::string Name() const { return name; }
-      uint8_t Age() const { return age; }
-      PLATON_SERIALIZE(Member, (name)(age)(sex))
-      };
-      MultiIndex<
-      "table"_n, Member,
+       ```cpp
+        struct Member {
+        std::string name;
+        uint8_t age;
+        uint8_t sex;
+        uint64_t $seq_;
+        std::string Name() const { return name; }
+        uint8_t Age() const { return age; }
+        PLATON_SERIALIZE(Member, (name)(age)(sex))
+        };
+        MultiIndex<
+        "table"_n, Member,
         IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
                                           IndexType::UniqueIndex>>,
-      IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
-                                            IndexType::NormalIndex>>>
-      member_table;
-      auto index = member_table.get_index<"index2"_n>();
-    ```
+        IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
+                                             IndexType::NormalIndex>>>
+        member_table;
+        auto index = member_table.get_index<"index2"_n>();
+       ```
       
     - `template<Name::Raw TableName, typename T , typename... Indices> template<typename Lambda >void platon::db::MultiIndex< TableName, T, Indices >::modify(const_iterator position,Lambda && constructor)`
-      
-    Modify data based on iterators, but not all fields related to the index.
-      
-        - **Parameters**
+      Modify data based on iterators, but not all fields related to the index.
+       - **Parameters**
             - `position:` Iterator
             - `constructor:` lambda function that updates the target object
-      - **Example:**
-      
-      ```cpp
-      struct Member {
-      std::string name;
-      uint8_t age;
-      uint8_t sex;
-      uint64_t $seq_;
-      std::string Name() const { return name; }
-      uint8_t Age() const { return age; }
-      PLATON_SERIALIZE(Member, (name)(age)(sex))
-      };
-      MultiIndex<
-      "table"_n, Member,
-        IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
+       - **Example:**
+        ```cpp
+         struct Member {
+         std::string name;
+         uint8_t age;
+         uint8_t sex;
+         uint64_t $seq_;
+         std::string Name() const { return name; }
+         uint8_t Age() const { return age; }
+         PLATON_SERIALIZE(Member, (name)(age)(sex))
+         };
+         MultiIndex<
+         "table"_n, Member,
+         IndexedBy<"index"_n, IndexMemberFun<Member, std::string, &Member::Name,
                                           IndexType::UniqueIndex>>,
-      IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
+         IndexedBy<"index2"_n, IndexMemberFun<Member, uint8_t, &Member::Age,
                                             IndexType::NormalIndex>>>
-      member_table;
-      member_table.modify(r.first, [&](auto &m) { m.sex = 15; });
-      ```
+         member_table;
+         member_table.modify(r.first, [&](auto &m) { m.sex = 15; });
+        ```
 
 ## Contract API
 
