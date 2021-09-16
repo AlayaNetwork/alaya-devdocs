@@ -1601,6 +1601,7 @@ no
 `String` - data directory.
 
 ##### Example
+
 ```js
 // Request
 curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": [], "id": 74}'
@@ -1612,6 +1613,7 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": []
   "result": "/home/platon/network/data"
 }
 ```
+
 ***
 
 #### personal_openWallet
@@ -1714,7 +1716,7 @@ curl --data '{"method":"personal_ecRecover","params":["0xd46e8dd67c5d32be8d46e8d
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "result": "0xb60e8dd61c5d32be8058bb8eb970870f07233155"
+  "result": "atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0"
 }
 ```
 
@@ -1876,7 +1878,7 @@ Calculates an Alaya specific signature with: sign(keccak256("Alaya Signed Messag
 
 ```js
 //Request
-curl --data '{"method":"personal_sign","params":[0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","0xb60e8dd61c5d32be8058bb8eb970870f07233155","hunter"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+curl --data '{"method":"personal_sign","params":[0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0","hunter"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
 //Result
 {
   "id": 1,
@@ -1914,7 +1916,7 @@ Signs a transaction without dispatching it to the network. It can later be submi
 
 ```js
 //Request
-curl --data '{"method":"personal_signTransaction","params":[{"from":"0x407d73d8a49eeb85d32cf465507dd71d507100c1","to":"0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b","data":"0x41cd5add4fd13aedd64521e363ea279923575ff39718065d38bd46f0e6632e8e","value":"0x186a0"},"hunter2"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+curl --data '{"method":"personal_signTransaction","params":[{"from":"atp1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp99y5h3","to":"atp14984xa8uuhkmer32s6tuz5e3valxa0ctv5ecf5","data":"0x41cd5add4fd13aedd64521e363ea279923575ff39718065d38bd46f0e6632e8e","value":"0x186a0"},"hunter2"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
 //Result
 {
   "id": 1,
@@ -1927,8 +1929,8 @@ curl --data '{"method":"personal_signTransaction","params":[{"from":"0x407d73d8a
       "blockHash": "0xbeab0aa2411b7ab17f30a99d3cb9c6ef2fc5426d6ad6fd9e2a26a6aed1d1055b",
       "blockNumber": "0x15df",
       "transactionIndex": "0x1",
-      "from": "0x407d73d8a49eeb85d32cf465507dd71d507100c1",
-      "to": "0x853f43d8a49eeb85d32cf465507dd71d507100c1",
+      "from": "atp1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp99y5h3",
+      "to": "atp1s5l58k9ynm4ct5ev73j4qlwhr4g8zqxp0p6xtt",
       "value": "0x7f110",
       "gas": "0x7f110",
       "gasPrice": "0x09184e72a000",
@@ -1962,7 +1964,7 @@ There can only be one unlocked account at a time.
 
 ```js
 //Request
-curl --data '{"method":"personal_unlockAccount","params":["0x8f0227d45853a50eefd48dd4fec25d5b3fd2295e","hunter2",null],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+curl --data '{"method":"personal_unlockAccount","params":["atp13upz04zc2wjsam753h20asjatvlay2272djw9w","hunter2",null],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
 //Result
 {
   "id": 1,
