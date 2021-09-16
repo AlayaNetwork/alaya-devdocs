@@ -4,32 +4,32 @@ title: JSON RPC API
 sidebar_label: JSON RPC
 ---
 
-[JSON](http://json.org/) is a lightweight data-interchange format. It can represent numbers, strings, ordered sequences of values, and collections of name/value pairs.
+[JSON](http://json.org/) 是一种轻量级的数据交换格式。它可以表示数字，字符串，值的有序序列以及名称/值对的集合。
 
-[JSON-RPC](http://www.jsonrpc.org/specification) is a stateless, light-weight remote procedure call (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON ([RFC 4627](http://www.ietf.org/rfc/rfc4627.txt)) as data format.
+[JSON-RPC](http://www.jsonrpc.org/specification) 是一种无状态的轻量级远程过程调用(RPC)协议。首先，本规范定义了几种数据结构及其处理规则。它与传输无关，因为可以在同一过程中，通过套接字，通过HTTP或在许多各种消息传递环境中使用这些概念。它使用JSON ([RFC 4627](http://www.ietf.org/rfc/rfc4627.txt)) 作为数据格式。
 
 ## JavaScript API
 
-To talk to an Alaya node from inside a JavaScript application use the [web3.js](https://github.com/AlayaNetwork/client-sdk-js) library, which gives an convenient interface for the RPC methods.
+要从JavaScript应用程序内部与alaya节点通信，请使用 [web3.js](https://github.com/AlayaNetwork/client-sdk-js) 库，该库为RPC方法提供了方便的接口。
 
-## Note
+## 注意
 
-The following just shows the RPC call process with curl procedure. Actually you need to make some adjustments according to the specific situation of your server. For example, a possible call procedure for Alaya is `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
+下面仅显示带有curl过程的RPC调用过程。实际上，您需要根据服务器的具体情况进行一些调整。例如，Alaya的可能调用过程是 `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
 
-## JSON RPC API Reference
+## JSON RPC API参考
 
 #### web3_clientVersion
 
-Returns the current client version.
+返回当前客户端版本。
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`String` - The current client version.
+`String` - 当前的客户端版本
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}'
@@ -46,11 +46,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],
 
 #### web3_sha3
 
-Returns Keccak-256 (*not* the standardized SHA3-256) of the given data.
+返回给定数据的Keccak-256(*不是*标准化的SHA3-256)。
 
-##### Parameters
+##### 参数
 
-1. `String` - the data to convert into a SHA3 hash.
+1. `String` - 要转换为SHA3哈希的数据。
 
 ```js
 params: [
@@ -58,11 +58,11 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`DATA` - The SHA3 result of the given string.
+`DATA` - 给定字符串的SHA3结果。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":64}'
@@ -79,16 +79,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c
 
 #### net_version
 
-Returns the current network protocol version.
+返回当前的网络协议版本。
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`String` - The current network protocol version.
+`String` - 当前的网络协议版本。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67}'
@@ -105,16 +105,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":67
 
 #### net_listening
 
-Returns `true` if client is actively listening for network connections.
+如果客户端正在积极侦听网络连接，则返回`true`。
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`Boolean` - `true` when listening, otherwise `false`.
+`Boolean` - 侦听时为`true`, 否则为 `false`.
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":67}'
@@ -131,16 +131,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":
 
 #### net_peerCount
 
-Returns number of peers currenly connected to the client.
+返回当前连接到客户端的节点数量。
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the number of connected peers.
+`QUANTITY` - 连接的节点数。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":74}'
@@ -157,16 +157,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 
 #### platon_protocolVersion
 
-Returns the current platon protocol version.
+返回当前的Alaya协议版本
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`String` - The current platon protocol version.
+`String` - 当前的Alaya协议版本。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_protocolVersion","params":[],"id":67}'
@@ -183,25 +183,23 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_protocolVersion","params"
 
 #### platon_syncing
 
-This property is read-only. If synchronizing, return the synchronization object. Otherwise return false.
+这个属性是只读的。如果正在同步，返回同步对象。否则返回`false`。
 
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`Object|Boolean`, An object with sync status data or `FALSE`,  If the node is not yet synchronized with the network,
+`Object|Boolean`, 如果节点还没有与网络同步，返回false，否则返回具有以下属性的同步对象：
 
-Returns false, otherwise returns a synchronous object with the following properties:
+  - `startingBlock`: `Number` - 同步开始区块号。
+  - `currentBlock`: `Number`- 节点当前正在同步的区块号。
+  - `highestBlock`: `Number`- 预估要同步到的区块。
+  - `knownStates`: `Number` - 预计要下载的状态数据。
+  - `pulledStates`: `Number` - 已经下载的状态数据。
 
-  - `startingBlock`: `Number` - The block at which the import started (will only be reset, after the sync reached his head).
-  - `currentBlock`: `Number`- The current block, same as platon_blockNumber.
-  - `highestBlock`: `Number`- The estimated highest block.
-  - `knownStates`: `Number`: The  estimated download status
-  - `pulledStates`: `Number`: The downloaded status
-
-##### Example
+##### 例子
 ```js
 // Request
 curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id":1}' http://127.0.0.1:6789
@@ -230,16 +228,16 @@ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","metho
 
 #### platon_gasPrice
 
-Returns the current price per gas in von.
+查询gasPrice。
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the current gas price in von.
+`QUANTITY` - 返回以von为单位的gasPrice。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_gasPrice","params":[],"id":73}'
@@ -256,17 +254,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_gasPrice","params":[],"id
 
 #### platon_accounts
 
-Returns a list of addresses owned by client.
+返回客户端拥有的地址列表。
 
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`Array of DATA`, string - address string in bech32 format owned by the client.
+`Array of DATA`, string - 客户端拥有的bech32格式的地址字符串。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"platon_accounts","params":[],"id":1}'
@@ -283,16 +281,16 @@ curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","metho
 
 #### platon_blockNumber
 
-Returns the number of most recent block.
+返回节点的块高
 
-##### Parameters
+##### 参数
 none
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the current block number the client is on.
+`QUANTITY` - 客户端所在的当前块高。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_blockNumber","params":[],"id":83}'
@@ -309,12 +307,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_blockNumber","params":[],
 
 #### platon_getBalance
 
-Returns the balance of the account of given address.
+返回给定地址的帐户余额。
 
-##### Parameters
+##### 参数
 
-1. `DATA`, string - address string in bech32 format to check for balance.
-2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`.
+1. `DATA`, string - 字符串-bech32格式的地址字符串，用于检查余额。
+2. `QUANTITY|TAG` - 块高, 或字符串: `"latest"`, `"earliest"` 或 `"pending"`.
 
 ```js
 params: [
@@ -323,12 +321,12 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the current balance in von.
+`QUANTITY` - 当前余额(以von为单位)的整数。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBalance","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym", "latest"],"id":1}'
@@ -345,13 +343,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBalance","params":["at
 
 #### platon_getStorageAt
 
-Returns the value from a storage position at a given address.
+从给定地址的存储位置返回值。
 
-##### Parameters
+##### 参数
 
-1. `DATA`, string - address string in bech32 format of the storage.
-2. `QUANTITY` - integer of the position in the storage.
-3. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`.
+1. `DATA`, string - 存储格式为bech32的地址字符串。
+2. `QUANTITY` - 存储器中位置的整数。
+3. `QUANTITY|TAG` - 块高, 或字符串:  `"latest"`, `"earliest"` 或 `"pending"`.
 
 
 ```js
@@ -362,12 +360,12 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`DATA` - the value at this storage position.
+`DATA` - 该存储位置的值。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getStorageAt","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym", "0x0", "0x2"],"id":1}'
@@ -384,13 +382,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getStorageAt","params":["
 
 #### platon_getTransactionCount
 
-Returns the number of transactions *sent* from an address.
+返回从地址*sent*的交易数量。
 
+##### 参数
 
-##### Parameters
-
-1. `DATA`, string - address string in bech32 format.
-2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`.
+1. `DATA`, string - bech32格式的地址字符串。
+2. `QUANTITY|TAG` - 块高, 或字符串:  `"latest"`, `"earliest"` 或 `"pending"`.
 
 ```js
 params: [
@@ -399,12 +396,12 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the number of transactions send from this address.
+`QUANTITY` - 从该地址发送的交易次数的整数。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionCount","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym","latest"],"id":1}'
@@ -421,12 +418,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionCount","par
 
 #### platon_getBlockTransactionCountByHash
 
-Returns the number of transactions in a block from a block matching the given block hash.
+从与给定区块哈希匹配的区块中返回区块中的交易数量。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, 32 Bytes - hash of a block.
+1. `DATA`, 32 Bytes - 块哈希。
 
 ```js
 params: [
@@ -434,12 +431,12 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the number of transactions in this block.
+`QUANTITY` - 此区块中交易数量的整数。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockTransactionCountByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
@@ -456,12 +453,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockTransactionCountB
 
 #### platon_getBlockTransactionCountByNumber
 
-Returns the number of transactions in a block from a block matching the given block number.
+从与给定区块编号匹配的区块中返回区块中的交易数量。
 
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY|TAG` - integer of a block number, or the string `"earliest"`, `"latest"` or `"pending"`.
+1. `QUANTITY|TAG` - 块高, 或字符串:  `"earliest"`, `"latest"` 或 `"pending"`.
 
 ```js
 params: [
@@ -469,11 +466,11 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`QUANTITY` - integer of the number of transactions in this block.
+`QUANTITY` - 此区块中交易数量的整数。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockTransactionCountByNumber","params":["0xe8"],"id":1}'
@@ -490,13 +487,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockTransactionCountB
 
 #### platon_getCode
 
-Returns code at a given address.
+返回给定地址的code。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, string - address string in bech32 format .
-2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`.
+1. `DATA`, string - bech32格式的地址字符串。
+2. `QUANTITY|TAG` - 块高, 或字符串:  `"latest"`, `"earliest"` 或 `"pending"`.
 
 ```js
 params: [
@@ -505,12 +502,12 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`DATA` - the code from the given address.
+`DATA` - 返回给定地址的code。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getCode","params":["atx14984xa8uuhkmer32s6tuz5e3valxa0ctxj9j67", "0x2"],"id":1}'
@@ -527,20 +524,20 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getCode","params":["atx14
 
 #### platon_sign
 
-Signs data with a given address.
+用给定的地址签名数据。
 
-**Note** the address to sign must be unlocked.
+**注意** 签名地址必须解锁。
 
-##### Parameters
+##### 参数
 
-1. `DATA`, string - address string in bech32 format .
-2. `DATA`, Data to sign.
+1. `DATA`, string - bech32格式的地址字符串。
+2. `DATA`, 要签名的数据。
 
-##### Returns
+##### 返回
 
-`DATA`: Signed data.
+`DATA`: 签名后的数据。
 
-##### Example
+##### 例子
 
 ```js
 // Request
@@ -558,18 +555,18 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sign","params":["atx16xk7
 
 #### platon_sendTransaction
 
-Creates new message call transaction or a contract creation, if the data field contains code.
+如果数据字段包含代码，则创建新的消息呼叫交易或合同创建。
 
-##### Parameters
+##### 参数
 
-1. `Object` - The transaction object.
-  - `from`: `DATA`, string - address string in bech32 format of the transaction is send from.
-  - `to`: `DATA`, string - address string in bech32 format - (optional when creating new contract) The address the transaction is directed to.
-  - `gas`: `QUANTITY`  - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
-  - `gasPrice`: `QUANTITY`  - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas.
-  - `value`: `QUANTITY`  - (optional) Integer of the value send with this transaction.
-  - `data`: `DATA`  - (optional) The compiled code of a contract.
-  - `nonce`: `QUANTITY`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+1. `Object` - 交易对象。
+  - `from`: `DATA`，string - 发送事务的bech32格式的地址字符串。
+  - `to`: `DATA`，string - bech32格式的地址字符串-(在创建新合约时是可选的)交易指向的地址。
+  - `gas`: `QUANTITY` - (可选，默认值: 90000)为交易执行提供的gas的整数。它将返回未使用的气体。
+  - `gasPrice`: `QUANTITY` - (可选，默认值: 待定)gasPrice。
+  - `value`: `QUANTITY` - (可选)此交易发送的值的整数。
+  - `data`: `DATA` - (可选)合同的编译代码。
+  - `nonce`: `QUANTITY` - (可选)随机数的整数。这样可以覆盖使用相同随机数的未决事务。
 
 ```js
 params: [{
@@ -582,13 +579,13 @@ params: [{
 }]
 ```
 
-##### Returns
+##### 返回
 
-`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
+`DATA`, 32字节-交易哈希，如果交易不可用，则为零字节哈希。
 
-Use platon_getTransactionReceipt to get the contract address, after the transaction was mined, when you created a contract.
+在创建交易后，使用platon_getTransactionReceipt获取交易后的合约地址。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sendTransaction","params":[{see above}],"id":1}'
@@ -605,12 +602,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sendTransaction","params"
 
 #### platon_sendRawTransaction
 
-Creates new message call transaction or a contract creation for signed transactions.
+发送已签名交易数据
 
-##### Parameters
+##### 参数
 
-1. `Object` - The transaction object.
-  - `data`: `DATA`, The signed transaction data.
+1. `Object` - 交易对象。
+  - `data`: `DATA`, 已签名的交易数据。
 
 ```js
 params: [{
@@ -618,13 +615,13 @@ params: [{
 }]
 ```
 
-##### Returns
+##### 返回
 
-`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
+`DATA`, 32字节 - 交易哈希，如果交易尚不可用，则为零哈希。
 
-Use platon_getTransactionReceipt to get the contract address, after the transaction was mined, when you created a contract.
+在创建交易后，使用platon_getTransactionReceipt获取交易后的合约地址。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sendRawTransaction","params":[{see above}],"id":1}'
@@ -641,25 +638,24 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sendRawTransaction","para
 
 #### platon_call
 
-Executes a new message call immediately without creating a transaction on the block chain.
+执行新的消息调用，而无需在区块链上创建事务。
 
+##### 参数
 
-##### Parameters
+1. `Object` - 事务调用对象
+  - `from`: `DATA`，字符串 - bech32格式的地址字符串-(可选)发送交易的地址。
+  - `to`: `DATA`，字符串 - bech32格式的地址字符串-事务指向的地址。
+  - `gas`: `QUANTITY` - (可选)为交易执行提供的gas的整数。 platon_call不消耗gas，但是某些执行可能需要此参数。
+  - `gasPrice`: `QUANTITY` - (可选)gasPrice
+  - `value`: `QUANTITY` - (可选)此交易发送的值的整数。
+  - `data`: `DATA` - (可选)合同的编译代码。
+2. `QUANTITY|TAG` - 块高, 或字符串:  `"latest"`, `"earliest"` 或 `"pending"`.
 
-1. `Object` - The transaction call object
-  - `from`: `DATA`, string - address string in bech32 format - (optional) The address the transaction is send from.
-  - `to`: `DATA`, string - address string in bech32 format - The address the transaction is directed to.
-  - `gas`: `QUANTITY`  - (optional) Integer of the gas provided for the transaction execution. platon_call consumes zero gas, but this parameter may be needed by some executions.
-  - `gasPrice`: `QUANTITY`  - (optional) Integer of the gasPrice used for each paid gas.
-  - `value`: `QUANTITY`  - (optional) Integer of the value send with this transaction.
-  - `data`: `DATA`  - (optional) The compiled code of a contract.
-2. `QUANTITY|TAG` - integer block number, or the string `"latest"`, `"earliest"` or `"pending"`.
+##### 返回
 
-##### Returns
+`DATA` - 执行合约的返回值。
 
-`DATA` - the return value of executed contract.
-
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_call","params":[{see above}],"id":1}'
@@ -676,17 +672,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_call","params":[{see abov
 
 #### platon_estimateGas
 
-Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas.
+预估发送交易所需要的gas费用。
 
-##### Parameters
+##### 参数
 
-See platon_call parameters, expect that all properties are optional.
+请参阅platon_call参数。
 
-##### Returns
+##### 返回
 
-`QUANTITY` - the amount of gas used.
+`QUANTITY` - 返回gas数量.
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_estimateGas","params":[{see above}],"id":1}'
@@ -703,13 +699,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_estimateGas","params":[{s
 
 #### platon_getBlockByHash
 
-Returns information about a block by hash.
+按哈希返回有关块的信息。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, 32 Bytes - Hash of a block.
-2. `Boolean` - If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
+1. `DATA`, 32个字节-块哈希值。
+2. `Boolean` - 如果为true，则返回完整的交易对象；如果为false，则仅返回交易的哈希值。
 
 ```js
 params: [
@@ -718,32 +714,32 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`Object` - A block object, or `null` when no block was found:
+Object - 块对象，如果未找到块，则为null：
 
-  - `number`: `QUANTITY` - the block number. `null` when it's pending block.
-  - `hash`: `DATA`, 32 Bytes - hash of the block. `null` when it's pending block.
-  - `parentHash`: `DATA`, 32 Bytes - hash of the parent block.
-  - `nonce`: `DATA`, 8 Bytes - hash of the generated proof-of-work. `null` when it's pending block.
-  - `sha3Uncles`: `DATA`, 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: `DATA`, 256 Bytes - the bloom filter for the logs of the block. `null` when it's pending block.
-  - `transactionsRoot`: `DATA`, 32 Bytes - the root of the transaction trie of the block.
-  - `stateRoot`: `DATA`, 32 Bytes - the root of the final state trie of the block.
-  - `receiptsRoot`: `DATA`, 32 Bytes - the root of the receipts trie of the block.
-  - `miner`: `DATA`, string - address string in bech32 format - the address of the beneficiary to whom the mining rewards were given.
-  - `difficulty`: `QUANTITY` - integer of the difficulty for this block.
-  - `totalDifficulty`: `QUANTITY` - integer of the total difficulty of the chain until this block.
-  - `extraData`: `DATA` - the "extra data" field of this block.
-  - `size`: `QUANTITY` - integer the size of this block in bytes.
-  - `gasLimit`: `QUANTITY` - the maximum gas allowed in this block.
-  - `gasUsed`: `QUANTITY` - the total used gas by all transactions in this block.
-  - `timestamp`: `QUANTITY` - the unix timestamp for when the block was collated.
-  - `transactions`: `Array` - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
-  - `uncles`: `Array` - Array of uncle hashes.
+   - `number`：`QUANTITY` - 块号。当它的未决块时，为"null"。
+   - `hash`：`DATA`，32字节 - 块的哈希值。当它的未决块时，为"null"。
+   - `parentHash`：`DATA`，32字节 - 父块的哈希值。
+   - `nonce`：`DATA`，8字节 - 生成的工作量证明的哈希。当它的未决块时，为"null"。
+   - `sha3Uncles`：`DATA`，32字节 - 块中叔叔数据的SHA3。
+   - `logsBloom`：`DATA`，256字节 - 用于块日志的Bloom过滤器。当它的未决块时，为"null"。
+   - `transactionsRoot`：`DATA`，32字节 - 块的事务Trie的根。
+   - `stateRoot`：`DATA`，32 Bytes - 块的最终状态Trie的根。
+   - `receiptsRoot`：`DATA`，32 Bytes - 块的收据Trie的根。
+   - `miner`：`DATA`，string - bech32格式的地址字符串 - 给予采矿奖励的受益人的地址。
+   - `difficulty`：`QUANTITY` - 该方块难度的整数。
+   - `totalDifficulty`：`QUANTITY` - 直到该区块为止链的总难度的整数。
+   - `extraData`：`DATA` - 该块的“额外数据"字段。
+   - `size`：`QUANTITY` - 该块的大小，以字节为单位。
+   - `gasLimit`：`QUANTITY` - 此区块中允许的最大气体。
+   - `gasUsed`：`QUANTITY` - 该区块中所有交易的总使用气体。
+   - `timestamp`：`QUANTITY` - 整理块时的unix时间戳。
+   - `transactions`：`Array` - 事务对象的数组，或32字节的事务哈希，具体取决于最后一个给定的参数。
+   - `uncles`：`Array` - 叔叔哈希数组。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockByHash","params":["0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331", true],"id":1}'
@@ -780,12 +776,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockByHash","params":
 
 #### platon_getBlockByNumber
 
-Returns information about a block by block number.
+按块号返回有关块的信息。
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY|TAG` - integer of a block number, or the string `"earliest"`, `"latest"` or `"pending"`.
-2. `Boolean` - If `true` it returns the full transaction objects, if `false` only the hashes of the transactions.
+1. `QUANTITY|TAG` - 块高, 或字符串:  `"earliest"`, `"latest"` 或 `"pending"`.
+2. `Boolean` - 如果为true，则返回完整的交易对象；如果为false，则仅返回交易的哈希值。
 
 ```js
 params: [
@@ -794,28 +790,28 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-See platon_getBlockByHash
+参考platon_getBlockByHash。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockByNumber","params":["0x1b4", true],"id":1}'
 ```
 
-Result see platon_getBlockByHash.
+结果参考platon_getBlockByHash。
 
 ***
 
 #### platon_getTransactionByHash
 
-Returns the information about a transaction requested by transaction hash.
+返回有关交易哈希请求的交易信息。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, 32 Bytes - hash of a transaction.
+1. `DATA`, 32个字节-交易哈希。
 
 ```js
 params: [
@@ -823,23 +819,24 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`Object` - A transaction object, or `null` when no transaction was found:
+Object - 交易对象，如果未找到交易，则为null：
 
-  - `hash`: `DATA`, 32 Bytes - hash of the transaction.
-  - `nonce`: `QUANTITY` - the number of transactions made by the sender prior to this one.
-  - `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in. `null` when it's pending.
-  - `blockNumber`: `QUANTITY` - block number where this transaction was in. `null` when it's pending.
-  - `transactionIndex`: `QUANTITY` - integer of the transactions index position in the block. `null` when it's pending.
-  - `from`: `DATA`, string - address string in bech32 format of the sender.
-  - `to`: `DATA`, string - address string in bech32 format of the receiver. `null` when it's a contract creation transaction.
-  - `value`: `QUANTITY` - value transferred in von.
-  - `gasPrice`: `QUANTITY` - gas price provided by the sender in von.
-  - `gas`: `QUANTITY` - gas provided by the sender.
-  - `input`: `DATA` - the data send along with the transaction.
+   - `hash`: `DATA`，32字节 - 事务的哈希值。
+   - `nonce`: `QUANTITY` - 发送者在此之前进行的交易次数。
+   - `blockHash`: `DATA`，32字节 - 此事务所在的块的哈希。`null`，待处理。
+   - `blockNumber`: `QUANTITY` - 该交易所在的区块号。`null`，待处理。
+   - `transactionIndex`: `QUANTITY` - 交易索引在区块中的位置的整数。当待处理时为null。
+   - `from`: `DATA`，string - 发送者的bech32格式的地址字符串。
+   - `to`: `DATA`，string - 接收者的bech32格式的地址字符串。当其为合同创建交易时为`null`。
+   - `value`: `QUANTITY` - 以von转移的值。
+   - `gasPrice`: `QUANTITY` - 发送者在von中提供的汽油价格。
+   - `gas`: `QUANTITY` - 发送者提供的气体。
+   - `input`: `DATA` - 数据与交易一起发送。
 
-##### Example
+
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
@@ -868,13 +865,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionByHash","pa
 
 #### platon_getTransactionByBlockHashAndIndex
 
-Returns information about a transaction by block hash and transaction index position.
+按区块哈希和交易索引位置返回有关交易的信息。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, 32 Bytes - hash of a block.
-2. `QUANTITY` - integer of the transaction index position.
+1. `DATA`, 32字节-块的哈希。
+2. `QUANTITY` - 交易索引
 
 ```js
 params: [
@@ -883,29 +880,29 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-See platon_getBlockByHash.
+参考platon_getBlockByHash。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
 ```
 
-Result see platon_getTransactionByHash.
+参考platon_getTransactionByHash。
 
 ***
 
 #### platon_getTransactionByBlockNumberAndIndex
 
-Returns information about a transaction by block number and transaction index position.
+通过块号和交易索引位置返回有关交易的信息。
 
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY|TAG` - a block number, or the string `"earliest"`, `"latest"` or `"pending"`.
-2. `QUANTITY` - the transaction index position.
+1. `QUANTITY|TAG` - 块高, 或字符串:  `"earliest"`, `"latest"` 或 `"pending"`.
+2. `QUANTITY` - 交易索引位置。
 
 ```js
 params: [
@@ -914,30 +911,30 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-See platon_getBlockByHash.
+参考platon_getBlockByHash。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
 ```
 
-Result see platon_getTransactionByHash.
+结果参考platon_getTransactionByHash.
 
 ***
 
 #### platon_getTransactionReceipt
 
-Returns the receipt of a transaction by transaction hash.
+根据交易hash返回交易回执数据
 
-**Note** That the receipt is not available for pending transactions.
+**注意** 在pending中的交易没有回执数据。
 
 
-##### Parameters
+##### 参数
 
-1. `DATA`, 32 Bytes - hash of a transaction.
+1. `DATA`, 32个字节-交易hash。
 
 ```js
 params: [
@@ -945,20 +942,19 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`Object` - A transaction receipt object, or `null` when no receipt was found:
+`Object` - 交易收据对象，如果未找到收据，则为null：
 
-  - `transactionHash `: `DATA`, 32 Bytes - hash of the transaction.
-  - `transactionIndex`: `QUANTITY` - integer of the transactions index position in the block.
-  - `blockHash`: `DATA`, 32 Bytes - hash of the block where this transaction was in.
-  - `blockNumber`: `QUANTITY` - block number where this transaction was in.
-  - `cumulativeGasUsed `: `QUANTITY ` - The total amount of gas used when this transaction was executed in the block.
-  - `gasUsed `: `QUANTITY ` - The amount of gas used by this specific transaction alone.
-  - `contractAddress `: `DATA`, string - address string in bech32 format - The contract address created, if the transaction was a contract creation, otherwise `null`.
-  - `logs`: `Array` - Array of log objects, which this transaction generated.
-
-##### Example
+   - `transactionHash`: `DATA`，32字节 - 事务的哈希。
+   - `transactionIndex`: `QUANTITY` - 交易索引在区块中的位置的整数。
+   - `blockHash`: `DATA`，32字节 - 此事务所在的块的哈希。
+   - `blockNumber`: `QUANTITY` - 此交易所在的区块号。
+   - `cumulativeGasUsed`: `QUANTITY` - 在区块中执行此交易时使用的天然气总量。
+   - `gasUsed`: `QUANTITY` - 仅此特定交易使用的天然气量。
+   - `contractAddress`: `DATA`，string - bech32格式的地址字符串 - 如果交易是创建合同，则创建的合同地址，否则为空。
+   - `logs`: `Array` - 此事务生成的日志对象数组。
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
@@ -986,16 +982,16 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionReceipt","p
 
 #### platon_newFilter
 
-Creates a filter object, based on filter options, to notify when the state changes (logs).
-To check if the state has changed, call platon_getFilterChanges.
+基于过滤器选项创建一个过滤器对象，以通知状态何时更改(日志)。
+要检查状态是否已更改，请调用`platon_getFilterChanges`。
 
-##### Parameters
+##### 参数
 
-1. `Object` - The filter options:
-  - `fromBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  - `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
-  - `address`: `DATA|Array`, string - address string in bech32 format  - (optional) Contract address or a list of addresses from which logs should originate.
-  - `topics`: `Array of DATA`,  - (optional) Array of 32 Bytes `DATA` topics. Each topic can also be an array of DATA with "or" options.
+1. `Object` - 过滤器选项: 
+  - `fromBlock`: `QUANTITY|TAG` - (可选, 默认: `"latest"`) 块高, 或 `"latest"` 最高块高 或 `"pending"`, `"earliest"` 尚未进行的交易。
+  - `toBlock`: `QUANTITY|TAG` - (可选, 默认: `"latest"`) 块高, 或 `"latest"` 最高块高 或 `"pending"`, `"earliest"` 尚未进行的交易。
+  - `address`: `DATA|Array`, string - bech32格式的地址字符串 - (可选) 合同地址或应从中产生日志的地址列表。
+  - `topics`: `Array of DATA`, - (可选) 32字节`DATA`主题数组。 每个主题也可以是带有"or"选项的`DATA`数组。
 
 ```js
 params: [{
@@ -1006,11 +1002,11 @@ params: [{
 }]
 ```
 
-##### Returns
+##### 返回
 
-`QUANTITY` - A filter id.
+`QUANTITY` - 过滤器ID。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newFilter","params":[{"topics":["0x12341234"]}],"id":73}'
@@ -1027,17 +1023,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newFilter","params":[{"to
 
 #### platon_newBlockFilter
 
-Creates a filter in the node, to notify when a new block arrives.
-To check if the state has changed, call platon_getFilterChanges.
+在节点中创建一个过滤器，以通知何时有新块到达。
+要检查状态是否已更改，请调用platon_getFilterChanges。
 
-##### Parameters
+##### 参数
 None
 
-##### Returns
+##### 返回
 
-`QUANTITY` - A filter id.
+`QUANTITY` - 过滤器ID。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newBlockFilter","params":[],"id":73}'
@@ -1054,17 +1050,17 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newBlockFilter","params":
 
 #### platon_newPendingTransactionFilter
 
-Creates a filter in the node, to notify when new pending transactions arrive.
-To check if the state has changed, call platon_getFilterChanges.
+在节点中创建一个过滤器，以通知新的挂起事务何时到达。
+要检查状态是否已更改，请调用platon_getFilterChanges。
 
-##### Parameters
+##### 参数
 None
 
-##### Returns
+##### 返回
 
-`QUANTITY` - A filter id.
+`QUANTITY` - 过滤器ID。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newPendingTransactionFilter","params":[],"id":73}'
@@ -1081,13 +1077,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_newPendingTransactionFilt
 
 #### platon_uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is no longer needed.
-Additonally Filters timeout when they aren't requested with platon_getFilterChanges for a period of time.
+卸载具有给定ID的过滤器。当不再需要手表时，应始终调用它。
+在一段时间内未通过platon_getFilterChanges请求超时时，可以额外地过滤超时。
 
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY` - The filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```js
 params: [
@@ -1095,11 +1091,11 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`.
+`Boolean` - `true` 如果过滤器已成功卸载，则为true；否则为false。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_uninstallFilter","params":["0xb"],"id":73}'
@@ -1116,12 +1112,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_uninstallFilter","params"
 
 #### platon_getFilterChanges
 
-Polling method for a filter, which returns an array of logs which occurred since last poll.
+筛选器的轮询方法，该方法返回自上次轮询以来发生的日志数组。
 
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY` - the filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```js
 params: [
@@ -1129,25 +1125,26 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-`Array` - Array of log objects, or an empty array if nothing has changed since last poll.
+Array - 日志对象的数组，如果自上次轮询以来没有任何变化，则为空数组。
 
-- For filters created with `platon_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
-- For filters created with `platon_newPendingTransactionFilter ` the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
-- For filters created with `platon_newFilter` logs are objects with following params:
+ - 对于使用`platon_newBlockFilter`创建的过滤器，返回的是块哈希值(`DATA`，32 Bytes)，例如`["0x3454645634534 ..."]`。
+ - 对于使用`platon_newPendingTransactionFilter`创建的过滤器，返回的是交易哈希(`DATA`，32字节)，例如`["0x6345343454645 ..."]`。
+ - 对于使用`platon_newFilter`日志创建的过滤器，对象是具有以下参数的对象：
 
-  - `type`: `TAG` - `pending` when the log is pending. `mined` if log is already mined.
-  - `logIndex`: `QUANTITY` - integer of the log index position in the block. `null` when it's pending log.
-  - `transactionIndex`: `QUANTITY` - integer of the transactions index position log was created from. `null` when it's pending log.
-  - `transactionHash`: `DATA`, 32 Bytes - hash of the transactions this log was created from. `null` when it's pending log.
-  - `blockHash`: `DATA`, 32 Bytes - hash of the block where this log was in. `null` when it's pending. `null` when it's pending log.
-  - `blockNumber`: `QUANTITY` - the block number where this log was in. `null` when it's pending. `null` when it's pending log.
-  - `address`: `DATA`, address string in bech32 format - address from which this log originated.
-  - `data`: `DATA` - contains one or more 32 Bytes non-indexed arguments of the log.
-  - `topics`: `Array of DATA` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except you declared the event with the `anonymous` specifier.).
+   - `type`：`TAG` - `pending`，待处理日志。 `mined`，如果日志已经被挖掘。
+   - `logIndex`：`QUANTITY` - 块中日志索引位置的整数。当其挂起的日志时为`null`。
+   - `transactionIndex`：`QUANTITY` - 创建交易索引位置日志的整数。当其挂起的日志时为`null`。
+   - `transactionHash`：`DATA`，32字节 - 创建此日志的事务的哈希值。当其挂起的日志时为`null`。
+   - `blockHash`：`DATA`，32字节 - 此日志所在的块的哈希。`null`，待处理。当其挂起的日志时为`null`。
+   - `blockNumber`：`QUANTITY` - 该日志所在的块号。`null`，待处理。当其挂起的日志时为`null`。
+   - `address`：`DATA`，以bech32格式的地址字符串 - 此日志源自的地址。
+   - `data`：`DATA` - 包含一个或多个日志的32字节非索引参数。
+   - 主题：数据数组 - 索引日志参数的0到4个32字节DATA数组。 (在*solidity*中：第一个主题是事件签名的*hash*(例如`Deposit(address，bytes32，uint256)`)，除非您用`anonymous`说明符声明了该事件。)
 
-##### Example
+
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getFilterChanges","params":["0x16"],"id":73}'
@@ -1175,12 +1172,12 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getFilterChanges","params
 
 #### platon_getFilterLogs
 
-Returns an array of all logs matching filter with given id.
+返回具有给定id的所有与筛选器匹配的所有日志的数组。
 
 
-##### Parameters
+##### 参数
 
-1. `QUANTITY` - The filter id.
+1. `QUANTITY` - 过滤器ID。
 
 ```js
 params: [
@@ -1188,27 +1185,27 @@ params: [
 ]
 ```
 
-##### Returns
+##### 返回
 
-See platon_getFilterChanges.
+参考platon_getFilterChanges.
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getFilterLogs","params":["0x16"],"id":74}'
 ```
 
-Result see platon_getFilterChanges.
+结果参考platon_getFilterChanges.
 
 ***
 
 #### platon_getLogs
 
-Returns an array of all logs matching a given filter object.
+返回与给定过滤器对象匹配的所有日志的数组。
 
-##### Parameters
+##### 参数
 
-1. `Object` - the filter object, see platon_newFilter parameters.
+1. `Object` - 过滤器对象，请参阅platon_newFilter参数。
 
 ```js
 params: [{
@@ -1216,30 +1213,30 @@ params: [{
 }]
 ```
 
-##### Returns
+##### 返回
 
-See platon_getFilterChanges.
+参考platon_getFilterChanges.
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
 ```
 
-Result see platon_getFilterChanges.
+结果参考platon_getFilterChanges.
 
 ***
 
 #### platon_evidences
-Return double sign report data.
+查询节点双签证据。
 
-##### Parameters
-no
+##### 参数
+none
 
-##### Returns
-`String` - The evidence string contains three types of evidence: duplicatePrepare, duplicateVote, duplicateViewchange. Each type contains multiple pieces of evidence, so it is an array structure. Please pay attention when parsing.
+##### 返回
+`String` - 证据字符串包含三种类型的证据：duplicatePrepare，duplicateVote，duplicateViewchange。每种类型都包含多个证据，因此它是一个数组结构。解析时请注意。
 
-##### Example
+##### 例子
 ```js
 // Request
 Curl -X POST --data '{"jsonrpc":"2.0","method":"platon_evidences","params":[],"id":74}'
@@ -1256,20 +1253,20 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"platon_evidences","params":[],"i
 
 #### admin_addPeer
 
-Add a node.
+添加一个对端节点。
 
 
-##### Parameters
+##### 参数
 
-1. `String` - peer node string details.
-
-
-##### Returns
-
-`Boolean` - Added success or failure (note: returning true does not necessarily add success).
+1. `String` - 对端节点字符串详细信息。
 
 
-##### Example
+##### 返回
+
+`Boolean` - 添加成功或失败(注意：返回true不一定会添加成功)。
+
+
+##### 例子
 ```js
 // Request
 curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_addPeer", "params": [ "enode: //acb2281452fb9fc25d40113fb6afe82b498361de0ee4ce69f55c180bb2afce2c5a00f97bfbe0270fadba174264cdf6da76ba334a6380c0005a84e8a6449c2502@127.0.0.1: 14789"], "id": 74 }'
@@ -1286,20 +1283,20 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_addPeer", "params": [ 
 
 #### admin_nodeInfo
 
-Returns the current client node details.
+返回当前客户端节点的详细信息。
 
 
-##### Parameters
+##### 参数
 
 no
 
 
-##### Returns
+##### 返回
 
-`Object` - current node details.
+`Object` - 当前节点详情。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_nodeInfo","params":[],"id":74}'
@@ -1316,20 +1313,20 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_nodeInfo","params":[],"id"
 
 #### admin_peers
 
-Returns the details of the peer connected to the current client.
+返回连接到当前客户端的对端节点的详细信息。
 
 
-##### Parameters
+##### 参数
 
 no
 
 
-##### Returns
+##### 返回
 
-`Array` - array, connected peer node details.
+`Array` - 数组，连接的对端节点详细信息。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":74}'
@@ -1346,20 +1343,20 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":74
 
 #### admin_getProgramVersion
 
-Query code version and signature.
+查询代码的版本和签名。
 
 
-##### Parameters
+##### 参数
 
 no
 
 
-##### Returns
+##### 返回
 
-`Object` - contains two fields, Version and Sign.
+`Object` - 包含两个字段，`版本`和`版本签名`。
 
 
-##### Example
+##### 例子
 ```js
 // Request
 Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_getProgramVersion","params":[],"id":74}'
@@ -1379,20 +1376,20 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_getProgramVersion","params
 
 #### admin_getSchnorrNIZKProve
 
-Get proof of bls.
+获取bls证明
 
 
-##### Parameters
+##### 参数
 
-no
-
-
-##### Returns
-
-`String` - proof of bls.
+none
 
 
-##### Example
+##### 返回
+
+`String` - bls证明。
+
+
+##### 例子
 ```js
 // Request
 curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_getSchnorrNIZKProve", "params": [], "id": 74}'
@@ -1408,15 +1405,16 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_getSchnorrNIZKProve", 
 ***
 
 #### admin_datadir
-Get the data directory.
 
-##### Parameters
+获取节点的数据目录。
+
+##### 参数
 no
 
-##### Returns
-`String` - data directory.
+##### 返回
+`String` - 节点数据目录。
 
-##### Example
+##### 例子
 ```js
 // Request
 curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": [], "id": 74}'
@@ -1433,16 +1431,16 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": []
 
 #### personal_openWallet
 
-OpenWallet initiates a hardware wallet opening procedure, establishing a USB connection and attempting to authenticate via the provided passphrase.
+OpenWallet启动硬件钱包的打开程序，建立USB连接，并试图通过提供的口令进行验证。
 
 ##### Parameters
 
-1. `String` - path of the wallet.
-2. `String` - passphrase of the wallet.
+1. `String` - 钱包文件路径。
+2. `String` - 钱包的密码。
 
 ##### Returns
 
-`Boolean` - `true` if the wallet was successfully opened, otherwise `false`.
+`Boolean` - 成功返回`true`, 否则返回`false`.
 
 ##### Example
 
@@ -1456,18 +1454,18 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "personal_openWallet", "param
 
 #### personal_sendTransaction
 
-Sends transaction and signs it in a single call. The account does not need to be unlocked to make this call, and will not be left unlocked after.
+在一次call调用中发送交易并签名。帐户不需要解锁来进行这个调用，之后也不会被解锁。
 
 ##### Parameters
 
-1. `Object` - The transaction object.
-  - `from`: `DATA`, string - address string in bech32 format of the transaction is send from.
-  - `to`: `DATA`, string - address string in bech32 format - (optional when creating new contract) The address the transaction is directed to.
-  - `gas`: `QUANTITY`  - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
-  - `gasPrice`: `QUANTITY`  - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas.
-  - `value`: `QUANTITY`  - (optional) Integer of the value send with this transaction.
-  - `data`: `DATA`  - (optional) The compiled code of a contract.
-  - `nonce`: `QUANTITY`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+1. `Object` - 交易对象。
+  - `from`: `DATA`，string - 发送事务的bech32格式的地址字符串。
+  - `to`: `DATA`，string - bech32格式的地址字符串-(在创建新合约时是可选的)交易指向的地址。
+  - `gas`: `QUANTITY` - (可选，默认值: 90000)为交易执行提供的gas的整数。它将返回未使用的气体。
+  - `gasPrice`: `QUANTITY` - (可选，默认值: 待定)gasPrice。
+  - `value`: `QUANTITY` - (可选)此交易发送的值的整数。
+  - `data`: `DATA` - (可选)合同的编译代码。
+  - `nonce`: `QUANTITY` - (可选)随机数的整数。这样可以覆盖使用相同随机数的未决事务。
 
 ```js
 params: [{
@@ -1482,7 +1480,7 @@ params: [{
 
 ##### Returns
 
-`DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
+`DATA`, 32字节-交易哈希，如果交易不可用，则为零字节哈希。
 
 ##### Example
 
@@ -1503,12 +1501,12 @@ curl --data '{"method":"personal_sendTransaction","params":[{"from":"atx1kc8gm4s
 
 #### personal_ecRecover
 
-Returns the address associated with the private key that was used to calculate the signature in `personal_sign`.
+返回与用于计算`personal_sign`中签名的私钥相关的地址。
 
 ##### Parameters
 
-1. `Data` - The data which hash was signed.
-2. `Data` - Signed data.
+1. `Data` - hash数据的原文。
+2. `Data` - hash签名后的数据。
 
 ```js
 params: [
@@ -1519,7 +1517,7 @@ params: [
 
 ##### Returns
 
-`Address` - Address of the signer of the message.
+`Address` - 签名数据的地址。
 
 ##### Example
 
@@ -1539,16 +1537,16 @@ curl --data '{"method":"personal_ecRecover","params":["0xd46e8dd67c5d32be8d46e8d
 
 #### personal_importRawKey
 
-Imports the given private key into the key store, encrypting it with the passphrase.
+将给定的私钥导入仓库，用口令对其进行加密。
 
 ##### Parameters
 
-1. `String` - An unencrypted private key (hex string).
-2. `String` - The password of the account.
+1. `String` - 16进制的私钥明问。
+2. `String` - 账户口令。
 
 ##### Returns
 
-`String` - The address of the account.
+`String` - 账户的地址。
 
 ##### Example
 
@@ -1564,14 +1562,14 @@ curl --data '{"method":"personal_importRawKey","params":["cd3376bb711cb332ee3fb2
 
 #### personal_listAccounts
 
-Lists all stored accounts.
+列出所有账户地址。
 
 ##### Parameters
 no
 
 ##### Returns
 
-`Array` - A list of 20 byte account identifiers.
+`Array` - 20字节的账户地址列表。
 
 ##### Example
 
@@ -1593,14 +1591,14 @@ curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0
 
 #### personal_listWallets
 
-list all your accounts you’ve used before + 1 empty new one
+列出你以前使用过的所有钱包和一个空的新钱包。
 
 ##### Parameters
 no
 
 ##### Returns
 
-`rawWalletArray` - A list of raw wallets.
+`rawWalletArray` - 钱包列表。
 
 ##### Example
 
@@ -1622,12 +1620,12 @@ curl --data '{"method":"personal_listWallets","params":[],"id":1,"jsonrpc":"2.0"
 
 #### personal_lockAccount
 
-Locks the given account.
+解锁指定账户。
 
 ##### Parameters
 
-1. `String` - The account address. 
-2. `Function` - (optional) Optional callback, returns an error object as first parameter and the result as second.
+1. `String` - 账户地址。
+2. `Function` - (可选) 可选的回调，返回一个错误对象作为第一个参数，返回结果作为第二个参数。
 
 ##### Returns
 
@@ -1648,17 +1646,17 @@ curl --data '{"method":"personal_lockAccount","params":["atp1v79he42uvxghmmajx4r
 
 #### personal_newAccount
 
-Creates new account.
+创建新账户。
 
-Note: it becomes the new current unlocked account. There can only be one unlocked account at a time.
+注意：它将成为当前新的解锁账户。一次只能有一个解锁的账户。
 
 ##### Parameters
 
-1. `String` - Password for the new account.
+1. `String` - 新账户的密码。
 
 ##### Returns
 
-`Address` - 20 Bytes - The identifier of the new account.
+`Address` - 20 字节 - 新账户的标识符。
 
 ##### Example
 
@@ -1677,17 +1675,17 @@ curl --data '{"method":"personal_newAccount","params":["abc123"],"id":1,"jsonrpc
 
 #### personal_sign
 
-Calculates an Alaya specific signature with: sign(keccak256("Alaya Signed Message: " + len(message) + message))).
+计算一个Alaya特定的签名： sign(keccak256("Alaya Signed Message: " + len(message) + message))。
 
 ##### Parameters
 
-1. `Data` - The data to sign
-2. `Address` - 20 Bytes - The address of the account to sign with
-3. `String` - Passphrase to unlock the from account.
+1. `Data` - 要签名的数据。
+2. `Address` - 签名的账户地址。
+3. `String` - 签名账户的口令。
 
 ##### Returns
 
-`Data` - Signed data.
+`Data` - 被签名的数据。
 
 ##### Example
 
@@ -1706,26 +1704,26 @@ curl --data '{"method":"personal_sign","params":[0xd46e8dd67c5d32be8d46e8dd67c5d
 
 #### personal_signTransaction
 
-Signs a transaction without dispatching it to the network. It can later be submitted using `platon_sendRawTransaction`. The account does not need to be unlocked to make this call, and will not be left unlocked after.
+签署一个交易，而不把它派发到网络。之后可以使用`platon_sendRawTransaction`提交。帐户不需要解锁来进行这个调用，之后也不会被解锁。
 
 ##### Parameters
 
-1. `Object` - Transaction object with optional condition field. see platon_sendRawTransaction.
-2. `String` - Passphrase to unlock the from account.
+1. `Object` - 带有可选的条件字段的交易对象。见platon_sendRawTransaction。
+2. `String` - 解锁账户的密码。
 
 ##### Returns
 
-`Object` - Signed transaction and its details:
-- raw: Data - The signed, RLP encoded transaction.
-- tx: Object - Transaction object.
-- from: Address - 20 Bytes - The address the transaction is send from.
-- to: Address - (optional) 20 Bytes - The address the transaction is directed to.
-- gas: Quantity - (optional) Integer of the gas provided for the transaction execution. eth_call consumes zero gas, but this parameter may be needed by some executions.
-- gasPrice: Quantity - (optional) Integer of the gas price used for each paid gas.
-- value: Quantity - (optional) Integer of the value sent with this transaction.
-- data: Data - (optional) 4 byte hash of the method signature followed by encoded parameters. For details see Ethereum Contract ABI.
-- nonce: Quantity - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
-- condition: Object - (optional) Conditional submission of the transaction. Can be either an integer block number { block: 1 } or UTC timestamp (in seconds) { time: 1491290692 } or null.
+`Object` - 签署的交易及其细节:
+- raw: 数据 - 经过签名的、RLP编码的交易。
+- tx: 对象 - 交易对象。
+- from: 地址 - 20字节 - 交易的发送地址。
+- to: 地址 - (可选) 20字节 - 交易指向的地址。
+- gas: 数量 - （可选）为交易执行提供的gas的整数。 eth_call消耗的gas为零，但某些执行可能需要这个参数。
+- gasPrice: 数量 -（可选）每个付费gas使用的gas价格的整数。
+- value: 数量 - （可选）随该交易发送的价值的整数。
+- data: 数据 -（可选）方法签名的4个字节的哈希值，后面是编码的参数。详见Ethereum Contract ABI。
+- nonce: 数量 - （可选）nonce的整数。这允许覆盖你自己的使用相同nonce的未决交易。
+- condition: 对象 - （可选）交易的有条件提交。可以是整数块数 { block: 1 } 或UTC时间戳（秒） { time: 1491290692 } 或空。
 
 ##### Example
 
@@ -1759,21 +1757,21 @@ curl --data '{"method":"personal_signTransaction","params":[{"from":"atp1gp7h8k9
 
 #### personal_unlockAccount
 
-Unlocks specified account for use.
+解锁指定的账户以供使用。
 
-If permanent unlocking is disabled (the default) then the duration argument will be ignored, and the account will be unlocked for a single signing. With permanent locking enabled, the duration sets the number of seconds to hold the account open for. It will default to 300 seconds. Passing 0 unlocks the account indefinitely.
+如果永久解锁被禁用（默认），那么持续时间参数将被忽略，账户将被解锁为一个单一的签名。在启用永久锁定的情况下，持续时间设置保持账户开放的秒数。它将默认为300秒。通过0可以无限期地解锁账户。
 
-There can only be one unlocked account at a time.
+一次只能有一个解锁的账户。
 
 ##### Parameters
 
-1. `Address` - 20 Bytes - The address of the account to unlock.
-2. `String` - Passphrase to unlock the account.
-3. `Quantity` - (default: 300) Integer or null - Duration in seconds how long the account should remain unlocked for.
+1. `Address` - 20字节 - 要解锁的账户地址。
+2. `String` - 解锁账户的密码。
+3. `Quantity` - (默认值：300) 整数或空值 - 帐户解锁的时间，以秒为单位，应该保持多久。
 
 ##### Returns
 
-`Boolean` - whether the call was successful
+`Boolean` - 调用是否成功。
 
 ##### Example
 
@@ -1792,15 +1790,15 @@ curl --data '{"method":"personal_unlockAccount","params":["atp13upz04zc2wjsam753
 
 #### miner_setGasPrice
 
-Sets the minimal accepted gas price when mining transactions. Any transactions that are below this limit are excluded from the mining process.
+设定开采交易时可接受的最小gas价格。任何低于此限制的交易都被排除在开采过程之外。
 
 ##### Parameters
 
-1. Uint - number of gas.
+1. Uint - gas数量。
 
 ##### Returns
 
-`Boolean` - whether the gas price was successfully set.
+`Boolean` - 设置成功返回`true`，否则返回`false`。
 
 
 ##### Example
@@ -1819,7 +1817,7 @@ curl --data '{"method":"miner_setGasPrice","params":[19999999],"id":1,"jsonrpc":
 
 #### txpool_status
 
-The status property of txPool can be used to query information such as the number of transactions in the transaction pool waiting to be packaged into the next block.
+txpool的status属性可以用来查询交易池中当前等待打包进下一个区块的交易数量等信息。
 
 ##### Parameters
 
@@ -1827,7 +1825,7 @@ none
 
 ##### Returns
 
-`Object` - The value of the status property is an object containing two fields, pending and Queued, each of which is an associative array.
+`Object` - status属性的值是一个包含两个字段的对象：pending和queued，每个字段的值都是一个关联数组。
 
 
 ##### Example
@@ -1849,7 +1847,7 @@ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","metho
 
 #### txpool_content
 
-The content property of txPool can be used to list pending and queued transactions currently in the pool. 
+txpool的content属性可以用来查询当前在交易池中的待定和排队交易清单。
 
 ##### Parameters
 
@@ -1857,7 +1855,7 @@ none
 
 ##### Returns
 
-`Object` - The value is an object containing two fields: Pending and Queued, each of which is an associative array.
+`Object` - content属性的值是一个包含两个字段的对象：pending和queued，每个字段都是一个关联数组。
 
 
 ##### Example
@@ -1911,7 +1909,7 @@ curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","metho
 
 #### txpool_inspect
 
-The inspect property of TXPool lists the summary of transactions in the transaction pool that are currently waiting to be packaged into the next block.
+txpool的inspect属性可以列出交易池中当前等待打包进下一个区块的交易的概要信息。 
 
 ##### Parameters
 
@@ -1919,7 +1917,7 @@ none
 
 ##### Returns
 
-`Object` - The value of the Inspect property is an object containing two fields, pending and Queued, each of which is an associative array.
+`Object` - inspect属性的值是一个包含两个字段的对象：pending和queued，每个字段都是一个关联数组。
 
 
 ##### Example
