@@ -10,11 +10,11 @@ sidebar_label: JSON RPC
 
 ## JavaScript API
 
-要从JavaScript应用程序内部与platon节点通信，请使用 [web3.js](https://github.com/PlatONnetwork/client-sdk-js) 库，该库为RPC方法提供了方便的接口。
+要从JavaScript应用程序内部与alaya节点通信，请使用 [web3.js](https://github.com/AlayaNetwork/client-sdk-js) 库，该库为RPC方法提供了方便的接口。
 
 ## 注意
 
-下面仅显示带有curl过程的RPC调用过程。实际上，您需要根据服务器的具体情况进行一些调整。例如，PlatON的可能调用过程是 `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
+下面仅显示带有curl过程的RPC调用过程。实际上，您需要根据服务器的具体情况进行一些调整。例如，Alaya的可能调用过程是 `curl -X POST -H 'content-type: application/json' --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":67}' 127.0.0.1:6789`.
 
 ## JSON RPC API参考
 
@@ -348,14 +348,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 
 #### platon_protocolVersion
 
-返回当前的PlatON协议版本
+返回当前的Alaya协议版本
 
 ##### 参数
 none
 
 ##### 返回
 
-`String` - 当前的PlatON协议版本。
+`String` - 当前的Alaya协议版本。
 
 ##### 例子
 ```js
@@ -374,7 +374,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_protocolVersion","params"
 
 #### platon_syncing
 
-返回一个对象，其中包含有关同步状态或FALSE的数据。
+这个属性是只读的。如果正在同步，返回同步对象。否则返回`false`。
 
 
 ##### 参数
@@ -382,15 +382,18 @@ none
 
 ##### 返回
 
-`Object|Boolean`, 不同步时具有同步状态数据或`FALSE`的对象:
-  - `startingBlock`: `QUANTITY` - 导入开始的块(仅在同步到达他的头部后重置)。
-  - `currentBlock`: `QUANTITY` - 当前块，与platon_blockNumber相同。
-  - `highestBlock`: `QUANTITY` - 估计的最高块。
+`Object|Boolean`, 如果节点还没有与网络同步，返回false，否则返回具有以下属性的同步对象：
+
+  - `startingBlock`: `Number` - 同步开始区块号。
+  - `currentBlock`: `Number`- 节点当前正在同步的区块号。
+  - `highestBlock`: `Number`- 预估要同步到的区块。
+  - `knownStates`: `Number` - 预计要下载的状态数据。
+  - `pulledStates`: `Number` - 已经下载的状态数据。
 
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id":1}'
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id":1}' http://127.0.0.1:6789
 
 // Result
 {
@@ -399,7 +402,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id"
   "result": {
     startingBlock: '0x384',
     currentBlock: '0x386',
-    highestBlock: '0x454'
+    highestBlock: '0x454',
+    knownStates: "0x0",
+    pulledStates: "0x0"
   }
 }
 // Or when not syncing
@@ -453,13 +458,13 @@ none
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_accounts","params":[],"id":1}'
+curl -X POST -H 'Content-Type: application/json' --data '{"jsonrpc":"2.0","method":"platon_accounts","params":[],"id":1}'
 
 // Result
 {
   "id":1,
   "jsonrpc": "2.0",
-  "result": ["lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3"]
+  "result": ["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym"]
 }
 ```
 
@@ -502,7 +507,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_blockNumber","params":[],
 
 ```js
 params: [
-   'lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3',
+   'atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym',
    'latest'
 ]
 ```
@@ -515,7 +520,7 @@ params: [
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBalance","params":["lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3", "latest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBalance","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym", "latest"],"id":1}'
 
 // Result
 {
@@ -540,7 +545,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBalance","params":["la
 
 ```js
 params: [
-   'lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3',
+   'atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym',
    '0x0', // storage position at 0
    '0x2' // state at block number 2
 ]
@@ -554,7 +559,7 @@ params: [
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getStorageAt","params":["lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3", "0x0", "0x2"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getStorageAt","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym", "0x0", "0x2"],"id":1}'
 
 // Result
 {
@@ -577,7 +582,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getStorageAt","params":["
 
 ```js
 params: [
-   'lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3',
+   'atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym',
    'latest' // state at the latest block
 ]
 ```
@@ -590,7 +595,7 @@ params: [
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionCount","params":["lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3","latest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionCount","params":["atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym","latest"],"id":1}'
 
 // Result
 {
@@ -683,7 +688,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockTransactionCountB
 
 ```js
 params: [
-   'lax14984xa8uuhkmer32s6tuz5e3valxa0ct68a0c5',
+   'atx14984xa8uuhkmer32s6tuz5e3valxa0ctxj9j67',
    '0x2'  // 2
 ]
 ```
@@ -696,7 +701,7 @@ params: [
 ##### 例子
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getCode","params":["lax14984xa8uuhkmer32s6tuz5e3valxa0ct68a0c5", "0x2"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getCode","params":["atx14984xa8uuhkmer32s6tuz5e3valxa0ctxj9j67", "0x2"],"id":1}'
 
 // Result
 {
@@ -727,7 +732,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getCode","params":["lax14
 
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sign","params":["lax16xk7yhxd842s5l44x2k8t89v00sfcfcej8gsug", "Schoolbus"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sign","params":["atx16xk7yhxd842s5l44x2k8t89v00sfcfcewjsd7z", "Schoolbus"],"id":1}'
 
 // Result
 {
@@ -756,8 +761,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_sign","params":["lax16xk7
 
 ```js
 params: [{
-  "from": "lax1kc8gm4sut5etaqzchw8tjuy8purjxv245450s0",
-  "to": "lax163hgm4nut5etaqzchw8tjuy8purjg3t87dtrgq",
+  "from": "atx1kc8gm4sut5etaqzchw8tjuy8purjxv24gqvjj9",
+  "to": "atx163hgm4nut5etaqzchw8tjuy8purjg3t8zcn722",
   "gas": "0x76c0", // 30400,
   "gasPrice": "0x9184e72a000", // 10000000000000
   "value": "0x9184e72a", // 2441406250
@@ -943,7 +948,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getBlockByHash","params":
     "logsBloom": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331",
     "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
     "stateRoot": "0xd5855eb08b3387c0af375e9cdb6acfc05eb8f519e419b874b6ff2ffda7ed1dff",
-    "miner": "lax1fejlmgs4j432f9he7dfzlzgj9gcgsjt6c4ujsh",
+    "miner": "atx1fejlmgs4j432f9he7dfzlzgj9gcgsjt6yqy0ja",
     "difficulty": "0x027f07", // 163591
     "totalDifficulty":  "0x027f07", // 163591
     "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -1037,8 +1042,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionByHash","pa
     "blockHash": "0xbeab0aa2411b7ab17f30a99d3cb9c6ef2fc5426d6ad6fd9e2a26a6aed1d1055b",
     "blockNumber": "0x15df", // 5599
     "transactionIndex":  "0x1", // 1
-    "from":"lax1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxpnkqrx3",
-    "to":"lax163hgm4nut5etaqzchw8tjuy8purjg3t87dtrgq",
+    "from":"atx1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp0rc7ym",
+    "to":"atx163hgm4nut5etaqzchw8tjuy8purjg3t8zcn722",
     "value":"0x7f110" // 520464
     "gas": "0x7f110" // 520464
     "gasPrice":"0x09184e72a000",
@@ -1156,7 +1161,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionReceipt","p
      blockHash: '0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b',
      cumulativeGasUsed: '0x33bc', // 13244
      gasUsed: '0x4dc', // 1244
-     contractAddress: 'lax1kc8gm4sut5etaqzchw8tjuy8purjxv245450s0' // or null, if none was created
+     contractAddress: 'atx1kc8gm4sut5etaqzchw8tjuy8purjxv24gqvjj9' // or null, if none was created
      logs: [{
          // logs as returned by getFilterLogs, etc.
      }, ...]
@@ -1183,7 +1188,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getTransactionReceipt","p
 params: [{
   "fromBlock": "0x1",
   "toBlock": "0x2",
-  "address": "lax13zy0ruv447se9nlwscrfskzvqv85e8d35gau40",
+  "address": "atx13zy0ruv447se9nlwscrfskzvqv85e8d3ga9ph9",
   "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b", null, [0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b, 0x000000000000000000000000aff3454fce5edbc8cca8697c15331677e6ebccc]]
 }]
 ```
@@ -1345,7 +1350,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_getFilterChanges","params
     "blockHash": "0x8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcfdf829c5a142f1fccd7d",
     "transactionHash":  "0xdf829c5a142f1fccd7d8216c5785ac562ff41e2dcfdf5785ac562ff41e2dcf",
     "transactionIndex": "0x0", // 0
-    "address": "lax1zmzhskk9vtl5rckulhuzn3dpgtclenta5fjs08",
+    "address": "atx1zmzhskk9vtl5rckulhuzn3dpgtclentagu2ddd",
     "data":"0x0000000000000000000000000000000000000000000000000000000000000000",
     "topics": ["0x59ebeb90bc63057b6515673c3ecf9438e5058bca0f92585014eced636878c9a5"]
     },{
@@ -1429,9 +1434,9 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"platon_evidences","params":[],"i
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": "evidences data..."
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": "evidences data..."
 }
 ```
 
@@ -1459,9 +1464,9 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_addPeer", "params": [ 
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": true
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": true
 }
 ```
 
@@ -1489,9 +1494,9 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_nodeInfo","params":[],"id"
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": {node information }
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": {node information }
 }
 ```
 
@@ -1519,9 +1524,9 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_peers","params":[],"id":74
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "Result": [{Node 1 information} ,  {Node 2 information}, ..., {node information N}]
+  "id": 74,
+  "jsonrpc": "2.0",
+  "Result": [{Node 1 information} ,  {Node 2 information}, ..., {node information N}]
 }
 ```
 
@@ -1549,12 +1554,12 @@ Curl -X POST --data '{"jsonrpc":"2.0","method":"admin_getProgramVersion","params
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": {
-        "Version": 1794,
-        "Sign": "0xa5eb0a935f63006b8f3a2f4dcb007a2bf50c6eb4755f3c27ff3b3af63078da2f5f1eed9beafd1e2dd8f4e588a8eafa60337b7f95aba5a0167fa600115542763a00"
-    }
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": {
+        "Version": 1794,
+        "Sign": "0xa5eb0a935f63006b8f3a2f4dcb007a2bf50c6eb4755f3c27ff3b3af63078da2f5f1eed9beafd1e2dd8f4e588a8eafa60337b7f95aba5a0167fa600115542763a00"
+    }
 }
 ```
 
@@ -1582,9 +1587,9 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_getSchnorrNIZKProve", 
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": "02705b94701eec4f4619d42796f3241a93035b8b8df3f098ae21f428339ed90599e77f4c90944854b70cbca341cb22480c8872da3b0ae4f6fda29df7293df93d"
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": "02705b94701eec4f4619d42796f3241a93035b8b8df3f098ae21f428339ed90599e77f4c90944854b70cbca341cb22480c8872da3b0ae4f6fda29df7293df93d"
 }
 ```
 
@@ -1607,37 +1612,539 @@ curl -X POST --data '{ "jsonrpc": "2.0", "method": "admin_datadir", "params": []
 
 // Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": "/home/platon/network/data"
+  "id": 74,
+  "jsonrpc": "2.0",
+  "result": "/home/alaya/network/data"
 }
 ```
+
 ***
 
-#### debug_getWaitSlashingNodeList
+#### personal_openWallet
 
-获取零出块的节点，因为零出块而被观察的节点列表。
+OpenWallet启动硬件钱包的打开程序，建立USB连接，并试图通过提供的口令进行验证。
 
-##### 参数
-no
+##### Parameters
 
-##### 返回
-`array` - 零出块的节点列表，每个结构包含三个字段，NodeId：零出块的节点ID，Round：观察期内第一次零出块时所处共识轮数，CountBit：零出块次数位图（从Round开始，1表示该轮未出块）。
+1. `String` - 钱包文件路径。
+2. `String` - 钱包的密码。
 
-##### 例子
+##### Returns
+
+`Boolean` - 成功返回`true`, 否则返回`false`.
+
+##### Example
+
 ```js
 // Request
-curl -X POST --data '{ "jsonrpc": "2.0", "method": "debug_getWaitSlashingNodeList", "params": [], "id": 74}'
+curl -X POST --data '{ "jsonrpc": "2.0", "method": "personal_openWallet", "params": ["keycard://044def09","abcdefg"], "id": 75}'
 
-// Result
+```
+
+***
+
+#### personal_sendTransaction
+
+在一次call调用中发送交易并签名。帐户不需要解锁来进行这个调用，之后也不会被解锁。
+
+##### Parameters
+
+1. `Object` - 交易对象。
+  - `from`: `DATA`，string - 发送事务的bech32格式的地址字符串。
+  - `to`: `DATA`，string - bech32格式的地址字符串-(在创建新合约时是可选的)交易指向的地址。
+  - `gas`: `QUANTITY` - (可选，默认值: 90000)为交易执行提供的gas的整数。它将返回未使用的气体。
+  - `gasPrice`: `QUANTITY` - (可选，默认值: 待定)gasPrice。
+  - `value`: `QUANTITY` - (可选)此交易发送的值的整数。
+  - `data`: `DATA` - (可选)合同的编译代码。
+  - `nonce`: `QUANTITY` - (可选)随机数的整数。这样可以覆盖使用相同随机数的未决事务。
+
+```js
+params: [{
+  "from": "atx1kc8gm4sut5etaqzchw8tjuy8purjxv24gqvjj9",
+  "to": "atx163hgm4nut5etaqzchw8tjuy8purjg3t8zcn722",
+  "gas": "0x76c0", // 30400,
+  "gasPrice": "0x9184e72a000", // 10000000000000
+  "value": "0x9184e72a", // 2441406250
+  "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"
+}]
+```
+
+##### Returns
+
+`DATA`, 32字节-交易哈希，如果交易不可用，则为零字节哈希。
+
+##### Example
+
+
+```js
+//Request
+curl --data '{"method":"personal_sendTransaction","params":[{"from":"atx1kc8gm4sut5etaqzchw8tjuy8purjxv24gqvjj9","to":"atx163hgm4nut5etaqzchw8tjuy8purjg3t8zcn722","data":"0x41cd5add4fd13aedd64521e363ea279923575ff39718065d38bd46f0e6632e8e","value":"0x186a0"},"hunter2"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+
+//Result
 {
-  "id": 74,
-  "jsonrpc": "2.0",
-  "result": "[{
-    "NodeId": "8e91f562c1798dc8c567a5c4a99a840eb86e43324b622fd0a4a8defdf873baf8f822313d7f35227fe15b6f4a2767dfb9ea7f7968d0a3a243e57b4d1090f6fc6c",
-    "Round": 1000,
-    "CountBit": 7
-  }]"
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0x62e05075829655752e146a129a044ad72e95ce33e48ff48118b697e15e7b41e4"
 }
 ```
+
 ***
+
+#### personal_ecRecover
+
+返回与用于计算`personal_sign`中签名的私钥相关的地址。
+
+##### Parameters
+
+1. `Data` - hash数据的原文。
+2. `Data` - hash签名后的数据。
+
+```js
+params: [
+  "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+  "0xe7225f986f192f859a9bf84e34b2b7001dfa11aeb5c7164f81a2bee0d79943e2587be1faa11502eba0f803bb0ee071a082b6fe40fba025f3309263a1eef52c711c"
+]
+```
+
+##### Returns
+
+`Address` - 签名数据的地址。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_ecRecover","params":["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","0xe7225f986f192f859a9bf84e34b2b7001dfa11aeb5c7164f81a2bee0d79943e2587be1faa11502eba0f803bb0ee071a082b6fe40fba025f3309263a1eef52c711c"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0"
+}
+```
+
+***
+
+#### personal_importRawKey
+
+将给定的私钥导入仓库，用口令对其进行加密。
+
+##### Parameters
+
+1. `String` - 16进制的私钥明问。
+2. `String` - 账户口令。
+
+##### Returns
+
+`String` - 账户的地址。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_importRawKey","params":["cd3376bb711cb332ee3fb2ca04c6a8b9f70c316fcdf7a1f44ef4c7999483295e","password1234"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+
+//Result
+"atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0"
+```
+
+***
+
+#### personal_listAccounts
+
+列出所有账户地址。
+
+##### Parameters
+no
+
+##### Returns
+
+`Array` - 20字节的账户地址列表。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_listAccounts","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": [
+    "atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0",
+    "atp1e2q84y8avn0w6as0hx9lpp5mgawydy6gvf2e0q"
+  ]
+}
+```
+
+***
+
+#### personal_listWallets
+
+列出你以前使用过的所有钱包和一个空的新钱包。
+
+##### Parameters
+no
+
+##### Returns
+
+`rawWalletArray` - 钱包列表。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_listWallets","params":[],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  accounts: [{
+      address: "atp1v79he42uvxghmmajx4r2gxqrckl7l0r6w2pwk8",
+      url: "keycard://044d/m/44'/60'/0'/0/0"
+  }],
+  status: "Online",
+  url: "keycard://044def09"
+}
+```
+
+***
+
+#### personal_lockAccount
+
+解锁指定账户。
+
+##### Parameters
+
+1. `String` - 账户地址。
+2. `Function` - (可选) 可选的回调，返回一个错误对象作为第一个参数，返回结果作为第二个参数。
+
+##### Returns
+
+`Boolean` - `true` if the account was successfully locked, otherwise `false`.
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_lockAccount","params":["atp1v79he42uvxghmmajx4r2gxqrckl7l0r6w2pwk8"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  result: true
+}
+```
+
+***
+
+#### personal_newAccount
+
+创建新账户。
+
+注意：它将成为当前新的解锁账户。一次只能有一个解锁的账户。
+
+##### Parameters
+
+1. `String` - 新账户的密码。
+
+##### Returns
+
+`Address` - 20 字节 - 新账户的标识符。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_newAccount","params":["abc123"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "atp13upz04zc2wjsam753h20asjatvlay2272djw9w"
+}
+```
+
+***
+
+#### personal_sign
+
+计算一个Alaya特定的签名： sign(keccak256("Alaya Signed Message: " + len(message) + message))。
+
+##### Parameters
+
+1. `Data` - 要签名的数据。
+2. `Address` - 签名的账户地址。
+3. `String` - 签名账户的口令。
+
+##### Returns
+
+`Data` - 被签名的数据。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_sign","params":[0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675","atp1kc8gm4sut5etaqzchw8tjuy8purjxv24zxscp0","hunter"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "0xe7225f986f192f859a9bf84e34b2b7001dfa11aeb5c7164f81a2bee0d79943e2587be1faa11502eba0f803bb0ee071a082b6fe40fba025f3309263a1eef52c711c"
+}
+```
+
+***
+
+#### personal_signTransaction
+
+签署一个交易，而不把它派发到网络。之后可以使用`platon_sendRawTransaction`提交。帐户不需要解锁来进行这个调用，之后也不会被解锁。
+
+##### Parameters
+
+1. `Object` - 带有可选的条件字段的交易对象。见platon_sendRawTransaction。
+2. `String` - 解锁账户的密码。
+
+##### Returns
+
+`Object` - 签署的交易及其细节:
+- raw: 数据 - 经过签名的、RLP编码的交易。
+- tx: 对象 - 交易对象。
+- from: 地址 - 20字节 - 交易的发送地址。
+- to: 地址 - (可选) 20字节 - 交易指向的地址。
+- gas: 数量 - （可选）为交易执行提供的gas的整数。 eth_call消耗的gas为零，但某些执行可能需要这个参数。
+- gasPrice: 数量 -（可选）每个付费gas使用的gas价格的整数。
+- value: 数量 - （可选）随该交易发送的价值的整数。
+- data: 数据 -（可选）方法签名的4个字节的哈希值，后面是编码的参数。详见Ethereum Contract ABI。
+- nonce: 数量 - （可选）nonce的整数。这允许覆盖你自己的使用相同nonce的未决交易。
+- condition: 对象 - （可选）交易的有条件提交。可以是整数块数 { block: 1 } 或UTC时间戳（秒） { time: 1491290692 } 或空。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_signTransaction","params":[{"from":"atp1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp99y5h3","to":"atp14984xa8uuhkmer32s6tuz5e3valxa0ctv5ecf5","data":"0x41cd5add4fd13aedd64521e363ea279923575ff39718065d38bd46f0e6632e8e","value":"0x186a0"},"hunter2"],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "raw": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+    "tx": {
+      "hash": "0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b",
+      "nonce": "0x0",
+      "blockHash": "0xbeab0aa2411b7ab17f30a99d3cb9c6ef2fc5426d6ad6fd9e2a26a6aed1d1055b",
+      "blockNumber": "0x15df",
+      "transactionIndex": "0x1",
+      "from": "atp1gp7h8k9ynm4ct5ev73j4qlwhr4g8zqxp99y5h3",
+      "to": "atp1s5l58k9ynm4ct5ev73j4qlwhr4g8zqxp0p6xtt",
+      "value": "0x7f110",
+      "gas": "0x7f110",
+      "gasPrice": "0x09184e72a000",
+      "input": "0x603880600c6000396000f300603880600c6000396000f3603880600c6000396000f360"
+    }
+  }
+}
+```
+
+***
+
+#### personal_unlockAccount
+
+解锁指定的账户以供使用。
+
+如果永久解锁被禁用（默认），那么持续时间参数将被忽略，账户将被解锁为一个单一的签名。在启用永久锁定的情况下，持续时间设置保持账户开放的秒数。它将默认为300秒。通过0可以无限期地解锁账户。
+
+一次只能有一个解锁的账户。
+
+##### Parameters
+
+1. `Address` - 20字节 - 要解锁的账户地址。
+2. `String` - 解锁账户的密码。
+3. `Quantity` - (默认值：300) 整数或空值 - 帐户解锁的时间，以秒为单位，应该保持多久。
+
+##### Returns
+
+`Boolean` - 调用是否成功。
+
+##### Example
+
+```js
+//Request
+curl --data '{"method":"personal_unlockAccount","params":["atp13upz04zc2wjsam753h20asjatvlay2272djw9w","hunter2",null],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": true
+}
+```
+
+***
+
+#### miner_setGasPrice
+
+设定开采交易时可接受的最小gas价格。任何低于此限制的交易都被排除在开采过程之外。
+
+##### Parameters
+
+1. Uint - gas数量。
+
+##### Returns
+
+`Boolean` - 设置成功返回`true`，否则返回`false`。
+
+
+##### Example
+```js
+//Request
+curl --data '{"method":"miner_setGasPrice","params":[19999999],"id":1,"jsonrpc":"2.0"}' -H "Content-Type: application/json" -X POST localhost:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": true
+}
+```
+
+***
+
+#### txpool_status
+
+txpool的status属性可以用来查询交易池中当前等待打包进下一个区块的交易数量等信息。
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - status属性的值是一个包含两个字段的对象：pending和queued，每个字段的值都是一个关联数组。
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_status","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+		"pending": "0x0",
+		"queued": "0x0"
+	}
+}
+```
+
+***
+
+#### txpool_content
+
+txpool的content属性可以用来查询当前在交易池中的待定和排队交易清单。
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - content属性的值是一个包含两个字段的对象：pending和queued，每个字段都是一个关联数组。
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_content","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+		"pending": {
+			"atp1gw8q4888jx6m6jzqxgg3szgggdxnh84ja3hupq": {
+				806: [{
+						blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+						blockNumber: null,
+						from: "atp1gw8q4888jx6m6jzqxgg3szgggdxnh84ja3hupq",
+						gas: "0x5208",
+						gasPrice: "0xba43b7400",
+						hash: "0xaf953a2d01f55cfe080c0c94150a60105e8ac3d51153058a1f03dd239dd08586",
+						input: "0x",
+						nonce: "0x326",
+						to: "atp1e2stldxefyfjckj0d893s8tsw0m92rnsj2agdl",
+						transactionIndex: null,
+						value: "0x19a99f0cf456000"
+				}]
+			}
+		},
+		"queued": {
+			"atp1nrsepejcs6800et8aluvduu39cly7ujdvqeqpa": {
+				2: [{
+					blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+					blockNumber: null,
+					from: "atp1nrsepejcs6800et8aluvduu39cly7ujdvqeqpa",
+					gas: "0x15f90",
+					gasPrice: "0xba43b7400",
+					hash: "0x3a3c0698552eec2455ed3190eac3996feccc806970a4a056106deaf6ceb1e5e3",
+					input: "0x",
+					nonce: "0x2",
+					to: "atp1sdzehuhqmep3qjxsx34hj99g5e9gvjw0fzkwsc",
+					transactionIndex: null,
+					value: "0xebec21ee1da40000"
+				}],
+			}
+		}
+	}
+}
+```
+
+***
+
+#### txpool_inspect
+
+txpool的inspect属性可以列出交易池中当前等待打包进下一个区块的交易的概要信息。 
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - inspect属性的值是一个包含两个字段的对象：pending和queued，每个字段都是一个关联数组。
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_inspect","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"pending": {
+			"atp1zzpzej5tk29s36rp640pg9zjxa542wxk9eh3lm": {
+				"13975": "atp18cw607wwvhny9au5xc33k6uk8sxn47psjs32zr: 1 von + 21000 gas × 1000000000 von",
+				"13976": "atp1tsl4az553q4ltf2r6x5lkun9gqaewh0fs4dgah: 1 von + 21000 gas × 1000000000 von",
+				"13977": "atp1acxyu6yr4zklm8tr0uumgpsp0wrf0p2wac0jkf: 1 von + 21000 gas × 1000000000 von",
+				"13978": "atp1xjt9m3lrydv7jq4h79avlxqc53scf38sc9uxn7: 1 von + 21000 gas × 1000000000 von",
+				"13979": "atp19ya4dvzuysk9urjunykez5tghyhzswecx2v2d8: 1 von + 21000 gas × 1000000000 von"
+			},
+			"atp1zzv8mawr5xkfpk3fuqg2msknh0sf547mlay864": {
+				"13829": "atp1jx5a6mywhm643fm64q7a0xqektts8sxp4waj2j: 1 von + 21000 gas × 1000000000 von",
+				"13830": "atp13dzff6kllwxny9x6xm6t0fa60z5h8q237ayvhq: 1 von + 21000 gas × 1000000000 von",
+				"13831": "atp13dzff6kllwxny9x6xm6t0fa60z5h8q237ayvhq: 1 von + 21000 gas × 1000000000 von"
+			}
+		},
+		"queued": {
+			"atp102pgp09cf805vwyvrxzrmtp69kwzqmmhz8pxsy": {
+				"13813": "atp1qerrx98a77pwf7rvp9vp3kykkd9umcklxygqm6: 1 von + 21000 gas × 1000000000 von",
+				"13814": "atp1x4cshmmcwn3skaprer3jqk9uhy9pgtypc0gvzg: 1 von + 21000 gas × 1000000000 von"
+			},
+			"atp103uhv88sq2lrtqkd2pql4974rt5py4lqgjgpys": {
+				"14192": "atp1hqz3caqku7jp7gr5yx5vtan6m3z6z2ae328ya8: 1 von + 21000 gas × 1000000000 von",
+				"14193": "atp1450f3q0r6qlkpz22zmgrwlffedenlyjkqt9ekf: 1 von + 21000 gas × 1000000000 von",
+				"14194": "atp1pf66yj4nmtt9ts53l05ptrvmad97h2a6drmwpt: 1 von + 21000 gas × 1000000000 von"
+			}
+		}
+	}
+}
+```
