@@ -374,7 +374,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_protocolVersion","params"
 
 #### platon_syncing
 
-Returns an object with data about the sync status or FALSE.
+This property is read-only. If synchronizing, return the synchronization object. Otherwise return false.
 
 
 ##### Parameters
@@ -382,15 +382,20 @@ none
 
 ##### Returns
 
-`Object|Boolean`, An object with sync status data or `FALSE`, when not syncing:
-  - `startingBlock`: `QUANTITY` - The block at which the import started (will only be reset, after the sync reached his head).
-  - `currentBlock`: `QUANTITY` - The current block, same as platon_blockNumber.
-  - `highestBlock`: `QUANTITY` - The estimated highest block.
+`Object|Boolean`, An object with sync status data or `FALSE`,  If the node is not yet synchronized with the network,
+
+Returns false, otherwise returns a synchronous object with the following properties:
+
+  - `startingBlock`: `Number` - The block at which the import started (will only be reset, after the sync reached his head).
+  - `currentBlock`: `Number`- The current block, same as platon_blockNumber.
+  - `highestBlock`: `Number`- The estimated highest block.
+  - `knownStates`: `Number`: The  estimated download status
+  - `pulledStates`: `Number`: The downloaded status
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id":1}'
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id":1}' http://127.0.0.1:6789
 
 // Result
 {
@@ -399,7 +404,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"platon_syncing","params":[],"id"
   "result": {
     startingBlock: '0x384',
     currentBlock: '0x386',
-    highestBlock: '0x454'
+    highestBlock: '0x454',
+    knownStates: "0x0",
+    pulledStates: "0x0"
   }
 }
 // Or when not syncing
@@ -2001,3 +2008,146 @@ curl --data '{"method":"miner_setGasPrice","params":[19999999],"id":1,"jsonrpc":
 ```
 
 ***
+
+#### txpool_status
+
+The status property of txPool can be used to query information such as the number of transactions in the transaction pool waiting to be packaged into the next block.
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - The value of the status property is an object containing two fields, pending and Queued, each of which is an associative array.
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_status","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+		"pending": "0x0",
+		"queued": "0x0"
+	}
+}
+```
+
+***
+
+#### txpool_content
+
+The content property of txPool can be used to list pending and queued transactions currently in the pool. 
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - The value is an object containing two fields: Pending and Queued, each of which is an associative array.
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_content","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+		"pending": {
+			"atp1gw8q4888jx6m6jzqxgg3szgggdxnh84ja3hupq": {
+				806: [{
+						blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+						blockNumber: null,
+						from: "atp1gw8q4888jx6m6jzqxgg3szgggdxnh84ja3hupq",
+						gas: "0x5208",
+						gasPrice: "0xba43b7400",
+						hash: "0xaf953a2d01f55cfe080c0c94150a60105e8ac3d51153058a1f03dd239dd08586",
+						input: "0x",
+						nonce: "0x326",
+						to: "atp1e2stldxefyfjckj0d893s8tsw0m92rnsj2agdl",
+						transactionIndex: null,
+						value: "0x19a99f0cf456000"
+				}]
+			}
+		},
+		"queued": {
+			"atp1nrsepejcs6800et8aluvduu39cly7ujdvqeqpa": {
+				2: [{
+					blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+					blockNumber: null,
+					from: "atp1nrsepejcs6800et8aluvduu39cly7ujdvqeqpa",
+					gas: "0x15f90",
+					gasPrice: "0xba43b7400",
+					hash: "0x3a3c0698552eec2455ed3190eac3996feccc806970a4a056106deaf6ceb1e5e3",
+					input: "0x",
+					nonce: "0x2",
+					to: "atp1sdzehuhqmep3qjxsx34hj99g5e9gvjw0fzkwsc",
+					transactionIndex: null,
+					value: "0xebec21ee1da40000"
+				}],
+			}
+		}
+	}
+}
+```
+
+***
+
+#### txpool_inspect
+
+The inspect property of TXPool lists the summary of transactions in the transaction pool that are currently waiting to be packaged into the next block.
+
+##### Parameters
+
+none
+
+##### Returns
+
+`Object` - The value of the Inspect property is an object containing two fields, pending and Queued, each of which is an associative array.
+
+
+##### Example
+```js
+//Request
+curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"txpool_inspect","params":[],"id":1}' http://127.0.0.1:6789
+//Result
+{
+	"jsonrpc": "2.0",
+	"id": 1,
+	"result": {
+		"pending": {
+			"atp1zzpzej5tk29s36rp640pg9zjxa542wxk9eh3lm": {
+				"13975": "atp18cw607wwvhny9au5xc33k6uk8sxn47psjs32zr: 1 von + 21000 gas × 1000000000 von",
+				"13976": "atp1tsl4az553q4ltf2r6x5lkun9gqaewh0fs4dgah: 1 von + 21000 gas × 1000000000 von",
+				"13977": "atp1acxyu6yr4zklm8tr0uumgpsp0wrf0p2wac0jkf: 1 von + 21000 gas × 1000000000 von",
+				"13978": "atp1xjt9m3lrydv7jq4h79avlxqc53scf38sc9uxn7: 1 von + 21000 gas × 1000000000 von",
+				"13979": "atp19ya4dvzuysk9urjunykez5tghyhzswecx2v2d8: 1 von + 21000 gas × 1000000000 von"
+			},
+			"atp1zzv8mawr5xkfpk3fuqg2msknh0sf547mlay864": {
+				"13829": "atp1jx5a6mywhm643fm64q7a0xqektts8sxp4waj2j: 1 von + 21000 gas × 1000000000 von",
+				"13830": "atp13dzff6kllwxny9x6xm6t0fa60z5h8q237ayvhq: 1 von + 21000 gas × 1000000000 von",
+				"13831": "atp13dzff6kllwxny9x6xm6t0fa60z5h8q237ayvhq: 1 von + 21000 gas × 1000000000 von"
+			}
+		},
+		"queued": {
+			"atp102pgp09cf805vwyvrxzrmtp69kwzqmmhz8pxsy": {
+				"13813": "atp1qerrx98a77pwf7rvp9vp3kykkd9umcklxygqm6: 1 von + 21000 gas × 1000000000 von",
+				"13814": "atp1x4cshmmcwn3skaprer3jqk9uhy9pgtypc0gvzg: 1 von + 21000 gas × 1000000000 von"
+			},
+			"atp103uhv88sq2lrtqkd2pql4974rt5py4lqgjgpys": {
+				"14192": "atp1hqz3caqku7jp7gr5yx5vtan6m3z6z2ae328ya8: 1 von + 21000 gas × 1000000000 von",
+				"14193": "atp1450f3q0r6qlkpz22zmgrwlffedenlyjkqt9ekf: 1 von + 21000 gas × 1000000000 von",
+				"14194": "atp1pf66yj4nmtt9ts53l05ptrvmad97h2a6drmwpt: 1 von + 21000 gas × 1000000000 von"
+			}
+		}
+	}
+}
+```
