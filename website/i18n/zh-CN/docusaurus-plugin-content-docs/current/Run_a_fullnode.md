@@ -168,7 +168,8 @@ sudo systemctl start alaya.service
 | --cbft.blskey | 指定节点 bls 私钥文件 （非验证节点即全节点，该参数为可选）             |
 | --verbosity   | 日志级别，0: CRIT;  1: ERROR； 2: WARN;  3: INFO;  4: DEBUG； 5: TRACE |
 | --syncmode    | fast：快速同步模式，full：全同步模式                                   |
-| –db.nogc      | 开启归档模式                                                           |
+| –-db.nogc      | 开启归档模式                                                           |
+| --allow-insecure-unlock   | 在rpc接口中启用unlockAccount接口，默认无法通过rpc解锁账户     |
 
 更多参数意义通过`alaya --help`命令查看。
 
