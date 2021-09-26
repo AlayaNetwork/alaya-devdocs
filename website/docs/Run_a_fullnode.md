@@ -194,7 +194,7 @@ sudo systemctl start alaya.service
 | --verbosity   | Log level, 0: CRIT; 1: ERROR;  2: WARN; 3: INFO; 4: DEBUG; 5: TRACE |
 | --syncmode    | fast: fast synchronization mode; full: full synchronization mode |
 | –-db.nogc      | Enable the archive mode                                      |
-| --allow-insecure-unlock   | Enable the unlockAccount interface in the rpc interface, the account cannot be unlocked through rpc by default     |
+| --allow-insecure-unlock   | Enable unlockAccount function     |
 
 More parameter meanings can be viewed through the `alaya --help` command.
 
