@@ -193,7 +193,8 @@ sudo systemctl start alaya.service
 | --cbft.blskey | Specify the bls private key file of the node (a non-validator is a full node. This parameter is optional) |
 | --verbosity   | Log level, 0: CRIT; 1: ERROR;  2: WARN; 3: INFO; 4: DEBUG; 5: TRACE |
 | --syncmode    | fast: fast synchronization mode; full: full synchronization mode |
-| –db.nogc      | Enable the archive mode                                      |
+| –-db.nogc      | Enable the archive mode                                      |
+| --allow-insecure-unlock   | Enable unlockAccount function     |
 
 More parameter meanings can be viewed through the `alaya --help` command.
 
