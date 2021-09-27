@@ -189,3 +189,8 @@ Samurai为了跟metamask命名不冲突，把metamask的window.ethereum修改成
 + 在某些情况下，真实的错误异常可能在某个地方被截获作处理了导致最终看到的错误并不是最初抛出的错误信息，这个时候需要进行debug找到处理前的最初的错误信息及堆栈
 + 某些错误如果对alaya网络甚至底层知识掌握不多的话，可能也会很棘手，这种情况下建议可以在社区向有经验的开发者请教或讨论
 
+### uniswap 迁移参考
+
+uniswap迁移参考前端项目：https://github.com/treelaketreelake/swap-frontend
+
+uniswap迁移参考合约项目：https://github.com/treelaketreelake/swap-contracts

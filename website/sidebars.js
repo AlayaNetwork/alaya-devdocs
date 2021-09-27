@@ -79,7 +79,8 @@ module.exports = {
                     type: 'category',
                     label: 'ARC Token',
                     items: ['ARC20', 'ARC721']
-                }
+                },
+                'DApp_migrate'
             ]
         },
         {
