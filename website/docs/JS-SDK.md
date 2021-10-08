@@ -4824,3 +4824,8 @@ Is a []Reward array
 | 301203    | Getting related of delegate is failed                |
 | 301204    | Query candidate info failed                          |
 | 301205    | Query delegate info failed                           |
+
+
+
+
+*English Translation Contributors @[WillXing](https://github.com/WillXing)*
