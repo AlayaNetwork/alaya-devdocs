@@ -58,15 +58,15 @@ The contract migration and modification points mainly are:
 
 4. In the Alaya smart contract, `block.timestamp` represents the timestamp of the current block in milliseconds, while Ethereum uses seconds as the unit. Whether `block.timestamp` needs to be modified or not is base on business logic. In the uniswap migration, the timestamp in the contract is not modified, but in front-end, the timeout period changed from seconds to milliseconds.
 
-5. For contract development guidelines, please refer to [EVM Smart Contract](https://devdocs.alaya.network/alaya-devdocs/zh-CN/EVM_Smart_Contract/)
+5. For contract development guidelines, please refer to [EVM Smart Contract](https://devdocs.alaya.network/alaya-devdocs/en/EVM_Smart_Contract/)
 
 ## DApp front-end interface migration
 
 ### Update the way to connect to the wallet
 
-Samurai use `window.alaya` in order not to conflict with the `window.ethereum` of metamask. In addition, the interface with prefix of `eth_` was changed to `platon_`, for example: `eth_requestAccounts` was changed to `platon_requestAccounts`. Therefore, the code to connect to the wallet needs to be modified. For Samurai developer documentation, please refer to: https://github.com/AlayaNetwork/Samurai/blob/main/docs/develop-manual.md 。
+Samurai use `window.alaya` in order not to conflict with the `window.ethereum` of metamask. In addition, the interface with prefix of `eth_` was changed to `platon_`, for example: `eth_requestAccounts` was changed to `platon_requestAccounts`. Therefore, the code to connect to the wallet needs to be modified. For Samurai developer documentation, please refer to: https://devdocs.alaya.network/alaya-devdocs/en/Samurai_API 。
 
-在uniswap的迁移过程中，修改了项目 https://github.com/NoahZinsmeister/web3-react 的injected-connector包，具体修改请参考github提交 https://github.com/AlayaNetwork/aswap-web3-react/commits/alaya-v6.1.1 。
+During the migration of uniswap, the injected-connector package of the project https://github.com/NoahZinsmeister/web3-react was modified, please refer to the github commit https://github.com/ AlayaNetwork/aswap-web3-react/commits/alaya-v6.1.1 .
 
 ### Update dependencies
 
@@ -141,7 +141,7 @@ Samurai use `window.alaya` in order not to conflict with the `window.ethereum` o
 #### RPC method and parameters of Alaya backend
 
 + The RPC method supported by the Alaya network starts with platon_ (such as: platon\_sendTransaction)
-+ The parameter types of some specific rpc interfaces may be inconsistent, especially the address type. Best thing to do is to refer to Alaya's [Developer Documentation] when developing(https://devdocs.alaya.network/alaya-devdocs/zh-CN/Json_Rpc/)
++ The parameter types of some specific rpc interfaces may be inconsistent, especially the address type. Best thing to do is to refer to Alaya's [Developer Documentation] when developing(https://devdocs.alaya.network/alaya-devdocs/en/Json_Rpc/)
 
 #### About Address
 
@@ -170,7 +170,7 @@ Samurai use `window.alaya` in order not to conflict with the `window.ethereum` o
 
 ## Alaya development and debugging tools
 
-Please refer to [Alaya Development Documentation](https://devdocs.alaya.network/alaya-devdocs/zh-CN/)
+Please refer to [Alaya Development Documentation](https://devdocs.alaya.network/alaya-devdocs/en/)
 
 ## Metamask and uniswap migration experience summary
 
@@ -194,3 +194,9 @@ Please refer to [Alaya Development Documentation](https://devdocs.alaya.network/
 Uniswap migration reference front-end project：https://github.com/treelaketreelake/swap-frontend
 
 Uniswap migration reference contract project：https://github.com/treelaketreelake/swap-contracts
+
+
+
+
+*English Translation Contributors @[WillXing](https://github.com/WillXing)*
+
