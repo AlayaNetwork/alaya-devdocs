@@ -51,5 +51,4 @@ For help or support, you can ask for support at [Discord](https://discord.gg/jAj
 
 ## License
 
-All software code is copyright (c) Protocol Labs, Inc. under the **MIT license**. See [LICENSE file](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/LICENSE.md) for details.
-
+The Alaya Docs is licensed under the [MIT License](https://github.com/AlayaNetwork/alaya-devdocs/blob/main/LICENSE.md) free software license.
