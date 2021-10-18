@@ -80,13 +80,12 @@ module.exports = {
                     label: 'ARC Token',
                     items: ['ARC20', 'ARC721']
                 },
-                'DApp_migrate'
             ]
         },
         {
             type: 'category',
             label: 'Tutorials',
-            items: ['JS-Tutorials']
+            items: ['JS-Tutorials',  'DApp_migrate']
         },
 
         {
