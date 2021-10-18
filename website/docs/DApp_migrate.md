@@ -1,7 +1,7 @@
 ---
 id: DApp_migrate
-title: DApp Migrate
-sidebar_label: DApp Migrate
+title: Ethereum DApp Quick Migration Tutorial
+sidebar_label: Ethereum DApp Quick Migration Tutorial
 ---
 
 
