@@ -752,13 +752,13 @@ Permissions：
 
   **Return value**
 
-  `string[]` - An array of single PlatON address strings.
+  `string[]` - An array of single PlatON/Alaya address strings.
 
   
 
   **Description**
 
-  Ask the user to provide a PlatON address as an identification. Return a Promise that resolves to an array of strings of individual PlatON addresses. If the user rejects the request, the Promise will reject it with a `4001` error.
+  Ask the user to provide a PlatON/Alaya address as an identification. Return a Promise that resolves to an array of strings of individual PlatON/Alaya addresses. If the user rejects the request, the Promise will reject it with a `4001` error.
 
   This request will result in a Samurai pop-up window. You only need to respond to user actions (such as clicking a button) to request the user's account. While the request is still pending, the button that caused the dispatch request should always be disabled.
 
@@ -886,7 +886,7 @@ Permissions：
 
   In Samurai, users track token requests. Boolean indicates whether the token has been successfully added.
 
-  Most PlatON wallets support certain token sets, usually obtained from a centrally planned token registry. `wallet_watchAsset` enables web3 application developers to require their users to track the tokens in their wallets at runtime. Once added, the token cannot be distinguished from the tokens added through traditional methods (such as centralized registration).
+  Most PlatON/Alaya wallets support certain token sets, usually obtained from a centrally planned token registry. `wallet_watchAsset` enables web3 application developers to require their users to track the tokens in their wallets at runtime. Once added, the token cannot be distinguished from the tokens added through traditional methods (such as centralized registration).
 
   
 
@@ -947,4 +947,17 @@ Promise {<pending>}
 On the DApp development page, since Samurai will inject a platon/alaya object when opening the page, the object can be directly called through javascript to complete the corresponding operation during development. For the introduction and use of web3a objects, see [js-sdk document](https://devdocs.alaya.network/alaya-devdocs/en/JS_SDK/).
 
 The following example shows the corresponding `javascript` script that is called after clicking a page button to initiate a transfer.
-
+```
+var Web3A = require('web3');
+var web3platon = new Web3A(platon)
+contract = new web3platon.platon.Contract(abi, address);
+toAccount = "atp1dt2wx0xjkd2je8ev4t3ysmte6n90kc9gm9mkrr";
+transferBalance = 1000000000000000;
+contract.methods.transfer(toAccount,transferBalance)
+  .send({from:platon.selectedAddress, gas:4712388})
+  .then (function(receipt){
+    console.log("receipt: ", receipt);
+  }).catch(function(err) {
+    console.log('err: ', err);
+  })
+```
