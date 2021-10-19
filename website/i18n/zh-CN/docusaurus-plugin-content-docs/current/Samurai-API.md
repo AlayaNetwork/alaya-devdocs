@@ -57,7 +57,7 @@ if (typeof window.platon !== 'undefined') {
 
 
 
-#### 置本地Nonce计算
+#### 重置本地Nonce计算
 
 如果您正在运行测试区块链并重新启动它，您可能会意外混淆Samurai，因为它是根据网络状态和已知发送的交易来计算下一个nonce。
 
@@ -743,13 +743,13 @@ Samurai使用该`platon.request(args)`方法包装RPC API。
 
   **返回值**
 
-  `string[]` -单个PlatON地址字符串的数组。
+  `string[]` -单个PlatON/Alaya地址字符串的数组。
 
   
 
   **描述**
 
-  请求用户提供一个PlatON地址以作为标识。返回一个Promise，该Promise解析为单个PlatON地址字符串的数组。如果用户拒绝该请求，则Promise将拒绝并出现`4001`错误。
+  请求用户提供一个PlatON/Alaya地址以作为标识。返回一个Promise，该Promise解析为单个PlatON/Alaya地址字符串的数组。如果用户拒绝该请求，则Promise将拒绝并出现`4001`错误。
 
   该请求将导致出现一个Samurai弹出窗口。您只需响应用户的操作（例如单击按钮）来请求用户的帐户。在请求仍处于挂起状态时，应始终禁用导致调度请求的按钮。
 
@@ -881,7 +881,7 @@ Samurai使用该`platon.request(args)`方法包装RPC API。
 
   在Samurai中用户跟踪token的请求。返回`boolean`表示token是否已成功添加。
 
-  大多数PlatON钱包都支持某些token集，通常是从中心化策划的token注册表中获取的。 `wallet_watchAsset`使web3应用程序开发人员可以在运行时要求其用户跟踪其钱包中的token。添加后，令牌就无法与通过传统方法（例如中心化注册）添加的令牌区分开。
+  大多数PlatON/Alaya钱包都支持某些token集，通常是从中心化策划的token注册表中获取的。 `wallet_watchAsset`使web3应用程序开发人员可以在运行时要求其用户跟踪其钱包中的token。添加后，令牌就无法与通过传统方法（例如中心化注册）添加的令牌区分开。
 
   
 
@@ -940,3 +940,17 @@ Promise {<pending>}
 在开发Dapp页面，由于Samurai在打开页面会注入platon/alaya对象，因此在开发的时候可以通过javascript直接调用该对象完成对应的操作。需要web3a对象的引入及使用见[js-sdk文档](https://devdocs.alaya.network/alaya-devdocs/zh-CN/JS_SDK/)
 
 下面例子展示的是点击一个页面按钮发起转账操作，在其后调用对应的javascript脚本。
+```
+var Web3A = require('web3');
+var web3platon = new Web3A(platon)
+contract = new web3platon.platon.Contract(abi, address);
+toAccount = "atp1dt2wx0xjkd2je8ev4t3ysmte6n90kc9gm9mkrr";
+transferBalance = 1000000000000000;
+contract.methods.transfer(toAccount,transferBalance)
+  .send({from:platon.selectedAddress, gas:4712388})
+  .then (function(receipt){
+    console.log("receipt: ", receipt);
+  }).catch(function(err) {
+    console.log('err: ', err);
+  })
+```
