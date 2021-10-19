@@ -5,6 +5,8 @@ sidebar_label: DApp Quick Migration Tutorial
 ---
 
 
+*Note: This article is based on Alaya DevNet nodes that have been upgraded to an Ethereum-compatible version（0.16.1）. The Ethereum-compatible version of the Alaya mainnet is expected to be released in mid-November.*
+
 To help developers migrate their Ethereum DApps onto the Alaya network, we will introduce the differences between the two networks and the general outline of DApp migration from the perspective of developers. Furthermore, we will also offer a specific illustration of how DApp contracts and front-end interfaces can be migrated through the existing Ethereum development tools through the example of Uniswap.
 
 
