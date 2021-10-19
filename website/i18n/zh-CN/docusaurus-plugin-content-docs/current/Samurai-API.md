@@ -937,7 +937,7 @@ Promise {<pending>}
 
 ### Dapp开发集成
 
-在开发Dapp页面，由于Samurai在打开页面会注入platon/alaya对象，因此在开发的时候可以通过javascript直接调用该对象完成对应的操作。需要web3a对象的引入及使用见[js-sdk文档](https://devdocs.alaya.network/alaya-devdocs/zh-CN/JS_SDK/)
+在开发Dapp页面，由于Samurai在打开页面会注入platon对象，因此在开发的时候可以通过javascript直接调用该对象完成对应的操作。需要web3a对象的引入及使用见[js-sdk文档](https://devdocs.alaya.network/alaya-devdocs/zh-CN/JS_SDK/)
 
 下面例子展示的是点击一个页面按钮发起转账操作，在其后调用对应的javascript脚本。
 ```
