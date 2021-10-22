@@ -8,20 +8,19 @@ sidebar_label: Alaya命令行工具
 
 ```conf
 NAME:
-   alaya.exe - the alaya-go command line interface
+   alaya - the alaya-go command line interface
 
    Copyright 2019 The Alaya-Go Authors
 
 USAGE:
-   alaya.exe [options] command [command options] [arguments...]
+   alaya [options] command [command options] [arguments...]
 
 VERSION:
-   0.14.0-unstable
+   0.16.1-unstable
 
 COMMANDS:
    account           Manage accounts
    attach            Start an interactive JavaScript environment (connect to node)
-   bug               opens a window to report a bug on the alaya repo
    console           Start an interactive JavaScript environment
    copydb            Create a local chain from a target chaindata folder
    dump              Dump a specific block from storage
@@ -29,6 +28,7 @@ COMMANDS:
    export-preimages  Export the preimage database into an RLP stream
    import-preimages  Import the preimage database from an RLP stream
    init              Bootstrap and initialize a new genesis block
+   inspect           Inspect the storage size for each type of data in the database
    js                Execute the specified JavaScript files
    license           Display license information
    removedb          Remove blockchain and state databases
@@ -36,19 +36,18 @@ COMMANDS:
    help, h           Shows a list of commands or help for one command
 
 ALAYA OPTIONS:
-  --config value                                        TOML configuration file
-  --datadir "C:\Users\jungle\AppData\Roaming\Alaya"  Data directory for the databases and keystore
-  --keystore                                            Directory for the keystore (default = inside the datadir)
-  --nousb                                               Disables monitoring for and managing USB hardware wallets
-  --networkid value                                     Network identifier (integer, 1=Frontier, 2=Morden (disused), 3=Ropsten, 4=Rinkeby) (default: 1)
-  --main                                                Mainnet network: pre-configured main network (default network)
-  --testnet                                             Testnet network: pre-configured test network
-  --alayatestnet                                        alaya test network: pre-configured alaya test network
-  --syncmode "full"                                     Blockchain sync mode ("fast", "full", or "light")
-  --identity value                                      Custom node name
-  --lightserv value                                     Maximum percentage of time allowed for serving LES requests (0-90) (default: 0)
-  --lightpeers value                                    Maximum number of LES client peers (default: 100)
-  --lightkdf                                            Reduce key-derivation RAM & CPU usage at some expense of KDF strength
+  --config value                     TOML configuration file
+  --datadir "/home/chenglin/.alaya"  Data directory for the databases and keystore
+  --datadir.ancient                  Data directory for ancient chain segments (default = inside chaindata)
+  --keystore                         Directory for the keystore (default = inside the datadir)
+  --nousb                            Disables monitoring for and managing USB hardware wallets
+  --networkid value                  Network identifier (integer, 1=Frontier, 2=Morden (disused), 3=Ropsten, 4=Rinkeby) (default: 1)
+  --alaya                            alaya network: pre-configured alaya network
+  --syncmode "full"                  Blockchain sync mode ("fast", "full", or "light")
+  --identity value                   Custom node name
+  --lightserv value                  Maximum percentage of time allowed for serving LES requests (0-90) (default: 0)
+  --lightpeers value                 Maximum number of LES client peers (default: 100)
+  --lightkdf                         Reduce key-derivation RAM & CPU usage at some expense of KDF strength
 
 DEVELOPER CHAIN OPTIONS:
   --dev.period value  Block period to use in developer mode (0 = mine only if transaction pending) (default: 0)
@@ -58,7 +57,6 @@ TRANSACTION POOL OPTIONS:
   --txpool.nolocals             Disables price exemptions for locally submitted transactions
   --txpool.journal value        Disk journal for local transaction to survive node restarts (default: "transactions.rlp")
   --txpool.rejournal value      Time interval to regenerate the local transaction journal (default: 1h0m0s)
-  --txpool.pricelimit value     Minimum gas price limit to enforce for acceptance into the pool (default: 1)
   --txpool.pricebump value      Price bump percentage to replace an already existing transaction (default: 10)
   --txpool.accountslots value   Minimum number of executable transaction slots guaranteed per account (default: 16)
   --txpool.globalslots value    Maximum number of executable transaction slots for all accounts (default: 16384)
@@ -71,18 +69,20 @@ TRANSACTION POOL OPTIONS:
 PERFORMANCE TUNING OPTIONS:
   --cache value           Megabytes of memory allocated to internal caching (default: 1024)
   --cache.database value  Percentage of cache memory allowance to use for database io (default: 75)
-  --cache.gc value        Percentage of cache memory allowance to use for trie pruning (default: 25)
+  --cache.gc value        Percentage of cache memory allowance to use for trie pruning (default = 25% full mode, 0% archive mode) (default: 25)
   --cache.triedb value    Megabytes of memory allocated to triedb internal caching (default: 512)
 
 ACCOUNT OPTIONS:
-  --unlock value    Comma separated list of accounts to unlock
-  --password value  Password file to use for non-interactive password input
+  --unlock value           Comma separated list of accounts to unlock
+  --password value         Password file to use for non-interactive password input
+  --allow-insecure-unlock  Allow insecure account unlocking when account-related RPCs are exposed by http
 
 API AND CONSOLE OPTIONS:
   --rpc                  Enable the HTTP-RPC server
   --rpcaddr value        HTTP-RPC server listening interface (default: "localhost")
   --rpcport value        HTTP-RPC server listening port (default: 6789)
   --rpcapi value         API's offered over the HTTP-RPC interface
+  --rpc.gascap value     Sets a cap on gas that can be used in eth_call/estimateGas (default: 0)
   --ws                   Enable the WS-RPC server
   --wsaddr value         WS-RPC server listening interface (default: "localhost")
   --wsport value         WS-RPC server listening port (default: 6790)
@@ -100,8 +100,8 @@ NETWORKING OPTIONS:
   --bootnodes value          Comma separated enode URLs for P2P discovery bootstrap (set v4+v5 instead for light servers)
   --bootnodesv4 value        Comma separated enode URLs for P2P v4 discovery bootstrap (light server, full nodes)
   --port value               Network listening port (default: 16789)
-  --maxpeers value           Maximum number of network peers (network disabled if set to 0) (default: 50)
-  --maxconsensuspeers value  Maximum number of network consensus peers (network disabled if set to 0) (default: 75)
+  --maxpeers value           Maximum number of network peers (network disabled if set to 0) (default: 60)
+  --maxconsensuspeers value  Maximum number of network consensus peers (network disabled if set to 0) (default: 40)
   --maxpendpeers value       Maximum number of pending connection attempts (defaults used if set to 0) (default: 0)
   --nat value                NAT port mapping mechanism (any|none|upnp|pmp|extip:<IP>) (default: "any")
   --nodiscover               Disables the peer discovery mechanism (manual peer addition)
@@ -111,7 +111,7 @@ NETWORKING OPTIONS:
 
 MINER OPTIONS:
   --miner.gasprice "1000000000"  Minimum gas price for mining a transaction
-  --miner.gastarget value        Target gas floor for mined blocks (default: 4712388)
+  --miner.gastarget value        Target gas floor for mined blocks (default: 9424776)
 
 GAS PRICE ORACLE OPTIONS:
   --gpoblocks value      Number of recent blocks to check for gas prices (default: 20)
@@ -134,16 +134,13 @@ LOGGING AND DEBUGGING OPTIONS:
 
 METRICS AND STATS OPTIONS:
   --metrics                          Enable metrics collection and reporting
+  --metrics.expensive                Enable expensive metrics collection and reporting
   --metrics.influxdb                 Enable metrics export/push to an external InfluxDB database
   --metrics.influxdb.endpoint value  InfluxDB API endpoint to report metrics to (default: "http://localhost:8086")
-  --metrics.influxdb.database value  InfluxDB database name to push reported metrics to (default: "platon")
+  --metrics.influxdb.database value  InfluxDB database name to push reported metrics to (default: "alaya")
   --metrics.influxdb.username value  Username to authorize access to the database (default: "test")
   --metrics.influxdb.password value  Password to authorize access to the database (default: "test")
-  --metrics.influxdb.host.tag host   InfluxDB host tag attached to all measurements (default: "localhost")
-
-DEPRECATED OPTIONS:
-  --targetgaslimit value   Target gas floor for mined blocks (deprecated, use --miner.gastarget) (default: 4712388)
-  --gasprice "1000000000"  Minimum gas price for mining a transaction (deprecated, use --miner.gasprice)
+  --metrics.influxdb.tags value      Comma-separated InfluxDB tags (key/values) attached to all measurements (default: "host=localhost")
 
 CBFT OPTIONS:
   --cbft.msg_queue_size value      Message queue size (default: 1024)
