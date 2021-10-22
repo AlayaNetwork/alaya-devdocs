@@ -3654,17 +3654,17 @@ web3.utils.toVon(number [, unit])
 - `number` - String|Number|BN: 要转换的金额
 - `unit` - String（可选，默认值为`atp`）：要转换的 atp 单位. 支持的单位包括:
 
- - von
- - kvon
- - mvon
- - gvon
- - microatp
- - milliatp
- - atp
- - katp
- - matp
- - gatp
- - tatp
+   - von
+   - kvon
+   - mvon
+   - gvon
+   - microatp
+   - milliatp
+   - atp
+   - katp
+   - matp
+   - gatp
+   - tatp
 
 返回值：
 
@@ -3681,7 +3681,7 @@ web3.utils.toVon('1', 'atp');
 
 #### web3.utils.fromVon
 
-将任意数量的 von 转换为 lat 。
+将任意数量的 von 转换为 atp 。
 
 调用：
 
@@ -3694,17 +3694,17 @@ web3.utils.fromVon(number [, unit])
 `number` - String|Number|BN: 以 VON 为单位的数值
 `unit` - String（可选，默认值为`atp`）: 要转换到的 atp 单位. 可能支持的单位包括:
 
- - von
- - kvon
- - mvon
- - gvon
- - microatp
- - milliatp
- - atp
- - katp
- - matp
- - gatp
- - tatp
+   - von
+   - kvon
+   - mvon
+   - gvon
+   - microatp
+   - milliatp
+   - atp
+   - katp
+   - matp
+   - gatp
+   - tatp
 
 返回值：
 
