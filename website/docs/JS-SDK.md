@@ -942,7 +942,7 @@ PromiEvent: A promise combined event emitter. Will be resolved when the transact
 Example:
 
 ```js
-// compiled solidity source code using https://remix.ethereum.org
+// compiled solidity source code using https://remix.ethereum.org Or PlatON Studio (https://github.com/ObsidianLabs/PlatON-Studio)
 var code = "603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3";
 
 // using the callback
@@ -3598,18 +3598,6 @@ web3.utils.hexToBytes(0x000000ea);
 
 Converts any atp value value into von.
 
-- von
-- kvon
-- mvon
-- gvon
-- microatp
-- milliatp
-- atp
-- katp
-- matp
-- gatp
-- tatp
-
 ```
 'von':          '1',
 'kvon':         '1000',
@@ -3633,7 +3621,19 @@ web3.utils.toVon(number [, unit])
 Parameter:
 
 - `number` - `String|Number|BN`: The value.
-- `unit` - String，(optional, defaults to "atp"): The ether to convert from.
+- `unit` - String，(optional, defaults to "atp"): The atp to convert from. Possible units are:
+
+ - von
+ - kvon
+ - mvon
+ - gvon
+ - microatp
+ - milliatp
+ - atp
+ - katp
+ - matp
+ - gatp
+ - tatp
 
 Returns:
 
@@ -3658,24 +3658,22 @@ Method:
 web3.utils.fromVon(number [, unit])
 ```
 
-Converts any von value into a atp value.
-
 Parameter:
 
 `number` - `String|Number|BN`: The value in von.
-`unit` - `String`，(optional, defaults to "atp"): The ether to convert to. Possible units are:
+`unit` - `String`，(optional, defaults to "atp"): The atp to convert to. Possible units are:
 
-- von
-- kvon
-- mvon
-- gvon
-- microatp
-- milliatp
-- atp
-- katp
-- matp
-- gatp
-- tatp
+  - von
+  - kvon
+  - mvon
+  - gvon
+  - microatp
+  - milliatp
+  - atp
+  - katp
+  - matp
+  - gatp
+  - tatp
 
 Returns:
 
