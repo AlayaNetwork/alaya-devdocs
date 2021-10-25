@@ -2329,7 +2329,7 @@ Note: Read contract history events, which can be obtained using the `newFilter` 
 
 #### web3.platon.personal
 
-The web3-platon-personal package allows you to interact with the PlatON node’s accounts.
+The web3-platon-personal package allows you to interact with the `Alaya` node’s accounts.
 
 Notes: Many of these functions send sensitive information, like password. Never call these functions over a unsecured Websocket or HTTP provider, as your password will be sent in plain text!
 
