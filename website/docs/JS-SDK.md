@@ -6,7 +6,7 @@ sidebar_label: JS SDK
 
 ## Web3.js Interface
 
-Interact with nodes through web3 objects provided by web3.js. On the underlying implementation, it communicates with the local node through RPC calls. web3.js can connect to any PlatON node that exposes the RPC interface. The installation and use under Windows 10 and Ubuntu are introduced in following.
+Interact with nodes through web3 objects provided by web3.js. On the underlying implementation, it communicates with the local node through RPC calls. web3.js can connect to any PlatON/Alaya node that exposes the RPC interface. The installation and use under Windows 10 and Ubuntu are introduced in following.
 
 ### Install and use under Windows
 
@@ -148,9 +148,9 @@ Returns:
 
 `Object`: A list of module constructors:
 
-- `Platon` - Function: The PlatON module for interacting with the PlatON network see web3.platon for more.
+- `Platon` - Function: The PlatON module for interacting with the PlatON/Alaya network see web3.platon for more.
 - `Net` - Function: The Net module for interacting with network properties see web3.platon.net for more.
-- `Personal` - Function: The Personal module for interacting with the PlatON accounts see web3.platon.personal for more.
+- `Personal` - Function: The Personal module for interacting with the PlatON/Alaya accounts see web3.platon.personal for more.
 
 Example:
 
@@ -338,7 +338,7 @@ web3.platon.defaultAccount
 
 Property：
 
-`String` - 20 Bytes: 20 Bytes: Any PlatON address. You should have the private key for that address in your node or keystore. (Default is undefined)
+`String` - 20 Bytes: 20 Bytes: Any Alaya address. You should have the private key for that address in your node or keystore. (Default is undefined)
 
 Example:
 
@@ -400,7 +400,7 @@ web3.platon.defaultBlock = 231;
 
 #### web3.platon.getProtocolVersion
 
-Returns the platon protocol version of the node.
+Returns the alaya protocol version of the node.
 
 Method:
 
@@ -958,7 +958,7 @@ PromiEvent: A promise combined event emitter. Will be resolved when the transact
 Example:
 
 ```js
-// compiled solidity source code using https://remix.Alaya.org Or PlatON Studio (https://github.com/ObsidianLabs/PlatON-Studio)
+// compiled solidity source code using https://remix.ethereum.org Or PlatON Studio (https://github.com/ObsidianLabs/PlatON-Studio)
 var code = "603d80600c6000396000f3007c01000000000000000000000000000000000000000000000000000000006000350463c6888fa18114602d57005b6007600435028060005260206000f3";
 
 // using the callback
@@ -1572,7 +1572,7 @@ subscription.unsubscribe(function (error, success) {
 
 #### web3.platon.Contract
 
-The `web3.platon.Contract` object makes it easy to interact with smart contracts on the PlatON blockchain. When you create a new contract object you give it the json interface of the respective smart contract and web3 will auto convert all calls into low level ABI calls over RPC for you.
+The `web3.platon.Contract` object makes it easy to interact with smart contracts on the Alaya blockchain. When you create a new contract object you give it the json interface of the respective smart contract and web3 will auto convert all calls into low level ABI calls over RPC for you.
 
 This allows you to interact with smart contracts as if they were JavaScript objects.
 
@@ -2354,7 +2354,7 @@ Note: Read contract history events, which can be obtained using the `newFilter` 
 
 #### web3.platon.personal
 
-The web3-platon-personal package allows you to interact with the PlatON node’s accounts.
+The web3-platon-personal package allows you to interact with the Alaya node’s accounts.
 
 Notes: Many of these functions send sensitive information, like password. Never call these functions over a unsecured Websocket or HTTP provider, as your password will be sent in plain text!
 
@@ -2363,7 +2363,7 @@ Usage:
 ```
 var Personal = require('web3.platon-personal');
 
-// "Personal.providers.givenProvider" will be set if in an PlatON supported browser.
+// "Personal.providers.givenProvider" will be set if in an PlatON/Alaya supported browser.
 var personal = new Personal(Personal.givenProvider || 'ws://some.local-or-remote.node:8546');
 
 
@@ -2793,7 +2793,7 @@ web3.platon.abi.decodeLog([{
 
 #### web3.utils
 
-This package provides utility functions for PlatON dapps and other web3.js packages
+This package provides utility functions for Alaya dapps and other web3.js packages
 
 Method:
 
@@ -3161,7 +3161,7 @@ web3.utils.isHex('Hello');
 
 #### web3.utils.isAddress
 
-Checks if a given string is a valid PlatON address. It will also check the checksum, if the address has upper and lowercase letters.
+Checks if a given string is a valid Hexadecimal address (ie. Ethereum address). It will also check the checksum, if the address has upper and lowercase letters.
 
 Method:
 
@@ -3200,7 +3200,7 @@ web3.utils.isAddress('0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d');
 
 #### web3.utils.isBech32Address
 
-Check whether the specified character string is a valid address in bech32 format.
+Check whether the specified character string is a valid address in bech32 format(ie. Alaya address).
 
 Method:
 
@@ -3236,7 +3236,7 @@ web3.utils.isBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 
 #### web3.utils.toBech32Address
 
-Convert a valid Alaya address to a bech32 format address of the designated network.
+Convert a valid Hexadecimal address (ie. Ethereum address) to a bech32 format address(ie. Alaya address) of the designated network.
 
 Method:
 
@@ -3248,11 +3248,11 @@ Parameters:
 
 `hrp` - String: Specify the network parameters, atx indicates the test network address, and atp indicates the main network address.
 
-`address` - String: Alaya address format string.
+`address` - String: Hexadecimal address (ie. Ethereum address)  format string.
 
 Returns:
 
-`String`: Returns address string in bech32 format
+`String`: Returns address string in bech32 format(ie. Alaya address)
 
 Sample code:
 
@@ -3268,7 +3268,7 @@ web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
 
 #### web3.utils.decodeBech32Address
 
-Resolve the bech32 format address of the specified network into a valid Alaya address.
+Resolve the bech32 format address of the specified network into a valid Hexadecimal address (ie. Ethereum address).
 
 Method:
 
@@ -3278,11 +3278,11 @@ web3.utils.decodeBech32Address(bech32Address);
 
 Parameters:
 
-`bech32Address` - String: Address string in bech32 format.
+`bech32Address` - String: Address string in bech32 format(ie. Alaya address).
 
 Returns:
 
-`String`: The resolution correctly returns a valid Alaya address, otherwise it returns null.
+`String`: The resolution correctly returns a valid Hexadecimal address (ie. Ethereum address)s, otherwise it returns null.
 
 Sample code:
 
@@ -3298,7 +3298,7 @@ web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 
 #### web3.utils.toChecksumAddress
 
-Will convert an upper or lowercase Alaya address to a checksum address.
+Will convert an upper or lowercase Hexadecimal address (ie. Ethereum address) to a checksum address.
 
 Method:
 
@@ -4301,19 +4301,19 @@ Parameters:
 
 Returns: List
 
-| Field           | Type             | Desc                                                                                                                                                                                                                                    |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeId          | 64bytes          | The node ID of the pledged (also called the node ID of the candidate)                                                                                                                                                                   |
-| StakingAddress  | 20bytes          | The account used when initiating the pledge (this account can only be used for subsequent pledge information. When the pledge is cancelled, `von` will be returned to the account or the account lock information)                      |
-| BenefitAddress  | 20bytes          | Revenue account for receiving block rewards and pledged rewards                                                                                                                                                                         |
-| StakingTxIndex  | uint32(4bytes)   | Index of transactions when pledge is initiated                                                                                                                                                                                          |
-| ProgramVersion  | uint32           | The real version number of the PlatON process of the pledged node (the interface for obtaining the version number is provided by the governance)                                                                                        |
-| StakingBlockNum | uint64(8bytes)   | Block height when pledge is initiated                                                                                                                                                                                                   |
-| Shares          | \*big.Int(bytes) | The current candidate's total pledge plus the number of `von` entrusted                                                                                                                                                                 |
-| ExternalId      | string           | External Id (with a length limit, the Id described by the third-party pull node)                                                                                                                                                        |
-| NodeName        | string           | The name of the node being pledged (there is a length limitation, indicating the name of the node)                                                                                                                                      |
-| Website         | string           | The third-party home page of the node (the length is limited, indicating the home page of the node)                                                                                                                                     |
-| Details         | string           | The description of the node (the length is limited, indicating the description of the node)                                                                                                                                             |
+| Field           | Type             | Desc                                                         |
+| --------------- | ---------------- | ------------------------------------------------------------ |
+| NodeId          | 64bytes          | The node ID of the pledged (also called the node ID of the candidate) |
+| StakingAddress  | 20bytes          | The account used when initiating the pledge (this account can only be used for subsequent pledge information. When the pledge is cancelled, `von` will be returned to the account or the account lock information) |
+| BenefitAddress  | 20bytes          | Revenue account for receiving block rewards and pledged rewards |
+| StakingTxIndex  | uint32(4bytes)   | Index of transactions when pledge is initiated               |
+| ProgramVersion  | uint32           | The real version number of the PlatON/Alaya process of the pledged node (the interface for obtaining the version number is provided by the governance) |
+| StakingBlockNum | uint64(8bytes)   | Block height when pledge is initiated                        |
+| Shares          | \*big.Int(bytes) | The current candidate's total pledge plus the number of `von` entrusted |
+| ExternalId      | string           | External Id (with a length limit, the Id described by the third-party pull node) |
+| NodeName        | string           | The name of the node being pledged (there is a length limitation, indicating the name of the node) |
+| Website         | string           | The third-party home page of the node (the length is limited, indicating the home page of the node) |
+| Details         | string           | The description of the node (the length is limited, indicating the description of the node) |
 | ValidatorTerm   | uint32(4bytes)   | Validator's term (it will always be 0 in the 101 validator snapshots of the settlement cycle, and will only be valued when the validator of the consensus round, it is also 0 when it is just selected, and +1 when it stays in office) |
 
 #### Query Validator list
@@ -4328,19 +4328,19 @@ Parameters:
 
 Returns: List
 
-| Field           | Type             | Remark                                                                                                                                                                                                                                  |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeId          | 64bytes          | The node ID of the pledged (also called the node ID of the candidate).                                                                                                                                                                  |
-| StakingAddress  | 20bytes          | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information)    |
-| BenefitAddress  | 20bytes          | Revenue account for receiving block rewards and pledged rewards                                                                                                                                                                         |
-| StakingTxIndex  | uint32(4bytes)   | Index of transactions when pledge is initiated                                                                                                                                                                                          |
-| ProgramVersion  | uint32(4bytes)   | The real version number of the PlatON process of the pledged node (the interface for obtaining the version number is provided by the governance)                                                                                        |
-| StakingBlockNum | uint64(8bytes)   | Block height when pledge is initiated                                                                                                                                                                                                   |
-| Shares          | \*big.Int(bytes) | The current candidate's total pledge plus the number of entrusted von                                                                                                                                                                   |
-| ExternalId      | string           | External Id (with a length limit, the Id described by the third-party pull node)                                                                                                                                                        |
-| NodeName        | string           | The name of the node being pledged (there is a length limitation, indicating the name of the node)                                                                                                                                      |
-| Website         | string           | The third-party home page of the node (the length is limited, indicating the home page of the node)                                                                                                                                     |
-| Details         | string           | The description of the node (the length is limited, indicating the description of the node)                                                                                                                                             |
+| Field           | Type             | Remark                                                       |
+| --------------- | ---------------- | ------------------------------------------------------------ |
+| NodeId          | 64bytes          | The node ID of the pledged (also called the node ID of the candidate). |
+| StakingAddress  | 20bytes          | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information) |
+| BenefitAddress  | 20bytes          | Revenue account for receiving block rewards and pledged rewards |
+| StakingTxIndex  | uint32(4bytes)   | Index of transactions when pledge is initiated               |
+| ProgramVersion  | uint32(4bytes)   | The real version number of the PlatON/Alaya process of the pledged node (the interface for obtaining the version number is provided by the governance) |
+| StakingBlockNum | uint64(8bytes)   | Block height when pledge is initiated                        |
+| Shares          | \*big.Int(bytes) | The current candidate's total pledge plus the number of entrusted von |
+| ExternalId      | string           | External Id (with a length limit, the Id described by the third-party pull node) |
+| NodeName        | string           | The name of the node being pledged (there is a length limitation, indicating the name of the node) |
+| Website         | string           | The third-party home page of the node (the length is limited, indicating the home page of the node) |
+| Details         | string           | The description of the node (the length is limited, indicating the description of the node) |
 | ValidatorTerm   | uint32(4bytes)   | Validator's term (it will always be 0 in the 101 validator snapshots of the settlement cycle, and will only be valued when the validator of the consensus round, it is also 0 when it is just selected, and +1 when it stays in office) |
 
 #### Query Real-time Candidate List
@@ -4355,25 +4355,25 @@ Parameters:
 
 Returns:List
 
-| Field              | Type           | Remark                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeId             | 64bytes        | The node ID of the pledged (also called the node ID of the candidate).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| StakingAddress     | 20bytes        | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| BenefitAddress     | 20bytes        | Revenue account for receiving block rewards and pledged rewards                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| StakingTxIndex     | uint32(4bytes) | Index of transactions when pledge is initiated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ProgramVersion     | uint32(4bytes) | The real version number of the PlatON process of the pledged node (the interface for obtaining the version number is provided by the governance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Field              | Type           | Remark                                                       |
+| ------------------ | -------------- | ------------------------------------------------------------ |
+| NodeId             | 64bytes        | The node ID of the pledged (also called the node ID of the candidate). |
+| StakingAddress     | 20bytes        | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information) |
+| BenefitAddress     | 20bytes        | Revenue account for receiving block rewards and pledged rewards |
+| StakingTxIndex     | uint32(4bytes) | Index of transactions when pledge is initiated               |
+| ProgramVersion     | uint32(4bytes) | The real version number of the PlatON/Alaya process of the pledged node (the interface for obtaining the version number is provided by the governance) |
 | Status             | uint32(4bytes) | The status of the candidate (the status is placed according to the 32bit of uint32, there can be multiple states at the same time, and the value is the sum of multiple simultaneous state values [0: node available (32 bits are all 0); 1: node Not available (only the last bit is 1); 2: The node has a low block generation rate but does not meet the removal condition (only the penultimate bit is 1); 4: The node's von is not enough to meet the minimum pledge threshold (only the penultimate bit 1); 8: The node is reported with a double sign (only the penultimate bit is 1)); 16: the node's block generation rate is low and the removal condition is met (the penultimate bit is 1); 32: the node actively initiates the cancellation (Only the penultimate bit is 1)] |
-| StakingEpoch       | uint32(4bytes) | Settlement cycle when current pledge amount is changed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| StakingBlockNum    | uint64(8bytes) | Block height when pledge is initiated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Shares             | string         | The current candidate's total pledge plus the number of entrusted von                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Released           | string         | Initiating a free amount locked period pledge of a pledged account `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| ReleasedHes        | string         | Freedom to initiate a pledge account with a hesitation period of von von                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| RestrictingPlan    | string         | Initiating the lock-up period of the pledged account's lock-up amount `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| RestrictingPlanHes | string         | Initiating the hedging period of the pledged account's hedging amount `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ExternalId         | string         | External Id (with a length limit, the Id described by the third-party pull node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| NodeName           | string         | The name of the node being pledged (there is a length limitation, indicating the name of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Website            | string         | The third-party home page of the node (the length is limited, indicating the home page of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Details            | string         | The description of the node (the length is limited, indicating the description of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| StakingEpoch       | uint32(4bytes) | Settlement cycle when current pledge amount is changed       |
+| StakingBlockNum    | uint64(8bytes) | Block height when pledge is initiated                        |
+| Shares             | string         | The current candidate's total pledge plus the number of entrusted von |
+| Released           | string         | Initiating a free amount locked period pledge of a pledged account `von` |
+| ReleasedHes        | string         | Freedom to initiate a pledge account with a hesitation period of von von |
+| RestrictingPlan    | string         | Initiating the lock-up period of the pledged account's lock-up amount `von` |
+| RestrictingPlanHes | string         | Initiating the hedging period of the pledged account's hedging amount `von` |
+| ExternalId         | string         | External Id (with a length limit, the Id described by the third-party pull node) |
+| NodeName           | string         | The name of the node being pledged (there is a length limitation, indicating the name of the node) |
+| Website            | string         | The third-party home page of the node (the length is limited, indicating the home page of the node) |
+| Details            | string         | The description of the node (the length is limited, indicating the description of the node) |
 
 #### Query The NodeID And Pledged Id of The Delegated Node
 
@@ -4434,25 +4434,25 @@ Parameters:
 
 Returns: List
 
-| Field              | Type           | Remark                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| NodeId             | 64bytes        | The node ID of the pledged (also called the node ID of the candidate).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| StakingAddress     | 20bytes        | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| BenefitAddress     | 20bytes        | Revenue account for receiving block rewards and pledged rewards                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| StakingTxIndex     | uint32(4bytes) | Index of transactions when pledge is initiated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ProgramVersion     | uint32(4bytes) | The real version number of the PlatON process of the pledged node (the interface for obtaining the version number is provided by the governance)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Field              | Type           | Remark                                                       |
+| ------------------ | -------------- | ------------------------------------------------------------ |
+| NodeId             | 64bytes        | The node ID of the pledged (also called the node ID of the candidate). |
+| StakingAddress     | 20bytes        | The account used when initiating the pledge (the pledge information can only be used for this operation in subsequent operations. When the pledge is cancelled, von will be returned to the account or the account lock information) |
+| BenefitAddress     | 20bytes        | Revenue account for receiving block rewards and pledged rewards |
+| StakingTxIndex     | uint32(4bytes) | Index of transactions when pledge is initiated               |
+| ProgramVersion     | uint32(4bytes) | The real version number of the PlatON/Alaya process of the pledged node (the interface for obtaining the version number is provided by the governance) |
 | Status             | uint32(4bytes) | The status of the candidate (the status is placed according to the `32bit` of` uint32`, multiple states can exist at the same time, and the value of multiple simultaneous state values is added [`0`: the node is available (32 bits are all 0); `1`: The node is unavailable (only the last bit is 1);` 2`: The node has a low block rate but does not meet the removal condition (only the penultimate bit is 1); `4`: The node Von is lower than the minimum pledge threshold (only the penultimate bit is 1); `8`: the node is reported as a double sign (only the penultimate bit is 1);` 16`: the node block rate is low and the removal condition is met (The penultimate bit is 1); `32`: the node actively initiates the revocation (only the penultimate bit is 1)] |
-| StakingEpoch       | uint32(4bytes) | Settlement cycle when current pledge amount is changed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| StakingBlockNum    | uint64(8bytes) | Block height when pledge is initiated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Shares             | string         | The current candidate's total pledge plus the number of entrusted von                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Released           | string         | Initiating a free amount locked period pledge of a pledged account `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ReleasedHes        | string         | Freedom to initiate a pledge account with a hesitation period of von von                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| RestrictingPlan    | string         | Initiating the lock-up period of the pledged account's lock-up amount `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| RestrictingPlanHes | string         | Initiating the hedging period of the pledged account's hedging amount `von`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ExternalId         | string         | External Id (with a length limit, the Id described by the third-party pull node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| NodeName           | string         | The name of the node being pledged (there is a length limitation, indicating the name of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Website            | string         | The third-party home page of the node (the length is limited, indicating the home page of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Details            | string         | The description of the node (the length is limited, indicating the description of the node)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| StakingEpoch       | uint32(4bytes) | Settlement cycle when current pledge amount is changed       |
+| StakingBlockNum    | uint64(8bytes) | Block height when pledge is initiated                        |
+| Shares             | string         | The current candidate's total pledge plus the number of entrusted von |
+| Released           | string         | Initiating a free amount locked period pledge of a pledged account `von` |
+| ReleasedHes        | string         | Freedom to initiate a pledge account with a hesitation period of von von |
+| RestrictingPlan    | string         | Initiating the lock-up period of the pledged account's lock-up amount `von` |
+| RestrictingPlanHes | string         | Initiating the hedging period of the pledged account's hedging amount `von` |
+| ExternalId         | string         | External Id (with a length limit, the Id described by the third-party pull node) |
+| NodeName           | string         | The name of the node being pledged (there is a length limitation, indicating the name of the node) |
+| Website            | string         | The third-party home page of the node (the length is limited, indicating the home page of the node) |
+| Details            | string         | The description of the node (the length is limited, indicating the description of the node) |
 
 ### Governance Module
 

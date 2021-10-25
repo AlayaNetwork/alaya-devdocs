@@ -6,7 +6,7 @@ sidebar_label: JS SDK
 
 ## Web3.js 调用接口
 
-通过 web3.js 提供的 web3 对象与底层链进行交互。底层实现上，它通过 RPC 调用与本地节点通信。web3.js 可以与任何暴露了 RPC 接口的 PlatON 节点连接。如下主要介绍 Windows 10 和 Ubuntu 下的安装和使用。
+通过 web3.js 提供的 web3 对象与底层链进行交互。底层实现上，它通过 RPC 调用与本地节点通信。web3.js 可以与任何暴露了 RPC 接口的 PlatON/Alaya 节点连接。如下主要介绍 Windows 10 和 Ubuntu 下的安装和使用。
 
 ### Windows 下安装使用
 
@@ -341,7 +341,7 @@ web3.platon.defaultAccount
 
 属性：
 
-`String` - Alaya 地址对应的 bech32 编码地址，你应当在节点或 keystore 中存有该地址的私钥。默认值为`undefined`
+`String` - 十六进制地址（如以太坊地址）对应的 bech32 编码地址，你应当在节点或 keystore 中存有该地址的私钥。默认值为`undefined`
 
 示例代码：
 
@@ -3188,7 +3188,7 @@ web3.utils.isHex('Hello');
 
 #### web3.utils.isAddress
 
-检查指定的字符串是否是有效的 Alaya 地址。如果地址同时使用了大小写字符，
+检查指定的字符串是否是有效的 十六进制地址（如以太坊地址）。如果地址同时使用了大小写字符，
 `web3.utils.isAddress()`方法也会检查校验和。
 
 调用：
@@ -3228,7 +3228,7 @@ web3.utils.isAddress('0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d');
 
 #### web3.utils.isBech32Address
 
-检查指定的字符串是否是有效的 bech32 格式地址。
+检查指定的字符串是否是有效的 bech32 格式地址(如 Alaya address)。
 
 调用：
 
@@ -3264,7 +3264,7 @@ web3.utils.isBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 
 #### web3.utils.toBech32Address
 
-将有效的 Alaya 地址转成指定网络的 bech32 格式地址。
+将有效的十六进制地址（如以太坊地址）转成指定网络的 bech32 格式地址(如 Alaya address)。
 
 调用：
 
@@ -3276,11 +3276,11 @@ web3.utils.toBech32Address(hrp, address)
 
 `hrp` - String: 指定网络参数，atx 表示测试网地址，atp 表示主网地址。
 
-`address` - String: Alaya 地址字符串。
+`address` - String: 十六进制地址（如以太坊地址）字符串。
 
 返回值：
 
-`String`：返回 bech32 地址
+`String`：返回 bech32 地址(如 Alaya address)
 
 示例代码：
 
@@ -3296,7 +3296,7 @@ web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
 
 #### web3.utils.decodeBech32Address
 
-将指定网络的的 bech32 格式地址解析成有效的 Alaya 地址。
+将指定网络的的 bech32 格式地址(如 Alaya address)解析成有效的十六进制地址（如以太坊地址）。
 
 调用：
 
@@ -3306,11 +3306,11 @@ web3.utils.decodeBech32Address(bech32Address)
 
 参数：
 
-`bech32Address` - String: bech32 格式地址。
+`bech32Address` - String: bech32 格式地址(如 Alaya address)。
 
 返回值：
 
-`String`：解析正确返回有效的 Alaya 地址，否则返回为空。
+`String`：解析正确返回有效的 六进制地址（如以太坊地址），否则返回为空。
 
 示例代码：
 
@@ -3326,7 +3326,7 @@ web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 
 #### web3.utils.toChecksumAddress
 
-将给定的大写或小写 Alaya 地址转换为校验和地址。
+将给定的大写或小写 十六进制地址（如以太坊地址）转换为校验和地址。
 
 调用：
 
@@ -4314,19 +4314,19 @@ reply = await ppos.send(params, other);
 
 返参： 列表
 
-| 名称            | 类型             | 说明                                                                                                                        |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| NodeId          | 64bytes          | 被质押的节点 Id(也叫候选人的节点 Id)                                                                                        |
-| StakingAddress  | 20bytes          | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中)                  |
-| BenefitAddress  | 20bytes          | 用于接受出块奖励和质押奖励的收益账户                                                                                        |
-| StakingTxIndex  | uint32(4bytes)   | 发起质押时的交易索引                                                                                                        |
-| ProgramVersion  | uint32           | 被质押节点的 PlatON 进程的真实版本号(获取版本号的接口由治理提供)                                                            |
-| StakingBlockNum | uint64(8bytes)   | 发起质押时的区块高度                                                                                                        |
-| Shares          | \*big.Int(bytes) | 当前候选人总共质押加被委托的 von 数目                                                                                       |
-| ExternalId      | string           | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)                                                                              |
-| NodeName        | string           | 被质押节点的名称(有长度限制，表示该节点的名称)                                                                              |
-| Website         | string           | 节点的第三方主页(有长度限制，表示该节点的主页)                                                                              |
-| Details         | string           | 节点的描述(有长度限制，表示该节点的描述)                                                                                    |
+| 名称            | 类型             | 说明                                                         |
+| --------------- | ---------------- | ------------------------------------------------------------ |
+| NodeId          | 64bytes          | 被质押的节点 Id(也叫候选人的节点 Id)                         |
+| StakingAddress  | 20bytes          | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中) |
+| BenefitAddress  | 20bytes          | 用于接受出块奖励和质押奖励的收益账户                         |
+| StakingTxIndex  | uint32(4bytes)   | 发起质押时的交易索引                                         |
+| ProgramVersion  | uint32           | 被质押节点的 PlatON/Alaya 进程的真实版本号(获取版本号的接口由治理提供) |
+| StakingBlockNum | uint64(8bytes)   | 发起质押时的区块高度                                         |
+| Shares          | \*big.Int(bytes) | 当前候选人总共质押加被委托的 von 数目                        |
+| ExternalId      | string           | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)               |
+| NodeName        | string           | 被质押节点的名称(有长度限制，表示该节点的名称)               |
+| Website         | string           | 节点的第三方主页(有长度限制，表示该节点的主页)               |
+| Details         | string           | 节点的描述(有长度限制，表示该节点的描述)                     |
 | ValidatorTerm   | uint32(4bytes)   | 验证人的任期(在结算周期的 101 个验证人快照中永远是 0，只有在共识轮的验证人时才会被有值，刚被选出来时也是 0，继续留任时则+1) |
 
 - 查询当前共识周期的验证人列表，call 查询
@@ -4339,19 +4339,19 @@ reply = await ppos.send(params, other);
 
 返参： 列表
 
-| 名称            | 类型             | 说明                                                                                                                        |
-| --------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| NodeId          | 64bytes          | 被质押的节点 Id(也叫候选人的节点 Id)                                                                                        |
-| StakingAddress  | 20bytes          | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中)                  |
-| BenefitAddress  | 20bytes          | 用于接受出块奖励和质押奖励的收益账户                                                                                        |
-| StakingTxIndex  | uint32(4bytes)   | 发起质押时的交易索引                                                                                                        |
-| ProgramVersion  | uint32(4bytes)   | 被质押节点的 PlatON 进程的真实版本号(获取版本号的接口由治理提供)                                                            |
-| StakingBlockNum | uint64(8bytes)   | 发起质押时的区块高度                                                                                                        |
-| Shares          | \*big.Int(bytes) | 当前候选人总共质押加被委托的 von 数目                                                                                       |
-| ExternalId      | string           | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)                                                                              |
-| NodeName        | string           | 被质押节点的名称(有长度限制，表示该节点的名称)                                                                              |
-| Website         | string           | 节点的第三方主页(有长度限制，表示该节点的主页)                                                                              |
-| Details         | string           | 节点的描述(有长度限制，表示该节点的描述)                                                                                    |
+| 名称            | 类型             | 说明                                                         |
+| --------------- | ---------------- | ------------------------------------------------------------ |
+| NodeId          | 64bytes          | 被质押的节点 Id(也叫候选人的节点 Id)                         |
+| StakingAddress  | 20bytes          | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中) |
+| BenefitAddress  | 20bytes          | 用于接受出块奖励和质押奖励的收益账户                         |
+| StakingTxIndex  | uint32(4bytes)   | 发起质押时的交易索引                                         |
+| ProgramVersion  | uint32(4bytes)   | 被质押节点的 PlatON/Alaya 进程的真实版本号(获取版本号的接口由治理提供) |
+| StakingBlockNum | uint64(8bytes)   | 发起质押时的区块高度                                         |
+| Shares          | \*big.Int(bytes) | 当前候选人总共质押加被委托的 von 数目                        |
+| ExternalId      | string           | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)               |
+| NodeName        | string           | 被质押节点的名称(有长度限制，表示该节点的名称)               |
+| Website         | string           | 节点的第三方主页(有长度限制，表示该节点的主页)               |
+| Details         | string           | 节点的描述(有长度限制，表示该节点的描述)                     |
 | ValidatorTerm   | uint32(4bytes)   | 验证人的任期(在结算周期的 101 个验证人快照中永远是 0，只有在共识轮的验证人时才会被有值，刚被选出来时也是 0，继续留任时则+1) |
 
 - 查询所有实时的候选人列表，call 查询
@@ -4364,25 +4364,25 @@ reply = await ppos.send(params, other);
 
 返参： 列表
 
-| 名称               | 类型                      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeId             | 64bytes                   | 被质押的节点 Id(也叫候选人的节点 Id)                                                                                                                                                                                                                                                                                                                                                                                                              |
-| StakingAddress     | 20bytes                   | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中)                                                                                                                                                                                                                                                                                                                                        |
-| BenefitAddress     | 20bytes                   | 用于接受出块奖励和质押奖励的收益账户                                                                                                                                                                                                                                                                                                                                                                                                              |
-| StakingTxIndex     | uint32(4bytes)            | 发起质押时的交易索引                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ProgramVersion     | uint32(4bytes)            | 被质押节点的 PlatON 进程的真实版本号(获取版本号的接口由治理提供)                                                                                                                                                                                                                                                                                                                                                                                  |
+| 名称               | 类型                      | 说明                                                         |
+| ------------------ | ------------------------- | ------------------------------------------------------------ |
+| NodeId             | 64bytes                   | 被质押的节点 Id(也叫候选人的节点 Id)                         |
+| StakingAddress     | 20bytes                   | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中) |
+| BenefitAddress     | 20bytes                   | 用于接受出块奖励和质押奖励的收益账户                         |
+| StakingTxIndex     | uint32(4bytes)            | 发起质押时的交易索引                                         |
+| ProgramVersion     | uint32(4bytes)            | 被质押节点的 PlatON/Alaya 进程的真实版本号(获取版本号的接口由治理提供) |
 | Status             | uint32(4bytes)            | 候选人的状态(状态是根据 uint32 的 32bit 来放置的，可同时存在多个状态，值为多个同时存在的状态值相加【0: 节点可用 (32 个 bit 全为 0)； 1: 节点不可用 (只有最后一 bit 为 1)； 2： 节点出块率低但没有达到移除条件的(只有倒数第二 bit 为 1)； 4： 节点的 von 不足最低质押门槛(只有倒数第三 bit 为 1)； 8：节点被举报双签(只有倒数第四 bit 为 1)); 16: 节点出块率低且达到移除条件(倒数第五位 bit 为 1); 32: 节点主动发起撤销(只有倒数第六位 bit 为 1)】 |
-| StakingEpoch       | uint32(4bytes)            | 当前变更质押金额时的结算周期                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| StakingBlockNum    | uint64(8bytes)            | 发起质押时的区块高度                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Shares             | string(0x 十六进制字符串) | 当前候选人总共质押加被委托的 von 数目                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Released           | string(0x 十六进制字符串) | 发起质押账户的自由金额的锁定期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ReleasedHes        | string(0x 十六进制字符串) | 发起质押账户的自由金额的犹豫期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RestrictingPlan    | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的锁定期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RestrictingPlanHes | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的犹豫期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ExternalId         | string                    | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| NodeName           | string                    | 被质押节点的名称(有长度限制，表示该节点的名称)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Website            | string                    | 节点的第三方主页(有长度限制，表示该节点的主页)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Details            | string                    | 节点的描述(有长度限制，表示该节点的描述)                                                                                                                                                                                                                                                                                                                                                                                                          |
+| StakingEpoch       | uint32(4bytes)            | 当前变更质押金额时的结算周期                                 |
+| StakingBlockNum    | uint64(8bytes)            | 发起质押时的区块高度                                         |
+| Shares             | string(0x 十六进制字符串) | 当前候选人总共质押加被委托的 von 数目                        |
+| Released           | string(0x 十六进制字符串) | 发起质押账户的自由金额的锁定期质押的 von                     |
+| ReleasedHes        | string(0x 十六进制字符串) | 发起质押账户的自由金额的犹豫期质押的 von                     |
+| RestrictingPlan    | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的锁定期质押的 von                     |
+| RestrictingPlanHes | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的犹豫期质押的 von                     |
+| ExternalId         | string                    | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)               |
+| NodeName           | string                    | 被质押节点的名称(有长度限制，表示该节点的名称)               |
+| Website            | string                    | 节点的第三方主页(有长度限制，表示该节点的主页)               |
+| Details            | string                    | 节点的描述(有长度限制，表示该节点的描述)                     |
 
 - 查询当前账户地址所委托的节点的 NodeID 和质押 Id，call 查询
 
@@ -4437,25 +4437,25 @@ reply = await ppos.send(params, other);
 
 返参： 列表
 
-| 名称               | 类型                      | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| NodeId             | 64bytes                   | 被质押的节点 Id(也叫候选人的节点 Id)                                                                                                                                                                                                                                                                                                                                                                                                              |
-| StakingAddress     | 20bytes                   | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中)                                                                                                                                                                                                                                                                                                                                        |
-| BenefitAddress     | 20bytes                   | 用于接受出块奖励和质押奖励的收益账户                                                                                                                                                                                                                                                                                                                                                                                                              |
-| StakingTxIndex     | uint32(4bytes)            | 发起质押时的交易索引                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ProgramVersion     | uint32(4bytes)            | 被质押节点的 PlatON 进程的真实版本号(获取版本号的接口由治理提供)                                                                                                                                                                                                                                                                                                                                                                                  |
+| 名称               | 类型                      | 说明                                                         |
+| ------------------ | ------------------------- | ------------------------------------------------------------ |
+| NodeId             | 64bytes                   | 被质押的节点 Id(也叫候选人的节点 Id)                         |
+| StakingAddress     | 20bytes                   | 发起质押时使用的账户(后续操作质押信息只能用这个账户，撤销质押时，von 会被退回该账户或者该账户的锁仓信息中) |
+| BenefitAddress     | 20bytes                   | 用于接受出块奖励和质押奖励的收益账户                         |
+| StakingTxIndex     | uint32(4bytes)            | 发起质押时的交易索引                                         |
+| ProgramVersion     | uint32(4bytes)            | 被质押节点的 PlatON/Alaya 进程的真实版本号(获取版本号的接口由治理提供) |
 | Status             | uint32(4bytes)            | 候选人的状态(状态是根据 uint32 的 32bit 来放置的，可同时存在多个状态，值为多个同时存在的状态值相加【0: 节点可用 (32 个 bit 全为 0)； 1: 节点不可用 (只有最后一 bit 为 1)； 2： 节点出块率低但没有达到移除条件的(只有倒数第二 bit 为 1)； 4： 节点的 von 不足最低质押门槛(只有倒数第三 bit 为 1)； 8：节点被举报双签(只有倒数第四 bit 为 1)); 16: 节点出块率低且达到移除条件(倒数第五位 bit 为 1); 32: 节点主动发起撤销(只有倒数第六位 bit 为 1)】 |
-| StakingEpoch       | uint32(4bytes)            | 当前变更质押金额时的结算周期                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| StakingBlockNum    | uint64(8bytes)            | 发起质押时的区块高度                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Shares             | string(0x 十六进制字符串) | 当前候选人总共质押加被委托的 von 数目                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Released           | string(0x 十六进制字符串) | 发起质押账户的自由金额的锁定期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ReleasedHes        | string(0x 十六进制字符串) | 发起质押账户的自由金额的犹豫期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RestrictingPlan    | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的锁定期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RestrictingPlanHes | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的犹豫期质押的 von                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ExternalId         | string                    | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| NodeName           | string                    | 被质押节点的名称(有长度限制，表示该节点的名称)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Website            | string                    | 节点的第三方主页(有长度限制，表示该节点的主页)                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Details            | string                    | 节点的描述(有长度限制，表示该节点的描述)                                                                                                                                                                                                                                                                                                                                                                                                          |
+| StakingEpoch       | uint32(4bytes)            | 当前变更质押金额时的结算周期                                 |
+| StakingBlockNum    | uint64(8bytes)            | 发起质押时的区块高度                                         |
+| Shares             | string(0x 十六进制字符串) | 当前候选人总共质押加被委托的 von 数目                        |
+| Released           | string(0x 十六进制字符串) | 发起质押账户的自由金额的锁定期质押的 von                     |
+| ReleasedHes        | string(0x 十六进制字符串) | 发起质押账户的自由金额的犹豫期质押的 von                     |
+| RestrictingPlan    | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的锁定期质押的 von                     |
+| RestrictingPlanHes | string(0x 十六进制字符串) | 发起质押账户的锁仓金额的犹豫期质押的 von                     |
+| ExternalId         | string                    | 外部 Id(有长度限制，给第三方拉取节点描述的 Id)               |
+| NodeName           | string                    | 被质押节点的名称(有长度限制，表示该节点的名称)               |
+| Website            | string                    | 节点的第三方主页(有长度限制，表示该节点的主页)               |
+| Details            | string                    | 节点的描述(有长度限制，表示该节点的描述)                     |
 
 #### 治理
 
