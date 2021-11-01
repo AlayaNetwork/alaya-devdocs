@@ -16,7 +16,7 @@ Depending on the build tool, use the following methods to add related dependenci
 
 ```xml
 <repository>
-	<id>platon-public</id>
+	<id>alaya-public</id>
 	<url>https://sdk.platon.network/nexus/content/groups/public/</url>
 </repository>
 ```
