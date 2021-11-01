@@ -16,7 +16,7 @@ sidebar_label: Java SDK
 
 ```xml
 <repository>
-	<id>platon-public</id>
+	<id>alaya-public</id>
 	<url>https://sdk.platon.network/nexus/content/groups/public/</url>
 </repository>
 ```
@@ -27,7 +27,7 @@ sidebar_label: Java SDK
 <dependency>
     <groupId>com.alaya.sdk</groupId>
     <artifactId>core</artifactId>
-    <version>0.16.0.0</version>
+    <version>0.16.1.0</version>
 </dependency>
 ```
 
@@ -44,7 +44,7 @@ repositories {
 > gradle 引用方式:
 
 ```
-compile "com.alaya.sdk:core:0.16.0.0"
+compile "com.alaya.sdk:core:0.16.1.0"
 ```
 
 ## 基础 api 使用
@@ -1439,6 +1439,720 @@ PlatonChainId属性中的String即为对应存储数据
 Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
 Request<?, PlatonChainId> req = platonWeb3j.getChainId();
 BigInteger chainId = req.send().getChainId();
+```
+
+### adminAddPeer
+
+> 新增一个端点到客户端节点
+* **参数**
+
+  String ：端点URL
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, BooleanResponse> request = platonWeb3j.adminAddPeer("enode://0abaf3219f454f3d07b6cbcf3c10b6b4ccf605202868e2043b6f5db12b745df0604ef01ef4cb523adc6d9e14b83a76dd09f862e3fe77205d8ac83df707969b47@[::]:16789");
+Boolean resp = request.send().getResult();
+```
+
+### adminRemovePeer
+
+> 从客户端节点移除一个端点
+* **参数**
+
+  String ：端点URL
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, BooleanResponse> request = platonWeb3j.adminRemovePeer("enode://0abaf3219f454f3d07b6cbcf3c10b6b4ccf605202868e2043b6f5db12b745df0604ef01ef4cb523adc6d9e14b83a76dd09f862e3fe77205d8ac83df707969b47@[::]:16789");
+Boolean resp = request.send().getResult();
+```
+
+### adminDataDir
+
+> 返回当前节点数据目录
+* **参数**
+
+  ​	无
+
+* **返回值**
+
+```java
+Request<?, AdminDataDir>
+```
+
+AdminDataDir属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request <?, AdminDataDir> request = platonWeb3j.adminDataDir();
+String resp = request.send().getDataDir();
+```
+
+### txPoolStatus
+
+>    返回交易池状态
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, TxPoolStatus>
+```
+
+TxPoolStatus属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request <?, TxPoolStatus> request = platonWeb3j.txPoolStatus();
+TxPoolStatus txPoolStatus = request.send();
+```
+
+### txPoolContent
+
+>    返回交易池内容
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, TxPoolContent>
+```
+
+TxPoolContent属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+JsonRpc2_0Admin platonWeb3j = new JsonRpc2_0Admin(new HttpService("http://127.0.0.1:6789"));
+Request <?, TxPoolContent> request = platonWeb3j.txPoolContent();
+TxPoolContent txPoolContent = request.send();
+```
+
+### adminNodeInfo
+
+>  以协议粒度检索我们知道的有关主机节点的所有信息。
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, AdminNodeInfo>
+```
+
+AdminNodeInfo属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminNodeInfo nodeInfo = platonWeb3j.adminNodeInfo().send();
+```
+
+### adminPeers
+
+>  以协议粒度检索我们知道的关于每个单独 Peer 的所有信息
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, AdminPeers>
+```
+
+AdminPeers属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminPeers adminPeers = platonWeb3j.adminPeers().send();
+```
+
+### adminStartRPC
+
+>   启动 HTTP RPC API 服务器
+* **参数**
+
+    - String :  host : 要监听的网络地址 
+    - Integer : port : 要监听的网络端口 
+    - String : cors : 要使用的跨源资源共享头
+    - String : apis : 要透过该服务接口提供服务的API模块
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStartRPC("127.0.0.1", 6789, null, null).send();
+```
+
+### adminStartWS
+
+>   启动 websocket RPC API 服务器
+* **参数**
+
+    - String :  host : 要监听的网络地址 
+    - Integer : port : 要监听的网络端口 
+    - String : cors : 要使用的跨源资源共享头
+    - String : apis : 要透过该服务接口提供服务的API模块
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = web3j.adminStartWS("127.0.0.1", 7789, null, null).send();
+```
+
+### adminStopRPC
+
+>  关闭当前启动的HTTP RPC端结点
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStopRPC().send();
+```
+
+### adminStopWS
+
+>  关闭当前启动的WebSocket RPC端结点
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStopWS().send();
+```
+
+### adminExportChain
+
+>   将当前区块链导出到本地文件中
+* **参数**
+
+    - String :  file : 文件名 
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.adminExportChain("1").send();
+```
+
+### adminImportChain
+
+>   从本地文件导入区块链
+* **参数**
+
+    - String :  file : 文件名 
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.adminImportChain("1").send();
+```
+
+### getWaitSlashingNodeList
+
+>    获取零出块的节点，因为零出块而被观察的节点列表
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, DebugWaitSlashingNodeList>
+```
+
+DebugWaitSlashingNodeList属性中的WaitSlashingNode列表对象即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, DebugWaitSlashingNodeList> req = platonWeb3j.getWaitSlashingNodeList();
+DebugWaitSlashingNodeList nodeList = req.send();
+```
+
+### platonGetRawTransactionByHash
+
+>    返回给定Hash的交易字节数
+* **参数**
+
+    - String :  hash : 交易hash 
+
+* **返回值**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+PlatonRawTransaction属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByHash("0x5b99...").send();
+```
+
+### platonGetRawTransactionByBlockHashAndIndex
+
+>   返回给定区块哈希和索引的交易
+* **参数**
+
+    - String :  hash : 块hash 
+    - String :  index : 索引 
+
+* **返回值**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+PlatonRawTransaction属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByBlockHashAndIndex("0xa34...", "0x1").send();
+```
+
+### platonGetRawTransactionByBlockNumberAndIndex
+
+>    返回给定区块号和索引的交易
+* **参数**
+
+    - String :  blockNumber : 块号
+    - String :  index : 索引 
+
+* **返回值**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+PlatonRawTransaction属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByBlockNumberAndIndex("0x1", "0x1").send();
+```
+
+### platonGetAddressHrp
+
+>    获取链Hrp
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, PlatonGetAddressHrp>
+```
+
+PlatonGetAddressHrp属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonGetAddressHrp send = platonWeb3j.platonGetAddressHrp().send();
+```
+
+### platonSignTransaction
+
+>    将使用 from 帐户签署给定的交易。节点需要有给定的发件人地址对应的账户私钥，并且需要解锁
+* **参数**
+
+      - Transaction :  transaction : 交易对象
+
+* **返回值**
+
+```java
+Request<?, PlatonSignTransaction>
+```
+
+PlatonSignTransaction属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PlatonSignTransaction send = platonWeb3j.platonSignTransaction(transaction).send();
+```
+
+### minerSetGasPrice
+
+>    设置矿工可接受的最低gas price
+* **参数**
+
+      - String :  minGasPrice : 最低gas price
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.minerSetGasPrice("0x1").send();
+```
+
+### adminPeerEvents
+
+>   创建一个 RPC 订阅，它从节点的 p2p服务器接收 peer 事件
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, AdminPeerEvents>
+```
+
+AdminPeerEvents属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminPeerEvents send = web3j.adminPeerEvents().send();
+```
+
+### personalImportRawKey
+
+>  将给定的十六进制编码密钥存储到密钥目录中，并使用密码对其进行加密
+* **参数**
+
+      - String :  keydata : 私钥
+      - String :  password : 密码
+
+* **返回值**
+
+```java
+Request<?, PersonalImportRawKey>
+```
+
+PersonalImportRawKey属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalImportRawKey key = admin.personalImportRawKey("03axxx", "000000").send();
+```
+
+### personalLockAccount
+
+>   锁定与给定地址关联的帐户
+* **参数**
+
+      - String :  address : 账户地址
+
+* **返回值**
+
+```java
+Request<?, BooleanResponse>
+```
+
+BooleanResponse属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse response = admin.personalLockAccount("atp1cxxx").send();
+```
+
+### personalSign
+
+>    使用给定的账户对交易进行签名，账户需要存在于节点的账户库中
+* **参数**
+
+      - String :  message : 交易的16进制编码字符串
+      - String :  accountId : 账户地址
+      - String :  password : 账户地址密码
+
+* **返回值**
+
+```java
+Request<?, PersonalSign>
+```
+
+PersonalSign属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+RawTransaction transaction = RawTransaction.createTransaction(nonce,gasPrice,gasLimit,toAddress,value,data);
+byte[] encode = TransactionEncoder.encode(transaction);
+String hexSignedTransaction = Numeric.toHexString(encode);
+PersonalSign send = admin.personalSign(hexSignedTransaction, "atp1xxx","000000").send();
+```
+
+### personalSignAndSendTransaction
+
+>    使用交易的from地址进行签名并发送交易，from账户需要存在于节点的账户库中
+* **参数**
+
+      - Transaction :  transaction : 交易对象
+      - String :  password : 账户地址密码
+
+* **返回值**
+
+```java
+Request<?, PersonalSign>
+```
+
+PersonalSign属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PersonalSign send = admin.personalSignAndSendTransaction(transaction, "000000").send();
+```
+
+### personalSignTransaction
+
+>    使用交易的from地址进行签名，from账户需要存在于节点的账户库中
+* **参数**
+
+      - Transaction :  transaction : 交易对象
+      - String :  password : from账户地址密码
+
+* **返回值**
+
+```java
+Request<?, PlatonSignTransaction>
+```
+
+PlatonSignTransaction属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PlatonSignTransaction send = admin.personalSignTransaction(transaction,"000000").send();
+```
+
+### personalEcRecover
+
+>   返回用于创建签名的帐户的地址
+* **参数**
+
+      - String :  message : 原始数据
+      - String :  signiture : 签名后的数据
+
+* **返回值**
+
+```java
+Request<?, PersonalEcRecover>
+```
+
+PersonalEcRecover属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalEcRecover send = admin.personalEcRecover("0xebxxx","0xa4f5xxx").send();
+```
+
+### personalListWallets
+
+>   返回此节点管理的钱包列表
+* **参数**
+
+  无
+
+* **返回值**
+
+```java
+Request<?, PersonalListWallets>
+```
+
+PersonalListWallets属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalListWallets send = admin.personalListWallets().send();
+```
+
+### personalOpenWallet
+
+>  启动硬件钱包打开程序，建立 USB 连接并尝试通过提供的密码进行身份验证。请注意，该方法可能会返回一个需要第二次打开的额外质询（例如，Trezor PIN 矩阵质询）
+* **参数**
+
+      - String :  url : 网址
+      - String :  passphrase : 密码
+
+* **返回值**
+
+```java
+Request<?, VoidResponse>
+```
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+VoidResponse send = admin.personalOpenWallet("http://localhost:8080", "000000").send();
+```
+
+### personalUnlockAccount
+
+>  使用给定密码解锁与给定地址关联的帐户持续时间秒。默认 300 秒。如果帐户已解锁，它会返回一个指示
+* **参数**
+
+      - String :  address : 地址
+      - String :  passphrase : 密码
+
+* **返回值**
+
+```java
+Request<?, PersonalUnlockAccount>
+```
+
+PersonalUnlockAccount属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalUnlockAccount response = admin.personalUnlockAccount("atp1xxx", "111111").send();
+```
+
+### personalListAccounts
+
+>  返回此节点管理的帐户的地址列表
+* **参数**
+
+    无
+
+* **返回值**
+
+```java
+Request<?, PersonalListAccounts>
+```
+
+PersonalListAccounts属性中的result即为对应存储数据
+
+* **示例**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalListAccounts send = admin.personalListAccounts().send();
 ```
 
 ## 系统合约调用
