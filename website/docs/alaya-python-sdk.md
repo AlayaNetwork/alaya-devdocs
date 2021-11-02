@@ -34,10 +34,10 @@ You can either use pip to install or download the source code.
 - Download the source code
 
   ```python
-  git clone -b 0.16.0-develop https://github.com/AlayaNetwork/client-sdk-python.git
+  git clone -b develop https://github.com/AlayaNetwork/client-sdk-python.git
   ```
 
-  > `0.16.0-develop` is the currently used branch.
+  > `develop` is the currently used branch.
 
 
 

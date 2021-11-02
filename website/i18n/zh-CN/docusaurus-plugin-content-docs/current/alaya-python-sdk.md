@@ -33,10 +33,10 @@ client-sdk-python 是一个服务于Alaya底层链的python sdk。通过web3对�
 - 下载源码
 
   ```
-  git clone -b 0.16.0-develop https://github.com/AlayaNetwork/client-sdk-python.git
+  git clone -b develop https://github.com/AlayaNetwork/client-sdk-python.git
   ```
 
-  > 其中`0.16.0-develop`为当前使用的分支。
+  > 其中`develop`为当前使用的分支。
 
 
 ### 使用

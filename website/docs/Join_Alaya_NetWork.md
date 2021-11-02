@@ -58,9 +58,9 @@ The development network provides a development test environment for the develope
 
 ### Develop network related resources
 
-> - alaya：https://download.alaya.network/alaya/platon/0.16.0/alaya
+> - alaya：https://download.alaya.network/alaya/platon/0.16.1/alaya
 >
-> - alayakey：https://download.alaya.network/alaya/platon/0.16.0/alayakey
+> - alayakey：https://download.alaya.network/alaya/platon/0.16.1/alayakey
 >
 > - mtool windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/alaya_mtool.exe
 >
