@@ -16,7 +16,7 @@ Depending on the build tool, use the following methods to add related dependenci
 
 ```xml
 <repository>
-	<id>platon-public</id>
+	<id>alaya-public</id>
 	<url>https://sdk.platon.network/nexus/content/groups/public/</url>
 </repository>
 ```
@@ -27,7 +27,7 @@ Depending on the build tool, use the following methods to add related dependenci
 <dependency>
     <groupId>com.alaya.sdk</groupId>
     <artifactId>core</artifactId>
-    <version>0.16.0.0</version>
+    <version>0.16.1.0</version>
 </dependency>
 ```
 
@@ -44,7 +44,7 @@ repositories {
 > gradle way of reference:
 
 ```
-compile "com.alaya.sdk:core:0.16.0.0"
+compile "com.alaya.sdk:core:0.16.1.0"
 ```
 
 ## Basic API Usage
@@ -1438,6 +1438,720 @@ The String in the PlatonChainId property is the corresponding stored data
 Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
 Request<?, PlatonChainId> req = platonWeb3j.getChainId();
 BigInteger chainId = req.send().getChainId();
+```
+
+### adminAddPeer
+
+> Add a peer to the client node
+* **parameters**
+
+  String : peer's URL
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse property is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, BooleanResponse> request = platonWeb3j.adminAddPeer("enode://0abaf3219f454f3d07b6cbcf3c10b6b4ccf605202868e2043b6f5db12b745df0604ef01ef4cb523adc6d9e14b83a76dd09f862e3fe77205d8ac83df707969b47@[::]:16789");
+Boolean resp = request.send().getResult();
+```
+
+### adminRemovePeer
+
+> Remove a peer from the client node
+* **parameters**
+
+  String : peer's URL
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse property is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, BooleanResponse> request = platonWeb3j.adminRemovePeer("enode://0abaf3219f454f3d07b6cbcf3c10b6b4ccf605202868e2043b6f5db12b745df0604ef01ef4cb523adc6d9e14b83a76dd09f862e3fe77205d8ac83df707969b47@[::]:16789");
+Boolean resp = request.send().getResult();
+```
+
+### adminDataDir
+
+> Return the current node data directory
+* **parameters**
+
+  no
+
+* **return value**
+
+```java
+Request<?, AdminDataDir>
+```
+
+The result in the AdminDataDir property is the corresponding storage data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request <?, AdminDataDir> request = platonWeb3j.adminDataDir();
+String resp = request.send().getDataDir();
+```
+
+### txPoolStatus
+
+>    Returns the status of the transaction pool
+* **parameters**
+
+  no
+
+* **return value**
+
+```java
+Request<?, TxPoolStatus>
+```
+
+The result in the TxPoolStatus property is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request <?, TxPoolStatus> request = platonWeb3j.txPoolStatus();
+TxPoolStatus txPoolStatus = request.send();
+```
+
+### txPoolContent
+
+>    Return transaction pool content
+* **parameters**
+
+  no
+
+* **return value**
+
+```java
+Request<?, TxPoolContent>
+```
+
+The result in the TxPoolContent property is the corresponding storage data
+
+* **Example**
+
+```java
+JsonRpc2_0Admin platonWeb3j = new JsonRpc2_0Admin(new HttpService("http://127.0.0.1:6789"));
+Request <?, TxPoolContent> request = platonWeb3j.txPoolContent();
+TxPoolContent txPoolContent = request.send();
+```
+
+### adminNodeInfo
+
+>  Retrieve all the information we know about the host node at protocol granularity
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, AdminNodeInfo>
+```
+
+The result in the AdminNodeInfo attribute is the corresponding storage data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminNodeInfo nodeInfo = platonWeb3j.adminNodeInfo().send();
+```
+
+### adminPeers
+
+>  Retrieve all the information we know about each individual Peer at protocol granularity
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, AdminPeers>
+```
+
+The result in the AdminPeers attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminPeers adminPeers = platonWeb3j.adminPeers().send();
+```
+
+### adminStartRPC
+
+>   Start the HTTP RPC API server
+* **parameters**
+
+    - String :  host : Network address to listen on
+    - Integer : port : Network port to listen on
+    - String : cors : Cross-origin resource sharing header to be used
+    - String : apis : API modules to provide services through the service interface
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStartRPC("127.0.0.1", 6789, null, null).send();
+```
+
+### adminStartWS
+
+>   Start the websocket RPC API server
+* **parameters**
+
+    - String :  host : Network address to listen on
+    - Integer : port : Network port to listen on
+    - String : cors : Cross-origin resource sharing header to be used
+    - String : apis : API modules to provide services through the service interface
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = web3j.adminStartWS("127.0.0.1", 7789, null, null).send();
+```
+
+### adminStopRPC
+
+>  Close the currently started HTTP RPC end node
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStopRPC().send();
+```
+
+### adminStopWS
+
+>  Close the currently started WebSocket RPC end node
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+WebSocketService webSocketService = new WebSocketService("ws://127.0.0.1:7790",false);
+webSocketService.connect();
+Web3j platonWeb3j = Web3j.build(webSocketService);
+BooleanResponse send = platonWeb3j.adminStopWS().send();
+```
+
+### adminExportChain
+
+>   Export the current blockchain to a local file
+* **parameters**
+
+    - String :  file : file name
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.adminExportChain("1").send();
+```
+
+### adminImportChain
+
+>   Import blockchain from local file
+* **parameters**
+
+    - String :  file : file name
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.adminImportChain("1").send();
+```
+
+### getWaitSlashingNodeList
+
+>    Get the node with zero block, the list of nodes that are observed because of zero block
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, DebugWaitSlashingNodeList>
+```
+
+The WaitSlashingNode list object in the DebugWaitSlashingNodeList property is the corresponding storage data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Request<?, DebugWaitSlashingNodeList> req = platonWeb3j.getWaitSlashingNodeList();
+DebugWaitSlashingNodeList nodeList = req.send();
+```
+
+### platonGetRawTransactionByHash
+
+>  Returns the number of transaction bytes for a given Hash
+* **parameters**
+
+    - String :  hash : Transaction hash
+
+* **return value**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+The result in the PlatonRawTransaction attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByHash("0x5b99...").send();
+```
+
+### platonGetRawTransactionByBlockHashAndIndex
+
+>   Return transactions for a given block hash and index
+* **parameters**
+
+    - String :  hash : Block hash 
+    - String :  index : index
+
+* **return value**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+The result in the PlatonRawTransaction attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByBlockHashAndIndex("0xa34...", "0x1").send();
+```
+
+### platonGetRawTransactionByBlockNumberAndIndex
+
+>    Return transactions with a given block number and index
+* **parameters**
+
+    - String :  blockNumber : Block number
+    - String :  index : index 
+
+* **return value**
+
+```java
+Request<?, PlatonRawTransaction>
+```
+
+The result in the PlatonRawTransaction attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonRawTransaction send = platonWeb3j.platonGetRawTransactionByBlockNumberAndIndex("0x1", "0x1").send();
+```
+
+### platonGetAddressHrp
+
+>    Get chain Hrp
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, PlatonGetAddressHrp>
+```
+
+The result in the PlatonGetAddressHrp attribute is the corresponding storage data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+PlatonGetAddressHrp send = platonWeb3j.platonGetAddressHrp().send();
+```
+
+### platonSignTransaction
+
+>    The from account will be used to sign the given transaction. The node needs to have the account private key corresponding to the given sender address, and it needs to be unlocked
+* **parameters**
+
+      - Transaction :  transaction : Transaction object
+
+* **return value**
+
+```java
+Request<?, PlatonSignTransaction>
+```
+
+The result in the PlatonSignTransaction attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PlatonSignTransaction send = platonWeb3j.platonSignTransaction(transaction).send();
+```
+
+### minerSetGasPrice
+
+>    Set the minimum gas price acceptable to miners
+* **parameters**
+
+      - String :  minGasPrice : Lowest gas price
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse send = platonWeb3j.minerSetGasPrice("0x1").send();
+```
+
+### adminPeerEvents
+
+>   Create an RPC subscription, which receives peer events from the node's p2p server
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, AdminPeerEvents>
+```
+
+The result in the AdminPeerEvents attribute is the corresponding storage data
+
+* **Example**
+
+```java
+Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
+AdminPeerEvents send = web3j.adminPeerEvents().send();
+```
+
+### personalImportRawKey
+
+>  Store the given hexadecimal coded key in the key directory and encrypt it with a password
+* **parameters**
+
+      - String :  keydata : Private key
+      - String :  password : password
+
+* **return value**
+
+```java
+Request<?, PersonalImportRawKey>
+```
+
+The result in the PersonalImportRawKey attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalImportRawKey key = admin.personalImportRawKey("03axxx", "000000").send();
+```
+
+### personalLockAccount
+
+>   Lock the account associated with a given address
+* **parameters**
+
+      - String :  address : Account address
+
+* **return value**
+
+```java
+Request<?, BooleanResponse>
+```
+
+The result in the BooleanResponse attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+BooleanResponse response = admin.personalLockAccount("atp1cxxx").send();
+```
+
+### personalSign
+
+>    Use the given account to sign the transaction, the account needs to exist in the node's account library
+* **parameters**
+
+      - String :  message : The hexadecimal code string of the transaction
+      - String :  accountId : Account address
+      - String :  password : Account address password
+
+* **return value**
+
+```java
+Request<?, PersonalSign>
+```
+
+The result in the PersonalSign attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+RawTransaction transaction = RawTransaction.createTransaction(nonce,gasPrice,gasLimit,toAddress,value,data);
+byte[] encode = TransactionEncoder.encode(transaction);
+String hexSignedTransaction = Numeric.toHexString(encode);
+PersonalSign send = admin.personalSign(hexSignedTransaction, "atp1xxx","000000").send();
+```
+
+### personalSignAndSendTransaction
+
+>    Use the from address of the transaction to sign and send the transaction. The from account needs to exist in the node's account library
+* **parameters**
+
+      - Transaction :  transaction : Transaction object
+      - String :  password : Account address password
+
+* **return value**
+
+```java
+Request<?, PersonalSign>
+```
+
+The result in the PersonalSign attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PersonalSign send = admin.personalSignAndSendTransaction(transaction, "000000").send();
+```
+
+### personalSignTransaction
+
+>    Use the from address of the transaction to sign, and the from account needs to exist in the node's account database
+* **parameters**
+
+      - Transaction :  transaction : Transaction object
+      - String :  password : From account address password
+
+* **return value**
+
+```java
+Request<?, PlatonSignTransaction>
+```
+
+The result in the PlatonSignTransaction attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+Transaction transaction = new Transaction("atp1xxx",nonce,gasPrice,gasLimit,toAddress,value,data);
+PlatonSignTransaction send = admin.personalSignTransaction(transaction,"000000").send();
+```
+
+### personalEcRecover
+
+>   Returns the address of the account used to create the signature
+* **parameters**
+
+      - String :  message : Raw data
+      - String :  signiture : Signed data
+
+* **return value**
+
+```java
+Request<?, PersonalEcRecover>
+```
+
+The result in the PersonalEcRecover attribute is the corresponding storage data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalEcRecover send = admin.personalEcRecover("0xebxxx","0xa4f5xxx").send();
+```
+
+### personalListWallets
+
+>   Return the list of wallets managed by this node
+* **parameters**
+
+  No
+
+* **return value**
+
+```java
+Request<?, PersonalListWallets>
+```
+
+The result in the PersonalListWallets attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalListWallets send = admin.personalListWallets().send();
+```
+
+### personalOpenWallet
+
+>  Start the hardware wallet opening program, establish a USB connection and try to authenticate with the provided password. Please note that this method may return an additional challenge that needs to be opened a second time (for example, Trezor PIN matrix challenge)
+* **parameters**
+
+      - String :  url : URL
+      - String :  passphrase : password
+
+* **return value**
+
+```java
+Request<?, VoidResponse>
+```
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+VoidResponse send = admin.personalOpenWallet("http://localhost:8080", "000000").send();
+```
+
+### personalUnlockAccount
+
+>  Use the given password to unlock the account associated with the given address for a duration of seconds. The default is 300 seconds. If the account is unlocked, it will return an indication
+* **parameters**
+
+      - String :  address : address
+      - String :  passphrase : password
+
+* **return value**
+
+```java
+Request<?, PersonalUnlockAccount>
+```
+
+The result in the PersonalUnlockAccount attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalUnlockAccount response = admin.personalUnlockAccount("atp1xxx", "111111").send();
+```
+
+### personalListAccounts
+
+>  Returns a list of addresses of accounts managed by this node
+* **parameters**
+
+    No
+
+* **return value**
+
+```java
+Request<?, PersonalListAccounts>
+```
+
+The result in the PersonalListAccounts attribute is the corresponding stored data
+
+* **Example**
+
+```java
+Admin admin = Admin.build(new HttpService("http://127.0.0.1:6789"));
+PersonalListAccounts send = admin.personalListAccounts().send();
 ```
 
 
