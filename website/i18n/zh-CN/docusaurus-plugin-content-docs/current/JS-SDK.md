@@ -109,7 +109,7 @@ console.log(web3);
 
 ### Mac 下的安装和使用
 
-安装方式同上述 [Ubuntu下安装使用](#ubuntu-下安装使用)
+安装方式同上述 [Ubuntu下安装使用](#ubuntu-下安装使用)。
 
 
 ### 详细使用

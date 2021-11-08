@@ -108,8 +108,8 @@ console.log(web3);
 After successful introduction, you can use the relevant API of web3.
 
 ### Install and use under Mac
-The installation method is the same as the above [Install and use under Ubuntu](#install-and-use-under-ubuntu).
 
+The installation method is the same as the above [Install and use under Ubuntu](#install-and-use-under-ubuntu).
 
 
 ### API Reference
