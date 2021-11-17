@@ -85,7 +85,7 @@ module.exports = {
         {
             type: 'category',
             label: 'Tutorials',
-            items: ['JS-Tutorials',  'DApp_migrate']
+            items: ['JS-Tutorials',  'DApp_migrate', 'WalletConnect_Tutorial']
         },
 
         {
