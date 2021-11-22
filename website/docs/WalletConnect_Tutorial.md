@@ -1,5 +1,5 @@
 ---
-id: walletconnect_tutorial
+id: WalletConnect_Tutorial
 title: WalletConnect Example
 sidebar_label: WalletConnect
 ---
