@@ -6,7 +6,7 @@ sidebar_label: Migration tutorial
 
 ### Introduction
 
-Alaya supports four versions of solidity: 0.4.26, 0.5.17, 0.6.12, and 0.7.1. If you migrate contracts with versions above 0.7.1, you need to reduce the version number and remove the syntax related to the higher version.
+Alaya supports four versions of solidity: 0.4.26, 0.5.17, 0.6.12, 0.7.6, 0.8.6 If you migrate contracts with versions above 0.8.6, you need to reduce the version number and remove the syntax related to the higher version.
 
 If you want to migrate Ethereum's smart contract to Alaya, you can do this with the alaya-truffle development tool. First, to make sure have alaya-truffle installed correctly, just follow these steps.
 
@@ -217,7 +217,6 @@ ls contracts/
 - You will see `ERC200513Token.sol`
 - The currency units in the Alaya smart contract are ATP and VON. To migrate the Ethereum smart contract to Alaya, change the denomination of Ether to Alaya denomination. At the same time pay attention to the ether/ATP market exchange rate (in this contract we assume that the market exchange rate is 1:1, and change uint256 public totalSupply = 10000000000000000000 ether to uint256 public totalSupply = 10000000000000000000 atp;)
 - The compiled version modifies the version supported by Alaya.
-- modify address: `require(_to != address(0x0)` modify to `require(_to != address(uint160(0)))`
 - In the Alaya smart contract, block.timestamp represents the timestamp of the current block in milliseconds, and Ethereum uses seconds as the unit.
 
 **Step4.** Modify the compiled version number and chain related configuration in `truffle-config.js`
