@@ -41,7 +41,7 @@ sidebar_label: Ledger 硬件钱包
 <br />注：Ledger与ATON助记词与Samurai助记词不兼容，相互导入请使用钱包私钥
 <br />
 <div>
-<img src="/docs/en/img/zh-CN/ledger/Figure1.1.1.png" width ="500" style={{zoom: '80%'}} />
+<img src="/alaya-devdocs/img/zh-CN/ledger/Figure1.1.1.png" width ="500" style={{zoom: '80%'}} />
 </div> 
 <br /><div class="text" style={{width: "400px", textAlign: "center"}}>图1.1.1</div>
 
