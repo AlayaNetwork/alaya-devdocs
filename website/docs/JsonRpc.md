@@ -2382,7 +2382,7 @@ curl --data '{"method":"personal_signTransaction","params":[{"from":"atp1gp7h8k9
 
 #### personal_unlockAccount
 
-Decrypts the key with the given address from the key store.This method is disabled by default in the Alaya 0.16.1 version and above, and needs to be enabled by adding --allow-insecure-unlock to the startup parameters.
+Decrypts the key with the given address from the key store.This method is disabled by default in the Alaya 0.16.2 version and above, and needs to be enabled by adding --allow-insecure-unlock to the startup parameters.
 
 The unencrypted key will be held in memory until the unlock duration expires. If the unlock duration defaults to 300 seconds. An explicit duration of zero seconds unlocks the key until geth exits.
 

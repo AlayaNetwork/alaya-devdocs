@@ -61,11 +61,11 @@ ntpq -4c rv | grep leap_none
 
 - Install binary
 
-  <font color="red">The binary version number of the main network is 0.15.0, and that of the development network is 0.16.1. If you need to join the development network, please change the version number in the download link to 0.16.1.</font>
+  <font color="red">The binary version number of the main network is 0.16.2, and that of the development network is 0.16.2. If you need to join the development network, please change the version number in the download link to 0.16.2.</font>
 
   ```bash
-  sudo wget https://download.alaya.network/alaya/platon/0.16.1/alaya -P /usr/bin
-  sudo wget https://download.alaya.network/alaya/platon/0.16.1/alayakey -P /usr/bin
+  sudo wget https://download.alaya.network/alaya/platon/0.16.2/alaya -P /usr/bin
+  sudo wget https://download.alaya.network/alaya/platon/0.16.2/alayakey -P /usr/bin
   sudo chmod +x /usr/bin/alaya  /usr/bin/alayakey
   alaya version
   ```
@@ -204,8 +204,8 @@ More parameter meanings can be viewed through the `alaya --help` command.
 
 | Documents or Resources | Address                                                      | Note                                                         |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| alaya binary file     | https://download.alaya.network/alaya/platon/0.16.1/alaya    |                                                              |
-| alayakey               | https://download.alaya.network/alaya/platon/0.16.1/alayakey  |                                                              |
+| alaya binary file     | https://download.alaya.network/alaya/platon/0.16.2/alaya    |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.16.2/alayakey  |                                                              |
 | mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip   | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
@@ -247,7 +247,7 @@ The fast synchronization makes it impossible to query the current block height. 
 
 If you are deploying a mainnet node, you can skip the following content.
 
-The development network provides a development and test environment for developers or nodes. There may be instability and network reset. The current version of the development network is `0.16.1`.
+The development network provides a development and test environment for developers or nodes. There may be instability and network reset. The current version of the development network is `0.16.2`.
 
 #### Initialize the Genesis Block
 
