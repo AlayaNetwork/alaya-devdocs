@@ -67,7 +67,7 @@ Proceed as follows:
 **Step1. Download MTool Toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip
 ```
 
 **Step2. Unzip the MTool toolkit**
