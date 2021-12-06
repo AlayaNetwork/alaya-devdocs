@@ -269,7 +269,7 @@ alayakey是一个命令行工具，一般是随节点一起安装，也可以单
 - **alayakey的安装**：在命令行中输入以下命令：
 
 ```shell
-sudo wget https://download.alaya.network/alaya/platon/0.16.1/alayakey -P /usr/bin
+sudo wget https://download.alaya.network/alaya/platon/0.16.2/alayakey -P /usr/bin
 sudo chmod +x /usr/bin/alayakey
 ```
 

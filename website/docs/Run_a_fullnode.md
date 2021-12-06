@@ -134,7 +134,7 @@ If you need to join the Alaya development network, please refer to [Join the Ala
 Run the following command to join the network:
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 Or you can use the `service unit` to manage your `alaya` process:
@@ -157,7 +157,7 @@ ExecStart=/usr/bin/alaya \\
     --rpcaddr 127.0.0.1 \\
     --rpcport 6789 \\
     --rpc \\
-    --rpcapi "db,platon,net,web3,admin,personal" \\
+    --rpcapi "platon,net,web3,admin,personal" \\
     --nodekey ${HOME}/alaya-node/data/nodekey \\
     --cbft.blskey ${HOME}/alaya-node/data/blskey \\
     --verbosity 1 \\
@@ -272,7 +272,7 @@ cd ~/alaya-node && alaya --datadir ./data init genesis.json
 Execute the following command to make the validator to join the Alaya development network; if you need to become a validator, please apply for a large amount of test ATP through the follow-up instructions (the development network will be reset from time to time according to the test needs, and the test ATP has no actual value).
 
 ```shell
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 **You can also refer to the mainnet configuration `service unit` file to manage the Alaya process.**
@@ -283,8 +283,8 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 | Documents or Resources | Address                                                      | Note                                                         |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| alaya binary files    | https://download.alaya.network/alaya/platon/0.16.1/alaya     |                                                              |
-| alayakey               | https://download.alaya.network/alaya/platon/0.16.1/alayakey  |                                                              |
+| alaya binary files    | https://download.alaya.network/alaya/platon/0.16.2/alaya     |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.16.2/alayakey  |                                                              |
 | mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.2/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | Samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
