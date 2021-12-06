@@ -35,7 +35,7 @@ chmod +x nginx_conf.sh && ./nginx_conf.sh
 
 ```bash
 # 下载MTool工具包
-wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip
 
 # 解压MTool工具包
 (if ! command -v unzip;then sudo apt install unzip; fi;) && unzip alaya_mtool.zip && cd alaya_mtool
