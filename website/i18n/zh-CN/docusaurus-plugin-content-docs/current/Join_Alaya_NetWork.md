@@ -59,9 +59,9 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 ### 开发网络相关资源
 
->- alaya：https://download.alaya.network/alaya/platon/0.16.1/platon
+>- alaya：https://download.alaya.network/alaya/platon/0.16.2/alaya
 >
->- alayakey：https://download.alaya.network/alaya/platon/0.16.1/alayakey
+>- alayakey：https://download.alaya.network/alaya/platon/0.16.2/alayakey
 >
 >- mtool windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/alaya_mtool.exe
 >

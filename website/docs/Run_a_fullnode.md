@@ -283,8 +283,8 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 | Documents or Resources | Address                                                      | Note                                                         |
 | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| alaya binary files    | https://download.alaya.network/alaya/platon/0.16.1/alaya     |                                                              |
-| alayakey               | https://download.alaya.network/alaya/platon/0.16.1/alayakey  |                                                              |
+| alaya binary files    | https://download.alaya.network/alaya/platon/0.16.2/alaya     |                                                              |
+| alayakey               | https://download.alaya.network/alaya/platon/0.16.2/alayakey  |                                                              |
 | mtool windows          | https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | mtool linux            | https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip | You need to modify the chain ID in the configuration file config.properties to the development network chain ID: 201030 |
 | Samurai                | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                              |
