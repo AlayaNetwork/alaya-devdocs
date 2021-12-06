@@ -16,7 +16,7 @@ USAGE:
    alaya [options] command [command options] [arguments...]
 
 VERSION:
-   0.16.1-unstable
+   0.16.2-unstable
 
 COMMANDS:
    account           Manage accounts

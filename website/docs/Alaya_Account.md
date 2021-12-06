@@ -315,7 +315,7 @@ Alayakey is a command-line tool, which is usually installed with the node or ins
 - **Installing alayakey**: Enter the following command in the command line:
 
 ```shell
-sudo wget https://download.alaya.network/alaya/platon/0.16.1/alayakey -P /usr/bin
+sudo wget https://download.alaya.network/alaya/platon/0.16.2/alayakey -P /usr/bin
 sudo chmod +x /usr/bin/alayakey
 ```
 
