@@ -26,7 +26,7 @@ If you want to connect to the development network as a validator, please refer t
 
 ## Development network faucet
 
-If you need the ATP of the development network for testing, you can get it from the faucet at <https://faucet.Alaya.network/faucet/?id=39fa041c887f11eba4f000163e06ae15>
+If you need the ATP of the development network for testing, you can get it from the faucet at <https://faucet.Alaya.network/faucet/>
 
 > **Note**: ATP on the development network has no real value and is for testing only!
 

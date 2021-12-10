@@ -20,7 +20,7 @@ Operation in this part is almost the same as the operation in [Become a Validato
 
 ## Develop the network faucet
 
-If you need test `ATP` on the development network, you need to receive it through the faucet at https://faucet.alaya.network/faucet/?id=f93426c0887f11eb83b900163e06151c> 
+If you need test `ATP` on the development network, you need to receive it through the faucet at https://faucet.alaya.network/faucet/> 
 
 > **Reminder**: The ATP on the development network has no actual value and is only used for development and testing! 
 
