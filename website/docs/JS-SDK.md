@@ -12,6 +12,14 @@ Interact with nodes through web3 objects provided by web3.js. On the underlying 
 
 To use js sdk under windows10, you need to install nvm and other related tools in advance. Steps are as follows:
 
+- View your current node version
+  >If you have not installed node, please move to [node official website](https://nodejs.org) to Download and install
+
+  ```
+  node -v
+  ```
+  >The current JS SDK only supports node 14.x and below, so if you are currently using a node version greater than 14.x. Please use NVM or other downgrade tools to reduce the node version to 14.x and below (the process of installing SDK for NVM will be given below)
+
 - Install `nvm`
 
   - Skip this step if already installed, [download here](https://github.com/coreybutler/nvm-windows/releases/download/1.1.8/nvm-setup.zip)
@@ -67,7 +75,13 @@ Skip this step if already installed, [download here](https://github.com/git-for-
 
 ### Install and use under Ubuntu
 
-First of all, please make sure that the nodeJS environment is installed locally. Because this project also uses the [lerna](https://github.com/lerna/lerna) management tool to optimize the workflow of the multi-package code library hosted on git\npm, So before you install the project, make sure that the lerna package has been installed globally. **If not, you need to install it globally. **
+First of all, please make sure that the nodeJS environment is installed locally.
+```
+node -v
+```
+>The current JS SDK only supports node 14.x and below, so if you are currently using a node version greater than 14.x. Please use NVM or other downgrade tools to reduce the node version to 14.x and below
+
+- Because this project also uses the [lerna](https://github.com/lerna/lerna) management tool to optimize the workflow of the multi-package code library hosted on git\npm, So before you install the project, make sure that the lerna package has been installed globally. **If not, you need to install it globally. **
 
 - Install `lerna`
 
