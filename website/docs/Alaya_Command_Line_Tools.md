@@ -314,7 +314,7 @@ COPYRIGHT:
   For example:
 
   ```bash
-  alaya attach http://localhost:6789 -exec 'platon.estimateGas({from:"lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6",to:"lax1zhllhqu72wz66cdwly8983xhla2sann75j2ec2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
+  alaya attach http://localhost:6789 -exec 'platon.estimateGas({from:"lat1fyeszufxwxk62p46djncj86rd553skpptsj8v6",to:"lat1zhllhqu72wz66cdwly8983xhla2sann75j2ec2",value:"0x10000000000000",data:"0x11",gas:"0x88888",gasprice:"0x333333",nonce:"11"})'
   ```
 
 - View the p2p protocol number of the underlying version of the current node
@@ -574,8 +574,8 @@ alayakey updateaddress 0x1000000000000000000000000000000000000001
 - This command supports converting any bech32 address to alaya address, such as:
 
 ```conf
-alayakey updateaddress lax19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
-originAddress: lax19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
+alayakey updateaddress lat19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
+originAddress: lat19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
 main net Address: atp19phpafljm0mgu2fj8mrwyarftpafynxvyuffwh
 other net Address: atx19phpafljm0mgu2fj8mrwyarftpafynxvw64raa
 ```

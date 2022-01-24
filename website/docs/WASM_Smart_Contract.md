@@ -1246,7 +1246,7 @@ Converts a c-style string to an address object.
 std::pair<Address, bool> make_address(const std::string &str_address)
 ```
 
-The default address recognized by CDT is the main network address, that is, the address prefix is atp. If you want to recognize the test network address prefix is lax, you need to define the macro TESTNET, and you can put #define TESTNET on the first line of the contract.
+The default address recognized by CDT is the main network address, that is, the address prefix is atp. If you want to recognize the test network address prefix is lat, you need to define the macro TESTNET, and you can put #define TESTNET on the first line of the contract.
 
 Converts a string to an address object.
 

@@ -282,7 +282,7 @@ client-sdk-python 是一个服务于Alaya底层链的python sdk。通过web3对�
 
 参数：
 
-  - `address`：String - 要检查余额的账户地址，bech32 address格式。在Alaya网络，`atx`开头的为测试网，`atp`开头的为主网（ChainID：201018）或开发网（ChainID：201030）。在PlatON网络，`lax`开头的为测试网，`lat`开头的为主网（ChainID：100）或开发网（ChainID：210309）。
+  - `address`：String - 要检查余额的账户地址，bech32 address格式。在Alaya网络，`atp`开头的为主网（ChainID：201018）或开发网（ChainID：201030）。在PlatON网络，`lat`开头的为主网（ChainID：100）或开发网（ChainID：210309）。
 
 **返回值：**
 

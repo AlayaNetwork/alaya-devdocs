@@ -289,7 +289,7 @@ To get the balance of a specific account address in the specified block.
 
 Parameters:
 
-  - `address`: String-The address of the account whose balance is to be checked, in bech32 address format. In the Alaya network, addresses starting with `atx` are on the testnest, and those starting with `atp` are on the mainnet (ChainID: 201018) or the development network (ChainID: 201030). In the PlatON network, the ones starting with `lax` are on the testnet, and those starting with `lat` are on the mainnet (ChainID: 100) or the development network (ChainID: 210309).
+  - `address`: String-The address of the account whose balance is to be checked, in bech32 address format. In the Alaya network, addresses starting with `atx` are on the testnest, and those starting with `atp` are on the mainnet (ChainID: 201018) or the development network (ChainID: 201030). In the PlatON network,  those starting with `lat` are on the mainnet (ChainID: 100) or the development network (ChainID: 210309).
 
 Return value:
 
