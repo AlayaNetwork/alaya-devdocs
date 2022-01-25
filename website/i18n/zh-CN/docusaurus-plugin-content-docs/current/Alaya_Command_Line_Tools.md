@@ -581,5 +581,4 @@ alayakey updateaddress 0x1000000000000000000000000000000000000001
 alayakey updateaddress lat19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
 originAddress:  lat19phpafljm0mgu2fj8mrwyarftpafynxvj0d7lh
 main net Address: atp19phpafljm0mgu2fj8mrwyarftpafynxvyuffwh
-other net Address: atx19phpafljm0mgu2fj8mrwyarftpafynxvw64raa
 ```

@@ -40,7 +40,6 @@ mkdir -p ~/alaya-node/data && alaya --datadir ~/alaya-node/data account new
 > Repeat passphrase:
 >
 > main net Address: atp16h5jr7t72das7jdtctsumzugygt55mvapqqvzp
-> other net Address: atx16h5jr7t72das7jdtctsumzugygt55mvatxux3t
 >
 > **Note：**
 >
@@ -127,9 +126,9 @@ Create the genesis block configuration file alaya.json in the `~/alaya-node` dir
       "increaseIssuanceRatio": 500
     },
     "innerAcc": {
-      "platonFundAccount": "atx10spacq8cz76y2n60pl7sg5yazncmjuus7n6hw2",
+      "platonFundAccount": "atp10spacq8cz76y2n60pl7sg5yazncmjuus7n6hw2",
       "platonFundBalance": 0,
-      "cdfAccount": "atx17tfkaghs4vded6mz6k53xyv5cvqsl63h5gq7cw",
+      "cdfAccount": "atp17tfkaghs4vded6mz6k53xyv5cvqsl63h5gq7cw",
       "cdfBalance": 4000000000000000000000000
     }
   },
@@ -138,10 +137,10 @@ Create the genesis block configuration file alaya.json in the `~/alaya-node` dir
   "extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
   "gasLimit": "4712388",
   "alloc": {
-    "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr75cqxf": {
+    "atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr75cqxf": {
       "balance": "1000000000000000000000000"
     },
-    "atx1zkrxx6rf358jcvr7nruhyvr9hxpwv9unj58er9": {
+    "atp1zkrxx6rf358jcvr7nruhyvr9hxpwv9unj58er9": {
       "balance": "9718188019000000000000000000"
     }
   },

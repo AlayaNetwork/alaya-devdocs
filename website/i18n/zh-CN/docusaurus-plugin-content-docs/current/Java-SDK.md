@@ -54,17 +54,17 @@ compile "com.alaya.sdk:core:0.16.1.0"
 - **0x 地址转 bech32 地址**
 
 ```java
-NetworkParameters.init(20000L, "atx");
+NetworkParameters.init(20000L, "atp");
 String hex = "0x4f9c1a1efaa7d81ba1cabf07f2c3a5ac5cf4f818";
 String bech32Address = Bech32.addressEncode(NetworkParameters.getHrp(), hex);
-assertThat(bech32Address, is("atx1f7wp58h65lvphgw2hurl9sa943w0f7qcdcev89"));
+assertThat(bech32Address, is("atp1f7wp58h65lvphgw2hurl9sa943w0f7qcdcev89"));
 ```
 
 - **bech32 address to 0x address**
 
 ```java
-NetworkParameters.init(20000L, "atx");
-String bech32Address = "atx1f7wp58h65lvphgw2hurl9sa943w0f7qcdcev89";
+NetworkParameters.init(20000L, "atp");
+String bech32Address = "atp1f7wp58h65lvphgw2hurl9sa943w0f7qcdcev89";
 String hex =  Bech32.addressDecodeHex(bech32Address);
 assertThat(hex, is("0x4f9c1a1efaa7d81ba1cabf07f2c3a5ac5cf4f818"));
 ```

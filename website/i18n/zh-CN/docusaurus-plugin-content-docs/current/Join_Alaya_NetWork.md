@@ -118,7 +118,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 如果您有领取大额测试ATP的需求，请您按照格式要求发送邮件至：support@latticex.foundation，邮件要求：
 
 ```toml
- 标题：Alaya测试网Token申请
+ 标题：Alaya开发测试网Token申请
  姓名：
  联系方式：
  微信号（或其他即时通讯软件）：

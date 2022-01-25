@@ -926,7 +926,7 @@ GasPrice)是用户的交易成本, 同时该成本会作为佣金奖励给旷工
 在 `Alaya` 网络中操作合约时, 请务必先确认当前网络所支持的智能合约版本, 然后选择对应版本对的编译器.
 
 常规操作是使用 `Alaya` 官方提供的最新的 Truffle/PlatON-CDT 来编译/部署/执行合约,
-同时在切换到主网操作前, 务必在测试网进行有效的验证.
+同时在切换到主网操作前, 务必在开发测试网进行有效的验证.
 
 ### C/C++语言限制
 
@@ -1212,7 +1212,7 @@ Address platon::platon_address()
 template <size_t M> std::pair<Address, bool> make_address(const char (&str)[M])
 ```
 
-CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要识别测试网地址前缀为 atx，需要定义宏 TESTNET，在合约第一行加上#define TESTNET 即可。
+CDT 默认识别的地址是主网地址也就是地址前缀为 atp，同时我们支持以太坊以地址格式,例如: "0x02ea8A5273d20f3e378a56D958a684004eDD0094"
 
 将 C 风格字符串转换为地址对象。
 
@@ -1227,7 +1227,7 @@ CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要
 std::pair<Address, bool> make_address(const std::string &str_address)
 ```
 
-CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要识别测试网地址前缀为 atx，需要定义宏 TESTNET，在合约第一行加上#define TESTNET 即可。
+CDT 默认识别的地址是主网地址也就是地址前缀为 atp，同时我们支持以太坊以地址格式,例如: "0x02ea8A5273d20f3e378a56D958a684004eDD0094"
 
 将字符串转换为地址对象。
 

@@ -285,7 +285,6 @@ alayakey generate
 
 ```shell
 main net Address: atp173gwqattqczz392fea795z7xwltkt2r3rslmcw
-other net Address: atx173gwqattqczz392fea795z7xwltkt2r3fkr3ty
 ```
 
 在当前文件夹下，会产生一个keyfile.json，这个文件就是钱包文件。钱包文件配合你刚才输入的密码就能使用这个账户了。

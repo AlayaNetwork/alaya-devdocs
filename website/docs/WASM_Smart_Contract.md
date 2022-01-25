@@ -1231,7 +1231,7 @@ Get the address of contract.
 template <size_t M> std::pair<Address, bool> make_address(const char (&str)[M])
 ```
 
-The default address recognized by CDT is the main network address, that is, the address prefix is atp. If you want to recognize the test network address prefix is atx, you need to define the macro TESTNET, and you can put #define TESTNET on the first line of the contract.
+The default address recognized by CDT is the main network address, that is, the address prefix is atp. 
 
 Converts a c-style string to an address object.
 

@@ -517,7 +517,7 @@ ls contracts/
 - 将看到 ERC200513Token.sol
 - Alaya智能合约中的货币单位为ATP和VON。要将以太坊智能合约迁移至Alaya，请将以太币面额更改为Alaya面额。同时注意以太/ATP市场汇率（此合约我们假设市场汇率1:1，将uint256 public totalSupply = 10000000000000000000 ether; 修改成uint256 public totalSupply = 10000000000000000000 atp; ）
 - 编译版本修改Alaya支持的版本。
-- 地址修改：把require(_to != address(0x0))修改为require(_to != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _to != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"))
+- 地址修改：把require(_to != address(0x0))修改为require( _to != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"))
 - Alaya智能合约中block.timestamp表示的是当前区块以毫秒为单位的时间戳，以太坊是以秒为单位。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配置
@@ -663,7 +663,7 @@ contract CrowdFunding {
     
     //校验地址是否为空
     modifier validAddress(address _address) {
-        require(_address != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc") || _address != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"));
+        require(_address != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j"));
         _;
     }
 
@@ -1123,7 +1123,7 @@ Gas 主要由两个部分组成：GasLimit(限制)和GasPrice(单价)。其中 `
 
 在 `Alaya` 网络中操作合约时，请务必先确认当前网络所支持的智能合约版本，然后选择对应版本对的编译器。
 
-常规操作是使用 `Alaya` 官方提供的最新的`Truffle`/`PlatON-CDT`来编译/部署/执行合约，同时在切换到主网操作前，务必在测试网进行有效的验证。
+常规操作是使用 `Alaya` 官方提供的最新的`Truffle`/`PlatON-CDT`来编译/部署/执行合约，同时在切换到主网操作前，务必在开发测试网进行有效的验证。
 
 
 ### 编码规范

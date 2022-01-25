@@ -24,7 +24,7 @@ Samurai是面向PlatON/Alaya网络的开源web浏览器插件钱包，它基于�
 
 - __区块链连接__
 
-  Samurai预装了PlatON/Alaya区块链和多个测试网络的快速连接。这可以使您在无需同步一个全节点的情况下就可以开始使用。
+  Samurai预装了PlatON/Alaya区块链和多个开发测试网络的快速连接。这可以使您在无需同步一个全节点的情况下就可以开始使用。
 
   同时，Samurai可以与任何公开并适配PlatON/Alaya的JSON RPC API区块链兼容，包括自定义和私有区块链。
 

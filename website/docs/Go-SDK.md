@@ -186,7 +186,7 @@ The above code will produce similar output:
     "nonce":"0x1",
     "gasPrice":"0x12a05f200",
     "gas":"0x5208",
-    "to":"atx1u6vtwsz2fqw5ufnm3tm070k43scxhhc8r3nnts",
+    "to":"atp1u6vtwsz2fqw5ufnm3tm070k43scxhhc8r3nnts",
     "value":"0x186a0",
     "input":"0x",
     "v":"0x62297",

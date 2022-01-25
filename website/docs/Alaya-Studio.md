@@ -51,7 +51,7 @@ After entering the main interface, we need to create some key pairs first. On an
 
 
 
-You can create, import and manage key pairs in the key manager. PlatON Studio supports the storage of key pairs in different address formats for PlatON, Alaya, and local development networks (respectively addresses starting with `lat`, `atp`, and `atx` ). When creating and importing a key pair, you can choose to create it in a private key or a mnemonic phrase. You can also set an alias for the key pair for identification in subsequent use.
+You can create, import and manage key pairs in the key manager. PlatON Studio supports the storage of key pairs in different address formats for PlatON, Alaya, and local development networks (respectively addresses starting with `lat`, `atp` ). When creating and importing a key pair, you can choose to create it in a private key or a mnemonic phrase. You can also set an alias for the key pair for identification in subsequent use.
 
 In addition to storing and managing the key pair, the key manager will also provide the creation address for the genesis block. When creating a new local node instance, all addresses in the key manager will be used as the creation address. *Before proceeding, please create some key pairs in the key manager as the creation address for node instances.* 
 
