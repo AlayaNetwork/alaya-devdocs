@@ -171,7 +171,7 @@ cd ~/alaya-node && alaya --datadir ./data init alaya.json
 In general, the alaya process is always in the foreground, so we can't perform other operations. If we exit the terminal halfway, the program will exit. The program can be started in nohup mode under Ubuntu:
 
 ```bash
-cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --http.addr 127.0.0.1 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
 ```
 
 When the shell prompts that nohup is successful, press Enter again to ensure that the process will not exit due to closing the terminal by mistake. 
@@ -191,7 +191,7 @@ Execute the above command several times. If the block height keeps increasing, i
  To run Alaya multi-node locally, you need to ensure:
 
 - Each node instance has a separate data directory (--datadir)
-- Each instance runs on a different port, whether it is a p2p port or an rpc port (--port and --rpcport) 
+- Each instance runs on a different port, whether it is a p2p port or an rpc port (--port and --http.port) 
 - Nodes can be interconnected with each other
 - RPC server port is not occupied
 
@@ -262,9 +262,9 @@ alaya --datadir ~/alaya-node/data0 init alaya.json && alaya --datadir ~/alaya-no
 After the initialization is successful, start node 0 and node 1 in nohup mode: 
 
 ```bash
-cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --http.addr 0.0.0.0 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
 
-cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --http.addr 0.0.0.0 --http.port 6790 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
 ```
 
 ### Check
