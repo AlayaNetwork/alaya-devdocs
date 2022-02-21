@@ -169,7 +169,7 @@ cd ~/alaya-node && alaya --datadir ./data init alaya.json
 一般情况下，alaya 进程一直在前台进行，这样我们就不能进行其他操作了，并且如果中途退出该终端，程序将退出。Ubuntu下可以以nohup方式启动程序：
 
 ```bash
-cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --rpcaddr 127.0.0.1 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya" --datadir ./data --port 16789 --http.addr 127.0.0.1 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey & > ./data/alaya.log 2>&1 &
 ```
 
 当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起进程退出。
@@ -257,9 +257,9 @@ alaya --datadir ~/alaya-node/data0 init alaya.json && alaya --datadir ~/alaya-no
 初始化成功后，分别用nohup方式启动节点0和节点1：
 
 ```bash
-cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya0" --datadir ./data0 --port 16789 --http.addr 0.0.0.0 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey > ./data0/alaya.log 2>&1 &
 
-cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
+cd ~/alaya-node && nohup alaya --identity "alaya1" --datadir ./data1 --port 16790 --http.addr 0.0.0.0 --http.port 6790 --http.api "platon,net,web3,admin,personal" --http --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey  > ./data1/alaya.log 2>&1 &
 ```
 
 ### 检查

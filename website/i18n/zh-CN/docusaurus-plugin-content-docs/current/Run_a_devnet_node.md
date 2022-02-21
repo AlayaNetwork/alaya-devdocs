@@ -16,11 +16,11 @@ Alaya开发网络和主网功能一致，在版本上可能超前于主网。可
 
 ## 抵押成为验证人
 
-该部分与[成为验证节点](/alaya-devdocs/zh-CN/Become_Validator)操作几乎一致，唯一区别Mtool使用0.16.1版本（[下载链接](https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip)），且需要修改配置文件`$ALAYA_MTOOLDIR/config.properties`中的`chainId`为开发网络链ID：201030
+该部分与[成为验证节点](/alaya-devdocs/zh-CN/Become_Validator)操作几乎一致，唯一区别Mtool使用0.16.2版本（[下载链接](https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip)），且需要修改配置文件`$ALAYA_MTOOLDIR/config.properties`中的`chainId`为开发网络链ID：201030
 
 ## 开发网络水龙头
 
-如果您有在开发网络上使用测试`ATP`的需求，您需要通过水龙头来领取，领取地址：<https://faucet.alaya.network/faucet/?id=f93426c0887f11eb83b900163e06151c>
+如果您有在开发网络上使用测试`ATP`的需求，您需要通过水龙头来领取，领取地址：<https://faucet.alaya.network/faucet/>
 
 > **提示**：开发网络上的ATP没有实际价值，仅用于开发测试使用！
 

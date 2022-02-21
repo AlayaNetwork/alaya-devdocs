@@ -42,12 +42,12 @@ ntpq -4c rv | grep leap_none
 
 | **网络**   | **ChainID** | **当前版本** |
 | ------ | ------- | -------- |
-| 主网   | 201018  | 0.16.1   |
-| 开发网 | 201030  | 0.16.1   |
+| 主网   | 201018  | 0.16.3   |
+| 开发网 | 201030  | 0.16.3   |
 
 ```bash
-# 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.1
-export PLATON_VERSION=0.16.1
+# 如果需要加入开发网，请修改PLATON_VERSION，如：0.16.2
+export PLATON_VERSION=0.16.3
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alaya -P /usr/bin
 sudo wget https://download.alaya.network/alaya/platon/${PLATON_VERSION}/alayakey -P /usr/bin
 sudo chmod +x /usr/bin/alaya  /usr/bin/alayakey
@@ -111,7 +111,7 @@ Alaya主网络已于北京时间2020年10月24日正式上线对外开放，Chai
 运行以下命令加入网络：
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --http.addr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 或者您也可以用`service unit`管理您的`alaya`进程：
@@ -131,10 +131,10 @@ ExecStart=/usr/bin/alaya \\
     --identity alaya-node \\
     --datadir ${HOME}/alaya-node/data \\
     --port 16789 \\
-    --rpcaddr 127.0.0.1 \\
-    --rpcport 6789 \\
-    --rpc \\
-    --rpcapi "db,platon,net,web3,admin,personal" \\
+    --http.addr 127.0.0.1 \\
+    --http.port 6789 \\
+    --http \\
+    --http.api "platon,net,web3,admin,personal" \\
     --nodekey ${HOME}/alaya-node/data/nodekey \\
     --cbft.blskey ${HOME}/alaya-node/data/blskey \\
     --verbosity 1 \\
@@ -160,10 +160,10 @@ sudo systemctl start alaya.service
 | --identity    | 指定网络名称                                                           |
 | --datadir     | 指定 data 目录路径                                                     |
 | --port        | p2p端口号                                                              |
-| --rpcaddr     | 指定 rpc 服务器地址                                                    |
-| --rpcport     | 指定 rpc 协议通信端口                                                  |
-| --rpcapi      | 指定节点开放的 rpcapi 名称                                             |
-| --rpc         | 指定 http-rpc 通讯方式                                                 |
+| --http.addr     | 指定 rpc 服务器地址                                                    |
+| --http.port     | 指定 rpc 协议通信端口                                                  |
+| --http.api      | 指定节点开放的 rpcapi 名称                                             |
+| --http         | 指定 http-rpc 通讯方式                                                 |
 | --nodekey     | 指定节点私钥文件                                                       |
 | --cbft.blskey | 指定节点 bls 私钥文件 （非验证节点即全节点，该参数为可选）             |
 | --verbosity   | 日志级别，0: CRIT;  1: ERROR； 2: WARN;  3: INFO;  4: DEBUG； 5: TRACE |
@@ -177,10 +177,10 @@ sudo systemctl start alaya.service
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| alaya二进制文件  | https://download.alaya.network/alaya/platon/0.16.1/alaya                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.16.1/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| alaya二进制文件  | https://download.alaya.network/alaya/platon/0.16.2/alaya                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.2/alayakey                               |                                                                 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.2/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | scan浏览器地址 | https://scan.alaya.network/                                                                |                                                                 |
 
@@ -214,7 +214,7 @@ fast同步状态下，会查询不到当前块高，待同步到最新高度，�
 ### 运行全节点加入alaya开发网络
 
 如您正在部署主网节点，以下内容可以忽略。
-开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.16.1`。
+开发网为开发者或节点提供开发测试环境。可能出现不稳定，网络重置的情况。开发网络目前版本为`0.16.3`。
 
 #### 初始化创世区块
 
@@ -235,7 +235,7 @@ cd ~/alaya-node && alaya --datadir ./data init genesis.json
 执行以下命令即可启动验证节点加入Alaya开发网络；如果需要成为验证节点，请通过后续说明方式申请大额测试ATP（开发网将根据测试需要不定期重置，开发网ATP无任何实际价值）。
 
 ```shell
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --http.port 6789 --http.api "platon,net,web3,admin,personal" --http --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --http.addr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 **也可参照主网配置`service unit`文件管理Alaya进程**
@@ -244,10 +244,10 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
 
 | 文件或资源     | 地址                                                                                      | 备注                                                            |
 | -------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| alaya二进制文件| https://download.alaya.network/alaya/platon/0.16.1/alaya                                 |                                                                 |
-| alayakey       | https://download.alaya.network/alaya/platon/0.16.1/alayakey                               |                                                                 |
-| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
-| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| alaya二进制文件| https://download.alaya.network/alaya/platon/0.16.3/alaya                                 |                                                                 |
+| alayakey       | https://download.alaya.network/alaya/platon/0.16.3/alayakey                               |                                                                 |
+| mtool windows  | https://download.alaya.network/alaya/mtool/windows/0.16.2/alaya_mtool.exe                 | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
+| mtool linux    | https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip                   | 需要修改配置文件config.properties中的链ID为开发网络链ID：201030 |
 | samurai        | https://github.com/AlayaNetwork/Samurai/releases/download/v8.1.0/samurai-chrome-8.1.0.zip |                                                                 |
 | 开放RPC URL    | http://47.241.91.2:6789 以及 ws://47.241.91.2:6790                                         |                                                                 |
 | scan浏览器地址 | https://devnetscan.alaya.network                                                          |                                                                 |

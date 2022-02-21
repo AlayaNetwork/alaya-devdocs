@@ -76,7 +76,7 @@
 启动命令中不再需要指定参数 `--alaya`，以下命令仅供参考，请根据各自的管理方式，重启alaya进程
 
 ```bash
-nohup alaya --identity alaya-node --datadir ./data --port 16789  --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
+nohup alaya --identity alaya-node --datadir ./data --port 16789  --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/platon.log 2>&1 &
 ```
 
 ### 4、提案处理

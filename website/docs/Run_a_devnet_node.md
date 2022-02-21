@@ -16,11 +16,11 @@ Follow the instructions of [Full Node Deployment](/alaya-devdocs/en/Run_a_fullno
 
 ## Stake to be a validator
 
-Operation in this part is almost the same as the operation in [Become a Validator](/alaya-devdocs/en/Become_Validator/). The only difference is that Mtool uses version 0.16.1 ([download link](https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip)), and you need to modify the `chainId` in the configuration file `$ALAYA_MTOOLDIR/config.properties` to the development network chain ID: 201030.
+Operation in this part is almost the same as the operation in [Become a Validator](/alaya-devdocs/en/Become_Validator/). The only difference is that Mtool uses version 0.16.2 ([download link](https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip)), and you need to modify the `chainId` in the configuration file `$ALAYA_MTOOLDIR/config.properties` to the development network chain ID: 201030.
 
 ## Develop the network faucet
 
-If you need test `ATP` on the development network, you need to receive it through the faucet at https://faucet.alaya.network/faucet/?id=f93426c0887f11eb83b900163e06151c> 
+If you need test `ATP` on the development network, you need to receive it through the faucet at https://faucet.alaya.network/faucet/> 
 
 > **Reminder**: The ATP on the development network has no actual value and is only used for development and testing! 
 

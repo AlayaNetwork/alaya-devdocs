@@ -11,13 +11,15 @@ sidebar_label: 开发网络
 
 Alaya开发网开放了如下RPC端口可以供开发者使用。
 ```
-RPC地址：http://47.241.91.2:6789 以及 ws://47.241.91.2:6790
+RPC地址：http://47.241.91.2:6789 或 ws://47.241.91.2:6790
+RPC地址：http://47.245.14.190:6789 或 ws://47.245.14.190:6790
+RPC地址：http://8.220.31.172:6789 或 ws://8.220.31.172:6790
 ```
 #### 通过本地程序接入开发网
 
 在ubuntu18.04服务器上，通过以下命令下载并安装Alaya二进制文件:
 ```
-sudo wget https://download.alaya.network/alaya/platon/0.16.1/alaya -P /usr/bin    
+sudo wget https://download.alaya.network/alaya/platon/0.16.2/alaya -P /usr/bin    
 ```
 通过以下方式连接入开发网：
 ```

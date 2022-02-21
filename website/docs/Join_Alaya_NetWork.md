@@ -30,7 +30,7 @@ Anyone and any organization can join the Alaya main network.
 **Execute the following command to join the Alaya as a validator node**
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 **Prompt:**
@@ -58,9 +58,9 @@ The development network provides a development test environment for the develope
 
 ### Develop network related resources
 
-> - alaya：https://download.alaya.network/alaya/platon/0.16.1/alaya
+> - alaya：https://download.alaya.network/alaya/platon/0.16.2/alaya
 >
-> - alayakey：https://download.alaya.network/alaya/platon/0.16.1/alayakey
+> - alayakey：https://download.alaya.network/alaya/platon/0.16.2/alayakey
 >
 > - mtool windows：https://download.alaya.network/alaya/mtool/windows/0.15.1/alaya_mtool.exe
 >
@@ -104,7 +104,7 @@ The development network provides a development test environment for the develope
 Please refer to [Install node](/alaya-devdocs/en/Install_Node) section to create a nodekey: nodekey, blskey, and then execute the following command to start the verification node to join the Alaya development network;If you need to become a verification node, please apply for a large test ATP by following instructions (the development network will be reset irregularly according to the test needs, and the ATP of the test network has no practical value).
 
 ```bash
-cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
+cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16789 --rpcport 6789 --rpcapi "platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 1 --rpcaddr 127.0.0.1 --bootnodes enode://48f9ebd7559b7849f80e00d89d87fb92604c74a541a7d76fcef9f2bcc67043042dfab0cfbaeb5386f921208ed9192c403f438934a0a39f4cad53c55d8272e5fb@devnetnode1.alaya.network:16789 --syncmode "fast" > ./data/alaya.log 2>&1 &
 ```
 
 ### Other

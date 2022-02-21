@@ -67,7 +67,7 @@ Proceed as follows:
 **Step1. Download MTool Toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip
 ```
 
 **Step2. Unzip the MTool toolkit**
@@ -162,8 +162,8 @@ After the validator information is configured, the validator information file va
 
 ```
 {
-  "nodePublicKey": "Content in platon-node/data/nodekey",
-  "blsPubKey": "Content in platon-node/data/blskey",
+  "nodePublicKey": "Content in platon-node/data/nodeid",
+  "blsPubKey": "Content in platon-node/data/blspub",
   "nodeAddress": "http://127.0.0.1 or other IP address of this machine",
   "nodePort": "16789",
   "nodeRpcPort": "6789",

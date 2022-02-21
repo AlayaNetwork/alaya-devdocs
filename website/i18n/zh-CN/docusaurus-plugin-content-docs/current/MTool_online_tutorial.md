@@ -41,7 +41,7 @@ alaya_mtool --version
 
 **step1. 下载 MTool 安装包**
 
-在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.16.1/alaya_mtool.exe> 到浏览器下载 MTool 安装包。
+在在线机器上，复制链接<https://download.alaya.network/alaya/mtool/windows/0.16.2/alaya_mtool.exe> 到浏览器下载 MTool 安装包。
 
 **step2. 安装 MTool**
 
@@ -64,7 +64,7 @@ alaya_mtool --version
 **step1. 下载 MTool 工具包**
 
 ```bash
-wget https://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
+wget https://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip
 ```
 
 **step2. 解压 MTool 工具包**

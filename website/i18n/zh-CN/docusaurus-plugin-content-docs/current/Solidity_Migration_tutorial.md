@@ -6,7 +6,7 @@ sidebar_label: 迁移教程
 
 ### 简介
 
-Alaya支持的solidity是0.4.26、0.5.17、0.6.12、0.7.1 四个版本，如果迁移0.7.1以上版本的合约，需要降低版本号，去除高版本相关语法。
+Alaya支持的solidity是0.4.26、0.5.17、0.6.12、0.7.6、0.8.6 五个版本，如果迁移0.8.6以上版本的合约，需要降低版本号，去除高版本相关语法。
 
 如果您希望将以太坊的智能合约迁移到Alaya上，可以通过alaya-truffle开发工具来进行。首先确保您正确安装了alaya-truffle,只需按照以下步骤操作即可。
 
@@ -220,7 +220,6 @@ ls contracts/
 - 将看到 ERC200513Token.sol
 - Alaya智能合约中的货币单位为ATP和VON。要将以太坊智能合约迁移至Alaya，请将以太币面额更改为Alaya面额。同时注意以太/ATP市场汇率（此合约我们假设市场汇率1:1，将uint256 public totalSupply = 10000000000000000000 ether; 修改成uint256 public totalSupply = 10000000000000000000 atp; ）
 - 编译版本修改Alaya支持的版本。
-- 地址修改：把require(_to != address(0x0))修改为require(_to != address(uint160(0)))
 - Alaya智能合约中block.timestamp表示的是当前区块以毫秒为单位的时间戳，以太坊是以秒为单位。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配置

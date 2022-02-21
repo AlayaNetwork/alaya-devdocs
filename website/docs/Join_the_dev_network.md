@@ -14,7 +14,9 @@ This article will introduce how to debug local applications by connecting to the
 Alaya Development Network has opened the following RPC ports to developers.
 
 ```
-RPC Address：http://47.241.91.2:6789 and ws://47.241.91.2:6790
+RPC Address：http://47.241.91.2:6789 or ws://47.241.91.2:6790
+RPC Address：http://47.245.14.190:6789 or ws://47.245.14.190:6790
+RPC Address：http://8.220.31.172:6789 or ws://8.220.31.172:6790
 ```
 
 #### Access to the development network through local programs
@@ -22,7 +24,7 @@ RPC Address：http://47.241.91.2:6789 and ws://47.241.91.2:6790
 On the ubuntu18.04 server, download and install the Alaya binary file with the following command:
 
 ```
-sudo wget https://download.alaya.network/alaya/platon/0.16.1/alaya -P /usr/bin    
+sudo wget https://download.alaya.network/alaya/platon/0.16.2/alaya -P /usr/bin    
 ```
 
 Connect to the development network by the following method:

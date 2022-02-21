@@ -4,7 +4,6 @@ title: 以太坊DApp快速迁移教程
 sidebar_label: 以太坊DApp快速迁移教程
 ---
 
-*注：本文基于已升级以太坊兼容版本的Alaya开发网节点进行介绍。Alaya主网以太坊兼容版本预计11月中旬将会发布。*
 
 为了更好的支持开发者迁移以太坊DApp到Alaya网络，本文将从开发者角度，首先介绍Alaya与以太坊的差异，然后介绍迁移DApp的大体思路。最后以uniswap迁移为例，基于现有以太坊开发工具对DApp合约迁移和前端界面迁移进行具体的介绍。
 
@@ -17,7 +16,7 @@ sidebar_label: 以太坊DApp快速迁移教程
 + Alaya网络的出块要比以太坊快，大约是1s出一个区块，所以block的timestamp是以毫秒为单位，以太坊的block的timestamp是以秒为单位
 + token的单位：Alaya使用von、atp代替了以太坊的wei、ether。
 + 账户地址格式：Alaya同时支持EIP55和Bech32地址格式。
-+ Alaya网络目前没有infrua类似的服务，目前对外的只有一个 https://openapi.alaya.network/rpc 接口服务
++ Alaya网络目前没有infrua类似的服务，目前对外提供了：http://47.241.91.2:6789; http://47.245.14.190:6789/; http://8.220.31.172:6789/ 接口服务。
 
 
 
@@ -31,7 +30,7 @@ sidebar_label: 以太坊DApp快速迁移教程
 
    ```javascript
    网络名称: Alaya开发测试网
-   新增RPC URL: http://47.241.91.2:6789
+   新增RPC URL: http://47.241.91.2:6789;  http://47.245.14.190:6789/; http://8.220.31.172:6789/
    链ID: 201030
    符号(选填): ATP
    区块浏览器URL(选填): https://devnetscan.alaya.network/

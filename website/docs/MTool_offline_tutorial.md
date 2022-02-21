@@ -42,7 +42,7 @@ Double-click `C:\alaya_mtool\unins000.exe` to uninstall all old versions of MToo
 
 **step1. Download the MTool installation package**
 
-On the online machine, copy the link <https://download.alaya.network/alaya/mtool/windows/0.16.1/mtool-setup.exe> ​​to the browser to download the MTool installation package.
+On the online machine, copy the link <https://download.alaya.network/alaya/mtool/windows/0.16.2/mtool-setup.exe> ​​to the browser to download the MTool installation package.
 
 **step2. Install MTool**
 
@@ -65,7 +65,7 @@ Proceed as follows:
 **step1. Download MTool Toolkit**
 
 ```bash
-wget http://download.alaya.network/alaya/mtool/linux/0.16.1/alaya_mtool.zip
+wget http://download.alaya.network/alaya/mtool/linux/0.16.2/alaya_mtool.zip
 ```
 
 **step2. Unzip MTool toolkit**
