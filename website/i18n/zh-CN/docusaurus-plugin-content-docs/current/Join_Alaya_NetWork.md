@@ -84,7 +84,7 @@ cd ~/alaya-node/ && nohup alaya --identity alaya-node --datadir ./data --port 16
   下载创世区块文件genesis.json：
 
   ```bash
-  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json
   ```
   
   

@@ -253,7 +253,7 @@ The development network provides a development and test environment for develope
 
 ```bash
 # Download the genesis block file genesis.json
-cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.1/genesis.json
+cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json
 
 # Initialize the genesis block file
 cd ~/alaya-node && alaya --datadir ./data init genesis.json

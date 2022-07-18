@@ -220,7 +220,7 @@ fast同步状态下，会查询不到当前块高，待同步到最新高度，�
 
 ```bash
 # 下载创世区块文件genesis.json
-cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json
+cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json
 
 # 初始化创世区块文件
 cd ~/alaya-node && alaya --datadir ./data init genesis.json

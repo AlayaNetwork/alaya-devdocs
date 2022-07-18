@@ -83,7 +83,7 @@ The development network provides a development test environment for the develope
   Save the following to the genesis.json file:
 
   ```bash
-  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.15.1/genesis.json 
+  cd ~/alaya-node && wget https://download.alaya.network/alaya/platon/0.16.0/genesis.json 
   ```
   
 - Initialize the genesis block file
