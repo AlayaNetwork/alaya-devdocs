@@ -15,8 +15,6 @@ Alaya Development Network has opened the following RPC ports to developers.
 
 ```
 RPC Address：http://47.241.91.2:6789 or ws://47.241.91.2:6790
-RPC Address：http://47.245.14.190:6789 or ws://47.245.14.190:6790
-RPC Address：http://8.220.31.172:6789 or ws://8.220.31.172:6790
 ```
 
 #### Access to the development network through local programs
