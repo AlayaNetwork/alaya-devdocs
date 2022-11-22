@@ -17,7 +17,7 @@ On Alaya, for DApp developers, the amount of work involved in migration has been
 + The Alaya network generates one block in about 1 second, which is faster than Ethereum. As such, the unit of block timestamp on Alaya is millisecond, whereas Ethereum’s block timestamp is measured in seconds.
 + Token unit: Alaya has replaced Ethereum’s wei and ether with von and atp.
 + The format of account address: PlatON and Alaya support EIP55 as well as Bech32.
-+ Currently, the Alaya network does not offer any infrua-like service, and The following interface services are currently available: http://47.241.91.2:6789; http://47.245.14.190:6789/; http://8.220.31.172:6789
++ Currently, the Alaya network does not offer any infrua-like service, and The following interface services are currently available: http://47.241.91.2:6789;
 
 
 
@@ -31,7 +31,7 @@ To successfully migrate your DApps, please refer to the below outline:
 
    ```javascript
    Network Name: Alaya development test network
-   New PRC URL: http://47.241.91.2:6789; http://47.245.14.190:6789/; http://8.220.31.172:6789
+   New PRC URL: http://47.241.91.2:6789;
    Chain ID: 201030
    Symbol (optional): ATP
    Blockchain explorer URL (optional): https://devnetscan.alaya.network/
