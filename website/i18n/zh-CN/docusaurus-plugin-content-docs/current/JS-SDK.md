@@ -325,7 +325,7 @@ var contract = new web3.platon.Contract(abi, address);
 var batch = new web3.BatchRequest();
 batch.add(
   web3.platon.getBalance.request(
-    "atx1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7",
+    "atp1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7",
     "latest",
     callback
   )
@@ -334,7 +334,7 @@ batch.add(
   contract.methods
     .balance(address)
     .call.request(
-      { from: "atx1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7" },
+      { from: "atp1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7" },
       callback2
     )
 );
@@ -370,12 +370,12 @@ web3.platon.defaultAccount;
 > undefined
 
 // set the default account
-web3.platon.defaultAccount = 'atx1fyeszufxwxk62p46djncj86rd553skpph926ws';
+web3.platon.defaultAccount = 'atp1fyeszufxwxk62p46djncj86rd553skpph926ws';
 ```
 
 > 注意：
 >
-> **所有地址格式必须带引号，如上：'atx1fyeszufxwxk62p46djncj86rd553skpph926ws'。**
+> **所有地址格式必须带引号，如上：'atp1fyeszufxwxk62p46djncj86rd553skpph926ws'。**
 
 ---
 
@@ -560,7 +560,7 @@ web3.platon.getAccounts([callback])
 
 ```js
 web3.platon.getAccounts().then(console.log);
-> ["atx1fyeszufxwxk62p46djncj86rd553skpph926ws", "atx1kg7y7wfwzqsyxppyxcdvhkkkwlf64cclmnav7p"]
+> ["atp1fyeszufxwxk62p46djncj86rd553skpph926ws", "atp1kg7y7wfwzqsyxppyxcdvhkkkwlf64cclmnav7p"]
 ```
 
 ---
@@ -600,7 +600,7 @@ web3.platon.getBalance(address [, defaultBlock] [, callback])
 
 参数：
 
-- `address`：String - 要检查余额的账户地址，bech32 address 格式，atx 开头的为 Alaya 测试网，atp 开头的为 Alaya 主网
+- `address`：String - 要检查余额的账户地址，bech32 address 格式，atp 开头的为 Alaya 主网
 - `defaultBlock`：Number|String - 可选，使用该参数覆盖 web3.platon.defaultBlock 属性值
 - `callback`：Function - 可选的回调函数，该回调的第一个参数为 error 对象，第二个参数为结果值
 
@@ -611,7 +611,7 @@ web3.platon.getBalance(address [, defaultBlock] [, callback])
 示例代码：
 
 ```js
-web3.platon.getBalance("atx1fyeszufxwxk62p46djncj86rd553skpph926ws")
+web3.platon.getBalance("atp1fyeszufxwxk62p46djncj86rd553skpph926ws")
 .then(console.log);
 > "1000000000000"
 ```
@@ -642,7 +642,7 @@ web3.platon.getStorageAt(address, position [, defaultBlock] [, callback])
 示例代码：
 
 ```js
-web3.platon.getStorageAt("atx1fyeszufxwxk62p46djncj86rd553skpph926ws", 0)
+web3.platon.getStorageAt("atp1fyeszufxwxk62p46djncj86rd553skpph926ws", 0)
 .then(console.log);
 > "0x033456732123ffff2342342dd12342434324234234fd234fd23fd4f23d4234"
 ```
@@ -672,7 +672,7 @@ web3.platon.getCode(address [, defaultBlock] [, callback])
 示例代码：
 
 ```js
-web3.platon.getCode("atx1fyeszufxwxk62p46djncj86rd553skpph926ws")
+web3.platon.getCode("atp1fyeszufxwxk62p46djncj86rd553skpph926ws")
 .then(console.log);
 > "0x600160008035811a818181146012578301005b601b6001356025565b8060005260206000f25b600060078202905091905056"
 ```
@@ -733,7 +733,7 @@ web3.platon.getBlock(3150)
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
     "transactionsRoot": "0x3a1b03875115b79539e5bd33fb00d8f7b7cd61929d5a3c574f507b8acf415bee",
     "stateRoot": "0xf1133199d44695dfa8fd1bcfe424d82854b5cebef75bddd7e40ea94cda515bcb",
-    "miner": "atx1fyeszufxwxk62p46djncj86rd553skpph926ws",
+    "miner": "atp1fyeszufxwxk62p46djncj86rd553skpph926ws",
     "difficulty": '21345678965432',
     "totalDifficulty": '324567845321',
     "size": 616,
@@ -772,7 +772,7 @@ web3.platon.getBlockTransactionCount(blockHashOrBlockNumber [, callback])
 示例代码：
 
 ```js
-web3.platon.getBlockTransactionCount("atx1fyeszufxwxk62p46djncj86rd553skpph926ws")
+web3.platon.getBlockTransactionCount("atp1fyeszufxwxk62p46djncj86rd553skpph926ws")
 .then(console.log);
 > 1
 ```
@@ -821,8 +821,8 @@ web3.platon.getTransaction('0x9fc76417374aa880d4449a1f7f31ec597f00b1f6f3dd2d66f4
     "blockHash": "0xef95f2f1ed3ca60b048b4bf67cde2195961e0bba6f70bcbea9a2c4e133e34b46",
     "blockNumber": 3,
     "transactionIndex": 0,
-    "from": "atx14984xa8uuhkmer32s6tuz5e3valxa0ctxj9j67",
-    "to": "atx1v227ux60dht9q3mk97fyanfk0st740u06lv59d",
+    "from": "atp14984xa8uuhkmer32s6tuz5e3valxa0ctxj9j67",
+    "to": "atp1v227ux60dht9q3mk97fyanfk0st740u06lv59d",
     "value": '123450000000000000',
     "gas": 314159,
     "gasPrice": '2000000000000',
@@ -905,7 +905,7 @@ var receipt = web3.platon.getTransactionReceipt('0x9fc76417374aa880d4449a1f7f31e
   "transactionIndex": 0,
   "blockHash": "0xef95f2f1ed3ca60b048b4bf67cde2195961e0bba6f70bcbea9a2c4e133e34b46",
   "blockNumber": 3,
-  "contractAddress": "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
+  "contractAddress": "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
   "cumulativeGasUsed": 314159,
   "gasUsed": 30234,
   "logs": [{
@@ -939,7 +939,7 @@ web3.platon.getTransactionCount(address [, defaultBlock] [, callback])
 示例代码：
 
 ```js
-web3.platon.getTransactionCount("atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
+web3.platon.getTransactionCount("atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
 .then(console.log);
 > 1
 ```
@@ -987,7 +987,7 @@ var code = "603d80600c6000396000f3007c010000000000000000000000000000000000000000
 
 // 使用回调函数
 web3.platon.sendTransaction({
-    from: 'atx1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
+    from: 'atp1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
     data: code // deploying a contracrt
 }, function(error, hash){
     ...
@@ -995,8 +995,8 @@ web3.platon.sendTransaction({
 
 // 使用promise
 web3.platon.sendTransaction({
-    from: 'atx1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
-    to: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
+    from: 'atp1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
+    to: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
     value: '1000000000000000'
 })
 .then(function(receipt){
@@ -1006,8 +1006,8 @@ web3.platon.sendTransaction({
 
 // 使用事件发生器
 web3.platon.sendTransaction({
-    from: 'atx1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
-    to: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
+    from: 'atp1mc9jj4nf487e840j3k0vshjq7n9kj7aw9qvc0x',
+    to: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
     value: '1000000000000000'
 })
 .on('transactionHash', function(hash){
@@ -1134,12 +1134,12 @@ web3.platon.sign(dataToSign, address [, callback])
 示例代码：
 
 ```js
-web3.platon.sign("Hello world", "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
+web3.platon.sign("Hello world", "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
 .then(console.log);
 > "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409de4c9c7f9466d4e9aaec7977f05e923889b33c0d0dd27d7226b6e6f56ce737465c5cfd04be400"
 
 // the below is the same
-web3.platon.sign(web3.utils.utf8ToHex("Hello world"), "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
+web3.platon.sign(web3.utils.utf8ToHex("Hello world"), "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq")
 .then(console.log);
 > "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409de4c9c7f9466d4e9aaec7977f05e923889b33c0d0dd27d7226b6e6f56ce737465c5cfd04be400"
 ```
@@ -1171,10 +1171,10 @@ web3.platon.signTransaction(transactionObject, address [, callback])
 
 ```js
 web3.platon.signTransaction({
-    from: "atx1avq5lrytgxxmddzhwnpjdg8xf3ufznwql8t8dx",
+    from: "atp1avq5lrytgxxmddzhwnpjdg8xf3ufznwql8t8dx",
     gasPrice: "20000000000",
     gas: "21000",
-    to: 'atx1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
+    to: 'atp1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
     value: "1000000000000000000",
     data: ""
 }).then(console.log);
@@ -1184,7 +1184,7 @@ web3.platon.signTransaction({
         nonce: '0x0',
         gasPrice: '0x4a817c800',
         gas: '0x5208',
-        to: 'atx1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
+        to: 'atp1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
         value: '0xde0b6b3a7640000',
         input: '0x',
         v: '0x25',
@@ -1220,7 +1220,7 @@ web3.platon.estimateGas(callObject [, callback])
 
 ```js
 web3.platon.estimateGas({
-    to: "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
+    to: "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
     data: "0xc6888fa10000000000000000000000000000000000000000000000000000000000000003"
 })
 .then(console.log);
@@ -1266,7 +1266,7 @@ web3.platon.getPastLogs(options [, callback])
 
 ```js
 web3.platon.getPastLogs({
-    address: "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
+    address: "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
     topics: ["0x033456732123ffff2342342dd12342434324234234fd234fd23fd4f23d4234"]
 })
 .then(console.log);
@@ -1279,7 +1279,7 @@ web3.platon.getPastLogs({
     transactionHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
     blockHash: '0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7',
     blockNumber: 1234,
-    address: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'
+    address: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'
 },{...}]
 ```
 
@@ -1323,8 +1323,8 @@ Mixed - 取决于具体的订阅类型
 var subscription = web3.platon.subscribe(
   "logs",
   {
-    address: "atx..",
-    topics: ["atx..."],
+    address: "atp..",
+    topics: ["atp..."],
   },
   function (error, result) {
     if (!error) console.log(log);
@@ -1576,8 +1576,8 @@ var subscription = web3.platon
   .subscribe(
     "logs",
     {
-      address: "atx..",
-      topics: ["atx..."],
+      address: "atp..",
+      topics: ["atp..."],
     },
     function (error, result) {
       if (!error) console.log(result);
@@ -1626,7 +1626,7 @@ new web3.platon.Contract(jsonInterface[, address][, options])
 
   - vmType - Number: 合约类型。0 表示 solidity 合约，1 表示 wasm 合约。不传默认是 solidity 合约。(新增字段)
 
-  - net_type - String: 网络类型。`atp`表示主网，`atx`表示测试网。不传默认是测试网。(新增字段)
+  - net_type - String: 网络类型。`atp`表示主网，不传默认是主网。(新增字段)
 
     返回值：
 
@@ -1635,8 +1635,8 @@ new web3.platon.Contract(jsonInterface[, address][, options])
 示例代码：
 
 ```js
-var myContract = new web3.platon.Contract([...], 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq', {
-    from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr', // default from address
+var myContract = new web3.platon.Contract([...], 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq', {
+    from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr', // default from address
     gasPrice: '20000000000' // default gas price in VON, 20 GVON in this case
 });
 ```
@@ -1667,14 +1667,14 @@ myContract.options
 ```js
 myContract.options;
 > {
-    address: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
+    address: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
     jsonInterface: [...],
-    from: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
+    from: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq',
     gasPrice: '10000000000000',
     gas: 1000000
 }
 
-myContract.options.from = 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'; // default from address
+myContract.options.from = 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'; // default from address
 myContract.options.gasPrice = '20000000000000'; // default gas price in VON
 myContract.options.gas = 5000000; // provide as fallback always 5M gas
 ```
@@ -1700,10 +1700,10 @@ myContract.options.address
 
 ```js
 myContract.options.address;
-> 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'
+> 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'
 
 // 设置一个新地址
-myContract.options.address = 'atx...';
+myContract.options.address = 'atp...';
 ```
 
 ---
@@ -1778,7 +1778,7 @@ myContract.deploy({
     arguments: [123, 'My String']
 })
 .send({
-    from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
+    from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
     gas: 1500000,
     gasPrice: '30000000000000'
 }, function(error, transactionHash){ ... })
@@ -1800,7 +1800,7 @@ myContract.deploy({
     arguments: [123, 'My String']
 })
 .send({
-    from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
+    from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr',
     gas: 1500000,
     gasPrice: '30000000000000'
 })
@@ -1866,18 +1866,18 @@ Object: 交易对象，包含以下字段：
 
 ```js
 // 调用合约方法
-myContract.methods.myMethod(123).call({from: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'}, function(error, result){
+myContract.methods.myMethod(123).call({from: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'}, function(error, result){
     ...
 });
 
 // 发送交易，使用Promise对象获取返回结果
-myContract.methods.myMethod(123).send({from: 'atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'})
+myContract.methods.myMethod(123).send({from: 'atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq'})
 .then(function(receipt){
     // receipt can also be a new contract instance, when coming from a "contract.deploy({...}).send()"
 });
 
 // 发送交易，使用事件获取返回结果
-myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
+myContract.methods.myMethod(123).send({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
 .on('transactionHash', function(hash){
     ...
 })
@@ -1919,12 +1919,12 @@ myContract.methods.myMethod([param1[, param2[, ...]]]).call(options[, callback])
 
 ```js
 // 使用回调函数接收合约方法执行结果
-myContract.methods.myMethod(123).call({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'}, function(error, result){
+myContract.methods.myMethod(123).call({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'}, function(error, result){
     ...
 });
 
 // 使用Promise接收合约方法执行结果
-myContract.methods.myMethod(123).call({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
+myContract.methods.myMethod(123).call({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
 .then(function(result){
     ...
 });
@@ -2015,19 +2015,19 @@ PromiEvent: 一个 Promise 对象，当交易收据有效时或者发送交易�
 
 ```js
 // using the callback
-myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'}, function(error, transactionHash){
+myContract.methods.myMethod(123).send({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'}, function(error, transactionHash){
     ...
 });
 
 // using the promise
-myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
+myContract.methods.myMethod(123).send({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
 .then(function(receipt){
     // receipt can also be a new contract instance, when coming from a "contract.deploy({...}).send()"
 });
 
 
 // using the event emitter
-myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
+myContract.methods.myMethod(123).send({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
 .on('transactionHash', function(hash){
     ...
 })
@@ -2042,7 +2042,7 @@ myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7
         "transactionIndex": 0,
         "blockHash": "0xef95f2f1ed3ca60b048b4bf67cde2195961e0bba6f70bcbea9a2c4e133e34b46",
         "blockNumber": 3,
-        "contractAddress": "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
+        "contractAddress": "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq",
         "cumulativeGasUsed": 314159,
         "gasUsed": 30234,
         "events": {
@@ -2063,7 +2063,7 @@ myContract.methods.myMethod(123).send({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7
                 transactionHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
                 blockHash: '0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7',
                 blockNumber: 1234,
-                address: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
+                address: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
             },
             "MyOtherEvent": {
                 ...
@@ -2110,7 +2110,7 @@ myContract.methods.myMethod(123).estimateGas({gas: 5000000}, function(error, gas
 });
 
 // 使用promise
-myContract.methods.myMethod(123).estimateGas({from: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
+myContract.methods.myMethod(123).estimateGas({from: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'})
 .then(function(gasAmount){
     ...
 })
@@ -2221,7 +2221,7 @@ myContract.events.MyEvent({
     transactionHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
     blockHash: '0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7',
     blockNumber: 1234,
-    address: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
+    address: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
 }
 ```
 
@@ -2292,7 +2292,7 @@ myContract.getPastEvents('MyEvent', {
     transactionHash: '0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385',
     blockHash: '0xfd43ade1c09fade1c0d57a7af66ab4ead7c2c2eb7b11a91ffdd57a7af66ab4ead7',
     blockNumber: 1234,
-    address: 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
+    address: 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
 },{
     ...
 }]
@@ -2440,7 +2440,7 @@ password - String: 用来加密账户的密码
 
 ```js
 web3.platon.personal.newAccount('!@superpassword').then(console.log);
-> 'atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljazusp4'
+> 'atp1uqug0zq7rcxddndleq4ux2ft3tv6dqljazusp4'
 ```
 
 ---
@@ -2471,12 +2471,12 @@ web3.platon.personal.sign(dataToSign, address, password [, callback])
 示例代码：
 
 ```js
-web3.platon.personal.sign("Hello world", "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq", "test password!")
+web3.platon.personal.sign("Hello world", "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq", "test password!")
 .then(console.log);
 > "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409de4c9c7f9466d4e9aaec7977f05e923889b33c0d0dd27d7226b6e6f56ce737465c5cfd04be400"
 
 // 下面代码实现同样功能
-web3.platon.personal.sign(web3.utils.utf8ToHex("Hello world"), "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq", "test password!")
+web3.platon.personal.sign(web3.utils.utf8ToHex("Hello world"), "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq", "test password!")
 .then(console.log);
 > "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409de4c9c7f9466d4e9aaec7977f05e923889b33c0d0dd27d7226b6e6f56ce737465c5cfd04be400"
 ```
@@ -2507,7 +2507,7 @@ web3.platon.personal.ecRecover(dataThatWasSigned, signature [, callback])
 
 ```js
 web3.platon.personal.ecRecover("Hello world", "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409de4c9c7f9466d4e9aaec7977f05e923889b33c0d0dd27d7226b6e6f56ce737465c5cfd04be400").then(console.log);
-> "atx1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq"
+> "atp1z86dpg7p96rtfd0nnvsn7lse6pyzwmdw039wlq"
 ```
 
 ---
@@ -2538,10 +2538,10 @@ web3.platon.personal.signTransaction(transaction, password [, callback])
 
 ```js
 web3.platon.signTransaction({
-    from: "atx1avq5lrytgxxmddzhwnpjdg8xf3ufznwql8t8dx",
+    from: "atp1avq5lrytgxxmddzhwnpjdg8xf3ufznwql8t8dx",
     gasPrice: "20000000000",
     gas: "21000",
-    to: 'atx1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
+    to: 'atp1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
     value: "1000000000000000000",
     data: ""
 }, 'MyPassword!').then(console.log);
@@ -2551,7 +2551,7 @@ web3.platon.signTransaction({
         nonce: '0x0',
         gasPrice: '0x4a817c800',
         gas: '0x5208',
-        to: 'atx1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
+        to: 'atp1x56n2df4x56n2df4x56n2df4x56n2df4fcrvnj',
         value: '0xde0b6b3a7640000',
         input: '0x',
         v: '0x25',
@@ -3258,7 +3258,7 @@ web3.utils.isBech32Address(bech32Address)
 
 参数：
 
-`bech32Address` - String: 要检查的 bech32 格式地址字符串；atx 表示测试网地址，atp 表示主网地址。
+`bech32Address` - String: 要检查的 bech32 格式地址字符串；atp 表示主网地址。
 
 返回值：
 
@@ -3267,18 +3267,11 @@ web3.utils.isBech32Address(bech32Address)
 示例代码：
 
 ```js
-web3.utils.isBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
-> true
-
 web3.utils.isBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
-> false
-
-web3.utils.isBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
 > true
 
-web3.utils.isBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
+web3.utils.isBech32Address('0x1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
 > false
-```
 
 ---
 
@@ -3294,7 +3287,7 @@ web3.utils.toBech32Address(hrp, address)
 
 参数：
 
-`hrp` - String: 指定网络参数，atx 表示测试网地址，atp 表示主网地址。
+`hrp` - String: 指定网络参数，atp 表示主网地址。
 
 `address` - String: 十六进制地址（如以太坊地址）字符串。
 
@@ -3305,8 +3298,8 @@ web3.utils.toBech32Address(hrp, address)
 示例代码：
 
 ```js
-web3.utils.toBech32Address('atx', '0x1234567890123456789012345678901234567891');
-> 'atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
+web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
+> 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr'
 
 web3.utils.toBech32Address('atp', '0x1234567890123456789012345678901234567891');
 > 'atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf'
@@ -3335,7 +3328,7 @@ web3.utils.decodeBech32Address(bech32Address)
 示例代码：
 
 ```js
-web3.utils.decodeBech32Address('atx1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
+web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3ut4wvr');
 > '0x1234567890123456789012345678901234567891'
 
 web3.utils.decodeBech32Address('atp1zg69v7yszg69v7yszg69v7yszg69v7y3kdfylf');
@@ -3827,7 +3820,7 @@ web3.utils.padLeft('Hello', 20, 'x');
     let data, reply;
 
     // 传参以对象形式发送交易： 1000. createStaking() : 发起质押
-    const benefitAddress = 'atx1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk';
+    const benefitAddress = 'atp1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk';
     const nodeId = '80f1fcee54de74dbf7587450f31c31c0e057bedd4faaa2a10c179d52c900ca01f0fb255a630c49d83b39f970d175c42b12a341a37504be248d76ecf592d32bc0';
     const amount = '10000000000000000000000000000';
     const blsPubKey = 'd2459db974f49ca9cbf944d4d04c2d17888aef90858b62d6aec166341a6e886e8c0c0cfae9e469c2f618f5d9b7a249130d10047899da6154288c9cde07b576acacd75fef07ba0cfeb4eaa7510704e77a9007eff5f1a5f8d099e6ea664129780c';
@@ -3906,11 +3899,11 @@ createStaking params object reply:  {
   "blockNumber": "0xb",
   "contractAddress": null,
   "cumulativeGasUsed": "0x14f34",
-  "from": "atx1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7",
+  "from": "atp1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7",
   "gasUsed": "0x14f34",
   "logs": [
     {
-      "address": "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm",
+      "address": "atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm",
       "topics": [
         "0xd63087bea9f1800eed943829fc1d61e7869764805baa3259078c1caf3d4f5a48"
       ],
@@ -3930,7 +3923,7 @@ createStaking params object reply:  {
   ],
   "logsBloom": "",
   "root": "0x3b7a41cea97f90196039586a3068f6a64c09aa7597898440c3c241a095e37984",
-  "to": "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm",
+  "to": "atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm",
   "transactionHash": "0x4bee71e351076a81482e2576e469a8dfaa76da9b6cc848265c10968d6de67364",
   "transactionIndex": "0x0"
 }
@@ -3940,10 +3933,10 @@ createStaking params array reply:  { blockHash:
   blockNumber: '0x10',
   contractAddress: null,
   cumulativeGasUsed: '0x14f34',
-  from: 'atx1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7',
+  from: 'atp1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7',
   gasUsed: '0x14f34',
   logs:
-   [ { address: 'atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm',
+   [ { address: 'atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm',
        topics: [Array],
        data:
         '0xf846b8447b22436f6465223a3330313130312c2244617461223a22222c224572724d7367223a22546869732063616e64696461746520697320616c7265616479206578697374227d',
@@ -3959,7 +3952,7 @@ createStaking params array reply:  { blockHash:
   logsBloom:'',
   root:
    '0x45ffeda340b68a0d54c5556a51f925b0787307eab1fb120ed141fd8ba81183d4',
-  to: 'atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm',
+  to: 'atp1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm',
   transactionHash:
    '0xe5cbc728d6e284464c30ce6f0bbee5fb2b30351a591424f3a0edd37cc1bbdc05',
   transactionIndex: '0x0' }
@@ -4073,7 +4066,7 @@ let reply = await ppos.rpc('admin_getProgramVersion');
 let reply = await ppos.rpc('platon_accounts')
 
 // 获取一个账号的金额
-let reply = await ppos.rpc('platon_getBalance', ["atx1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7","latest"])
+let reply = await ppos.rpc('platon_getBalance', ["atp1w9x7ye4qalarnl9v59zzhyn7tug9864rll39n7","latest"])
 ```
 
 ---
@@ -4153,7 +4146,7 @@ let buffer = ppos.hexStrBuf(nodeId);
 var utils = require("web3-utils")
 let params, reply;
 
-let address = utils.decodeBech32Address("atx1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk")
+let address = utils.decodeBech32Address("atp1umevux40n6ljlclm4pmrh2ad7f0rld06tr6mnk")
 // 以传进入对象进行调用(对于key不要求顺序)
 params = {
     funcType: 1103,

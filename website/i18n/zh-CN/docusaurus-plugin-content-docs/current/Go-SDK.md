@@ -109,7 +109,7 @@ account, err := w.NewAccount(1)
 
 ### 转账
 使用`Transfer(from common.Address, to common.Address, value *big.Int) (string, error)`方法用来转账.
-下面的代码示例, 演示了如果在Alaya测试网上列出账户余额和转账的操作.
+下面的代码示例, 演示了如果在Alaya开发测试网上列出账户余额和转账的操作.
 
 ```go
 const mnemonic = "always brick access science decade nasty marriage attack fame topple pen add"
@@ -141,7 +141,7 @@ const mnemonic = "always brick access science decade nasty marriage attack fame 
 
 ### 导出HDWallet的账户详情
 使用`ToString(account accounts.Account) string`方法导出一个HDWallet账号的详情,
-包括Alaya主网地址, 测试网地址, 私钥.
+包括Alaya主网地址, 开发测试网地址, 私钥.
 
 ### 导出KeyStore中账户的私钥
 使用`ExportPrivateKey(account accounts.Account, passphrass string) (*ecdsa.PrivateKey, error)`方法
@@ -186,7 +186,7 @@ w, _ := NewWalletByMnemonics(mnemonic)
     "nonce":"0x1",
     "gasPrice":"0x12a05f200",
     "gas":"0x5208",
-    "to":"atx1u6vtwsz2fqw5ufnm3tm070k43scxhhc8r3nnts",
+    "to":"atp1u6vtwsz2fqw5ufnm3tm070k43scxhhc8r3nnts",
     "value":"0x186a0",
     "input":"0x",
     "v":"0x62297",

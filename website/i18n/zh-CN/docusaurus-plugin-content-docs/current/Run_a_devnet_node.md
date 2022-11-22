@@ -27,7 +27,7 @@ Alaya开发网络和主网功能一致，在版本上可能超前于主网。可
 如果您有领取大额测试ATP的需求，比如创建开发网验证人节点请您按照格式要求发送邮件至：[support@latticex.foundation](mailto:support@latticex.foundation)，邮件要求：
 
 ```toml
- 标题：Alaya测试网Token申请
+ 标题：Alaya开发测试网Token申请
  姓名：
  联系方式：
  微信号（或其他即时通讯软件）：

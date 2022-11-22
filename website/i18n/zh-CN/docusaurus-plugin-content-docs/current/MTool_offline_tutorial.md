@@ -453,7 +453,7 @@ alaya_mtool staking --config $ALAYA_MTOOLDIR/validator/validator_config.json --a
 - 执行命令
 
 ```bash
-alaya_mtool update_validator --config $ALAYA_MTOOLDIR/validator/validator_config.json --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atx1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
+alaya_mtool update_validator --config $ALAYA_MTOOLDIR/validator/validator_config.json --address $ALAYA_MTOOLDIR/keystore/staking_observed.json --node_name myNode --website www.mywebsite.com --external_id 121412312 --delegated_reward_rate 6000 --benefit_address atp1x0f9xwr9steccekttqvml0d26zgsxwdnt4f55x --details "Modify the verifier information operation"
 ```
 
 - 参数说明

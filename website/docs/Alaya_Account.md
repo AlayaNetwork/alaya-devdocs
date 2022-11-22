@@ -331,7 +331,6 @@ After that, you will be prompted to enter the password twice, and finally the ad
 
 ```shell
 main net Address: atp173gwqattqczz392fea795z7xwltkt2r3rslmcw
-other net Address: atx173gwqattqczz392fea795z7xwltkt2r3fkr3ty
 ```
 
 In the current folder, a keyfile.json will be generated, which is the wallet file. You can use this account by matching the wallet file with the password you just entered.

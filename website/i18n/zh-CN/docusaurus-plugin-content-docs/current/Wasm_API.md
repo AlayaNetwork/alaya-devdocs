@@ -152,7 +152,7 @@ Address platon::platon_address()
 template <size_t M> std::pair<Address, bool> make_address(const char (&str)[M])
 ```
 
-CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要识别测试网地址前缀为 atx，需要定义宏 TESTNET，在合约第一行加上#define TESTNET 即可。
+CDT 默认识别的地址是主网地址也就是地址前缀为 atp，同时我们支持以太坊以地址格式,例如: "0x02ea8A5273d20f3e378a56D958a684004eDD0094"
 
 将 C 风格字符串转换为地址对象。
 
@@ -167,7 +167,7 @@ CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要
 std::pair<Address, bool> make_address(const std::string &str_address)
 ```
 
-CDT 默认识别的地址是主网地址也就是地址前缀为 atp，如果要识别测试网地址前缀为 atx，需要定义宏 TESTNET，在合约第一行加上#define TESTNET 即可。
+CDT 默认识别的地址是主网地址也就是地址前缀为 atp，同时我们支持以太坊以地址格式,例如: "0x02ea8A5273d20f3e378a56D958a684004eDD0094"
 
 将字符串转换为地址对象。
 
