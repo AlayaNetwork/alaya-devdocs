@@ -23,7 +23,6 @@ module.exports = {
             items: [
                 'Intro_to_validator',
                 'Run_a_fullnode',
-                'Become_Validator',
                 'Data_snapshot',
                 {
                     type: 'category',
