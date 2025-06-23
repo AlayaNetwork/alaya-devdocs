@@ -10,6 +10,9 @@ sidebar_label: Alaya开发者文档
 
 ## 初步了解
 - [关于Alaya](/alaya-devdocs/zh-CN/Intro_to_Alaya) - 快速了解什么是Alaya
+- [什么是ATP](/alaya-devdocs/zh-CN/Intro_to_ATP) - 在这里你可以全面了解到什么是ATP、ATP有什么作用，以及相关使用方式等
+- [质押&委托](/alaya-devdocs/zh-CN/staking_and_delegation)
+- [ATON钱包](/alaya-devdocs/zh-CN/ATON_user_manual) - 关于ATON钱包的各类操作，你都可以在这里找到相关说明
 - 区块链浏览器
   - [AlayaScan](https://scan.alaya.network/)
   - [PlatEye](/alaya-devdocs/zh-CN/PlatEye) - 由社区开发的浏览器，并提供了API数据查询接口
@@ -56,6 +59,7 @@ sidebar_label: Alaya开发者文档
 ### 普通用户
 
 - [大使计划](https://forum.latticex.foundation/t/topic/4246) - 你可以作为大使为 PlatON 和 Alaya 生态贡献力量
+- [质押&委托](/alaya-devdocs/zh-CN/staking_and_delegation) - 介绍了什么是委托、什么是质押，以及相关收益问题
 - 社区资源：
   - [Facebook](https://www.facebook.com/PlatONNetwork/)
   - [Twitter](https://twitter.com/PlatON_Network)

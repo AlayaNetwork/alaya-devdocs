@@ -12,6 +12,9 @@ This documentation is designed to help you build with Alaya. It covers Alaya's p
 If you are new to Alaya, we recommend starting at the beginning and working your way through like a book.
 
 - [Intro to Alaya](/alaya-devdocs/en/Intro_to_Alaya) - A basic introduction to the Alaya network.
+- [What is ATP](/alaya-devdocs/en/Intro_to_ATP) - Here you can get a comprehensive understanding of what ATP is, what it does, and how it is used, etc.
+- [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation) - A brief introduction to Staking and Delegation.
+- [ATON wallet](/alaya-devdocs/en/ATON_user_manual) - A comprehensive instruction on the use of ATON.
 - Blockchain Explorer
   - [AlayaScan](https://scan.alaya.network/)
   - [PlatEye](https://www.alayascan.com/) - An Alaya blockchain explorer was developed by the community. It provides an [API](/alaya-devdocs/en/Explorer_API) interface for developers.
@@ -53,6 +56,7 @@ If you want to join the Alaya network as a node, the following guidelines can he
 ### General users
 
 - [Ambassador Program](https://forum.latticex.foundation/t/topic/4246)
+- [Staking & Delegation](/alaya-devdocs/en/staking_and_delegation)
 - [Ecosystem Programs](/alaya-devdocs/en/Ecosystem_Programs)
 - [Join the Community](/alaya-devdocs/en/Join_the_Community)
   - [Twitter](https://twitter.com/PlatON_Network)
