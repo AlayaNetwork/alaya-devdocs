@@ -8,8 +8,6 @@ module.exports = {
             label: 'Basics',
             items: [
                 'Intro_to_Alaya',
-                'Intro_to_ATP',
-                'staking_and_delegation',
                 'Networks',
                 'Alaya_Account'
             ]
@@ -96,7 +94,7 @@ module.exports = {
         {
             type: 'category',
             label: 'Wallet',
-            items: ['Wallet_Guide', 'ATON_user_manual', 'Samurai_user_manual','Ledger-hardware-wallet', 'MetaMask']
+            items: ['Ledger-hardware-wallet', 'MetaMask']
         },
         {
             type: 'category',
