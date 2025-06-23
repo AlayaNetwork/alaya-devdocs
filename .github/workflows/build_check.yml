@@ -13,4 +13,4 @@ jobs:
         ref: main
     
     - name: Build
-      run: cd website && npm install && npm run build
+      run: cd website && npm run build
